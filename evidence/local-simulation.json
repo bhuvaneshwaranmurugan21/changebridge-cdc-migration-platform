@@ -1,0 +1,131 @@
+{
+  "architecture": "frontier-bound-migration-generations",
+  "checks": [
+    {
+      "check": "contiguous_batch",
+      "passed": true,
+      "proof": "100->130"
+    },
+    {
+      "check": "idempotent_batch_replay",
+      "passed": true,
+      "proof": "batch-100-130"
+    },
+    {
+      "check": "delete_tombstone",
+      "passed": true,
+      "proof": "orders/o-002@120"
+    },
+    {
+      "check": "frontier_gap_blocked",
+      "passed": true,
+      "proof": "expected start=130, received=140"
+    },
+    {
+      "check": "conflicting_transaction_replay_blocked",
+      "passed": true,
+      "proof": "tx-110 digest mismatch"
+    },
+    {
+      "check": "crash_atomicity",
+      "passed": true,
+      "proof": "frontier unchanged after injected crash"
+    },
+    {
+      "check": "nullable_schema_addition",
+      "passed": true,
+      "proof": "campaign_id nullable"
+    },
+    {
+      "check": "breaking_schema_blocked",
+      "passed": true,
+      "proof": [
+        "removed field: amount"
+      ]
+    },
+    {
+      "check": "frontier_reconciliation",
+      "passed": true,
+      "proof": {
+        "frontier_lsn": 130,
+        "generation_id": "g-20260101",
+        "matched": true,
+        "tables": [
+          {
+            "actual_count": 1,
+            "actual_digest": "ac25973969c44e217cbb62a3ca36f6eb105f725ce57ba94de0a130566502426a",
+            "expected_count": 1,
+            "expected_digest": "ac25973969c44e217cbb62a3ca36f6eb105f725ce57ba94de0a130566502426a",
+            "matched": true,
+            "table": "customers"
+          },
+          {
+            "actual_count": 2,
+            "actual_digest": "41a9f150034ec55530bfd6842898d361485b66f8e1bfbfc339ff21cd2c93daa7",
+            "expected_count": 2,
+            "expected_digest": "41a9f150034ec55530bfd6842898d361485b66f8e1bfbfc339ff21cd2c93daa7",
+            "matched": true,
+            "table": "orders"
+          }
+        ]
+      }
+    },
+    {
+      "check": "settlement_mismatch_detected",
+      "passed": true,
+      "proof": {
+        "frontier_lsn": 130,
+        "generation_id": "g-20260101",
+        "matched": false,
+        "tables": [
+          {
+            "actual_count": 1,
+            "actual_digest": "ac25973969c44e217cbb62a3ca36f6eb105f725ce57ba94de0a130566502426a",
+            "expected_count": 1,
+            "expected_digest": "ac25973969c44e217cbb62a3ca36f6eb105f725ce57ba94de0a130566502426a",
+            "matched": true,
+            "table": "customers"
+          },
+          {
+            "actual_count": 2,
+            "actual_digest": "41a9f150034ec55530bfd6842898d361485b66f8e1bfbfc339ff21cd2c93daa7",
+            "expected_count": 2,
+            "expected_digest": "b9ae83b481691c4c14116fd91679ab68e6e7bf3e23a03880d68d91ac932c9dee",
+            "matched": false,
+            "table": "orders"
+          }
+        ]
+      }
+    },
+    {
+      "check": "lag_gate",
+      "passed": true,
+      "proof": [
+        "lag 31.000s exceeds 30.000s"
+      ]
+    },
+    {
+      "check": "proof_gated_cutover",
+      "passed": true,
+      "proof": [
+        "g-20260101",
+        1
+      ]
+    },
+    {
+      "check": "concurrent_cutover_blocked",
+      "passed": true,
+      "proof": "stale pointer version=0"
+    }
+  ],
+  "claim_level": "LOCAL_SIMULATION",
+  "evidence_digest": "5cb82833490b5f9da6dc40636a1c80ad44113736bce7e46e303448c8d1c72794",
+  "metrics": {
+    "checks_passed": 13,
+    "checks_total": 13,
+    "duration_ms": 5.726
+  },
+  "production_claim": false,
+  "result": "PASS",
+  "scope": "SQLite correctness oracle; no managed AWS service was invoked"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:orders:v1",
+  "title": "Order",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["order_id", "customer_id", "amount"],
+  "properties": {
+    "order_id": {"type": "string", "minLength": 1},
+    "customer_id": {"type": "string", "minLength": 1},
+    "amount": {"type": "integer", "minimum": 0},
+    "campaign_id": {"type": ["string", "null"]}
+  }
+}
