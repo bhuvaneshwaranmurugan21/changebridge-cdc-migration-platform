@@ -18,7 +18,9 @@ class CompatibilityResult:
     reasons: tuple[str, ...]
 
 
-def check_compatibility(previous: tuple[Field, ...], candidate: tuple[Field, ...]) -> CompatibilityResult:
+def check_compatibility(
+    previous: tuple[Field, ...], candidate: tuple[Field, ...]
+) -> CompatibilityResult:
     """Allow nullable additions; block removals, type changes, and required additions."""
 
     old = {field.name: field for field in previous}

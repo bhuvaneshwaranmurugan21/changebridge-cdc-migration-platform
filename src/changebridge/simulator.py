@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from copy import deepcopy
-from time import perf_counter
-from typing import Any, Callable
+from typing import Any
 
 from changebridge.canonical import digest
 from changebridge.cutover import evaluate_cutover
@@ -103,7 +103,6 @@ def _expect_failure(error_type: type[Exception], operation: Callable[[], object]
 
 
 def run_failure_lab() -> dict[str, Any]:
-    started = perf_counter()
     checks: list[dict[str, Any]] = []
 
     def record(name: str, passed: bool, proof: Any) -> None:
@@ -114,7 +113,11 @@ def run_failure_lab() -> dict[str, Any]:
     engine.create_generation("g-20260101", 100, "orders-v1")
     engine.load_snapshot("g-20260101", snapshot)
     record("contiguous_batch", engine.apply_batch("g-20260101", batch) == "applied", "100->130")
-    record("idempotent_batch_replay", engine.apply_batch("g-20260101", batch) == "replayed", batch.batch_id)
+    record(
+        "idempotent_batch_replay",
+        engine.apply_batch("g-20260101", batch) == "replayed",
+        batch.batch_id,
+    )
     record("delete_tombstone", len(engine.tombstones("g-20260101")) == 1, "orders/o-002@120")
 
     gap_batch = CdcBatch("batch-gap", 140, 150, ())
@@ -210,7 +213,6 @@ def run_failure_lab() -> dict[str, Any]:
 
     engine.close()
     crash_engine.close()
-    duration_ms = round((perf_counter() - started) * 1000, 3)
     return {
         "architecture": "frontier-bound-migration-generations",
         "claim_level": "LOCAL_SIMULATION",
@@ -219,7 +221,6 @@ def run_failure_lab() -> dict[str, Any]:
         "metrics": {
             "checks_passed": sum(item["passed"] for item in checks),
             "checks_total": len(checks),
-            "duration_ms": duration_ms,
         },
         "production_claim": False,
         "result": "PASS" if all(item["passed"] for item in checks) else "FAIL",

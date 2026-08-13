@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import json
 import sqlite3
-from collections.abc import Mapping, Sequence
+from collections.abc import Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
 from changebridge.canonical import canonical_json, digest
 from changebridge.model import CdcBatch, Generation, Operation
@@ -109,7 +109,13 @@ class ChangeBridgeEngine:
             """INSERT INTO generations
                (generation_id, snapshot_lsn, current_lsn, schema_version, status, created_at)
                VALUES (?, ?, ?, ?, 'loading', ?)""",
-            (generation_id, snapshot_lsn, snapshot_lsn, schema_version, datetime.now(UTC).isoformat()),
+            (
+                generation_id,
+                snapshot_lsn,
+                snapshot_lsn,
+                schema_version,
+                datetime.now(UTC).isoformat(),
+            ),
         )
 
     def load_snapshot(
@@ -130,7 +136,8 @@ class ChangeBridgeEngine:
                 for record_key, payload in sorted(rows.items()):
                     self.connection.execute(
                         """INSERT INTO records
-                           (generation_id, table_name, record_key, payload_json, source_lsn, deleted)
+                           (generation_id, table_name, record_key, payload_json,
+                            source_lsn, deleted)
                            VALUES (?, ?, ?, ?, ?, 0)""",
                         (
                             generation_id,
@@ -195,7 +202,8 @@ class ChangeBridgeEngine:
                     payload = None if event.after is None else canonical_json(event.after)
                     self.connection.execute(
                         """INSERT INTO records
-                           (generation_id, table_name, record_key, payload_json, source_lsn, deleted)
+                           (generation_id, table_name, record_key, payload_json,
+                            source_lsn, deleted)
                            VALUES (?, ?, ?, ?, ?, ?)
                            ON CONFLICT(generation_id, table_name, record_key) DO UPDATE SET
                              payload_json = excluded.payload_json,
