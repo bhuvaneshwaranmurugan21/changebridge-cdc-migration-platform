@@ -172,16 +172,16 @@ resource "aws_iam_role_policy" "dms_s3" {
 }
 
 resource "aws_dms_s3_endpoint" "landing" {
-  endpoint_id             = "${local.name}-landing"
-  endpoint_type           = "target"
-  bucket_name             = aws_s3_bucket.landing.bucket
-  bucket_folder           = "raw"
-  service_access_role_arn = aws_iam_role.dms_s3.arn
-  data_format             = "parquet"
-  timestamp_column_name   = "changebridge_commit_time"
-  preserve_transactions   = true
-  cdc_path                = "cdc"
-  encryption_mode         = "SSE_KMS"
+  endpoint_id                       = "${local.name}-landing"
+  endpoint_type                     = "target"
+  bucket_name                       = aws_s3_bucket.landing.bucket
+  bucket_folder                     = "raw"
+  service_access_role_arn           = aws_iam_role.dms_s3.arn
+  data_format                       = "parquet"
+  timestamp_column_name             = "changebridge_commit_time"
+  preserve_transactions             = true
+  cdc_path                          = "cdc"
+  encryption_mode                   = "SSE_KMS"
   server_side_encryption_kms_key_id = aws_kms_key.platform.arn
 }
 
@@ -196,9 +196,9 @@ resource "aws_dms_replication_task" "migration" {
 
   table_mappings = jsonencode({
     rules = [{
-      "rule-type"   = "selection"
-      "rule-id"     = "1"
-      "rule-name"   = "business-tables"
+      "rule-type" = "selection"
+      "rule-id"   = "1"
+      "rule-name" = "business-tables"
       "object-locator" = {
         "schema-name" = "public"
         "table-name"  = "%"

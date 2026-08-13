@@ -30,7 +30,7 @@ def _event(
 
 
 def fixture() -> tuple[dict[str, dict[str, dict[str, Any]]], CdcBatch]:
-    snapshot = {
+    snapshot: dict[str, dict[str, dict[str, Any]]] = {
         "customers": {
             "c-001": {"customer_id": "c-001", "email": "ada@example.com", "tier": "silver"}
         },
@@ -82,7 +82,9 @@ def fixture() -> tuple[dict[str, dict[str, dict[str, Any]]], CdcBatch]:
     return snapshot, CdcBatch("batch-100-130", 100, 130, transactions)
 
 
-def expected_state(snapshot: dict[str, dict[str, dict[str, Any]]]) -> dict[str, Any]:
+def expected_state(
+    snapshot: dict[str, dict[str, dict[str, Any]]],
+) -> dict[str, dict[str, dict[str, Any]]]:
     result = deepcopy(snapshot)
     result["customers"]["c-001"]["tier"] = "gold"
     del result["orders"]["o-002"]
