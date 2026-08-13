@@ -6,6 +6,7 @@ claim_levels:
     evidence:
       - evidence/local-simulation.json
       - tests/
+      - https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/runs/31691764224
     scope:
       - contiguous frontier enforcement
       - transaction and batch replay identity
@@ -16,9 +17,10 @@ claim_levels:
       - lag and cutover gates
       - compare-and-swap active pointer
   TERRAFORM_STATIC:
-    status: PENDING_CI
+    status: VALIDATED_IN_CI
     evidence:
       - infra/terraform/
+      - https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/runs/31691764278
     scope:
       - formatting
       - terraform validate with providers initialized
