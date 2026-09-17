@@ -1,0 +1,156 @@
+{
+  "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+  "claims": [
+    {
+      "claim_id": "PC-001",
+      "classification": "SUPPORTED_LOCAL",
+      "evidence_label": "LOCAL_VERIFIED",
+      "implied_scope": "local SQLite oracle",
+      "limitation": "pytest was blocked locally by absent dependencies, but the deterministic simulator reproduced exactly and prior exact-commit CI succeeded.",
+      "location": "README.md:13-14",
+      "proof": [
+        "src/changebridge/simulator.py",
+        "evidence/local-simulation.json",
+        "GitHub Actions run 31722053980"
+      ],
+      "severity": "LOW",
+      "wording": "Executable and verified locally: replay identity, contiguous LSN frontiers, deletes, atomic failure rollback, schema gates, reconciliation, cutover CAS, and deterministic evidence."
+    },
+    {
+      "claim_id": "PC-002",
+      "classification": "DESIGN_ONLY",
+      "evidence_label": "DESIGN_ONLY",
+      "implied_scope": "design/static infrastructure",
+      "limitation": "No Step Functions definition exists and the Spark adapter does not write Iceberg.",
+      "location": "README.md:15-16",
+      "proof": [
+        "infra/terraform/",
+        "docs/architecture.md"
+      ],
+      "severity": "MEDIUM",
+      "wording": "Production-shaped but not yet verified on AWS: DMS to S3, Glue/Iceberg, Step Functions, DynamoDB control state, KMS, IAM, and CloudWatch Terraform."
+    },
+    {
+      "claim_id": "PC-003",
+      "classification": "SUPPORTED_LOCAL",
+      "evidence_label": "LOCAL_VERIFIED",
+      "implied_scope": "claim boundary",
+      "limitation": "No managed run exists on audited main.",
+      "location": "README.md:18",
+      "proof": [
+        "README.md",
+        "docs/claims.yaml"
+      ],
+      "severity": "NONE",
+      "wording": "No cloud throughput, availability, or cost claim is made without a captured AWS run."
+    },
+    {
+      "claim_id": "PC-004",
+      "classification": "SUPPORTED_LOCAL",
+      "evidence_label": "LOCAL_VERIFIED",
+      "implied_scope": "local model and target architecture",
+      "limitation": "Managed multi-table consumer behavior is design-only.",
+      "location": "README.md:29-31",
+      "proof": [
+        "src/changebridge/cutover.py",
+        "src/changebridge/engine.py"
+      ],
+      "severity": "MEDIUM",
+      "wording": "Consumers never read a half-built candidate and cutover is a gate-protected compare-and-swap."
+    },
+    {
+      "claim_id": "PC-005",
+      "classification": "SUPPORTED_LOCAL",
+      "evidence_label": "LOCAL_VERIFIED",
+      "implied_scope": "local simulator",
+      "limitation": "docs/failure-lab.md enumerates only 11 rows.",
+      "location": "README.md:81-83",
+      "proof": [
+        "src/changebridge/simulator.py",
+        "evidence/local-simulation.json"
+      ],
+      "severity": "MEDIUM",
+      "wording": "The deterministic failure lab proves 13 scenarios."
+    },
+    {
+      "claim_id": "PC-006",
+      "classification": "OVERSTATED",
+      "evidence_label": "DESIGN_ONLY",
+      "implied_scope": "adapter surface",
+      "limitation": "The current adapter validates column presence and counts rows but performs no CDC apply or Iceberg write.",
+      "location": "README.md:91",
+      "proof": [
+        "jobs/spark_iceberg_apply.py"
+      ],
+      "severity": "HIGH",
+      "wording": "jobs/ is a production-shaped Spark adapter."
+    },
+    {
+      "claim_id": "PC-007",
+      "classification": "UNBOUND",
+      "evidence_label": "UNCLAIMED",
+      "implied_scope": "production data path",
+      "limitation": "No state-machine definition, Terraform resource, test, or run evidence exists.",
+      "location": "docs/architecture.md:48",
+      "proof": [],
+      "severity": "HIGH",
+      "wording": "Step Functions asks the gate evaluator for a decision."
+    },
+    {
+      "claim_id": "PC-008",
+      "classification": "SUPPORTED_LOCAL",
+      "evidence_label": "LOCAL_VERIFIED",
+      "implied_scope": "historical CI",
+      "limitation": "The successful run predates audited HEAD; Terraform files were unchanged afterward, but local revalidation was blocked.",
+      "location": "docs/claims.yaml:19-26",
+      "proof": [
+        "GitHub Actions run 31691764278",
+        ".github/workflows/terraform.yml"
+      ],
+      "severity": "LOW",
+      "wording": "Terraform static validation includes formatting and terraform validate with providers initialized."
+    },
+    {
+      "claim_id": "PC-009",
+      "classification": "DESIGN_ONLY",
+      "evidence_label": "DESIGN_ONLY",
+      "implied_scope": "local model and target architecture",
+      "limitation": "No explicit rollback API or executable rollback scenario exists.",
+      "location": "README.md:67",
+      "proof": [
+        "src/changebridge/engine.py",
+        "docs/runbook.md"
+      ],
+      "severity": "MEDIUM",
+      "wording": "Rollback is a pointer transition to a retained proven generation."
+    },
+    {
+      "claim_id": "PC-010",
+      "classification": "SUPPORTED_LOCAL",
+      "evidence_label": "LOCAL_VERIFIED",
+      "implied_scope": "evidence boundary",
+      "limitation": "The committed evidence payload lacks embedded commit and tool provenance.",
+      "location": "README.md:120-124",
+      "proof": [
+        "evidence/local-simulation.json",
+        "validation V-002 through V-004"
+      ],
+      "severity": "LOW",
+      "wording": "Local evidence is reproducible; AWS runtime remains intentionally unclaimed."
+    }
+  ],
+  "part": 1,
+  "project": "ChangeBridge",
+  "run_id": "cb-p1-s1-20260917T073557Z-6081230",
+  "schema_version": "1.0.0",
+  "stage": 1,
+  "summary": {
+    "CONTRADICTED": 0,
+    "DESIGN_ONLY": 2,
+    "NOT_ASSESSABLE": 0,
+    "OBSOLETE": 0,
+    "OVERSTATED": 1,
+    "SUPPORTED_LOCAL": 6,
+    "UNBOUND": 1
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "allowed_statuses": [
+    "CONFIRMED_PRESENT",
+    "PRESENT_BUT_THIN",
+    "PRESENT_BUT_CONTRADICTORY",
+    "MISSING",
+    "OBSOLETE",
+    "NOT_ASSESSABLE"
+  ],
+  "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+  "claims": [
+    {
+      "assertion": "The historical implementation baseline contained 32 tracked files.",
+      "claim_id": "BC-001",
+      "evidence_label": "LOCAL_VERIFIED",
+      "finding": "The initial implementation and four subsequent main commits contain 32 files; current main contains 33 after the OIDC workflow was added.",
+      "proof_level": "git_history",
+      "references": [
+        "commit:6df84bf2993cd8c5f38f8ee5bbe3dd5e9c8505d0"
+      ],
+      "scope": "historical",
+      "status": "CONFIRMED_PRESENT"
+    },
+    {
+      "assertion": "The repository is isolated from the other portfolio projects.",
+      "claim_id": "BC-002",
+      "evidence_label": "LOCAL_VERIFIED",
+      "finding": "No AtlasRetail, LedgerGuard, EventPulse, FeatureForge, or obsolete ChangeBridge repository-name residue was found in the current tree or reachable history.",
+      "limitation": "This proves repository-content isolation, not whether an external repository was changed during historical development.",
+      "proof_level": "tree_and_history_search",
+      "references": [
+        "evidence/part1/stage1/isolation_audit.json"
+      ],
+      "scope": "current_and_history",
+      "status": "CONFIRMED_PRESENT"
+    },
+    {
+      "assertion": "A SQLite correctness reference engine implements generation, frontier, replay, tombstone, atomicity, and CAS semantics.",
+      "claim_id": "BC-003",
+      "evidence_label": "LOCAL_VERIFIED",
+      "limitations": "It is a single-process SQLite oracle, not distributed or managed-runtime proof.",
+      "proof_level": "local_behavior",
+      "references": [
+        "src/changebridge/engine.py",
+        "tests/test_engine.py",
+        "tests/test_schema_and_cutover.py",
+        "evidence/local-simulation.json"
+      ],
+      "scope": "current",
+      "status": "CONFIRMED_PRESENT"
+    },
+    {
+      "assertion": "The deterministic failure laboratory contains 13 passing scenarios.",
+      "claim_id": "BC-004",
+      "evidence_label": "LOCAL_VERIFIED",
+      "finding": "The executable simulator emits 13 named passing checks and reproduced byte-for-byte; the failure-lab document enumerates only 11 scenario rows.",
+      "proof_level": "local_behavior",
+      "references": [
+        "src/changebridge/simulator.py",
+        "evidence/local-simulation.json",
+        "docs/failure-lab.md"
+      ],
+      "scope": "current",
+      "status": "PRESENT_BUT_CONTRADICTORY"
+    },
+    {
+      "assertion": "Terraform defines the production-shaped AWS reference topology.",
+      "claim_id": "BC-005",
+      "evidence_label": "DESIGN_ONLY",
+      "finding": "S3, KMS, DynamoDB, Glue Catalog, CloudWatch, IAM, DMS S3 endpoint, and optional DMS task declarations exist; source database, replication instance, Glue job, Step Functions state machine, budgets, lease/TTL controls, and complete teardown evidence do not.",
+      "proof_level": "static_and_historical_remote_ci",
+      "references": [
+        "infra/terraform/",
+        ".github/workflows/terraform.yml"
+      ],
+      "scope": "current",
+      "status": "PRESENT_BUT_THIN"
+    },
+    {
+      "assertion": "CI validates code quality, tests, deterministic evidence, infrastructure, and AWS OIDC identity.",
+      "claim_id": "BC-006",
+      "evidence_label": "LOCAL_VERIFIED",
+      "limitations": "OIDC reaches AWS and was not triggered during Stage 1. Actions are version-tag pinned rather than immutable commit-SHA pinned.",
+      "proof_level": "workflow_static_and_remote_metadata",
+      "references": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/terraform.yml",
+        ".github/workflows/aws-oidc-identity.yml"
+      ],
+      "scope": "current",
+      "status": "CONFIRMED_PRESENT"
+    },
+    {
+      "assertion": "The Spark/Iceberg adapter applies CDC to Iceberg.",
+      "claim_id": "BC-007",
+      "evidence_label": "DESIGN_ONLY",
+      "finding": "The adapter reads JSON, checks five column names, creates a temporary view, and counts rows. It performs no Iceberg MERGE/write, delete handling, checkpointing, or idempotency transaction.",
+      "proof_level": "static",
+      "references": [
+        "jobs/spark_iceberg_apply.py"
+      ],
+      "scope": "current",
+      "status": "PRESENT_BUT_THIN"
+    },
+    {
+      "assertion": "Step Functions executes the migration gate and cutover flow.",
+      "claim_id": "BC-008",
+      "evidence_label": "UNCLAIMED",
+      "finding": "The architecture mentions Step Functions, but no state-machine definition, Terraform resource, test, or runtime evidence exists on audited main.",
+      "proof_level": "file_and_static",
+      "references": [
+        "docs/architecture.md:48"
+      ],
+      "scope": "current",
+      "status": "MISSING"
+    },
+    {
+      "assertion": "Runbooks and a claim registry exist.",
+      "claim_id": "BC-009",
+      "evidence_label": "DESIGN_ONLY",
+      "limitations": "The runbook is not bound to a real run and the claim registry predates Stage 1.",
+      "proof_level": "file_and_static",
+      "references": [
+        "docs/runbook.md",
+        "docs/claims.yaml"
+      ],
+      "scope": "current",
+      "status": "CONFIRMED_PRESENT"
+    },
+    {
+      "assertion": "Evidence scaffolding exists and is commit-bound.",
+      "claim_id": "BC-010",
+      "evidence_label": "LOCAL_VERIFIED",
+      "finding": "One reproducible local simulation artifact exists and matches regeneration, but it lacks embedded commit/run/tool provenance fields.",
+      "proof_level": "file_and_local_behavior",
+      "references": [
+        "evidence/local-simulation.json"
+      ],
+      "scope": "current",
+      "status": "PRESENT_BUT_THIN"
+    },
+    {
+      "assertion": "Reconciliation proves source/target equality at a frontier.",
+      "claim_id": "BC-011",
+      "evidence_label": "LOCAL_VERIFIED",
+      "finding": "Count and canonical full-table digests detect a value mismatch locally; there is no partitioned/keyed localization, managed source query, or scale evidence.",
+      "proof_level": "local_behavior",
+      "references": [
+        "src/changebridge/reconciliation.py",
+        "tests/test_reconciliation.py",
+        "src/changebridge/simulator.py"
+      ],
+      "scope": "current",
+      "status": "PRESENT_BUT_THIN"
+    },
+    {
+      "assertion": "Rollback is implemented as a retained proven-generation pointer transition.",
+      "claim_id": "BC-012",
+      "evidence_label": "LOCAL_VERIFIED",
+      "finding": "The generic CAS activation primitive can point to any ready generation, but there is no explicit retirement/rollback API or rollback scenario in the 13-check simulator.",
+      "proof_level": "local_model",
+      "references": [
+        "src/changebridge/engine.py",
+        "docs/runbook.md"
+      ],
+      "scope": "current",
+      "status": "PRESENT_BUT_THIN"
+    }
+  ],
+  "part": 1,
+  "project": "ChangeBridge",
+  "run_id": "cb-p1-s1-20260917T073557Z-6081230",
+  "schema_version": "1.0.0",
+  "stage": 1,
+  "summary": {
+    "CONFIRMED_PRESENT": 5,
+    "MISSING": 1,
+    "NOT_ASSESSABLE": 0,
+    "OBSOLETE": 0,
+    "PRESENT_BUT_CONTRADICTORY": 1,
+    "PRESENT_BUT_THIN": 5
+  }
+}

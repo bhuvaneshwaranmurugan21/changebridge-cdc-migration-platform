@@ -1,0 +1,84 @@
+{
+  "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+  "entries": [
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 1107,
+      "deterministic": true,
+      "path": "PROJECT_STATUS.md",
+      "redaction_status": "SANITIZED",
+      "sha256": "77e2c719431314fd5ff85ebc261b8e5ddf1e07220df0a2921be84136ea6312d9"
+    },
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 6978,
+      "deterministic": true,
+      "path": "docs/audits/CURRENT_STATE_AUDIT.md",
+      "redaction_status": "SANITIZED",
+      "sha256": "d928d31ceadc38dec86aa692ec5a10dcca2c71dbf0f6d2329cdd3f7f1e80e266"
+    },
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 7351,
+      "deterministic": true,
+      "path": "evidence/part1/stage1/baseline_claims_matrix.json",
+      "redaction_status": "SANITIZED",
+      "sha256": "5255698f35a7939a7e827362a29d66306e29ae666d0edf2e7d11ca75f5068013"
+    },
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 2757,
+      "deterministic": true,
+      "path": "evidence/part1/stage1/isolation_audit.json",
+      "redaction_status": "SANITIZED",
+      "sha256": "593cd0b92e63e2d82e88e9c0b4e9847448a1213594cab302d340710b232d3ce7"
+    },
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 5775,
+      "deterministic": true,
+      "path": "evidence/part1/stage1/public_claims_inventory.json",
+      "redaction_status": "SANITIZED",
+      "sha256": "d96e18a2e53d24a974b53b85b3c8e3ae8426862f59a6e877ed2699ff7cb43f8a"
+    },
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 2539,
+      "deterministic": true,
+      "path": "evidence/part1/stage1/repository_identity.json",
+      "redaction_status": "SANITIZED",
+      "sha256": "9e27a199b86b067c00e660ae554eafc01fb311af23e29a42ec126512a135b135"
+    },
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 23603,
+      "deterministic": true,
+      "path": "evidence/part1/stage1/repository_inventory.json",
+      "redaction_status": "SANITIZED",
+      "sha256": "bc272dc885d2d0e28dbf97d7eff1d817e1aa0c3f719545999a803947c39c93e0"
+    },
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 1558,
+      "deterministic": true,
+      "path": "evidence/part1/stage1/substage_receipts.json",
+      "redaction_status": "SANITIZED",
+      "sha256": "50c3d44cb5e92b5608505eea718dc7826dbb2cacd11f78fc62d471849ea6fb86"
+    },
+    {
+      "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+      "byte_size": 5618,
+      "deterministic": true,
+      "path": "evidence/part1/stage1/validation_baseline.json",
+      "redaction_status": "SANITIZED",
+      "sha256": "0fcaef9a2a24d05e57997fbc5c23459dc4a286fa1e60fcfcc19d2a5859e771e4"
+    }
+  ],
+  "ordering_rule": "repository-relative path, bytewise ascending",
+  "part": 1,
+  "project": "ChangeBridge",
+  "run_id": "cb-p1-s1-20260917T073557Z-6081230",
+  "schema_version": "1.0.0",
+  "self_reference_rule": "artifact_manifest.json excludes itself; stage_receipt.json is generated afterward and binds the manifest digest; the external post-merge checkpoint binds the receipt and merged SHA",
+  "stage": 1
+}

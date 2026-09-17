@@ -1,0 +1,162 @@
+{
+  "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+  "entries": [
+    {
+      "command": "python3 -m compileall -q src jobs tests",
+      "exit_code": 0,
+      "layer": "syntax",
+      "proof_scope": "Python syntax/import compilation only",
+      "repeatability": "not claimed",
+      "status": "PASS",
+      "validation_id": "V-001",
+      "writes": "external pycache directory only"
+    },
+    {
+      "command": "PYTHONPATH=src python3 -m changebridge.cli simulate --output <external>/simulation-run-1.json",
+      "exit_code": 0,
+      "layer": "reference_behavior",
+      "output_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24",
+      "proof_scope": "13 SQLite correctness-oracle checks; no AWS or Spark",
+      "repeatability": "matched V-003",
+      "status": "PASS",
+      "validation_id": "V-002",
+      "writes": "external validation directory only"
+    },
+    {
+      "command": "PYTHONPATH=src python3 -m changebridge.cli simulate --output <external>/simulation-run-2.json",
+      "exit_code": 0,
+      "layer": "reference_behavior_repeat",
+      "output_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24",
+      "proof_scope": "deterministic repeat of V-002",
+      "repeatability": "byte-identical",
+      "status": "PASS",
+      "validation_id": "V-003",
+      "writes": "external validation directory only"
+    },
+    {
+      "command": "compare regenerated simulation with evidence/local-simulation.json",
+      "exit_code": 0,
+      "layer": "evidence_reproduction",
+      "output_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24",
+      "proof_scope": "committed local evidence exactly reproduced",
+      "repeatability": "byte-identical",
+      "status": "PASS",
+      "validation_id": "V-004",
+      "writes": "none"
+    },
+    {
+      "command": "pytest",
+      "layer": "unit_and_coverage",
+      "proof_scope": "test definitions inventoried but not locally executed",
+      "reason": "pytest and pytest-cov are not installed in the execution environment; Stage 1 forbids installation",
+      "status": "BLOCKED",
+      "validation_id": "V-005",
+      "writes": "none"
+    },
+    {
+      "command": "ruff check .",
+      "layer": "lint",
+      "reason": "ruff is not installed; Stage 1 forbids installation",
+      "status": "BLOCKED",
+      "validation_id": "V-006",
+      "writes": "none"
+    },
+    {
+      "command": "mypy src",
+      "layer": "typing",
+      "reason": "mypy is not installed; Stage 1 forbids installation",
+      "status": "BLOCKED",
+      "validation_id": "V-007",
+      "writes": "none"
+    },
+    {
+      "command": "terraform fmt -check -diff -recursive",
+      "layer": "terraform_format",
+      "reason": "terraform is not installed; Stage 1 forbids installation",
+      "status": "BLOCKED",
+      "validation_id": "V-008",
+      "writes": "none"
+    },
+    {
+      "command": "terraform -chdir=infra/terraform init -backend=false && terraform -chdir=infra/terraform validate",
+      "layer": "terraform_validate",
+      "reason": "would initialize/download providers and terraform is absent; dependency installation is prohibited",
+      "status": "UNSAFE_TO_RUN",
+      "validation_id": "V-009",
+      "writes": "none"
+    },
+    {
+      "command": "AWS OIDC Identity Check workflow",
+      "historical_remote_observation": "success at exact audited commit in run 31722054083",
+      "layer": "aws_identity",
+      "reason": "would contact AWS; Stage 1 expressly prohibits AWS operations",
+      "status": "UNSAFE_TO_RUN",
+      "validation_id": "V-010",
+      "writes": "none"
+    },
+    {
+      "command": "existing CI workflow on audited main",
+      "exit_code": 0,
+      "layer": "remote_ci",
+      "limitations": "Stage 1 did not rerun this historical workflow",
+      "proof_scope": "GitHub run 31722053980 reports success at exact audited commit",
+      "status": "PASS",
+      "validation_id": "V-011",
+      "writes": "ephemeral historical CI runner only"
+    },
+    {
+      "command": "Git-index inventory generation twice",
+      "exit_code": 0,
+      "layer": "inventory_determinism",
+      "output_sha256": "1ae17a25a05e8798f9244b90e5c44c1d2af921a5a58dc328a68c1ef4c67bad8a",
+      "proof_scope": "33 tracked entries and byte hashes",
+      "repeatability": "matched",
+      "status": "PASS",
+      "validation_id": "V-012",
+      "writes": "none"
+    },
+    {
+      "command": "targeted tracked-tree and reachable-history pattern scans",
+      "exit_code": 0,
+      "layer": "secret_and_isolation_scan",
+      "limitations": "No installed dedicated secret-scanning engine",
+      "proof_scope": "cross-project names, obsolete repository name, suspicious filenames, common credential forms",
+      "status": "PASS",
+      "validation_id": "V-013",
+      "writes": "none"
+    }
+  ],
+  "environment": {
+    "git": "2.51.1",
+    "jq": "1.7",
+    "python": "3.12.14",
+    "ripgrep": "15.2.0"
+  },
+  "limitations": [
+    "Absent tools were not installed.",
+    "Passing remote CI proves only the assertions in the existing workflow.",
+    "No AWS or Terraform initialization command was executed."
+  ],
+  "part": 1,
+  "project": "ChangeBridge",
+  "repository_status_after": "CLEAN",
+  "repository_status_before": "CLEAN",
+  "run_id": "cb-p1-s1-20260917T073557Z-6081230",
+  "schema_version": "1.0.0",
+  "stage": 1,
+  "status_vocabulary": [
+    "PASS",
+    "FAIL",
+    "BLOCKED",
+    "NOT_DEFINED",
+    "UNSAFE_TO_RUN"
+  ],
+  "summary": {
+    "BLOCKED": 4,
+    "FAIL": 0,
+    "NOT_DEFINED": 0,
+    "PASS": 7,
+    "UNSAFE_TO_RUN": 2
+  },
+  "unexpected_writes": []
+}
