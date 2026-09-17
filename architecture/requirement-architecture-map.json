@@ -1,0 +1,604 @@
+{
+  "authority": "ChangeBridge Part 1 Stage 3",
+  "capability_promotion": "NONE",
+  "entries": [
+    {
+      "adrs": [
+        "ADR-002"
+      ],
+      "architecture_disposition": "RESOLVED_DESIGN_ONLY",
+      "components": [
+        "postgres_source",
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "owner_stage": "part1-stage3",
+      "proof_owner": "part1-stage3",
+      "requirement_id": "CB-BOUNDARY-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-002"
+      ],
+      "architecture_disposition": "RESOLVED_DESIGN_ONLY",
+      "components": [
+        "dms_transport",
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "owner_stage": "part1-stage3",
+      "proof_owner": "part1-stage3",
+      "requirement_id": "CB-BOUNDARY-002",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-002"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "postgres_source",
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part3-managed-proof",
+      "proof_owner": "part3-managed-proof",
+      "requirement_id": "CB-BOUNDARY-003",
+      "requirement_status": "UNSATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-003",
+        "ADR-004"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage4",
+      "proof_owner": "part1-stage4",
+      "requirement_id": "CB-ORDER-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-003",
+        "ADR-004"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-ORDER-002",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-003",
+        "ADR-004"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage4",
+      "proof_owner": "part1-stage4",
+      "requirement_id": "CB-ORDER-003",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-003",
+        "ADR-004"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-ORDER-004",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-APPLY-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-APPLY-002",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-APPLY-003",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-APPLY-004",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "migration_apply_engine"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-APPLY-005",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-006"
+      ],
+      "architecture_disposition": "RESOLVED_DESIGN_ONLY",
+      "components": [
+        "migration_apply_engine",
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "owner_stage": "part1-stage3",
+      "proof_owner": "part1-stage3",
+      "requirement_id": "CB-CHECKPOINT-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-006"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-CHECKPOINT-002",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-006"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-CHECKPOINT-003",
+      "requirement_status": "UNSATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-008"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "schema_coordinator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage4",
+      "proof_owner": "part1-stage4",
+      "requirement_id": "CB-SCHEMA-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-008"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "schema_coordinator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-SCHEMA-002",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-008"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "schema_coordinator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-SCHEMA-003",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-001",
+        "ADR-013"
+      ],
+      "architecture_disposition": "RESOLVED_DESIGN_ONLY",
+      "components": [
+        "generation_registry",
+        "iceberg_generation_store",
+        "consumer_resolver"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "owner_stage": "part1-stage3",
+      "proof_owner": "part1-stage3",
+      "requirement_id": "CB-ISOLATION-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-001",
+        "ADR-013"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "generation_registry",
+        "iceberg_generation_store"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-ISOLATION-002",
+      "requirement_status": "UNSATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-009"
+      ],
+      "architecture_disposition": "RESOLVED_DESIGN_ONLY",
+      "components": [
+        "postgres_source",
+        "reconciliation_coordinator"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "owner_stage": "part1-stage3",
+      "proof_owner": "part1-stage3",
+      "requirement_id": "CB-RECON-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-009"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "reconciliation_coordinator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-RECON-002",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-009"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "reconciliation_coordinator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-RECON-003",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "proof_coordinator",
+        "publication_controller",
+        "active_generation_pointer"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage4",
+      "proof_owner": "part1-stage4",
+      "requirement_id": "CB-PUBLISH-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "proof_coordinator",
+        "publication_controller",
+        "active_generation_pointer"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-PUBLISH-002",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "proof_coordinator",
+        "publication_controller",
+        "active_generation_pointer"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-PUBLISH-003",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "proof_coordinator",
+        "publication_controller",
+        "active_generation_pointer"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-PUBLISH-004",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "future_orchestrator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part2-runtime",
+      "proof_owner": "part2-runtime",
+      "requirement_id": "CB-OPS-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "future_orchestrator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part3-managed-proof",
+      "proof_owner": "part3-managed-proof",
+      "requirement_id": "CB-OPS-002",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "future_orchestrator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part3-managed-proof",
+      "proof_owner": "part3-managed-proof",
+      "requirement_id": "CB-OPS-003",
+      "requirement_status": "UNSATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "future_orchestrator"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part3-managed-proof",
+      "proof_owner": "part3-managed-proof",
+      "requirement_id": "CB-OPS-004",
+      "requirement_status": "UNSATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-014",
+        "ADR-015"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "evidence_manifest_store",
+        "rollback_retirement_controller"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part3-managed-proof",
+      "proof_owner": "part3-managed-proof",
+      "requirement_id": "CB-SEC-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-014",
+        "ADR-015"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "evidence_manifest_store",
+        "rollback_retirement_controller"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part3-managed-proof",
+      "proof_owner": "part3-managed-proof",
+      "requirement_id": "CB-SEC-002",
+      "requirement_status": "UNSATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage2",
+      "proof_owner": "part1-stage2",
+      "requirement_id": "CB-EVIDENCE-001",
+      "requirement_status": "PARTIAL"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage2",
+      "proof_owner": "part1-stage2",
+      "requirement_id": "CB-EVIDENCE-002",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage2",
+      "proof_owner": "part1-stage2",
+      "requirement_id": "CB-EVIDENCE-003",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage2",
+      "proof_owner": "part1-stage2",
+      "requirement_id": "CB-EVIDENCE-004",
+      "requirement_status": "SATISFIED"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "final-release",
+      "proof_owner": "final-release",
+      "requirement_id": "CB-RELEASE-001",
+      "requirement_status": "DEFERRED"
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "architecture_disposition": "MAPPED_TO_ARCHITECTURE_AND_PROOF_OWNER",
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "UNCHANGED",
+      "owner_stage": "part1-stage5",
+      "proof_owner": "part1-stage5",
+      "requirement_id": "CB-INTERVIEW-001",
+      "requirement_status": "DEFERRED"
+    }
+  ],
+  "requirement_count": 39,
+  "schema_version": "1.0.0",
+  "stage3_owned_requirements": [
+    "CB-BOUNDARY-001",
+    "CB-BOUNDARY-002",
+    "CB-CHECKPOINT-001",
+    "CB-ISOLATION-001",
+    "CB-RECON-001"
+  ]
+}

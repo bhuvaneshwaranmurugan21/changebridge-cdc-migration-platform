@@ -1,0 +1,260 @@
+{
+  "authority": "ChangeBridge Part 1 Stage 3",
+  "decisions": [
+    {
+      "components": [
+        "generation_registry",
+        "iceberg_generation_store",
+        "active_generation_pointer"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-001",
+      "path": "docs/adr/ADR-001-generation-isolation-unit.md",
+      "requirements": [
+        "CB-ISOLATION-001",
+        "CB-ISOLATION-002",
+        "CB-PUBLISH-004"
+      ],
+      "status": "ACCEPTED",
+      "title": "Generation is the isolation and publication unit"
+    },
+    {
+      "components": [
+        "postgres_source",
+        "dms_transport",
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-002",
+      "path": "docs/adr/ADR-002-snapshot-cdc-boundary.md",
+      "requirements": [
+        "CB-BOUNDARY-001",
+        "CB-BOUNDARY-002",
+        "CB-BOUNDARY-003"
+      ],
+      "status": "ACCEPTED",
+      "title": "Snapshot frontier S and CDC interval (S,F]"
+    },
+    {
+      "components": [
+        "dms_transport",
+        "s3_landing",
+        "manifest_normalizer"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-003",
+      "path": "docs/adr/ADR-003-canonical-cdc-envelope.md",
+      "requirements": [
+        "CB-ORDER-001",
+        "CB-ORDER-004",
+        "CB-SCHEMA-001"
+      ],
+      "status": "ACCEPTED",
+      "title": "Transport-neutral canonical CDC envelope"
+    },
+    {
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine",
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-004",
+      "path": "docs/adr/ADR-004-source-position-ordering.md",
+      "requirements": [
+        "CB-ORDER-002",
+        "CB-ORDER-003",
+        "CB-ORDER-004"
+      ],
+      "status": "ACCEPTED",
+      "title": "Order by source position and transaction sequence"
+    },
+    {
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine",
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-005",
+      "path": "docs/adr/ADR-005-replay-identity-conflicts.md",
+      "requirements": [
+        "CB-APPLY-004",
+        "CB-APPLY-005",
+        "CB-ORDER-003"
+      ],
+      "status": "ACCEPTED",
+      "title": "Deterministic replay identity and conflicting duplicates"
+    },
+    {
+      "components": [
+        "migration_apply_engine",
+        "iceberg_generation_store",
+        "checkpoint_ledger"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-006",
+      "path": "docs/adr/ADR-006-target-checkpoint-recovery.md",
+      "requirements": [
+        "CB-CHECKPOINT-001",
+        "CB-CHECKPOINT-002",
+        "CB-CHECKPOINT-003"
+      ],
+      "status": "ACCEPTED",
+      "title": "Recover target commit and checkpoint without distributed ACID"
+    },
+    {
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine",
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-007",
+      "path": "docs/adr/ADR-007-delete-tombstone-retention.md",
+      "requirements": [
+        "CB-APPLY-003",
+        "CB-RECON-002"
+      ],
+      "status": "ACCEPTED",
+      "title": "Represent deletes with auditable tombstones"
+    },
+    {
+      "components": [
+        "schema_coordinator",
+        "manifest_normalizer",
+        "generation_registry"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-008",
+      "path": "docs/adr/ADR-008-schema-compatibility-quarantine.md",
+      "requirements": [
+        "CB-SCHEMA-001",
+        "CB-SCHEMA-002",
+        "CB-SCHEMA-003"
+      ],
+      "status": "ACCEPTED",
+      "title": "Version schema identity and quarantine incompatible drift"
+    },
+    {
+      "components": [
+        "postgres_source",
+        "iceberg_generation_store",
+        "reconciliation_coordinator"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-009",
+      "path": "docs/adr/ADR-009-hierarchical-reconciliation.md",
+      "requirements": [
+        "CB-RECON-001",
+        "CB-RECON-002",
+        "CB-RECON-003"
+      ],
+      "status": "ACCEPTED",
+      "title": "Reconcile canonical rows hierarchically at one frontier"
+    },
+    {
+      "components": [
+        "active_generation_pointer",
+        "consumer_resolver",
+        "iceberg_generation_store"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-010",
+      "path": "docs/adr/ADR-010-consumer-generation-consistency.md",
+      "requirements": [
+        "CB-ISOLATION-001",
+        "CB-PUBLISH-002",
+        "CB-PUBLISH-004"
+      ],
+      "status": "ACCEPTED",
+      "title": "Provide consumer consistency through generation resolution"
+    },
+    {
+      "components": [
+        "publication_controller",
+        "active_generation_pointer"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-011",
+      "path": "docs/adr/ADR-011-cas-publication.md",
+      "requirements": [
+        "CB-PUBLISH-001",
+        "CB-PUBLISH-002",
+        "CB-PUBLISH-003"
+      ],
+      "status": "ACCEPTED",
+      "title": "Publish with expected-revision compare-and-swap"
+    },
+    {
+      "components": [
+        "rollback_retirement_controller",
+        "publication_controller",
+        "consumer_resolver"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-012",
+      "path": "docs/adr/ADR-012-rollback-eligibility.md",
+      "requirements": [
+        "CB-PUBLISH-004",
+        "CB-OPS-002"
+      ],
+      "status": "ACCEPTED",
+      "title": "Rollback republishes an eligible prior generation"
+    },
+    {
+      "components": [
+        "generation_registry",
+        "migration_apply_engine",
+        "iceberg_generation_store"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-013",
+      "path": "docs/adr/ADR-013-backfill-replay-isolation.md",
+      "requirements": [
+        "CB-ISOLATION-002",
+        "CB-APPLY-004",
+        "CB-EVIDENCE-001"
+      ],
+      "status": "ACCEPTED",
+      "title": "Backfill and replay use successor generations"
+    },
+    {
+      "components": [
+        "proof_coordinator",
+        "future_orchestrator",
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-014",
+      "path": "docs/adr/ADR-014-evidence-manifest-binding.md",
+      "requirements": [
+        "CB-EVIDENCE-001",
+        "CB-EVIDENCE-002",
+        "CB-EVIDENCE-003",
+        "CB-EVIDENCE-004"
+      ],
+      "status": "ACCEPTED",
+      "title": "Bind decisions through immutable evidence manifests"
+    },
+    {
+      "components": [
+        "rollback_retirement_controller",
+        "consumer_resolver",
+        "evidence_manifest_store"
+      ],
+      "evidence_label": "DESIGN_ONLY",
+      "id": "ADR-015",
+      "path": "docs/adr/ADR-015-retention-retirement.md",
+      "requirements": [
+        "CB-PUBLISH-004",
+        "CB-SEC-002",
+        "CB-EVIDENCE-001"
+      ],
+      "status": "ACCEPTED",
+      "title": "Retain evidence and retire generations with explicit guards"
+    }
+  ],
+  "required_decision_count": 15,
+  "schema_version": "1.0.0"
+}

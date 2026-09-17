@@ -1,0 +1,545 @@
+{
+  "authority": "ChangeBridge Part 1 Stage 3",
+  "forbidden_rules": [
+    "no write after SEALED",
+    "only SEALED enters PROVING",
+    "only PROVING enters PROVEN",
+    "only PROVEN enters PUBLISHED",
+    "REJECTED and RETIRED have no outgoing transitions",
+    "ROLLED_BACK cannot return directly to PUBLISHED"
+  ],
+  "initial_state": "CREATED",
+  "machine_id": "generation_lifecycle",
+  "schema_version": "1.0.0",
+  "states": [
+    {
+      "id": "CREATED",
+      "meaning": "identity and policy are registered; no source data is loaded"
+    },
+    {
+      "id": "SNAPSHOT_LOADING",
+      "meaning": "consistent snapshot is loading into the isolated namespace"
+    },
+    {
+      "id": "CDC_APPLYING",
+      "meaning": "contiguous transactions after S are applied through a moving frontier"
+    },
+    {
+      "id": "SEALED",
+      "meaning": "candidate data and frontier F are frozen for proof"
+    },
+    {
+      "id": "PROVING",
+      "meaning": "independent gates are evaluated against the sealed candidate at F"
+    },
+    {
+      "id": "PROVEN",
+      "meaning": "one complete immutable proof manifest passed at F"
+    },
+    {
+      "id": "PUBLISHED",
+      "meaning": "the generation has successful publication history; the pointer determines current activity"
+    },
+    {
+      "id": "REJECTED",
+      "meaning": "terminal failed generation; repair requires a successor generation"
+    },
+    {
+      "id": "ROLLED_BACK",
+      "meaning": "publication was withdrawn by publishing an eligible prior generation"
+    },
+    {
+      "id": "RETIRED",
+      "meaning": "terminal generation no longer eligible for publication or rollback"
+    }
+  ],
+  "terminal_states": [
+    "REJECTED",
+    "RETIRED"
+  ],
+  "transitions": [
+    {
+      "actor": "generation_registry",
+      "adr_ids": [
+        "ADR-001",
+        "ADR-002"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "begin_snapshot",
+      "idempotency_key": "generation_id:begin_snapshot:expected_revision",
+      "preconditions": [
+        "source identity and schema digest fixed"
+      ],
+      "recovery": "reject or retry before data load",
+      "required_gates": [],
+      "requirement_ids": [
+        "CB-BOUNDARY-001"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "record snapshot request"
+      ],
+      "source": "CREATED",
+      "target": "SNAPSHOT_LOADING"
+    },
+    {
+      "actor": "migration_apply_engine",
+      "adr_ids": [
+        "ADR-002"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "begin_cdc",
+      "idempotency_key": "generation_id:begin_cdc:expected_revision",
+      "preconditions": [
+        "snapshot sealed at typed S"
+      ],
+      "recovery": "reject generation if S cannot be established",
+      "required_gates": [
+        "snapshot_integrity"
+      ],
+      "requirement_ids": [
+        "CB-BOUNDARY-001",
+        "CB-BOUNDARY-002"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "persist S and open (S,...) interval"
+      ],
+      "source": "SNAPSHOT_LOADING",
+      "target": "CDC_APPLYING"
+    },
+    {
+      "actor": "generation_registry",
+      "adr_ids": [
+        "ADR-001",
+        "ADR-006"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "seal_generation",
+      "idempotency_key": "generation_id:seal_generation:expected_revision",
+      "preconditions": [
+        "all target commits through F reconciled with checkpoint"
+      ],
+      "recovery": "resume CDC only before successful seal",
+      "required_gates": [
+        "continuity",
+        "checkpoint"
+      ],
+      "requirement_ids": [
+        "CB-CHECKPOINT-001",
+        "CB-ISOLATION-001"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "freeze table map and frontier F"
+      ],
+      "source": "CDC_APPLYING",
+      "target": "SEALED"
+    },
+    {
+      "actor": "proof_coordinator",
+      "adr_ids": [
+        "ADR-009",
+        "ADR-014"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "begin_proof",
+      "idempotency_key": "generation_id:begin_proof:expected_revision",
+      "preconditions": [
+        "sealed input digests available"
+      ],
+      "recovery": "remain sealed and start a new proof attempt",
+      "required_gates": [],
+      "requirement_ids": [
+        "CB-PUBLISH-001"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "open proof attempt bound to F"
+      ],
+      "source": "SEALED",
+      "target": "PROVING"
+    },
+    {
+      "actor": "proof_coordinator",
+      "adr_ids": [
+        "ADR-014"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "accept_proof",
+      "idempotency_key": "generation_id:accept_proof:expected_revision",
+      "preconditions": [
+        "sealed proof manifest complete"
+      ],
+      "recovery": "failed or stale gates reject the proof attempt",
+      "required_gates": [
+        "continuity",
+        "schema",
+        "deletes",
+        "reconciliation",
+        "lag",
+        "pre_migration",
+        "rollback_readiness",
+        "evidence_integrity"
+      ],
+      "requirement_ids": [
+        "CB-PUBLISH-001"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "persist immutable proof manifest digest"
+      ],
+      "source": "PROVING",
+      "target": "PROVEN"
+    },
+    {
+      "actor": "publication_controller",
+      "adr_ids": [
+        "ADR-010",
+        "ADR-011"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "publish",
+      "idempotency_key": "generation_id:publish:expected_revision",
+      "preconditions": [
+        "generation eligible",
+        "complete table map",
+        "expected active revision supplied"
+      ],
+      "recovery": "CAS conflict leaves generation proven and eligible; ambiguous response is reconciled",
+      "required_gates": [
+        "proof_manifest"
+      ],
+      "requirement_ids": [
+        "CB-PUBLISH-001",
+        "CB-PUBLISH-002",
+        "CB-PUBLISH-003"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "attempt pointer CAS",
+        "verify consumer resolution"
+      ],
+      "source": "PROVEN",
+      "target": "PUBLISHED"
+    },
+    {
+      "actor": "rollback_retirement_controller",
+      "adr_ids": [
+        "ADR-012"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "record_rollback",
+      "idempotency_key": "generation_id:record_rollback:expected_revision",
+      "preconditions": [
+        "pointer now references an eligible prior generation"
+      ],
+      "recovery": "incident handling if post-publication verification fails",
+      "required_gates": [
+        "rollback_authorization",
+        "consumer_verification"
+      ],
+      "requirement_ids": [
+        "CB-PUBLISH-004"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "record withdrawal and replacement pointer revision"
+      ],
+      "source": "PUBLISHED",
+      "target": "ROLLED_BACK"
+    },
+    {
+      "actor": "rollback_retirement_controller",
+      "adr_ids": [
+        "ADR-015"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "retire_published",
+      "idempotency_key": "generation_id:retire_published:expected_revision",
+      "preconditions": [
+        "not active",
+        "not pinned",
+        "not rollback-required",
+        "evidence preserved"
+      ],
+      "recovery": "retain generation until every guard passes",
+      "required_gates": [
+        "retirement_eligibility"
+      ],
+      "requirement_ids": [
+        "CB-PUBLISH-004",
+        "CB-SEC-002"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "mark permanently ineligible"
+      ],
+      "source": "PUBLISHED",
+      "target": "RETIRED"
+    },
+    {
+      "actor": "rollback_retirement_controller",
+      "adr_ids": [
+        "ADR-015"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "retire_rolled_back",
+      "idempotency_key": "generation_id:retire_rolled_back:expected_revision",
+      "preconditions": [
+        "not pinned",
+        "not rollback-required",
+        "evidence preserved"
+      ],
+      "recovery": "retain generation until every guard passes",
+      "required_gates": [
+        "retirement_eligibility"
+      ],
+      "requirement_ids": [
+        "CB-PUBLISH-004",
+        "CB-SEC-002"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "mark permanently ineligible"
+      ],
+      "source": "ROLLED_BACK",
+      "target": "RETIRED"
+    },
+    {
+      "actor": "generation_registry",
+      "adr_ids": [
+        "ADR-001",
+        "ADR-013"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "reject_created",
+      "idempotency_key": "generation_id:reject_created:expected_revision",
+      "preconditions": [
+        "unrecoverable configuration or source identity failure"
+      ],
+      "recovery": "create a successor generation after correction",
+      "required_gates": [],
+      "requirement_ids": [
+        "CB-ISOLATION-001"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "seal rejection evidence"
+      ],
+      "source": "CREATED",
+      "target": "REJECTED"
+    },
+    {
+      "actor": "generation_registry",
+      "adr_ids": [
+        "ADR-002",
+        "ADR-013"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "reject_snapshot",
+      "idempotency_key": "generation_id:reject_snapshot:expected_revision",
+      "preconditions": [
+        "snapshot integrity cannot be established"
+      ],
+      "recovery": "create a successor generation after correction",
+      "required_gates": [],
+      "requirement_ids": [
+        "CB-BOUNDARY-001"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "seal rejection evidence"
+      ],
+      "source": "SNAPSHOT_LOADING",
+      "target": "REJECTED"
+    },
+    {
+      "actor": "generation_registry",
+      "adr_ids": [
+        "ADR-005",
+        "ADR-008",
+        "ADR-013"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "reject_cdc",
+      "idempotency_key": "generation_id:reject_cdc:expected_revision",
+      "preconditions": [
+        "conflict, gap, schema failure, or unrecoverable apply outcome"
+      ],
+      "recovery": "create a successor generation after correction",
+      "required_gates": [],
+      "requirement_ids": [
+        "CB-APPLY-005",
+        "CB-SCHEMA-003"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "seal rejection evidence"
+      ],
+      "source": "CDC_APPLYING",
+      "target": "REJECTED"
+    },
+    {
+      "actor": "generation_registry",
+      "adr_ids": [
+        "ADR-013",
+        "ADR-014"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "reject_sealed",
+      "idempotency_key": "generation_id:reject_sealed:expected_revision",
+      "preconditions": [
+        "sealed inputs are corrupt or invalidated"
+      ],
+      "recovery": "create a successor generation after correction",
+      "required_gates": [],
+      "requirement_ids": [
+        "CB-EVIDENCE-001"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "seal rejection evidence"
+      ],
+      "source": "SEALED",
+      "target": "REJECTED"
+    },
+    {
+      "actor": "proof_coordinator",
+      "adr_ids": [
+        "ADR-009",
+        "ADR-013"
+      ],
+      "ambiguity": "reconcile registry and owned side-effect receipts before deciding",
+      "evidence": [
+        "generation_id",
+        "from_revision",
+        "to_revision",
+        "decision_digest"
+      ],
+      "expected_revision": "required",
+      "failure_result": "state and revision remain unchanged; failure evidence is retained",
+      "id": "reject_proof",
+      "idempotency_key": "generation_id:reject_proof:expected_revision",
+      "preconditions": [
+        "mandatory proof fails with no permitted retry on same sealed inputs"
+      ],
+      "recovery": "create a successor generation when data correction is required",
+      "required_gates": [],
+      "requirement_ids": [
+        "CB-RECON-003",
+        "CB-PUBLISH-001"
+      ],
+      "retry": "reread authoritative revision and reconcile prior outcome before retry",
+      "side_effects": [
+        "seal failed proof manifest"
+      ],
+      "source": "PROVING",
+      "target": "REJECTED"
+    }
+  ]
+}
