@@ -46,3 +46,7 @@ This is the authoritative Stage 3 design. It is intentionally explicit about wha
 ## Current implementation boundary
 
 The SQLite engine remains a local correctness oracle with a smaller state vocabulary and local transaction coupling. Terraform is partial. The Spark file is an input-shape adapter. DMS-to-source frontier mapping, Iceberg apply/checkpoint recovery, consumer resolution, orchestration, explicit rollback, and retirement remain implementation or managed-proof obligations.
+
+<!-- claim:CB-CLAIM-007 -->
+Step Functions orchestration is an unimplemented target design: no state-machine definition,
+Terraform resource, test, or run evidence exists.
