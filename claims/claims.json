@@ -30,19 +30,19 @@
     {
       "id": "CB-CLAIM-002",
       "source_claim_ids": ["PC-002", "BC-005"],
-      "approved_wording": "The repository contains a design-only, partial AWS reference topology; it does not contain a complete deployable migration platform or managed runtime proof.",
-      "scope": "architecture and partial Terraform declarations",
+      "approved_wording": "The repository contains an accepted design-only architecture authority and a partial AWS reference topology; it does not contain a complete deployable migration platform or managed runtime proof.",
+      "scope": "accepted architecture authority and partial Terraform declarations",
       "label": "DESIGN_ONLY",
       "requirement_ids": ["CB-OPS-002", "CB-OPS-003", "CB-SEC-001"],
-      "proof_refs": ["infra/terraform/", "docs/architecture.md", "evidence/part1/stage1/baseline_claims_matrix.json"],
-      "producing_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+      "proof_refs": ["architecture/", "docs/adr/", "infra/terraform/", "docs/architecture.md", "evidence/part1/stage3/claim-impact-review.json"],
+      "producing_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
       "producing_run": null,
       "limitations": "Source database, replication instance, Glue apply job, Step Functions state machine, budgets, lease controls, managed cutover, and teardown proof are absent.",
       "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-002"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-002"}],
       "review_status": "APPROVED",
-      "owner": "part1-stage2",
+      "owner": "part1-stage3",
       "invalidation_conditions": ["architecture or Terraform topology changes", "managed deployment evidence is produced"],
-      "disposition": "DOWNGRADED"
+      "disposition": "CORRECTED"
     },
     {
       "id": "CB-CLAIM-003",
@@ -149,19 +149,19 @@
     {
       "id": "CB-CLAIM-009",
       "source_claim_ids": ["PC-009", "BC-012"],
-      "approved_wording": "Rollback is currently a design contract supported only indirectly by the local generic compare-and-swap activation primitive; no explicit rollback API, scenario, or managed rollback proof exists.",
+      "approved_wording": "Rollback now has an accepted design-only eligibility and publication contract, while the local engine still provides only a generic compare-and-swap activation primitive; no explicit rollback API, consumer-resolution scenario, or managed rollback proof exists.",
       "scope": "rollback",
       "label": "DESIGN_ONLY",
       "requirement_ids": ["CB-PUBLISH-004"],
-      "proof_refs": ["src/changebridge/engine.py", "docs/runbook.md", "evidence/part1/stage1/baseline_claims_matrix.json"],
-      "producing_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+      "proof_refs": ["architecture/publication-state-machine.json", "docs/adr/ADR-012-rollback-eligibility.md", "docs/architecture/CONSISTENCY_AND_LIMITATIONS.md", "docs/runbook.md", "evidence/part1/stage3/claim-impact-review.json"],
+      "producing_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
       "producing_run": null,
-      "limitations": "Generic activation does not prove retained-generation readability, authorization, rollback observability, or managed recovery.",
+      "limitations": "The accepted contract is DESIGN_ONLY. Generic local activation does not prove retained-generation readability, authorization, consumer pinning, rollback observability, or managed recovery.",
       "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-009"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-009"}],
       "review_status": "APPROVED",
-      "owner": "part2-runtime",
+      "owner": "part1-stage3",
       "invalidation_conditions": ["an explicit rollback contract or implementation is merged"],
-      "disposition": "DOWNGRADED"
+      "disposition": "CORRECTED"
     },
     {
       "id": "CB-CLAIM-010",

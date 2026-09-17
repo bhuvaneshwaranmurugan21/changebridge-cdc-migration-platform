@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://changebridge.local/schemas/architecture-state-machine.schema.json",
+  "title": "ChangeBridge architecture state machine",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "authority",
+    "machine_id",
+    "initial_state",
+    "terminal_states",
+    "states",
+    "transitions"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "authority": {"const": "ChangeBridge Part 1 Stage 3"},
+    "machine_id": {"type": "string", "minLength": 1},
+    "initial_state": {"type": "string", "minLength": 1},
+    "terminal_states": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "states": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "meaning"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"},
+          "meaning": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "target"]
+      }
+    },
+    "forbidden_rules": {"type": "array", "items": {"type": "string"}},
+    "invariants": {"type": "array", "items": {"type": "string"}}
+  }
+}

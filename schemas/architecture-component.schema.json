@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://changebridge.local/schemas/architecture-component.schema.json",
+  "title": "ChangeBridge architecture component authority",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "authority", "planes", "components"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "authority": {"const": "ChangeBridge Part 1 Stage 3"},
+    "planes": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "data"},
+        {"const": "control"},
+        {"const": "evidence"}
+      ],
+      "items": false
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "plane",
+          "responsibility",
+          "non_responsibilities",
+          "inputs",
+          "outputs",
+          "owned_metadata",
+          "dependencies",
+          "idempotency_identity",
+          "retry_boundary",
+          "failure_signal",
+          "quarantine_behavior",
+          "evidence_emitted",
+          "implementation_status",
+          "future_implementation_owner",
+          "proof_owner",
+          "requirement_ids",
+          "adr_ids"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"},
+          "plane": {"enum": ["data", "control", "evidence"]},
+          "responsibility": {"type": "string", "minLength": 1},
+          "non_responsibilities": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "inputs": {"type": "array", "items": {"type": "string"}},
+          "outputs": {"type": "array", "items": {"type": "string"}},
+          "owned_metadata": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "dependencies": {"type": "array", "items": {"type": "string"}},
+          "idempotency_identity": {"type": "string", "minLength": 1},
+          "retry_boundary": {"type": "string", "minLength": 1},
+          "failure_signal": {"type": "string", "minLength": 1},
+          "quarantine_behavior": {"type": "string", "minLength": 1},
+          "evidence_emitted": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "implementation_status": {"enum": ["LOCAL_REFERENCE", "PARTIAL_TERRAFORM", "DESIGN_ONLY", "UNIMPLEMENTED", "EXTERNAL_UNVERIFIED"]},
+          "future_implementation_owner": {"type": "string", "minLength": 1},
+          "proof_owner": {"type": "string", "minLength": 1},
+          "requirement_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "adr_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

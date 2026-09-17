@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.7",
+  "evidence_label": "LOCAL_VERIFIED",
+  "architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
+  "review_procedure": "Join completion-requirements.json to requirement-architecture-map.json; validate uniqueness, referential integrity, Stage 3 ownership, proof ownership, and evidence-label preservation.",
+  "expected_result": "All 39 requirements map exactly once; the five Stage 3-owned requirements are resolved design-only; capability promotion is NONE.",
+  "counts": {
+    "requirements": 39,
+    "mapped_once": 39,
+    "mapped_to_architecture_and_proof_owner": 34,
+    "resolved_design_only": 5,
+    "stage3_owned": 5,
+    "orphan_requirements": 0,
+    "unknown_components": 0,
+    "unknown_adrs": 0
+  },
+  "stage3_owned_requirements": [
+    "CB-BOUNDARY-001",
+    "CB-BOUNDARY-002",
+    "CB-CHECKPOINT-001",
+    "CB-ISOLATION-001",
+    "CB-RECON-001"
+  ],
+  "capability_promotion": "NONE",
+  "result": "PASS",
+  "limitations": [
+    "Architecture resolution does not change the completion status in the Stage 2 requirement registry.",
+    "Future proof owners remain responsible for runtime and managed evidence."
+  ]
+}

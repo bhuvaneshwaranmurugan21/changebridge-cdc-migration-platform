@@ -16,12 +16,12 @@ The SQLite reference engine locally verifies contiguous frontiers, identical rep
 ## CB-CLAIM-002 — DESIGN_ONLY
 
 <!-- claim:CB-CLAIM-002 -->
-The repository contains a design-only, partial AWS reference topology; it does not contain a complete deployable migration platform or managed runtime proof.
+The repository contains an accepted design-only architecture authority and a partial AWS reference topology; it does not contain a complete deployable migration platform or managed runtime proof.
 
-- Scope: architecture and partial Terraform declarations
+- Scope: accepted architecture authority and partial Terraform declarations
 - Limitations: Source database, replication instance, Glue apply job, Step Functions state machine, budgets, lease controls, managed cutover, and teardown proof are absent.
 - Requirements: `CB-OPS-002`, `CB-OPS-003`, `CB-SEC-001`
-- Disposition: `DOWNGRADED`
+- Disposition: `CORRECTED`
 
 ## CB-CLAIM-003 — UNCLAIMED
 
@@ -86,12 +86,12 @@ Terraform is a partial design artifact whose formatting and validation have hist
 ## CB-CLAIM-009 — DESIGN_ONLY
 
 <!-- claim:CB-CLAIM-009 -->
-Rollback is currently a design contract supported only indirectly by the local generic compare-and-swap activation primitive; no explicit rollback API, scenario, or managed rollback proof exists.
+Rollback now has an accepted design-only eligibility and publication contract, while the local engine still provides only a generic compare-and-swap activation primitive; no explicit rollback API, consumer-resolution scenario, or managed rollback proof exists.
 
 - Scope: rollback
-- Limitations: Generic activation does not prove retained-generation readability, authorization, rollback observability, or managed recovery.
+- Limitations: The accepted contract is DESIGN_ONLY. Generic local activation does not prove retained-generation readability, authorization, consumer pinning, rollback observability, or managed recovery.
 - Requirements: `CB-PUBLISH-004`
-- Disposition: `DOWNGRADED`
+- Disposition: `CORRECTED`
 
 ## CB-CLAIM-010 — LOCAL_VERIFIED
 
