@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.8",
+  "evidence_label": "LOCAL_VERIFIED",
+  "procedure": "Regenerate SVG views from machine-readable authorities, compare committed bytes, parse each SVG as XML, validate declared dimensions and semantic text/shape content, then inspect repository-host rendering on the published exact head.",
+  "expected_result": "All four diagrams are deterministic, structurally renderable SVG documents and render on the published repository head.",
+  "local_checks": {
+    "deterministic_generation": "PASS",
+    "byte_drift": "NONE",
+    "xml_parse": "PASS",
+    "declared_dimensions": "PASS",
+    "semantic_nodes": "PASS"
+  },
+  "diagrams": [
+    {
+      "path": "architecture/diagrams/checkpoint-recovery.svg",
+      "width": 1200,
+      "height": 600,
+      "sha256": "7ba72ab850d354feb580588b3c51d5dd9c0a5517b8693d069797505782b490cf"
+    },
+    {
+      "path": "architecture/diagrams/generation-lifecycle.svg",
+      "width": 1200,
+      "height": 784,
+      "sha256": "539a8e942cc31eccf2789aa0d153acff5ca6cfd911afa59f1dbe7202043dd8f8"
+    },
+    {
+      "path": "architecture/diagrams/proof-publication.svg",
+      "width": 1200,
+      "height": 600,
+      "sha256": "b92858e817b1ac5934e322c2af4ee7a128903bc642df044042e4125db497bf0d"
+    },
+    {
+      "path": "architecture/diagrams/responsibility-planes.svg",
+      "width": 1500,
+      "height": 740,
+      "sha256": "8738d73adc703633a49e2461bae22dc53ae82585014becdfd505f8a6bb2cba86"
+    }
+  ],
+  "repository_host_render": "PENDING_PUBLICATION",
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "limitations": [
+    "The available local raster tool lacks its SVG delegate; no undeclared package was installed.",
+    "Repository-host rendering is an exact-head publication check and does not alter the diagram bytes."
+  ]
+}

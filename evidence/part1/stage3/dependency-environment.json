@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.1",
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "procedure": "Create a disposable virtual environment and install the repository-declared .[dev] extra only.",
+  "expected_result": "The isolated environment contains only the project editable install and transitive packages selected from declared development dependencies; no new dependency declaration is introduced.",
+  "environment": {
+    "path_class": "disposable /tmp virtual environment",
+    "python": "3.12.14",
+    "declared_extra": ".[dev]",
+    "pyproject_sha256": "69033209e975f2635aa09f9bd65d070ad11aaac6e683d6a452c022a06aa24ebe",
+    "direct_dev_tools": {
+      "pytest": "9.1.1",
+      "pytest_cov": "7.1.0",
+      "ruff": "0.16.8",
+      "mypy": "2.3.1"
+    }
+  },
+  "repository_dependency_file_changed": false,
+  "undeclared_package_installed_for_stage3": false,
+  "mermaid_renderer_installed": false,
+  "result": "PASS",
+  "limitations": [
+    "Local validation used Python 3.12; repository CI independently validates the supported Python 3.11 configuration.",
+    "Package resolution follows the existing lower-bounded declarations and is not a lock-file claim."
+  ]
+}
