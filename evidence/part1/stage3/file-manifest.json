@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 3,
+  "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "result": "PASS",
+  "allowed_roots": [
+    "architecture/",
+    "claims/claims.json",
+    "CLAIMS.md",
+    "docs/adr/",
+    "docs/architecture/",
+    "docs/architecture.md",
+    "docs/runbook.md",
+    "evidence/part1/stage3/",
+    "PROJECT_STATUS.md",
+    "README.md",
+    "schemas/architecture-",
+    "scripts/build_architecture_authority.py",
+    "scripts/validate_architecture_authority.py",
+    "tests/fixtures/architecture-authority/",
+    "tests/test_architecture_authority.py"
+  ],
+  "forbidden_roots": [
+    ".github/workflows/",
+    "contracts/",
+    "infra/terraform/",
+    "jobs/",
+    "src/changebridge/",
+    "tests/test_engine.py",
+    "tests/test_reconciliation.py",
+    "tests/test_schema_and_cutover.py",
+    "tests/test_simulator.py"
+  ],
+  "planned_artifact_groups": [
+    {"path": "architecture/", "action": "CREATE", "purpose": "machine-readable architecture authority"},
+    {"path": "docs/adr/", "action": "CREATE", "purpose": "fifteen accepted architecture decisions"},
+    {"path": "docs/architecture/", "action": "CREATE", "purpose": "responsibility and failure-model explanations"},
+    {"path": "docs/architecture.md", "action": "MODIFY", "purpose": "canonical architecture index"},
+    {"path": "docs/runbook.md", "action": "MODIFY", "purpose": "align future managed procedure to accepted semantics"},
+    {"path": "README.md", "action": "MODIFY", "purpose": "correct public architecture wording"},
+    {"path": "claims/claims.json", "action": "MODIFY", "purpose": "re-adjudicate architecture-sensitive claims"},
+    {"path": "CLAIMS.md", "action": "GENERATE", "purpose": "render corrected claim registry"},
+    {"path": "PROJECT_STATUS.md", "action": "MODIFY", "purpose": "Stage 3 status and continuation rule"},
+    {"path": "schemas/architecture-*.schema.json", "action": "CREATE", "purpose": "authority shape contracts"},
+    {"path": "scripts/build_architecture_authority.py", "action": "CREATE", "purpose": "deterministic authority builder and renderer"},
+    {"path": "scripts/validate_architecture_authority.py", "action": "CREATE", "purpose": "fail-closed semantic validator"},
+    {"path": "tests/test_architecture_authority.py", "action": "CREATE", "purpose": "validator and rendering tests"},
+    {"path": "tests/fixtures/architecture-authority/", "action": "CREATE", "purpose": "positive and exact-diagnostic negative fixtures"},
+    {"path": "evidence/part1/stage3/", "action": "CREATE", "purpose": "entry, review, validation, scope, and receipt evidence"}
+  ],
+  "limitations": [
+    "The external post-merge continuation checkpoint is excluded because its merge SHA and CI run are not known before merge.",
+    "No runtime, Terraform behavior, workflow, dependency declaration, release, or managed-service artifact is authorized."
+  ]
+}
