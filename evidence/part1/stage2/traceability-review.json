@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "requirement_count": 39,
+  "current_paths_validated": true,
+  "future_paths_explicitly_prefixed": true,
+  "future_obligations_have_owners": true,
+  "circular_proof_dependencies": 0,
+  "limitations": [
+    "Future paths are plans and never satisfy a current capability claim."
+  ]
+}

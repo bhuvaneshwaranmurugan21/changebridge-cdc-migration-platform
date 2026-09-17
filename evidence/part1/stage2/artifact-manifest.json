@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "digest_algorithm": "SHA-256",
+  "artifacts": [
+    {"path": "CLAIMS.md", "sha256": "de82b8ac9c917714ff4e028c6d3042d5000dc002f89dae1938d6bf85eb735232"},
+    {"path": "COMPLETION_CONTRACT.md", "sha256": "abf44431ad6b3cee1f06e8149d043f0d841e003f50374bcf34ab9ccc38e2f178"},
+    {"path": "PROJECT_STATUS.md", "sha256": "87c1d1b08ca6e621049bbd9c7b46dc1b7055be7ad8595c0902c1d184da2462a8"},
+    {"path": "README.md", "sha256": "6100b86427a7befba54dee5ca67dcbc8da7c1f30a18e82982ba7fb53cfc6ef03"},
+    {"path": "claims/claims.json", "sha256": "8d1538a75c70530383cc983cf957833f21a649565c16bd14e1a0e6d10f951599"},
+    {"path": "docs/architecture.md", "sha256": "14ab488bb973289b3cba1209b8115b0c9dc4cbf605e9c34981f5735dbf65823e"},
+    {"path": "docs/failure-lab.md", "sha256": "ed8aa22c3e514fc205ef081133644b8c32393721fe478c2542ea992f8014acda"},
+    {"path": "requirements/REQUIREMENT_CATALOG.md", "sha256": "9dd4037b2bf6a61e73b0f64e84f7992951c9209c108008806f9fc08eba577c84"},
+    {"path": "requirements/REQUIREMENT_PROOF_MATRIX.md", "sha256": "ed2678b29c4c9da78830d74994395078559b004f59993169a017948b0f2732eb"},
+    {"path": "requirements/completion-requirements.json", "sha256": "483dae6bfc8167234938c235c225d691f17c14797a6f213f67162ee3b62676e8"},
+    {"path": "requirements/requirement-proof-matrix.json", "sha256": "75d632902f1b8a1e1bd68e011486a9d6f0ccc7a0bc32152df13a7d3fcfcbe5f3"},
+    {"path": "schemas/claim-registry.schema.json", "sha256": "0c269018aa12e86498e1e156bd09ef32be6f0c62880b3a168f4a3362328a8da5"},
+    {"path": "schemas/completion-requirements.schema.json", "sha256": "5105c3d990b07b2e26c91a2c607ba12b01e3bca97e6bda40ec3bc4f6b435505d"},
+    {"path": "schemas/stage-evidence.schema.json", "sha256": "8919144b297d0e3b9b059df5dfbe58ef3175440f1e1aa21ae98362a2ee0134d9"},
+    {"path": "scripts/validate_completion_authority.py", "sha256": "a780b69874b7e95d50bf2d8e67518db54ed12f29bc5e8371b9d6a5bee009ba6d"},
+    {"path": "tests/fixtures/completion-authority/invalid-cases.json", "sha256": "290873f08ab92c5341d930e637daaa8a6b1ec5927e8da22f58281a58f9e3eb43"},
+    {"path": "tests/fixtures/completion-authority/valid-authority.json", "sha256": "99e2b3829e528f07d951ac54818e0fe50ff94499874c45c5ee85b3fdb2afac24"},
+    {"path": "tests/test_completion_authority.py", "sha256": "caa82b5339881b1db2fdbe38b06c078eedc37fd554544c2a72810cdb2687eaea"},
+    {"path": "evidence/part1/stage2/execution-envelope.json", "sha256": "89dbdb91b23a7be06cfb32c3b5eb8dbfd47c568c3808d29a23798c957a5c3551"},
+    {"path": "evidence/part1/stage2/source-surface-inventory.json", "sha256": "12e3976d2b3f5df8cfaa79c66cb90462122787f6f4d3ffc4849f3dc212853752"},
+    {"path": "evidence/part1/stage2/file-manifest.json", "sha256": "6406e16ef7a7f204611c960bebb0befec2c43c82176c2ade3bfda88c535ec71c"},
+    {"path": "evidence/part1/stage2/overlap-register.json", "sha256": "e92933b419df0aae4e48e68c77f3e89807b99c856ff47ce795bca1169057cf1a"},
+    {"path": "evidence/part1/stage2/requirements-source-coverage.json", "sha256": "7ffb8a15c46c4cd06351425e512eb20b2ca95d2ee641c6ff403398dddfcfc914"},
+    {"path": "evidence/part1/stage2/requirements-review.json", "sha256": "c7d83badcecff25fb25c961ec1d66446b2a7d7f9a1cf47652c41c0cc7aaada97"},
+    {"path": "evidence/part1/stage2/traceability-review.json", "sha256": "60b3ae4de623279df87ebef59c93ef0ef32ab0612b52871369b58332b8554ae5"},
+    {"path": "evidence/part1/stage2/claim-disposition.json", "sha256": "b8b9bfb9382097323f2780ab0dd863b64560b858344fb005a2ca7bc34aa8b2b6"},
+    {"path": "evidence/part1/stage2/public-surface-review.json", "sha256": "f7310473d3dcaede6c9be1340f8f3533d03b6004ce8dba637e4493c9a40a07be"},
+    {"path": "evidence/part1/stage2/validation-report.json", "sha256": "c2cd21c06d2404c3f2aee27d7eb93e2a0bf6392f6311125b186c1f0e0798729e"},
+    {"path": "evidence/part1/stage2/determinism-report.json", "sha256": "75d15df4598f2bb1e318537a98578058b0f8afdf750208239ee55287551a0d16"},
+    {"path": "evidence/part1/stage2/scope-isolation-report.json", "sha256": "00990e45eecede068c3d6be49a205c4a0f8ae63f360b7dcac33e54213b8aa9ca"},
+    {"path": "evidence/part1/stage2/stage-receipt.json", "sha256": "79743ebf1c9006d3939eec2afa740774e2ffb31cae8a4b865adbe050483d14d7"}
+  ],
+  "retired_artifacts": [
+    {"path": "docs/claims.yaml", "reason": "Replaced by claims/claims.json as the single claim authority."}
+  ],
+  "limitations": [
+    "The manifest intentionally excludes its own digest and the external post-merge checkpoint.",
+    "The retired legacy claim file is recorded without a post-change content digest because it no longer exists in the candidate tree."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "canonical_stage_name": "Completion authority and claim boundary",
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PENDING",
+  "status": "STAGE2_COMPLETION_AUTHORITY_PENDING",
+  "acceptance": {
+    "criteria_total": 27,
+    "criteria_passed_locally": 22,
+    "criteria_pending_external_closure": 5,
+    "criteria": [
+      {"id": "ST2-AC-01", "result": "PASS", "evidence": ["evidence/part1/stage2/execution-envelope.json"]},
+      {"id": "ST2-AC-02", "result": "PASS", "evidence": ["evidence/part1/stage2/file-manifest.json", "evidence/part1/stage2/scope-isolation-report.json"]},
+      {"id": "ST2-AC-03", "result": "PASS", "evidence": ["evidence/part1/stage2/requirements-source-coverage.json"]},
+      {"id": "ST2-AC-04", "result": "PASS", "evidence": ["evidence/part1/stage2/requirements-source-coverage.json", "requirements/requirement-proof-matrix.json"]},
+      {"id": "ST2-AC-05", "result": "PASS", "evidence": ["evidence/part1/stage2/requirements-review.json", "evidence/part1/stage2/validation-report.json"]},
+      {"id": "ST2-AC-06", "result": "PASS", "evidence": ["requirements/completion-requirements.json", "evidence/part1/stage2/validation-report.json"]},
+      {"id": "ST2-AC-07", "result": "PASS", "evidence": ["requirements/completion-requirements.json", "tests/fixtures/completion-authority/invalid-cases.json"]},
+      {"id": "ST2-AC-08", "result": "PASS", "evidence": ["COMPLETION_CONTRACT.md"]},
+      {"id": "ST2-AC-09", "result": "PASS", "evidence": ["COMPLETION_CONTRACT.md", "schemas/claim-registry.schema.json", "tests/test_completion_authority.py"]},
+      {"id": "ST2-AC-10", "result": "PASS", "evidence": ["evidence/part1/stage2/claim-disposition.json"]},
+      {"id": "ST2-AC-11", "result": "PASS", "evidence": ["claims/claims.json", "evidence/part1/stage2/public-surface-review.json"]},
+      {"id": "ST2-AC-12", "result": "PASS", "evidence": ["README.md", "docs/architecture.md", "docs/failure-lab.md"]},
+      {"id": "ST2-AC-13", "result": "PASS", "evidence": ["claims/claims.json", "evidence/part1/stage2/validation-report.json"]},
+      {"id": "ST2-AC-14", "result": "PASS", "evidence": ["evidence/part1/stage2/claim-disposition.json"]},
+      {"id": "ST2-AC-15", "result": "PASS", "evidence": ["scripts/validate_completion_authority.py", "tests/fixtures/completion-authority/invalid-cases.json"]},
+      {"id": "ST2-AC-16", "result": "PASS", "evidence": ["evidence/part1/stage2/validation-report.json", "tests/test_completion_authority.py"]},
+      {"id": "ST2-AC-17", "result": "PASS", "evidence": ["evidence/part1/stage2/validation-report.json", "tests/fixtures/completion-authority/valid-authority.json"]},
+      {"id": "ST2-AC-18", "result": "PASS", "evidence": ["evidence/part1/stage2/determinism-report.json"]},
+      {"id": "ST2-AC-19", "result": "PASS", "evidence": ["evidence/part1/stage2/traceability-review.json"]},
+      {"id": "ST2-AC-20", "result": "PASS", "evidence": ["evidence/part1/stage2/scope-isolation-report.json"]},
+      {"id": "ST2-AC-21", "result": "PASS", "evidence": ["evidence/part1/stage2/scope-isolation-report.json"]},
+      {"id": "ST2-AC-22", "result": "PASS", "evidence": ["evidence/part1/stage2/scope-isolation-report.json"]},
+      {"id": "ST2-AC-23", "result": "PENDING", "evidence": ["evidence/part1/stage2/validation-report.json", "external:exact-head-ci"]},
+      {"id": "ST2-AC-24", "result": "PENDING", "evidence": ["external:exact-head-ci"]},
+      {"id": "ST2-AC-25", "result": "PENDING", "evidence": ["external:pull-request-merge-metadata"]},
+      {"id": "ST2-AC-26", "result": "PENDING", "evidence": ["external:post-merge-main-and-ci"]},
+      {"id": "ST2-AC-27", "result": "PENDING", "evidence": ["evidence/part1/stage2/artifact-manifest.json", "external:continuation-checkpoint"]}
+    ]
+  },
+  "publication": {
+    "branch": "part1-stage2-completion-contract",
+    "pull_request": null,
+    "pull_request_head": null,
+    "merge_method": "squash",
+    "merged_main": null,
+    "post_merge_ci": null,
+    "binding_model": "Exact PR head and merged main are recorded externally after GitHub assigns them."
+  },
+  "limitations": [
+    "This candidate receipt is not a completion decision until all 27 criteria and post-merge checks pass."
+  ]
+}

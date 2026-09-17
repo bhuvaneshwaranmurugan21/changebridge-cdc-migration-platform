@@ -37,7 +37,9 @@ stateDiagram-v2
     Retired --> Active: rollback pointer CAS
 ```
 
-## Production data path
+## Target production data path
+
+This section is a design target. It is not a description of an implemented managed pipeline.
 
 1. PostgreSQL logical replication exposes committed changes.
 2. AWS DMS captures the full load and CDC, with transaction-preserving output enabled.
@@ -45,8 +47,12 @@ stateDiagram-v2
 4. A manifest validator checks checksum, schema digest, transaction boundary, and LSN interval.
 5. Glue/Spark applies a manifest into generation-scoped Iceberg tables.
 6. Reconciliation runs at a frozen source/target frontier and writes immutable evidence.
-7. Step Functions asks the gate evaluator for a decision.
+7. A future orchestrator asks the gate evaluator for a decision.
 8. DynamoDB conditionally swaps the active pointer. Consumers resolve that pointer.
+
+<!-- claim:CB-CLAIM-007 -->
+Step Functions orchestration is an unimplemented target design: no state-machine definition,
+Terraform resource, test, or run evidence exists.
 
 ## Failure containment
 

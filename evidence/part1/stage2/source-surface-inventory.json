@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "surfaces": [
+    {"path": "README.md", "classification": "PUBLIC_DOCUMENTATION", "action": "CORRECT_AND_REGISTER"},
+    {"path": "PROJECT_STATUS.md", "classification": "PUBLIC_STATUS", "action": "UPDATE_STAGE_BOUNDARY"},
+    {"path": "docs/architecture.md", "classification": "PUBLIC_ARCHITECTURE", "action": "QUALIFY_TARGET_DESIGN"},
+    {"path": "docs/failure-lab.md", "classification": "PUBLIC_EVIDENCE_GUIDE", "action": "RECONCILE_13_CHECKS"},
+    {"path": "docs/runbook.md", "classification": "PUBLIC_RUNBOOK", "action": "READ_ONLY_DESIGN_REFERENCE"},
+    {"path": "docs/claims.yaml", "classification": "LEGACY_CLAIM_REGISTRY", "action": "RETIRE"},
+    {"path": "evidence/part1/stage1/public_claims_inventory.json", "classification": "STAGE1_SOURCE_INVENTORY", "action": "READ_ONLY_INPUT"},
+    {"path": "evidence/part1/stage1/baseline_claims_matrix.json", "classification": "STAGE1_BASELINE", "action": "READ_ONLY_INPUT"}
+  ],
+  "stage1_public_claims": 10,
+  "limitations": [
+    "Repository description is empty and therefore contains no capability claim.",
+    "Workflow names and badges are inventoried but are not interpreted as managed-runtime proof."
+  ]
+}

@@ -1,0 +1,612 @@
+{
+  "entries": [
+    {
+      "current_proof_paths": [
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/integration/test_iceberg_apply.py"
+      ],
+      "implementation_paths": [
+        "future:jobs/iceberg_apply.py",
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-APPLY-001",
+      "status": "PARTIAL",
+      "verification_method": "model, property, integration, and managed target tests"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/integration/test_iceberg_apply.py"
+      ],
+      "implementation_paths": [
+        "future:jobs/iceberg_apply.py",
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-APPLY-002",
+      "status": "PARTIAL",
+      "verification_method": "before/after, conflict, replay, and managed Iceberg tests"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-APPLY-003",
+      "status": "SATISFIED",
+      "verification_method": "delete, replay, compaction, and managed table tests"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-APPLY-004",
+      "status": "SATISFIED",
+      "verification_method": "repeat application and state/digest equality tests"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-APPLY-005",
+      "status": "SATISFIED",
+      "verification_method": "digest-conflict tests at batch and transaction grain"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/contracts/test_boundary.py"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/contracts/boundary.py",
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage3",
+      "requirement_id": "CB-BOUNDARY-001",
+      "status": "PARTIAL",
+      "verification_method": "contract tests plus integration evidence that binds source snapshot metadata to one generation"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/contracts/test_boundary.py"
+      ],
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "src/changebridge/model.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage3",
+      "requirement_id": "CB-BOUNDARY-002",
+      "status": "PARTIAL",
+      "verification_method": "boundary model and integration tests for first and last included source positions"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/managed/frontier-lineage.json"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/evidence/frontier.py"
+      ],
+      "minimum_evidence": "AWS_VERIFIED",
+      "owner_stage": "part3-managed-proof",
+      "requirement_id": "CB-BOUNDARY-003",
+      "status": "UNSATISFIED",
+      "verification_method": "managed evidence schema validation and exact-run reconciliation"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/model/test_checkpoint_coupling.py"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/checkpoint.py",
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage3",
+      "requirement_id": "CB-CHECKPOINT-001",
+      "status": "PARTIAL",
+      "verification_method": "state-machine oracle and failure injection before, during, and after target commit"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-CHECKPOINT-002",
+      "status": "SATISFIED",
+      "verification_method": "injected failure and before/after state equality"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/managed/restart.json",
+        "future:tests/model/test_restart.py"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/recovery.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-CHECKPOINT-003",
+      "status": "UNSATISFIED",
+      "verification_method": "restart at every commit boundary with final-state and evidence equality"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/part1/stage2/validation-report.json"
+      ],
+      "future_proof_paths": [
+        "future:external-continuation-checkpoint.json"
+      ],
+      "implementation_paths": [
+        "schemas/stage-evidence.schema.json",
+        "scripts/validate_completion_authority.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage2",
+      "requirement_id": "CB-EVIDENCE-001",
+      "status": "PARTIAL",
+      "verification_method": "schema and referential validation plus exact Git/GitHub comparisons"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/part1/stage2/validation-report.json",
+        "tests/test_completion_authority.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "claims/claims.json",
+        "scripts/validate_completion_authority.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage2",
+      "requirement_id": "CB-EVIDENCE-002",
+      "status": "SATISFIED",
+      "verification_method": "claim registry, public-surface fingerprinting, and fail-closed validator"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/part1/stage2/determinism-report.json"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "scripts/validate_completion_authority.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage2",
+      "requirement_id": "CB-EVIDENCE-003",
+      "status": "SATISFIED",
+      "verification_method": "two clean executions with byte and SHA-256 comparison"
+    },
+    {
+      "current_proof_paths": [
+        "tests/fixtures/completion-authority/invalid-cases.json",
+        "tests/test_completion_authority.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "scripts/validate_completion_authority.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage2",
+      "requirement_id": "CB-EVIDENCE-004",
+      "status": "SATISFIED",
+      "verification_method": "positive fixtures plus one-fault negative fixtures asserting exact diagnostics"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/part1/stage5/interview-rehearsal.json"
+      ],
+      "implementation_paths": [
+        "future:docs/INTERVIEW_WALKTHROUGH.md"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage5",
+      "requirement_id": "CB-INTERVIEW-001",
+      "status": "DEFERRED",
+      "verification_method": "timed interview rehearsal with repository navigation and adversarial follow-ups"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/model/test_generation_isolation.py"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/generation.py",
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage3",
+      "requirement_id": "CB-ISOLATION-001",
+      "status": "PARTIAL",
+      "verification_method": "multi-generation state-model and integration tests"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:tests/model/test_replay_isolation.py"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/replay.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-ISOLATION-002",
+      "status": "UNSATISFIED",
+      "verification_method": "concurrent active/replay model tests and publication rejection tests"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_schema_and_cutover.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/cutover.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-OPS-001",
+      "status": "PARTIAL",
+      "verification_method": "boundary tests for absent, stale, equal, and above-threshold lag plus managed metric lineage"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/managed/operations.json"
+      ],
+      "implementation_paths": [
+        "docs/runbook.md",
+        "future:src/changebridge/observability.py",
+        "infra/terraform/main.tf"
+      ],
+      "minimum_evidence": "AWS_VERIFIED",
+      "owner_stage": "part3-managed-proof",
+      "requirement_id": "CB-OPS-002",
+      "status": "PARTIAL",
+      "verification_method": "alarm inventory, failure drill, runbook execution record, and evidence link checks"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/managed/stage-receipt.json"
+      ],
+      "implementation_paths": [
+        "future:experiments/managed-migration/"
+      ],
+      "minimum_evidence": "AWS_VERIFIED",
+      "owner_stage": "part3-managed-proof",
+      "requirement_id": "CB-OPS-003",
+      "status": "UNSATISFIED",
+      "verification_method": "bounded managed run with immutable inputs, injected failures, raw logs, proof artifacts, and teardown"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/managed/measurements.json"
+      ],
+      "implementation_paths": [
+        "future:experiments/workloads/"
+      ],
+      "minimum_evidence": "MEASURED",
+      "owner_stage": "part3-managed-proof",
+      "requirement_id": "CB-OPS-004",
+      "status": "UNSATISFIED",
+      "verification_method": "repeatable workload execution, raw metric capture, calculation audit, and bounded comparison"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:tests/contracts/test_cdc_envelope.py"
+      ],
+      "implementation_paths": [
+        "future:contracts/cdc-envelope-v1.json",
+        "src/changebridge/model.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage4",
+      "requirement_id": "CB-ORDER-001",
+      "status": "PARTIAL",
+      "verification_method": "versioned schema validation plus round-trip and property tests"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-ORDER-002",
+      "status": "SATISFIED",
+      "verification_method": "state-model tests for contiguous, gap, overlap, duplicate, and restart paths"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:tests/contracts/test_ordering.py"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/contracts/ordering.py",
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage4",
+      "requirement_id": "CB-ORDER-003",
+      "status": "PARTIAL",
+      "verification_method": "ordering oracle, permutation property tests, and managed transaction-order evidence"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_engine.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/test_transaction_atomicity.py"
+      ],
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "src/changebridge/model.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-ORDER-004",
+      "status": "PARTIAL",
+      "verification_method": "multi-event transaction tests and failure injection at each apply boundary"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_schema_and_cutover.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/model/test_publication_oracle.py"
+      ],
+      "implementation_paths": [
+        "src/changebridge/cutover.py",
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage4",
+      "requirement_id": "CB-PUBLISH-001",
+      "status": "PARTIAL",
+      "verification_method": "truth-table oracle for all gate combinations plus integration tests"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_schema_and_cutover.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-PUBLISH-002",
+      "status": "SATISFIED",
+      "verification_method": "pointer-version state-model and concurrent writer tests"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_schema_and_cutover.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-PUBLISH-003",
+      "status": "SATISFIED",
+      "verification_method": "concurrent stale-version state-model tests"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/managed/rollback.json",
+        "future:tests/model/test_rollback.py"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/rollback.py",
+        "src/changebridge/engine.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-PUBLISH-004",
+      "status": "PARTIAL",
+      "verification_method": "explicit rollback API tests, retained-generation readability, stale-writer rejection, and managed exercise"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_reconciliation.py"
+      ],
+      "future_proof_paths": [
+        "future:evidence/managed/reconciliation.json"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/proof.py",
+        "src/changebridge/reconciliation.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage3",
+      "requirement_id": "CB-RECON-001",
+      "status": "PARTIAL",
+      "verification_method": "frontier binding tests and managed source/target proof"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_reconciliation.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/test_hierarchical_reconciliation.py"
+      ],
+      "implementation_paths": [
+        "future:src/changebridge/hierarchical_reconciliation.py",
+        "src/changebridge/reconciliation.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-RECON-002",
+      "status": "PARTIAL",
+      "verification_method": "determinism, partition coverage, mismatch localization, and bounded-scale tests"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_reconciliation.py",
+        "tests/test_schema_and_cutover.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/cutover.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-RECON-003",
+      "status": "SATISFIED",
+      "verification_method": "known mismatch injection and cutover rejection"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:release/release-verification.json"
+      ],
+      "implementation_paths": [
+        "future:release/PROJECT_COMPLETION_VERIFIED.json"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "final-release",
+      "requirement_id": "CB-RELEASE-001",
+      "status": "DEFERRED",
+      "verification_method": "release graph and checksum validation from an independent checkout"
+    },
+    {
+      "current_proof_paths": [
+        "tests/test_schema_and_cutover.py"
+      ],
+      "future_proof_paths": [
+        "future:tests/contracts/test_schema_identity.py"
+      ],
+      "implementation_paths": [
+        "contracts/orders-v1.json",
+        "src/changebridge/schema.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part1-stage4",
+      "requirement_id": "CB-SCHEMA-001",
+      "status": "PARTIAL",
+      "verification_method": "contract validation and schema-digest round trips"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_schema_and_cutover.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "src/changebridge/schema.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-SCHEMA-002",
+      "status": "PARTIAL",
+      "verification_method": "compatibility matrix and data/replay tests across contract versions"
+    },
+    {
+      "current_proof_paths": [
+        "evidence/local-simulation.json",
+        "tests/test_schema_and_cutover.py"
+      ],
+      "future_proof_paths": [],
+      "implementation_paths": [
+        "future:src/changebridge/quarantine.py",
+        "src/changebridge/schema.py"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "owner_stage": "part2-runtime",
+      "requirement_id": "CB-SCHEMA-003",
+      "status": "PARTIAL",
+      "verification_method": "negative compatibility fixtures and quarantine state tests"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/managed/security.json"
+      ],
+      "implementation_paths": [
+        "future:security/policy-tests/",
+        "infra/terraform/main.tf"
+      ],
+      "minimum_evidence": "AWS_VERIFIED",
+      "owner_stage": "part3-managed-proof",
+      "requirement_id": "CB-SEC-001",
+      "status": "PARTIAL",
+      "verification_method": "static policy tests, deployment inspection, secret scan, and access-denial probes"
+    },
+    {
+      "current_proof_paths": [],
+      "future_proof_paths": [
+        "future:evidence/managed/teardown.json"
+      ],
+      "implementation_paths": [
+        "future:experiments/teardown/"
+      ],
+      "minimum_evidence": "AWS_VERIFIED",
+      "owner_stage": "part3-managed-proof",
+      "requirement_id": "CB-SEC-002",
+      "status": "UNSATISFIED",
+      "verification_method": "destroy plan/apply evidence and independent residual inventory"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

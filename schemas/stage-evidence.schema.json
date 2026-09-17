@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://changebridge.local/schemas/stage-evidence.schema.json",
+  "title": "ChangeBridge stage evidence envelope",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "project", "repository", "part", "stage", "evidence_label", "base_commit", "result", "limitations"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "project": {"const": "ChangeBridge"},
+    "repository": {"const": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform"},
+    "part": {"const": 1},
+    "stage": {"const": 2},
+    "evidence_label": {"enum": ["DESIGN_ONLY", "LOCAL_VERIFIED", "AWS_VERIFIED", "MEASURED", "EXTRAPOLATED", "UNCLAIMED"]},
+    "base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "result": {"enum": ["PASS", "FAIL", "BLOCKED", "PENDING"]},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

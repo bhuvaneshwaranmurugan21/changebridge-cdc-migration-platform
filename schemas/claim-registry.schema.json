@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://changebridge.local/schemas/claim-registry.schema.json",
+  "title": "ChangeBridge claim registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project", "allowed_labels", "claims"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "project": {"const": "ChangeBridge"},
+    "allowed_labels": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "source_claim_ids", "approved_wording", "scope", "label", "requirement_ids", "proof_refs", "producing_commit", "producing_run", "limitations", "public_surfaces", "review_status", "owner", "invalidation_conditions", "disposition"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^CB-CLAIM-[0-9]{3}$"},
+          "source_claim_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+          "approved_wording": {"type": "string", "minLength": 1},
+          "scope": {"type": "string", "minLength": 1},
+          "label": {"enum": ["DESIGN_ONLY", "LOCAL_VERIFIED", "AWS_VERIFIED", "MEASURED", "EXTRAPOLATED", "UNCLAIMED"]},
+          "requirement_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+          "proof_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "producing_commit": {"type": ["string", "null"]},
+          "producing_run": {"type": ["string", "null"]},
+          "limitations": {"type": "string", "minLength": 1},
+          "public_surfaces": {"type": "array", "items": {"type": "object", "required": ["path", "marker"], "additionalProperties": false, "properties": {"path": {"type": "string"}, "marker": {"type": "string"}}}},
+          "review_status": {"enum": ["APPROVED", "UNCLAIMED", "WITHDRAWN"]},
+          "owner": {"type": "string", "minLength": 1},
+          "invalidation_conditions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "disposition": {"enum": ["RETAINED", "CORRECTED", "DOWNGRADED", "FROZEN", "REMOVED_DUPLICATE", "WITHDRAWN_UNSUPPORTED"]},
+          "measurement": {"type": "object"},
+          "extrapolation": {"type": "object"}
+        }
+      }
+    }
+  }
+}

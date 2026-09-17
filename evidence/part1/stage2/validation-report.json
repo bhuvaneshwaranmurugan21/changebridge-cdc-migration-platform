@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "validation": {
+    "completion_authority": {
+      "command": "python scripts/validate_completion_authority.py --render --check-rendered",
+      "canonical_report_sha256": "1828cad3c5927bf41700cb91ff607600a2164f21e6209b7eb9464f11565b4722",
+      "requirements": 39,
+      "claims": 10,
+      "completion_conditions": 16,
+      "invariants": 16,
+      "failure_lab_checks": 13,
+      "result": "PASS"
+    },
+    "local_fixture_harness": {
+      "method": "Execute the checked-in pytest test functions with a dependency-free local raises/parametrize shim because pytest is not installed in the workstation environment.",
+      "valid_corpus": "PASS",
+      "invalid_cases": 22,
+      "invalid_cases_with_expected_diagnostic": 22,
+      "determinism_test": "PASS",
+      "result": "PASS"
+    },
+    "python_syntax": {
+      "method": "Parse every repository Python file with ast.parse under the available Python interpreter.",
+      "files": 16,
+      "result": "PASS"
+    },
+    "local_simulator": {
+      "command": "PYTHONPATH=src python -m changebridge.cli simulate --output <temporary-path>",
+      "result": "PASS"
+    },
+    "diff_check": "PASS",
+    "secret_pattern_scan": "PASS",
+    "ci_required": ["ruff check .", "mypy src", "pytest", "deterministic simulator evidence"],
+    "ci_history": [
+      {
+        "head": "8013fb67b1b9de47867668ad6ef3b4e4514a3db3",
+        "run_id": 35203448962,
+        "result": "FAIL",
+        "failed_gate": "ruff check .",
+        "root_cause": "Two overlong lines and one simplifiable nested conditional in new Stage 2 Python files.",
+        "response": "Correct the three lint findings without exclusions or configuration changes, then rerun all dependent gates on the new exact head."
+      }
+    ]
+  },
+  "limitations": [
+    "pytest, Ruff, and mypy are not installed in the local environment and were not installed because dependency installation is outside Stage 2 authorization.",
+    "The repository's declared GitHub Actions environment must execute those gates on the exact pull-request head before merge."
+  ]
+}
