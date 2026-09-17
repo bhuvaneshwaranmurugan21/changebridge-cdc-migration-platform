@@ -1,0 +1,171 @@
+{
+  "acceptance": [
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-01",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-02",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-03",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-04",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-05",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-06",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-07",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-08",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-09",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-10",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-11",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-12",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-13",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-14",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-15",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-16",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-17",
+      "status": "PASS"
+    },
+    {
+      "binding": "repository evidence",
+      "id": "S1-AC-18",
+      "status": "PASS"
+    },
+    {
+      "binding": "exact PR-head CI and review record",
+      "id": "S1-AC-19",
+      "status": "PASS"
+    },
+    {
+      "binding": "external post-merge continuation checkpoint and closed PR record",
+      "id": "S1-AC-20",
+      "status": "PASS"
+    }
+  ],
+  "artifact_manifest_sha256": "424f63c992796f3c9a903e737af3b16a429edcdd9361b673711863d293539d47",
+  "audited_base_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+  "audited_base_tree": "78d896e3056921d64a49fb11eaa8f73fdd5c444f",
+  "ending_worktree_required": "CLEAN",
+  "generation": {
+    "deterministic": true,
+    "procedure": "generate_stage1_audit.py",
+    "python": "3.12.14"
+  },
+  "historical_claim_summary": {
+    "CONFIRMED_PRESENT": 5,
+    "MISSING": 1,
+    "NOT_ASSESSABLE": 0,
+    "OBSOLETE": 0,
+    "PRESENT_BUT_CONTRADICTORY": 1,
+    "PRESENT_BUT_THIN": 5
+  },
+  "inventory_digest": "3a301237dedef1600fe14729a87031b7aa579989c784604a372ba99dae652d59",
+  "isolation_summary": {
+    "cross_project_matches": 0,
+    "nonblocking_sensitive_metadata_findings": 1,
+    "obsolete_name_matches": 0,
+    "secret_findings": 0
+  },
+  "limitations": [
+    "Local pytest, coverage, Ruff, mypy, and Terraform checks were blocked by missing tools and were not installed.",
+    "The Spark adapter and Step Functions boundaries remain findings for later stages; Stage 1 does not repair them.",
+    "Exact merge identity is intentionally external to prevent recursive commit binding."
+  ],
+  "merge_commit": "BOUND_IN_EXTERNAL_CLOSURE_CHECKPOINT",
+  "next_exact_action": "Resume Part 1 Stage 2 only from the exact merged Stage 1 main commit recorded in the external closure checkpoint.",
+  "open_blockers": [],
+  "part": 1,
+  "project": "ChangeBridge",
+  "public_claim_summary": {
+    "CONTRADICTED": 0,
+    "DESIGN_ONLY": 2,
+    "NOT_ASSESSABLE": 0,
+    "OBSOLETE": 0,
+    "OVERSTATED": 1,
+    "SUPPORTED_LOCAL": 6,
+    "UNBOUND": 1
+  },
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "run_id": "cb-p1-s1-20260917T073557Z-6081230",
+  "schema_version": "1.0.0",
+  "stage": 1,
+  "stage_head_commit": "BOUND_IN_EXTERNAL_CLOSURE_CHECKPOINT",
+  "starting_worktree": "CLEAN",
+  "status": "STAGE1_AUDIT_VERIFIED",
+  "status_effective_condition": "All repository-content criteria pass and the external closure checkpoint binds the exact successful PR head, merge operation, merged main SHA, and post-merge verification.",
+  "substage_statuses": [
+    "VERIFIED",
+    "VERIFIED",
+    "VERIFIED",
+    "VERIFIED",
+    "VERIFIED",
+    "VERIFIED",
+    "EXTERNAL_BINDING_REQUIRED"
+  ],
+  "validation_summary": {
+    "BLOCKED": 4,
+    "FAIL": 0,
+    "NOT_DEFINED": 0,
+    "PASS": 7,
+    "UNSAFE_TO_RUN": 2
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+  "closure_blockers": [],
+  "cross_project_matches": [],
+  "evidence_provenance": [
+    {
+      "blocking": false,
+      "classification": "REPRODUCED_BUT_NOT_COMMIT_BOUND_IN_PAYLOAD",
+      "path": "evidence/local-simulation.json",
+      "sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24"
+    }
+  ],
+  "findings": [
+    {
+      "blocking": false,
+      "classification": "FALSE_POSITIVE",
+      "finding_id": "ISO-001",
+      "location": ".github/workflows/aws-oidc-identity.yml",
+      "rationale": "The match is the GitHub OIDC permission key, not a credential value.",
+      "redacted_concept": "workflow permission name matched generic token pattern",
+      "severity": "NONE"
+    },
+    {
+      "blocking": false,
+      "classification": "SECURITY_OR_SENSITIVITY_ISSUE",
+      "finding_id": "ISO-002",
+      "location": "Git commit author/committer metadata",
+      "rationale": "A personal email address is publicly present in normal commit metadata; no credential is present.",
+      "redacted_fingerprint_sha256": "05b4412ddcd8e75473c682d284e6e302e7475edb3ab1083ded6fd150ddc7e941",
+      "severity": "LOW"
+    },
+    {
+      "blocking": false,
+      "classification": "LEGITIMATE_PORTFOLIO_REFERENCE",
+      "finding_id": "ISO-003",
+      "location": "none",
+      "rationale": "Current tree and reachable history returned no matches for the required project-name variants.",
+      "redacted_concept": "no foreign portfolio references found",
+      "severity": "NONE"
+    }
+  ],
+  "namespace_assessment": {
+    "classification": "CHANGE_BRIDGE_NAMESPACED",
+    "limitation": "No deployed namespace was inspected",
+    "references": [
+      "infra/terraform/main.tf:7",
+      "infra/terraform/versions.tf:21"
+    ]
+  },
+  "obsolete_name_matches": [],
+  "part": 1,
+  "project": "ChangeBridge",
+  "run_id": "cb-p1-s1-20260917T073557Z-6081230",
+  "schema_version": "1.0.0",
+  "search_scopes": [
+    "tracked current tree",
+    "all reachable local history",
+    "workflow/configuration",
+    "Terraform namespaces",
+    "evidence and public documentation",
+    "suspicious filenames and common credential patterns"
+  ],
+  "secret_scan": {
+    "current_tree_secret_findings": 0,
+    "dedicated_scanner": "BLOCKED_NOT_INSTALLED",
+    "history_secret_findings": 0,
+    "raw_secret_values_recorded": false,
+    "suspicious_filename_findings": 0
+  },
+  "stage": 1,
+  "variants": [
+    "AtlasRetail",
+    "atlas-retail",
+    "atlas_retail",
+    "LedgerGuard",
+    "ledger-guard",
+    "ledger_guard",
+    "EventPulse",
+    "event-pulse",
+    "event_pulse",
+    "FeatureForge",
+    "feature-forge",
+    "feature_forge",
+    "changebridge-cdc-lakehouse-platform"
+  ]
+}

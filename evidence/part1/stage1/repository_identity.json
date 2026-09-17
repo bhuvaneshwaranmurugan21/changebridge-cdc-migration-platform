@@ -1,0 +1,75 @@
+{
+  "evidence_label": "LOCAL_VERIFIED",
+  "git": {
+    "ahead": 0,
+    "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+    "audited_tree": "78d896e3056921d64a49fb11eaa8f73fdd5c444f",
+    "bare": false,
+    "behind": 0,
+    "fresh_clone": true,
+    "interrupted_operations": [],
+    "object_format": "sha1",
+    "shallow": false,
+    "stage_branch": "part1-stage1-exact-state-audit",
+    "starting_branch": "main",
+    "starting_upstream": "origin/main",
+    "submodules": [],
+    "tags": []
+  },
+  "history": {
+    "current_tracked_files": 33,
+    "historical_32_file_commit": "6df84bf2993cd8c5f38f8ee5bbe3dd5e9c8505d0",
+    "initial_commit": "8acab3b51381d94639580bba043abc608e5a6231",
+    "main_commit_count": 6
+  },
+  "identity_decision": "CONFIRMED",
+  "limitations": [
+    "The execution checkout is a fresh clone, so no pre-existing local user edits existed in it.",
+    "The user separately confirmed that no one else is modifying this repository.",
+    "Branch-protection details were unavailable to the installed GitHub integration."
+  ],
+  "part": 1,
+  "project": "ChangeBridge",
+  "raw_sanitized_evidence_digests": {
+    "command_risk_register": "c6b0d297a956ba36a173dcb43c6146ec91c41ac7ca82cc2add4e1503f88adacb",
+    "execution_envelope": "7db66cfcb935c7f87028ca42860e98b8bab8d378a0f58502bc4d1bc325c5c358",
+    "provisional_identity": "a41caee59ff41a659d5a436b072332d2de7236f608763c5db4e69c952dda57ea"
+  },
+  "remote_topology": {
+    "branch_protection": "NOT_ASSESSABLE_INTEGRATION_403",
+    "branches": [
+      "main",
+      "agent/production-grade-foundation"
+    ],
+    "open_pull_requests": [
+      {
+        "base": "main",
+        "draft": true,
+        "head": "agent/production-grade-foundation",
+        "head_sha": "62cefd896cde869ba04bf7dc34f350f9e51cbd44",
+        "number": 1,
+        "relationship": "unmerged independent historical work excluded from audited baseline"
+      }
+    ],
+    "releases": [],
+    "rulesets": []
+  },
+  "repository": {
+    "archived": false,
+    "canonical_full_name": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+    "default_branch": "main",
+    "github_repository_id": "1332970949",
+    "remote": "https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform.git",
+    "visibility": "public"
+  },
+  "run_id": "cb-p1-s1-20260917T073557Z-6081230",
+  "schema_version": "1.0.0",
+  "stage": 1,
+  "starting_worktree": {
+    "classification": "CLEAN",
+    "conflicted": [],
+    "staged": [],
+    "unstaged": [],
+    "untracked": []
+  }
+}

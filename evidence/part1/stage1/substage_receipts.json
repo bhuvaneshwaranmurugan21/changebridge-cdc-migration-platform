@@ -1,0 +1,53 @@
+{
+  "audited_commit": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+  "part": 1,
+  "project": "ChangeBridge",
+  "receipts": [
+    {
+      "authority": "external envelope and command-risk register",
+      "name": "execution envelope",
+      "status": "VERIFIED",
+      "substage": "1.1.1"
+    },
+    {
+      "authority": "repository_identity.json",
+      "name": "identity and worktree freeze",
+      "status": "VERIFIED",
+      "substage": "1.1.2"
+    },
+    {
+      "authority": "repository_inventory.json",
+      "name": "topology and deterministic inventory",
+      "status": "VERIFIED",
+      "substage": "1.1.3"
+    },
+    {
+      "authority": "baseline_claims_matrix.json",
+      "name": "historical capability reconciliation",
+      "status": "VERIFIED",
+      "substage": "1.1.4"
+    },
+    {
+      "authority": "validation_baseline.json",
+      "name": "safe validation baseline",
+      "note": "blocked/unsafe validations are honestly classified",
+      "status": "VERIFIED",
+      "substage": "1.1.5"
+    },
+    {
+      "authority": "isolation_audit.json and public_claims_inventory.json",
+      "name": "isolation claims and sensitivity audit",
+      "status": "VERIFIED",
+      "substage": "1.1.6"
+    },
+    {
+      "authority": "artifact_manifest.json, stage_receipt.json, PR exact-head CI, and post-merge checkpoint",
+      "name": "synthesis publication and closure",
+      "status": "EXTERNAL_BINDING_REQUIRED",
+      "substage": "1.1.7"
+    }
+  ],
+  "run_id": "cb-p1-s1-20260917T073557Z-6081230",
+  "schema_version": "1.0.0",
+  "stage": 1
+}
