@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 3,
+  "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "open_pull_requests": [],
+  "remote_branches_at_start": [
+    "agent/production-grade-foundation",
+    "main",
+    "part1-stage1-exact-state-audit",
+    "part1-stage2-completion-contract"
+  ],
+  "overlap": "NONE",
+  "result": "PASS",
+  "limitations": [
+    "Historical closed branches are non-authoritative and are not merged or copied."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 3,
+  "architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
+  "architecture_freeze_tree": "13097d3cae42b120bc13add818ae1c7ed7b8dcc5",
+  "reviewed_claim_ids": [
+    "CB-CLAIM-002",
+    "CB-CLAIM-004",
+    "CB-CLAIM-007",
+    "CB-CLAIM-009"
+  ],
+  "decisions": [
+    {
+      "claim_id": "CB-CLAIM-002",
+      "decision": "REBOUND",
+      "label": "DESIGN_ONLY",
+      "reason": "The accepted architecture authority supersedes the Stage 1 topology narrative without adding managed proof."
+    },
+    {
+      "claim_id": "CB-CLAIM-004",
+      "decision": "UNCHANGED",
+      "label": "LOCAL_VERIFIED",
+      "reason": "Stage 3 does not change the local SQLite cutover implementation or its proof."
+    },
+    {
+      "claim_id": "CB-CLAIM-007",
+      "decision": "UNCHANGED",
+      "label": "UNCLAIMED",
+      "reason": "The orchestrator has an explicit responsibility boundary but remains unimplemented."
+    },
+    {
+      "claim_id": "CB-CLAIM-009",
+      "decision": "REBOUND",
+      "label": "DESIGN_ONLY",
+      "reason": "Rollback eligibility and publication semantics are explicit while implementation and managed proof remain absent."
+    }
+  ],
+  "new_aws_verified_capabilities": 0,
+  "new_measured_capabilities": 0,
+  "result": "PASS",
+  "limitations": [
+    "Architecture binding does not prove runtime implementation.",
+    "No local-runtime claim was broadened."
+  ]
+}

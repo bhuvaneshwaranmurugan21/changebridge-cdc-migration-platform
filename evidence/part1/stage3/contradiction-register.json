@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 3,
+  "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "result": "PASS",
+  "contradictions": [
+    {"id": "ST3-CON-001", "subject": "generation lifecycle vocabulary", "sources": ["docs/architecture.md", "src/changebridge/model.py", "COMPLETION_CONTRACT.md"], "starting_state": "CONFLICTING", "planned_resolution": "ADR-001 and canonical lifecycle"},
+    {"id": "ST3-CON-002", "subject": "active pointer versus generation status", "sources": ["docs/architecture.md", "src/changebridge/cutover.py"], "starting_state": "AMBIGUOUS", "planned_resolution": "publication model makes the pointer authoritative"},
+    {"id": "ST3-CON-003", "subject": "reopening quarantined or rejected generations", "sources": ["docs/architecture.md", "COMPLETION_CONTRACT.md"], "starting_state": "UNSAFE", "planned_resolution": "REJECTED is terminal; repair creates a successor generation"},
+    {"id": "ST3-CON-004", "subject": "reactivating retired generations", "sources": ["docs/architecture.md", "docs/runbook.md"], "starting_state": "UNSAFE", "planned_resolution": "RETIRED is terminal and ineligible for rollback"},
+    {"id": "ST3-CON-005", "subject": "meaning of immutable generation", "sources": ["README.md", "src/changebridge/engine.py"], "starting_state": "AMBIGUOUS", "planned_resolution": "namespace isolation during build; evidence immutability after seal"},
+    {"id": "ST3-CON-006", "subject": "target commit and external checkpoint coupling", "sources": ["src/changebridge/engine.py", "infra/terraform/main.tf"], "starting_state": "IMPLEMENTATION_GAP", "planned_resolution": "ADR-006 recoverable idempotent protocol without distributed ACID"},
+    {"id": "ST3-CON-007", "subject": "source frozen-frontier acquisition", "sources": ["src/changebridge/reconciliation.py", "docs/runbook.md"], "starting_state": "EXTERNAL_ASSUMPTION_UNVERIFIED", "planned_resolution": "transport-neutral protocol plus future managed proof owner"},
+    {"id": "ST3-CON-008", "subject": "consumer reader pinning", "sources": ["README.md", "docs/architecture.md"], "starting_state": "UNDERSPECIFIED", "planned_resolution": "ADR-010 pointer revision and generation pin per logical operation"},
+    {"id": "ST3-CON-009", "subject": "rollback eligibility", "sources": ["README.md", "docs/runbook.md"], "starting_state": "UNDERSPECIFIED", "planned_resolution": "ADR-012 explicit proof, readability, retention, authorization, and CAS guards"},
+    {"id": "ST3-CON-010", "subject": "component ownership", "sources": ["infra/terraform/main.tf", "docs/architecture.md"], "starting_state": "PARTIAL_TOPOLOGY", "planned_resolution": "data, control, and evidence plane responsibility model"},
+    {"id": "ST3-CON-011", "subject": "orchestration implementation status", "sources": ["docs/architecture.md", "claims/claims.json"], "starting_state": "NARRATIVE_ONLY", "planned_resolution": "retain UNCLAIMED and assign future owner"},
+    {"id": "ST3-CON-012", "subject": "proof gate aggregation", "sources": ["src/changebridge/cutover.py", "COMPLETION_CONTRACT.md"], "starting_state": "LOCALLY_SIMPLIFIED", "planned_resolution": "independent frontier-bound gate records and sealed manifest"},
+    {"id": "ST3-CON-013", "subject": "architecture-sensitive claim bindings", "sources": ["claims/claims.json", "README.md"], "starting_state": "INVALIDATED_BY_STAGE3", "planned_resolution": "re-adjudicate and bind design claims to architecture freeze commit"}
+  ],
+  "limitations": [
+    "This is the frozen starting register; final dispositions are recorded separately after architecture decisions are validated."
+  ]
+}

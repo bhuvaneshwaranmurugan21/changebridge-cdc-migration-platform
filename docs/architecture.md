@@ -1,73 +1,52 @@
-# Architecture decision record
+# ChangeBridge architecture authority
 
-## Decision
+ChangeBridge uses **frontier-bound migration generations**. A generation is the unit of source-boundary capture, isolated build, proof, publication, rollback eligibility, retention, and retirement.
 
-Adopt **frontier-bound migration generations**. A generation is the smallest unit that can be
-reconciled, activated, rolled back, retained, or destroyed. It contains:
-
-- source identity and schema digest;
-- consistent snapshot frontier `S`;
-- immutable transaction-preserving CDC manifests covering `(S,F]`;
-- candidate Iceberg snapshot IDs;
-- table-level reconciliation proofs at `F`;
-- gate results and a terminal decision.
-
-The active data product is resolved through a strongly consistent versioned pointer. Table
-paths never become the cutover mechanism.
-
-## Why not trust transport offsets?
-
-An offset proves that a reader progressed. It does not prove that every source row is in the
-candidate, that deletes were preserved, that a schema change was safe, or that every target
-table represents the same business frontier. The control plane therefore verifies semantic
-state at a declared frontier before publication.
-
-## State machine
-
-```mermaid
-stateDiagram-v2
-    [*] --> Loading
-    Loading --> Candidate: snapshot sealed at S
-    Candidate --> Candidate: apply contiguous CDC
-    Candidate --> Quarantined: any proof fails
-    Quarantined --> Candidate: repair and replay
-    Candidate --> Ready: every gate passes at F
-    Ready --> Active: pointer CAS
-    Active --> Retired: replacement activated
-    Retired --> Active: rollback pointer CAS
+```text
+Generation G = snapshot at typed frontier S
+             + ordered committed CDC interval (S,F]
+             + sealed candidate table map at F
+             + complete proof manifest at F
+             + expected-revision publication decision
 ```
 
-## Target production data path
+This is the authoritative Stage 3 design. It is intentionally explicit about what remains unimplemented or unverified.
 
-This section is a design target. It is not a description of an implemented managed pipeline.
+## Authority map
 
-1. PostgreSQL logical replication exposes committed changes.
-2. AWS DMS captures the full load and CDC, with transaction-preserving output enabled.
-3. Raw S3 objects are immutable and named by run/generation.
-4. A manifest validator checks checksum, schema digest, transaction boundary, and LSN interval.
-5. Glue/Spark applies a manifest into generation-scoped Iceberg tables.
-6. Reconciliation runs at a frozen source/target frontier and writes immutable evidence.
-7. A future orchestrator asks the gate evaluator for a decision.
-8. DynamoDB conditionally swaps the active pointer. Consumers resolve that pointer.
+- [Responsibility model](architecture/RESPONSIBILITY_MODEL.md)
+- [Generation lifecycle](architecture/GENERATION_LIFECYCLE.md)
+- [Checkpoint recovery](architecture/CHECKPOINT_RECOVERY.md)
+- [Proof and publication](architecture/PROOF_AND_PUBLICATION.md)
+- [Consistency and limitations](architecture/CONSISTENCY_AND_LIMITATIONS.md)
+- [Architecture decision records](adr/README.md)
+- Machine-readable authorities in [`../architecture/`](../architecture/)
+
+## Trust boundaries
+
+- The **data plane** transports and stores generation-scoped data; it does not decide completeness.
+- The **control plane** owns lifecycle, checkpoint, proof aggregation, publication, reader resolution, rollback, and retirement decisions.
+- The **evidence plane** binds inputs, decisions, repository/run identity, results, and limitations; it does not manufacture passing capability.
+
+![Responsibility planes](../architecture/diagrams/responsibility-planes.svg)
+
+## Non-negotiable semantics
+
+1. Source positions, not timestamps, define snapshot/CDC coverage and ordering.
+2. The checkpoint never advances ahead of durable target-commit evidence.
+3. Ambiguous acknowledgements are reconciled before replay or advancement.
+4. Only a sealed generation may be proven; only a proven generation may be published.
+5. Publication is a compare-and-swap of one complete generation pointer.
+6. Consumers pin generation and pointer revision for a logical operation.
+7. Rejected and retired generations never silently re-enter service.
+8. Rollback republishes an eligible prior generation; it does not reverse-mutate data.
+9. Reconciliation compares canonical data at one frozen frontier, not counts alone.
+10. Architecture validation is local specification proof, never managed-runtime proof.
+
+## Current implementation boundary
+
+The SQLite engine remains a local correctness oracle with a smaller state vocabulary and local transaction coupling. Terraform is partial. The Spark file is an input-shape adapter. DMS-to-source frontier mapping, Iceberg apply/checkpoint recovery, consumer resolution, orchestration, explicit rollback, and retirement remain implementation or managed-proof obligations.
 
 <!-- claim:CB-CLAIM-007 -->
 Step Functions orchestration is an unimplemented target design: no state-machine definition,
 Terraform resource, test, or run evidence exists.
-
-## Failure containment
-
-- A missing interval stops ingestion with the previous frontier intact.
-- Duplicate identical transactions are no-ops; conflicting duplicates are quarantined.
-- A worker crash before commit changes neither frontier nor data.
-- A breaking contract cannot reach the candidate table.
-- A stale cutover command loses the conditional write.
-- The previous proven generation remains available for pointer rollback.
-
-## Primary references
-
-- [AWS DMS: using PostgreSQL as a source](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html)
-- [AWS DMS S3 target settings, including transaction order](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html)
-- [Debezium PostgreSQL connector snapshots and offsets](https://debezium.io/documentation/reference/stable/connectors/postgresql.html)
-- [Apache Iceberg reliability and snapshots](https://iceberg.apache.org/docs/latest/reliability/)
-- [Apache Iceberg schema evolution](https://iceberg.apache.org/docs/latest/evolution/)
-- [DynamoDB conditional operations](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html)

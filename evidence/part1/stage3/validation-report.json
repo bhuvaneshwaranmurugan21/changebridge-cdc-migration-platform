@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.8",
+  "evidence_label": "LOCAL_VERIFIED",
+  "validated_commit": "bd78898602bfae650eaae04589bcc98f64511bd8",
+  "validated_tree": "8016fd41e16dbd6f1e183a04ffde642afcfc10f9",
+  "expected_result": "All existing quality gates, Stage 2 authority checks, Stage 3 semantic checks, mutation fixtures, generated-view drift checks, and simulator assertions pass without weakening.",
+  "runs": [
+    {
+      "gate": "ruff check .",
+      "result": "PASS",
+      "runs": 2,
+      "output_sha256_first": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "gate": "mypy src",
+      "result": "PASS",
+      "runs": 2,
+      "source_files": 9,
+      "output_sha256_first": "46984ca20bf69f7b14ec1fd9bd82101d56a4e109e68f016fd2a04f22481b09b3"
+    },
+    {
+      "gate": "pytest",
+      "result": "PASS",
+      "runs": 2,
+      "tests": 82,
+      "coverage_percent": 88.92,
+      "coverage_threshold_percent": 85,
+      "output_sha256_first": "0a43f88301fd75dac1b44a7079dc14ce54db8350221620db7e20268226287dc7"
+    },
+    {
+      "gate": "focused architecture mutation suite",
+      "command": "pytest -q tests/test_architecture_authority.py -o addopts='-q --strict-markers'",
+      "result": "PASS",
+      "tests": 48,
+      "negative_cases": 46,
+      "note": "Focused execution omits application coverage because this file tests the validator; both full-suite runs enforce the unchanged 85% application threshold."
+    },
+    {
+      "gate": "architecture generated-view drift",
+      "command": "python scripts/build_architecture_authority.py --check",
+      "result": "PASS",
+      "runs": 2,
+      "output_sha256_first": "29fe9e10c4cd533187a10c37d598dcf77b530e326a12cd3eb5008e0276372af0"
+    },
+    {
+      "gate": "Stage 2 completion authority",
+      "command": "python scripts/validate_completion_authority.py --check-rendered",
+      "result": "PASS",
+      "runs": 2,
+      "canonical_sha256": "1828cad3c5927bf41700cb91ff607600a2164f21e6209b7eb9464f11565b4722",
+      "output_file_sha256": "80bf49b01bb9ade8f6428978473684799ce71230daba7fd9f5b5353e20b47dbc"
+    },
+    {
+      "gate": "Stage 3 architecture authority",
+      "command": "python scripts/validate_architecture_authority.py --check-rendered",
+      "result": "PASS",
+      "runs": 2,
+      "canonical_sha256": "085dc3acf92dc2b60a637488f6810273ce945fae1e309eef48455aa73bb692c7",
+      "output_file_sha256": "820228766731724e5421d35bb63bbc1012adae215cbc3d4064caa7187af0ba1e"
+    },
+    {
+      "gate": "deterministic simulator",
+      "command": "python -m changebridge.cli simulate",
+      "result": "PASS",
+      "runs": 2,
+      "checks": 13,
+      "production_claim": false,
+      "output_file_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24"
+    }
+  ],
+  "result": "PASS",
+  "limitations": [
+    "Local validators prove repository specification consistency and reference behavior, not managed runtime behavior.",
+    "Exact PR-head and post-merge CI remain publication gates."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "expected_component_count": 17,
+  "expected_adr_count": 15,
+  "expected_requirement_count": 39,
+  "expected_stage3_requirement_count": 5,
+  "expected_generation_state_count": 10,
+  "expected_generation_transition_count": 14,
+  "expected_checkpoint_state_count": 9,
+  "expected_proof_gate_count": 8,
+  "expected_claim_count": 10,
+  "expected_architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797"
+}

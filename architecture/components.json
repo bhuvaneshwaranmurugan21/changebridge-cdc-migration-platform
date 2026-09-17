@@ -1,0 +1,833 @@
+{
+  "authority": "ChangeBridge Part 1 Stage 3",
+  "components": [
+    {
+      "adr_ids": [
+        "ADR-002",
+        "ADR-004",
+        "ADR-009"
+      ],
+      "dependencies": [],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "POSTGRES_SOURCE_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "postgres_source",
+      "idempotency_identity": "postgres_source:generation_id:operation_id",
+      "implementation_status": "EXTERNAL_UNVERIFIED",
+      "inputs": [
+        "application transactions"
+      ],
+      "non_responsibilities": [
+        "migration completeness",
+        "target durability",
+        "publication"
+      ],
+      "outputs": [
+        "committed rows",
+        "WAL positions"
+      ],
+      "owned_metadata": [
+        "source identity",
+        "source schema identity"
+      ],
+      "plane": "data",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-BOUNDARY-001",
+        "CB-BOUNDARY-003",
+        "CB-RECON-001"
+      ],
+      "responsibility": "Own source rows, transaction boundaries, and comparable PostgreSQL WAL positions.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-002",
+        "ADR-003"
+      ],
+      "dependencies": [
+        "postgres_source",
+        "s3_landing"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "DMS_TRANSPORT_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "dms_transport",
+      "idempotency_identity": "dms_transport:generation_id:operation_id",
+      "implementation_status": "PARTIAL_TERRAFORM",
+      "inputs": [
+        "WAL changes",
+        "snapshot rows"
+      ],
+      "non_responsibilities": [
+        "migration correctness",
+        "reconciliation",
+        "proof",
+        "publication"
+      ],
+      "outputs": [
+        "raw S3 objects",
+        "transport checkpoints"
+      ],
+      "owned_metadata": [
+        "task identity",
+        "transport settings"
+      ],
+      "plane": "data",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-BOUNDARY-002",
+        "CB-ORDER-004",
+        "CB-OPS-002"
+      ],
+      "responsibility": "Transport full-load and CDC records while preserving configured transaction metadata.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-003",
+        "ADR-014"
+      ],
+      "dependencies": [
+        "dms_transport"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "S3_LANDING_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "s3_landing",
+      "idempotency_identity": "s3_landing:generation_id:operation_id",
+      "implementation_status": "PARTIAL_TERRAFORM",
+      "inputs": [
+        "DMS objects"
+      ],
+      "non_responsibilities": [
+        "event normalization",
+        "target apply",
+        "proof verdicts"
+      ],
+      "outputs": [
+        "versioned raw objects",
+        "object checksums"
+      ],
+      "owned_metadata": [
+        "object version",
+        "generation prefix",
+        "checksum"
+      ],
+      "plane": "data",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-ORDER-004",
+        "CB-EVIDENCE-001",
+        "CB-SEC-001"
+      ],
+      "responsibility": "Retain immutable generation-scoped raw objects and their transport lineage.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-003",
+        "ADR-004",
+        "ADR-005"
+      ],
+      "dependencies": [
+        "s3_landing",
+        "schema_coordinator"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "MANIFEST_NORMALIZER_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "manifest_normalizer",
+      "idempotency_identity": "manifest_normalizer:generation_id:operation_id",
+      "implementation_status": "UNIMPLEMENTED",
+      "inputs": [
+        "raw objects",
+        "transport metadata",
+        "schema identity"
+      ],
+      "non_responsibilities": [
+        "source extraction",
+        "target mutation",
+        "checkpoint publication"
+      ],
+      "outputs": [
+        "canonical envelopes",
+        "quarantine decisions"
+      ],
+      "owned_metadata": [
+        "manifest digest",
+        "normalizer version"
+      ],
+      "plane": "data",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-ORDER-001",
+        "CB-ORDER-003",
+        "CB-ORDER-004"
+      ],
+      "responsibility": "Validate raw manifests and emit one canonical transport-neutral CDC envelope.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-004",
+        "ADR-005",
+        "ADR-006",
+        "ADR-007"
+      ],
+      "dependencies": [
+        "manifest_normalizer",
+        "iceberg_generation_store",
+        "checkpoint_ledger"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "MIGRATION_APPLY_ENGINE_FAILED",
+      "future_implementation_owner": "existing-local-reference",
+      "id": "migration_apply_engine",
+      "idempotency_identity": "migration_apply_engine:generation_id:operation_id",
+      "implementation_status": "LOCAL_REFERENCE",
+      "inputs": [
+        "canonical envelopes",
+        "last mutually established frontier"
+      ],
+      "non_responsibilities": [
+        "transport acquisition",
+        "proof aggregation",
+        "publication"
+      ],
+      "outputs": [
+        "target commit receipts",
+        "candidate table mutations"
+      ],
+      "owned_metadata": [
+        "transaction digest",
+        "target commit identity"
+      ],
+      "plane": "data",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-APPLY-001",
+        "CB-APPLY-002",
+        "CB-APPLY-003",
+        "CB-APPLY-004",
+        "CB-APPLY-005"
+      ],
+      "responsibility": "Apply ordered canonical transactions idempotently into one isolated candidate generation.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-001",
+        "ADR-006",
+        "ADR-010",
+        "ADR-013"
+      ],
+      "dependencies": [
+        "migration_apply_engine"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "ICEBERG_GENERATION_STORE_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "iceberg_generation_store",
+      "idempotency_identity": "iceberg_generation_store:generation_id:operation_id",
+      "implementation_status": "DESIGN_ONLY",
+      "inputs": [
+        "candidate mutations"
+      ],
+      "non_responsibilities": [
+        "source coverage",
+        "cross-table atomicity",
+        "publication decision"
+      ],
+      "outputs": [
+        "Iceberg snapshots",
+        "generation table map"
+      ],
+      "owned_metadata": [
+        "table snapshot IDs",
+        "generation namespace"
+      ],
+      "plane": "data",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-ISOLATION-001",
+        "CB-ISOLATION-002",
+        "CB-CHECKPOINT-001"
+      ],
+      "responsibility": "Store generation-scoped candidate tables and durable snapshot identifiers.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-001",
+        "ADR-008",
+        "ADR-015"
+      ],
+      "dependencies": [
+        "schema_coordinator"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "GENERATION_REGISTRY_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "generation_registry",
+      "idempotency_identity": "generation_registry:generation_id:operation_id",
+      "implementation_status": "PARTIAL_TERRAFORM",
+      "inputs": [
+        "authorized lifecycle commands"
+      ],
+      "non_responsibilities": [
+        "target data",
+        "proof computation",
+        "active consumer resolution"
+      ],
+      "outputs": [
+        "conditional lifecycle transitions"
+      ],
+      "owned_metadata": [
+        "generation state",
+        "revision",
+        "lineage"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-ISOLATION-001",
+        "CB-EVIDENCE-001"
+      ],
+      "responsibility": "Own lifecycle state, revision, parent/successor lineage, and immutable generation identity.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-006"
+      ],
+      "dependencies": [
+        "migration_apply_engine",
+        "iceberg_generation_store"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "CHECKPOINT_LEDGER_FAILED",
+      "future_implementation_owner": "existing-local-reference",
+      "id": "checkpoint_ledger",
+      "idempotency_identity": "checkpoint_ledger:generation_id:operation_id",
+      "implementation_status": "LOCAL_REFERENCE",
+      "inputs": [
+        "target commit receipts",
+        "expected ledger revision"
+      ],
+      "non_responsibilities": [
+        "target data commit",
+        "transport delivery"
+      ],
+      "outputs": [
+        "conditional checkpoint record",
+        "recovery verdict"
+      ],
+      "owned_metadata": [
+        "frontier",
+        "target commit identity",
+        "ledger revision"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-CHECKPOINT-001",
+        "CB-CHECKPOINT-002",
+        "CB-CHECKPOINT-003"
+      ],
+      "responsibility": "Own the monotonic mutually-established source/target frontier and ambiguity recovery state.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-008"
+      ],
+      "dependencies": [],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "SCHEMA_COORDINATOR_FAILED",
+      "future_implementation_owner": "existing-local-reference",
+      "id": "schema_coordinator",
+      "idempotency_identity": "schema_coordinator:generation_id:operation_id",
+      "implementation_status": "LOCAL_REFERENCE",
+      "inputs": [
+        "source contract",
+        "candidate schema"
+      ],
+      "non_responsibilities": [
+        "data transport",
+        "target mutation",
+        "schema deployment"
+      ],
+      "outputs": [
+        "compatibility decision",
+        "quarantine reason"
+      ],
+      "owned_metadata": [
+        "schema digest",
+        "compatibility policy version"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-SCHEMA-001",
+        "CB-SCHEMA-002",
+        "CB-SCHEMA-003"
+      ],
+      "responsibility": "Own versioned schema identity and fail-closed compatibility decisions.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-009"
+      ],
+      "dependencies": [
+        "postgres_source",
+        "iceberg_generation_store"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "RECONCILIATION_COORDINATOR_FAILED",
+      "future_implementation_owner": "existing-local-reference",
+      "id": "reconciliation_coordinator",
+      "idempotency_identity": "reconciliation_coordinator:generation_id:operation_id",
+      "implementation_status": "LOCAL_REFERENCE",
+      "inputs": [
+        "source snapshot at F",
+        "candidate snapshot at F",
+        "canonical row rules"
+      ],
+      "non_responsibilities": [
+        "source freeze mechanism",
+        "publication"
+      ],
+      "outputs": [
+        "partition and table digests",
+        "mismatch localization"
+      ],
+      "owned_metadata": [
+        "frontier",
+        "canonicalization version",
+        "input snapshot identities"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-RECON-001",
+        "CB-RECON-002",
+        "CB-RECON-003"
+      ],
+      "responsibility": "Bind frozen source and candidate observations to the same frontier and compute hierarchical proof.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-009",
+        "ADR-014"
+      ],
+      "dependencies": [
+        "reconciliation_coordinator",
+        "schema_coordinator"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "PROOF_COORDINATOR_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "proof_coordinator",
+      "idempotency_identity": "proof_coordinator:generation_id:operation_id",
+      "implementation_status": "DESIGN_ONLY",
+      "inputs": [
+        "independent gate records"
+      ],
+      "non_responsibilities": [
+        "inventing evidence",
+        "managed capability verification",
+        "publication"
+      ],
+      "outputs": [
+        "sealed proof manifest",
+        "proof rejection"
+      ],
+      "owned_metadata": [
+        "proof manifest digest",
+        "gate identities",
+        "frontier"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-PUBLISH-001",
+        "CB-OPS-001",
+        "CB-EVIDENCE-001"
+      ],
+      "responsibility": "Collect independent frontier-bound gate records and seal one immutable proof manifest.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-010",
+        "ADR-011"
+      ],
+      "dependencies": [
+        "proof_coordinator",
+        "active_generation_pointer"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "PUBLICATION_CONTROLLER_FAILED",
+      "future_implementation_owner": "existing-local-reference",
+      "id": "publication_controller",
+      "idempotency_identity": "publication_controller:generation_id:operation_id",
+      "implementation_status": "LOCAL_REFERENCE",
+      "inputs": [
+        "proven generation",
+        "sealed proof manifest",
+        "expected pointer revision"
+      ],
+      "non_responsibilities": [
+        "proof creation",
+        "consumer query execution",
+        "cross-table transactions"
+      ],
+      "outputs": [
+        "publication attempt",
+        "success or safe conflict"
+      ],
+      "owned_metadata": [
+        "publish attempt ID",
+        "expected revision",
+        "decision digest"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-PUBLISH-001",
+        "CB-PUBLISH-002",
+        "CB-PUBLISH-003"
+      ],
+      "responsibility": "Validate proof eligibility and issue one expected-revision publication attempt.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "dependencies": [
+        "publication_controller"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "ACTIVE_GENERATION_POINTER_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "active_generation_pointer",
+      "idempotency_identity": "active_generation_pointer:generation_id:operation_id",
+      "implementation_status": "PARTIAL_TERRAFORM",
+      "inputs": [
+        "conditional publication writes"
+      ],
+      "non_responsibilities": [
+        "generation proof",
+        "table storage",
+        "reader caching policy"
+      ],
+      "outputs": [
+        "active generation ID",
+        "pointer revision",
+        "table map digest"
+      ],
+      "owned_metadata": [
+        "product ID",
+        "generation ID",
+        "revision"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-PUBLISH-002",
+        "CB-PUBLISH-003",
+        "CB-PUBLISH-004"
+      ],
+      "responsibility": "Own the strongly consistent product-to-generation mapping and monotonically increasing revision.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-010",
+        "ADR-012"
+      ],
+      "dependencies": [
+        "active_generation_pointer",
+        "iceberg_generation_store"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "CONSUMER_RESOLVER_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "consumer_resolver",
+      "idempotency_identity": "consumer_resolver:generation_id:operation_id",
+      "implementation_status": "UNIMPLEMENTED",
+      "inputs": [
+        "product ID"
+      ],
+      "non_responsibilities": [
+        "publication eligibility",
+        "cross-table storage atomicity"
+      ],
+      "outputs": [
+        "pinned generation read context",
+        "resolution verification"
+      ],
+      "owned_metadata": [
+        "pointer revision",
+        "generation ID",
+        "table map digest"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-ISOLATION-001",
+        "CB-PUBLISH-002",
+        "CB-PUBLISH-004"
+      ],
+      "responsibility": "Resolve and pin one pointer revision, generation, and table map per logical read operation.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-012",
+        "ADR-015"
+      ],
+      "dependencies": [
+        "active_generation_pointer",
+        "consumer_resolver",
+        "proof_coordinator"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "ROLLBACK_RETIREMENT_CONTROLLER_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "rollback_retirement_controller",
+      "idempotency_identity": "rollback_retirement_controller:generation_id:operation_id",
+      "implementation_status": "UNIMPLEMENTED",
+      "inputs": [
+        "rollback request",
+        "reader pins",
+        "retention policy",
+        "generation eligibility"
+      ],
+      "non_responsibilities": [
+        "reverse data mutation",
+        "proof fabrication",
+        "external side-effect reversal"
+      ],
+      "outputs": [
+        "conditional rollback publication",
+        "retirement decision"
+      ],
+      "owned_metadata": [
+        "authorization",
+        "eligibility decision",
+        "retention decision"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-PUBLISH-004",
+        "CB-ISOLATION-002"
+      ],
+      "responsibility": "Authorize rollback publication and retire only unreferenced, non-active, evidence-preserved generations.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-014"
+      ],
+      "dependencies": [
+        "generation_registry",
+        "proof_coordinator",
+        "publication_controller"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "FUTURE_ORCHESTRATOR_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "future_orchestrator",
+      "idempotency_identity": "future_orchestrator:generation_id:operation_id",
+      "implementation_status": "UNIMPLEMENTED",
+      "inputs": [
+        "run intent",
+        "component outcomes"
+      ],
+      "non_responsibilities": [
+        "migration correctness",
+        "proof creation",
+        "gate bypass",
+        "implicit retries"
+      ],
+      "outputs": [
+        "auditable commands",
+        "workflow state"
+      ],
+      "owned_metadata": [
+        "run ID",
+        "command ID",
+        "component receipt IDs"
+      ],
+      "plane": "control",
+      "proof_owner": "part1-stage4",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-OPS-002",
+        "CB-OPS-003"
+      ],
+      "responsibility": "Coordinate commands, waits, retries, and approvals without overriding component verdicts.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    },
+    {
+      "adr_ids": [
+        "ADR-014",
+        "ADR-015"
+      ],
+      "dependencies": [
+        "s3_landing",
+        "proof_coordinator"
+      ],
+      "evidence_emitted": [
+        "generation_id",
+        "operation_id",
+        "input_digest",
+        "result"
+      ],
+      "failure_signal": "EVIDENCE_MANIFEST_STORE_FAILED",
+      "future_implementation_owner": "part2-runtime",
+      "id": "evidence_manifest_store",
+      "idempotency_identity": "evidence_manifest_store:generation_id:operation_id",
+      "implementation_status": "PARTIAL_TERRAFORM",
+      "inputs": [
+        "component receipts",
+        "proof records",
+        "repository identity"
+      ],
+      "non_responsibilities": [
+        "making capability claims",
+        "correcting failed runtime behavior"
+      ],
+      "outputs": [
+        "sealed evidence manifests",
+        "artifact digests"
+      ],
+      "owned_metadata": [
+        "manifest digest",
+        "producer",
+        "evidence label",
+        "lineage"
+      ],
+      "plane": "evidence",
+      "proof_owner": "part3-managed-proof",
+      "quarantine_behavior": "fail closed; preserve inputs, decision context, and evidence",
+      "requirement_ids": [
+        "CB-EVIDENCE-001",
+        "CB-EVIDENCE-002",
+        "CB-EVIDENCE-003",
+        "CB-EVIDENCE-004"
+      ],
+      "responsibility": "Retain immutable manifests that bind inputs, decisions, digests, commit, run, and limitations.",
+      "retry_boundary": "retry only after resolving the authoritative prior outcome"
+    }
+  ],
+  "planes": [
+    "data",
+    "control",
+    "evidence"
+  ],
+  "schema_version": "1.0.0"
+}

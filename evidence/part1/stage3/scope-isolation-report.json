@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.9",
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "reviewed_commit": "bd78898602bfae650eaae04589bcc98f64511bd8",
+  "procedure": "Compare the complete branch diff to the frozen manifest; scan changed paths, Markdown links, secrets, symlinks, dependency declarations, forbidden roots, and external-project literals.",
+  "expected_result": "Only authorized Stage 3 documentation, architecture, claim, validator, test, evidence, and status surfaces change.",
+  "checks": [
+    {
+      "name": "changed paths against allowed roots",
+      "result": "PASS",
+      "changed_paths_before_final_evidence": 55
+    },
+    {
+      "name": "runtime source unchanged",
+      "result": "PASS",
+      "paths_matching": 0
+    },
+    {
+      "name": "Terraform unchanged",
+      "result": "PASS",
+      "paths_matching": 0
+    },
+    {
+      "name": "GitHub workflows unchanged",
+      "result": "PASS",
+      "paths_matching": 0
+    },
+    {
+      "name": "dependency declarations unchanged",
+      "result": "PASS",
+      "paths_matching": 0
+    },
+    {
+      "name": "contracts and jobs unchanged",
+      "result": "PASS",
+      "paths_matching": 0
+    },
+    {
+      "name": "external-project literal scan",
+      "result": "PASS",
+      "matches": 0
+    },
+    {
+      "name": "secret-pattern scan",
+      "result": "PASS",
+      "matches": 0
+    },
+    {
+      "name": "changed Markdown local-link scan",
+      "result": "PASS",
+      "changed_markdown_files": 25,
+      "missing_targets": 0
+    },
+    {
+      "name": "repository symlink scan",
+      "result": "PASS",
+      "symlinks": 0
+    },
+    {
+      "name": "diff whitespace check",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS",
+  "limitations": [
+    "The final evidence/status commit adds only paths already authorized by evidence/part1/stage3/file-manifest.json.",
+    "GitHub-assigned PR and CI identifiers are recorded after publication."
+  ]
+}

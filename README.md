@@ -16,8 +16,9 @@ replay rejection, tombstones, failure rollback, schema gates, reconciliation, an
 compare-and-swap publication.
 
 <!-- claim:CB-CLAIM-002 -->
-The repository contains a design-only, partial AWS reference topology; it does not contain a
-complete deployable migration platform or managed runtime proof.
+The repository contains an accepted design-only architecture authority and a partial AWS
+reference topology; it does not contain a complete deployable migration platform or managed
+runtime proof.
 
 <!-- claim:CB-CLAIM-003 -->
 ChangeBridge makes no AWS throughput, availability, recovery-time, scale, or cost claim because
@@ -37,17 +38,11 @@ The local reference engine prevents publication before its modeled gates pass an
 active generation through a versioned compare-and-swap pointer. The managed multi-table behavior
 is still design-only; this is not a claim of atomic transactions across Iceberg tables.
 
-```mermaid
-flowchart TD
-    A["PostgreSQL source"] --> B["Snapshot at LSN S"]
-    A --> C["Transaction-preserving CDC (S,F]"]
-    B --> D["Immutable candidate generation"]
-    C --> D
-    D --> E{"Proof gates at F"}
-    E -->|pass| G["CAS active-generation pointer"]
-    E -->|fail| H["Quarantine and replay"]
-    G --> I["Consumers"]
-```
+![Proof-gated generation publication](architecture/diagrams/proof-publication.svg)
+
+The complete component, lifecycle, checkpoint-recovery, proof, publication, reader-pinning,
+rollback, and retirement semantics are defined by the
+[Stage 3 architecture authority](docs/architecture.md) and its fifteen accepted ADRs.
 
 ### What it changes in three mainstream patterns
 
@@ -75,9 +70,9 @@ and storage engines while owning migration correctness in a small control plane.
     reverse mutation.
 
 <!-- claim:CB-CLAIM-009 -->
-Rollback is currently a design contract supported only indirectly by the local generic
-compare-and-swap activation primitive; no explicit rollback API, scenario, or managed rollback
-proof exists.
+Rollback now has an accepted design-only eligibility and publication contract, while the local
+engine still provides only a generic compare-and-swap activation primitive; no explicit rollback
+API, consumer-resolution scenario, or managed rollback proof exists.
 
 ## Run it
 

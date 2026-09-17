@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 3,
+  "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "result": "PASS",
+  "sources": [
+    {"path": "COMPLETION_CONTRACT.md", "authority": "NORMATIVE_COMPLETION", "stage3_action": "READ_ONLY_INPUT"},
+    {"path": "requirements/completion-requirements.json", "authority": "NORMATIVE_REQUIREMENTS", "stage3_action": "READ_ONLY_INPUT"},
+    {"path": "requirements/requirement-proof-matrix.json", "authority": "PROOF_OWNERSHIP", "stage3_action": "READ_ONLY_INPUT"},
+    {"path": "claims/claims.json", "authority": "PUBLIC_CLAIMS", "stage3_action": "REBIND_ARCHITECTURE_CLAIMS"},
+    {"path": "README.md", "authority": "PUBLIC_OVERVIEW", "stage3_action": "ALIGN"},
+    {"path": "docs/architecture.md", "authority": "LEGACY_ARCHITECTURE_NARRATIVE", "stage3_action": "REPLACE_WITH_AUTHORITY_INDEX"},
+    {"path": "docs/runbook.md", "authority": "FUTURE_MANAGED_RUNBOOK", "stage3_action": "ALIGN_SEMANTICS"},
+    {"path": "docs/failure-lab.md", "authority": "LOCAL_FAILURE_EVIDENCE", "stage3_action": "READ_ONLY_INPUT"},
+    {"path": "src/changebridge/model.py", "authority": "LOCAL_REFERENCE_BEHAVIOR", "stage3_action": "READ_ONLY_COMPATIBILITY_INPUT"},
+    {"path": "src/changebridge/engine.py", "authority": "LOCAL_REFERENCE_BEHAVIOR", "stage3_action": "READ_ONLY_COMPATIBILITY_INPUT"},
+    {"path": "src/changebridge/cutover.py", "authority": "LOCAL_REFERENCE_BEHAVIOR", "stage3_action": "READ_ONLY_COMPATIBILITY_INPUT"},
+    {"path": "src/changebridge/reconciliation.py", "authority": "LOCAL_REFERENCE_BEHAVIOR", "stage3_action": "READ_ONLY_COMPATIBILITY_INPUT"},
+    {"path": "src/changebridge/simulator.py", "authority": "LOCAL_REFERENCE_EVIDENCE", "stage3_action": "READ_ONLY_INPUT"},
+    {"path": "jobs/spark_iceberg_apply.py", "authority": "INTERFACE_ADAPTER", "stage3_action": "READ_ONLY_GAP_INPUT"},
+    {"path": "infra/terraform/main.tf", "authority": "PARTIAL_TOPOLOGY", "stage3_action": "READ_ONLY_GAP_INPUT"},
+    {"path": ".github/workflows/ci.yml", "authority": "QUALITY_GATE", "stage3_action": "READ_ONLY"},
+    {"path": "evidence/part1/stage1/", "authority": "REPOSITORY_TRUTH_EVIDENCE", "stage3_action": "READ_ONLY"},
+    {"path": "evidence/part1/stage2/", "authority": "COMPLETION_AUTHORITY_EVIDENCE", "stage3_action": "READ_ONLY"}
+  ],
+  "limitations": [
+    "Repository behavior is evidence of the local reference engine only.",
+    "Terraform and managed-service narratives are not treated as deployed capability."
+  ]
+}

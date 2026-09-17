@@ -1,0 +1,67 @@
+{
+  "aggregation_rules": [
+    "every required gate appears exactly once",
+    "every gate result is PASS",
+    "every gate binds the same generation and frontier",
+    "no gate is stale or invalidated",
+    "all input digests and producers are present",
+    "sealed proof manifest is immutable"
+  ],
+  "authority": "ChangeBridge Part 1 Stage 3",
+  "gate_fields": [
+    "gate_id",
+    "generation_id",
+    "frontier",
+    "input_digests",
+    "producer",
+    "producer_version",
+    "result",
+    "limitations",
+    "invalidation_conditions"
+  ],
+  "model_id": "frontier_bound_proof",
+  "rejection_reasons": [
+    "missing gate",
+    "failed gate",
+    "stale gate",
+    "frontier mismatch",
+    "generation mismatch",
+    "unbound input",
+    "invalid evidence label"
+  ],
+  "required_gates": [
+    {
+      "id": "continuity",
+      "owner": "checkpoint_ledger"
+    },
+    {
+      "id": "schema",
+      "owner": "schema_coordinator"
+    },
+    {
+      "id": "deletes",
+      "owner": "migration_apply_engine"
+    },
+    {
+      "id": "reconciliation",
+      "owner": "reconciliation_coordinator"
+    },
+    {
+      "id": "lag",
+      "owner": "future_orchestrator"
+    },
+    {
+      "id": "pre_migration",
+      "owner": "future_orchestrator"
+    },
+    {
+      "id": "rollback_readiness",
+      "owner": "rollback_retirement_controller"
+    },
+    {
+      "id": "evidence_integrity",
+      "owner": "evidence_manifest_store"
+    }
+  ],
+  "schema_version": "1.0.0"
+}
