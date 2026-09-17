@@ -37,7 +37,17 @@
     },
     "diff_check": "PASS",
     "secret_pattern_scan": "PASS",
-    "ci_required": ["ruff check .", "mypy src", "pytest", "deterministic simulator evidence"]
+    "ci_required": ["ruff check .", "mypy src", "pytest", "deterministic simulator evidence"],
+    "ci_history": [
+      {
+        "head": "8013fb67b1b9de47867668ad6ef3b4e4514a3db3",
+        "run_id": 35203448962,
+        "result": "FAIL",
+        "failed_gate": "ruff check .",
+        "root_cause": "Two overlong lines and one simplifiable nested conditional in new Stage 2 Python files.",
+        "response": "Correct the three lint findings without exclusions or configuration changes, then rerun all dependent gates on the new exact head."
+      }
+    ]
   },
   "limitations": [
     "pytest, Ruff, and mypy are not installed in the local environment and were not installed because dependency installation is outside Stage 2 authorization.",

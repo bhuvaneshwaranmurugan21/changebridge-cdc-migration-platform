@@ -32,9 +32,14 @@ def load_json(relative: str) -> dict[str, Any]:
 def baseline() -> tuple[dict[str, Any], dict[str, Any], dict[str, str], str]:
     requirements = load_json("requirements/completion-requirements.json")
     claims = load_json("claims/claims.json")
+    surface_paths = {
+        surface["path"]
+        for claim in claims["claims"]
+        for surface in claim["public_surfaces"]
+    }
     surfaces = {
         path: (ROOT / path).read_text(encoding="utf-8")
-        for path in {surface["path"] for claim in claims["claims"] for surface in claim["public_surfaces"]}
+        for path in surface_paths
     }
     failure_lab = (ROOT / "docs/failure-lab.md").read_text(encoding="utf-8")
     return requirements, claims, surfaces, failure_lab

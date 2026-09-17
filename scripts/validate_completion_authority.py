@@ -342,9 +342,10 @@ def validate_claims(
                 if path.startswith("future:"):
                     raise AuthorityError("CBV035_FUTURE_PROOF_FOR_CURRENT_CLAIM", claim["id"])
                 _safe_existing_path(root, path, "CBV036_MISSING_OR_UNSAFE_CLAIM_PROOF", claim["id"])
-        if label == "AWS_VERIFIED":
-            if not run or not any(path.startswith("evidence/managed/") for path in proof_refs):
-                raise AuthorityError("CBV037_UNSUPPORTED_AWS_CLAIM", claim["id"])
+        if label == "AWS_VERIFIED" and (
+            not run or not any(path.startswith("evidence/managed/") for path in proof_refs)
+        ):
+            raise AuthorityError("CBV037_UNSUPPORTED_AWS_CLAIM", claim["id"])
         if label == "MEASURED":
             measurement = claim.get("measurement")
             if not isinstance(measurement, dict) or not {
@@ -385,7 +386,8 @@ def validate_claims(
                     ).read_text(encoding="utf-8")
             marker = f"<!-- claim:{claim['id']} -->"
             normalized_surface = normalized_text(surfaces[path])
-            if marker not in surfaces[path] or normalized_text(claim["approved_wording"]) not in normalized_surface:
+            wording_present = normalized_text(claim["approved_wording"]) in normalized_surface
+            if marker not in surfaces[path] or not wording_present:
                 raise AuthorityError("CBV042_PUBLIC_WORDING_DRIFT", f"{claim['id']} in {path}")
 
     marker_ids: set[str] = set()
