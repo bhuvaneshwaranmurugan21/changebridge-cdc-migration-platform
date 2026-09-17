@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "requirement_count": 39,
+  "completion_conditions_covered": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+  "invariants_covered": ["boundary", "checkpoint_coupling", "conflict_detection", "continuity", "delete_correctness", "evidence_binding", "failure_atomicity", "generation_isolation", "idempotency", "order", "proof_before_publication", "replay_determinism", "rollback_safety", "schema_safety", "single_publisher_cas", "stale_writer_rejection"],
+  "limitations": [
+    "Coverage proves every source obligation is represented; it does not assert that deferred runtime requirements are implemented."
+  ]
+}

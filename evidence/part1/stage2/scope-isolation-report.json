@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "checks": {
+    "manifest_matches_diff": true,
+    "application_behavior_unchanged": true,
+    "infrastructure_behavior_unchanged": true,
+    "dependencies_unchanged": true,
+    "workflows_unchanged": true,
+    "cross_project_evidence_absent": true,
+    "credentials_absent": true,
+    "aws_operations": "NONE"
+  },
+  "reviewed_diff_base": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "behavior_paths_changed": [],
+  "dependency_paths_changed": [],
+  "workflow_paths_changed": [],
+  "limitations": [
+    "The cross-project validator negative fixture constructs its forbidden token dynamically; no unrelated-project name, proof, path, or artifact is committed by Stage 2.",
+    "The secret scan is pattern-based and is paired with manual semantic diff review."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {"name": "unknown_label", "expected_code": "CBV012_UNKNOWN_EVIDENCE_LABEL", "mutation": "unknown_label"},
+    {"name": "missing_requirement_field", "expected_code": "CBV005_INVALID_REQUIREMENT_FIELDS", "mutation": "missing_requirement_field"},
+    {"name": "duplicate_requirement", "expected_code": "CBV009_DUPLICATE_REQUIREMENT_ID", "mutation": "duplicate_requirement"},
+    {"name": "duplicate_claim", "expected_code": "CBV026_DUPLICATE_CLAIM_ID", "mutation": "duplicate_claim"},
+    {"name": "unknown_dependency", "expected_code": "CBV006_UNKNOWN_REQUIREMENT_DEPENDENCY", "mutation": "unknown_dependency"},
+    {"name": "dependency_cycle", "expected_code": "CBV007_REQUIREMENT_CYCLE", "mutation": "dependency_cycle"},
+    {"name": "missing_failure_condition", "expected_code": "CBV013_MISSING_FAILURE_CONDITION", "mutation": "missing_failure_condition"},
+    {"name": "future_proof_for_satisfied_requirement", "expected_code": "CBV017_FUTURE_PROOF_FOR_SATISFIED_REQUIREMENT", "mutation": "future_proof_for_satisfied_requirement"},
+    {"name": "missing_requirement_path", "expected_code": "CBV018_MISSING_OR_UNSAFE_REQUIREMENT_PATH", "mutation": "missing_requirement_path"},
+    {"name": "unsafe_claim_path", "expected_code": "CBV036_MISSING_OR_UNSAFE_CLAIM_PROOF", "mutation": "unsafe_claim_path"},
+    {"name": "cross_project_reference", "expected_code": "CBV023_CROSS_PROJECT_REFERENCE", "mutation": "cross_project_reference"},
+    {"name": "malformed_commit", "expected_code": "CBV034_INVALID_COMMIT_BINDING", "mutation": "malformed_commit"},
+    {"name": "unbound_numeric_claim", "expected_code": "CBV040_UNBOUND_NUMERIC_CLAIM", "mutation": "unbound_numeric_claim"},
+    {"name": "unsupported_aws_claim", "expected_code": "CBV037_UNSUPPORTED_AWS_CLAIM", "mutation": "unsupported_aws_claim"},
+    {"name": "unsupported_measured_claim", "expected_code": "CBV038_UNBOUND_MEASUREMENT", "mutation": "unsupported_measured_claim"},
+    {"name": "unsupported_extrapolation", "expected_code": "CBV039_UNBOUND_EXTRAPOLATION", "mutation": "unsupported_extrapolation"},
+    {"name": "public_wording_drift", "expected_code": "CBV042_PUBLIC_WORDING_DRIFT", "mutation": "public_wording_drift"},
+    {"name": "unregistered_public_claim", "expected_code": "CBV043_UNREGISTERED_PUBLIC_CLAIM", "mutation": "unregistered_public_claim"},
+    {"name": "orphan_stage1_claim", "expected_code": "CBV044_ORPHAN_STAGE1_CLAIM", "mutation": "orphan_stage1_claim"},
+    {"name": "failure_lab_mismatch", "expected_code": "CBV045_FAILURE_LAB_PARITY", "mutation": "failure_lab_mismatch"},
+    {"name": "volatile_canonical_field", "expected_code": "CBV021_VOLATILE_CANONICAL_FIELD", "mutation": "volatile_canonical_field"},
+    {"name": "unknown_semantic_field", "expected_code": "CBV024_INVALID_CLAIM_FIELDS", "mutation": "unknown_semantic_field"}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "stage1_public_claim_count": 10,
+  "registered_claim_count": 10,
+  "dispositions": [
+    {"source": "PC-001", "claim": "CB-CLAIM-001", "decision": "CORRECTED"},
+    {"source": "PC-002", "claim": "CB-CLAIM-002", "decision": "DOWNGRADED"},
+    {"source": "PC-003", "claim": "CB-CLAIM-003", "decision": "FROZEN"},
+    {"source": "PC-004", "claim": "CB-CLAIM-004", "decision": "CORRECTED"},
+    {"source": "PC-005", "claim": "CB-CLAIM-005", "decision": "CORRECTED"},
+    {"source": "PC-006", "claim": "CB-CLAIM-006", "decision": "DOWNGRADED"},
+    {"source": "PC-007", "claim": "CB-CLAIM-007", "decision": "FROZEN"},
+    {"source": "PC-008", "claim": "CB-CLAIM-008", "decision": "DOWNGRADED"},
+    {"source": "PC-009", "claim": "CB-CLAIM-009", "decision": "DOWNGRADED"},
+    {"source": "PC-010", "claim": "CB-CLAIM-010", "decision": "CORRECTED"}
+  ],
+  "unsupported_claims_silently_removed": 0,
+  "limitations": [
+    "UNCLAIMED items remain visible as limitations rather than being hidden."
+  ]
+}

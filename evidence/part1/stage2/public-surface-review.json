@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "registered_claims": 10,
+  "legacy_claim_registry": "RETIRED",
+  "corrections": [
+    "Spark adapter is explicitly not an Iceberg mutation engine.",
+    "Step Functions is explicitly unimplemented target design.",
+    "Terraform is explicitly partial design/static evidence.",
+    "Failure-lab documentation names all 13 executable checks.",
+    "Rollback is explicitly design-only pending an API and scenario.",
+    "Managed performance, recovery, scale, availability, and cost remain unclaimed."
+  ],
+  "limitations": [
+    "The validator enforces registered markers and approved wording on declared repository surfaces; repository-hosted metadata outside the tree requires separate review."
+  ]
+}

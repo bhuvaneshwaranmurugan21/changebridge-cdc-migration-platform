@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "canonical_report_sha256": "1828cad3c5927bf41700cb91ff607600a2164f21e6209b7eb9464f11565b4722",
+  "runs": [
+    {
+      "ordinal": 1,
+      "command": "python scripts/validate_completion_authority.py --check-rendered",
+      "stdout_sha256": "80bf49b01bb9ade8f6428978473684799ce71230daba7fd9f5b5353e20b47dbc",
+      "result": "PASS"
+    },
+    {
+      "ordinal": 2,
+      "command": "python scripts/validate_completion_authority.py --check-rendered",
+      "stdout_sha256": "80bf49b01bb9ade8f6428978473684799ce71230daba7fd9f5b5353e20b47dbc",
+      "result": "PASS"
+    }
+  ],
+  "byte_identical": true,
+  "limitations": [
+    "The temporary output paths and wall-clock metadata were deliberately excluded from canonical output."
+  ]
+}

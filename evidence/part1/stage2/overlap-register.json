@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "result": "PASS",
+  "historical_pull_request": {
+    "number": 1,
+    "title": "Harden ChangeBridge AWS evidence and interview boundary",
+    "state_at_stage_start": "OPEN_DRAFT",
+    "head_branch": "agent/production-grade-foundation",
+    "head_commit": "62cefd896cde869ba04bf7dc34f350f9e51cbd44",
+    "base_at_creation": "6081230f222b6efb2468a010b4dddfb13b90e2f6",
+    "changed_files": 11,
+    "overlap_paths": ["docs/claims.yaml"],
+    "authority": "NON_AUTHORITATIVE",
+    "planned_disposition": "CLOSE_AS_SUPERSEDED_AFTER_STAGE2_REPLACEMENT_IS_COMMITTED"
+  },
+  "limitations": [
+    "No content was copied or cherry-picked from PR #1.",
+    "Closing the PR does not delete its historical branch or commits."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
+  "base_tree": "0c098fa83c8fad316210d7f141444fb1f091b416",
+  "branch": "part1-stage2-completion-contract",
+  "observed_at_utc": "2026-09-17T08:43:32Z",
+  "repository_identity": "VERIFIED",
+  "default_branch": "main",
+  "local_head_matches_remote_main": true,
+  "worktree_before_stage": "CLEAN",
+  "repository_permissions": {"admin": true, "push": true, "pull": true},
+  "branch_protected": false,
+  "rulesets": [],
+  "result": "PASS",
+  "limitations": [
+    "This entry envelope proves repository and GitHub state at Stage 2 start only.",
+    "No AWS operation was performed."
+  ]
+}
