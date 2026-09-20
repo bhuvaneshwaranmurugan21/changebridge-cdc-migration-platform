@@ -272,6 +272,19 @@
             "criteria_total": {"type": "integer", "minimum": 1},
             "criteria_passed": {"type": "integer", "minimum": 0},
             "criteria_pending": {"type": "integer", "minimum": 0},
+            "criteria": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["id", "result", "evidence"],
+                "properties": {
+                  "id": {"type": "string", "pattern": "^ST4-AC-[0-9]{2}$"},
+                  "result": {"enum": ["PASS", "PENDING"]},
+                  "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+                }
+              }
+            },
             "result": {"enum": ["PASS", "PENDING", "BLOCKED"]},
             "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
           }

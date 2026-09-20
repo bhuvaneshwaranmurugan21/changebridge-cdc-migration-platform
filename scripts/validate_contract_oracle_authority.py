@@ -380,11 +380,13 @@ def validate_evidence(root: Path) -> None:
     missing = REQUIRED_EVIDENCE - present
     if missing:
         fail("CB4V033_MISSING_STAGE_EVIDENCE", repr(sorted(missing)))
-    from changebridge.contracts import verify_artifact_manifest
+    from changebridge.contracts import validate_control_record, verify_artifact_manifest
 
     manifest = load_json(stage_root / "artifact-manifest.json")
     verify_artifact_manifest(root, manifest)
     receipt = load_json(stage_root / "stage-receipt.json")
+    control_schema = load_json(root / "contracts/control/control-records-v1.schema.json")
+    validate_control_record(receipt, control_schema)
     if receipt["criteria_total"] != 40 or receipt["criteria_passed"] != 37:
         fail("CB4V034_INVALID_CANDIDATE_RECEIPT", "expected 37 local passes")
     if receipt["criteria_pending"] != 3 or receipt["result"] != "PENDING":

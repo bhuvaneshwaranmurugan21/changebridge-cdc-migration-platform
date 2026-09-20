@@ -467,7 +467,7 @@
       "consumers": ["reviewer", "next-stage-controller"],
       "compatibility_class": "STRICT_MAJOR_ADDITIVE_MINOR",
       "required_fields": ["part", "stage", "base_commit", "candidate_commit", "artifact_manifest_digest", "criteria_total", "criteria_passed", "criteria_pending", "result", "limitations"],
-      "optional_fields": [],
+      "optional_fields": ["criteria"],
       "conditional_fields": [],
       "unknown_field_policy": "REJECT",
       "canonicalization_profile": "changebridge-canonical-json/1.0.0",

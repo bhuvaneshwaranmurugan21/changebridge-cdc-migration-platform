@@ -344,6 +344,12 @@ def validate_control_record(record: Mapping[str, Any], schema: Mapping[str, Any]
         expected = "PASS" if record["criteria_pending"] == 0 else "PENDING"
         if record["result"] != expected:
             fail("CBCTL011_RECEIPT_RESULT_MISMATCH", str(record["record_id"]))
+        criteria = record.get("criteria")
+        if criteria is not None:
+            expected_ids = {f"ST4-AC-{index:02d}" for index in range(1, 41)}
+            ids = [item.get("id") for item in criteria]
+            if len(ids) != record["criteria_total"] or set(ids) != expected_ids:
+                fail("CBCTL012_RECEIPT_CRITERIA_MISMATCH", str(record["record_id"]))
 
 
 def verify_artifact_manifest(root: Path, manifest: Mapping[str, Any]) -> None:

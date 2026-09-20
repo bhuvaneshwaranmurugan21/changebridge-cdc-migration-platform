@@ -27,6 +27,12 @@ contracts, twelve control/proof/publication/evidence record authorities, all six
 oracles, a preserved thirteen-check historical failure laboratory, an adversarial corpus, ten test
 layers, and a fail-closed cross-authority validator.
 
+Local validation passes with Ruff, strict mypy, 106 tests and 87.40% coverage, deterministic
+generated views, all predecessor validators, all thirteen preserved simulator checks, and exact
+diagnostics for the adversarial and validator-mutation corpora. The result remains pending until
+exact-head CI, policy-compliant merge, merged-main verification, and the external continuation
+checkpoint pass.
+
 The four Stage 4-owned requirements remain `PARTIAL`: local contract and oracle proof now exists,
 but runtime adapters and managed execution are not proven. No claim is promoted beyond
 `DESIGN_ONLY` or bounded `LOCAL_VERIFIED`.
