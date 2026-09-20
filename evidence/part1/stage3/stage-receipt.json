@@ -11,13 +11,13 @@
   "architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
   "architecture_freeze_tree": "13097d3cae42b120bc13add818ae1c7ed7b8dcc5",
   "locally_validated_commit": "bd78898602bfae650eaae04589bcc98f64511bd8",
-  "artifact_manifest_sha256": "0a2920f5bd75a1558b1839da06d8b3af186060fc4dfc39f0d91d8bb6fd4f3038",
+  "artifact_manifest_sha256": "be248e6bf6780bbc2f22ea1e7688bbdaa658a4d7632a8d328b60f2ceb1688a39",
   "result": "PENDING",
   "status": "STAGE3_ARCHITECTURE_AUTHORITY_PENDING",
   "acceptance": {
     "criteria_total": 36,
-    "criteria_passed_locally": 31,
-    "criteria_pending_external_closure": 5,
+    "criteria_passed_locally": 32,
+    "criteria_pending_external_closure": 4,
     "criteria": [
       {
         "id": "ST3-AC-01",
@@ -214,10 +214,9 @@
       },
       {
         "id": "ST3-AC-27",
-        "result": "PENDING",
+        "result": "PASS",
         "evidence": [
-          "evidence/part1/stage3/diagram-render-report.json",
-          "external:repository-host-render"
+          "evidence/part1/stage3/diagram-render-report.json"
         ]
       },
       {
@@ -297,7 +296,7 @@
     "merge_method": "repository policy; expected-head guarded",
     "merged_main": null,
     "post_merge_ci": null,
-    "binding_model": "The exact PR head, repository-host diagram render, merge commit/tree, and CI identities are recorded after GitHub assigns them."
+    "binding_model": "The exact PR head, merge commit/tree, and CI identities are recorded after GitHub assigns them."
   },
   "limitations": [
     "This candidate receipt is not a completion decision until all 36 criteria and post-merge checks pass.",

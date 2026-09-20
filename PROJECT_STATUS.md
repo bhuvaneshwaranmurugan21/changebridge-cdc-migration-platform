@@ -28,9 +28,10 @@ corrected architecture-sensitive claims; deterministic SVG views; and a fail-clo
 46 exact-diagnostic negative cases.
 
 Local validation passes twice: Ruff, strict mypy, 82 tests with 88.92% application coverage, the
-Stage 2 validator, the Stage 3 validator, generated-view drift checks, and all 13 deterministic
-simulator checks. This remains a candidate until exact-head CI, repository-host SVG rendering,
-policy-compliant merge, merged-main CI, and the external continuation checkpoint pass.
+Stage 2 validator, the Stage 3 validator, generated-view drift checks, authorized CairoSVG
+rasterization and visual inspection, and all 13 deterministic simulator checks. This remains a
+candidate until exact-head CI, policy-compliant merge, merged-main CI, and the external
+continuation checkpoint pass.
 
 No application behavior, Terraform behavior, AWS resource, workflow, dependency declaration,
 performance experiment, deployment, release, tag, history, or other project is changed by Stage 3.
@@ -38,7 +39,7 @@ The architecture is `DESIGN_ONLY`; its repository consistency checks are `LOCAL_
 
 ## Next permitted action
 
-Publish the exact candidate branch, open the Stage 3 pull request, inspect repository-host diagram
-rendering, require CI on the exact PR head, and merge only if every remaining Stage 3 criterion
-passes. Do not begin Part 1 Stage 4 until the external Stage 3 continuation checkpoint identifies
-the exact merged commit and tree.
+Publish the evidence-only render closure to the existing Stage 3 pull request, require CI on the
+new exact PR head, and merge only if every remaining Stage 3 criterion passes. Do not begin Part 1
+Stage 4 until the external Stage 3 continuation checkpoint identifies the exact merged commit and
+tree.

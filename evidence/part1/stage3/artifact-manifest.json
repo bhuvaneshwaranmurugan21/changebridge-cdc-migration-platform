@@ -17,7 +17,7 @@
     },
     {
       "path": "PROJECT_STATUS.md",
-      "sha256": "c5a797255d9bcfcf5ed0edca2bf43a62aaa86eaac8366f953688954a6a4aa5df"
+      "sha256": "72fb7d6993059321a5401f87fe5cc31502b058f2705945514d01f2b7fbf293ec"
     },
     {
       "path": "README.md",
@@ -189,7 +189,7 @@
     },
     {
       "path": "evidence/part1/stage3/dependency-environment.json",
-      "sha256": "699424eec4277e2a2ac27c5724ee37ec8f751408e70b619ae171c2b766fb5047"
+      "sha256": "4ff3c08456e258e7d6494779d00ace87d10b587f3739e4433dd830c2594c9cea"
     },
     {
       "path": "evidence/part1/stage3/determinism-report.json",
@@ -197,7 +197,7 @@
     },
     {
       "path": "evidence/part1/stage3/diagram-render-report.json",
-      "sha256": "d60bead9c667723ef6ecd54020a914d89690cc0332d3f607e9216ae923db0557"
+      "sha256": "8662952ec87be5756352bc5e03cd9464268c7a96ed7aced257ae42791e4d6e90"
     },
     {
       "path": "evidence/part1/stage3/execution-envelope.json",

@@ -6,45 +6,66 @@
   "stage": 3,
   "producing_substage": "3.8",
   "evidence_label": "LOCAL_VERIFIED",
-  "procedure": "Regenerate SVG views from machine-readable authorities, compare committed bytes, parse each SVG as XML, validate declared dimensions and semantic text/shape content, then inspect repository-host rendering on the published exact head.",
-  "expected_result": "All four diagrams are deterministic, structurally renderable SVG documents and render on the published repository head.",
+  "procedure": "Regenerate SVG views from machine-readable authorities, compare committed bytes, parse each SVG as XML, validate declared dimensions and semantic text/shape content, rasterize the exact committed bytes with separately authorized CairoSVG==2.8.2, and visually inspect the rendered output.",
+  "expected_result": "All four diagrams are deterministic and rasterize at their declared dimensions with readable labels, complete shapes and arrows, and no clipping or overlap.",
   "local_checks": {
     "deterministic_generation": "PASS",
     "byte_drift": "NONE",
     "xml_parse": "PASS",
     "declared_dimensions": "PASS",
-    "semantic_nodes": "PASS"
+    "semantic_nodes": "PASS",
+    "cairosvg_rasterization": "PASS",
+    "visual_inspection": "PASS",
+    "repository_worktree_unchanged": "PASS"
+  },
+  "renderer": {
+    "package": "CairoSVG",
+    "version": "2.8.2",
+    "environment": "disposable /tmp virtual environment",
+    "repository_dependency_change": false
   },
   "diagrams": [
     {
       "path": "architecture/diagrams/checkpoint-recovery.svg",
       "width": 1200,
       "height": 600,
-      "sha256": "7ba72ab850d354feb580588b3c51d5dd9c0a5517b8693d069797505782b490cf"
+      "sha256": "7ba72ab850d354feb580588b3c51d5dd9c0a5517b8693d069797505782b490cf",
+      "rendered_png_sha256": "43096e0e0cc6e20097c0ca5d4aa81b0542f5fab8301bf8f0898f67b87e2710f7",
+      "inspection": "PASS"
     },
     {
       "path": "architecture/diagrams/generation-lifecycle.svg",
       "width": 1200,
       "height": 784,
-      "sha256": "539a8e942cc31eccf2789aa0d153acff5ca6cfd911afa59f1dbe7202043dd8f8"
+      "sha256": "539a8e942cc31eccf2789aa0d153acff5ca6cfd911afa59f1dbe7202043dd8f8",
+      "rendered_png_sha256": "11f4da431d8576e60c2decd71e026fbbae36bd4da9c69923f557d94d7f4ec1e3",
+      "inspection": "PASS"
     },
     {
       "path": "architecture/diagrams/proof-publication.svg",
       "width": 1200,
       "height": 600,
-      "sha256": "b92858e817b1ac5934e322c2af4ee7a128903bc642df044042e4125db497bf0d"
+      "sha256": "b92858e817b1ac5934e322c2af4ee7a128903bc642df044042e4125db497bf0d",
+      "rendered_png_sha256": "d2cf97a2906ee37486e6b35397b6f2383b6c9679895f7a42464dde1f81a3a7b1",
+      "inspection": "PASS"
     },
     {
       "path": "architecture/diagrams/responsibility-planes.svg",
       "width": 1500,
       "height": 740,
-      "sha256": "8738d73adc703633a49e2461bae22dc53ae82585014becdfd505f8a6bb2cba86"
+      "sha256": "8738d73adc703633a49e2461bae22dc53ae82585014becdfd505f8a6bb2cba86",
+      "rendered_png_sha256": "0618dfe23e16646b4c2d7bb9ef93022c26976ba521acd68882a9223b10e75c75",
+      "inspection": "PASS"
     }
   ],
-  "repository_host_render": "PENDING_PUBLICATION",
-  "result": "PENDING_EXTERNAL_CLOSURE",
+  "exact_head_binding": {
+    "published_head_before_evidence_update": "689c0e8b7102a2e5480bd9e390189d221161c9a8",
+    "published_tree": "084228d8a7ead5510723f8ef285f80b471f9c9bb",
+    "binding": "The rendered SVG digests match the four SVG digests in the reviewed and published tree. This evidence-only update changes no SVG bytes."
+  },
+  "result": "PASS",
   "limitations": [
-    "The available local raster tool lacks its SVG delegate; no undeclared package was installed.",
-    "Repository-host rendering is an exact-head publication check and does not alter the diagram bytes."
+    "Rasterization proves presentation of the committed diagrams, not implementation of the managed architecture.",
+    "Rendered PNGs are disposable inspection outputs and are not repository artifacts."
   ]
 }

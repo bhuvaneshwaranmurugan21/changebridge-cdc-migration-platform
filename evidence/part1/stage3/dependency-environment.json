@@ -7,8 +7,8 @@
   "producing_substage": "3.1",
   "evidence_label": "LOCAL_VERIFIED",
   "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
-  "procedure": "Create a disposable virtual environment and install the repository-declared .[dev] extra only.",
-  "expected_result": "The isolated environment contains only the project editable install and transitive packages selected from declared development dependencies; no new dependency declaration is introduced.",
+  "procedure": "Create one disposable validation environment containing only the repository-declared .[dev] extra, then create a second disposable render environment containing separately authorized CairoSVG==2.8.2 and its transitive dependencies.",
+  "expected_result": "Validation uses only declared development dependencies; rendering uses only the separately authorized pinned renderer; no repository dependency declaration is changed.",
   "environment": {
     "path_class": "disposable /tmp virtual environment",
     "python": "3.12.14",
@@ -21,12 +21,30 @@
       "mypy": "2.3.1"
     }
   },
+  "authorized_render_environment": {
+    "path_class": "disposable /tmp virtual environment",
+    "python": "3.12.14",
+    "direct_renderer": "CairoSVG==2.8.2",
+    "resolved_transitive_dependencies": [
+      "cairocffi==1.7.1",
+      "cffi==2.1.1",
+      "cssselect2==0.10.1",
+      "defusedxml==0.7.1",
+      "pillow==12.3.0",
+      "pycparser==3.0",
+      "tinycss2==1.5.1",
+      "webencodings==0.6.1"
+    ],
+    "purpose": "Rasterize and inspect the four committed Stage 3 SVG diagrams only"
+  },
   "repository_dependency_file_changed": false,
-  "undeclared_package_installed_for_stage3": false,
+  "undeclared_package_installed_in_validation_environment": false,
+  "separately_authorized_renderer_installed": true,
   "mermaid_renderer_installed": false,
   "result": "PASS",
   "limitations": [
     "Local validation used Python 3.12; repository CI independently validates the supported Python 3.11 configuration.",
-    "Package resolution follows the existing lower-bounded declarations and is not a lock-file claim."
+    "Package resolution for the repository-declared development extra follows existing lower bounds and is not a lock-file claim.",
+    "The renderer environment is disposable, is not part of project dependencies, and authorizes no runtime use."
   ]
 }
