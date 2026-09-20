@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.5",
+  "evidence_label": "LOCAL_VERIFIED",
+  "architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
+  "review_procedure": "Map observed reference-engine concepts to the accepted target lifecycle without changing runtime behavior or overstating equivalence.",
+  "expected_result": "Every current state has an honest target interpretation and every target-only state remains an explicit implementation gap.",
+  "mappings": [
+    {"current": "Generation(status=loading)", "target": ["CREATED", "SNAPSHOT_LOADING", "CDC_APPLYING"], "compatibility": "PARTIAL", "reason": "The local status collapses registration, snapshot, and CDC phases."},
+    {"current": "Generation(status=candidate)", "target": ["SEALED", "PROVING"], "compatibility": "PARTIAL", "reason": "The local candidate state does not encode sealing or a separate proof attempt."},
+    {"current": "Generation(status=ready)", "target": ["PROVEN"], "compatibility": "PARTIAL", "reason": "The local gate is narrower than the eight-gate immutable proof manifest."},
+    {"current": "generation pointer selected by compare-and-swap", "target": ["PUBLISHED"], "compatibility": "PARTIAL", "reason": "The pointer models selection but lacks target publication receipts and post-publish consumer verification."},
+    {"current": "prior pointer restored through generic compare-and-swap", "target": ["ROLLED_BACK"], "compatibility": "PARTIAL", "reason": "No explicit rollback eligibility or authorization API exists."},
+    {"current": "Generation(status=retired)", "target": ["RETIRED"], "compatibility": "PARTIAL", "reason": "The state name exists, while retention, reader-pin, and rollback-required guards are not enforced."},
+    {"current": "no terminal rejection lifecycle", "target": ["REJECTED"], "compatibility": "ABSENT", "reason": "Target rejection requires a terminal audited state and successor generation for repair."}
+  ],
+  "unchanged_runtime_files": [
+    "src/changebridge/model.py",
+    "src/changebridge/engine.py",
+    "src/changebridge/cutover.py",
+    "src/changebridge/reconciliation.py",
+    "src/changebridge/schema.py",
+    "src/changebridge/simulator.py"
+  ],
+  "result": "PASS",
+  "limitations": [
+    "A mapping is not implementation proof.",
+    "Stage 3 makes no runtime behavior change."
+  ]
+}

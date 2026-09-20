@@ -1,0 +1,105 @@
+{
+  "authority": "ChangeBridge Part 1 Stage 3",
+  "initial_state": "ELIGIBILITY_CHECK",
+  "machine_id": "cas_publication",
+  "pointer_fields": [
+    "product_id",
+    "generation_id",
+    "revision",
+    "table_map_digest",
+    "proof_manifest_digest",
+    "publication_attempt_id"
+  ],
+  "schema_version": "1.0.0",
+  "states": [
+    {
+      "id": "ELIGIBILITY_CHECK",
+      "meaning": "proof, readability, table map, retention, and expected revision are checked"
+    },
+    {
+      "id": "CAS_ATTEMPT",
+      "meaning": "one conditional pointer write is in flight"
+    },
+    {
+      "id": "POINTER_UPDATED",
+      "meaning": "conditional write succeeded"
+    },
+    {
+      "id": "SAFE_CONFLICT",
+      "meaning": "expected revision was stale and pointer was not changed"
+    },
+    {
+      "id": "POST_PUBLISH_VERIFY",
+      "meaning": "consumer resolver pins and reads the new revision"
+    },
+    {
+      "id": "VERIFIED",
+      "meaning": "publication and consumer resolution are proven for the attempt"
+    },
+    {
+      "id": "FAILED_SAFE",
+      "meaning": "eligibility or write outcome failed before pointer mutation"
+    },
+    {
+      "id": "INCIDENT",
+      "meaning": "pointer changed but consumer verification failed"
+    }
+  ],
+  "terminal_states": [
+    "VERIFIED",
+    "SAFE_CONFLICT",
+    "FAILED_SAFE",
+    "INCIDENT"
+  ],
+  "transitions": [
+    {
+      "action": "submit immutable publish attempt",
+      "guard": "PROVEN generation, sealed proof, complete table map, expected revision",
+      "id": "eligible",
+      "source": "ELIGIBILITY_CHECK",
+      "target": "CAS_ATTEMPT"
+    },
+    {
+      "action": "preserve rejection evidence",
+      "guard": "any eligibility guard fails",
+      "id": "ineligible",
+      "source": "ELIGIBILITY_CHECK",
+      "target": "FAILED_SAFE"
+    },
+    {
+      "action": "advance pointer revision once",
+      "guard": "expected revision matches",
+      "id": "cas_success",
+      "source": "CAS_ATTEMPT",
+      "target": "POINTER_UPDATED"
+    },
+    {
+      "action": "leave pointer and generation unchanged",
+      "guard": "expected revision is stale",
+      "id": "cas_conflict",
+      "source": "CAS_ATTEMPT",
+      "target": "SAFE_CONFLICT"
+    },
+    {
+      "action": "resolve and pin through consumer path",
+      "guard": "write receipt matches requested generation and revision",
+      "id": "verify",
+      "source": "POINTER_UPDATED",
+      "target": "POST_PUBLISH_VERIFY"
+    },
+    {
+      "action": "seal publication receipt",
+      "guard": "generation, revision, table map, and representative reads match",
+      "id": "verification_pass",
+      "source": "POST_PUBLISH_VERIFY",
+      "target": "VERIFIED"
+    },
+    {
+      "action": "invoke incident and authorized rollback evaluation",
+      "guard": "consumer resolution/read fails after pointer write",
+      "id": "verification_fail",
+      "source": "POST_PUBLISH_VERIFY",
+      "target": "INCIDENT"
+    }
+  ]
+}

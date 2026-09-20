@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.9",
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
+  "result": "PASS",
+  "digest_algorithm": "SHA-256",
+  "artifacts": [
+    {
+      "path": "CLAIMS.md",
+      "sha256": "2e5a39f81726ae7f4eaa5d26a6c875cc20e313429cf192e805237634f7bb424c"
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "sha256": "72fb7d6993059321a5401f87fe5cc31502b058f2705945514d01f2b7fbf293ec"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f5f926f29411d826a135ef2cdde5967b4c3962d13625a6d69e54ac0a9b4fb4dd"
+    },
+    {
+      "path": "architecture/adr-index.json",
+      "sha256": "f53e0a2367ab57410cb15aee0ae1fbfea9ea1e168d9408d87eaf0ad84db03d5b"
+    },
+    {
+      "path": "architecture/checkpoint-state-machine.json",
+      "sha256": "417cabce90141bf0933f1ac6105b6c9b499e443a3af31fd3e16182cc2d7ba165"
+    },
+    {
+      "path": "architecture/components.json",
+      "sha256": "d595d6b9e5c6eed5f2ea99488183ba3907f4638ad201654ff0f07c3b32e07bde"
+    },
+    {
+      "path": "architecture/diagrams/checkpoint-recovery.svg",
+      "sha256": "7ba72ab850d354feb580588b3c51d5dd9c0a5517b8693d069797505782b490cf"
+    },
+    {
+      "path": "architecture/diagrams/generation-lifecycle.svg",
+      "sha256": "539a8e942cc31eccf2789aa0d153acff5ca6cfd911afa59f1dbe7202043dd8f8"
+    },
+    {
+      "path": "architecture/diagrams/proof-publication.svg",
+      "sha256": "b92858e817b1ac5934e322c2af4ee7a128903bc642df044042e4125db497bf0d"
+    },
+    {
+      "path": "architecture/diagrams/responsibility-planes.svg",
+      "sha256": "8738d73adc703633a49e2461bae22dc53ae82585014becdfd505f8a6bb2cba86"
+    },
+    {
+      "path": "architecture/generation-state-machine.json",
+      "sha256": "3086871cb26c24122eed2cbeff8ddfea5593892da09e9e781ac320c83b86e83e"
+    },
+    {
+      "path": "architecture/proof-state-machine.json",
+      "sha256": "49fd9b2f8568b7e894fea597aa435ef3ee303b7fa1e241f382aed70320a48128"
+    },
+    {
+      "path": "architecture/publication-state-machine.json",
+      "sha256": "6b8f59cf2f82f8933d16870d6e4ed6c6fab06d465e9256f67a3fac66e2cd5040"
+    },
+    {
+      "path": "architecture/requirement-architecture-map.json",
+      "sha256": "4a58982e8cc891f4c1f3b73aac12aa6eaaffaa48bed1ecb3fdfd34f5f3136e0d"
+    },
+    {
+      "path": "claims/claims.json",
+      "sha256": "de92e7c3a600971e30ae4ae5ab50b104c23a992a953378c2b99b2bb22d8bb719"
+    },
+    {
+      "path": "docs/adr/ADR-001-generation-isolation-unit.md",
+      "sha256": "fe3c3d0ab9967103543cd19a88e786fa6959b3515831b0164d669f6e9d68b652"
+    },
+    {
+      "path": "docs/adr/ADR-002-snapshot-cdc-boundary.md",
+      "sha256": "6d38269297f5e22f1b497a41e90cc6d2978cb573754827a889f497362e464696"
+    },
+    {
+      "path": "docs/adr/ADR-003-canonical-cdc-envelope.md",
+      "sha256": "f439968204163e4e92c8d322e2bebb0605ca2e5d373a2e209ac8d4f374923ea6"
+    },
+    {
+      "path": "docs/adr/ADR-004-source-position-ordering.md",
+      "sha256": "f96db6441a6e5bbfa3e4119fe1a4cd4d44b10e3b0cc5a27c8ecfbbcd0a163cc4"
+    },
+    {
+      "path": "docs/adr/ADR-005-replay-identity-conflicts.md",
+      "sha256": "187cd3f69ca3421488cefc6877e26b3c8eb5b25f04cd9dd9fabdf695f3daed54"
+    },
+    {
+      "path": "docs/adr/ADR-006-target-checkpoint-recovery.md",
+      "sha256": "9ffde5b06bff5c68def751155d0c854349c1857eae1d19695cdb35dbe81983ac"
+    },
+    {
+      "path": "docs/adr/ADR-007-delete-tombstone-retention.md",
+      "sha256": "1e8edb0f8e2e3fe4a9dd7e6ad6d2db8539d6b20bff12e2c9a54df0b915fad240"
+    },
+    {
+      "path": "docs/adr/ADR-008-schema-compatibility-quarantine.md",
+      "sha256": "a34aa3fef03edb4da603664c154317e9c09edcf512d3636c6f4bb3c0da940569"
+    },
+    {
+      "path": "docs/adr/ADR-009-hierarchical-reconciliation.md",
+      "sha256": "8f5c30d56340f3b11a90b2e73e6d5f0b3f12b4ffd6b8a00f6f89ddf73c332b41"
+    },
+    {
+      "path": "docs/adr/ADR-010-consumer-generation-consistency.md",
+      "sha256": "cfcfe016e28705fd60e340a6b4824b82bce024bc9de2ebd5db84007c7d5d457d"
+    },
+    {
+      "path": "docs/adr/ADR-011-cas-publication.md",
+      "sha256": "b5b6c21e35ac079b62d532fd4aaa4637a3e87ad4d826e3c589d83a64ff8cf549"
+    },
+    {
+      "path": "docs/adr/ADR-012-rollback-eligibility.md",
+      "sha256": "a98b83135a7b6a53ac4972f3d6d58a78eb4a7973ce598b941c8c938cc84a9bce"
+    },
+    {
+      "path": "docs/adr/ADR-013-backfill-replay-isolation.md",
+      "sha256": "8da50bf1f77142d4419764b4d90fe872d92542fd78b62e61db948b4582c740db"
+    },
+    {
+      "path": "docs/adr/ADR-014-evidence-manifest-binding.md",
+      "sha256": "485908f63f0f2c9c95375d0619546da6adc66b5cce3e09f315340137d8f86547"
+    },
+    {
+      "path": "docs/adr/ADR-015-retention-retirement.md",
+      "sha256": "181e41c2319f94df31f810a66e2dca54f92d90f8f2b3b43ebcf2d018ab201c57"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "0fa38d3caa112b4f2c641c6e63b2a366c238f2f6f3ffb3b6968edcee83bfa318"
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "51d9d23e443f924a24c4031a53fb9c2f897e6b08d99cb3c5e1775f62efa15d9b"
+    },
+    {
+      "path": "docs/architecture/CHECKPOINT_RECOVERY.md",
+      "sha256": "a9b59514b51d4200c1c8c40883b8b1b6b244c81b5839e6b4682770d8baa2c57e"
+    },
+    {
+      "path": "docs/architecture/CONSISTENCY_AND_LIMITATIONS.md",
+      "sha256": "140f595fa8a57ab1d3e375d794bd5c060f83a742f5b5ca07a101dd90a1808168"
+    },
+    {
+      "path": "docs/architecture/GENERATION_LIFECYCLE.md",
+      "sha256": "f73ffb8ba8a0a7a9f1a596d7ba8e761afdd08fa405c6f1d1a31970ab6fee0728"
+    },
+    {
+      "path": "docs/architecture/PROOF_AND_PUBLICATION.md",
+      "sha256": "16072e6be3f4d0e1b29a50aff71f98ed526702f38664f4dab1e1f37262e43a91"
+    },
+    {
+      "path": "docs/architecture/RESPONSIBILITY_MODEL.md",
+      "sha256": "48b19ef3e01b0a61f42bb6af9134d5a64d91fd3283784a118b4d527324e484d8"
+    },
+    {
+      "path": "docs/runbook.md",
+      "sha256": "9ec9d4d86b78e2c5e0fdb559cad7a6aeaa1facf8282b5f6c9242c63f49538612"
+    },
+    {
+      "path": "evidence/part1/stage3/architecture-review.json",
+      "sha256": "220c0d7edc7414d3c07bac6982e84cb7f37de3c4287a0701a4b85f32b414f86c"
+    },
+    {
+      "path": "evidence/part1/stage3/architecture-source-inventory.json",
+      "sha256": "b2b0f4d4988f667fdd60eb75b867e7b163feee91cf5fbfbc6330f02b04f9d98d"
+    },
+    {
+      "path": "evidence/part1/stage3/claim-impact-review.json",
+      "sha256": "375e328f9c34a1cff4aeb33bc47b6f420ff27a835e83bcb6e4619bd53a6d33a2"
+    },
+    {
+      "path": "evidence/part1/stage3/contradiction-register.json",
+      "sha256": "37ca77cb878ed06c1793a01bed80e2c741ec9494af8caa6f7a91c604144f155c"
+    },
+    {
+      "path": "evidence/part1/stage3/contradiction-resolution.json",
+      "sha256": "590d138a4970676858805a1361365ce472b5486bcfcdc27e9b34c283b4749370"
+    },
+    {
+      "path": "evidence/part1/stage3/current-model-compatibility.json",
+      "sha256": "7c36d55014e36936d2134c8cbe36eab758c520f32aa2a51d09e5468249740186"
+    },
+    {
+      "path": "evidence/part1/stage3/dependency-environment.json",
+      "sha256": "4ff3c08456e258e7d6494779d00ace87d10b587f3739e4433dd830c2594c9cea"
+    },
+    {
+      "path": "evidence/part1/stage3/determinism-report.json",
+      "sha256": "e077b8a2bdd57d8c6176d47ae2141f55b445a0f52a89a821753480fa842871a5"
+    },
+    {
+      "path": "evidence/part1/stage3/diagram-render-report.json",
+      "sha256": "8662952ec87be5756352bc5e03cd9464268c7a96ed7aced257ae42791e4d6e90"
+    },
+    {
+      "path": "evidence/part1/stage3/execution-envelope.json",
+      "sha256": "bf3215b054c9070c503e2122915fb8926cdb703d645a3e3d8d619c053acbbd65"
+    },
+    {
+      "path": "evidence/part1/stage3/file-manifest.json",
+      "sha256": "24611efeea74b27af08c12a4fb582dd96b28ad8ec95b71e33bc4a14adf6b5a8c"
+    },
+    {
+      "path": "evidence/part1/stage3/overlap-register.json",
+      "sha256": "173e7cae7ff244c6ab0c94843be113a3ec8b9d68927c65db17e2ee0321a1b526"
+    },
+    {
+      "path": "evidence/part1/stage3/requirement-architecture-review.json",
+      "sha256": "1896c325ba9d09f6d302157e281390ba4081513b3e9d99f889590bc751c69582"
+    },
+    {
+      "path": "evidence/part1/stage3/scope-isolation-report.json",
+      "sha256": "4a5659828da4002be49fd6a676e3c8e4297269b9bd801b2cebe7f69028963529"
+    },
+    {
+      "path": "evidence/part1/stage3/validation-report.json",
+      "sha256": "ac0ffb28f2ff5d88e68f39ef451e349e063b83a89fb42bec1194d63fee1bdfe1"
+    },
+    {
+      "path": "schemas/architecture-adr-index.schema.json",
+      "sha256": "1a08919e9e0b1390c4b8ea46e9baed4a38bf3bdae21bd37d1f19b5fcf585d84b"
+    },
+    {
+      "path": "schemas/architecture-component.schema.json",
+      "sha256": "43a29eb9d9be79f16d345617509f5088050fda1a4a677c67e0ab22b08be840a4"
+    },
+    {
+      "path": "schemas/architecture-state-machine.schema.json",
+      "sha256": "7e127d8d40dc39600a23e938dc91bf494a37db5f041641edf4ac339b3da6029f"
+    },
+    {
+      "path": "scripts/build_architecture_authority.py",
+      "sha256": "a5bfc42846238ef76af9825f500a4cc9ca673e0cb92af8d4877f2de7bf1be3df"
+    },
+    {
+      "path": "scripts/validate_architecture_authority.py",
+      "sha256": "cea59c6634068d928e2ab9f6ebce7d5e08092de73aac589f18aad392de251d10"
+    },
+    {
+      "path": "tests/fixtures/architecture-authority/invalid-cases.json",
+      "sha256": "d0fd954e8374d561473192564330b062452563554a45da204fda97e7419bed1d"
+    },
+    {
+      "path": "tests/fixtures/architecture-authority/valid-authority.json",
+      "sha256": "c661ff8573b5022e90348c00211ac090f6caebac380f25d0c6d4d47d870985b8"
+    },
+    {
+      "path": "tests/test_architecture_authority.py",
+      "sha256": "e94afe454c5d36f425a34f062fe3ad5a08497f4268a47f0ffdb184eba9e32c38"
+    }
+  ],
+  "retired_artifacts": [],
+  "limitations": [
+    "The manifest intentionally excludes its own digest, the candidate stage receipt, and the external post-merge continuation checkpoint.",
+    "GitHub-assigned PR, merge, and CI identities are bound outside this candidate manifest."
+  ]
+}

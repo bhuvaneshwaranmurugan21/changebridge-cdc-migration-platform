@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.2",
+  "evidence_label": "LOCAL_VERIFIED",
+  "architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
+  "architecture_freeze_tree": "13097d3cae42b120bc13add818ae1c7ed7b8dcc5",
+  "review_procedure": "Compare each frozen contradiction with accepted ADRs, machine-readable models, current implementation, and explicit limitations.",
+  "expected_result": "Every contradiction has one non-blocking, evidence-bounded disposition and no semantic blocker remains.",
+  "resolutions": [
+    {"id": "ST3-CON-001", "disposition": "RESOLVED_BY_ADR", "authority": ["ADR-001", "architecture/generation-state-machine.json"], "implementation_gap": "Current SQLite status strings remain a local approximation."},
+    {"id": "ST3-CON-002", "disposition": "RESOLVED_BY_ADR", "authority": ["ADR-010", "ADR-011", "architecture/publication-state-machine.json"], "implementation_gap": "The managed consumer resolver and pointer store are not implemented."},
+    {"id": "ST3-CON-003", "disposition": "RESOLVED_BY_ADR", "authority": ["ADR-001", "architecture/generation-state-machine.json"], "implementation_gap": "The target lifecycle is not yet enforced by a managed registry."},
+    {"id": "ST3-CON-004", "disposition": "RESOLVED_BY_ADR", "authority": ["ADR-012", "ADR-015", "architecture/generation-state-machine.json"], "implementation_gap": "Managed retention and retirement enforcement are absent."},
+    {"id": "ST3-CON-005", "disposition": "RESOLVED_BY_ADR", "authority": ["ADR-001", "ADR-014"], "implementation_gap": "Runtime sealing and manifest enforcement remain future work."},
+    {"id": "ST3-CON-006", "disposition": "IMPLEMENTATION_GAP", "authority": ["ADR-006", "architecture/checkpoint-state-machine.json"], "implementation_gap": "No Iceberg receipt resolver or external checkpoint reconciler exists."},
+    {"id": "ST3-CON-007", "disposition": "EXTERNAL_ASSUMPTION_UNVERIFIED", "authority": ["ADR-002", "ADR-009"], "implementation_gap": "PostgreSQL/DMS mapping to the transport-neutral frontier requires managed proof."},
+    {"id": "ST3-CON-008", "disposition": "IMPLEMENTATION_GAP", "authority": ["ADR-010", "architecture/publication-state-machine.json"], "implementation_gap": "Reader pinning and table-map resolution are design only."},
+    {"id": "ST3-CON-009", "disposition": "IMPLEMENTATION_GAP", "authority": ["ADR-012", "ADR-015"], "implementation_gap": "The local engine exposes only a generic compare-and-swap primitive."},
+    {"id": "ST3-CON-010", "disposition": "RESOLVED_BY_ADR", "authority": ["architecture/components.json", "docs/architecture/RESPONSIBILITY_MODEL.md"], "implementation_gap": "The Terraform topology remains intentionally partial."},
+    {"id": "ST3-CON-011", "disposition": "IMPLEMENTATION_GAP", "authority": ["architecture/components.json", "claims/claims.json"], "implementation_gap": "The future orchestrator is explicitly unimplemented and unclaimed."},
+    {"id": "ST3-CON-012", "disposition": "IMPLEMENTATION_GAP", "authority": ["ADR-014", "architecture/proof-state-machine.json"], "implementation_gap": "The local proof gate is narrower than the accepted target aggregator."},
+    {"id": "ST3-CON-013", "disposition": "RESOLVED_BY_ADR", "authority": ["claims/claims.json", "evidence/part1/stage3/claim-impact-review.json"], "implementation_gap": "Architecture claims remain DESIGN_ONLY; runtime and managed claims are not promoted."}
+  ],
+  "summary": {
+    "contradictions_total": 13,
+    "resolved_by_adr": 6,
+    "implementation_gap": 6,
+    "external_assumption_unverified": 1,
+    "blocking": 0
+  },
+  "result": "PASS",
+  "limitations": [
+    "This review resolves semantics; it does not implement or operate the managed design.",
+    "External source and transport assumptions remain subject to managed verification."
+  ]
+}

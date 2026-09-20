@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "producing_substage": "3.8",
+  "evidence_label": "LOCAL_VERIFIED",
+  "validated_commit": "bd78898602bfae650eaae04589bcc98f64511bd8",
+  "procedure": "Execute each canonical validator and simulator twice from the same clean committed tree, compare output bytes with cmp, and hash the first output.",
+  "expected_result": "Each pair is byte-identical.",
+  "comparisons": [
+    {
+      "artifact": "Stage 2 authority report",
+      "result": "BYTE_IDENTICAL",
+      "sha256": "80bf49b01bb9ade8f6428978473684799ce71230daba7fd9f5b5353e20b47dbc",
+      "canonical_sha256": "1828cad3c5927bf41700cb91ff607600a2164f21e6209b7eb9464f11565b4722"
+    },
+    {
+      "artifact": "Stage 3 authority report",
+      "result": "BYTE_IDENTICAL",
+      "sha256": "820228766731724e5421d35bb63bbc1012adae215cbc3d4064caa7187af0ba1e",
+      "canonical_sha256": "085dc3acf92dc2b60a637488f6810273ce945fae1e309eef48455aa73bb692c7"
+    },
+    {
+      "artifact": "reference simulator evidence",
+      "result": "BYTE_IDENTICAL",
+      "sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24",
+      "production_claim": false
+    }
+  ],
+  "diagrams": [
+    {
+      "path": "architecture/diagrams/checkpoint-recovery.svg",
+      "sha256": "7ba72ab850d354feb580588b3c51d5dd9c0a5517b8693d069797505782b490cf"
+    },
+    {
+      "path": "architecture/diagrams/generation-lifecycle.svg",
+      "sha256": "539a8e942cc31eccf2789aa0d153acff5ca6cfd911afa59f1dbe7202043dd8f8"
+    },
+    {
+      "path": "architecture/diagrams/proof-publication.svg",
+      "sha256": "b92858e817b1ac5934e322c2af4ee7a128903bc642df044042e4125db497bf0d"
+    },
+    {
+      "path": "architecture/diagrams/responsibility-planes.svg",
+      "sha256": "8738d73adc703633a49e2461bae22dc53ae82585014becdfd505f8a6bb2cba86"
+    }
+  ],
+  "result": "PASS",
+  "limitations": [
+    "Byte identity is asserted for canonical reports and simulator evidence, not volatile runner output."
+  ]
+}

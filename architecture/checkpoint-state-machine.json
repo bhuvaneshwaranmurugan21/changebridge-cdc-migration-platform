@@ -1,0 +1,122 @@
+{
+  "authority": "ChangeBridge Part 1 Stage 3",
+  "initial_state": "FRONTIER_PROPOSED",
+  "invariants": [
+    "checkpoint never advances before durable target receipt",
+    "checkpoint writes are monotonic and expected-revision conditional",
+    "ambiguous acknowledgement always enters reconciliation",
+    "replay begins only after target receipt resolution",
+    "restart begins from the last mutually established frontier",
+    "no distributed ACID transaction is claimed"
+  ],
+  "machine_id": "target_checkpoint_recovery",
+  "schema_version": "1.0.0",
+  "states": [
+    {
+      "id": "FRONTIER_PROPOSED",
+      "meaning": "contiguous next frontier and deterministic apply identity selected"
+    },
+    {
+      "id": "TARGET_COMMIT_IN_PROGRESS",
+      "meaning": "target commit requested; outcome may not yet be known"
+    },
+    {
+      "id": "TARGET_COMMIT_DURABLE",
+      "meaning": "durable target receipt identifies committed data and frontier"
+    },
+    {
+      "id": "CHECKPOINT_COMMIT_IN_PROGRESS",
+      "meaning": "conditional monotonic ledger update requested"
+    },
+    {
+      "id": "CHECKPOINT_DURABLE",
+      "meaning": "target receipt and checkpoint establish the same frontier"
+    },
+    {
+      "id": "ACKNOWLEDGEMENT_AMBIGUOUS",
+      "meaning": "request outcome cannot be inferred from client acknowledgement"
+    },
+    {
+      "id": "RECOVERY_RECONCILING",
+      "meaning": "authoritative target receipt and ledger are queried"
+    },
+    {
+      "id": "SAFELY_RECOVERED",
+      "meaning": "prior outcome is established and replay/advance decision is safe"
+    },
+    {
+      "id": "FAILED_SAFE",
+      "meaning": "outcome remains unresolved; no checkpoint advance or blind replay is allowed"
+    }
+  ],
+  "terminal_states": [
+    "CHECKPOINT_DURABLE",
+    "SAFELY_RECOVERED",
+    "FAILED_SAFE"
+  ],
+  "transitions": [
+    {
+      "action": "submit deterministic target commit identity",
+      "guard": "frontier contiguous and expected checkpoint revision matches",
+      "id": "start_target_commit",
+      "source": "FRONTIER_PROPOSED",
+      "target": "TARGET_COMMIT_IN_PROGRESS"
+    },
+    {
+      "action": "persist receipt evidence",
+      "guard": "durable target receipt matches generation and frontier",
+      "id": "target_commit_confirmed",
+      "source": "TARGET_COMMIT_IN_PROGRESS",
+      "target": "TARGET_COMMIT_DURABLE"
+    },
+    {
+      "action": "forbid blind retry",
+      "guard": "client response cannot establish commit result",
+      "id": "target_ack_ambiguous",
+      "source": "TARGET_COMMIT_IN_PROGRESS",
+      "target": "ACKNOWLEDGEMENT_AMBIGUOUS"
+    },
+    {
+      "action": "conditional monotonic ledger update",
+      "guard": "receipt verified and checkpoint remains predecessor frontier",
+      "id": "start_checkpoint",
+      "source": "TARGET_COMMIT_DURABLE",
+      "target": "CHECKPOINT_COMMIT_IN_PROGRESS"
+    },
+    {
+      "action": "emit mutually established frontier receipt",
+      "guard": "ledger revision and frontier match request",
+      "id": "checkpoint_confirmed",
+      "source": "CHECKPOINT_COMMIT_IN_PROGRESS",
+      "target": "CHECKPOINT_DURABLE"
+    },
+    {
+      "action": "forbid checkpoint rewrite",
+      "guard": "client response cannot establish ledger result",
+      "id": "checkpoint_ack_ambiguous",
+      "source": "CHECKPOINT_COMMIT_IN_PROGRESS",
+      "target": "ACKNOWLEDGEMENT_AMBIGUOUS"
+    },
+    {
+      "action": "query target receipt and checkpoint ledger",
+      "guard": "deterministic operation identity available",
+      "id": "begin_reconciliation",
+      "source": "ACKNOWLEDGEMENT_AMBIGUOUS",
+      "target": "RECOVERY_RECONCILING"
+    },
+    {
+      "action": "record safe resume decision",
+      "guard": "authoritative outcomes agree or identify safe missing action",
+      "id": "reconcile_success",
+      "source": "RECOVERY_RECONCILING",
+      "target": "SAFELY_RECOVERED"
+    },
+    {
+      "action": "halt and preserve evidence",
+      "guard": "target or ledger outcome cannot be established",
+      "id": "reconcile_failure",
+      "source": "RECOVERY_RECONCILING",
+      "target": "FAILED_SAFE"
+    }
+  ]
+}

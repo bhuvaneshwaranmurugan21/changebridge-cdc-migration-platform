@@ -3,31 +3,43 @@
 ## Current authorized boundary
 
 - Part: 1 — Truth, invariants, and completion contract
-- Stage: 2 — Completion authority and claim boundary
-- Verified entry commit: `d7e9cac800edfaf9e88f03dc6094ae07f43b496a`
-- Verified entry tree: `0c098fa83c8fad316210d7f141444fb1f091b416`
-- Stage branch: `part1-stage2-completion-contract`
-- Stage evidence: `evidence/part1/stage2/`
+- Stage: 3 — Architecture authority
+- Verified entry commit: `0acaaad2c41e83a9d593e54d02c94aaf3dfdf173`
+- Verified entry tree: `b5a426ba12a854feab1a8493aa2715c1d36c57ea`
+- Stage branch: `part1-stage3-architecture-authority`
+- Architecture freeze commit: `0a27be6a197fa6e849958957e7df1447f2b4f797`
+- Architecture freeze tree: `13097d3cae42b120bc13add818ae1c7ed7b8dcc5`
+- Stage evidence: `evidence/part1/stage3/`
 
-## Stage 1 result
+## Predecessor results
 
-`STAGE1_AUDIT_VERIFIED`: PR #2 was squash-merged and the exact merged main commit, tree,
-post-merge CI, local validation, and 13/13 deterministic simulator checks were recorded in the
-external Stage 1 continuation checkpoint.
+- `STAGE1_AUDIT_VERIFIED`
+- `STAGE2_COMPLETION_AUTHORITY_VERIFIED`
 
-## Stage 2 result
+Stage 3 started only from the exact merged Stage 2 checkpoint. Its requirement and claim
+authority remains intact and its deterministic validator continues to pass.
 
-The Stage 2 payload defines the completion contract, atomic requirement registry, proof matrix,
-claim registry, corrected public surfaces, schemas, fail-closed validator, negative fixtures, and
-evidence. `STAGE2_COMPLETION_AUTHORITY_VERIFIED` becomes effective only after the exact PR head
-passes every Stage 2 gate, the PR is merged without scope change, merged-main CI succeeds, and an
-external continuation checkpoint records the final merge state.
+## Stage 3 candidate result
 
-No application, infrastructure, dependency, AWS, performance experiment, release, tag, history,
-or other-project change belongs to Stage 2.
+`STAGE3_ARCHITECTURE_AUTHORITY_PENDING`: the candidate contains one accepted architecture
+authority: 17 owned components across data, control, and evidence planes; 15 ADRs; canonical
+generation, checkpoint, proof, and publication models; mappings for all 39 Stage 2 requirements;
+corrected architecture-sensitive claims; deterministic SVG views; and a fail-closed validator with
+46 exact-diagnostic negative cases.
+
+Local validation passes twice: Ruff, strict mypy, 82 tests with 88.92% application coverage, the
+Stage 2 validator, the Stage 3 validator, generated-view drift checks, authorized CairoSVG
+rasterization and visual inspection, and all 13 deterministic simulator checks. This remains a
+candidate until exact-head CI, policy-compliant merge, merged-main CI, and the external
+continuation checkpoint pass.
+
+No application behavior, Terraform behavior, AWS resource, workflow, dependency declaration,
+performance experiment, deployment, release, tag, history, or other project is changed by Stage 3.
+The architecture is `DESIGN_ONLY`; its repository consistency checks are `LOCAL_VERIFIED`.
 
 ## Next permitted action
 
-Do not begin Part 1 Stage 3 from chat memory or from the feature branch. Resume only from the exact
-merged Stage 2 commit recorded in the external post-merge checkpoint. Re-run Stage 2 only if its
-authority artifacts are invalidated or `main` changes materially before continuation.
+Publish the evidence-only render closure to the existing Stage 3 pull request, require CI on the
+new exact PR head, and merge only if every remaining Stage 3 criterion passes. Do not begin Part 1
+Stage 4 until the external Stage 3 continuation checkpoint identifies the exact merged commit and
+tree.

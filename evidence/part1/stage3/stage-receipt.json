@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 3,
+  "canonical_stage_name": "Architecture authority",
+  "evidence_label": "LOCAL_VERIFIED",
+  "base_commit": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "base_tree": "b5a426ba12a854feab1a8493aa2715c1d36c57ea",
+  "architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797",
+  "architecture_freeze_tree": "13097d3cae42b120bc13add818ae1c7ed7b8dcc5",
+  "locally_validated_commit": "bd78898602bfae650eaae04589bcc98f64511bd8",
+  "artifact_manifest_sha256": "be248e6bf6780bbc2f22ea1e7688bbdaa658a4d7632a8d328b60f2ceb1688a39",
+  "result": "PENDING",
+  "status": "STAGE3_ARCHITECTURE_AUTHORITY_PENDING",
+  "acceptance": {
+    "criteria_total": 36,
+    "criteria_passed_locally": 32,
+    "criteria_pending_external_closure": 4,
+    "criteria": [
+      {
+        "id": "ST3-AC-01",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/execution-envelope.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-02",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/file-manifest.json",
+          "evidence/part1/stage3/overlap-register.json",
+          "evidence/part1/stage3/scope-isolation-report.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-03",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/architecture-source-inventory.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-04",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/contradiction-resolution.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-05",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/contradiction-resolution.json",
+          "evidence/part1/stage3/architecture-review.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-06",
+        "result": "PASS",
+        "evidence": [
+          "architecture/components.json",
+          "docs/architecture/RESPONSIBILITY_MODEL.md"
+        ]
+      },
+      {
+        "id": "ST3-AC-07",
+        "result": "PASS",
+        "evidence": [
+          "architecture/components.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-08",
+        "result": "PASS",
+        "evidence": [
+          "architecture/components.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-09",
+        "result": "PASS",
+        "evidence": [
+          "architecture/adr-index.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-10",
+        "result": "PASS",
+        "evidence": [
+          "docs/adr/"
+        ]
+      },
+      {
+        "id": "ST3-AC-11",
+        "result": "PASS",
+        "evidence": [
+          "architecture/requirement-architecture-map.json",
+          "evidence/part1/stage3/requirement-architecture-review.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-12",
+        "result": "PASS",
+        "evidence": [
+          "architecture/requirement-architecture-map.json",
+          "scripts/validate_architecture_authority.py"
+        ]
+      },
+      {
+        "id": "ST3-AC-13",
+        "result": "PASS",
+        "evidence": [
+          "architecture/generation-state-machine.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-14",
+        "result": "PASS",
+        "evidence": [
+          "architecture/generation-state-machine.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-15",
+        "result": "PASS",
+        "evidence": [
+          "tests/fixtures/architecture-authority/invalid-cases.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-16",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/current-model-compatibility.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-17",
+        "result": "PASS",
+        "evidence": [
+          "architecture/checkpoint-state-machine.json",
+          "docs/adr/ADR-006-target-checkpoint-recovery.md"
+        ]
+      },
+      {
+        "id": "ST3-AC-18",
+        "result": "PASS",
+        "evidence": [
+          "architecture/checkpoint-state-machine.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-19",
+        "result": "PASS",
+        "evidence": [
+          "architecture/proof-state-machine.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-20",
+        "result": "PASS",
+        "evidence": [
+          "architecture/publication-state-machine.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-21",
+        "result": "PASS",
+        "evidence": [
+          "docs/adr/ADR-010-consumer-generation-consistency.md",
+          "architecture/publication-state-machine.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-22",
+        "result": "PASS",
+        "evidence": [
+          "docs/adr/ADR-002-snapshot-cdc-boundary.md",
+          "docs/adr/ADR-009-hierarchical-reconciliation.md"
+        ]
+      },
+      {
+        "id": "ST3-AC-23",
+        "result": "PASS",
+        "evidence": [
+          "docs/architecture/CONSISTENCY_AND_LIMITATIONS.md"
+        ]
+      },
+      {
+        "id": "ST3-AC-24",
+        "result": "PASS",
+        "evidence": [
+          "docs/adr/ADR-012-rollback-eligibility.md",
+          "docs/adr/ADR-015-retention-retirement.md"
+        ]
+      },
+      {
+        "id": "ST3-AC-25",
+        "result": "PASS",
+        "evidence": [
+          "claims/claims.json",
+          "evidence/part1/stage3/claim-impact-review.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-26",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/claim-impact-review.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-27",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/diagram-render-report.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-28",
+        "result": "PASS",
+        "evidence": [
+          "tests/test_architecture_authority.py",
+          "tests/fixtures/architecture-authority/invalid-cases.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-29",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/validation-report.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-30",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/determinism-report.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-31",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/validation-report.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-32",
+        "result": "PASS",
+        "evidence": [
+          "evidence/part1/stage3/scope-isolation-report.json"
+        ]
+      },
+      {
+        "id": "ST3-AC-33",
+        "result": "PENDING",
+        "evidence": [
+          "external:exact-pr-head-ci",
+          "external:review-thread-state"
+        ]
+      },
+      {
+        "id": "ST3-AC-34",
+        "result": "PENDING",
+        "evidence": [
+          "external:expected-head-merge",
+          "external:repository-policy"
+        ]
+      },
+      {
+        "id": "ST3-AC-35",
+        "result": "PENDING",
+        "evidence": [
+          "external:merged-main-tree",
+          "external:post-merge-ci"
+        ]
+      },
+      {
+        "id": "ST3-AC-36",
+        "result": "PENDING",
+        "evidence": [
+          "evidence/part1/stage3/artifact-manifest.json",
+          "external:continuation-checkpoint"
+        ]
+      }
+    ]
+  },
+  "publication": {
+    "branch": "part1-stage3-architecture-authority",
+    "pull_request": null,
+    "pull_request_head": null,
+    "merge_method": "repository policy; expected-head guarded",
+    "merged_main": null,
+    "post_merge_ci": null,
+    "binding_model": "The exact PR head, merge commit/tree, and CI identities are recorded after GitHub assigns them."
+  },
+  "limitations": [
+    "This candidate receipt is not a completion decision until all 36 criteria and post-merge checks pass.",
+    "Architecture validation is LOCAL_VERIFIED specification evidence; architecture capability remains DESIGN_ONLY."
+  ]
+}
