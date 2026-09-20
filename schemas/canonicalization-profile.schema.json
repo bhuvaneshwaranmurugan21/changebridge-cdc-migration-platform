@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:schema:canonicalization-profile:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "profile_id", "encoding", "unicode_normalization", "object_key_order", "array_order", "integer_rule", "decimal_rule", "timestamp_rule", "binary_rule", "null_absent_rule", "composite_key_rule", "source_position_rule", "volatile_fields", "digest_algorithm", "digest_domain_separator", "identity_profiles", "unknown_field_policy", "unknown_version_policy", "implementation", "limitations"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "profile_id": {"const": "changebridge-canonical-json/1.0.0"},
+    "encoding": {"const": "UTF-8"},
+    "unicode_normalization": {"const": "NFC"},
+    "object_key_order": {"type": "string", "minLength": 1},
+    "array_order": {"type": "string", "minLength": 1},
+    "integer_rule": {"type": "string", "minLength": 1},
+    "decimal_rule": {"type": "string", "minLength": 1},
+    "timestamp_rule": {"type": "string", "minLength": 1},
+    "binary_rule": {"type": "string", "minLength": 1},
+    "null_absent_rule": {"type": "string", "minLength": 1},
+    "composite_key_rule": {"type": "string", "minLength": 1},
+    "source_position_rule": {"type": "string", "minLength": 1},
+    "volatile_fields": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"type": "string"}},
+    "digest_algorithm": {"const": "SHA-256"},
+    "digest_domain_separator": {"type": "string", "minLength": 1},
+    "identity_profiles": {
+      "type": "object", "additionalProperties": false,
+      "required": ["event_id", "payload_digest", "transaction_digest", "contract_digest", "proof_manifest_digest", "evidence_manifest_digest"],
+      "properties": {
+        "event_id": {"type": "string", "minLength": 1}, "payload_digest": {"type": "string", "minLength": 1},
+        "transaction_digest": {"type": "string", "minLength": 1}, "contract_digest": {"type": "string", "minLength": 1},
+        "proof_manifest_digest": {"type": "string", "minLength": 1}, "evidence_manifest_digest": {"type": "string", "minLength": 1}
+      }
+    },
+    "unknown_field_policy": {"const": "REJECT"},
+    "unknown_version_policy": {"const": "REJECT"},
+    "implementation": {"const": "src/changebridge/contracts.py"},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  }
+}

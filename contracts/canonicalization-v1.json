@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "changebridge-canonical-json/1.0.0",
+  "encoding": "UTF-8",
+  "unicode_normalization": "NFC",
+  "object_key_order": "lexicographic-by-normalized-code-point",
+  "array_order": "preserved-unless-contract-declares-set-semantics",
+  "integer_rule": "arbitrary-precision-base-10-no-leading-plus",
+  "decimal_rule": "finite-normalized-decimal-string; IEEE-754 float forbidden in identity material",
+  "timestamp_rule": "RFC3339 UTC with six fractional digits and Z suffix",
+  "binary_rule": "unpadded-base64url inside $binary_base64url tagged object",
+  "null_absent_rule": "null is a value; absent means the key is omitted; they are never equivalent",
+  "composite_key_rule": "schema-ordered array of name/type/value components",
+  "source_position_rule": "kind plus canonical string value; comparisons require identical kinds",
+  "volatile_fields": ["generated_at", "hostname", "ingested_at", "temporary_path"],
+  "digest_algorithm": "SHA-256",
+  "digest_domain_separator": "changebridge-canonical-json/1.0.0\\n<identity-profile>\\n",
+  "identity_profiles": {
+    "event_id": "source/table/position/transaction-sequence/event-sequence/key/operation",
+    "payload_digest": "semantic envelope excluding event_id, payload_digest, ingested_at, and quarantine_reason",
+    "transaction_digest": "ordered event_id and payload_digest pairs",
+    "contract_digest": "complete canonical JSON Schema authority",
+    "proof_manifest_digest": "sealed gate results plus generation/frontier/schema/input revision",
+    "evidence_manifest_digest": "repository-relative artifact paths, SHA-256 digests, producer commit/run/tool versions"
+  },
+  "unknown_field_policy": "REJECT",
+  "unknown_version_policy": "REJECT",
+  "implementation": "src/changebridge/contracts.py",
+  "limitations": [
+    "This profile is a local reference authority, not proof of adapter conformance.",
+    "Filesystem normalization applies only to evidence paths and forbids absolute or parent-traversal paths."
+  ]
+}

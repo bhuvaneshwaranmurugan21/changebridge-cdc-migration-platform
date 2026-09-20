@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 4,
+  "stage_name": "Contract and oracle authority",
+  "base_commit": "3634b23a7fb83611a9c3b28b785a7373b68861ec",
+  "base_tree": "edd0986becbe74daff9131587c535e17e26a9315",
+  "base_signature": {"verified": true, "reason": "valid"},
+  "base_parent": "0acaaad2c41e83a9d593e54d02c94aaf3dfdf173",
+  "branch": "part1-stage4-contracts-and-oracles",
+  "branch_created_from_exact_base": true,
+  "stage3_external_checkpoint_sha256": "f7cc65bb26fc129643ed769de3854c99d2fa32c3e562417a9f48a70b99e9e99b",
+  "plan_sha256": "396894a77ce2fd9d1131bcfdf268606bbd6831dcac27904fe419dfc351c168ae",
+  "micro_rehearsal_sha256": "54b3f01f7fa55ce16a1f87daaa75fb38ce3581b36de618613899475c34fe2610",
+  "dependency_policy": "isolated disposable environment; declared development dependencies plus only the two separately authorized direct packages",
+  "authorized_direct_dependencies": ["jsonschema==4.26.0", "hypothesis==6.168.0"],
+  "forbidden_actions": [
+    "AWS operations", "runtime-adapter behavior changes", "Terraform behavior changes",
+    "deployments", "managed experiments", "performance tests", "releases", "tags",
+    "history rewrites", "changes to another project"
+  ],
+  "result": "PASS",
+  "limitations": ["PR, CI, merge, and post-merge closure are not entry-envelope facts."]
+}

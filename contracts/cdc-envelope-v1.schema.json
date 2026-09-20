@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:cdc-envelope:1.0.0",
+  "title": "ChangeBridge canonical CDC envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version", "source_system", "source_database", "source_schema", "source_table",
+    "source_contract_id", "source_contract_version", "source_contract_digest", "operation",
+    "primary_key", "before", "after", "transaction_id", "source_position",
+    "transaction_sequence", "event_sequence", "committed_at", "ingested_at",
+    "source_schema_version", "source_schema_digest", "event_id", "payload_digest",
+    "run_id", "generation_id", "transport_capabilities", "quarantine_reason"
+  ],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "source_system": {"type": "string", "minLength": 1},
+    "source_database": {"type": "string", "minLength": 1},
+    "source_schema": {"type": "string", "minLength": 1},
+    "source_table": {"type": "string", "minLength": 1},
+    "source_contract_id": {"type": "string", "minLength": 1},
+    "source_contract_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "source_contract_digest": {"$ref": "#/$defs/digest"},
+    "operation": {"enum": ["snapshot", "insert", "update", "delete"]},
+    "primary_key": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "type", "value"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "type": {"enum": ["binary", "boolean", "decimal", "integer", "string"]},
+          "value": {"type": ["string", "integer", "boolean"]}
+        }
+      }
+    },
+    "before": {"type": ["object", "null"]},
+    "after": {"type": ["object", "null"]},
+    "transaction_id": {"type": "string", "minLength": 1},
+    "source_position": {"$ref": "#/$defs/source_position"},
+    "transaction_sequence": {"type": "integer", "minimum": 0},
+    "event_sequence": {"type": "integer", "minimum": 0},
+    "committed_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "ingested_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "source_schema_version": {"type": "string", "minLength": 1},
+    "source_schema_digest": {"$ref": "#/$defs/digest"},
+    "event_id": {"$ref": "#/$defs/digest"},
+    "payload_digest": {"$ref": "#/$defs/digest"},
+    "run_id": {"type": "string", "minLength": 1},
+    "generation_id": {"type": "string", "minLength": 1},
+    "transport_capabilities": {
+      "type": "object", "additionalProperties": false,
+      "required": ["before_images", "transaction_boundaries", "source_order"],
+      "properties": {
+        "before_images": {"enum": ["full", "keys_only", "unavailable"]},
+        "transaction_boundaries": {"type": "boolean"},
+        "source_order": {"type": "boolean"}
+      }
+    },
+    "quarantine_reason": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_position": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {"enum": ["integer", "mysql_binlog", "oracle_scn", "postgres_lsn"]},
+        "value": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

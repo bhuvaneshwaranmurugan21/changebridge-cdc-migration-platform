@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:schema:invariant-oracle:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "authority", "invariants"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "authority": {"const": "ChangeBridge Part 1 Stage 4"},
+    "invariants": {
+      "type": "array", "minItems": 16, "maxItems": 16,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "title", "normative_statement", "requirement_ids", "adr_ids", "component_ids", "contract_ids", "scenario_ids", "claim_ids", "evidence_targets", "predicate", "assumptions", "positive_example", "minimal_counterexample", "local_oracle", "pass_output", "fail_output", "false_positive_risks", "false_negative_risks", "proves", "does_not_prove", "status", "evidence_label", "local_owner", "future_runtime_owner", "future_managed_proof_owner", "invalidation_conditions"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"},
+          "title": {"type": "string", "minLength": 1},
+          "normative_statement": {"type": "string", "minLength": 1},
+          "requirement_ids": {"$ref": "#/$defs/nonempty_strings"},
+          "adr_ids": {"$ref": "#/$defs/nonempty_strings"},
+          "component_ids": {"$ref": "#/$defs/nonempty_strings"},
+          "contract_ids": {"$ref": "#/$defs/nonempty_strings"},
+          "scenario_ids": {"$ref": "#/$defs/nonempty_strings"},
+          "claim_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "evidence_targets": {"$ref": "#/$defs/nonempty_strings"},
+          "predicate": {"type": "string", "minLength": 1},
+          "assumptions": {"$ref": "#/$defs/nonempty_strings"},
+          "positive_example": {"type": "string", "minLength": 1},
+          "minimal_counterexample": {"type": "string", "minLength": 1},
+          "local_oracle": {"type": "string", "pattern": "^changebridge\\.oracles:"},
+          "pass_output": {"const": true},
+          "fail_output": {"const": false},
+          "false_positive_risks": {"$ref": "#/$defs/nonempty_strings"},
+          "false_negative_risks": {"$ref": "#/$defs/nonempty_strings"},
+          "proves": {"type": "string", "minLength": 1},
+          "does_not_prove": {"type": "string", "minLength": 1},
+          "status": {"enum": ["LOCAL_ORACLE_ACTIVE", "FUTURE_ONLY"]},
+          "evidence_label": {"enum": ["DESIGN_ONLY", "LOCAL_VERIFIED"]},
+          "local_owner": {"const": "part1-stage4"},
+          "future_runtime_owner": {"type": "string", "minLength": 1},
+          "future_managed_proof_owner": {"type": "string", "minLength": 1},
+          "invalidation_conditions": {"$ref": "#/$defs/nonempty_strings"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty_strings": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}

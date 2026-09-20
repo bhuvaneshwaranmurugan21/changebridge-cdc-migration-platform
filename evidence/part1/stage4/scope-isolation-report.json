@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 4,
+  "scope": "contract, canonicalization, control-record, oracle, fixture, test-authority, validator, evidence, documentation, bounded claim and requirement correction, and dev dependency declaration",
+  "checks": {
+    "single_repository": "PASS",
+    "foreign_project_terms": "PASS",
+    "aws_operations": "NOT_PERFORMED",
+    "runtime_adapter_behavior": "UNCHANGED",
+    "terraform_behavior": "UNCHANGED",
+    "workflow_changes": "NONE",
+    "deployments": "NONE",
+    "managed_experiments": "NONE",
+    "performance_tests": "NONE",
+    "releases_or_tags": "NONE",
+    "history_rewrites": "NONE",
+    "secrets_detected": "NONE",
+    "symlinks_added": "NONE",
+    "absolute_or_temporary_paths_in_artifacts": "NONE"
+  },
+  "authorized_dependency_changes": ["jsonschema==4.26.0", "hypothesis==6.168.0"],
+  "unexpected_changed_paths": [],
+  "result": "PASS"
+}

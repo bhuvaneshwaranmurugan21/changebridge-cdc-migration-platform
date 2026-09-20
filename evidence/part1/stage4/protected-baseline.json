@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "entry_commit": "3634b23a7fb83611a9c3b28b785a7373b68861ec",
+  "entry_tree": "edd0986becbe74daff9131587c535e17e26a9315",
+  "protected_authorities": [
+    {"path": "evidence/part1/stage1/artifact_manifest.json", "sha256": "424f63c992796f3c9a903e737af3b16a429edcdd9361b673711863d293539d47"},
+    {"path": "evidence/part1/stage2/artifact-manifest.json", "sha256": "b63acdab969a9ca972e4fa00c423ee03bcd0b4659b97577749c542b912ec460c"},
+    {"path": "evidence/part1/stage3/artifact-manifest.json", "sha256": "be248e6bf6780bbc2f22ea1e7688bbdaa658a4d7632a8d328b60f2ceb1688a39"},
+    {"path": "evidence/local-simulation.json", "sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24"},
+    {"path": "requirements/completion-requirements.json", "entry_git_blob": "b549249a48066dc88bcb0e525c992a0de3d4de25"},
+    {"path": "claims/claims.json", "entry_git_blob": "82ec101e498bf571ee190261f8e339d5f2049bbd"},
+    {"path": "architecture/components.json", "entry_sha256": "d595d6b9e5c6eed5f2ea99488183ba3907f4638ad201654ff0f07c3b32e07bde"},
+    {"path": "architecture/adr-index.json", "entry_sha256": "f53e0a2367ab57410cb15aee0ae1fbfea9ea1e168d9408d87eaf0ad84db03d5b"}
+  ],
+  "baseline_closure": "The three predecessor artifact manifests bind their complete stage-owned path sets; the exact entry tree binds all remaining repository paths.",
+  "predecessor_validation": {
+    "completion_authority_sha256": "80bf49b01bb9ade8f6428978473684799ce71230daba7fd9f5b5353e20b47dbc",
+    "architecture_authority_sha256": "820228766731724e5421d35bb63bbc1012adae215cbc3d4064caa7187af0ba1e",
+    "simulator_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24",
+    "two_run_byte_identical": true,
+    "tests_passed": 82,
+    "coverage_percent": 88.92
+  },
+  "result": "PASS"
+}

@@ -341,12 +341,14 @@
       "verification_method": "repeatable workload execution, raw metric capture, calculation audit, and bounded comparison"
     },
     {
-      "current_proof_paths": [],
-      "future_proof_paths": [
-        "future:tests/contracts/test_cdc_envelope.py"
+      "current_proof_paths": [
+        "tests/fixtures/contract-oracle-authority/valid-cdc-event.json",
+        "tests/test_contract_oracle_authority.py"
       ],
+      "future_proof_paths": [],
       "implementation_paths": [
-        "future:contracts/cdc-envelope-v1.json",
+        "contracts/cdc-envelope-v1.schema.json",
+        "src/changebridge/contracts.py",
         "src/changebridge/model.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
@@ -371,12 +373,12 @@
       "verification_method": "state-model tests for contiguous, gap, overlap, duplicate, and restart paths"
     },
     {
-      "current_proof_paths": [],
-      "future_proof_paths": [
-        "future:tests/contracts/test_ordering.py"
+      "current_proof_paths": [
+        "tests/test_contract_oracle_authority.py"
       ],
+      "future_proof_paths": [],
       "implementation_paths": [
-        "future:src/changebridge/contracts/ordering.py",
+        "src/changebridge/contracts.py",
         "src/changebridge/engine.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
@@ -405,12 +407,13 @@
     {
       "current_proof_paths": [
         "evidence/local-simulation.json",
+        "tests/test_contract_oracle_authority.py",
         "tests/test_schema_and_cutover.py"
       ],
-      "future_proof_paths": [
-        "future:tests/model/test_publication_oracle.py"
-      ],
+      "future_proof_paths": [],
       "implementation_paths": [
+        "oracles/invariants.json",
+        "src/changebridge/contracts.py",
         "src/changebridge/cutover.py",
         "src/changebridge/engine.py"
       ],
@@ -532,12 +535,13 @@
     },
     {
       "current_proof_paths": [
+        "tests/test_contract_oracle_authority.py",
         "tests/test_schema_and_cutover.py"
       ],
-      "future_proof_paths": [
-        "future:tests/contracts/test_schema_identity.py"
-      ],
+      "future_proof_paths": [],
       "implementation_paths": [
+        "contracts/catalog.json",
+        "contracts/cdc-envelope-v1.schema.json",
         "contracts/orders-v1.json",
         "src/changebridge/schema.py"
       ],

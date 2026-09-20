@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "entry_tree": "edd0986becbe74daff9131587c535e17e26a9315",
+  "source": "src/changebridge/simulator.py",
+  "committed_evidence": "evidence/local-simulation.json",
+  "canonical_result_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24",
+  "two_run_byte_identical": true,
+  "checks": [
+    {"name": "contiguous_batch", "semantic_sha256": "8630e9539e759304050df55e9c408b86cbd358655ba19e592c88e0b0ef703286", "assertion": "frontier advances 100 to 130", "invariants": ["continuity"], "managed_gap": "no managed transport"},
+    {"name": "idempotent_batch_replay", "semantic_sha256": "157361d4bd017d89b14f33560361ec2f11a09a97115f9f8dbf91d6bd11e9776a", "assertion": "identical batch replays", "invariants": ["idempotency"], "managed_gap": "no managed target"},
+    {"name": "delete_tombstone", "semantic_sha256": "c2fd89633a195d45886ab0521a5ab9bedbad054324d1f740b41feae2a985bd53", "assertion": "delete leaves tombstone", "invariants": ["delete_correctness"], "managed_gap": "no Iceberg delete proof"},
+    {"name": "frontier_gap_blocked", "semantic_sha256": "6ae1e90a80cc324972f48e831252cef37e6c7416e9653628cb27372de093bad7", "assertion": "gap from 130 to 140 is rejected", "invariants": ["continuity"], "managed_gap": "no DMS gap injection"},
+    {"name": "conflicting_transaction_replay_blocked", "semantic_sha256": "d864f90f4d23c9c444ab60de0a14618098c24fd666efb09b9b5eb9f7090e8039", "assertion": "same transaction ID with changed digest is rejected", "invariants": ["conflict_detection"], "managed_gap": "no distributed ledger"},
+    {"name": "crash_atomicity", "semantic_sha256": "7b04c09e50a4b88f13675d6c1c903da3bc15d20554130e0b93b499278e43f87d", "assertion": "injected pre-commit crash leaves frontier unchanged", "invariants": ["failure_atomicity", "checkpoint_coupling"], "managed_gap": "single-process SQLite only"},
+    {"name": "nullable_schema_addition", "semantic_sha256": "342af81053108f1dcc2e2434e5cd28c15171c993f90a95fc9994634e2feb910b", "assertion": "nullable campaign_id is accepted", "invariants": ["schema_safety"], "managed_gap": "bounded compatibility rule"},
+    {"name": "breaking_schema_blocked", "semantic_sha256": "acfbed06431b1750b4d8b3432124610ad3859abcb384ab55f95dd6e8edcc2d86", "assertion": "removed amount field is rejected", "invariants": ["schema_safety"], "managed_gap": "no generation quarantine runtime"},
+    {"name": "frontier_reconciliation", "semantic_sha256": "6496a953811cac48b9cb10927d65e844b3bdb4a4ce92b27ed1e8541a210fca02", "assertion": "count and digest match at frontier 130", "invariants": ["proof_before_publication"], "managed_gap": "local records only"},
+    {"name": "settlement_mismatch_detected", "semantic_sha256": "b96a549ddf57f7d4c3259616dcb73bbf39a9466aba81ae7c198d7dde38792fba", "assertion": "orders digest mismatch is detected", "invariants": ["proof_before_publication"], "managed_gap": "no managed reconciliation"},
+    {"name": "lag_gate", "semantic_sha256": "2cb81fc9f85d2514a7bef64fefa56a46f69c79fb833605bf45b5bef89c5ad497", "assertion": "31 seconds exceeds the 30-second local threshold", "invariants": ["proof_before_publication"], "managed_gap": "not a performance measurement"},
+    {"name": "proof_gated_cutover", "semantic_sha256": "cabc2266aaa872693fd47a9ea176afb6a7e1e4418cdc946430ab95d0df88f9a4", "assertion": "local ready generation publishes", "invariants": ["proof_before_publication", "single_publisher_cas"], "managed_gap": "historical five-boolean gate only"},
+    {"name": "concurrent_cutover_blocked", "semantic_sha256": "0e6a4bb0672335a4e63a396045767a1872cf041522fe9a3b9ee70d09625ed7f6", "assertion": "stale pointer revision is rejected", "invariants": ["stale_writer_rejection"], "managed_gap": "no managed contention"}
+  ],
+  "check_count": 13,
+  "discrepancies": [],
+  "historical_source_changed": false,
+  "result": "PASS"
+}

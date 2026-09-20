@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "decision": "APPROVED_DEV_ONLY",
+  "direct_dependencies": [
+    {"name": "jsonschema", "version": "4.26.0", "purpose": "Draft 2020-12 meta-schema and instance validation"},
+    {"name": "hypothesis", "version": "6.168.0", "purpose": "genuine shrinking property-based tests"}
+  ],
+  "resolved_transitive_dependencies": [
+    "attrs==26.1.0", "jsonschema-specifications==2025.9.1", "referencing==0.37.0",
+    "rpds-py==2026.6.3", "sortedcontainers==2.4.0"
+  ],
+  "repository_declaration_change": "Only the two direct packages are added to the dev extra.",
+  "runtime_dependency_change": false,
+  "environment_persistence": false,
+  "result": "PASS"
+}

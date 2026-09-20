@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:schema:contract-catalog:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "authority", "canonicalization_profile", "compatibility_policy", "required_logical_records", "contracts", "historical_evidence_compatibility"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "authority": {"const": "ChangeBridge Part 1 Stage 4"},
+    "canonicalization_profile": {"const": "changebridge-canonical-json/1.0.0"},
+    "compatibility_policy": {"type": "object", "minProperties": 12, "additionalProperties": {"type": "string", "minLength": 1}},
+    "required_logical_records": {"type": "array", "minItems": 16, "maxItems": 16, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "contracts": {
+      "type": "array", "minItems": 16,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "title", "version", "schema_uri", "authority_path", "schema_pointer", "owner", "producers", "consumers", "compatibility_class", "required_fields", "optional_fields", "conditional_fields", "unknown_field_policy", "canonicalization_profile", "identity_profile", "requirement_ids", "adr_ids", "component_ids", "invariant_ids", "claim_ids", "lifecycle", "replacement_id", "deprecation_stage", "local_validator", "future_managed_proof_owner"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"},
+          "title": {"type": "string", "minLength": 1},
+          "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+          "schema_uri": {"type": "string", "pattern": "^urn:changebridge:"},
+          "authority_path": {"type": "string", "pattern": "^contracts/"},
+          "schema_pointer": {"type": "string", "pattern": "^#"},
+          "owner": {"type": "string", "minLength": 1},
+          "producers": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "consumers": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "compatibility_class": {"enum": ["STRICT_MAJOR_ADDITIVE_MINOR"]},
+          "required_fields": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+          "optional_fields": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "conditional_fields": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "unknown_field_policy": {"const": "REJECT"},
+          "canonicalization_profile": {"const": "changebridge-canonical-json/1.0.0"},
+          "identity_profile": {"type": "string", "minLength": 1},
+          "requirement_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^CB-[A-Z]+-[0-9]{3}$"}},
+          "adr_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^ADR-[0-9]{3}$"}},
+          "component_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+          "invariant_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+          "claim_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CB-CLAIM-[0-9]{3}$"}},
+          "lifecycle": {"enum": ["ACTIVE", "DEPRECATED", "RETIRED"]},
+          "replacement_id": {"type": ["string", "null"]},
+          "deprecation_stage": {"type": ["string", "null"]},
+          "local_validator": {"type": "string", "minLength": 1},
+          "future_managed_proof_owner": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "historical_evidence_compatibility": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage1_to_stage3_schema", "status", "rule"],
+      "properties": {
+        "stage1_to_stage3_schema": {"const": "schemas/stage-evidence.schema.json"},
+        "status": {"const": "IMMUTABLE_LEGACY_ACCEPTED"},
+        "rule": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

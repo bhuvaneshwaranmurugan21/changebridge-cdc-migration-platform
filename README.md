@@ -44,6 +44,14 @@ The complete component, lifecycle, checkpoint-recovery, proof, publication, read
 rollback, and retirement semantics are defined by the
 [Stage 3 architecture authority](docs/architecture.md) and its fifteen accepted ADRs.
 
+Stage 4 makes those decisions machine-checkable through the
+[contract catalog](docs/contracts/CONTRACT_CATALOG.md),
+[canonicalization profile](docs/contracts/CANONICALIZATION.md), twelve control-record schemas,
+[sixteen invariant oracles](docs/testing/INVARIANT_ORACLES.md), and the
+[layered test authority](docs/testing/TEST_ARCHITECTURE.md). These are bounded local specification
+and reference-oracle proofs. They do not change the existing runtime adapters or establish AWS,
+performance, availability, exactly-once, or zero-downtime behavior.
+
 ### What it changes in three mainstream patterns
 
 | Common pattern | Normalized failure | ChangeBridge correction |
@@ -98,6 +106,8 @@ excessive lag, successful cutover, and stale concurrent cutover.
 src/changebridge/   transport-neutral correctness kernel
 tests/              invariant and failure-injection tests
 contracts/          versioned source contracts
+oracles/            invariant-to-oracle authority
+testing/            machine-readable test-layer authority
 jobs/               Spark interface/input-shape adapter; no Iceberg mutation
 infra/terraform/    AWS reference topology
 evidence/           reproducible local proof artifact

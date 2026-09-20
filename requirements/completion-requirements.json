@@ -78,11 +78,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "versioned schema validation plus round-trip and property tests",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/model.py", "future:contracts/cdc-envelope-v1.json"],
-      "proof_paths": ["future:tests/contracts/test_cdc_envelope.py"],
+      "implementation_paths": ["src/changebridge/model.py", "contracts/cdc-envelope-v1.schema.json", "src/changebridge/contracts.py"],
+      "proof_paths": ["tests/test_contract_oracle_authority.py", "tests/fixtures/contract-oracle-authority/valid-cdc-event.json"],
       "failure_condition": "Any required source semantic is absent, ambiguous, lossy, or excluded from replay identity.",
-      "limitations": "The current model lacks explicit schema version and per-event replay identity fields.",
-      "review_notes": "Field-level contract details are owned by Part 1 Stage 4."
+      "limitations": "The v1 envelope and local reference validator are complete, but the existing runtime model and managed transport do not yet emit the envelope.",
+      "review_notes": "Stage 4 supplies contract-level LOCAL_VERIFIED proof while runtime conformance remains Part 2 work."
     },
     {
       "id": "CB-ORDER-002",
@@ -118,11 +118,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "ordering oracle, permutation property tests, and managed transaction-order evidence",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/engine.py", "future:src/changebridge/contracts/ordering.py"],
-      "proof_paths": ["future:tests/contracts/test_ordering.py"],
+      "implementation_paths": ["src/changebridge/engine.py", "src/changebridge/contracts.py"],
+      "proof_paths": ["tests/test_contract_oracle_authority.py"],
       "failure_condition": "Equivalent immutable inputs can produce different event order or target state.",
-      "limitations": "Local transactions are ordered by supplied integer commit LSN; equal-position tie semantics are not defined.",
-      "review_notes": "The detailed total-order key must be settled before runtime construction."
+      "limitations": "Typed position and tie semantics are locally verified, but the current apply engine still consumes integer LSN batches and no managed adapter conformance exists.",
+      "review_notes": "Stage 4 settles the total-order contract without changing runtime adapter behavior."
     },
     {
       "id": "CB-ORDER-004",
@@ -318,11 +318,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "contract validation and schema-digest round trips",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["contracts/orders-v1.json", "src/changebridge/schema.py"],
-      "proof_paths": ["tests/test_schema_and_cutover.py", "future:tests/contracts/test_schema_identity.py"],
+      "implementation_paths": ["contracts/orders-v1.json", "contracts/catalog.json", "contracts/cdc-envelope-v1.schema.json", "src/changebridge/schema.py"],
+      "proof_paths": ["tests/test_schema_and_cutover.py", "tests/test_contract_oracle_authority.py"],
       "failure_condition": "A record is accepted without an exact contract identity or schema digest.",
-      "limitations": "Generation schema version exists locally, but events do not carry a schema version.",
-      "review_notes": "Contract evolution rules must be explicit, not inferred from target columns."
+      "limitations": "Contract identity and digest binding are locally verified for v1 fixtures; runtime producers and managed schema registries are not yet proven conformant.",
+      "review_notes": "Stage 4 makes evolution rules explicit and retains PARTIAL until runtime conformance is implemented."
     },
     {
       "id": "CB-SCHEMA-002",
@@ -478,11 +478,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "truth-table oracle for all gate combinations plus integration tests",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/cutover.py", "src/changebridge/engine.py"],
-      "proof_paths": ["tests/test_schema_and_cutover.py", "evidence/local-simulation.json", "future:tests/model/test_publication_oracle.py"],
+      "implementation_paths": ["src/changebridge/cutover.py", "src/changebridge/engine.py", "oracles/invariants.json", "src/changebridge/contracts.py"],
+      "proof_paths": ["tests/test_schema_and_cutover.py", "evidence/local-simulation.json", "tests/test_contract_oracle_authority.py"],
       "failure_condition": "Any failed, missing, stale, or unbound mandatory gate permits publication.",
-      "limitations": "The local gate covers five booleans; complete oracle coverage is not yet present.",
-      "review_notes": "The exact gate set belongs to Part 1 Stage 4."
+      "limitations": "The complete eight-gate truth table and manifest semantics are locally verified; runtime orchestration and managed publication remain unimplemented.",
+      "review_notes": "Stage 4 fixes the exact gate set and retains PARTIAL because local specification proof is not runtime proof."
     },
     {
       "id": "CB-PUBLISH-002",

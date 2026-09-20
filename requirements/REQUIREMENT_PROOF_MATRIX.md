@@ -26,11 +26,11 @@ Generated deterministically from the authoritative requirements registry.
 | `CB-OPS-002` | `PARTIAL` | `AWS_VERIFIED` | `part3-managed-proof` | None | `future:evidence/managed/operations.json` |
 | `CB-OPS-003` | `UNSATISFIED` | `AWS_VERIFIED` | `part3-managed-proof` | None | `future:evidence/managed/stage-receipt.json` |
 | `CB-OPS-004` | `UNSATISFIED` | `MEASURED` | `part3-managed-proof` | None | `future:evidence/managed/measurements.json` |
-| `CB-ORDER-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | None | `future:tests/contracts/test_cdc_envelope.py` |
+| `CB-ORDER-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `tests/fixtures/contract-oracle-authority/valid-cdc-event.json`<br>`tests/test_contract_oracle_authority.py` | None |
 | `CB-ORDER-002` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_engine.py` | None |
-| `CB-ORDER-003` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | None | `future:tests/contracts/test_ordering.py` |
+| `CB-ORDER-003` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `tests/test_contract_oracle_authority.py` | None |
 | `CB-ORDER-004` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `tests/test_engine.py` | `future:tests/test_transaction_atomicity.py` |
-| `CB-PUBLISH-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | `future:tests/model/test_publication_oracle.py` |
+| `CB-PUBLISH-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/local-simulation.json`<br>`tests/test_contract_oracle_authority.py`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-002` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-004` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | None | `future:evidence/managed/rollback.json`<br>`future:tests/model/test_rollback.py` |
@@ -38,7 +38,7 @@ Generated deterministically from the authoritative requirements registry.
 | `CB-RECON-002` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `tests/test_reconciliation.py` | `future:tests/test_hierarchical_reconciliation.py` |
 | `CB-RECON-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_reconciliation.py`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-RELEASE-001` | `DEFERRED` | `LOCAL_VERIFIED` | `final-release` | None | `future:release/release-verification.json` |
-| `CB-SCHEMA-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `tests/test_schema_and_cutover.py` | `future:tests/contracts/test_schema_identity.py` |
+| `CB-SCHEMA-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `tests/test_contract_oracle_authority.py`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-SCHEMA-002` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-SCHEMA-003` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-SEC-001` | `PARTIAL` | `AWS_VERIFIED` | `part3-managed-proof` | None | `future:evidence/managed/security.json` |

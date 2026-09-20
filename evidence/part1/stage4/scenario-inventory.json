@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "corpora": [
+    {"path": "tests/fixtures/contract-oracle-authority/oracle-cases.json", "seed": 4401, "case_count": 32, "purpose": "one positive and one minimal counterexample for each invariant"},
+    {"path": "tests/fixtures/contract-oracle-authority/adversarial-cases.json", "seed": 4402, "case_count": 26, "purpose": "malformed, ambiguous, conflicting, stale, incomplete, cross-boundary, and tampered inputs"},
+    {"path": "tests/fixtures/contract-oracle-authority/validator-mutations.json", "seed": null, "case_count": 12, "purpose": "minimal cross-authority mutations with non-interchangeable exact diagnostics"},
+    {"path": "evidence/local-simulation.json", "seed": "deterministic fixed fixture", "case_count": 13, "purpose": "preserved historical failure lab"}
+  ],
+  "new_stage4_case_count": 70,
+  "historical_case_count": 13,
+  "expected_verdict_field": "expected or expected_verdict",
+  "exact_diagnostic_field": "expected_diagnostic",
+  "missing_reproduction_metadata_count": 0,
+  "result": "PASS"
+}
