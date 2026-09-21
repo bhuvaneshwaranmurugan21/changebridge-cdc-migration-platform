@@ -1,0 +1,28 @@
+{
+  "accepted_non_orphan_exceptions": [
+    {
+      "id": "ADR-015",
+      "reason": "Retention and retirement lifecycle governance supports accepted components and state machines without owning a standalone completion requirement."
+    }
+  ],
+  "counts": {
+    "adrs": 15,
+    "claims": 10,
+    "components": 17,
+    "contracts": 16,
+    "invariants": 16,
+    "requirements": 39
+  },
+  "errors": {
+    "claims_without_requirements": [],
+    "missing_current_paths": [],
+    "missing_requirement_mappings": [],
+    "unknown_requirement_mappings": [],
+    "unreferenced_adrs": [],
+    "unreferenced_components": [],
+    "unreferenced_contracts": []
+  },
+  "record_type": "part1_orphan_reference_review",
+  "result": "PASS",
+  "schema_version": "1.0.0"
+}

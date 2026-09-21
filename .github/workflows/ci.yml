@@ -21,6 +21,8 @@ jobs:
       - run: ruff check .
       - run: mypy src
       - run: pytest
+      - name: Validate Part 1 closure authority
+        run: python scripts/validate_part1_closure.py
       - name: Regenerate deterministic evidence
         run: |
           python -m changebridge.cli simulate --output /tmp/changebridge-evidence.json

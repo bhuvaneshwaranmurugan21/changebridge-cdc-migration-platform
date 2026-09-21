@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "stage5_command_rehearsal",
+  "environment": {
+    "kind": "disposable_tmp_virtualenv",
+    "dependency_source": "repository-declared development dependencies only",
+    "undeclared_dependencies_installed": []
+  },
+  "commands": [
+    {
+      "id": "CMD-01",
+      "command": "python scripts/validate_completion_authority.py --check-rendered --output <tmp>/completion.json",
+      "result": "PASS",
+      "purpose": "Stage 2 completion and claim authority"
+    },
+    {
+      "id": "CMD-02",
+      "command": "python scripts/build_architecture_authority.py --check",
+      "result": "PASS",
+      "purpose": "Stage 3 deterministic architecture views"
+    },
+    {
+      "id": "CMD-03",
+      "command": "python scripts/validate_architecture_authority.py --check-rendered --output <tmp>/architecture.json",
+      "result": "PASS",
+      "purpose": "Stage 3 architecture authority"
+    },
+    {
+      "id": "CMD-04",
+      "command": "python scripts/build_contract_oracle_authority.py --check",
+      "result": "PASS",
+      "purpose": "Stage 4 deterministic contract and oracle views"
+    },
+    {
+      "id": "CMD-05",
+      "command": "python scripts/validate_contract_oracle_authority.py --skip-evidence --output <tmp>/contracts-authority.json",
+      "result": "PASS",
+      "purpose": "Stage 4 authority under an explicitly recorded later-stage overlap"
+    },
+    {
+      "id": "CMD-06",
+      "command": "sha256sum <eight protected predecessor manifests and receipts>",
+      "result": "PASS",
+      "purpose": "Byte-identity proof for immutable Stage 1 through Stage 4 evidence roots"
+    },
+    {
+      "id": "CMD-07",
+      "command": "python scripts/build_part1_closure.py --check",
+      "result": "PASS",
+      "purpose": "Stage 5 deterministic trace and walkthrough views"
+    },
+    {
+      "id": "CMD-08",
+      "command": "python scripts/validate_part1_closure.py --allow-pending-interview --output <tmp>/closure.json",
+      "result": "PASS",
+      "purpose": "Technical pre-interview closure with the human gate still deferred"
+    },
+    {
+      "id": "CMD-09",
+      "command": "ruff check .",
+      "result": "PASS",
+      "purpose": "Repository lint"
+    },
+    {
+      "id": "CMD-10",
+      "command": "mypy src",
+      "result": "PASS",
+      "purpose": "Strict source type validation"
+    },
+    {
+      "id": "CMD-11",
+      "command": "pytest -q",
+      "result": "PASS",
+      "purpose": "114 tests and the configured coverage gate"
+    },
+    {
+      "id": "CMD-12",
+      "command": "python -m changebridge.cli simulate --output <tmp>/simulation.json",
+      "result": "PASS",
+      "purpose": "Preserved thirteen-scenario local failure laboratory"
+    }
+  ],
+  "stage4_full_evidence_observation": {
+    "command": "python scripts/validate_contract_oracle_authority.py",
+    "observed_diagnostic": "CBEVD003_ARTIFACT_DIGEST_MISMATCH: PROJECT_STATUS.md",
+    "classification": "EXPECTED_LATER_STAGE_OVERLAP",
+    "resolution": "The diagnostic remains enabled. Stage 5 uses Stage 4 authority-only validation, verifies all protected Stage 4 evidence roots byte-for-byte, and records every intentional overlap.",
+    "bypass": false
+  },
+  "result": "PASS"
+}

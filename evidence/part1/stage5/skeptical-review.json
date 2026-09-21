@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "skeptical_review",
+  "reviewer_posture": "senior data engineer adversarial review",
+  "questions": [
+    {"id": "SR-01", "question": "Is the snapshot and CDC boundary precise?", "result": "PASS", "authority": ["docs/adr/ADR-002-snapshot-cdc-boundary.md", "architecture/generation-state-machine.json"], "finding": "The boundary is typed as snapshot frontier S plus contiguous interval (S,F]; transport acquisition remains unproven."},
+    {"id": "SR-02", "question": "Is ordering stronger than timestamp ordering?", "result": "PASS", "authority": ["docs/adr/ADR-004-source-position-ordering.md", "contracts/cdc-envelope-v1.schema.json"], "finding": "Typed source position and transaction/event sequence govern order; timestamps are not ordering authority."},
+    {"id": "SR-03", "question": "Are transaction and checkpoint ambiguities acknowledged?", "result": "PASS", "authority": ["docs/adr/ADR-006-target-checkpoint-recovery.md", "architecture/checkpoint-state-machine.json"], "finding": "Checkpoint advancement requires durable target receipt; ambiguous acknowledgement is a recovery state, not assumed success."},
+    {"id": "SR-04", "question": "Is consumer-visible consistency stated honestly?", "result": "PASS", "authority": ["docs/architecture/CONSISTENCY_AND_LIMITATIONS.md", "docs/adr/ADR-010-consumer-generation-consistency.md"], "finding": "The active-generation pointer supplies one consumer view; cross-table storage atomicity is not claimed."},
+    {"id": "SR-05", "question": "Are deletes and schema changes first-class?", "result": "PASS", "authority": ["docs/adr/ADR-007-delete-tombstone-retention.md", "docs/adr/ADR-008-schema-compatibility-quarantine.md"], "finding": "Delete lineage and schema quarantine have explicit contracts, invariants and adversarial cases."},
+    {"id": "SR-06", "question": "Can every material public claim be traced to evidence?", "result": "PASS", "authority": ["claims/claims.json", "scripts/validate_completion_authority.py"], "finding": "Ten registered claims have bounded labels and named proof references; new walkthrough surfaces must reuse registry wording."},
+    {"id": "SR-07", "question": "Are failure oracles stronger than workflow success?", "result": "PASS", "authority": ["oracles/invariants.json", "tests/fixtures/contract-oracle-authority/adversarial-cases.json"], "finding": "Sixteen invariants have executable predicates and positive/minimal-negative cases; twenty-six adversarial cases expect exact diagnostics."},
+    {"id": "SR-08", "question": "Are local and AWS proof boundaries distinct?", "result": "PASS", "authority": ["COMPLETION_CONTRACT.md", "claims/claims.json"], "finding": "Current proof is DESIGN_ONLY, LOCAL_VERIFIED or UNCLAIMED; no Stage 5 AWS or measurement promotion is permitted."},
+    {"id": "SR-09", "question": "Is complexity justified by the failure model?", "result": "PASS", "authority": ["docs/architecture/RESPONSIBILITY_MODEL.md", "architecture/components.json"], "finding": "Generation, checkpoint, proof and publication are separate because they fail independently; the readiness graph avoids new orchestration abstractions."},
+    {"id": "SR-10", "question": "Can a 2-YOE engineer plausibly own and explain the plan?", "result": "PENDING_HUMAN_REHEARSAL", "authority": ["docs/INTERVIEW_WALKTHROUGH.md", "evidence/part1/stage5/interview-rehearsal.json"], "finding": "Repository navigation is prepared, but owner ability cannot be inferred from generated documentation."},
+    {"id": "SR-11", "question": "Does the repository remain unmistakably ChangeBridge?", "result": "PASS", "authority": ["evidence/part1/stage5/execution-envelope.json", "evidence/part1/stage5/scope-isolation-report.json"], "finding": "Stage 5 scope and scans are ChangeBridge-only."}
+  ],
+  "blocking_findings": ["SR-10"],
+  "severity_lowered_for_schedule": false,
+  "result": "PENDING"
+}

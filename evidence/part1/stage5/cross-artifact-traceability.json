@@ -1,0 +1,1192 @@
+{
+  "base_commit": "f7ada638e0404afacaac604be400c1434858002f",
+  "base_tree": "2401a4e8cdff8ae153dc4b1cebc1bc7b5cc61ac3",
+  "complete_trace_count": 39,
+  "part": 1,
+  "project": "ChangeBridge",
+  "record_type": "part1_cross_artifact_traceability",
+  "requirement_count": 39,
+  "result": "PASS",
+  "rows": [
+    {
+      "adrs": [
+        "ADR-002"
+      ],
+      "claims": [],
+      "components": [
+        "checkpoint_ledger",
+        "postgres_source"
+      ],
+      "contracts": [
+        "migration_generation"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "future:src/changebridge/contracts/boundary.py"
+      ],
+      "invariants": [
+        "boundary"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage3",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "future:tests/contracts/test_boundary.py"
+      ],
+      "requirement_id": "CB-BOUNDARY-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-002"
+      ],
+      "claims": [],
+      "components": [
+        "checkpoint_ledger",
+        "dms_transport"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/model.py",
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [
+        "boundary",
+        "continuity"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage3",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "future:tests/contracts/test_boundary.py"
+      ],
+      "requirement_id": "CB-BOUNDARY-002",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-002"
+      ],
+      "claims": [],
+      "components": [
+        "checkpoint_ledger",
+        "postgres_source"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "future:src/changebridge/evidence/frontier.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "AWS_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part3-managed-proof",
+      "proof_paths": [
+        "future:evidence/managed/frontier-lineage.json"
+      ],
+      "requirement_id": "CB-BOUNDARY-003",
+      "status": "UNSATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-003",
+        "ADR-004"
+      ],
+      "claims": [],
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine"
+      ],
+      "contracts": [
+        "cdc_envelope",
+        "target_record_metadata"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/model.py",
+        "contracts/cdc-envelope-v1.schema.json",
+        "src/changebridge/contracts.py"
+      ],
+      "invariants": [
+        "order"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage4",
+      "proof_paths": [
+        "tests/test_contract_oracle_authority.py",
+        "tests/fixtures/contract-oracle-authority/valid-cdc-event.json"
+      ],
+      "requirement_id": "CB-ORDER-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-003",
+        "ADR-004"
+      ],
+      "claims": [
+        "CB-CLAIM-001"
+      ],
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [
+        "continuity"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-ORDER-002",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-003",
+        "ADR-004"
+      ],
+      "claims": [],
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine"
+      ],
+      "contracts": [
+        "cdc_envelope"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "src/changebridge/contracts.py"
+      ],
+      "invariants": [
+        "order",
+        "replay_determinism"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage4",
+      "proof_paths": [
+        "tests/test_contract_oracle_authority.py"
+      ],
+      "requirement_id": "CB-ORDER-003",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-003",
+        "ADR-004"
+      ],
+      "claims": [],
+      "components": [
+        "manifest_normalizer",
+        "migration_apply_engine"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/model.py",
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "future:tests/test_transaction_atomicity.py"
+      ],
+      "requirement_id": "CB-ORDER-004",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "claims": [
+        "CB-CLAIM-006"
+      ],
+      "components": [
+        "migration_apply_engine"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "future:jobs/iceberg_apply.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "future:tests/integration/test_iceberg_apply.py"
+      ],
+      "requirement_id": "CB-APPLY-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "claims": [
+        "CB-CLAIM-006"
+      ],
+      "components": [
+        "migration_apply_engine"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "future:jobs/iceberg_apply.py"
+      ],
+      "invariants": [
+        "delete_correctness"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "future:tests/integration/test_iceberg_apply.py"
+      ],
+      "requirement_id": "CB-APPLY-002",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "claims": [
+        "CB-CLAIM-001",
+        "CB-CLAIM-006"
+      ],
+      "components": [
+        "migration_apply_engine"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [
+        "idempotency"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-APPLY-003",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "claims": [
+        "CB-CLAIM-001"
+      ],
+      "components": [
+        "migration_apply_engine"
+      ],
+      "contracts": [
+        "applied_transaction"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [
+        "conflict_detection",
+        "idempotency",
+        "replay_determinism"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-APPLY-004",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-005",
+        "ADR-007"
+      ],
+      "claims": [
+        "CB-CLAIM-001"
+      ],
+      "components": [
+        "migration_apply_engine"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [
+        "failure_atomicity"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-APPLY-005",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-006"
+      ],
+      "claims": [
+        "CB-CLAIM-006"
+      ],
+      "components": [
+        "checkpoint_ledger",
+        "migration_apply_engine"
+      ],
+      "contracts": [
+        "applied_transaction",
+        "frontier_checkpoint",
+        "target_record_metadata"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "future:src/changebridge/checkpoint.py"
+      ],
+      "invariants": [
+        "checkpoint_coupling"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage3",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "future:tests/model/test_checkpoint_coupling.py"
+      ],
+      "requirement_id": "CB-CHECKPOINT-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-006"
+      ],
+      "claims": [
+        "CB-CLAIM-001"
+      ],
+      "components": [
+        "checkpoint_ledger"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [
+        "failure_atomicity"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-CHECKPOINT-002",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-006"
+      ],
+      "claims": [],
+      "components": [
+        "checkpoint_ledger"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "future:src/changebridge/recovery.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "future:tests/model/test_restart.py",
+        "future:evidence/managed/restart.json"
+      ],
+      "requirement_id": "CB-CHECKPOINT-003",
+      "status": "UNSATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-008"
+      ],
+      "claims": [],
+      "components": [
+        "schema_coordinator"
+      ],
+      "contracts": [
+        "cdc_envelope",
+        "orders_source_contract",
+        "schema_contract",
+        "target_record_metadata"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "contracts/orders-v1.json",
+        "contracts/catalog.json",
+        "contracts/cdc-envelope-v1.schema.json",
+        "src/changebridge/schema.py"
+      ],
+      "invariants": [
+        "schema_safety"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage4",
+      "proof_paths": [
+        "tests/test_schema_and_cutover.py",
+        "tests/test_contract_oracle_authority.py"
+      ],
+      "requirement_id": "CB-SCHEMA-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-008"
+      ],
+      "claims": [],
+      "components": [
+        "schema_coordinator"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/schema.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_schema_and_cutover.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-SCHEMA-002",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-008"
+      ],
+      "claims": [],
+      "components": [
+        "schema_coordinator"
+      ],
+      "contracts": [
+        "schema_contract"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/schema.py",
+        "future:src/changebridge/quarantine.py"
+      ],
+      "invariants": [
+        "proof_before_publication",
+        "schema_safety"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_schema_and_cutover.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-SCHEMA-003",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-001",
+        "ADR-013"
+      ],
+      "claims": [],
+      "components": [
+        "consumer_resolver",
+        "generation_registry",
+        "iceberg_generation_store"
+      ],
+      "contracts": [
+        "migration_generation"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "future:src/changebridge/generation.py"
+      ],
+      "invariants": [
+        "generation_isolation"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage3",
+      "proof_paths": [
+        "tests/test_engine.py",
+        "future:tests/model/test_generation_isolation.py"
+      ],
+      "requirement_id": "CB-ISOLATION-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-001",
+        "ADR-013"
+      ],
+      "claims": [],
+      "components": [
+        "generation_registry",
+        "iceberg_generation_store"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "future:src/changebridge/replay.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "future:tests/model/test_replay_isolation.py"
+      ],
+      "requirement_id": "CB-ISOLATION-002",
+      "status": "UNSATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-009"
+      ],
+      "claims": [],
+      "components": [
+        "postgres_source",
+        "reconciliation_coordinator"
+      ],
+      "contracts": [
+        "reconciliation_run"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/reconciliation.py",
+        "future:src/changebridge/proof.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage3",
+      "proof_paths": [
+        "tests/test_reconciliation.py",
+        "future:evidence/managed/reconciliation.json"
+      ],
+      "requirement_id": "CB-RECON-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-009"
+      ],
+      "claims": [],
+      "components": [
+        "reconciliation_coordinator"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/reconciliation.py",
+        "future:src/changebridge/hierarchical_reconciliation.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_reconciliation.py",
+        "future:tests/test_hierarchical_reconciliation.py"
+      ],
+      "requirement_id": "CB-RECON-002",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-009"
+      ],
+      "claims": [
+        "CB-CLAIM-001"
+      ],
+      "components": [
+        "reconciliation_coordinator"
+      ],
+      "contracts": [
+        "reconciliation_run"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/cutover.py"
+      ],
+      "invariants": [
+        "proof_before_publication"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_reconciliation.py",
+        "tests/test_schema_and_cutover.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-RECON-003",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "claims": [
+        "CB-CLAIM-004",
+        "CB-CLAIM-007"
+      ],
+      "components": [
+        "active_generation_pointer",
+        "proof_coordinator",
+        "publication_controller"
+      ],
+      "contracts": [
+        "gate_result",
+        "proof_manifest",
+        "publication_event"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/cutover.py",
+        "src/changebridge/engine.py",
+        "oracles/invariants.json",
+        "src/changebridge/contracts.py"
+      ],
+      "invariants": [
+        "proof_before_publication"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage4",
+      "proof_paths": [
+        "tests/test_schema_and_cutover.py",
+        "evidence/local-simulation.json",
+        "tests/test_contract_oracle_authority.py"
+      ],
+      "requirement_id": "CB-PUBLISH-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "claims": [
+        "CB-CLAIM-001",
+        "CB-CLAIM-004"
+      ],
+      "components": [
+        "active_generation_pointer",
+        "proof_coordinator",
+        "publication_controller"
+      ],
+      "contracts": [
+        "active_generation",
+        "publication_event"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [
+        "single_publisher_cas"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_schema_and_cutover.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-PUBLISH-002",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "claims": [
+        "CB-CLAIM-001",
+        "CB-CLAIM-004"
+      ],
+      "components": [
+        "active_generation_pointer",
+        "proof_coordinator",
+        "publication_controller"
+      ],
+      "contracts": [
+        "active_generation"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py"
+      ],
+      "invariants": [
+        "stale_writer_rejection"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_schema_and_cutover.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-PUBLISH-003",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-010",
+        "ADR-011",
+        "ADR-012"
+      ],
+      "claims": [
+        "CB-CLAIM-009"
+      ],
+      "components": [
+        "active_generation_pointer",
+        "proof_coordinator",
+        "publication_controller"
+      ],
+      "contracts": [
+        "rollback_event"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/engine.py",
+        "future:src/changebridge/rollback.py"
+      ],
+      "invariants": [
+        "rollback_safety"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "future:tests/model/test_rollback.py",
+        "future:evidence/managed/rollback.json"
+      ],
+      "requirement_id": "CB-PUBLISH-004",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [],
+      "components": [
+        "future_orchestrator"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "src/changebridge/cutover.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part2-runtime",
+      "proof_paths": [
+        "tests/test_schema_and_cutover.py",
+        "evidence/local-simulation.json"
+      ],
+      "requirement_id": "CB-OPS-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [
+        "CB-CLAIM-002",
+        "CB-CLAIM-007"
+      ],
+      "components": [
+        "future_orchestrator"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "docs/runbook.md",
+        "infra/terraform/main.tf",
+        "future:src/changebridge/observability.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "AWS_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part3-managed-proof",
+      "proof_paths": [
+        "future:evidence/managed/operations.json"
+      ],
+      "requirement_id": "CB-OPS-002",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [
+        "CB-CLAIM-002",
+        "CB-CLAIM-003",
+        "CB-CLAIM-007",
+        "CB-CLAIM-008"
+      ],
+      "components": [
+        "future_orchestrator"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "future:experiments/managed-migration/"
+      ],
+      "invariants": [],
+      "minimum_evidence": "AWS_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part3-managed-proof",
+      "proof_paths": [
+        "future:evidence/managed/stage-receipt.json"
+      ],
+      "requirement_id": "CB-OPS-003",
+      "status": "UNSATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [
+        "CB-CLAIM-003"
+      ],
+      "components": [
+        "future_orchestrator"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "future:experiments/workloads/"
+      ],
+      "invariants": [],
+      "minimum_evidence": "MEASURED",
+      "missing_current_paths": [],
+      "owner_stage": "part3-managed-proof",
+      "proof_paths": [
+        "future:evidence/managed/measurements.json"
+      ],
+      "requirement_id": "CB-OPS-004",
+      "status": "UNSATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014",
+        "ADR-015"
+      ],
+      "claims": [
+        "CB-CLAIM-002",
+        "CB-CLAIM-008"
+      ],
+      "components": [
+        "evidence_manifest_store",
+        "rollback_retirement_controller"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "infra/terraform/main.tf",
+        "future:security/policy-tests/"
+      ],
+      "invariants": [],
+      "minimum_evidence": "AWS_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part3-managed-proof",
+      "proof_paths": [
+        "future:evidence/managed/security.json"
+      ],
+      "requirement_id": "CB-SEC-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014",
+        "ADR-015"
+      ],
+      "claims": [
+        "CB-CLAIM-008"
+      ],
+      "components": [
+        "evidence_manifest_store",
+        "rollback_retirement_controller"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "future:experiments/teardown/"
+      ],
+      "invariants": [],
+      "minimum_evidence": "AWS_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part3-managed-proof",
+      "proof_paths": [
+        "future:evidence/managed/teardown.json"
+      ],
+      "requirement_id": "CB-SEC-002",
+      "status": "UNSATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [
+        "CB-CLAIM-010"
+      ],
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "contracts": [
+        "evidence_bundle",
+        "stage_receipt"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "schemas/stage-evidence.schema.json",
+        "scripts/validate_completion_authority.py"
+      ],
+      "invariants": [
+        "evidence_binding"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage2",
+      "proof_paths": [
+        "evidence/part1/stage2/validation-report.json",
+        "future:external-continuation-checkpoint.json"
+      ],
+      "requirement_id": "CB-EVIDENCE-001",
+      "status": "PARTIAL",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [],
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "contracts": [
+        "evidence_bundle"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "claims/claims.json",
+        "scripts/validate_completion_authority.py"
+      ],
+      "invariants": [
+        "evidence_binding"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage2",
+      "proof_paths": [
+        "tests/test_completion_authority.py",
+        "evidence/part1/stage2/validation-report.json"
+      ],
+      "requirement_id": "CB-EVIDENCE-002",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [
+        "CB-CLAIM-005",
+        "CB-CLAIM-010"
+      ],
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "contracts": [
+        "source_workload",
+        "stage_receipt"
+      ],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "scripts/validate_completion_authority.py"
+      ],
+      "invariants": [
+        "evidence_binding"
+      ],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage2",
+      "proof_paths": [
+        "evidence/part1/stage2/determinism-report.json"
+      ],
+      "requirement_id": "CB-EVIDENCE-003",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [],
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "scripts/validate_completion_authority.py"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage2",
+      "proof_paths": [
+        "tests/test_completion_authority.py",
+        "tests/fixtures/completion-authority/invalid-cases.json"
+      ],
+      "requirement_id": "CB-EVIDENCE-004",
+      "status": "SATISFIED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [],
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "future:release/PROJECT_COMPLETION_VERIFIED.json"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "final-release",
+      "proof_paths": [
+        "future:release/release-verification.json"
+      ],
+      "requirement_id": "CB-RELEASE-001",
+      "status": "DEFERRED",
+      "trace_complete": true
+    },
+    {
+      "adrs": [
+        "ADR-014"
+      ],
+      "claims": [],
+      "components": [
+        "evidence_manifest_store"
+      ],
+      "contracts": [],
+      "has_future_owner": true,
+      "implementation_paths": [
+        "future:docs/INTERVIEW_WALKTHROUGH.md"
+      ],
+      "invariants": [],
+      "minimum_evidence": "LOCAL_VERIFIED",
+      "missing_current_paths": [],
+      "owner_stage": "part1-stage5",
+      "proof_paths": [
+        "future:evidence/part1/stage5/interview-rehearsal.json"
+      ],
+      "requirement_id": "CB-INTERVIEW-001",
+      "status": "DEFERRED",
+      "trace_complete": true
+    }
+  ],
+  "schema_version": "1.0.0",
+  "stage": 5
+}

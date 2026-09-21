@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "owner_interview_rehearsal",
+  "requirement_id": "CB-INTERVIEW-001",
+  "evidence_label": "LOCAL_VERIFIED",
+  "status": "PENDING_HUMAN_REHEARSAL",
+  "result": "PENDING",
+  "required_topics": ["design choices", "invariants", "failure paths", "evidence boundaries", "tradeoffs", "limitations"],
+  "rubric": [
+    {"dimension": "repository_navigation", "minimum": 4, "maximum": 5, "score": null},
+    {"dimension": "technical_correctness", "minimum": 4, "maximum": 5, "score": null},
+    {"dimension": "failure_reasoning", "minimum": 4, "maximum": 5, "score": null},
+    {"dimension": "evidence_boundary_honesty", "minimum": 5, "maximum": 5, "score": null},
+    {"dimension": "tradeoff_and_limitation_clarity", "minimum": 4, "maximum": 5, "score": null}
+  ],
+  "question_ids": [],
+  "repository_references": [],
+  "observed_errors": [],
+  "corrections": [],
+  "duration_minutes": null,
+  "private_transcript_published": false,
+  "limitations": ["Generated documentation cannot prove owner explainability.", "This record must remain pending until the owner completes the timed rehearsal."]
+}

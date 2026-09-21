@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "overlap_register",
+  "entries": [
+    {"path": "requirements/completion-requirements.json", "predecessor_owner": "Stage 2", "stage5_change": "CB-INTERVIEW-001 status and real proof paths only", "protected_fields": "all other requirements"},
+    {"path": "requirements/requirement-proof-matrix.json", "predecessor_owner": "Stage 2", "stage5_change": "deterministic projection of CB-INTERVIEW-001 only", "protected_fields": "all other entries"},
+    {"path": "architecture/requirement-architecture-map.json", "predecessor_owner": "Stage 3", "stage5_change": "CB-INTERVIEW-001 requirement status only", "protected_fields": "ADRs, components and all other mappings"},
+    {"path": "claims/claims.json", "predecessor_owner": "Stage 2", "stage5_change": "add walkthrough public-surface markers without wording or label promotion", "protected_fields": "claim wording, evidence labels and proof references"},
+    {"path": ".github/workflows/ci.yml", "predecessor_owner": "repository CI", "stage5_change": "add explicit Part 1 closure validation step", "protected_fields": "existing triggers, permissions and gates"},
+    {"path": "PROJECT_STATUS.md", "predecessor_owner": "Stage 4", "stage5_change": "bounded Stage 5 pending status and next gate", "protected_fields": "predecessor results"}
+  ],
+  "unexplained_overlap_count": 0,
+  "result": "PASS"
+}
