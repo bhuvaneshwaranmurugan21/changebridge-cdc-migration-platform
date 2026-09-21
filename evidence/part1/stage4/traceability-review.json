@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "critical_chains": [
+    {"requirement": "CB-ORDER-001", "adrs": ["ADR-003", "ADR-005", "ADR-007"], "components": ["manifest_normalizer"], "contracts": ["cdc_envelope"], "invariants": ["order", "conflict_detection", "delete_correctness", "replay_determinism"], "oracles": ["changebridge.oracles:order", "changebridge.oracles:conflict_detection", "changebridge.oracles:delete_correctness", "changebridge.oracles:replay_determinism"], "scenarios": ["ST4-SC-03", "ST4-SC-05", "ST4-SC-08", "ST4-SC-14", "ADV-001", "ADV-008", "ADV-010"], "evidence_targets": ["tests/test_contract_oracle_authority.py", "evidence/part1/stage4/validation-report.json"]},
+    {"requirement": "CB-ORDER-003", "adrs": ["ADR-004"], "components": ["manifest_normalizer", "migration_apply_engine"], "contracts": ["cdc_envelope"], "invariants": ["order", "replay_determinism"], "oracles": ["changebridge.oracles:order", "changebridge.oracles:replay_determinism"], "scenarios": ["ST4-SC-03", "ST4-SC-14", "ADV-004", "ADV-005", "ADV-006"], "evidence_targets": ["tests/test_contract_oracle_authority.py", "evidence/part1/stage4/determinism-report.json"]},
+    {"requirement": "CB-SCHEMA-001", "adrs": ["ADR-008"], "components": ["schema_coordinator", "manifest_normalizer"], "contracts": ["orders_source_contract", "schema_contract", "cdc_envelope"], "invariants": ["schema_safety"], "oracles": ["changebridge.oracles:schema_safety"], "scenarios": ["ST4-SC-09", "ADV-001", "ADV-002", "ADV-009"], "evidence_targets": ["tests/fixtures/contract-oracle-authority/valid-cdc-event.json", "tests/test_contract_oracle_authority.py"]},
+    {"requirement": "CB-PUBLISH-001", "adrs": ["ADR-011", "ADR-014"], "components": ["proof_coordinator", "publication_controller"], "contracts": ["gate_result", "proof_manifest", "publication_event"], "invariants": ["proof_before_publication"], "oracles": ["changebridge.oracles:proof_before_publication"], "scenarios": ["ST4-SC-11", "ADV-016", "ADV-017", "ADV-018", "ADV-019", "ADV-020"], "evidence_targets": ["tests/test_contract_oracle_authority.py", "evidence/part1/stage4/validation-report.json"]}
+  ],
+  "critical_requirement_count": 4,
+  "complete_chain_count": 4,
+  "dangling_reference_count": 0,
+  "result": "PASS"
+}

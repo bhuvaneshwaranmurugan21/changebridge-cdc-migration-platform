@@ -1,0 +1,312 @@
+{
+  "artifact_manifest_digest": "0fc7df11542fc693b91fae2030345a5a520d6cc1d15f6f6cd8e81e440e4f2481",
+  "base_commit": "3634b23a7fb83611a9c3b28b785a7373b68861ec",
+  "candidate_commit": "6385a185e83a52f9f1ca9fd34f70435f6e9d0624",
+  "contract_version": "1.0.0",
+  "criteria": [
+    {
+      "evidence": [
+        "evidence/part1/stage4/execution-envelope.json"
+      ],
+      "id": "ST4-AC-01",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/execution-envelope.json"
+      ],
+      "id": "ST4-AC-02",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/overlap-register.json",
+        "evidence/part1/stage4/file-manifest.json"
+      ],
+      "id": "ST4-AC-03",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/protected-baseline.json",
+        "evidence/part1/stage4/failure-lab-preservation.json"
+      ],
+      "id": "ST4-AC-04",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/file-manifest.json",
+        "evidence/part1/stage4/dependency-decision.json",
+        "evidence/part1/stage4/scope-isolation-report.json"
+      ],
+      "id": "ST4-AC-05",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/contract-source-inventory.json"
+      ],
+      "id": "ST4-AC-06",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/contract-contradiction-resolution.json"
+      ],
+      "id": "ST4-AC-07",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/catalog.json"
+      ],
+      "id": "ST4-AC-08",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/VERSIONING.md"
+      ],
+      "id": "ST4-AC-09",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/canonicalization-v1.json"
+      ],
+      "id": "ST4-AC-10",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/canonicalization-v1.json"
+      ],
+      "id": "ST4-AC-11",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/cdc-envelope-v1.schema.json"
+      ],
+      "id": "ST4-AC-12",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "src/changebridge/contracts.py"
+      ],
+      "id": "ST4-AC-13",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/fixtures/contract-oracle-authority/adversarial-cases.json"
+      ],
+      "id": "ST4-AC-14",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/source-workload-v1.schema.json",
+        "contracts/target-record-metadata-v1.schema.json"
+      ],
+      "id": "ST4-AC-15",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/fixtures/contract-oracle-authority/valid-cdc-event.json"
+      ],
+      "id": "ST4-AC-16",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/catalog.json",
+        "contracts/VERSIONING.md"
+      ],
+      "id": "ST4-AC-17",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/control/control-records-v1.schema.json"
+      ],
+      "id": "ST4-AC-18",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/test_contract_oracle_authority.py"
+      ],
+      "id": "ST4-AC-19",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/test_contract_oracle_authority.py"
+      ],
+      "id": "ST4-AC-20",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "oracles/invariants.json"
+      ],
+      "id": "ST4-AC-21",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "oracles/invariants.json"
+      ],
+      "id": "ST4-AC-22",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "src/changebridge/oracles.py"
+      ],
+      "id": "ST4-AC-23",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/traceability-review.json"
+      ],
+      "id": "ST4-AC-24",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/failure-lab-preservation.json"
+      ],
+      "id": "ST4-AC-25",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/failure-lab-preservation.json"
+      ],
+      "id": "ST4-AC-26",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/failure-lab-preservation.json"
+      ],
+      "id": "ST4-AC-27",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/fixtures/contract-oracle-authority/adversarial-cases.json"
+      ],
+      "id": "ST4-AC-28",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "testing/test-layers.json"
+      ],
+      "id": "ST4-AC-29",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "docs/testing/TEST_ARCHITECTURE.md"
+      ],
+      "id": "ST4-AC-30",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/fixtures/contract-oracle-authority/adversarial-cases.json"
+      ],
+      "id": "ST4-AC-31",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/fixtures/contract-oracle-authority/validator-mutations.json"
+      ],
+      "id": "ST4-AC-32",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/determinism-report.json"
+      ],
+      "id": "ST4-AC-33",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/validation-report.json"
+      ],
+      "id": "ST4-AC-34",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/claim-impact-review.json"
+      ],
+      "id": "ST4-AC-35",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/claim-impact-review.json"
+      ],
+      "id": "ST4-AC-36",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage4/artifact-manifest.json"
+      ],
+      "id": "ST4-AC-37",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "external:exact-pr-head-ci"
+      ],
+      "id": "ST4-AC-38",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "external:merge-and-main-ci"
+      ],
+      "id": "ST4-AC-39",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "external:stage5-continuation-checkpoint"
+      ],
+      "id": "ST4-AC-40",
+      "result": "PENDING"
+    }
+  ],
+  "criteria_passed": 37,
+  "criteria_pending": 3,
+  "criteria_total": 40,
+  "evidence_refs": [
+    "evidence/part1/stage4/artifact-manifest.json",
+    "evidence/part1/stage4/validation-report.json",
+    "evidence/part1/stage4/determinism-report.json"
+  ],
+  "limitations": [
+    "The candidate commit binds the pre-receipt source/evidence freeze.",
+    "Criteria 38-40 require exact-head CI, merge/main verification, and the external Stage 5 checkpoint."
+  ],
+  "part": 1,
+  "record_id": "changebridge-part1-stage4",
+  "record_type": "stage_receipt",
+  "result": "PENDING",
+  "revision": 1,
+  "stage": 4
+}

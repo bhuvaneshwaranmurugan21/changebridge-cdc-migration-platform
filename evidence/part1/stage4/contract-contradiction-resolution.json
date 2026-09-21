@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "resolutions": [
+    {"id": "ST4-C-01", "decision": "ADAPT", "authority": "contracts/cdc-envelope-v1.schema.json", "rationale": "Typed kind/value positions preserve transport identity; unlike kinds fail closed."},
+    {"id": "ST4-C-02", "decision": "ADAPT", "authority": "contracts/cdc-envelope-v1.schema.json", "rationale": "Ordered name/type/value components preserve composite and scalar keys without lossy string coercion."},
+    {"id": "ST4-C-03", "decision": "SUPERSEDE_FOR_NEW_CONTRACT", "authority": "contracts/cdc-envelope-v1.schema.json", "rationale": "The existing runtime dataclass remains unchanged; v1 defines the future adapter boundary."},
+    {"id": "ST4-C-04", "decision": "ADAPT", "authority": "src/changebridge/contracts.py", "rationale": "Position, transaction sequence, event sequence, and event ID form a deterministic total order."},
+    {"id": "ST4-C-05", "decision": "ADAPT", "authority": "docs/contracts/CANONICALIZATION.md", "rationale": "Operation/image rules and explicit capabilities quarantine ambiguity rather than guessing."},
+    {"id": "ST4-C-06", "decision": "VERSIONED_COMPATIBILITY", "authority": "contracts/catalog.json", "rationale": "Historical evidence stays immutable under its producing schema; new bundles use strict v1 records."},
+    {"id": "ST4-C-07", "decision": "STAGE3_AUTHORITY_WINS", "authority": "contracts/control/control-records-v1.schema.json", "rationale": "Local ready remains a historical oracle while publication requires the exact eight Stage 3 gates."},
+    {"id": "ST4-C-08", "decision": "VERSIONED_COMPATIBILITY", "authority": "contracts/VERSIONING.md", "rationale": "No historical receipt is rewritten or retroactively held to new fields."}
+  ],
+  "runtime_behavior_changed": false,
+  "historical_evidence_rewritten": false,
+  "result": "PASS"
+}

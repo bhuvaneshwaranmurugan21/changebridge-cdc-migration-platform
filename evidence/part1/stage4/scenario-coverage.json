@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "coverage": [
+    {"invariant": "boundary", "positive": "ST4-SC-01", "negative": "ST4-SC-01-N", "adversarial": ["ADV-011"]},
+    {"invariant": "continuity", "positive": "ST4-SC-02", "negative": "ST4-SC-02-N", "adversarial": ["ADV-011", "ADV-012"]},
+    {"invariant": "order", "positive": "ST4-SC-03", "negative": "ST4-SC-03-N", "adversarial": ["ADV-004", "ADV-005", "ADV-006"]},
+    {"invariant": "idempotency", "positive": "ST4-SC-04", "negative": "ST4-SC-04-N", "adversarial": ["ADV-010"]},
+    {"invariant": "conflict_detection", "positive": "ST4-SC-05", "negative": "ST4-SC-05-N", "adversarial": ["ADV-010"]},
+    {"invariant": "checkpoint_coupling", "positive": "ST4-SC-06", "negative": "ST4-SC-06-N", "adversarial": ["ADV-013", "ADV-014"]},
+    {"invariant": "failure_atomicity", "positive": "ST4-SC-07", "negative": "ST4-SC-07-N", "adversarial": ["ADV-015"]},
+    {"invariant": "delete_correctness", "positive": "ST4-SC-08", "negative": "ST4-SC-08-N", "adversarial": ["ADV-007", "ADV-008"]},
+    {"invariant": "schema_safety", "positive": "ST4-SC-09", "negative": "ST4-SC-09-N", "adversarial": ["ADV-001", "ADV-002", "ADV-003", "ADV-009"]},
+    {"invariant": "generation_isolation", "positive": "ST4-SC-10", "negative": "ST4-SC-10-N", "adversarial": ["ADV-021"]},
+    {"invariant": "proof_before_publication", "positive": "ST4-SC-11", "negative": "ST4-SC-11-N", "adversarial": ["ADV-016", "ADV-017", "ADV-018", "ADV-019", "ADV-020"]},
+    {"invariant": "single_publisher_cas", "positive": "ST4-SC-12", "negative": "ST4-SC-12-N", "adversarial": ["ADV-022"]},
+    {"invariant": "stale_writer_rejection", "positive": "ST4-SC-13", "negative": "ST4-SC-13-N", "adversarial": ["ADV-022"]},
+    {"invariant": "replay_determinism", "positive": "ST4-SC-14", "negative": "ST4-SC-14-N", "adversarial": ["ADV-025", "ADV-026"]},
+    {"invariant": "rollback_safety", "positive": "ST4-SC-15", "negative": "ST4-SC-15-N", "adversarial": ["ADV-023"]},
+    {"invariant": "evidence_binding", "positive": "ST4-SC-16", "negative": "ST4-SC-16-N", "adversarial": ["ADV-024"]}
+  ],
+  "invariant_count": 16,
+  "invariants_with_positive_and_negative": 16,
+  "orphan_scenario_count": 0,
+  "orphan_invariant_count": 0,
+  "result": "PASS"
+}

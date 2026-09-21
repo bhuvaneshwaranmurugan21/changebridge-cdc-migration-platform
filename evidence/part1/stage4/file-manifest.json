@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "base_commit": "3634b23a7fb83611a9c3b28b785a7373b68861ec",
+  "allowed_roots": [
+    "contracts/", "oracles/", "testing/", "schemas/contract-", "schemas/canonicalization-",
+    "schemas/invariant-", "schemas/test-layer", "src/changebridge/contracts.py",
+    "src/changebridge/oracles.py", "scripts/build_contract_oracle_authority.py",
+    "scripts/validate_contract_oracle_authority.py", "tests/test_contract_oracle_authority.py",
+    "tests/fixtures/contract-oracle-authority/", "docs/contracts/", "docs/testing/",
+    "evidence/part1/stage4/", "requirements/", "CLAIMS.md", "README.md", "PROJECT_STATUS.md",
+    "pyproject.toml"
+  ],
+  "forbidden_roots": [
+    ".github/workflows/", "infra/terraform/", "jobs/", "src/changebridge/engine.py",
+    "src/changebridge/model.py", "src/changebridge/simulator.py", "evidence/local-simulation.json"
+  ],
+  "planned_artifact_groups": [
+    {"path": "contracts/", "action": "CREATE_OR_EXTEND", "purpose": "governed data and control record authority"},
+    {"path": "oracles/", "action": "CREATE", "purpose": "sixteen invariant records"},
+    {"path": "testing/", "action": "CREATE", "purpose": "ten-layer test authority"},
+    {"path": "src/changebridge/contracts.py", "action": "CREATE", "purpose": "pure local contract reference functions"},
+    {"path": "src/changebridge/oracles.py", "action": "CREATE", "purpose": "bounded invariant predicates"},
+    {"path": "scripts/", "action": "CREATE", "purpose": "deterministic Stage 4 build and validation"},
+    {"path": "tests/", "action": "CREATE", "purpose": "property, truth-table, adversarial, and validator mutation proof"},
+    {"path": "evidence/part1/stage4/", "action": "CREATE", "purpose": "entry, validation, traceability, scope, and receipt evidence"}
+  ],
+  "result": "PASS"
+}

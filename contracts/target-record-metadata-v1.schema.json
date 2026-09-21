@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:target-record-metadata:1.0.0",
+  "title": "Target record lineage metadata v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_version", "generation_id", "source_position", "transaction_id", "event_id", "operation", "source_contract_id", "source_schema_digest", "apply_attempt", "tombstone", "target_commit_id", "row_digest"],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "generation_id": {"type": "string", "minLength": 1},
+    "source_position": {"$ref": "cdc-envelope-v1.schema.json#/$defs/source_position"},
+    "transaction_id": {"type": "string", "minLength": 1},
+    "event_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "operation": {"enum": ["snapshot", "insert", "update", "delete"]},
+    "source_contract_id": {"type": "string", "minLength": 1},
+    "source_schema_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "apply_attempt": {"type": "integer", "minimum": 1},
+    "tombstone": {"type": "boolean"},
+    "target_commit_id": {"type": "string", "minLength": 1},
+    "row_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

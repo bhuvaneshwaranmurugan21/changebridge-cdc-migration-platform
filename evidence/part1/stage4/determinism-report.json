@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "validated_commit": "6385a185e83a52f9f1ca9fd34f70435f6e9d0624",
+  "validated_tree": "6b8358f0cba2702fdf2554ae337babb5f95288b0",
+  "controls": {
+    "seeds": [4401, 4402],
+    "hypothesis": "derandomized, database-free, shrinking enabled",
+    "clock": "fixed UTC values for Stage 4 pure tests",
+    "locale": "C.UTF-8",
+    "path_policy": "repository-relative only",
+    "ordering": "canonical sort or contract-declared order",
+    "volatile_fields": "explicitly excluded or rejected",
+    "concurrency": "enumerated schedules",
+    "dependency_versions_recorded": true
+  },
+  "two_run_comparisons": [
+    {"artifact": "completion authority report", "run_1_sha256": "80bf49b01bb9ade8f6428978473684799ce71230daba7fd9f5b5353e20b47dbc", "run_2_sha256": "80bf49b01bb9ade8f6428978473684799ce71230daba7fd9f5b5353e20b47dbc", "byte_identical": true},
+    {"artifact": "architecture authority report", "run_1_sha256": "820228766731724e5421d35bb63bbc1012adae215cbc3d4064caa7187af0ba1e", "run_2_sha256": "820228766731724e5421d35bb63bbc1012adae215cbc3d4064caa7187af0ba1e", "byte_identical": true},
+    {"artifact": "contract and oracle authority report", "run_1_sha256": "0937faec1f584b97f22a99bf15897b3355e11fc461435340673f90f5080ade51", "run_2_sha256": "0937faec1f584b97f22a99bf15897b3355e11fc461435340673f90f5080ade51", "byte_identical": true},
+    {"artifact": "historical failure lab", "run_1_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24", "run_2_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24", "byte_identical": true},
+    {"artifact": "generated contract/oracle views", "comparison": "in-memory output maps and committed bytes", "byte_identical": true}
+  ],
+  "nondeterministic_outputs": [],
+  "result": "PASS",
+  "limitations": ["Two-run local determinism does not prove every platform or managed adapter is deterministic."]
+}

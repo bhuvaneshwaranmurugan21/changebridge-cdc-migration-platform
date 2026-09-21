@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "part": 1,
+  "stage": 4,
+  "validated_commit": "6385a185e83a52f9f1ca9fd34f70435f6e9d0624",
+  "validated_tree": "6b8358f0cba2702fdf2554ae337babb5f95288b0",
+  "environment": {
+    "python": "3.12.14",
+    "jsonschema": "4.26.0",
+    "hypothesis": "6.168.0",
+    "pytest": "9.1.1",
+    "pytest_cov": "7.1.0",
+    "ruff": "0.16.8",
+    "mypy": "2.3.1"
+  },
+  "gates": [
+    {"id": "schema_and_cross_authority", "command": "python scripts/validate_contract_oracle_authority.py", "result": "PASS", "report_sha256": "0937faec1f584b97f22a99bf15897b3355e11fc461435340673f90f5080ade51"},
+    {"id": "focused_contract_oracles", "command": "pytest -q -o addopts='' tests/test_contract_oracle_authority.py", "result": "PASS", "tests_passed": 24},
+    {"id": "full_test_and_coverage", "command": "pytest", "result": "PASS", "tests_passed": 106, "coverage_percent": 87.40, "coverage_minimum": 85},
+    {"id": "ruff", "command": "ruff check .", "result": "PASS"},
+    {"id": "mypy", "command": "mypy src", "result": "PASS", "mode": "strict"},
+    {"id": "generated_views", "command": "python scripts/build_contract_oracle_authority.py --check", "result": "PASS"},
+    {"id": "completion_authority", "command": "python scripts/validate_completion_authority.py --check-rendered", "result": "PASS", "report_sha256": "80bf49b01bb9ade8f6428978473684799ce71230daba7fd9f5b5353e20b47dbc"},
+    {"id": "architecture_authority", "command": "python scripts/validate_architecture_authority.py --check-rendered", "result": "PASS", "report_sha256": "820228766731724e5421d35bb63bbc1012adae215cbc3d4064caa7187af0ba1e"},
+    {"id": "historical_failure_lab", "command": "python -m changebridge.cli simulate", "result": "PASS", "checks_passed": 13, "report_sha256": "13ff5b8ffa5c4d98193e0363665cd2fe5a8482ca4963f959f99ab88bbc79eb24"},
+    {"id": "diff_whitespace", "command": "git diff --check", "result": "PASS"},
+    {"id": "secret_scan", "command": "bounded high-confidence repository pattern scan", "result": "PASS"},
+    {"id": "path_and_symlink_scan", "command": "repository-relative path and symlink scan", "result": "PASS"},
+    {"id": "scope_and_isolation", "command": "changed-path allowlist and foreign-project scan", "result": "PASS"},
+    {"id": "artifact_manifest", "command": "python scripts/build_stage4_evidence.py --check", "result": "PASS"}
+  ],
+  "authority_counts": {
+    "contracts": 16,
+    "control_records": 12,
+    "invariants": 16,
+    "oracle_cases": 32,
+    "adversarial_cases": 26,
+    "validator_mutations": 12,
+    "test_layers": 10,
+    "historical_checks": 13
+  },
+  "capability_promotion": "NONE",
+  "result": "PASS",
+  "limitations": [
+    "The validated commit is the source/evidence freeze before candidate receipt closure.",
+    "Exact PR-head CI, merge, merged-main CI, and the continuation checkpoint remain external closure gates.",
+    "Local proof does not establish managed runtime, performance, availability, exactly-once, or zero-downtime behavior."
+  ]
+}

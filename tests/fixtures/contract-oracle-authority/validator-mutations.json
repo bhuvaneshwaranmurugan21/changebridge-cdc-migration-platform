@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {"id": "VAL-001", "mutation": "delete_contract", "expected_diagnostic": "CB4V009_REQUIRED_CONTRACT_SET"},
+    {"id": "VAL-002", "mutation": "duplicate_invariant", "expected_diagnostic": "CB4V020_INVARIANT_SET"},
+    {"id": "VAL-003", "mutation": "broken_cross_reference", "expected_diagnostic": "CB4V011_UNKNOWN_REFERENCE"},
+    {"id": "VAL-004", "mutation": "wrong_source_contract_digest", "expected_diagnostic": "CBEVT005_SCHEMA_IDENTITY_MISMATCH"},
+    {"id": "VAL-005", "mutation": "invalid_extra_field", "expected_diagnostic": "CB4V002_SCHEMA_REJECTED"},
+    {"id": "VAL-006", "mutation": "version_downgrade", "expected_diagnostic": "CB4V005_INVALID_VERSION"},
+    {"id": "VAL-007", "mutation": "stale_gate", "expected_diagnostic": "CBPRF005_STALE_GATE"},
+    {"id": "VAL-008", "mutation": "altered_historical_scenario", "expected_diagnostic": "CB4V026_FAILURE_LAB_DRIFT"},
+    {"id": "VAL-009", "mutation": "missing_seed", "expected_diagnostic": "CB4V024_SCENARIO_CORPUS"},
+    {"id": "VAL-010", "mutation": "volatile_path", "expected_diagnostic": "CB4V030_VOLATILE_OR_UNSAFE_PATH"},
+    {"id": "VAL-011", "mutation": "tampered_claim_label", "expected_diagnostic": "CB4V028_CLAIM_BOUNDARY"},
+    {"id": "VAL-012", "mutation": "orphan_schema", "expected_diagnostic": "CB4V010_ORPHAN_SCHEMA"}
+  ]
+}

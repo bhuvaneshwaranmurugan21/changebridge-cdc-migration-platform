@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "contradictions": [
+    {"id": "ST4-C-01", "subject": "source position", "existing": "integer commit_lsn", "required": "transport-neutral typed source position", "status": "RESOLVED"},
+    {"id": "ST4-C-02", "subject": "primary key", "existing": "single untyped string", "required": "schema-ordered typed composite key", "status": "RESOLVED"},
+    {"id": "ST4-C-03", "subject": "event lineage", "existing": "table/key/operation/images only", "required": "event, schema, run, generation, transaction, and position lineage", "status": "RESOLVED"},
+    {"id": "ST4-C-04", "subject": "equal-position order", "existing": "commit LSN only", "required": "transaction and event sequence tie breakers", "status": "RESOLVED"},
+    {"id": "ST4-C-05", "subject": "before images", "existing": "optional local value without capability declaration", "required": "operation truth table plus transport capability metadata", "status": "RESOLVED"},
+    {"id": "ST4-C-06", "subject": "historical evidence", "existing": "permissive Stage 1-3 evidence schema", "required": "strict future evidence bundle and receipt", "status": "RESOLVED"},
+    {"id": "ST4-C-07", "subject": "readiness lifecycle", "existing": "local ready flag and five booleans", "required": "Stage 3 sealed eight-gate proof before publication", "status": "RESOLVED"},
+    {"id": "ST4-C-08", "subject": "legacy receipt compatibility", "existing": "immutable Stage 1-3 receipts", "required": "Stage 4 strict receipt without historical rewrite", "status": "RESOLVED"}
+  ],
+  "unresolved_count": 0,
+  "result": "PASS"
+}

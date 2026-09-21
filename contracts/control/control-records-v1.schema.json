@@ -1,0 +1,296 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:control-records:1.0.0",
+  "title": "ChangeBridge control, proof, publication, rollback, and evidence records v1",
+  "oneOf": [
+    {"$ref": "#/$defs/migration_generation"},
+    {"$ref": "#/$defs/frontier_checkpoint"},
+    {"$ref": "#/$defs/applied_transaction"},
+    {"$ref": "#/$defs/schema_contract"},
+    {"$ref": "#/$defs/reconciliation_run"},
+    {"$ref": "#/$defs/gate_result"},
+    {"$ref": "#/$defs/proof_manifest"},
+    {"$ref": "#/$defs/active_generation"},
+    {"$ref": "#/$defs/publication_event"},
+    {"$ref": "#/$defs/rollback_event"},
+    {"$ref": "#/$defs/evidence_bundle"},
+    {"$ref": "#/$defs/stage_receipt"}
+  ],
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "position": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {"enum": ["integer", "mysql_binlog", "oracle_scn", "postgres_lsn"]},
+        "value": {"type": "string", "minLength": 1}
+      }
+    },
+    "base": {
+      "type": "object",
+      "required": ["record_type", "contract_version", "record_id", "revision", "evidence_refs"],
+      "properties": {
+        "record_type": {"type": "string"},
+        "contract_version": {"const": "1.0.0"},
+        "record_id": {"type": "string", "minLength": 1},
+        "revision": {"type": "integer", "minimum": 0},
+        "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "generation_base": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"type": "object", "required": ["generation_id"], "properties": {"generation_id": {"type": "string", "minLength": 1}}}
+      ]
+    },
+    "migration_generation": {
+      "allOf": [
+        {"$ref": "#/$defs/generation_base"},
+        {
+          "type": "object",
+          "required": ["snapshot_frontier", "schema_set_digest", "state", "retention_state"],
+          "properties": {
+            "record_type": {"const": "migration_generation"},
+            "snapshot_frontier": {"$ref": "#/$defs/position"},
+            "schema_set_digest": {"$ref": "#/$defs/digest"},
+            "state": {"enum": ["CREATED", "SNAPSHOT_LOADING", "CDC_APPLYING", "SEALED", "PROVING", "PROVEN", "PUBLISHED", "REJECTED", "ROLLED_BACK", "RETIRED"]},
+            "retention_state": {"enum": ["RETAINED", "RETIREMENT_PENDING", "RETIRED"]}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "frontier_checkpoint": {
+      "allOf": [
+        {"$ref": "#/$defs/generation_base"},
+        {
+          "type": "object",
+          "required": ["previous_frontier", "current_frontier", "target_commit_id", "target_commit_digest", "expected_revision"],
+          "properties": {
+            "record_type": {"const": "frontier_checkpoint"},
+            "previous_frontier": {"$ref": "#/$defs/position"},
+            "current_frontier": {"$ref": "#/$defs/position"},
+            "target_commit_id": {"type": "string", "minLength": 1},
+            "target_commit_digest": {"$ref": "#/$defs/digest"},
+            "expected_revision": {"type": "integer", "minimum": 0}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "applied_transaction": {
+      "allOf": [
+        {"$ref": "#/$defs/generation_base"},
+        {
+          "type": "object",
+          "required": ["transaction_id", "transaction_digest", "source_frontier", "target_commit_id"],
+          "properties": {
+            "record_type": {"const": "applied_transaction"},
+            "transaction_id": {"type": "string", "minLength": 1},
+            "transaction_digest": {"$ref": "#/$defs/digest"},
+            "source_frontier": {"$ref": "#/$defs/position"},
+            "target_commit_id": {"type": "string", "minLength": 1}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "schema_contract": {
+      "allOf": [
+        {"$ref": "#/$defs/generation_base"},
+        {
+          "type": "object",
+          "required": ["source_contract_id", "source_contract_version", "source_contract_digest", "compatibility_verdict", "quarantine_required"],
+          "properties": {
+            "record_type": {"const": "schema_contract"},
+            "source_contract_id": {"type": "string", "minLength": 1},
+            "source_contract_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+            "source_contract_digest": {"$ref": "#/$defs/digest"},
+            "compatibility_verdict": {"enum": ["COMPATIBLE", "INCOMPATIBLE", "UNKNOWN"]},
+            "quarantine_required": {"type": "boolean"}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "reconciliation_run": {
+      "allOf": [
+        {"$ref": "#/$defs/generation_base"},
+        {
+          "type": "object",
+          "required": ["frontier", "canonicalization_version", "source_digest", "candidate_digest", "mismatch_count", "verdict"],
+          "properties": {
+            "record_type": {"const": "reconciliation_run"},
+            "frontier": {"$ref": "#/$defs/position"},
+            "canonicalization_version": {"const": "changebridge-canonical-json/1.0.0"},
+            "source_digest": {"$ref": "#/$defs/digest"},
+            "candidate_digest": {"$ref": "#/$defs/digest"},
+            "mismatch_count": {"type": "integer", "minimum": 0},
+            "verdict": {"enum": ["PASS", "FAIL"]}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "gate_result": {
+      "allOf": [
+        {"$ref": "#/$defs/generation_base"},
+        {
+          "type": "object",
+          "required": ["gate_id", "frontier", "schema_set_digest", "input_revision", "input_digests", "producer", "verdict", "gate_digest"],
+          "properties": {
+            "record_type": {"const": "gate_result"},
+            "gate_id": {"enum": ["continuity", "schema", "deletes", "reconciliation", "lag", "pre_migration", "rollback_readiness", "evidence_integrity"]},
+            "frontier": {"$ref": "#/$defs/position"},
+            "schema_set_digest": {"$ref": "#/$defs/digest"},
+            "input_revision": {"type": "integer", "minimum": 0},
+            "input_digests": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/digest"}},
+            "producer": {"type": "string", "minLength": 1},
+            "verdict": {"enum": ["PASS", "FAIL"]},
+            "gate_digest": {"$ref": "#/$defs/digest"}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "proof_manifest": {
+      "allOf": [
+        {"$ref": "#/$defs/generation_base"},
+        {
+          "type": "object",
+          "required": ["frontier", "schema_set_digest", "input_revision", "state", "gates", "proof_manifest_digest"],
+          "properties": {
+            "record_type": {"const": "proof_manifest"},
+            "frontier": {"$ref": "#/$defs/position"},
+            "schema_set_digest": {"$ref": "#/$defs/digest"},
+            "input_revision": {"type": "integer", "minimum": 0},
+            "state": {"enum": ["OPEN", "SEALED", "INVALIDATED"]},
+            "gates": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/gate_result"}},
+            "proof_manifest_digest": {"$ref": "#/$defs/digest"}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "active_generation": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {
+          "type": "object",
+          "required": ["active_generation_id", "pointer_revision", "proof_manifest_digest"],
+          "properties": {
+            "record_type": {"const": "active_generation"},
+            "active_generation_id": {"type": "string", "minLength": 1},
+            "pointer_revision": {"type": "integer", "minimum": 0},
+            "proof_manifest_digest": {"$ref": "#/$defs/digest"}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "publication_event": {
+      "allOf": [
+        {"$ref": "#/$defs/generation_base"},
+        {
+          "type": "object",
+          "required": ["proof_manifest_digest", "expected_revision", "prior_generation_id", "new_revision", "verdict", "diagnostic"],
+          "properties": {
+            "record_type": {"const": "publication_event"},
+            "proof_manifest_digest": {"$ref": "#/$defs/digest"},
+            "expected_revision": {"type": "integer", "minimum": 0},
+            "prior_generation_id": {"type": ["string", "null"]},
+            "new_revision": {"type": "integer", "minimum": 1},
+            "verdict": {"enum": ["PUBLISHED", "REJECTED"]},
+            "diagnostic": {"type": "string", "minLength": 1}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "rollback_event": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {
+          "type": "object",
+          "required": ["target_generation_id", "target_proof_manifest_digest", "target_state", "retained", "readable", "reason", "authority", "prior_revision", "new_revision"],
+          "properties": {
+            "record_type": {"const": "rollback_event"},
+            "target_generation_id": {"type": "string", "minLength": 1},
+            "target_proof_manifest_digest": {"$ref": "#/$defs/digest"},
+            "target_state": {"const": "PROVEN"},
+            "retained": {"const": true},
+            "readable": {"const": true},
+            "reason": {"type": "string", "minLength": 1},
+            "authority": {"type": "string", "minLength": 1},
+            "prior_revision": {"type": "integer", "minimum": 0},
+            "new_revision": {"type": "integer", "minimum": 1}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"}, "sha256": {"$ref": "#/$defs/digest"}}
+    },
+    "evidence_bundle": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {
+          "type": "object",
+          "required": ["commit_sha", "run_id", "resources", "artifacts", "evidence_label", "limitations", "producer_versions", "evidence_manifest_digest"],
+          "properties": {
+            "record_type": {"const": "evidence_bundle"},
+            "commit_sha": {"$ref": "#/$defs/sha"},
+            "run_id": {"type": "string", "minLength": 1},
+            "resources": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact"}},
+            "evidence_label": {"enum": ["DESIGN_ONLY", "LOCAL_VERIFIED", "AWS_VERIFIED", "MEASURED", "EXTRAPOLATED", "UNCLAIMED"]},
+            "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+            "producer_versions": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+            "evidence_manifest_digest": {"$ref": "#/$defs/digest"}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "stage_receipt": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {
+          "type": "object",
+          "required": ["part", "stage", "base_commit", "candidate_commit", "artifact_manifest_digest", "criteria_total", "criteria_passed", "criteria_pending", "result", "limitations"],
+          "properties": {
+            "record_type": {"const": "stage_receipt"},
+            "part": {"type": "integer", "minimum": 1},
+            "stage": {"type": "integer", "minimum": 1},
+            "base_commit": {"$ref": "#/$defs/sha"},
+            "candidate_commit": {"anyOf": [{"$ref": "#/$defs/sha"}, {"const": "PENDING"}]},
+            "artifact_manifest_digest": {"$ref": "#/$defs/digest"},
+            "criteria_total": {"type": "integer", "minimum": 1},
+            "criteria_passed": {"type": "integer", "minimum": 0},
+            "criteria_pending": {"type": "integer", "minimum": 0},
+            "criteria": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["id", "result", "evidence"],
+                "properties": {
+                  "id": {"type": "string", "pattern": "^ST4-AC-[0-9]{2}$"},
+                  "result": {"enum": ["PASS", "PENDING"]},
+                  "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+                }
+              }
+            },
+            "result": {"enum": ["PASS", "PENDING", "BLOCKED"]},
+            "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    }
+  }
+}

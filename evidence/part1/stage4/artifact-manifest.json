@@ -1,0 +1,236 @@
+{
+  "artifact_count": 54,
+  "artifacts": [
+    {
+      "path": "PROJECT_STATUS.md",
+      "sha256": "2a737626a1d541c1df60c63ad43770dcf432c66c0b712644046436e60a496477"
+    },
+    {
+      "path": "README.md",
+      "sha256": "140e34b77aee99e80bde821a2441545dd505a7bb2657e3455c4ca04f7ab84956"
+    },
+    {
+      "path": "contracts/VERSIONING.md",
+      "sha256": "a93c097686b1fd134750b3a8d81134b1a4dcd76305ab4de36b3d800e1a954f8f"
+    },
+    {
+      "path": "contracts/canonicalization-v1.json",
+      "sha256": "97652896cccaf80e26c92de51a0c1ad18791056af33973787cda96aed2b184ce"
+    },
+    {
+      "path": "contracts/catalog.json",
+      "sha256": "04a1bb9eb1922a3df17f9febdee091332d5c33f0e4b278a6a3b56965eddf7874"
+    },
+    {
+      "path": "contracts/cdc-envelope-v1.schema.json",
+      "sha256": "4ae93a5ba9ac65eeed87c911faac93a8588868180750fb8bda3f5da9f57d98f8"
+    },
+    {
+      "path": "contracts/control/control-records-v1.schema.json",
+      "sha256": "3afb04bce808d6dd9855ce2b3d37b0e57891835db92a13968e364470378b025b"
+    },
+    {
+      "path": "contracts/source-workload-v1.schema.json",
+      "sha256": "ab90931bdcdd0b6be740241b5969fcd7681a02059fe72edc765c33c88d321567"
+    },
+    {
+      "path": "contracts/target-record-metadata-v1.schema.json",
+      "sha256": "98184ec22176a2eebb55f8a12e5a7b219234e0929689a1c052678f460390c4a2"
+    },
+    {
+      "path": "docs/contracts/CANONICALIZATION.md",
+      "sha256": "f2c7d612e10f33b2e6811a02773ac87ed288e33951dd773da67de987f04fd05e"
+    },
+    {
+      "path": "docs/contracts/CONTRACT_CATALOG.md",
+      "sha256": "214ea79dd7f2d45f886784478533c5a065dc7f06d8b2f3352a5598fb230efce9"
+    },
+    {
+      "path": "docs/contracts/CONTROL_RECORDS.md",
+      "sha256": "48dad8e93d4dfcd9eccd973dd43e962b4e38d5db6146ce2fc08227e5fbb600ae"
+    },
+    {
+      "path": "docs/testing/DETERMINISM.md",
+      "sha256": "e7855811abb7e9e29a6d1657e2c4ab620f1ff5fe6f59684d27645c06c39e5ad4"
+    },
+    {
+      "path": "docs/testing/INVARIANT_ORACLES.md",
+      "sha256": "ec5ed01e091088571444c419981f449833991e173d82707816cbb6ae4eb1d60f"
+    },
+    {
+      "path": "docs/testing/REQUIREMENT_ORACLE_MATRIX.md",
+      "sha256": "6f74655a13670615db0ad041f35143a9bd108d2cce79702eb00ae3e9187ed6af"
+    },
+    {
+      "path": "docs/testing/SCENARIO_ORACLE_MATRIX.md",
+      "sha256": "5a61eb9faa25b4f8d739ac52e6991f4f7056a2e93937fa6ba66c91bc02fc0a2d"
+    },
+    {
+      "path": "docs/testing/TEST_ARCHITECTURE.md",
+      "sha256": "3320f35e86beecb37474427c5b95179bef8996f5c72d0e14f95e5896c3f92cf5"
+    },
+    {
+      "path": "evidence/part1/stage4/claim-impact-review.json",
+      "sha256": "614be26147cc122c29d56c1a5ef104ff93fb7c435ef951ab69c15416633337e1"
+    },
+    {
+      "path": "evidence/part1/stage4/contract-contradiction-register.json",
+      "sha256": "c1903197a1862aa50817af83b76ea51444d960b6e6589f6a6c73e66b9984aff0"
+    },
+    {
+      "path": "evidence/part1/stage4/contract-contradiction-resolution.json",
+      "sha256": "e32da41801f104ed23198bc7dd4d439e62ee34535b76a12edd3ad7fec1a8c22e"
+    },
+    {
+      "path": "evidence/part1/stage4/contract-source-inventory.json",
+      "sha256": "c0db62ca1231bbfe4ee11ab633c7da5d34597c3a524533fe31b2bd2bd8f131de"
+    },
+    {
+      "path": "evidence/part1/stage4/dependency-decision.json",
+      "sha256": "dc874f02ecfb72ebddbc89bc32ff5f81bb30394cbaab189b42ba8c43e5c80294"
+    },
+    {
+      "path": "evidence/part1/stage4/determinism-report.json",
+      "sha256": "35384a25fb459a002c628f6d4560823dcc1e194d404294b7cfcf3d3889a43d15"
+    },
+    {
+      "path": "evidence/part1/stage4/execution-envelope.json",
+      "sha256": "dee25a9bb82d9a1b77deaface7ebf255cee8025d13375ea03961b6e99b0167e3"
+    },
+    {
+      "path": "evidence/part1/stage4/failure-lab-preservation.json",
+      "sha256": "2fc7d4aecf162bf0d4332323d8e44a4b8aaa51e45325a051f52178ae07b4d1c9"
+    },
+    {
+      "path": "evidence/part1/stage4/file-manifest.json",
+      "sha256": "dbfe37e5617f1e4e4add3c5b4bdbfa86f2098cddce1a0e9c743ca74d10d655c5"
+    },
+    {
+      "path": "evidence/part1/stage4/overlap-register.json",
+      "sha256": "a4934f720aaab4c8e20ce668894240077bd26607d9c993cffbe8f80c9be4bbe1"
+    },
+    {
+      "path": "evidence/part1/stage4/protected-baseline.json",
+      "sha256": "e75c44ff80cbb25ab00faa53db6ab18d1234e4bebc755c0698f5811843a59198"
+    },
+    {
+      "path": "evidence/part1/stage4/scenario-coverage.json",
+      "sha256": "0234837fed24fe388ff16a9fce55c9a9636fdbc54514ca453daab0c3d152ba31"
+    },
+    {
+      "path": "evidence/part1/stage4/scenario-inventory.json",
+      "sha256": "10bd78c9d8aaad5b25e3aa965d39a375b8e19456c84e63459440679cd87a176c"
+    },
+    {
+      "path": "evidence/part1/stage4/scope-isolation-report.json",
+      "sha256": "e981e05e3a7f158359f9b0ebacda7a4fa721ff75866aa773adcc50000ae815ef"
+    },
+    {
+      "path": "evidence/part1/stage4/traceability-review.json",
+      "sha256": "b88c2b35343713795e8cff13287003c2786e5c13cdf5a5322841dedb20157749"
+    },
+    {
+      "path": "evidence/part1/stage4/validation-report.json",
+      "sha256": "5b9177e6258a7d586382b59da99ca76001d0fcfaa57073ceabea513a206df1ae"
+    },
+    {
+      "path": "oracles/invariants.json",
+      "sha256": "eacbfb61d52d63e324bf073c098faa7e7f9341d17eb6a9da6e9f249a375113ec"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "187629e362d06e5670df211d4877109aebd3ad67dad00b9bfeadf707c32195a6"
+    },
+    {
+      "path": "requirements/REQUIREMENT_CATALOG.md",
+      "sha256": "79ee72136686caebad3fd40658140fae93d953ee3266e371cc2998010e25a3f9"
+    },
+    {
+      "path": "requirements/REQUIREMENT_PROOF_MATRIX.md",
+      "sha256": "df28e958b59cb19e1d3b77072353af557df81167576bfe592182062737471b9e"
+    },
+    {
+      "path": "requirements/completion-requirements.json",
+      "sha256": "77dd8c08341c9202c34a53303db3ff98f7a93447122667555f36195e38d27a4b"
+    },
+    {
+      "path": "requirements/requirement-proof-matrix.json",
+      "sha256": "6b0bd2cc288123036bca03e77c17819c4ef819c4da51bb0abad1e1dbf261d6dc"
+    },
+    {
+      "path": "schemas/canonicalization-profile.schema.json",
+      "sha256": "8efb3178c83e18209a7922137fc02085544e0351e1b666ed45aa13ed77f9bb62"
+    },
+    {
+      "path": "schemas/contract-catalog.schema.json",
+      "sha256": "644aea05c64c579577dc94b117ceca14dbd180c5229dcf283766cc07deb10657"
+    },
+    {
+      "path": "schemas/invariant-oracle.schema.json",
+      "sha256": "f2bac8d069465585aa3a41d56c69db5e5eb0158e950572669e52a6cd84342672"
+    },
+    {
+      "path": "schemas/test-layer.schema.json",
+      "sha256": "5c539ff21a7fe099efc7fa51035f2027407ee62ba0a1923fb6256a614b5f7a9b"
+    },
+    {
+      "path": "scripts/build_contract_oracle_authority.py",
+      "sha256": "7b6120da7a7c7ac4ffcc2614e557000ee117cca6cb8b1aaf77612749b2dc2fa2"
+    },
+    {
+      "path": "scripts/build_stage4_evidence.py",
+      "sha256": "f063b45ff18e4edc47ca9af5a7db6877ca4969c093569929a808a1e9e967927d"
+    },
+    {
+      "path": "scripts/validate_contract_oracle_authority.py",
+      "sha256": "a766e025bf9a3f4c59ff7040d65f7aefc96fcba0fc07fe7898dfac109deef1e0"
+    },
+    {
+      "path": "src/changebridge/contracts.py",
+      "sha256": "43fc1478e132c6e59d1663b2423cadfd081ab3b8b4fffc725060e12b26ad9d7e"
+    },
+    {
+      "path": "src/changebridge/oracles.py",
+      "sha256": "ac2229b46bcc0ae45dbb9e3dfa31bb1a22624b26aef4e9b50cd829f105d71166"
+    },
+    {
+      "path": "testing/test-layers.json",
+      "sha256": "6535bc5a0edf7660402e88fcc673a47611c4ffe0294e141822cb3ae7356d9f87"
+    },
+    {
+      "path": "tests/fixtures/contract-oracle-authority/adversarial-cases.json",
+      "sha256": "ba797cf9bea132f77010a417369eba52c54eb6edd00ec00712b92d98020f36bf"
+    },
+    {
+      "path": "tests/fixtures/contract-oracle-authority/oracle-cases.json",
+      "sha256": "e6dcbf9df5a30d32f9a5540127784e97a8d7dc87e2df97e023a9bc3663d9f6da"
+    },
+    {
+      "path": "tests/fixtures/contract-oracle-authority/valid-cdc-event.json",
+      "sha256": "7f7fe36de9492f75eaeaedce78a2723625f83d9785e0e2369915b68aa2272567"
+    },
+    {
+      "path": "tests/fixtures/contract-oracle-authority/validator-mutations.json",
+      "sha256": "60a744af95fd6615ef0db0a54e239287a0fd06cc29825497cde45b7b315b937d"
+    },
+    {
+      "path": "tests/test_contract_oracle_authority.py",
+      "sha256": "ff6b375d03e8e5348763c1fad1fa3364ed426c4da93af1a5ab3cd18383b0eace"
+    }
+  ],
+  "base_commit": "3634b23a7fb83611a9c3b28b785a7373b68861ec",
+  "base_tree": "edd0986becbe74daff9131587c535e17e26a9315",
+  "digest_algorithm": "SHA-256",
+  "limitations": [
+    "The manifest excludes itself and the receipt to avoid recursive identity.",
+    "PR, merge, and continuation evidence are external closure artifacts."
+  ],
+  "part": 1,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "stage": 4,
+  "validated_commit": "6385a185e83a52f9f1ca9fd34f70435f6e9d0624",
+  "validated_tree": "6b8358f0cba2702fdf2554ae337babb5f95288b0"
+}

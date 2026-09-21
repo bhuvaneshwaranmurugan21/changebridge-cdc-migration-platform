@@ -346,7 +346,7 @@ Each normalized CDC event MUST preserve source position, transaction identity, o
 
 **Failure condition:** Any required source semantic is absent, ambiguous, lossy, or excluded from replay identity.
 
-**Current limitation:** The current model lacks explicit schema version and per-event replay identity fields.
+**Current limitation:** The v1 envelope and local reference validator are complete, but the existing runtime model and managed transport do not yet emit the envelope.
 
 ## CB-ORDER-002 — Contiguous batch chain
 
@@ -376,7 +376,7 @@ Transactions and events MUST be applied in a deterministic order consistent with
 
 **Failure condition:** Equivalent immutable inputs can produce different event order or target state.
 
-**Current limitation:** Local transactions are ordered by supplied integer commit LSN; equal-position tie semantics are not defined.
+**Current limitation:** Typed position and tie semantics are locally verified, but the current apply engine still consumes integer LSN batches and no managed adapter conformance exists.
 
 ## CB-ORDER-004 — Transaction boundary preservation
 
@@ -406,7 +406,7 @@ A candidate generation MUST become publishable only after every required schema,
 
 **Failure condition:** Any failed, missing, stale, or unbound mandatory gate permits publication.
 
-**Current limitation:** The local gate covers five booleans; complete oracle coverage is not yet present.
+**Current limitation:** The complete eight-gate truth table and manifest semantics are locally verified; runtime orchestration and managed publication remain unimplemented.
 
 ## CB-PUBLISH-002 — Single publisher compare-and-swap
 
@@ -526,7 +526,7 @@ Every snapshot and CDC event MUST bind to a versioned source contract and canoni
 
 **Failure condition:** A record is accepted without an exact contract identity or schema digest.
 
-**Current limitation:** Generation schema version exists locally, but events do not carry a schema version.
+**Current limitation:** Contract identity and digest binding are locally verified for v1 fixtures; runtime producers and managed schema registries are not yet proven conformant.
 
 ## CB-SCHEMA-002 — Compatible evolution acceptance
 

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 4,
+  "reviewed_claim_ids": ["CB-CLAIM-001", "CB-CLAIM-004", "CB-CLAIM-005", "CB-CLAIM-009", "CB-CLAIM-010"],
+  "decisions": [
+    {"claim_id": "CB-CLAIM-001", "decision": "UNCHANGED", "label": "LOCAL_VERIFIED", "reason": "Stage 4 does not modify the SQLite engine or its historical proof."},
+    {"claim_id": "CB-CLAIM-004", "decision": "UNCHANGED", "label": "LOCAL_VERIFIED", "reason": "The new eight-gate specification does not broaden the older local engine claim."},
+    {"claim_id": "CB-CLAIM-005", "decision": "UNCHANGED", "label": "LOCAL_VERIFIED", "reason": "All thirteen historical checks reproduce without source or evidence mutation."},
+    {"claim_id": "CB-CLAIM-009", "decision": "UNCHANGED", "label": "DESIGN_ONLY", "reason": "Rollback gains a strict contract and local predicate but still has no explicit runtime API or managed proof."},
+    {"claim_id": "CB-CLAIM-010", "decision": "UNCHANGED", "label": "LOCAL_VERIFIED", "reason": "Stage 4 adds future evidence authority without rewriting the historical Stage 1 result."}
+  ],
+  "requirement_status_changes": [],
+  "stage4_owned_requirements_retained_partial": ["CB-ORDER-001", "CB-ORDER-003", "CB-SCHEMA-001", "CB-PUBLISH-001"],
+  "new_aws_verified_capabilities": 0,
+  "new_measured_capabilities": 0,
+  "new_extrapolated_capabilities": 0,
+  "capability_promotion": "NONE",
+  "result": "PASS"
+}
