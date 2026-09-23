@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "protected_predecessor_baseline",
+  "base_commit": "f7ada638e0404afacaac604be400c1434858002f",
+  "base_tree": "2401a4e8cdff8ae153dc4b1cebc1bc7b5cc61ac3",
+  "artifacts": [
+    {"path": "evidence/part1/stage1/artifact_manifest.json", "sha256": "424f63c992796f3c9a903e737af3b16a429edcdd9361b673711863d293539d47"},
+    {"path": "evidence/part1/stage2/artifact-manifest.json", "sha256": "b63acdab969a9ca972e4fa00c423ee03bcd0b4659b97577749c542b912ec460c"},
+    {"path": "evidence/part1/stage3/artifact-manifest.json", "sha256": "be248e6bf6780bbc2f22ea1e7688bbdaa658a4d7632a8d328b60f2ceb1688a39"},
+    {"path": "evidence/part1/stage4/artifact-manifest.json", "sha256": "0fc7df11542fc693b91fae2030345a5a520d6cc1d15f6f6cd8e81e440e4f2481"},
+    {"path": "evidence/part1/stage1/stage_receipt.json", "sha256": "5781abefaa399102594ad735e865f03f65cbf1aef63ea7595d7b339c7fb38551"},
+    {"path": "evidence/part1/stage2/stage-receipt.json", "sha256": "79743ebf1c9006d3939eec2afa740774e2ffb31cae8a4b865adbe050483d14d7"},
+    {"path": "evidence/part1/stage3/stage-receipt.json", "sha256": "8fde07277e7ba5935d344976f3af55989ae04acb6838c4044f58820468a12bf4"},
+    {"path": "evidence/part1/stage4/stage-receipt.json", "sha256": "c0193863c0cadfc122aff168224ed74978d967ccc3a70c66c4770eb201075809"}
+  ],
+  "result": "PASS"
+}

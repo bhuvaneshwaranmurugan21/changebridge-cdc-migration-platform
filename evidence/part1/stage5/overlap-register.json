@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "overlap_register",
+  "entries": [
+    {"path": "requirements/completion-requirements.json", "predecessor_owner": "Stage 2", "stage5_change": "bind the current walkthrough and defer CB-INTERVIEW-001 proof to final project completion", "protected_fields": "status, normative strength and all other requirements"},
+    {"path": "requirements/requirement-proof-matrix.json", "predecessor_owner": "Stage 2", "stage5_change": "project the current walkthrough and final-project proof owner for CB-INTERVIEW-001", "protected_fields": "status, evidence threshold and all other entries"},
+    {"path": "architecture/requirement-architecture-map.json", "predecessor_owner": "Stage 3", "stage5_change": "move only the deferred CB-INTERVIEW-001 owner to final project completion", "protected_fields": "status, ADRs, components and all other mappings"},
+    {"path": "claims/claims.json", "predecessor_owner": "Stage 2", "stage5_change": "add walkthrough public-surface markers without wording or label promotion", "protected_fields": "claim wording, evidence labels and proof references"},
+    {"path": ".github/workflows/ci.yml", "predecessor_owner": "repository CI", "stage5_change": "add explicit Part 1 closure validation step", "protected_fields": "existing triggers, permissions and gates"},
+    {"path": "PROJECT_STATUS.md", "predecessor_owner": "Stage 4", "stage5_change": "bounded Stage 5 pending status and next gate", "protected_fields": "predecessor results"}
+  ],
+  "unexplained_overlap_count": 0,
+  "result": "PASS"
+}

@@ -1,0 +1,160 @@
+{
+  "artifact_count": 35,
+  "artifacts": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "65d1efb96f0cdb4d832f4edd242bc38617442f7311d7922277a7952cfbcc6cf5"
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "sha256": "db5423d4c540ad3ca091f14422a7a7882f40c3fda9084c3c6e729fb3a7c348c7"
+    },
+    {
+      "path": "architecture/requirement-architecture-map.json",
+      "sha256": "dbd472165191baa3cf9bddf01a6bc8104ac5cc006d08628e88791f11a9729c79"
+    },
+    {
+      "path": "claims/claims.json",
+      "sha256": "1a7ae6a68315a42360f35ccd3f5d5094b498690df4428bea680aab2916316743"
+    },
+    {
+      "path": "docs/INTERVIEW_WALKTHROUGH.md",
+      "sha256": "c700c91eb0362b8e2b08c7ad82dbb6ce96beafa1ead83771adddc302f20e32b2"
+    },
+    {
+      "path": "docs/readiness/PART1_IMPLEMENTATION_HANDOFF.md",
+      "sha256": "7ec8c7e0fa9b29099190474273c4a798af446eab0ef20dda2f8cc850239cd340"
+    },
+    {
+      "path": "evidence/part1/stage5/ci-closure.json",
+      "sha256": "dec001365ac7c7760682267b6355eca530b8b2fa0e83a3917cefc486ca80ded8"
+    },
+    {
+      "path": "evidence/part1/stage5/claim-impact-review.json",
+      "sha256": "b50b99a3524ca83693ed7a9f511eb7004f147c4f637ba46ab8729383870c3baa"
+    },
+    {
+      "path": "evidence/part1/stage5/command-rehearsal.json",
+      "sha256": "09237faed31c9353f9522a7e711a4dfeb3769f2fe0c13cadc18330bdb626cdac"
+    },
+    {
+      "path": "evidence/part1/stage5/cross-artifact-traceability.json",
+      "sha256": "03a288d86818d3ab9e5a30cf5b16b1e0ceebd3ff253810a5468b98b8d757a5ef"
+    },
+    {
+      "path": "evidence/part1/stage5/determinism-report.json",
+      "sha256": "a1bbbe165cbb6671267d705b40cdb2c6ca6e47ced748c7c7ad443b519f97e05e"
+    },
+    {
+      "path": "evidence/part1/stage5/execution-envelope.json",
+      "sha256": "d09fc9e3a0ab912d0a3f306a0c0b72e11b88a6fc8f99989fdcefacc64d0a4a2e"
+    },
+    {
+      "path": "evidence/part1/stage5/file-manifest.json",
+      "sha256": "e9d6fbe67791498b2fd376fc9f497fc26ca9af2ea37fe56608a3122bd7043bfd"
+    },
+    {
+      "path": "evidence/part1/stage5/historical-stage-reconciliation.json",
+      "sha256": "d25d9e8fd62ac8ae2ba1a0a1b39700944d8e15f832690e0c9514985555632429"
+    },
+    {
+      "path": "evidence/part1/stage5/interview-rehearsal.json",
+      "sha256": "a231e95933a05ac60a55f8eb0fffae229499435ac26a2fc381ea47211b83ed8b"
+    },
+    {
+      "path": "evidence/part1/stage5/orphan-reference-review.json",
+      "sha256": "a5054b9425ec8cdcee241065f5a16b0bb08fe7bafde50358da92a425fd81791f"
+    },
+    {
+      "path": "evidence/part1/stage5/overlap-register.json",
+      "sha256": "21eb95beecbf4884ae1e7fb89df6a3c1839747f88dca114be98422b45766fa17"
+    },
+    {
+      "path": "evidence/part1/stage5/protected-baseline.json",
+      "sha256": "4a257b5a5d42ea84569366fca633272ad35b01a02aff273172875ea11145f3b5"
+    },
+    {
+      "path": "evidence/part1/stage5/resource-authorization-forecast.json",
+      "sha256": "9393115c34af6b69ac6c8d21e47425d7497941bc9deba2772f30fb01f8b42cae"
+    },
+    {
+      "path": "evidence/part1/stage5/risk-failure-rehearsal.json",
+      "sha256": "0aef1f47e6e3369b76605e8bcecf3c05a47a647622f31d0e78eb7a0db10f488f"
+    },
+    {
+      "path": "evidence/part1/stage5/scope-isolation-report.json",
+      "sha256": "012937e6cf7b9c5d92e56751188dfbddeac90b7ccee7bcb0a7e59b9d9b01a52d"
+    },
+    {
+      "path": "evidence/part1/stage5/skeptical-review.json",
+      "sha256": "a630c6e8efd1951f459e317c9d96b01a62c7e12bf42bc21ed93d6908550cfcb8"
+    },
+    {
+      "path": "evidence/part1/stage5/validation-report.json",
+      "sha256": "4aee7a9f7a0bdd193cc9d5a24eb326e54642777d2eb66845ae87e15d83fcec2d"
+    },
+    {
+      "path": "readiness/dependency-graph.json",
+      "sha256": "2a2b7a8349efc93fb45491f180fe5a412ae63b2cd3f4e55f670b8f83a3e20f69"
+    },
+    {
+      "path": "readiness/implementation-manifest.json",
+      "sha256": "97a257bccb8d952934f8d131dafc227ca36721ecfb5da81c5ff614c5d419a3c7"
+    },
+    {
+      "path": "requirements/REQUIREMENT_CATALOG.md",
+      "sha256": "481daccf3d66bc6bcba9611f25956d245c489623c210be184513627473eb6091"
+    },
+    {
+      "path": "requirements/REQUIREMENT_PROOF_MATRIX.md",
+      "sha256": "e40666a468e1e41ce50c6b532a19230be383cc45cbb580228065da9c2905fcf2"
+    },
+    {
+      "path": "requirements/completion-requirements.json",
+      "sha256": "4668a534360b302cdc01e83032297c4efdd70a9e32f3a5ee761c0980b79d83ea"
+    },
+    {
+      "path": "requirements/requirement-proof-matrix.json",
+      "sha256": "f219d55bae803ab0ba8b0f26c70e5678196376369512c698b7eb6a151e4a4e4e"
+    },
+    {
+      "path": "schemas/part1-closure.schema.json",
+      "sha256": "090d7d7abeac9a647074519dfd29487c5d814d4f9a941d2eed3d4ad076740057"
+    },
+    {
+      "path": "scripts/build_part1_closure.py",
+      "sha256": "dded2184c10b77d327a82a39df925727b72298505cf0c7da797b95d7e67cf08d"
+    },
+    {
+      "path": "scripts/build_stage5_evidence.py",
+      "sha256": "11c0ec79147ead4961716d74edef7afee08b17d52b62e671f9ab13f21410a516"
+    },
+    {
+      "path": "scripts/validate_part1_closure.py",
+      "sha256": "ceb9a75b0f756a95f6527a1e532716065fc36b1adc572680dba3a11a472691a4"
+    },
+    {
+      "path": "tests/fixtures/part1-closure/validator-mutations.json",
+      "sha256": "528d735c59b5886c21e81b275e3818e387d5b490bf176f66e2ed17547e396791"
+    },
+    {
+      "path": "tests/test_part1_closure.py",
+      "sha256": "710434916e80b8c311e7826e3b70c0b3e8b2c6e0c5f1a8204556a6ee95e7af55"
+    }
+  ],
+  "base_commit": "f7ada638e0404afacaac604be400c1434858002f",
+  "base_tree": "2401a4e8cdff8ae153dc4b1cebc1bc7b5cc61ac3",
+  "digest_algorithm": "SHA-256",
+  "limitations": [
+    "The manifest excludes itself and the receipt to avoid recursive identity.",
+    "Exact-head CI, merge, merged-main CI and continuation evidence are external."
+  ],
+  "part": 1,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "stage": 5,
+  "validated_commit": "a4ad1b73e6cd7da2ed1cea22f1f86a608d7052ee",
+  "validated_tree": "8ae75b0d6e71fd12d744d6dabea454f564a815a9"
+}

@@ -586,8 +586,8 @@
         "evidence_manifest_store"
       ],
       "evidence_label": "UNCHANGED",
-      "owner_stage": "part1-stage5",
-      "proof_owner": "part1-stage5",
+      "owner_stage": "project-final-interview",
+      "proof_owner": "project-final-interview",
       "requirement_id": "CB-INTERVIEW-001",
       "requirement_status": "DEFERRED"
     }

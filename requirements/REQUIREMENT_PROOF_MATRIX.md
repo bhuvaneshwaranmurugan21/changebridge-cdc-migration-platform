@@ -19,7 +19,7 @@ Generated deterministically from the authoritative requirements registry.
 | `CB-EVIDENCE-002` | `SATISFIED` | `LOCAL_VERIFIED` | `part1-stage2` | `evidence/part1/stage2/validation-report.json`<br>`tests/test_completion_authority.py` | None |
 | `CB-EVIDENCE-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part1-stage2` | `evidence/part1/stage2/determinism-report.json` | None |
 | `CB-EVIDENCE-004` | `SATISFIED` | `LOCAL_VERIFIED` | `part1-stage2` | `tests/fixtures/completion-authority/invalid-cases.json`<br>`tests/test_completion_authority.py` | None |
-| `CB-INTERVIEW-001` | `DEFERRED` | `LOCAL_VERIFIED` | `part1-stage5` | None | `future:evidence/part1/stage5/interview-rehearsal.json` |
+| `CB-INTERVIEW-001` | `DEFERRED` | `LOCAL_VERIFIED` | `project-final-interview` | None | `future:evidence/project-completion/interview-rehearsal.json` |
 | `CB-ISOLATION-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage3` | `tests/test_engine.py` | `future:tests/model/test_generation_isolation.py` |
 | `CB-ISOLATION-002` | `UNSATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | None | `future:tests/model/test_replay_isolation.py` |
 | `CB-OPS-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |

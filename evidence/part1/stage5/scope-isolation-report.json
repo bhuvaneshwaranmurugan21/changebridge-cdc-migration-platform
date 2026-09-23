@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "stage5_scope_isolation_report",
+  "project": "ChangeBridge",
+  "base_commit": "f7ada638e0404afacaac604be400c1434858002f",
+  "runtime_source_paths_changed": [],
+  "spark_paths_changed": [],
+  "terraform_paths_changed": [],
+  "dependency_declarations_changed": [],
+  "aws_operations": [],
+  "deployments": [],
+  "managed_experiments": [],
+  "performance_tests": [],
+  "releases": [],
+  "tags": [],
+  "history_rewrites": [],
+  "foreign_project_artifacts": [],
+  "intentional_predecessor_overlaps": [
+    ".github/workflows/ci.yml",
+    "PROJECT_STATUS.md",
+    "architecture/requirement-architecture-map.json",
+    "claims/claims.json",
+    "requirements/completion-requirements.json",
+    "requirements/requirement-proof-matrix.json"
+  ],
+  "unexplained_paths": [],
+  "result": "PASS"
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "resource_authorization_forecast",
+  "categories": [
+    {"id": "AUTH-LOCAL", "class": "LOCAL_READ_ONLY_OR_DISPOSABLE", "examples": ["declared dependency environment", "validators", "tests", "deterministic temporary evidence"], "stage5_authorized": true},
+    {"id": "AUTH-REPO", "class": "REVERSIBLE_REPOSITORY_PUBLICATION", "examples": ["branch", "commit", "pull request", "policy-compliant merge"], "stage5_authorized": true},
+    {"id": "AUTH-EXTERNAL-READ", "class": "EXTERNAL_READ_ONLY_QUALIFICATION", "examples": ["GitHub state", "future AWS identity and inventory qualification"], "stage5_authorized": false},
+    {"id": "AUTH-AWS-MUTATE", "class": "AWS_MUTATION", "examples": ["DMS task", "S3 or DynamoDB resource", "Glue or Step Functions execution"], "stage5_authorized": false},
+    {"id": "AUTH-DESTRUCTIVE", "class": "DESTRUCTIVE_CLEANUP", "examples": ["managed resource teardown", "evidence-retention decision"], "stage5_authorized": false},
+    {"id": "AUTH-RELEASE", "class": "PUBLIC_RELEASE", "examples": ["annotated tag", "GitHub release", "release assets"], "stage5_authorized": false}
+  ],
+  "invented_account_ids": [],
+  "invented_role_arns": [],
+  "invented_budgets": [],
+  "invented_resource_names": [],
+  "result": "PASS"
+}

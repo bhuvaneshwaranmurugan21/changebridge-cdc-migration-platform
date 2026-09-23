@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {"id": "ST5-MUT-01", "mutation": "missing_requirement_trace", "expected_diagnostic": "CB5V010_REQUIREMENT_TRACE_SET"},
+    {"id": "ST5-MUT-02", "mutation": "dependency_cycle", "expected_diagnostic": "CB5V020_DEPENDENCY_CYCLE"},
+    {"id": "ST5-MUT-03", "mutation": "unknown_dependency", "expected_diagnostic": "CB5V019_UNKNOWN_DEPENDENCY"},
+    {"id": "ST5-MUT-04", "mutation": "future_path_marked_satisfied", "expected_diagnostic": "CB5V014_SATISFIED_FUTURE_PATH"},
+    {"id": "ST5-MUT-05", "mutation": "false_interview_pass", "expected_diagnostic": "CB5V028_INTERVIEW_EVIDENCE"},
+    {"id": "ST5-MUT-06", "mutation": "foreign_project_token", "expected_diagnostic": "CB5V032_PROJECT_ISOLATION"},
+    {"id": "ST5-MUT-07", "mutation": "changed_predecessor_digest", "expected_diagnostic": "CB5V005_PREDECESSOR_SET"},
+    {"id": "ST5-MUT-08", "mutation": "claim_label_promotion", "expected_diagnostic": "CB5V031_CLAIM_PROMOTION"},
+    {"id": "ST5-MUT-09", "mutation": "missing_risk_case", "expected_diagnostic": "CB5V023_RISK_COVERAGE"},
+    {"id": "ST5-MUT-10", "mutation": "invented_aws_identity", "expected_diagnostic": "CB5V025_INVENTED_EXTERNAL_IDENTITY"},
+    {"id": "ST5-MUT-11", "mutation": "blocking_review_ignored", "expected_diagnostic": "CB5V027_SKEPTICAL_REVIEW"},
+    {"id": "ST5-MUT-12", "mutation": "completion_status_too_strong", "expected_diagnostic": "CB5V034_COMPLETION_STATUS"}
+  ]
+}

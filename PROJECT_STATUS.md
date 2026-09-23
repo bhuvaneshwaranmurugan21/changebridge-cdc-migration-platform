@@ -3,48 +3,48 @@
 ## Current authorized boundary
 
 - Part: 1 — Truth, invariants, and completion contract
-- Stage: 4 — Contract and oracle authority
-- Verified entry commit: `3634b23a7fb83611a9c3b28b785a7373b68861ec`
-- Verified entry tree: `edd0986becbe74daff9131587c535e17e26a9315`
-- Stage branch: `part1-stage4-contracts-and-oracles`
-- Stage evidence: `evidence/part1/stage4/`
+- Stage: 5 — Readiness and owner rehearsal
+- Verified entry commit: `f7ada638e0404afacaac604be400c1434858002f`
+- Verified entry tree: `2401a4e8cdff8ae153dc4b1cebc1bc7b5cc61ac3`
+- Stage branch: `part1-stage5-readiness-rehearsal`
+- Stage evidence: `evidence/part1/stage5/`
+- Stage 5 source freeze: `a4ad1b73e6cd7da2ed1cea22f1f86a608d7052ee`
+- Stage 5 source tree: `8ae75b0d6e71fd12d744d6dabea454f564a815a9`
 
 ## Predecessor results
 
 - `STAGE1_AUDIT_VERIFIED`
 - `STAGE2_COMPLETION_AUTHORITY_VERIFIED`
 - `STAGE3_ARCHITECTURE_AUTHORITY_VERIFIED`
+- `STAGE4_CONTRACT_ORACLE_AUTHORITY_VERIFIED`
 
-Stage 4 started only from the exact signed Stage 3 merge checkpoint. The Stage 2 completion
-authority and Stage 3 architecture authority remain intact and their deterministic validators
-continue to pass.
+Stage 5 started only from the exact verified Stage 4 merge checkpoint. All four predecessor
+stage manifests and receipts remain byte-identical, and their deterministic validators continue
+to pass.
 
-## Stage 4 candidate result
+## Stage 5 candidate result
 
-`STAGE4_CONTRACT_ORACLE_AUTHORITY_PENDING`: the candidate contains one governed contract catalog,
-one deterministic canonicalization profile, a canonical CDC envelope, workload and target-lineage
-contracts, twelve control/proof/publication/evidence record authorities, all sixteen invariant
-oracles, a preserved thirteen-check historical failure laboratory, an adversarial corpus, ten test
-layers, and a fail-closed cross-authority validator.
+`PART1_COMPLETION_PENDING`: the candidate reconciles all 39 completion requirements, 15 ADRs,
+17 components, 16 contracts, 16 invariants, 10 governed claims and all four predecessor stages.
+It provides a non-authorizing nine-slice implementation-readiness manifest, an acyclic dependency
+graph, sixteen failure rehearsals, an authorization forecast, a skeptical review, an interview
+walkthrough, and fail-closed closure validation.
 
-Local validation passes with Ruff, strict mypy, 106 tests and 87.40% coverage, deterministic
-generated views, all predecessor validators, all thirteen preserved simulator checks, and exact
-diagnostics for the adversarial and validator-mutation corpora. The result remains pending until
-exact-head CI, policy-compliant merge, merged-main verification, and the external continuation
-checkpoint pass.
+Part 1 validation passes while `CB-INTERVIEW-001` remains deliberately `DEFERRED` to the final
+ChangeBridge project-completion stage. The walkthrough authority exists now, but no human score or
+rehearsal result is fabricated. Part 1 completion still requires the deterministic validation
+ladder, exact-head CI, policy-compliant merge, and verified merged main.
 
-The four Stage 4-owned requirements remain `PARTIAL`: local contract and oracle proof now exists,
-but runtime adapters and managed execution are not proven. No claim is promoted beyond
-`DESIGN_ONLY` or bounded `LOCAL_VERIFIED`.
+No claim is promoted. Managed runtime, adapter conformance, performance, availability,
+exactly-once delivery, zero-downtime cutover and release completion remain unproven.
 
-No runtime-adapter behavior, Terraform behavior, AWS resource, workflow, performance experiment,
-deployment, release, tag, history, or other project is changed by Stage 4. The only direct
-development dependencies added are the authorized `jsonschema==4.26.0` and
-`hypothesis==6.168.0`.
+No runtime or Spark behavior, Terraform behavior, AWS resource, deployment, managed experiment,
+performance test, release, tag, history, dependency declaration or other project is changed by
+Stage 5.
 
 ## Next permitted action
 
-Complete the deterministic validation ladder and evidence binding, publish the exact Stage 4
-candidate, require CI on that exact PR head, and merge only when all forty Stage 4 criteria pass.
-Do not begin Part 1 Stage 5 until the external Stage 4 continuation checkpoint identifies the exact
-merged commit and tree.
+Seal Stage 5 evidence, publish the exact candidate, require CI on that exact PR head, and merge only
+after `ST5-AC-01` through `ST5-AC-41` pass. Do not publish the external verified-completion
+checkpoint inside the repository; it requires verified merged main and `ST5-AC-42` through
+`ST5-AC-44`. Preserve the mandatory interview rehearsal for final ChangeBridge project closure.

@@ -1,0 +1,338 @@
+{
+  "artifact_manifest_digest": "21947695142fc4626bf229dc9be029c11b525117790f01747528be375f9facf6",
+  "base_commit": "f7ada638e0404afacaac604be400c1434858002f",
+  "candidate_commit": "a4ad1b73e6cd7da2ed1cea22f1f86a608d7052ee",
+  "contract_version": "1.0.0",
+  "criteria": [
+    {
+      "evidence": [
+        "evidence/part1/stage5/execution-envelope.json"
+      ],
+      "id": "ST5-AC-01",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/execution-envelope.json"
+      ],
+      "id": "ST5-AC-02",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/overlap-register.json",
+        "evidence/part1/stage5/file-manifest.json"
+      ],
+      "id": "ST5-AC-03",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/protected-baseline.json"
+      ],
+      "id": "ST5-AC-04",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/scope-isolation-report.json"
+      ],
+      "id": "ST5-AC-05",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "requirements/completion-requirements.json"
+      ],
+      "id": "ST5-AC-06",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/cross-artifact-traceability.json"
+      ],
+      "id": "ST5-AC-07",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/orphan-reference-review.json"
+      ],
+      "id": "ST5-AC-08",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/cross-artifact-traceability.json"
+      ],
+      "id": "ST5-AC-09",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "requirements/requirement-proof-matrix.json"
+      ],
+      "id": "ST5-AC-10",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "architecture/requirement-architecture-map.json"
+      ],
+      "id": "ST5-AC-11",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "contracts/catalog.json"
+      ],
+      "id": "ST5-AC-12",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "oracles/invariants.json"
+      ],
+      "id": "ST5-AC-13",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "claims/claims.json"
+      ],
+      "id": "ST5-AC-14",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/cross-artifact-traceability.json"
+      ],
+      "id": "ST5-AC-15",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "readiness/implementation-manifest.json"
+      ],
+      "id": "ST5-AC-16",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "readiness/implementation-manifest.json"
+      ],
+      "id": "ST5-AC-17",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "readiness/dependency-graph.json"
+      ],
+      "id": "ST5-AC-18",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "readiness/dependency-graph.json"
+      ],
+      "id": "ST5-AC-19",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "readiness/dependency-graph.json"
+      ],
+      "id": "ST5-AC-20",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "readiness/implementation-manifest.json"
+      ],
+      "id": "ST5-AC-21",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "readiness/implementation-manifest.json"
+      ],
+      "id": "ST5-AC-22",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/risk-failure-rehearsal.json"
+      ],
+      "id": "ST5-AC-23",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/risk-failure-rehearsal.json"
+      ],
+      "id": "ST5-AC-24",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/risk-failure-rehearsal.json"
+      ],
+      "id": "ST5-AC-25",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/historical-stage-reconciliation.json"
+      ],
+      "id": "ST5-AC-26",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/command-rehearsal.json"
+      ],
+      "id": "ST5-AC-27",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/resource-authorization-forecast.json"
+      ],
+      "id": "ST5-AC-28",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/resource-authorization-forecast.json"
+      ],
+      "id": "ST5-AC-29",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/skeptical-review.json"
+      ],
+      "id": "ST5-AC-30",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "docs/INTERVIEW_WALKTHROUGH.md"
+      ],
+      "id": "ST5-AC-31",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/interview-rehearsal.json"
+      ],
+      "id": "ST5-AC-32",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/claim-impact-review.json"
+      ],
+      "id": "ST5-AC-33",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/claim-impact-review.json"
+      ],
+      "id": "ST5-AC-34",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "schemas/part1-closure.schema.json"
+      ],
+      "id": "ST5-AC-35",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/fixtures/part1-closure/validator-mutations.json"
+      ],
+      "id": "ST5-AC-36",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/validation-report.json"
+      ],
+      "id": "ST5-AC-37",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/validation-report.json"
+      ],
+      "id": "ST5-AC-38",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/determinism-report.json"
+      ],
+      "id": "ST5-AC-39",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part1/stage5/artifact-manifest.json",
+        "evidence/part1/stage5/stage-receipt.json"
+      ],
+      "id": "ST5-AC-40",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "external:exact-pr-head-ci"
+      ],
+      "id": "ST5-AC-41",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "external:policy-compliant-merge"
+      ],
+      "id": "ST5-AC-42",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "external:merged-main-ci"
+      ],
+      "id": "ST5-AC-43",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "external:part2-continuation-checkpoint"
+      ],
+      "id": "ST5-AC-44",
+      "result": "PENDING"
+    }
+  ],
+  "criteria_passed": 40,
+  "criteria_pending": 4,
+  "criteria_total": 44,
+  "deferred_project_requirement": "CB-INTERVIEW-001",
+  "evidence_refs": [
+    "evidence/part1/stage5/artifact-manifest.json",
+    "evidence/part1/stage5/validation-report.json",
+    "evidence/part1/stage5/determinism-report.json"
+  ],
+  "limitations": [
+    "The candidate commit binds the pre-receipt source and evidence freeze.",
+    "Criteria 41-44 require exact-head CI, merge, merged-main CI and the external Part 2 checkpoint.",
+    "The interview rehearsal remains mandatory at final ChangeBridge project completion."
+  ],
+  "part": 1,
+  "record_id": "changebridge-part1-stage5",
+  "record_type": "stage_receipt",
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "revision": 1,
+  "stage": 5
+}

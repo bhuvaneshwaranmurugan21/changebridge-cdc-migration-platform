@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "stage5_file_responsibility_manifest",
+  "categories": [
+    {
+      "responsibility": "readiness authority",
+      "paths": ["readiness/implementation-manifest.json", "readiness/dependency-graph.json"]
+    },
+    {
+      "responsibility": "walkthrough and implementation handoff",
+      "paths": ["docs/INTERVIEW_WALKTHROUGH.md", "docs/readiness/PART1_IMPLEMENTATION_HANDOFF.md"]
+    },
+    {
+      "responsibility": "requirement and claim corrections",
+      "paths": ["requirements/completion-requirements.json", "requirements/requirement-proof-matrix.json", "requirements/REQUIREMENT_CATALOG.md", "requirements/REQUIREMENT_PROOF_MATRIX.md", "architecture/requirement-architecture-map.json", "claims/claims.json"]
+    },
+    {
+      "responsibility": "validation implementation",
+      "paths": ["schemas/part1-closure.schema.json", "scripts/build_part1_closure.py", "scripts/validate_part1_closure.py", "scripts/build_stage5_evidence.py", "tests/test_part1_closure.py", "tests/fixtures/part1-closure/validator-mutations.json"]
+    },
+    {
+      "responsibility": "closure evidence and status",
+      "paths": ["evidence/part1/stage5/", "PROJECT_STATUS.md", ".github/workflows/ci.yml"]
+    }
+  ],
+  "runtime_paths": [],
+  "terraform_paths": [],
+  "dependency_declaration_paths": [],
+  "unexplained_paths": [],
+  "result": "PASS"
+}

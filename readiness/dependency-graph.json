@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "readiness_dependency_graph",
+  "authority": "ChangeBridge Part 1 Stage 5",
+  "non_authorizing": true,
+  "nodes": [
+    {"id": "VS-01-contract-adapter-boundary", "depends_on": [], "local_validation": ["schema and canonicalization conformance"], "managed_proof": ["adapter conformance"], "critical_path": true},
+    {"id": "VS-02-generation-snapshot-boundary", "depends_on": ["VS-01-contract-adapter-boundary"], "local_validation": ["generation and boundary model tests"], "managed_proof": ["source snapshot frontier"], "critical_path": true},
+    {"id": "VS-03-cdc-normalization-ordering", "depends_on": ["VS-01-contract-adapter-boundary", "VS-02-generation-snapshot-boundary"], "local_validation": ["ordering and identity properties"], "managed_proof": ["captured transport metadata"], "critical_path": true},
+    {"id": "VS-04-transactional-apply-checkpoint", "depends_on": ["VS-03-cdc-normalization-ordering"], "local_validation": ["failure-injection reference tests"], "managed_proof": ["target commit and checkpoint coupling"], "critical_path": true},
+    {"id": "VS-05-schema-quarantine", "depends_on": ["VS-01-contract-adapter-boundary"], "local_validation": ["schema compatibility fixtures"], "managed_proof": ["runtime quarantine enforcement"], "critical_path": false},
+    {"id": "VS-06-reconciliation-proof", "depends_on": ["VS-04-transactional-apply-checkpoint", "VS-05-schema-quarantine"], "local_validation": ["reconciliation and proof oracles"], "managed_proof": ["frontier-bound source and target comparison"], "critical_path": true},
+    {"id": "VS-07-publication-rollback", "depends_on": ["VS-06-reconciliation-proof"], "local_validation": ["publication truth table and CAS model"], "managed_proof": ["concurrent publication and rollback"], "critical_path": true},
+    {"id": "VS-08-observability-security", "depends_on": ["VS-04-transactional-apply-checkpoint", "VS-06-reconciliation-proof"], "local_validation": ["policy and configuration validation"], "managed_proof": ["alarms, IAM, cost and teardown"], "critical_path": false},
+    {"id": "VS-09-evidence-release-binding", "depends_on": ["VS-07-publication-rollback", "VS-08-observability-security"], "local_validation": ["claim and artifact integrity"], "managed_proof": ["final CI, tag, release and retained evidence"], "critical_path": true}
+  ]
+}

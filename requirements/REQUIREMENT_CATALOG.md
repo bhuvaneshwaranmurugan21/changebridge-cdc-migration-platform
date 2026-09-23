@@ -233,7 +233,7 @@ Malformed, unknown, stale, unsafe, unregistered, cross-project, or proof-incompa
 - Normative level: `MUST`
 - Current status: `DEFERRED`
 - Minimum evidence: `LOCAL_VERIFIED`
-- Owner: `part1-stage5`
+- Owner: `project-final-interview`
 - Source conditions: 16
 - Source invariants: evidence_binding
 
@@ -241,7 +241,7 @@ The project owner MUST be able to explain each major design choice, invariant, f
 
 **Failure condition:** A major claim, limitation, or failure response depends on chat memory or cannot be located and defended from the repository.
 
-**Current limitation:** Stage 2 creates the authority sources; interview rehearsal belongs to Stage 5.
+**Current limitation:** Part 1 creates the repository walkthrough; the human rehearsal remains mandatory at final ChangeBridge project completion.
 
 ## CB-ISOLATION-001 — Immutable generation isolation
 

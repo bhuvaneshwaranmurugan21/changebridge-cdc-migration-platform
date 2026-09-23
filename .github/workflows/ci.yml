@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -21,6 +23,10 @@ jobs:
       - run: ruff check .
       - run: mypy src
       - run: pytest
+      - name: Validate Part 1 closure authority
+        run: python scripts/validate_part1_closure.py
+      - name: Validate Stage 5 evidence binding
+        run: python scripts/build_stage5_evidence.py --check
       - name: Regenerate deterministic evidence
         run: |
           python -m changebridge.cli simulate --output /tmp/changebridge-evidence.json
