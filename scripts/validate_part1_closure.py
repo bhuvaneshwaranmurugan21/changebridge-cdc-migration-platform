@@ -26,6 +26,8 @@ EXPECTED_INVARIANTS = 16
 EXPECTED_CLAIMS = 10
 EXPECTED_SCENARIOS = 13
 EXPECTED_RISKS = 16
+SOURCE_FREEZE_COMMIT = "a4ad1b73e6cd7da2ed1cea22f1f86a608d7052ee"
+SOURCE_FREEZE_TREE = "8ae75b0d6e71fd12d744d6dabea454f564a815a9"
 EXPECTED_CLAIM_LABELS = {
     "CB-CLAIM-001": "LOCAL_VERIFIED",
     "CB-CLAIM-002": "DESIGN_ONLY",
@@ -141,6 +143,9 @@ def load_authority(root: Path) -> dict[str, Any]:
         "authorization": load(root / "evidence/part1/stage5/resource-authorization-forecast.json"),
         "skeptical": load(root / "evidence/part1/stage5/skeptical-review.json"),
         "interview": load(root / "evidence/part1/stage5/interview-rehearsal.json"),
+        "validation_report": load(root / "evidence/part1/stage5/validation-report.json"),
+        "determinism_report": load(root / "evidence/part1/stage5/determinism-report.json"),
+        "file_manifest": load(root / "evidence/part1/stage5/file-manifest.json"),
     }
 
 
@@ -344,6 +349,47 @@ def validate_counts_and_claims(authority: dict[str, Any]) -> None:
             fail("CB5V036_WALKTHROUGH_CLAIM_SURFACE", claim["id"])
 
 
+def validate_stage5_reports(root: Path, authority: dict[str, Any]) -> None:
+    validation = authority["validation_report"]
+    if (
+        validation.get("validated_commit") != SOURCE_FREEZE_COMMIT
+        or validation.get("validated_tree") != SOURCE_FREEZE_TREE
+        or validation.get("result") != "PASS"
+        or any(gate.get("result") != "PASS" for gate in validation.get("gates", []))
+    ):
+        fail("CB5V037_VALIDATION_REPORT", repr(validation))
+    interview = validation.get("interview_requirement", {})
+    if (
+        interview.get("status") != "DEFERRED"
+        or interview.get("owner") != "project-final-interview"
+        or interview.get("requirement_weakened") is not False
+    ):
+        fail("CB5V037_VALIDATION_REPORT", repr(interview))
+
+    determinism = authority["determinism_report"]
+    if (
+        determinism.get("result") != "PASS"
+        or determinism.get("runs") != 2
+        or determinism.get("volatile_fields")
+        or determinism.get("byte_differences")
+    ):
+        fail("CB5V038_DETERMINISM_REPORT", repr(determinism))
+    for artifact in determinism.get("artifacts", []):
+        path = root / artifact["path"]
+        if not path.is_file() or digest(path) != artifact["sha256"]:
+            fail("CB5V038_DETERMINISM_REPORT", artifact["path"])
+
+    file_manifest = authority["file_manifest"]
+    if (
+        file_manifest.get("result") != "PASS"
+        or file_manifest.get("runtime_paths")
+        or file_manifest.get("terraform_paths")
+        or file_manifest.get("dependency_declaration_paths")
+        or file_manifest.get("unexplained_paths")
+    ):
+        fail("CB5V039_FILE_MANIFEST", repr(file_manifest))
+
+
 def validate_scope_and_isolation(root: Path) -> None:
     paths = git_paths(root)
     forbidden = sorted(
@@ -392,6 +438,7 @@ def validate_authority(authority: dict[str, Any], root: Path) -> dict[str, Any]:
     validate_risk_and_authorization(authority)
     validate_skeptical_and_interview(authority)
     validate_counts_and_claims(authority)
+    validate_stage5_reports(root, authority)
     validate_scope_and_isolation(root)
     validate_generated(root)
     return {

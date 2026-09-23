@@ -23,6 +23,8 @@ jobs:
       - run: pytest
       - name: Validate Part 1 closure authority
         run: python scripts/validate_part1_closure.py
+      - name: Validate Stage 5 evidence binding
+        run: python scripts/build_stage5_evidence.py --check
       - name: Regenerate deterministic evidence
         run: |
           python -m changebridge.cli simulate --output /tmp/changebridge-evidence.json

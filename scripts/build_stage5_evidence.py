@@ -14,8 +14,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 BASE_COMMIT = "f7ada638e0404afacaac604be400c1434858002f"
 BASE_TREE = "2401a4e8cdff8ae153dc4b1cebc1bc7b5cc61ac3"
-VALIDATED_COMMIT = "PENDING_SOURCE_FREEZE"
-VALIDATED_TREE = "PENDING_SOURCE_FREEZE"
+VALIDATED_COMMIT = "a4ad1b73e6cd7da2ed1cea22f1f86a608d7052ee"
+VALIDATED_TREE = "8ae75b0d6e71fd12d744d6dabea454f564a815a9"
 MANIFEST_PATH = Path("evidence/part1/stage5/artifact-manifest.json")
 RECEIPT_PATH = Path("evidence/part1/stage5/stage-receipt.json")
 EXCLUDED = {MANIFEST_PATH.as_posix(), RECEIPT_PATH.as_posix()}

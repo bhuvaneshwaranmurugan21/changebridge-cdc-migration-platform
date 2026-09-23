@@ -4,8 +4,8 @@
   "project": "ChangeBridge",
   "part": 1,
   "stage": 5,
-  "validated_commit": "PENDING_SOURCE_FREEZE",
-  "validated_tree": "PENDING_SOURCE_FREEZE",
+  "validated_commit": "a4ad1b73e6cd7da2ed1cea22f1f86a608d7052ee",
+  "validated_tree": "8ae75b0d6e71fd12d744d6dabea454f564a815a9",
   "environment": {
     "python": "3.12.14",
     "dependency_source": "repository-declared development dependencies only",
@@ -14,7 +14,7 @@
   "gates": [
     {"id": "VAL-01", "name": "ruff", "result": "PASS"},
     {"id": "VAL-02", "name": "strict mypy source validation", "result": "PASS"},
-    {"id": "VAL-03", "name": "114-test repository suite", "result": "PASS"},
+    {"id": "VAL-03", "name": "115-test repository suite", "result": "PASS"},
     {"id": "VAL-04", "name": "85-percent coverage gate", "observed_percent": 87.40, "result": "PASS"},
     {"id": "VAL-05", "name": "Stage 2 completion authority", "result": "PASS"},
     {"id": "VAL-06", "name": "Stage 3 architecture authority", "result": "PASS"},

@@ -8,6 +8,8 @@
 - Verified entry tree: `2401a4e8cdff8ae153dc4b1cebc1bc7b5cc61ac3`
 - Stage branch: `part1-stage5-readiness-rehearsal`
 - Stage evidence: `evidence/part1/stage5/`
+- Stage 5 source freeze: `a4ad1b73e6cd7da2ed1cea22f1f86a608d7052ee`
+- Stage 5 source tree: `8ae75b0d6e71fd12d744d6dabea454f564a815a9`
 
 ## Predecessor results
 

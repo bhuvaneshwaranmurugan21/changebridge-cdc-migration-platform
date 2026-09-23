@@ -78,6 +78,12 @@
       "command": "python -m changebridge.cli simulate --output <tmp>/simulation.json",
       "result": "PASS",
       "purpose": "Preserved thirteen-scenario local failure laboratory"
+    },
+    {
+      "id": "CMD-13",
+      "command": "python scripts/build_stage5_evidence.py --check",
+      "result": "PASS",
+      "purpose": "Commit-bound Stage 5 artifact manifest and acceptance receipt"
     }
   ],
   "stage4_full_evidence_observation": {
