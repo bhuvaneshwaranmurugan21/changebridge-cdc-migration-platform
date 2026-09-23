@@ -239,13 +239,13 @@
     {
       "current_proof_paths": [],
       "future_proof_paths": [
-        "future:evidence/part1/stage5/interview-rehearsal.json"
+        "future:evidence/project-completion/interview-rehearsal.json"
       ],
       "implementation_paths": [
-        "future:docs/INTERVIEW_WALKTHROUGH.md"
+        "docs/INTERVIEW_WALKTHROUGH.md"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
-      "owner_stage": "part1-stage5",
+      "owner_stage": "project-final-interview",
       "requirement_id": "CB-INTERVIEW-001",
       "status": "DEFERRED",
       "verification_method": "timed interview rehearsal with repository navigation and adversarial follow-ups"

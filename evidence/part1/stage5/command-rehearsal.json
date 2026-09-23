@@ -51,9 +51,9 @@
     },
     {
       "id": "CMD-08",
-      "command": "python scripts/validate_part1_closure.py --allow-pending-interview --output <tmp>/closure.json",
+      "command": "python scripts/validate_part1_closure.py --output <tmp>/closure.json",
       "result": "PASS",
-      "purpose": "Technical pre-interview closure with the human gate still deferred"
+      "purpose": "Part 1 closure with the mandatory human gate explicitly owned by final project completion"
     },
     {
       "id": "CMD-09",

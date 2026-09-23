@@ -3,8 +3,8 @@
   "record_type": "owner_interview_rehearsal",
   "requirement_id": "CB-INTERVIEW-001",
   "evidence_label": "LOCAL_VERIFIED",
-  "status": "PENDING_HUMAN_REHEARSAL",
-  "result": "PENDING",
+  "status": "DEFERRED_TO_PROJECT_COMPLETION",
+  "result": "DEFERRED",
   "required_topics": ["design choices", "invariants", "failure paths", "evidence boundaries", "tradeoffs", "limitations"],
   "rubric": [
     {"dimension": "repository_navigation", "minimum": 4, "maximum": 5, "score": null},
@@ -19,5 +19,5 @@
   "corrections": [],
   "duration_minutes": null,
   "private_transcript_published": false,
-  "limitations": ["Generated documentation cannot prove owner explainability.", "This record must remain pending until the owner completes the timed rehearsal."]
+  "limitations": ["Generated documentation cannot prove owner explainability.", "The timed rehearsal remains mandatory before final ChangeBridge project completion."]
 }

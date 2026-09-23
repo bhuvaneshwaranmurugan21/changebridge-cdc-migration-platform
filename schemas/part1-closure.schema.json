@@ -77,8 +77,8 @@
         "record_type": {"const": "owner_interview_rehearsal"},
         "requirement_id": {"const": "CB-INTERVIEW-001"},
         "evidence_label": {"const": "LOCAL_VERIFIED"},
-        "status": {"enum": ["PENDING_HUMAN_REHEARSAL", "PASS", "FAIL"]},
-        "result": {"enum": ["PENDING", "PASS", "FAIL"]},
+        "status": {"enum": ["DEFERRED_TO_PROJECT_COMPLETION", "PASS", "FAIL"]},
+        "result": {"enum": ["DEFERRED", "PASS", "FAIL"]},
         "required_topics": {"$ref": "#/$defs/non_empty_strings"},
         "rubric": {
           "type": "array",

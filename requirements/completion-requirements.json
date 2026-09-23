@@ -775,13 +775,13 @@
       "source_invariants": ["evidence_binding"],
       "dependencies": ["CB-EVIDENCE-002"],
       "current_status": "DEFERRED",
-      "owner_stage": "part1-stage5",
+      "owner_stage": "project-final-interview",
       "verification_method": "timed interview rehearsal with repository navigation and adversarial follow-ups",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["future:docs/INTERVIEW_WALKTHROUGH.md"],
-      "proof_paths": ["future:evidence/part1/stage5/interview-rehearsal.json"],
+      "implementation_paths": ["docs/INTERVIEW_WALKTHROUGH.md"],
+      "proof_paths": ["future:evidence/project-completion/interview-rehearsal.json"],
       "failure_condition": "A major claim, limitation, or failure response depends on chat memory or cannot be located and defended from the repository.",
-      "limitations": "Stage 2 creates the authority sources; interview rehearsal belongs to Stage 5.",
+      "limitations": "Part 1 creates the repository walkthrough; the human rehearsal remains mandatory at final ChangeBridge project completion.",
       "review_notes": "The walkthrough must include negative findings, not only the happy path."
     }
   ]

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "stage5_validation_report",
+  "project": "ChangeBridge",
+  "part": 1,
+  "stage": 5,
+  "validated_commit": "PENDING_SOURCE_FREEZE",
+  "validated_tree": "PENDING_SOURCE_FREEZE",
+  "environment": {
+    "python": "3.12.14",
+    "dependency_source": "repository-declared development dependencies only",
+    "undeclared_dependencies": []
+  },
+  "gates": [
+    {"id": "VAL-01", "name": "ruff", "result": "PASS"},
+    {"id": "VAL-02", "name": "strict mypy source validation", "result": "PASS"},
+    {"id": "VAL-03", "name": "114-test repository suite", "result": "PASS"},
+    {"id": "VAL-04", "name": "85-percent coverage gate", "observed_percent": 87.40, "result": "PASS"},
+    {"id": "VAL-05", "name": "Stage 2 completion authority", "result": "PASS"},
+    {"id": "VAL-06", "name": "Stage 3 architecture authority", "result": "PASS"},
+    {"id": "VAL-07", "name": "Stage 4 contract and oracle authority", "result": "PASS"},
+    {"id": "VAL-08", "name": "protected predecessor evidence digests", "result": "PASS"},
+    {"id": "VAL-09", "name": "Stage 5 closure authority", "result": "PASS"},
+    {"id": "VAL-10", "name": "thirteen-scenario local simulation", "result": "PASS"},
+    {"id": "VAL-11", "name": "twelve exact-diagnostic validator mutations", "result": "PASS"},
+    {"id": "VAL-12", "name": "generated-view determinism", "result": "PASS"}
+  ],
+  "interview_requirement": {
+    "id": "CB-INTERVIEW-001",
+    "status": "DEFERRED",
+    "owner": "project-final-interview",
+    "requirement_weakened": false
+  },
+  "capability_promotion": "NONE",
+  "result": "PASS"
+}

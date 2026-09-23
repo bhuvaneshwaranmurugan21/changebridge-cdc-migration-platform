@@ -192,7 +192,7 @@ def validate_trace(authority: dict[str, Any], requirements: dict[str, dict[str, 
 
 
 def validate_interview_requirement(
-    authority: dict[str, Any], requirements: dict[str, dict[str, Any]], *, allow_pending: bool
+    authority: dict[str, Any], requirements: dict[str, dict[str, Any]]
 ) -> None:
     row = requirements["CB-INTERVIEW-001"]
     matrix = {item["requirement_id"]: item for item in authority["proof_matrix"]["entries"]}[
@@ -201,18 +201,30 @@ def validate_interview_requirement(
     architecture = {
         item["requirement_id"]: item for item in authority["architecture_map"]["entries"]
     }["CB-INTERVIEW-001"]
-    if allow_pending:
-        if row["current_status"] != "DEFERRED":
-            fail("CB5V013_PENDING_REQUIREMENT_STATUS", row["current_status"])
-        return
-    if row["current_status"] != "SATISFIED":
-        fail("CB5V015_INTERVIEW_REQUIREMENT_STATUS", row["current_status"])
     all_paths = row["implementation_paths"] + row["proof_paths"]
-    if any(path.startswith("future:") for path in all_paths):
+    if row["current_status"] == "SATISFIED" and any(
+        path.startswith("future:") for path in all_paths
+    ):
         fail("CB5V014_SATISFIED_FUTURE_PATH", repr(all_paths))
-    if matrix["status"] != "SATISFIED" or matrix["future_proof_paths"]:
+    if row["current_status"] != "DEFERRED" or row["owner_stage"] != "project-final-interview":
+        fail("CB5V013_PENDING_REQUIREMENT_STATUS", repr(row))
+    if row["implementation_paths"] != ["docs/INTERVIEW_WALKTHROUGH.md"] or row["proof_paths"] != [
+        "future:evidence/project-completion/interview-rehearsal.json"
+    ]:
+        fail("CB5V015_INTERVIEW_REQUIREMENT_STATUS", repr(all_paths))
+    if (
+        matrix["status"] != "DEFERRED"
+        or matrix["owner_stage"] != "project-final-interview"
+        or matrix["implementation_paths"] != ["docs/INTERVIEW_WALKTHROUGH.md"]
+        or matrix["future_proof_paths"]
+        != ["future:evidence/project-completion/interview-rehearsal.json"]
+    ):
         fail("CB5V016_PROOF_MATRIX_STATUS", repr(matrix))
-    if architecture["requirement_status"] != "SATISFIED":
+    if (
+        architecture["requirement_status"] != "DEFERRED"
+        or architecture["owner_stage"] != "project-final-interview"
+        or architecture["proof_owner"] != "project-final-interview"
+    ):
         fail("CB5V017_ARCHITECTURE_MAP_STATUS", repr(architecture))
 
 
@@ -273,27 +285,27 @@ def validate_risk_and_authorization(authority: dict[str, Any]) -> None:
         fail("CB5V025_INVENTED_EXTERNAL_IDENTITY", "authorization forecast")
 
 
-def validate_skeptical_and_interview(authority: dict[str, Any], *, allow_pending: bool) -> None:
+def validate_skeptical_and_interview(authority: dict[str, Any]) -> None:
     review = authority["skeptical"]
     interview = authority["interview"]
-    if allow_pending:
-        if review.get("blocking_findings") != ["SR-10"] or review.get("result") != "PENDING":
-            fail("CB5V027_SKEPTICAL_REVIEW", repr(review.get("blocking_findings")))
-        if interview.get("status") != "PENDING_HUMAN_REHEARSAL":
-            fail("CB5V028_INTERVIEW_EVIDENCE", interview.get("status", "missing"))
-        return
-    if review.get("blocking_findings") or review.get("result") != "PASS":
+    if (
+        review.get("blocking_findings")
+        or review.get("deferred_findings") != ["SR-10"]
+        or review.get("result") != "PASS_WITH_DEFERRED_FINAL_GATE"
+    ):
         fail("CB5V027_SKEPTICAL_REVIEW", repr(review.get("blocking_findings")))
-    if interview.get("status") != "PASS" or interview.get("result") != "PASS":
+    if (
+        interview.get("status") != "DEFERRED_TO_PROJECT_COMPLETION"
+        or interview.get("result") != "DEFERRED"
+    ):
         fail("CB5V028_INTERVIEW_EVIDENCE", interview.get("status", "missing"))
-    if not interview.get("question_ids") or not interview.get("repository_references"):
-        fail("CB5V028_INTERVIEW_EVIDENCE", "missing questions or repository references")
-    if not isinstance(interview.get("duration_minutes"), int):
-        fail("CB5V028_INTERVIEW_EVIDENCE", "missing duration")
-    for rubric in interview["rubric"]:
-        score = rubric.get("score")
-        if not isinstance(score, int) or score < rubric["minimum"]:
-            fail("CB5V029_INTERVIEW_SCORE", rubric["dimension"])
+    if (
+        interview.get("question_ids")
+        or interview.get("repository_references")
+        or interview.get("duration_minutes") is not None
+        or any(rubric.get("score") is not None for rubric in interview["rubric"])
+    ):
+        fail("CB5V029_INTERVIEW_SCORE", "deferred evidence contains fabricated observations")
 
 
 def validate_counts_and_claims(authority: dict[str, Any]) -> None:
@@ -352,8 +364,7 @@ def validate_scope_and_isolation(root: Path) -> None:
         collapsed = text.replace("-", "").replace("_", "")
         tokens = "".join(character if character.isalnum() else " " for character in collapsed)
         token_digests = {
-            hashlib.sha256(token.lower().encode("utf-8")).hexdigest()
-            for token in tokens.split()
+            hashlib.sha256(token.lower().encode("utf-8")).hexdigest() for token in tokens.split()
         }
         if token_digests & FOREIGN_PROJECT_TOKEN_DIGESTS:
             fail("CB5V032_PROJECT_ISOLATION", path)
@@ -370,18 +381,16 @@ def validate_generated(root: Path) -> None:
             fail("CB5V035_GENERATED_DRIFT", str(relative))
 
 
-def validate_authority(
-    authority: dict[str, Any], root: Path, *, allow_pending_interview: bool
-) -> dict[str, Any]:
+def validate_authority(authority: dict[str, Any], root: Path) -> dict[str, Any]:
     validate_schema(root, authority)
     validate_predecessors(root, authority)
     requirements = requirement_map(authority)
     validate_trace(authority, requirements)
-    validate_interview_requirement(authority, requirements, allow_pending=allow_pending_interview)
+    validate_interview_requirement(authority, requirements)
     validate_graph(authority)
     validate_references(root, authority)
     validate_risk_and_authorization(authority)
-    validate_skeptical_and_interview(authority, allow_pending=allow_pending_interview)
+    validate_skeptical_and_interview(authority)
     validate_counts_and_claims(authority)
     validate_scope_and_isolation(root)
     validate_generated(root)
@@ -428,11 +437,11 @@ def mutation_probe(authority: dict[str, Any], root: Path, mutation: str) -> None
         )
         row["current_status"] = "SATISFIED"
         row["implementation_paths"] = ["future:docs/INTERVIEW_WALKTHROUGH.md"]
-        validate_interview_requirement(data, requirement_map(data), allow_pending=False)
+        validate_interview_requirement(data, requirement_map(data))
         return
     elif mutation == "false_interview_pass":
         data["interview"]["status"] = "PASS"
-        validate_skeptical_and_interview(data, allow_pending=True)
+        validate_skeptical_and_interview(data)
         return
     elif mutation == "foreign_project_token":
         fail("CB5V032_PROJECT_ISOLATION", "synthetic foreign token")
@@ -445,12 +454,12 @@ def mutation_probe(authority: dict[str, Any], root: Path, mutation: str) -> None
     elif mutation == "invented_aws_identity":
         data["authorization"]["invented_role_arns"] = ["arn:aws:iam::000000000000:role/fake"]
     elif mutation == "blocking_review_ignored":
-        data["skeptical"]["blocking_findings"] = []
+        data["skeptical"]["blocking_findings"] = ["SR-10"]
     elif mutation == "completion_status_too_strong":
         fail("CB5V034_COMPLETION_STATUS", "synthetic early completion")
     else:
         raise ValueError(mutation)
-    validate_authority(data, root, allow_pending_interview=True)
+    validate_authority(data, root)
 
 
 def canonical_json(value: Any) -> str:
@@ -460,7 +469,6 @@ def canonical_json(value: Any) -> str:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
-    parser.add_argument("--allow-pending-interview", action="store_true")
     parser.add_argument("--output", type=Path)
     return parser.parse_args()
 
@@ -470,9 +478,7 @@ def main() -> int:
     root = args.root.resolve()
     try:
         authority = load_authority(root)
-        report = validate_authority(
-            authority, root, allow_pending_interview=args.allow_pending_interview
-        )
+        report = validate_authority(authority, root)
     except (ClosureError, OSError, json.JSONDecodeError, subprocess.CalledProcessError) as exc:
         print(str(exc), file=sys.stderr)
         return 1

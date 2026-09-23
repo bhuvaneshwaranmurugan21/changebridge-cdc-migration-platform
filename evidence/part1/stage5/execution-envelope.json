@@ -13,5 +13,5 @@
   "authorized_actions": ["local authority and evidence changes", "GitHub branch and pull request", "policy-compliant merge after gates", "external Part 1 checkpoint"],
   "forbidden_actions": ["AWS operations", "runtime or Spark behavior changes", "Terraform behavior changes", "deployment", "managed experiment", "performance test", "release", "tag", "history rewrite", "other-project access"],
   "result": "PASS",
-  "limitations": ["The owner interview gate must pass before CB-INTERVIEW-001 changes status.", "This envelope grants no future implementation authority."]
+  "limitations": ["CB-INTERVIEW-001 remains deferred and mandatory at final ChangeBridge project completion.", "This envelope grants no future implementation authority."]
 }

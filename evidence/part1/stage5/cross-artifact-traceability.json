@@ -1173,14 +1173,14 @@
       "contracts": [],
       "has_future_owner": true,
       "implementation_paths": [
-        "future:docs/INTERVIEW_WALKTHROUGH.md"
+        "docs/INTERVIEW_WALKTHROUGH.md"
       ],
       "invariants": [],
       "minimum_evidence": "LOCAL_VERIFIED",
       "missing_current_paths": [],
-      "owner_stage": "part1-stage5",
+      "owner_stage": "project-final-interview",
       "proof_paths": [
-        "future:evidence/part1/stage5/interview-rehearsal.json"
+        "future:evidence/project-completion/interview-rehearsal.json"
       ],
       "requirement_id": "CB-INTERVIEW-001",
       "status": "DEFERRED",

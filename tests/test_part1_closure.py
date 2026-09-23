@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_part1_closure as builder  # noqa: E402
+import build_stage5_evidence as evidence_builder  # noqa: E402
 import validate_part1_closure as validator  # noqa: E402
 
 
@@ -19,24 +20,23 @@ def load(relative: str) -> dict:
     return json.loads((ROOT / relative).read_text(encoding="utf-8"))
 
 
-def test_pending_human_gate_is_the_only_permitted_pre_interview_state() -> None:
-    report = validator.validate_authority(
-        validator.load_authority(ROOT), ROOT, allow_pending_interview=True
-    )
+def test_final_project_interview_deferral_is_explicit_and_non_blocking_for_part1() -> None:
+    report = validator.validate_authority(validator.load_authority(ROOT), ROOT)
 
     assert report["result"] == "PASS"
-    assert report["interview_status"] == "PENDING_HUMAN_REHEARSAL"
+    assert report["interview_status"] == "DEFERRED_TO_PROJECT_COMPLETION"
     assert report["requirement_count"] == 39
     assert report["capability_promotion"] == "NONE"
 
 
-def test_final_validation_rejects_pending_human_gate() -> None:
-    with pytest.raises(validator.ClosureError) as exc_info:
-        validator.validate_authority(
-            validator.load_authority(ROOT), ROOT, allow_pending_interview=False
-        )
+def test_deferred_interview_contains_no_fabricated_human_observations() -> None:
+    interview = load("evidence/part1/stage5/interview-rehearsal.json")
 
-    assert exc_info.value.code == "CB5V015_INTERVIEW_REQUIREMENT_STATUS"
+    assert interview["result"] == "DEFERRED"
+    assert interview["question_ids"] == []
+    assert interview["repository_references"] == []
+    assert interview["duration_minutes"] is None
+    assert all(row["score"] is None for row in interview["rubric"])
 
 
 def test_closure_schema_is_valid_and_governs_all_three_authorities() -> None:
@@ -91,3 +91,18 @@ def test_scope_allowlist_excludes_runtime_and_infrastructure_paths() -> None:
 def test_predecessor_receipts_remain_byte_identical() -> None:
     for relative, expected_digest in validator.PROTECTED_DIGESTS.items():
         assert validator.digest(ROOT / relative) == expected_digest
+
+
+def test_stage5_receipt_has_complete_acceptance_criterion_partition() -> None:
+    evidence = evidence_builder.criterion_evidence()
+    receipt = evidence_builder.build_receipt({"result": "PASS"})
+
+    assert set(evidence) == set(range(1, 45))
+    assert receipt["criteria_total"] == 44
+    assert receipt["criteria_passed"] == 40
+    assert receipt["criteria_pending"] == 4
+    assert [row["id"] for row in receipt["criteria"]] == [
+        f"ST5-AC-{index:02d}" for index in range(1, 45)
+    ]
+    assert all(row["result"] == "PASS" for row in receipt["criteria"][:40])
+    assert all(row["result"] == "PENDING" for row in receipt["criteria"][40:])

@@ -28,10 +28,10 @@ It provides a non-authorizing nine-slice implementation-readiness manifest, an a
 graph, sixteen failure rehearsals, an authorization forecast, a skeptical review, an interview
 walkthrough, and fail-closed closure validation.
 
-Technical pre-rehearsal validation passes, while `CB-INTERVIEW-001` remains deliberately
-`DEFERRED`. Part 1 cannot be declared complete until the owner performs the human repository
-walkthrough, meets every rubric threshold, the final deterministic validation ladder passes, the
-exact PR head passes CI, the candidate is merged under policy, and merged main is verified.
+Part 1 validation passes while `CB-INTERVIEW-001` remains deliberately `DEFERRED` to the final
+ChangeBridge project-completion stage. The walkthrough authority exists now, but no human score or
+rehearsal result is fabricated. Part 1 completion still requires the deterministic validation
+ladder, exact-head CI, policy-compliant merge, and verified merged main.
 
 No claim is promoted. Managed runtime, adapter conformance, performance, availability,
 exactly-once delivery, zero-downtime cutover and release completion remain unproven.
@@ -42,8 +42,7 @@ Stage 5.
 
 ## Next permitted action
 
-Complete the human interview rehearsal without using chat memory as repository authority. Then
-seal Stage 5 evidence, publish the exact candidate, require CI on that exact PR head, and merge only
+Seal Stage 5 evidence, publish the exact candidate, require CI on that exact PR head, and merge only
 after `ST5-AC-01` through `ST5-AC-41` pass. Do not publish the external verified-completion
 checkpoint inside the repository; it requires verified merged main and `ST5-AC-42` through
-`ST5-AC-44`.
+`ST5-AC-44`. Preserve the mandatory interview rehearsal for final ChangeBridge project closure.

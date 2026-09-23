@@ -344,12 +344,13 @@ def render_interview(root: Path) -> str:
                 "project release completion."
             ),
             "",
-            "## Owner rehearsal rule",
+            "## Final-project owner rehearsal rule",
             "",
             (
-                "`CB-INTERVIEW-001` becomes satisfied only after the owner completes the timed "
-                "repository walkthrough and adversarial follow-ups recorded in "
-                "`evidence/part1/stage5/interview-rehearsal.json`."
+                "Part 1 prepares this walkthrough but does not infer human capability from it. "
+                "`CB-INTERVIEW-001` remains mandatory and deferred until the owner completes the "
+                "timed repository walkthrough and adversarial follow-ups at final ChangeBridge "
+                "project completion."
             ),
             "",
         ]
