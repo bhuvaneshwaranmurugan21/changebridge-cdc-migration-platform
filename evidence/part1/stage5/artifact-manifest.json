@@ -1,9 +1,9 @@
 {
-  "artifact_count": 34,
+  "artifact_count": 35,
   "artifacts": [
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "2805003ca811582778fa5f56d82adb974804c359b44b2627112b084ce1ff5e2d"
+      "sha256": "65d1efb96f0cdb4d832f4edd242bc38617442f7311d7922277a7952cfbcc6cf5"
     },
     {
       "path": "PROJECT_STATUS.md",
@@ -24,6 +24,10 @@
     {
       "path": "docs/readiness/PART1_IMPLEMENTATION_HANDOFF.md",
       "sha256": "7ec8c7e0fa9b29099190474273c4a798af446eab0ef20dda2f8cc850239cd340"
+    },
+    {
+      "path": "evidence/part1/stage5/ci-closure.json",
+      "sha256": "dec001365ac7c7760682267b6355eca530b8b2fa0e83a3917cefc486ca80ded8"
     },
     {
       "path": "evidence/part1/stage5/claim-impact-review.json",
