@@ -102,3 +102,13 @@ Stage 1 reproduced the committed local simulation byte-for-byte and bound that v
 - Limitations: This is evidence reproducibility, not managed migration or performance proof.
 - Requirements: `CB-EVIDENCE-001`, `CB-EVIDENCE-003`
 - Disposition: `CORRECTED`
+
+## CB-CLAIM-011 — LOCAL_VERIFIED
+
+<!-- claim:CB-CLAIM-011 -->
+A deterministic workload was executed in isolated PostgreSQL 17.11 schemas, and a real exported logical snapshot was locally bound to one typed PostgreSQL LSN frontier; repeated same-seed runs matched logically while their physical LSNs remained run-specific.
+
+- Scope: isolated PostgreSQL source workload and snapshot boundary
+- Limitations: This does not verify AWS DMS position mapping or delivery, downstream normalization, target application, Iceberg behavior, performance, availability, cost, exactly-once delivery, zero downtime, or production readiness.
+- Requirements: `CB-BOUNDARY-001`, `CB-BOUNDARY-002`, `CB-BOUNDARY-003`, `CB-ORDER-003`, `CB-ORDER-004`, `CB-SCHEMA-001`
+- Disposition: `CORRECTED`

@@ -1,0 +1,45 @@
+{
+  "different_seed": 424243,
+  "different_seed_differs": true,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "determinism_report",
+  "interpretation": "Equivalent semantic inputs match logically; run-specific WAL addresses are intentionally unequal.",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "logical_history_digests": [
+    "61b6a6af3a3befa54f80a17cbf65278bb35a72cbb70a59bf6c86cd0460a00634",
+    "61b6a6af3a3befa54f80a17cbf65278bb35a72cbb70a59bf6c86cd0460a00634",
+    "ea248f5bf6d2970ee6b05fe2561d7705ce7be49dc9bcf419d9f0f905993a8b06"
+  ],
+  "part": 2,
+  "physical_lsn_excluded_from_identity": true,
+  "physical_snapshot_frontiers": [
+    {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    {
+      "kind": "postgres_lsn",
+      "value": "0/1969728"
+    },
+    {
+      "kind": "postgres_lsn",
+      "value": "0/19824C8"
+    }
+  ],
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "same_seed": 424242,
+  "same_seed_equal": {
+    "expected_final_digest": true,
+    "history_digest": true,
+    "workload_id": true
+  },
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}

@@ -81,14 +81,16 @@
     },
     {
       "current_proof_paths": [
-        "tests/test_engine.py"
+        "evidence/part2/stage1/boundary-capture-report.json",
+        "tests/integration/test_postgres_source_boundary.py",
+        "tests/test_engine.py",
+        "tests/test_source_boundary.py"
       ],
-      "future_proof_paths": [
-        "future:tests/contracts/test_boundary.py"
-      ],
+      "future_proof_paths": [],
       "implementation_paths": [
-        "future:src/changebridge/contracts/boundary.py",
-        "src/changebridge/engine.py"
+        "scripts/stage21_postgres_adapter.py",
+        "src/changebridge/engine.py",
+        "src/changebridge/source_boundary.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
       "owner_stage": "part1-stage3",
@@ -98,14 +100,18 @@
     },
     {
       "current_proof_paths": [
-        "tests/test_engine.py"
+        "evidence/part2/stage1/boundary-capture-report.json",
+        "evidence/part2/stage1/negative-case-report.json",
+        "tests/integration/test_postgres_source_boundary.py",
+        "tests/test_engine.py",
+        "tests/test_source_boundary.py"
       ],
-      "future_proof_paths": [
-        "future:tests/contracts/test_boundary.py"
-      ],
+      "future_proof_paths": [],
       "implementation_paths": [
+        "scripts/stage21_postgres_adapter.py",
         "src/changebridge/engine.py",
-        "src/changebridge/model.py"
+        "src/changebridge/model.py",
+        "src/changebridge/source_boundary.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
       "owner_stage": "part1-stage3",
@@ -114,17 +120,21 @@
       "verification_method": "boundary model and integration tests for first and last included source positions"
     },
     {
-      "current_proof_paths": [],
+      "current_proof_paths": [
+        "evidence/part2/stage1/boundary-capture-report.json"
+      ],
       "future_proof_paths": [
         "future:evidence/managed/frontier-lineage.json"
       ],
       "implementation_paths": [
-        "future:src/changebridge/evidence/frontier.py"
+        "contracts/source-boundary-receipt-v1.json",
+        "future:src/changebridge/evidence/frontier.py",
+        "src/changebridge/source_boundary.py"
       ],
       "minimum_evidence": "AWS_VERIFIED",
       "owner_stage": "part3-managed-proof",
       "requirement_id": "CB-BOUNDARY-003",
-      "status": "UNSATISFIED",
+      "status": "PARTIAL",
       "verification_method": "managed evidence schema validation and exact-run reconciliation"
     },
     {
@@ -374,12 +384,16 @@
     },
     {
       "current_proof_paths": [
-        "tests/test_contract_oracle_authority.py"
+        "evidence/part2/stage1/determinism-report.json",
+        "evidence/part2/stage1/source-history-ledger.json",
+        "tests/test_contract_oracle_authority.py",
+        "tests/test_source_workload.py"
       ],
       "future_proof_paths": [],
       "implementation_paths": [
         "src/changebridge/contracts.py",
-        "src/changebridge/engine.py"
+        "src/changebridge/engine.py",
+        "src/changebridge/source_workload.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
       "owner_stage": "part1-stage4",
@@ -389,14 +403,18 @@
     },
     {
       "current_proof_paths": [
-        "tests/test_engine.py"
+        "evidence/part2/stage1/source-history-ledger.json",
+        "tests/test_engine.py",
+        "tests/test_source_workload.py"
       ],
       "future_proof_paths": [
         "future:tests/test_transaction_atomicity.py"
       ],
       "implementation_paths": [
+        "scripts/stage21_postgres_adapter.py",
         "src/changebridge/engine.py",
-        "src/changebridge/model.py"
+        "src/changebridge/model.py",
+        "src/changebridge/source_workload.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
       "owner_stage": "part2-runtime",
@@ -535,15 +553,22 @@
     },
     {
       "current_proof_paths": [
+        "evidence/part2/stage1/boundary-capture-report.json",
+        "evidence/part2/stage1/source-workload-manifest.json",
         "tests/test_contract_oracle_authority.py",
-        "tests/test_schema_and_cutover.py"
+        "tests/test_schema_and_cutover.py",
+        "tests/test_source_workload.py"
       ],
       "future_proof_paths": [],
       "implementation_paths": [
         "contracts/catalog.json",
         "contracts/cdc-envelope-v1.schema.json",
+        "contracts/order-items-v1.json",
+        "contracts/orders-v1.1.json",
         "contracts/orders-v1.json",
-        "src/changebridge/schema.py"
+        "contracts/part2-stage1-catalog.json",
+        "src/changebridge/schema.py",
+        "src/changebridge/source_workload.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
       "owner_stage": "part1-stage4",

@@ -1,0 +1,186 @@
+{
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "boundary_capture_report",
+  "exported_snapshot_count": 3,
+  "image": "postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652",
+  "imported_snapshot_count": 3,
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "raw_artifact_committed": false,
+  "raw_report_sha256": "a02c8fa8b9cbe1088dd0737c2c3e1c32f9325f96b98ba8c6fc1511fd78e37a13",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "runs": [
+    {
+      "capture_method": "postgres-logical-slot-exported-snapshot/1.0.0",
+      "cleanup": {
+        "slot_dropped": true
+      },
+      "comparator_version": "postgres-lsn-u32-pair/1.0.0",
+      "first_post_boundary_change_position": {
+        "kind": "postgres_lsn",
+        "value": "0/194FB20"
+      },
+      "first_post_boundary_position": {
+        "kind": "postgres_lsn",
+        "value": "0/194FBC8"
+      },
+      "first_post_boundary_transaction_sha256": "a8cee66e4788af8b855979155e486c988d84a42aba71e43a0fc26997ca12e737",
+      "generation_id": "generation-34edddda5aee96dc7236aaf3",
+      "generation_transitions": [
+        "CREATED",
+        "SNAPSHOT_LOADING",
+        "CDC_APPLYING"
+      ],
+      "image": "postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652",
+      "logical_change_count": 1,
+      "output_plugin": "test_decoding",
+      "schema_set_digest": "5bfe6ecf0e7576a91f9e1a8aed715b7653d3aa98009162b65dc8a5f2bff93979",
+      "seed": 424242,
+      "server_major": 17,
+      "server_version_digest": "14720de0c7175dd5945e536e4d8eb8c226c1c4d7a3753376150d583fefd31ff6",
+      "slot_identity_sha256": "e19771d2443aa5cb52ee00380bb0e3fdd4cfdf7915970460b34f348975419757",
+      "snapshot_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FB20"
+      },
+      "snapshot_identity_sha256": "a3bb1a0865d403f487a19c512aa413c05977af12afc988df37a5ee5ecc2ec3f9",
+      "snapshot_imported": true,
+      "snapshot_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "2915caa9cd13844f0b75cd450ba8ef4e8cd8e439136ca630225e71863654b07f"
+        }
+      },
+      "snapshot_transaction": {
+        "isolation": "repeatable read",
+        "read_only": true
+      },
+      "snapshot_whole_state_digest": "9089d027e04c0a78752776e679bed109348960d04f64c926b56a665a9e83439b",
+      "source_identity_digest": "50350dd8c9efb5e8bb910b5c5ac14bb08369d304ebc0636636ac600dcf05c231",
+      "workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd"
+    },
+    {
+      "capture_method": "postgres-logical-slot-exported-snapshot/1.0.0",
+      "cleanup": {
+        "slot_dropped": true
+      },
+      "comparator_version": "postgres-lsn-u32-pair/1.0.0",
+      "first_post_boundary_change_position": {
+        "kind": "postgres_lsn",
+        "value": "0/1969728"
+      },
+      "first_post_boundary_position": {
+        "kind": "postgres_lsn",
+        "value": "0/19697D0"
+      },
+      "first_post_boundary_transaction_sha256": "f7b856c054de7ccced087ad4f9413380ec494e40abc818b840aaad990ca3c5bc",
+      "generation_id": "generation-34edddda5aee96dc7236aaf3",
+      "generation_transitions": [
+        "CREATED",
+        "SNAPSHOT_LOADING",
+        "CDC_APPLYING"
+      ],
+      "image": "postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652",
+      "logical_change_count": 1,
+      "output_plugin": "test_decoding",
+      "schema_set_digest": "5bfe6ecf0e7576a91f9e1a8aed715b7653d3aa98009162b65dc8a5f2bff93979",
+      "seed": 424242,
+      "server_major": 17,
+      "server_version_digest": "14720de0c7175dd5945e536e4d8eb8c226c1c4d7a3753376150d583fefd31ff6",
+      "slot_identity_sha256": "e19771d2443aa5cb52ee00380bb0e3fdd4cfdf7915970460b34f348975419757",
+      "snapshot_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/1969728"
+      },
+      "snapshot_identity_sha256": "161277f80ac8aba51870d07d82b7d116f9ea2c158f6c5027432736cc513f1bc7",
+      "snapshot_imported": true,
+      "snapshot_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "2915caa9cd13844f0b75cd450ba8ef4e8cd8e439136ca630225e71863654b07f"
+        }
+      },
+      "snapshot_transaction": {
+        "isolation": "repeatable read",
+        "read_only": true
+      },
+      "snapshot_whole_state_digest": "9089d027e04c0a78752776e679bed109348960d04f64c926b56a665a9e83439b",
+      "source_identity_digest": "e960ad44f04a29b23009e6bc98daf5b3f6cdf31383cfff95846b46093922c088",
+      "workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd"
+    },
+    {
+      "capture_method": "postgres-logical-slot-exported-snapshot/1.0.0",
+      "cleanup": {
+        "slot_dropped": true
+      },
+      "comparator_version": "postgres-lsn-u32-pair/1.0.0",
+      "first_post_boundary_change_position": {
+        "kind": "postgres_lsn",
+        "value": "0/19824C8"
+      },
+      "first_post_boundary_position": {
+        "kind": "postgres_lsn",
+        "value": "0/1982570"
+      },
+      "first_post_boundary_transaction_sha256": "5620e84be3e5141819e0d9e4ba10b782ba40e232e56352ed636dc0282161b543",
+      "generation_id": "generation-8be77bf968ff52e5797381b4",
+      "generation_transitions": [
+        "CREATED",
+        "SNAPSHOT_LOADING",
+        "CDC_APPLYING"
+      ],
+      "image": "postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652",
+      "logical_change_count": 1,
+      "output_plugin": "test_decoding",
+      "schema_set_digest": "5bfe6ecf0e7576a91f9e1a8aed715b7653d3aa98009162b65dc8a5f2bff93979",
+      "seed": 424243,
+      "server_major": 17,
+      "server_version_digest": "14720de0c7175dd5945e536e4d8eb8c226c1c4d7a3753376150d583fefd31ff6",
+      "slot_identity_sha256": "022216a2672697788f54b73e9306dd36d2a40f155ed5e6031f9f21c926df966f",
+      "snapshot_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/19824C8"
+      },
+      "snapshot_identity_sha256": "96b8d7e6a1b53d60a0709996564da1fcf3f4338a482191ab32debdb6fc35333f",
+      "snapshot_imported": true,
+      "snapshot_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "3a4e98ecf60c1f3b99bfd9683e286723c4b3fe553b0b58db13b0484de2ca7bf9"
+        }
+      },
+      "snapshot_transaction": {
+        "isolation": "repeatable read",
+        "read_only": true
+      },
+      "snapshot_whole_state_digest": "8238b1b67ba56625c808f3f345601fe24a28355f9145d2959ecb2b052746cb49",
+      "source_identity_digest": "d15f03abe3059e324c8f2dedda23444668e53f22c34fcfca1043e27f1b34ccc5",
+      "workload_id": "8be77bf968ff52e5797381b43d14b9e4e00d63d45a47cecf7452bed5de931c94"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "slot_cleanup_count": 3,
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1,
+  "workflow_artifact_id": 10824187394,
+  "workflow_artifact_sha256": "27170270e61438644ffc24aae164579f6884622b120d20f52e18fa3fe9cd49d1",
+  "workflow_run_id": 36036471399
+}

@@ -1,0 +1,40 @@
+{
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "overlap_register",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "overlaps": [
+    {
+      "authority": "typed PostgreSQL LSN validation",
+      "change": "Reject hexadecimal halves wider than 32 bits.",
+      "decision": "Named additive hardening; no accepted valid position is removed.",
+      "path": "src/changebridge/contracts.py",
+      "record": "docs/part2/stage1/AUTHORITY_TRANSITION.md"
+    },
+    {
+      "authority": "completion requirement status and proof paths",
+      "change": "Add exact Stage 1 local proof without advancing managed claims.",
+      "decision": "Evidence-bounded correction.",
+      "path": "requirements/completion-requirements.json",
+      "record": "docs/part2/stage1/AUTHORITY_TRANSITION.md"
+    },
+    {
+      "authority": "public claim registry",
+      "change": "Add a locally verified source-boundary claim with explicit exclusions.",
+      "decision": "No existing managed or performance claim is promoted.",
+      "path": "claims/claims.json",
+      "record": "docs/part2/stage1/AUTHORITY_TRANSITION.md"
+    }
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1,
+  "unreviewed_overlaps": []
+}

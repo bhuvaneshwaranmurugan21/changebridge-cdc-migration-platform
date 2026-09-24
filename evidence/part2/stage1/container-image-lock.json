@@ -1,0 +1,23 @@
+{
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "container_image_lock",
+  "image": "postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "mutable_tag_used_in_execution": false,
+  "part": 2,
+  "platform": "linux/amd64",
+  "platform_digest": "sha256:91eb52696c76c7a8482a678f663cb350d962bfeb669066332816ceebb7cd6038",
+  "project": "ChangeBridge",
+  "publisher": "Docker Official Images",
+  "registry": "docker.io/library/postgres",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1,
+  "tag_resolved": "17.11-bookworm"
+}

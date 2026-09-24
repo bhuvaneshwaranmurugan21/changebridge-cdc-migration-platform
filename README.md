@@ -151,6 +151,13 @@ CI validation and a real managed-service run still required before making a runt
 See the authoritative [claim registry](CLAIMS.md) and
 [completion contract](COMPLETION_CONTRACT.md).
 
+<!-- claim:CB-CLAIM-011 -->
+A deterministic workload was executed in isolated PostgreSQL 17.11 schemas, and a real exported
+logical snapshot was locally bound to one typed PostgreSQL LSN frontier; repeated same-seed runs
+matched logically while their physical LSNs remained run-specific.
+This is local source-boundary proof only; it is not AWS DMS, target-apply, performance, or
+production-readiness proof. See the [Stage 1 authority](docs/part2/stage1/SOURCE_BOUNDARY.md).
+
 <!-- claim:CB-CLAIM-010 -->
 Stage 1 reproduced the committed local simulation byte-for-byte and bound that verification to
 merged main; the older simulation payload itself still lacks embedded commit, command, and tool

@@ -1,0 +1,28 @@
+{
+  "added_claim": "CB-CLAIM-011",
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "claim_impact_review",
+  "explicitly_unclaimed": [
+    "AWS DMS behavior",
+    "target application or Iceberg behavior",
+    "throughput, availability, cost, RTO/RPO, exactly-once, zero downtime, production readiness"
+  ],
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "locally_verified": [
+    "deterministic PostgreSQL source workload and replay equivalence",
+    "exported logical snapshot bound to one typed PostgreSQL frontier",
+    "tested boundary mismatch and expired-snapshot rejection"
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "promoted_existing_claims": [],
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}

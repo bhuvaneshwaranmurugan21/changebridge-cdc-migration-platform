@@ -1,0 +1,23 @@
+{
+  "direct_driver_dependencies": [],
+  "driver": "psycopg2-binary==2.9.12",
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "toolchain_inventory",
+  "integration_python": "3.11",
+  "integration_server": "PostgreSQL 17.11 Debian",
+  "libpq_version": 170009,
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "local_python": "3.12.14",
+  "logical_output_plugin": "test_decoding",
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}
