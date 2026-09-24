@@ -45,7 +45,7 @@
       "owner_stage": "part3-managed-proof",
       "proof_owner": "part3-managed-proof",
       "requirement_id": "CB-BOUNDARY-003",
-      "requirement_status": "UNSATISFIED"
+      "requirement_status": "PARTIAL"
     },
     {
       "adrs": [

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:source-boundary-receipt:1.0.0",
+  "title": "PostgreSQL exported-snapshot boundary receipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_version",
+    "capture_method",
+    "repository_commit",
+    "repository_tree",
+    "generation_id",
+    "workload_id",
+    "schema_set_digest",
+    "source_identity_digest",
+    "image",
+    "server_major",
+    "server_version_digest",
+    "output_plugin",
+    "slot_identity_sha256",
+    "snapshot_identity_sha256",
+    "snapshot_frontier",
+    "comparator_version",
+    "snapshot_imported",
+    "snapshot_transaction",
+    "snapshot_state",
+    "first_post_boundary_position",
+    "first_post_boundary_change_position",
+    "first_post_boundary_transaction_sha256",
+    "logical_change_count",
+    "post_boundary_observations",
+    "generation_record",
+    "generation_transitions",
+    "cleanup"
+  ],
+  "properties": {
+    "receipt_version": {"const": "source-boundary-receipt/1.0.0"},
+    "capture_method": {"const": "postgres-logical-slot-exported-snapshot/1.0.0"},
+    "repository_commit": {"$ref": "#/$defs/sha"},
+    "repository_tree": {"$ref": "#/$defs/sha"},
+    "generation_id": {"type": "string", "pattern": "^generation-[0-9a-f]{24}$"},
+    "workload_id": {"$ref": "#/$defs/digest"},
+    "schema_set_digest": {"$ref": "#/$defs/digest"},
+    "source_identity_digest": {"$ref": "#/$defs/digest"},
+    "image": {"const": "postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652"},
+    "server_major": {"const": 17},
+    "server_version_digest": {"$ref": "#/$defs/digest"},
+    "output_plugin": {"const": "test_decoding"},
+    "slot_identity_sha256": {"$ref": "#/$defs/digest"},
+    "snapshot_identity_sha256": {"$ref": "#/$defs/digest"},
+    "snapshot_frontier": {"$ref": "#/$defs/lsn"},
+    "comparator_version": {"const": "postgres-lsn-u32-pair/1.0.0"},
+    "snapshot_imported": {"const": true},
+    "snapshot_transaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isolation", "read_only"],
+      "properties": {"isolation": {"const": "repeatable read"}, "read_only": {"const": true}}
+    },
+    "snapshot_state": {"type": "object"},
+    "first_post_boundary_position": {"$ref": "#/$defs/lsn"},
+    "first_post_boundary_change_position": {"$ref": "#/$defs/lsn"},
+    "first_post_boundary_transaction_sha256": {"$ref": "#/$defs/digest"},
+    "logical_change_count": {"type": "integer", "minimum": 1},
+    "post_boundary_observations": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "generation_record": {"type": "object"},
+    "generation_transitions": {
+      "const": ["CREATED", "SNAPSHOT_LOADING", "CDC_APPLYING"]
+    },
+    "cleanup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slot_dropped"],
+      "properties": {"slot_dropped": {"const": true}}
+    }
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "lsn": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {"const": "postgres_lsn"},
+        "value": {"type": "string", "pattern": "^[0-9A-F]{1,8}/[0-9A-F]{1,8}$"}
+      }
+    }
+  }
+}

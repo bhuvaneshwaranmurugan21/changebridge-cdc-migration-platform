@@ -18,11 +18,11 @@
       "owner_stage": "part1-stage3",
       "verification_method": "contract tests plus integration evidence that binds source snapshot metadata to one generation",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/engine.py", "future:src/changebridge/contracts/boundary.py"],
-      "proof_paths": ["tests/test_engine.py", "future:tests/contracts/test_boundary.py"],
+      "implementation_paths": ["src/changebridge/engine.py", "src/changebridge/source_boundary.py", "scripts/stage21_postgres_adapter.py"],
+      "proof_paths": ["tests/test_engine.py", "tests/test_source_boundary.py", "tests/integration/test_postgres_source_boundary.py", "evidence/part2/stage1/boundary-capture-report.json"],
       "failure_condition": "A generation has no frontier, more than one frontier, or a frontier that can change after snapshot sealing.",
-      "limitations": "The SQLite oracle stores a snapshot LSN; no managed source snapshot is yet bound.",
-      "review_notes": "Stage 2 preserves the obligation without choosing the managed capture mechanism."
+      "limitations": "Satisfied for the isolated PostgreSQL exported-snapshot path. AWS DMS checkpoint mapping and managed-source proof remain unverified.",
+      "review_notes": "Stage 2.1 binds each local generation to one immutable consistent point and rejects a second frontier."
     },
     {
       "id": "CB-BOUNDARY-002",
@@ -38,11 +38,11 @@
       "owner_stage": "part1-stage3",
       "verification_method": "boundary model and integration tests for first and last included source positions",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/model.py", "src/changebridge/engine.py"],
-      "proof_paths": ["tests/test_engine.py", "future:tests/contracts/test_boundary.py"],
+      "implementation_paths": ["src/changebridge/model.py", "src/changebridge/engine.py", "src/changebridge/source_boundary.py", "scripts/stage21_postgres_adapter.py"],
+      "proof_paths": ["tests/test_engine.py", "tests/test_source_boundary.py", "tests/integration/test_postgres_source_boundary.py", "evidence/part2/stage1/boundary-capture-report.json", "evidence/part2/stage1/negative-case-report.json"],
       "failure_condition": "The first CDC event overlaps S, a source position after S is omitted, or an event beyond F is included in proof at F.",
-      "limitations": "Local integer LSNs model the interval; DMS checkpoint semantics remain unverified.",
-      "review_notes": "The boundary contract must remain transport-neutral."
+      "limitations": "Satisfied for local PostgreSQL transaction commit LSNs. DMS checkpoint semantics, transport delivery, and terminal target frontier F remain later-stage proof.",
+      "review_notes": "The exported snapshot is S; the first governed decoded transaction uses its COMMIT LSN and must be strictly greater than S."
     },
     {
       "id": "CB-BOUNDARY-003",
@@ -54,15 +54,15 @@
       "source_conditions": [1, 11],
       "source_invariants": ["boundary", "evidence_binding"],
       "dependencies": ["CB-BOUNDARY-001", "CB-BOUNDARY-002"],
-      "current_status": "UNSATISFIED",
+      "current_status": "PARTIAL",
       "owner_stage": "part3-managed-proof",
       "verification_method": "managed evidence schema validation and exact-run reconciliation",
       "minimum_evidence": "AWS_VERIFIED",
-      "implementation_paths": ["future:src/changebridge/evidence/frontier.py"],
-      "proof_paths": ["future:evidence/managed/frontier-lineage.json"],
+      "implementation_paths": ["src/changebridge/source_boundary.py", "contracts/source-boundary-receipt-v1.json", "future:src/changebridge/evidence/frontier.py"],
+      "proof_paths": ["evidence/part2/stage1/boundary-capture-report.json", "future:evidence/managed/frontier-lineage.json"],
       "failure_condition": "The proof cannot uniquely identify the source, generation, S, F, or producing run.",
-      "limitations": "No managed frontier lineage exists on current main.",
-      "review_notes": "Static design metadata cannot satisfy this requirement."
+      "limitations": "Local lineage now binds source, server/image, generation, workload, schema, snapshot, S and producing run; managed terminal F and AWS run lineage remain absent.",
+      "review_notes": "Stage 2.1 supplies local source-boundary lineage only, so the managed requirement remains partial."
     },
     {
       "id": "CB-ORDER-001",
@@ -118,11 +118,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "ordering oracle, permutation property tests, and managed transaction-order evidence",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/engine.py", "src/changebridge/contracts.py"],
-      "proof_paths": ["tests/test_contract_oracle_authority.py"],
+      "implementation_paths": ["src/changebridge/engine.py", "src/changebridge/contracts.py", "src/changebridge/source_workload.py"],
+      "proof_paths": ["tests/test_contract_oracle_authority.py", "tests/test_source_workload.py", "evidence/part2/stage1/source-history-ledger.json", "evidence/part2/stage1/determinism-report.json"],
       "failure_condition": "Equivalent immutable inputs can produce different event order or target state.",
-      "limitations": "Typed position and tie semantics are locally verified, but the current apply engine still consumes integer LSN batches and no managed adapter conformance exists.",
-      "review_notes": "Stage 4 settles the total-order contract without changing runtime adapter behavior."
+      "limitations": "Typed ordering and deterministic PostgreSQL source commit order are locally verified; DMS envelope order and target-apply conformance remain unverified.",
+      "review_notes": "Stage 2.1 adds an explicit source commit schedule without claiming downstream preservation."
     },
     {
       "id": "CB-ORDER-004",
@@ -138,11 +138,11 @@
       "owner_stage": "part2-runtime",
       "verification_method": "multi-event transaction tests and failure injection at each apply boundary",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/model.py", "src/changebridge/engine.py"],
-      "proof_paths": ["tests/test_engine.py", "future:tests/test_transaction_atomicity.py"],
+      "implementation_paths": ["src/changebridge/model.py", "src/changebridge/engine.py", "src/changebridge/source_workload.py", "scripts/stage21_postgres_adapter.py"],
+      "proof_paths": ["tests/test_engine.py", "tests/test_source_workload.py", "evidence/part2/stage1/source-history-ledger.json", "future:tests/test_transaction_atomicity.py"],
       "failure_condition": "A subset of a committed source transaction becomes visible or checkpointed.",
-      "limitations": "The local oracle groups events but managed DMS-to-Iceberg transaction preservation is unverified.",
-      "review_notes": "Transport chunking must not redefine a source transaction."
+      "limitations": "Source transaction boundaries and observed PostgreSQL commits are locally recorded; DMS normalization and target atomicity remain unverified.",
+      "review_notes": "Stage 2.1 establishes authoritative source boundaries that later stages must preserve."
     },
     {
       "id": "CB-APPLY-001",
@@ -318,11 +318,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "contract validation and schema-digest round trips",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["contracts/orders-v1.json", "contracts/catalog.json", "contracts/cdc-envelope-v1.schema.json", "src/changebridge/schema.py"],
-      "proof_paths": ["tests/test_schema_and_cutover.py", "tests/test_contract_oracle_authority.py"],
+      "implementation_paths": ["contracts/orders-v1.json", "contracts/orders-v1.1.json", "contracts/order-items-v1.json", "contracts/catalog.json", "contracts/part2-stage1-catalog.json", "contracts/cdc-envelope-v1.schema.json", "src/changebridge/schema.py", "src/changebridge/source_workload.py"],
+      "proof_paths": ["tests/test_schema_and_cutover.py", "tests/test_contract_oracle_authority.py", "tests/test_source_workload.py", "evidence/part2/stage1/source-workload-manifest.json", "evidence/part2/stage1/boundary-capture-report.json"],
       "failure_condition": "A record is accepted without an exact contract identity or schema digest.",
-      "limitations": "Contract identity and digest binding are locally verified for v1 fixtures; runtime producers and managed schema registries are not yet proven conformant.",
-      "review_notes": "Stage 4 makes evolution rules explicit and retains PARTIAL until runtime conformance is implemented."
+      "limitations": "Stage 2.1 binds local PostgreSQL source rows and snapshots to the Stage 1 schema-set digest; normalized CDC producers and managed schema registries remain unverified.",
+      "review_notes": "The requirement remains partial because source binding is proven but downstream envelope conformance is not."
     },
     {
       "id": "CB-SCHEMA-002",

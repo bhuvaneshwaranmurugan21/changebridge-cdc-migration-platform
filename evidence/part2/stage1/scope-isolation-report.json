@@ -1,0 +1,23 @@
+{
+  "aws_operation_count": 0,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "scope_isolation_report",
+  "foreign_project_match_count": 0,
+  "history_rewrite_count": 0,
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "release_or_tag_count": 0,
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "result_detail": "Only ChangeBridge Part 2 Stage 1 source-boundary artifacts are present.",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1,
+  "target_runtime_behavior_change_count": 0,
+  "terraform_behavior_change_count": 0
+}

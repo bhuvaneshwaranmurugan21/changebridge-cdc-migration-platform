@@ -91,7 +91,7 @@ ChangeBridge MUST bind each migration generation to exactly one immutable source
 
 **Failure condition:** A generation has no frontier, more than one frontier, or a frontier that can change after snapshot sealing.
 
-**Current limitation:** The SQLite oracle stores a snapshot LSN; no managed source snapshot is yet bound.
+**Current limitation:** Satisfied for the isolated PostgreSQL exported-snapshot path. AWS DMS checkpoint mapping and managed-source proof remain unverified.
 
 ## CB-BOUNDARY-002 — Half-open CDC coverage
 
@@ -106,12 +106,12 @@ ChangeBridge MUST define generation coverage as the snapshot at S followed by CD
 
 **Failure condition:** The first CDC event overlaps S, a source position after S is omitted, or an event beyond F is included in proof at F.
 
-**Current limitation:** Local integer LSNs model the interval; DMS checkpoint semantics remain unverified.
+**Current limitation:** Satisfied for local PostgreSQL transaction commit LSNs. DMS checkpoint semantics, transport delivery, and terminal target frontier F remain later-stage proof.
 
 ## CB-BOUNDARY-003 — Frontier lineage
 
 - Normative level: `MUST`
-- Current status: `UNSATISFIED`
+- Current status: `PARTIAL`
 - Minimum evidence: `AWS_VERIFIED`
 - Owner: `part3-managed-proof`
 - Source conditions: 1, 11
@@ -121,7 +121,7 @@ ChangeBridge MUST retain source identity, engine/version, snapshot checkpoint, t
 
 **Failure condition:** The proof cannot uniquely identify the source, generation, S, F, or producing run.
 
-**Current limitation:** No managed frontier lineage exists on current main.
+**Current limitation:** Local lineage now binds source, server/image, generation, workload, schema, snapshot, S and producing run; managed terminal F and AWS run lineage remain absent.
 
 ## CB-CHECKPOINT-001 — Target commit and checkpoint coupling
 
@@ -376,7 +376,7 @@ Transactions and events MUST be applied in a deterministic order consistent with
 
 **Failure condition:** Equivalent immutable inputs can produce different event order or target state.
 
-**Current limitation:** Typed position and tie semantics are locally verified, but the current apply engine still consumes integer LSN batches and no managed adapter conformance exists.
+**Current limitation:** Typed ordering and deterministic PostgreSQL source commit order are locally verified; DMS envelope order and target-apply conformance remain unverified.
 
 ## CB-ORDER-004 — Transaction boundary preservation
 
@@ -391,7 +391,7 @@ ChangeBridge MUST preserve source transaction boundaries through normalized inge
 
 **Failure condition:** A subset of a committed source transaction becomes visible or checkpointed.
 
-**Current limitation:** The local oracle groups events but managed DMS-to-Iceberg transaction preservation is unverified.
+**Current limitation:** Source transaction boundaries and observed PostgreSQL commits are locally recorded; DMS normalization and target atomicity remain unverified.
 
 ## CB-PUBLISH-001 — Proof before publication
 
@@ -526,7 +526,7 @@ Every snapshot and CDC event MUST bind to a versioned source contract and canoni
 
 **Failure condition:** A record is accepted without an exact contract identity or schema digest.
 
-**Current limitation:** Contract identity and digest binding are locally verified for v1 fixtures; runtime producers and managed schema registries are not yet proven conformant.
+**Current limitation:** Stage 2.1 binds local PostgreSQL source rows and snapshots to the Stage 1 schema-set digest; normalized CDC producers and managed schema registries remain unverified.
 
 ## CB-SCHEMA-002 — Compatible evolution acceptance
 

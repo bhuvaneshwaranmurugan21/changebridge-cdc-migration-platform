@@ -1,0 +1,24 @@
+{
+  "branch_created_from_entry": true,
+  "branch_protected": false,
+  "concurrent_contributors_declared": false,
+  "default_branch": "main",
+  "entry_commit": "6ae4e071782bddeb5a35f9635262e868f52df6f5",
+  "entry_tree": "2126b55cb85844189aa9907452de22847ca43e98",
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "repository_entry",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "overlapping_open_pull_requests": [],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "ruleset_count": 0,
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}

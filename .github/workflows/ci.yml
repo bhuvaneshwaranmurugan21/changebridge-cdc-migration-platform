@@ -21,12 +21,14 @@ jobs:
           cache: pip
       - run: python -m pip install -e '.[dev]'
       - run: ruff check .
-      - run: mypy src
+      - run: mypy src scripts/stage21_postgres_adapter.py scripts/run_stage21_postgres_lab.py
       - run: pytest
-      - name: Validate Part 1 closure authority
-        run: python scripts/validate_part1_closure.py
-      - name: Validate Stage 5 evidence binding
-        run: python scripts/build_stage5_evidence.py --check
+      - name: Validate frozen Part 1 closure authority
+        run: python scripts/validate_part1_frozen.py
+      - name: Verify protected Part 1 evidence in the current tree
+        run: python scripts/validate_part1_preservation.py
+      - name: Validate Part 2 Stage 1 evidence and scope
+        run: python scripts/validate_part2_stage1.py
       - name: Regenerate deterministic evidence
         run: |
           python -m changebridge.cli simulate --output /tmp/changebridge-evidence.json

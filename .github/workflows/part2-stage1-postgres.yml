@@ -1,0 +1,123 @@
+name: Part 2 Stage 1 PostgreSQL Boundary
+
+on:
+  push:
+    branches: [main, part2-stage1-source-boundary]
+    paths:
+      - .github/workflows/part2-stage1-postgres.yml
+      - pyproject.toml
+      - scripts/probe_postgres_replication.py
+      - scripts/run_stage21_postgres_lab.py
+      - scripts/stage21_postgres_adapter.py
+      - src/changebridge/source_boundary.py
+      - src/changebridge/source_workload.py
+      - contracts/order-items-v1.json
+      - contracts/orders-v1.1.json
+      - contracts/source-boundary-receipt-v1.json
+      - contracts/source-workload-spec-v1.json
+      - migrations/source/**
+      - tests/integration/**
+  pull_request:
+    paths:
+      - .github/workflows/part2-stage1-postgres.yml
+      - pyproject.toml
+      - scripts/probe_postgres_replication.py
+      - scripts/run_stage21_postgres_lab.py
+      - scripts/stage21_postgres_adapter.py
+      - src/changebridge/source_boundary.py
+      - src/changebridge/source_workload.py
+      - contracts/order-items-v1.json
+      - contracts/orders-v1.1.json
+      - contracts/source-boundary-receipt-v1.json
+      - contracts/source-workload-spec-v1.json
+      - migrations/source/**
+      - tests/integration/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: part2-stage1-postgres-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  postgres-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652
+        env:
+          POSTGRES_DB: changebridge
+          POSTGRES_USER: changebridge
+          POSTGRES_PASSWORD: stage21-local-only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U changebridge -d changebridge"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=12
+
+    env:
+      PGHOST: 127.0.0.1
+      PGPORT: "5432"
+      PGDATABASE: changebridge
+      PGUSER: changebridge
+      PGPASSWORD: stage21-local-only
+      CB_SOURCE_SCHEMA: cb_stage21_probe
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable logical decoding on the isolated service
+        shell: bash
+        run: |
+          set -euo pipefail
+          container_id='${{ job.services.postgres.id }}'
+          docker exec "$container_id" psql \
+            --username changebridge \
+            --dbname changebridge \
+            --set ON_ERROR_STOP=1 \
+            --command "ALTER SYSTEM SET wal_level = 'logical';"
+          docker restart "$container_id"
+          for attempt in $(seq 1 30); do
+            if docker exec "$container_id" pg_isready \
+              --username changebridge --dbname changebridge; then
+              break
+            fi
+            if [[ "$attempt" == 30 ]]; then
+              echo "::error::PostgreSQL did not become ready after logical-decoding restart"
+              exit 1
+            fi
+            sleep 1
+          done
+          actual="$(docker exec "$container_id" psql \
+            --username changebridge --dbname changebridge \
+            --tuples-only --no-align --command 'SHOW wal_level')"
+          test "$actual" = logical
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install the authorized probe toolchain
+        run: python -m pip install -e '.[dev]'
+
+      - name: Prove exported-snapshot replication compatibility
+        run: python scripts/probe_postgres_replication.py
+
+      - name: Execute the real PostgreSQL boundary laboratory
+        env:
+          CB_RUN_POSTGRES_INTEGRATION: "1"
+          STAGE21_LAB_OUTPUT: /tmp/stage21-postgres-lab.json
+        run: pytest -m postgres_integration tests/integration --no-cov
+
+      - name: Upload normalized Stage 2.1 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage21-postgres-lab-${{ github.sha }}
+          path: /tmp/stage21-postgres-lab.json
+          if-no-files-found: error
+          retention-days: 7

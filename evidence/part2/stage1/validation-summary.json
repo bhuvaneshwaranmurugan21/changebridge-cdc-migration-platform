@@ -1,0 +1,49 @@
+{
+  "commands": [
+    {
+      "command": "ruff check src scripts tests",
+      "result": "PASS"
+    },
+    {
+      "command": "mypy src scripts/stage21_postgres_adapter.py scripts/run_stage21_postgres_lab.py",
+      "result": "PASS"
+    },
+    {
+      "command": "pytest",
+      "coverage_floor_percent": 85,
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_part1_frozen.py",
+      "historical_coverage_percent": 87.4,
+      "historical_tests_passed": 115,
+      "result": "PASS"
+    },
+    {
+      "command": "GitHub Part 2 Stage 1 PostgreSQL Boundary",
+      "result": "PASS",
+      "workflow_run_id": 36036471399
+    }
+  ],
+  "coverage_exclusion_added": false,
+  "current_tree_preservation": "PASS",
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "validation_summary",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "secret_scan": "PASS",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_runtime_tests": {
+    "integration_passed": 1,
+    "integration_skipped": 0
+  },
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}

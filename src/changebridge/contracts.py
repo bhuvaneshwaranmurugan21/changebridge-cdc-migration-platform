@@ -31,7 +31,7 @@ REQUIRED_PROOF_GATES = (
     "schema",
 )
 SOURCE_POSITION_KINDS = {"integer", "mysql_binlog", "oracle_scn", "postgres_lsn"}
-_HEX_LSN = re.compile(r"^(?P<high>[0-9A-F]+)/(?P<low>[0-9A-F]+)$")
+_HEX_LSN = re.compile(r"^(?P<high>[0-9A-F]{1,8})/(?P<low>[0-9A-F]{1,8})$")
 _BINLOG = re.compile(r"^(?P<file>[A-Za-z0-9_.-]+):(?P<offset>[0-9]+)$")
 
 

@@ -1,0 +1,79 @@
+{
+  "canonicalization_profile": "changebridge-canonical-json/1.0.0",
+  "completed_run_receipt_contract": "contracts/source-workload-v1.schema.json",
+  "concurrency_schedule": [
+    {
+      "barrier": "writers-ready",
+      "commit_order": [
+        "tx-007-writer-b",
+        "tx-006-writer-a"
+      ],
+      "transactions": [
+        "tx-006-writer-a",
+        "tx-007-writer-b"
+      ]
+    }
+  ],
+  "contract_version": "source-workload-spec/1.0.0",
+  "covered_cases": [
+    "concurrent_writers",
+    "controlled_schema_change",
+    "decimal",
+    "delete",
+    "large_transaction",
+    "multi_row_insert",
+    "multi_table_transaction",
+    "null",
+    "null_vs_absent",
+    "null_vs_value",
+    "post_boundary",
+    "rollback",
+    "single_row_insert",
+    "unicode",
+    "update",
+    "utc_timestamp_edge"
+  ],
+  "driver_semantic_version": "changebridge-source-driver/1.0.0",
+  "event_count": 79,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "source_workload_manifest",
+  "identity_excludes": [
+    "physical_lsn",
+    "postgres_transaction_id",
+    "container_id",
+    "hostname",
+    "wall_clock",
+    "temporary_path"
+  ],
+  "identity_includes": [
+    "contract_version",
+    "seed",
+    "schema_set_digest",
+    "transactions",
+    "concurrency_schedule",
+    "driver_semantic_version",
+    "canonicalization_profile",
+    "logical_clock"
+  ],
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "logical_clock": {
+    "epoch": "2024-02-29T23:59:58.000000Z",
+    "increment_microseconds": 250000
+  },
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_set_digest": "5bfe6ecf0e7576a91f9e1a8aed715b7653d3aa98009162b65dc8a5f2bff93979",
+  "schema_version": "1.0.0",
+  "seed": 424242,
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "specification_contract": "contracts/source-workload-spec-v1.json",
+  "stage": 1,
+  "transaction_count": 12,
+  "workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd"
+}

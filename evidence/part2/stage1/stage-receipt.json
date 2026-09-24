@@ -1,0 +1,317 @@
+{
+  "artifact_manifest_digest": "b52776513ed7db10d1e2d39eed80b7dafdfbfe857f1065fda6d44b27ff8dada4",
+  "base_commit": "6ae4e071782bddeb5a35f9635262e868f52df6f5",
+  "base_tree": "2126b55cb85844189aa9907452de22847ca43e98",
+  "contract_version": "1.0.0",
+  "criteria": [
+    {
+      "evidence": [
+        "evidence/part2/stage1/repository-entry.json"
+      ],
+      "id": "ST21-AC-01",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/execution-envelope.json"
+      ],
+      "id": "ST21-AC-02",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/overlap-register.json"
+      ],
+      "id": "ST21-AC-03",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/protected-part1-baseline.json"
+      ],
+      "id": "ST21-AC-04",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/scope-isolation-report.json"
+      ],
+      "id": "ST21-AC-05",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "PART2_COMPLETION_CONTRACT.md",
+        "requirements/part2-stage1-acceptance.json"
+      ],
+      "id": "ST21-AC-06",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/protected-part1-baseline.json",
+        "scripts/validate_part1_frozen.py"
+      ],
+      "id": "ST21-AC-07",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/dependency-decision.json",
+        "evidence/part2/stage1/container-image-lock.json"
+      ],
+      "id": "ST21-AC-08",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/bootstrap-report.json"
+      ],
+      "id": "ST21-AC-09",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/bootstrap-report.json",
+        "evidence/part2/stage1/boundary-capture-report.json"
+      ],
+      "id": "ST21-AC-10",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/source-workload-manifest.json"
+      ],
+      "id": "ST21-AC-11",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/source-workload-manifest.json"
+      ],
+      "id": "ST21-AC-12",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/source-workload-manifest.json"
+      ],
+      "id": "ST21-AC-13",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "docs/part2/stage1/SOURCE_BOUNDARY.md"
+      ],
+      "id": "ST21-AC-14",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/source-history-ledger.json"
+      ],
+      "id": "ST21-AC-15",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/source-workload-manifest.json"
+      ],
+      "id": "ST21-AC-16",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/source-history-ledger.json"
+      ],
+      "id": "ST21-AC-17",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/determinism-report.json"
+      ],
+      "id": "ST21-AC-18",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/determinism-report.json"
+      ],
+      "id": "ST21-AC-19",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/expected-state-manifest.json"
+      ],
+      "id": "ST21-AC-20",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/boundary-capture-report.json"
+      ],
+      "id": "ST21-AC-21",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/boundary-capture-report.json"
+      ],
+      "id": "ST21-AC-22",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/boundary-capture-report.json"
+      ],
+      "id": "ST21-AC-23",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "tests/test_source_boundary.py"
+      ],
+      "id": "ST21-AC-24",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/boundary-capture-report.json"
+      ],
+      "id": "ST21-AC-25",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/boundary-capture-report.json"
+      ],
+      "id": "ST21-AC-26",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/boundary-capture-report.json"
+      ],
+      "id": "ST21-AC-27",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/negative-case-report.json"
+      ],
+      "id": "ST21-AC-28",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/source-history-ledger.json"
+      ],
+      "id": "ST21-AC-29",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/determinism-report.json"
+      ],
+      "id": "ST21-AC-30",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/validation-summary.json"
+      ],
+      "id": "ST21-AC-31",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/validation-summary.json"
+      ],
+      "id": "ST21-AC-32",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/artifact-manifest.json"
+      ],
+      "id": "ST21-AC-33",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/validation-summary.json"
+      ],
+      "id": "ST21-AC-34",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/claim-impact-review.json"
+      ],
+      "id": "ST21-AC-35",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage1/file-manifest.json"
+      ],
+      "id": "ST21-AC-36",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "external:exact-pr-head-checks"
+      ],
+      "id": "ST21-AC-37",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "external:policy-compliant-merge"
+      ],
+      "id": "ST21-AC-38",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "external:exact-merged-main-validation"
+      ],
+      "id": "ST21-AC-39",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "external:part2-stage2-continuation-checkpoint"
+      ],
+      "id": "ST21-AC-40",
+      "result": "PENDING"
+    }
+  ],
+  "criteria_passed": 36,
+  "criteria_pending": 4,
+  "criteria_total": 40,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "stage_receipt",
+  "external_criteria": [
+    "ST21-AC-37",
+    "ST21-AC-38",
+    "ST21-AC-39",
+    "ST21-AC-40"
+  ],
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "record_id": "changebridge-part2-stage1",
+  "record_type": "stage_receipt",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}

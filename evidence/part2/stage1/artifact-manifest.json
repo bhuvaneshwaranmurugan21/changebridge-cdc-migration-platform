@@ -1,0 +1,280 @@
+{
+  "artifact_count": 64,
+  "artifacts": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "97888042f59599580572d48113e67e37e7ad29e4dbb5e0f25550bcddfa88497a"
+    },
+    {
+      "path": ".github/workflows/part2-stage1-postgres.yml",
+      "sha256": "6a4e448a9196f4949429ab8bd96950a921afa0b9a395ddbfaf94faf89b5bf9f7"
+    },
+    {
+      "path": "CLAIMS.md",
+      "sha256": "45c6e9a67ba436fbae0ea3960a1278cc91eee8ca344429618b37a2a689bd3d77"
+    },
+    {
+      "path": "PART2_COMPLETION_CONTRACT.md",
+      "sha256": "ff6b565fad1dc69a501a4c99d81061a7e1489e75d2a1fbdfc463767d4874f524"
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "sha256": "d14711bea2d46d7661e38c492a094c160ab673ee498a68f6c38d4e49f2ff0c40"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b39554680144f05afe6a0e03c4e9ca1a684c44789ded64f48728ece7c273836f"
+    },
+    {
+      "path": "architecture/requirement-architecture-map.json",
+      "sha256": "bf2af192aa0a480322c4911174f2b136f982b5bb33f29f37aa3ddcfc872b43a9"
+    },
+    {
+      "path": "claims/claims.json",
+      "sha256": "ead9d662f97439d6e691f6a988500ae951c075a8a38c2ab3999a74b191df9bad"
+    },
+    {
+      "path": "contracts/order-items-v1.json",
+      "sha256": "040250ecd6f538b3446086f18e908d0d940695ea76e305ad696fc74aff19f0d9"
+    },
+    {
+      "path": "contracts/orders-v1.1.json",
+      "sha256": "8d4337677da739a945efd52c96697bf248f6e2d365ee11ad3d697d5be5e72f89"
+    },
+    {
+      "path": "contracts/part2-stage1-catalog.json",
+      "sha256": "f259a4fe0da6296c75e64876234e62e7f86ba816df95a52a81b852ac972d729a"
+    },
+    {
+      "path": "contracts/source-boundary-receipt-v1.json",
+      "sha256": "058600ba4bb590c9265e10cf774c481e68f60b70761eb7dcc588597cfde1672e"
+    },
+    {
+      "path": "contracts/source-workload-spec-v1.json",
+      "sha256": "748acd2d5ef99aad9510f788d2dc84f28aad3a8da0fc6633be25e456e2ecbc47"
+    },
+    {
+      "path": "docs/part2/stage1/AUTHORITY_TRANSITION.md",
+      "sha256": "f89e0e32a059b5e1c871b2ef6d058c5e54a2632ea9b61875bd10222b00e10cea"
+    },
+    {
+      "path": "docs/part2/stage1/FAILURE_MODES.md",
+      "sha256": "82554950c369950145bfbbbca81993a2c2a4f021f9401be71c2e8f4941167052"
+    },
+    {
+      "path": "docs/part2/stage1/RUNBOOK.md",
+      "sha256": "e2792ca41d618ff3c4b74d4059176fee73f5df7320836da9fc7f10a225859d08"
+    },
+    {
+      "path": "docs/part2/stage1/SKEPTICAL_REVIEW.md",
+      "sha256": "6ae757fa353fb08a21a08fd00e946e39aa0c351769010be0973deac235749e4a"
+    },
+    {
+      "path": "docs/part2/stage1/SOURCE_BOUNDARY.md",
+      "sha256": "89fa09f01120b3e6dcd7fef887d7f426686f76e43c678cee7afc4893f5fa95ce"
+    },
+    {
+      "path": "evidence/part2/stage1/authority-transition.json",
+      "sha256": "051bb2252e431a497d549e55f35415b5b42734b64e933195d625d26acec6ec23"
+    },
+    {
+      "path": "evidence/part2/stage1/bootstrap-report.json",
+      "sha256": "0d8f03fed61f2b690ee543ca5cbccce1504771982d0244a8d07b906cfce551e3"
+    },
+    {
+      "path": "evidence/part2/stage1/boundary-capture-report.json",
+      "sha256": "bfa112e71e129e8e1c84df0809c46600591867831b391e17cfb28f6eaae88448"
+    },
+    {
+      "path": "evidence/part2/stage1/claim-impact-review.json",
+      "sha256": "d41216c690dcbf4214726c1147c7c52fa3d693727046a599eb4585adb558320b"
+    },
+    {
+      "path": "evidence/part2/stage1/container-image-lock.json",
+      "sha256": "446ede6ef7e57219bc8c46aa4506906f69072c0106f64215baec5b0519b849c0"
+    },
+    {
+      "path": "evidence/part2/stage1/dependency-decision.json",
+      "sha256": "7edd99aae4fc3b752357498f5661174ebc060ed5c0f2e295bf375ae7cc80665b"
+    },
+    {
+      "path": "evidence/part2/stage1/determinism-report.json",
+      "sha256": "d60ada786edb8d24ce5ff01e3bad725371549359a1905567d5bb5247ed41e1dd"
+    },
+    {
+      "path": "evidence/part2/stage1/execution-envelope.json",
+      "sha256": "ce8249cb503f6a367ae21c5e61d26cf7c2bddeeedc5b89b8e27dcb55c4aed66b"
+    },
+    {
+      "path": "evidence/part2/stage1/expected-state-manifest.json",
+      "sha256": "e7b00523a1c546ea76d89353722456e70d22d80e205c29564481943246fd9515"
+    },
+    {
+      "path": "evidence/part2/stage1/file-manifest.json",
+      "sha256": "959ba04bd00f15dd118a95a26970b6f0586c02ab891d0b2e7a863bb8a3f17baa"
+    },
+    {
+      "path": "evidence/part2/stage1/negative-case-report.json",
+      "sha256": "3a2d432d45fffd966748e8029d359cc3c23a89f3448cbec7b2f786e144d4ae0a"
+    },
+    {
+      "path": "evidence/part2/stage1/overlap-register.json",
+      "sha256": "27632741e6937c021ed6162a9a687e640a287ef89cb93f05e450b11c5a25e1a8"
+    },
+    {
+      "path": "evidence/part2/stage1/protected-part1-baseline.json",
+      "sha256": "fcf5d9b1000dba093b13ba4c43a7b5a250e15772fa3ebfa0f85c3746cea3bd6e"
+    },
+    {
+      "path": "evidence/part2/stage1/repository-entry.json",
+      "sha256": "537891e589c65b66e2777041bcbb29e4668865fee193ceab74fb7382ee344cf0"
+    },
+    {
+      "path": "evidence/part2/stage1/scope-isolation-report.json",
+      "sha256": "6fe543d99930800e38a5210394138a9a97f8642a1245059a13c0ad15dd224174"
+    },
+    {
+      "path": "evidence/part2/stage1/source-history-ledger.json",
+      "sha256": "df4567f817a06caa8472f090b7af1e371c9c59174e6765e978e0866de4b3bd9f"
+    },
+    {
+      "path": "evidence/part2/stage1/source-surface-inventory.json",
+      "sha256": "ada14b4962c81590d4c1827142bb40a9d18f119da2c28441a3ebca06ec287ffd"
+    },
+    {
+      "path": "evidence/part2/stage1/source-workload-manifest.json",
+      "sha256": "d1ff4148ae794399a1e93f682a848b0dd40327ae1d581a3fb1457ed746d37bbe"
+    },
+    {
+      "path": "evidence/part2/stage1/toolchain-inventory.json",
+      "sha256": "fdc37c8f449ffc4eae66d7cf4d7865ce60d76b2346c5c57320e390bbeddc1e9d"
+    },
+    {
+      "path": "evidence/part2/stage1/validation-summary.json",
+      "sha256": "ab84bd3e4059fd2a10bea7ebf3cb2237ba8ab844a56e64c128e09da41d30091f"
+    },
+    {
+      "path": "migrations/source/001_initial_source.sql",
+      "sha256": "6bcff136b0f4971cec9a7d8060af578e428b8eadaac0aaee916d81c329f86b96"
+    },
+    {
+      "path": "migrations/source/002_orders_source_note.sql",
+      "sha256": "1e911cb10715d442134e3a8b2a4901bfe166747110501610498e853e28257c95"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "e6bb53dda741d109db649735d27aab41770ec9d80aec129bfeaf1447cd3004d4"
+    },
+    {
+      "path": "requirements/REQUIREMENT_CATALOG.md",
+      "sha256": "09318679513e953ba1ac3ce9c6de0dba2687f171a9a3c142b1396173f2d70fad"
+    },
+    {
+      "path": "requirements/REQUIREMENT_PROOF_MATRIX.md",
+      "sha256": "62a53af9214517f94a19d4b0df03a2a92237ece1cbf24c7f28fbb22cec86b00e"
+    },
+    {
+      "path": "requirements/completion-requirements.json",
+      "sha256": "4ca0c9d0249e38691a435aedece5fbaaa5a638c5f5311b71e1d2f0e09a74bda1"
+    },
+    {
+      "path": "requirements/part2-stage1-acceptance.json",
+      "sha256": "897ee341eecad0faae5e45e5c6c1d2db35b0e814f37dd4da69758b2a44531394"
+    },
+    {
+      "path": "requirements/requirement-proof-matrix.json",
+      "sha256": "23953ab06661e616a6ae4e966978d1eed2e8837ffc387acd2bf0af4f57c4977a"
+    },
+    {
+      "path": "schemas/part2-stage1-evidence.schema.json",
+      "sha256": "e2aa4cbed6f023ae91e4677212af3cf23d3cd3a5a167bf46635bf280eb27597d"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "e9695acbd157159b9e82260fca0ce926238a0c1ec8d43892d5c6eee04486e4fc"
+    },
+    {
+      "path": "scripts/build_stage21_evidence.py",
+      "sha256": "5e386731e3a2c246f20b16214663feeea2f21748c4b9ff137b8892e0e4d7f089"
+    },
+    {
+      "path": "scripts/probe_postgres_replication.py",
+      "sha256": "20bb6961f22c168ff4839f2bd12d34d254c907095ec34ec76283b2141c3dcdcf"
+    },
+    {
+      "path": "scripts/run_stage21_postgres_lab.py",
+      "sha256": "17d3f19a9ee432c1e79141fef0fc10dc77dcf81a4f3761867ffca767ede35b13"
+    },
+    {
+      "path": "scripts/stage21_postgres_adapter.py",
+      "sha256": "763a187fe16d84d16d85f2f83d337348c39d244874659fdb85b1feb981195971"
+    },
+    {
+      "path": "scripts/validate_part1_frozen.py",
+      "sha256": "8b7023f200427b9f03241a20848bac7aa8b9e95b3a41a8e149f754175ccda95a"
+    },
+    {
+      "path": "scripts/validate_part1_preservation.py",
+      "sha256": "3f7688feba23b9181782aff16307a8dfc9a6a174971289030b49cb69fa3e5e01"
+    },
+    {
+      "path": "scripts/validate_part2_stage1.py",
+      "sha256": "844d34234b25cca96c42261b75b854efe824d64f5e41d54178497e94a2409425"
+    },
+    {
+      "path": "src/changebridge/contracts.py",
+      "sha256": "25b2b22bb6eb97e2023955fedcfe602040386d7ff5cd628b8166d3e6411ce530"
+    },
+    {
+      "path": "src/changebridge/source_boundary.py",
+      "sha256": "599134e92bf9559f9d9ce8deb04d736130eea7c1c350f2704b96f761156e40d6"
+    },
+    {
+      "path": "src/changebridge/source_workload.py",
+      "sha256": "fc9af6e0cf427e1d4cfcffa230c1ad13e3f42670d4b125da5c2e9b23c60e0ca7"
+    },
+    {
+      "path": "tests/fixtures/architecture-authority/valid-authority.json",
+      "sha256": "dfb9b8d7d02e04f41493edad037876928245a35f974da3b7385934c42eeeb3fc"
+    },
+    {
+      "path": "tests/fixtures/completion-authority/valid-authority.json",
+      "sha256": "50db81c1c46ab667f9a8b127e37ff546c2632b442727f122bafc526e1b8b4b1d"
+    },
+    {
+      "path": "tests/integration/test_postgres_source_boundary.py",
+      "sha256": "e2ce07b9ea960dcfbbc56d4a41ece37318d8e34810296e6e803d0aab3e122eef"
+    },
+    {
+      "path": "tests/test_part2_stage1_validator.py",
+      "sha256": "f46d3456ca923a954bd4f2c14f1c903c441028073ecbb3e1b55cfdc7430b8b3f"
+    },
+    {
+      "path": "tests/test_source_boundary.py",
+      "sha256": "cb6a2b5cf822296fb82215afaf9d648cab943822a8ea685b053f5e7f9994a892"
+    },
+    {
+      "path": "tests/test_source_workload.py",
+      "sha256": "a347ce7ddebc7de9060e5550d669c4405176f6e1724bd086396a3387099ab2bb"
+    }
+  ],
+  "digest_algorithm": "SHA-256",
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "artifact_manifest",
+  "excluded_recursive_paths": [
+    "evidence/part2/stage1/artifact-manifest.json",
+    "evidence/part2/stage1/stage-receipt.json"
+  ],
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}

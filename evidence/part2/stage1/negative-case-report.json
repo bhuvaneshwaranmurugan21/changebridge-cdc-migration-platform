@@ -1,0 +1,148 @@
+{
+  "cases": [
+    {
+      "expected_diagnostic": "CBSNP020_UNQUALIFIED_CAPTURE_METHOD",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "arbitrary_current_wal"
+    },
+    {
+      "expected_diagnostic": "CBPOS003_MALFORMED_VALUE",
+      "layer": "property",
+      "result": "PASS",
+      "scenario": "missing_or_malformed_lsn"
+    },
+    {
+      "expected_diagnostic": "CBSNP001_NON_POSTGRES_FRONTIER",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "non_postgres_position"
+    },
+    {
+      "expected_diagnostic": "property-order-equivalence",
+      "layer": "property",
+      "result": "PASS",
+      "scenario": "numeric_not_lexical_lsn_order"
+    },
+    {
+      "expected_diagnostic": "CBSNP009_NONADVANCING_FIRST_POSITION",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "frontier_regression"
+    },
+    {
+      "expected_diagnostic": "CBSNP002_SECOND_FRONTIER",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "second_frontier"
+    },
+    {
+      "expected_diagnostic": "CBSNP007_SOURCE_IDENTITY_MISMATCH",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "source_identity_mismatch"
+    },
+    {
+      "expected_diagnostic": "CBSNP004_GENERATION_MISMATCH",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "generation_mismatch"
+    },
+    {
+      "expected_diagnostic": "CBSNP006_SCHEMA_MISMATCH",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "schema_set_mismatch"
+    },
+    {
+      "expected_diagnostic": "CBSRC004_WORKLOAD_ID_MISMATCH",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "workload_identity_mismatch"
+    },
+    {
+      "expected_diagnostic": "CBSNP019_FIRST_TRANSACTION_GAP",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "first_transaction_gap"
+    },
+    {
+      "expected_diagnostic": "CBSNP009_NONADVANCING_FIRST_POSITION",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "commit_at_exact_frontier"
+    },
+    {
+      "expected_diagnostic": "CBSNP017_CHANGE_PRECEDES_FRONTIER",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "change_before_frontier"
+    },
+    {
+      "expected_diagnostic": "CBPOS004_INCOMPARABLE_KINDS",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "cross_kind_comparison"
+    },
+    {
+      "expected_diagnostic": "CBSRC006_DUPLICATE_TRANSACTION_ID",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "duplicate_transaction_identity"
+    },
+    {
+      "expected_diagnostic": "state-and-history-absence",
+      "layer": "integration",
+      "result": "PASS",
+      "scenario": "aborted_transaction_visibility"
+    },
+    {
+      "expected_diagnostic": "CBSRC010_INVALID_CONCURRENCY_SCHEDULE",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "nondeterministic_schedule"
+    },
+    {
+      "expected_diagnostic": "CBSRC024_DIRTY_REUSED_NAMESPACE",
+      "layer": "integration",
+      "result": "PASS",
+      "scenario": "dirty_namespace"
+    },
+    {
+      "expected_diagnostic": "UndefinedObject",
+      "layer": "integration",
+      "result": "PASS",
+      "scenario": "expired_exported_snapshot"
+    },
+    {
+      "expected_diagnostic": "CBSNP012_CLEANUP_NOT_PROVEN",
+      "layer": "unit",
+      "result": "PASS",
+      "scenario": "slot_cleanup_failure"
+    }
+  ],
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "negative_case_report",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "proof_paths": [
+    "tests/test_source_boundary.py",
+    "tests/test_source_workload.py",
+    "tests/integration/test_postgres_source_boundary.py"
+  ],
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "runtime_expired_snapshot": {
+    "diagnostic_class": "UndefinedObject",
+    "result": "PASS",
+    "scenario": "exporter_closed_before_snapshot_import"
+  },
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}

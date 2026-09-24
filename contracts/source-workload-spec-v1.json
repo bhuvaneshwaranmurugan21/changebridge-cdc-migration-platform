@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:source-workload-spec:1.0.0",
+  "title": "Deterministic source workload pre-execution specification v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "workload_id",
+    "seed",
+    "schema_set_digest",
+    "driver_semantic_version",
+    "canonicalization_profile",
+    "logical_clock",
+    "concurrency_schedule",
+    "transactions"
+  ],
+  "properties": {
+    "contract_version": {"const": "source-workload-spec/1.0.0"},
+    "workload_id": {"$ref": "#/$defs/digest"},
+    "seed": {"type": "integer", "minimum": 0, "maximum": 9223372036854775807},
+    "schema_set_digest": {"$ref": "#/$defs/digest"},
+    "driver_semantic_version": {"const": "changebridge-source-driver/1.0.0"},
+    "canonicalization_profile": {"const": "changebridge-canonical-json/1.0.0"},
+    "logical_clock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["epoch", "increment_microseconds"],
+      "properties": {
+        "epoch": {"const": "2024-02-29T23:59:58.000000Z"},
+        "increment_microseconds": {"const": 250000}
+      }
+    },
+    "concurrency_schedule": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["barrier", "transactions", "commit_order"],
+        "properties": {
+          "barrier": {"type": "string", "minLength": 1},
+          "transactions": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+          "commit_order": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}}
+        }
+      }
+    },
+    "transactions": {
+      "type": "array",
+      "minItems": 12,
+      "items": {"$ref": "#/$defs/transaction"}
+    }
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_sequence", "table", "operation", "key", "before", "after", "schema_version", "cases", "event_digest"],
+      "properties": {
+        "event_sequence": {"type": "integer", "minimum": 1},
+        "table": {"enum": ["orders", "order_items", "__schema__"]},
+        "operation": {"enum": ["insert", "update", "delete", "schema_change"]},
+        "key": {"type": "string", "minLength": 1},
+        "before": {"type": ["object", "null"]},
+        "after": {"type": ["object", "null"]},
+        "schema_version": {"type": "string", "minLength": 1},
+        "cases": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "event_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "transaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["transaction_id", "transaction_sequence", "commit_ordinal", "outcome", "phase", "events", "cases", "transaction_digest"],
+      "properties": {
+        "transaction_id": {"type": "string", "minLength": 1},
+        "transaction_sequence": {"type": "integer", "minimum": 1},
+        "commit_ordinal": {"type": ["integer", "null"], "minimum": 1},
+        "outcome": {"enum": ["COMMIT", "ABORT"]},
+        "phase": {"enum": ["PRE_BOUNDARY", "POST_BOUNDARY"]},
+        "events": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/event"}},
+        "cases": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "transaction_digest": {"$ref": "#/$defs/digest"}
+      }
+    }
+  }
+}

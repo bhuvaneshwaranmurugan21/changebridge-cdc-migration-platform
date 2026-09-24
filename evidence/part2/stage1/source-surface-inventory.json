@@ -1,0 +1,36 @@
+{
+  "contracts": [
+    "contracts/orders-v1.json",
+    "contracts/orders-v1.1.json",
+    "contracts/order-items-v1.json",
+    "contracts/source-workload-spec-v1.json",
+    "contracts/source-boundary-receipt-v1.json",
+    "contracts/part2-stage1-catalog.json"
+  ],
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "source_surface_inventory",
+  "infrastructure_behavior_changes": [],
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "migrations": [
+    "migrations/source/001_initial_source.sql",
+    "migrations/source/002_orders_source_note.sql"
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "runtime_paths": [
+    "src/changebridge/source_boundary.py",
+    "src/changebridge/source_workload.py",
+    "scripts/stage21_postgres_adapter.py",
+    "scripts/run_stage21_postgres_lab.py"
+  ],
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1,
+  "target_runtime_changes": []
+}

@@ -1,0 +1,34 @@
+{
+  "affected_requirements": [
+    "CB-BOUNDARY-001",
+    "CB-BOUNDARY-002",
+    "CB-BOUNDARY-003",
+    "CB-ORDER-003",
+    "CB-ORDER-004",
+    "CB-SCHEMA-001"
+  ],
+  "compatibility": "Additive and fail-closed; historical Part 1 validation remains frozen and passing.",
+  "decisions": [
+    "PostgreSQL LSN halves are bounded to unsigned 32-bit hexadecimal text.",
+    "The exported slot consistent point is snapshot frontier S.",
+    "The first governed CDC frontier is the decoded transaction COMMIT LSN, not a row-change record LSN that may equal S.",
+    "Physical LSN values are run evidence and are excluded from semantic workload identity."
+  ],
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "authority_transition",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "new_authority": "Part 2 Stage 1 executable PostgreSQL source-boundary implementation",
+  "part": 2,
+  "prior_authority": "Part 1 typed source-position and boundary design",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1,
+  "transition_id": "CB-AUTH-TRANSITION-002"
+}

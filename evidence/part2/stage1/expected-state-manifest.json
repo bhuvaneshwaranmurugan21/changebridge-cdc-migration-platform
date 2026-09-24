@@ -1,0 +1,112 @@
+{
+  "all_replays_match": true,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "expected_state_manifest",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "runs": [
+    {
+      "expected_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "1c71f186d07a020da119d50b9cc9d13e951b6d054fd659421f0b186042512127"
+        }
+      },
+      "expected_whole_state_digest": "e81acc5e486462932fc15c57adff882cf1eda0f34edec1ace48cd776717ee38b",
+      "match": true,
+      "migration_checksums": {
+        "001_initial_source.sql": "6bcff136b0f4971cec9a7d8060af578e428b8eadaac0aaee916d81c329f86b96",
+        "002_orders_source_note.sql": "1e911cb10715d442134e3a8b2a4901bfe166747110501610498e853e28257c95"
+      },
+      "queried_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "1c71f186d07a020da119d50b9cc9d13e951b6d054fd659421f0b186042512127"
+        }
+      },
+      "queried_whole_state_digest": "e81acc5e486462932fc15c57adff882cf1eda0f34edec1ace48cd776717ee38b",
+      "seed": 424242,
+      "workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd"
+    },
+    {
+      "expected_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "1c71f186d07a020da119d50b9cc9d13e951b6d054fd659421f0b186042512127"
+        }
+      },
+      "expected_whole_state_digest": "e81acc5e486462932fc15c57adff882cf1eda0f34edec1ace48cd776717ee38b",
+      "match": true,
+      "migration_checksums": {
+        "001_initial_source.sql": "6bcff136b0f4971cec9a7d8060af578e428b8eadaac0aaee916d81c329f86b96",
+        "002_orders_source_note.sql": "1e911cb10715d442134e3a8b2a4901bfe166747110501610498e853e28257c95"
+      },
+      "queried_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "1c71f186d07a020da119d50b9cc9d13e951b6d054fd659421f0b186042512127"
+        }
+      },
+      "queried_whole_state_digest": "e81acc5e486462932fc15c57adff882cf1eda0f34edec1ace48cd776717ee38b",
+      "seed": 424242,
+      "workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd"
+    },
+    {
+      "expected_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "5490dae722e54f18ae077ff3f764489cde6517c839395fbddbce47e8ef5a4122"
+        }
+      },
+      "expected_whole_state_digest": "89efb5b8fdcbd7b70131b29968ac0cd2e257e7c93a311e57fb31aea61d3f61d6",
+      "match": true,
+      "migration_checksums": {
+        "001_initial_source.sql": "6bcff136b0f4971cec9a7d8060af578e428b8eadaac0aaee916d81c329f86b96",
+        "002_orders_source_note.sql": "1e911cb10715d442134e3a8b2a4901bfe166747110501610498e853e28257c95"
+      },
+      "queried_tables": {
+        "order_items": {
+          "row_count": 66,
+          "state_digest": "cbcd2035768c8e0a652f2dd3371c8cbaf11cecd2b3401091947f715cbaaa9b43"
+        },
+        "orders": {
+          "row_count": 6,
+          "state_digest": "5490dae722e54f18ae077ff3f764489cde6517c839395fbddbce47e8ef5a4122"
+        }
+      },
+      "queried_whole_state_digest": "89efb5b8fdcbd7b70131b29968ac0cd2e257e7c93a311e57fb31aea61d3f61d6",
+      "seed": 424243,
+      "workload_id": "8be77bf968ff52e5797381b43d14b9e4e00d63d45a47cecf7452bed5de931c94"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1
+}

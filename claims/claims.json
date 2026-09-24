@@ -179,6 +179,23 @@
       "owner": "part1-stage2",
       "invalidation_conditions": ["Stage 1 evidence or simulator changes", "the recorded merged commit becomes unreachable"],
       "disposition": "CORRECTED"
+    },
+    {
+      "id": "CB-CLAIM-011",
+      "source_claim_ids": ["PART2-STAGE1-SOURCE-BOUNDARY"],
+      "approved_wording": "A deterministic workload was executed in isolated PostgreSQL 17.11 schemas, and a real exported logical snapshot was locally bound to one typed PostgreSQL LSN frontier; repeated same-seed runs matched logically while their physical LSNs remained run-specific.",
+      "scope": "isolated PostgreSQL source workload and snapshot boundary",
+      "label": "LOCAL_VERIFIED",
+      "requirement_ids": ["CB-BOUNDARY-001", "CB-BOUNDARY-002", "CB-BOUNDARY-003", "CB-ORDER-003", "CB-ORDER-004", "CB-SCHEMA-001"],
+      "proof_refs": ["evidence/part2/stage1/boundary-capture-report.json", "evidence/part2/stage1/determinism-report.json", "evidence/part2/stage1/source-history-ledger.json", "tests/integration/test_postgres_source_boundary.py"],
+      "producing_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+      "producing_run": "36036471399",
+      "limitations": "This does not verify AWS DMS position mapping or delivery, downstream normalization, target application, Iceberg behavior, performance, availability, cost, exactly-once delivery, zero downtime, or production readiness.",
+      "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-011"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-011"}],
+      "review_status": "APPROVED",
+      "owner": "part2-stage1",
+      "invalidation_conditions": ["source workload, snapshot capture, comparator, image, or bound integration evidence changes"],
+      "disposition": "CORRECTED"
     }
   ]
 }

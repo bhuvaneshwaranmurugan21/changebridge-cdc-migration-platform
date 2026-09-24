@@ -20,6 +20,7 @@ dev = [
   "mypy>=1.11",
   "jsonschema==4.26.0",
   "hypothesis==6.168.0",
+  "psycopg2-binary==2.9.12",
 ]
 aws = ["boto3>=1.35"]
 spark = ["pyspark>=3.5"]
@@ -31,8 +32,12 @@ changebridge = "changebridge.cli:main"
 where = ["src"]
 
 [tool.pytest.ini_options]
-addopts = "-q --strict-markers --cov=changebridge --cov-report=term-missing --cov-fail-under=85"
+addopts = "-q --strict-markers --ignore=tests/test_part1_closure.py --cov=changebridge --cov-report=term-missing --cov-fail-under=85"
 testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+  "postgres_integration: requires the authorized digest-pinned PostgreSQL 17.11 service",
+]
 
 [tool.ruff]
 line-length = 100

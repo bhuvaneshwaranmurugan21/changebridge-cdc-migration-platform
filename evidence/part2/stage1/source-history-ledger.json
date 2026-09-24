@@ -1,0 +1,1412 @@
+{
+  "aborted_transaction_count": 1,
+  "committed_history_digest": "61b6a6af3a3befa54f80a17cbf65278bb35a72cbb70a59bf6c86cd0460a00634",
+  "committed_transaction_count": 11,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "source_history_ledger",
+  "limitations": [
+    "Proof is limited to isolated PostgreSQL 17.11 and local Python behavior.",
+    "No AWS DMS, Spark, Iceberg, Terraform, deployment, performance, availability, cost, RTO/RPO, exactly-once, zero-downtime, or production-readiness claim is established."
+  ],
+  "observed_pre_boundary_transactions": [
+    {
+      "logical_transaction_id": "tx-001-single-insert",
+      "observed_transaction_id_sha256": "ccbcd0d62f439eacea8b0fa4139d934d2782bae1b8046e8764e598dc64a9f421",
+      "outcome": "COMMIT"
+    },
+    {
+      "logical_transaction_id": "tx-002-multi-row",
+      "observed_transaction_id_sha256": "0df5486b7bca884d5f00c502e216f734b2865b202397f24bca25ac9b8a95ab4a",
+      "outcome": "COMMIT"
+    },
+    {
+      "logical_transaction_id": "tx-003-multi-table",
+      "observed_transaction_id_sha256": "a15faf6f6c7e4c11d7956175f4a1c01edffff6e114684eee28c255a86a8888f8",
+      "outcome": "COMMIT"
+    },
+    {
+      "logical_transaction_id": "tx-004-update",
+      "observed_transaction_id_sha256": "42c6024940120036d7a0103375d5b8e5072589f6d0f9a1a8e7f6eb6a17358675",
+      "outcome": "COMMIT"
+    },
+    {
+      "logical_transaction_id": "tx-005-delete",
+      "observed_transaction_id_sha256": "5dad6478e152b8aa33dc6a2c27992d26c0a6873d6ed1407a7e6efddca3985122",
+      "outcome": "COMMIT"
+    },
+    {
+      "concurrency_group": "writers-ready",
+      "logical_transaction_id": "tx-007-writer-b",
+      "observed_transaction_id_sha256": "0c658eb5d61e88c86f37613342bbce6cbf278a9a86ba6514dc7e5c205f76c99f",
+      "outcome": "COMMIT"
+    },
+    {
+      "concurrency_group": "writers-ready",
+      "logical_transaction_id": "tx-006-writer-a",
+      "observed_transaction_id_sha256": "6f90a5a0d3234433d03c7a06fc4bd5c3ac1f21f33978292fee61323e22238a92",
+      "outcome": "COMMIT"
+    },
+    {
+      "logical_transaction_id": "tx-008-large",
+      "observed_transaction_id_sha256": "6165d33e490f91dbf808b194904d4f07c550d5e3a19c9e776e0c895136ec9fa2",
+      "outcome": "COMMIT"
+    },
+    {
+      "logical_transaction_id": "tx-009-schema-change",
+      "observed_transaction_id_sha256": "64d095f2fecfdeb907dae5403b10966c4ae755b7598aa078cb932e345bd0b5d0",
+      "outcome": "COMMIT"
+    },
+    {
+      "logical_transaction_id": "tx-010-null-versus-absent",
+      "observed_transaction_id_sha256": "d3b913cdf3e8a79786216cc7bbd15fc27f86a7be516f3e14c909b86b7f9eb241",
+      "outcome": "COMMIT"
+    },
+    {
+      "logical_transaction_id": "tx-011-abort",
+      "observed_transaction_id_sha256": "8b80f49ec2822cb3cdbe97d9405e39ae40ba418b084c06604b51e2a5af11a7f8",
+      "outcome": "ABORT"
+    }
+  ],
+  "part": 2,
+  "post_boundary_transaction": {
+    "logical_transaction_id": "tx-012-post-boundary",
+    "observed_transaction_id_sha256": "a8cee66e4788af8b855979155e486c988d84a42aba71e43a0fc26997ca12e737",
+    "outcome": "COMMIT"
+  },
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "6f64f6afe99dbacfac71e3176bc15fe4b6227dc4",
+  "source_tree": "022f0b80aa20a2b6588465d924e53bae2ff0bb1a",
+  "stage": 1,
+  "transactions": [
+    {
+      "cases": [
+        "single_row_insert",
+        "unicode",
+        "null"
+      ],
+      "commit_ordinal": 1,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "single_row_insert",
+            "unicode",
+            "null"
+          ],
+          "event_digest": "f0de7fb9e4dc78cee5e87b08dfed110d1d4e8d5df85d3cf099a10bac5c2c5c79",
+          "event_sequence": 1,
+          "key": "order-001",
+          "operation": "insert",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "f951f8e8adf8697336b704a6af6d77456c830b5d34bfa1110764926c2201a041",
+      "transaction_id": "tx-001-single-insert",
+      "transaction_sequence": 1
+    },
+    {
+      "cases": [
+        "multi_row_insert"
+      ],
+      "commit_ordinal": 2,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "multi_row_insert"
+          ],
+          "event_digest": "cb77dba406e7783d1a4931c937400e39a9d0e932d4c72bd50d67309527855f71",
+          "event_sequence": 1,
+          "key": "order-002",
+          "operation": "insert",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "multi_row_insert"
+          ],
+          "event_digest": "e41e8a216d466f82e7d69e4d090f616882ad7fecf69db20a0c991149a8e019c7",
+          "event_sequence": 2,
+          "key": "order-003",
+          "operation": "insert",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "cd898f0cc83d356e5afad4cabc14f20c0f9faf1fccbf5af8076e80637cb8f959",
+      "transaction_id": "tx-002-multi-row",
+      "transaction_sequence": 2
+    },
+    {
+      "cases": [
+        "multi_table_transaction",
+        "decimal",
+        "utc_timestamp_edge"
+      ],
+      "commit_ordinal": 3,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "multi_table_transaction"
+          ],
+          "event_digest": "3a7822d660174037cc5f957c51ee4d86433f9a357de59de8822de3ac8bfa3ebc",
+          "event_sequence": 1,
+          "key": "order-004",
+          "operation": "insert",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "multi_table_transaction",
+            "decimal",
+            "unicode",
+            "utc_timestamp_edge"
+          ],
+          "event_digest": "9fa8c3aab04841cd3044f9a1d43b1b5f80cbc0b47f32dd78df7d73f6edf26e2e",
+          "event_sequence": 2,
+          "key": "item-004-001",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "multi_table_transaction",
+            "decimal",
+            "null"
+          ],
+          "event_digest": "8ec2588ebcf03b102f8439b73819891fc1a3d1ac04b71984050e726a966dd972",
+          "event_sequence": 3,
+          "key": "item-004-002",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "3473a891fe3c8c2629bbf065d05bf29e600a7915d1666749afc39c58d722a3ad",
+      "transaction_id": "tx-003-multi-table",
+      "transaction_sequence": 3
+    },
+    {
+      "cases": [
+        "update",
+        "null_vs_value"
+      ],
+      "commit_ordinal": 4,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": true,
+          "cases": [
+            "update",
+            "null_vs_value"
+          ],
+          "event_digest": "d2033b59185c111d3fd708ba0f9203b8ddf6aa77855d1b364f44d7eefe2179a8",
+          "event_sequence": 1,
+          "key": "order-002",
+          "operation": "update",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "5d5f14746870258a81c7b2e5279251dd67ccbbf1f331611beaca89b5f247f2eb",
+      "transaction_id": "tx-004-update",
+      "transaction_sequence": 4
+    },
+    {
+      "cases": [
+        "delete"
+      ],
+      "commit_ordinal": 5,
+      "events": [
+        {
+          "after_present": false,
+          "before_present": true,
+          "cases": [
+            "delete"
+          ],
+          "event_digest": "2f863172d5bca7ae4fd3829f16a4c35808d4583d2e365f3618f00bdf4a769105",
+          "event_sequence": 1,
+          "key": "order-003",
+          "operation": "delete",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "360c00e8a889f5cbe4abfd2c0128ef152ffc676b66d3e51c79525efe70fd78fe",
+      "transaction_id": "tx-005-delete",
+      "transaction_sequence": 5
+    },
+    {
+      "cases": [
+        "concurrent_writers"
+      ],
+      "commit_ordinal": 7,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "concurrent_writers"
+          ],
+          "event_digest": "5d83a948609d62a6865561c0ef5c3fbcc9ec71bf45a671fb849dce86015b2151",
+          "event_sequence": 1,
+          "key": "order-005",
+          "operation": "insert",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "fb3a64085f60ecdeaca9b6f2ec4e3f8ea51d3aa6d9ac593dae36af14860a84f2",
+      "transaction_id": "tx-006-writer-a",
+      "transaction_sequence": 6
+    },
+    {
+      "cases": [
+        "concurrent_writers"
+      ],
+      "commit_ordinal": 6,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "concurrent_writers"
+          ],
+          "event_digest": "85763bab788a5fdb89a6da3928bf2f90bcaadacfc733752eed65f822ae66c28e",
+          "event_sequence": 1,
+          "key": "order-006",
+          "operation": "insert",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "08e186da51a732904b9e173f806831cbb46748979d4b90389353031590f98e91",
+      "transaction_id": "tx-007-writer-b",
+      "transaction_sequence": 7
+    },
+    {
+      "cases": [
+        "large_transaction"
+      ],
+      "commit_ordinal": 8,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction"
+          ],
+          "event_digest": "1243dc46cf3d989042ba6fe70b3904886e28b336c4ba34370d31f416a3c53eb7",
+          "event_sequence": 1,
+          "key": "order-007",
+          "operation": "insert",
+          "schema_version": "orders/1.0.0",
+          "table": "orders"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "77ec47f4a49e70d2fb9825d24a35146885205d2683a5af57014213693e4e10a7",
+          "event_sequence": 2,
+          "key": "item-007-000",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "62fa867c60260434ba769ae7e664fc8eada7da14ff3652154f85f8fcc34c5d12",
+          "event_sequence": 3,
+          "key": "item-007-001",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "e69ad2b7d706ecbf77757fe4b1f332fd8c7126012f718f91495ce626d209aa6a",
+          "event_sequence": 4,
+          "key": "item-007-002",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "77dbcdc89be4447350afebc314d2b73bf700637d1880a88894312efc9ac684d2",
+          "event_sequence": 5,
+          "key": "item-007-003",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "2f67d0161b282d7792ea1b8e9c1ba2cf366325eb18a0ae055adbab3c558853d9",
+          "event_sequence": 6,
+          "key": "item-007-004",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "f1866c004fd563552dbeb8a781502ab3c3b4c75159cac06c23a74c0ee33530ae",
+          "event_sequence": 7,
+          "key": "item-007-005",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "ec6fae4f5606b76442078d0d7f6315529aa0e83ff33c65d519266f9ada2c9a68",
+          "event_sequence": 8,
+          "key": "item-007-006",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "b7124f0d24893264bc2fc84a3ab5022d2719fecce820bed0348ad04170cfd9b2",
+          "event_sequence": 9,
+          "key": "item-007-007",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "9731464796df93e04bd91dc31f9cffba5c6e5c19ec2e254387894385752aa7d9",
+          "event_sequence": 10,
+          "key": "item-007-008",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "4d75bfc75a64d7ad220b9185bf03bf8cb3d153168d8a035421215101e878cec2",
+          "event_sequence": 11,
+          "key": "item-007-009",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "ed594fb422ccd6f7f76d3d71eab5f8dfb97c5edfbcc189237795484f6b831497",
+          "event_sequence": 12,
+          "key": "item-007-010",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "98bb0bf2f674e002fbb2d2f1afd7c3e05c78471a57f9e34eae2ce49858f692d4",
+          "event_sequence": 13,
+          "key": "item-007-011",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "3c461a4b52fc8809d0a5f0a1902f6dda6da3f482ece990946632f87fad363fca",
+          "event_sequence": 14,
+          "key": "item-007-012",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "d66110f2afdacb906f4cf62bebd140134f94c887e71e6940afaf3f5b61a4fa36",
+          "event_sequence": 15,
+          "key": "item-007-013",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "b1e47fc0654a76569acb34f56007272005443701eab1bcbe34fef6ce9bade279",
+          "event_sequence": 16,
+          "key": "item-007-014",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "1411979e02eb5ac328ec6e134b2189ae63fe882aec05d4f9867ca65ece4ee8f4",
+          "event_sequence": 17,
+          "key": "item-007-015",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "e831f812a41ee487b1e72b1da21a69262257c7dc5ad6accc9f28f5ceb3e46f11",
+          "event_sequence": 18,
+          "key": "item-007-016",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "9a4780ddc4fb47ba25d8f0aa795d3b1850b374b0fc1bda5f6b9e0c6e75428764",
+          "event_sequence": 19,
+          "key": "item-007-017",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "7af5cc60531fabbf64478910a7546bf903174b8925d5d59fc4d5477af7db4b9c",
+          "event_sequence": 20,
+          "key": "item-007-018",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "e9244dbe2e2b380da24b8c895a27d83b582591c405cfbb81ddbc4646237b515a",
+          "event_sequence": 21,
+          "key": "item-007-019",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "0c53c194136960193b8d56bbdeb8e51e729afcff3256a77693e4a8ffd63e6a5b",
+          "event_sequence": 22,
+          "key": "item-007-020",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "fe4d148f42727722dfb8279fe922190638814fefa80138ffd77aa9d3f87d3bc5",
+          "event_sequence": 23,
+          "key": "item-007-021",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "0be0fc07582fe60dba5d634b68351a1c236717c3b2c3e17e5b72677838060624",
+          "event_sequence": 24,
+          "key": "item-007-022",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "6516cbaa5e176a00960cb6f3e89a7e210bf2a0670b564ad58dc8f41fb0225faf",
+          "event_sequence": 25,
+          "key": "item-007-023",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "bd06949cacb19eb535d9b93a48d8e4eb2f749b92039b038dedfc009d9cd444ac",
+          "event_sequence": 26,
+          "key": "item-007-024",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "32d3ba0f88c5f0f5ab818d177575926c041426765ed181949305281a600b6c27",
+          "event_sequence": 27,
+          "key": "item-007-025",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "6b465741188b55c6cecfd582b1e5239a6ef93b1428ff10e034251606d0f81c3c",
+          "event_sequence": 28,
+          "key": "item-007-026",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "77285fc76f453d336ad678c74c6441319cb1e8e3ca4a492cac382f3af710bd0e",
+          "event_sequence": 29,
+          "key": "item-007-027",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "eb6f024f9778e19a60f3f050f5b5ca202b0525121c1cf45619cec3f0e04ccd93",
+          "event_sequence": 30,
+          "key": "item-007-028",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "273f2d11951bbdceec69501cf850ce428f38d945d3f85e1120f5db3dfa7609f4",
+          "event_sequence": 31,
+          "key": "item-007-029",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "7c5ba06eb83699ef3cec5dd12632ab9fd43c37ad808e3a9b6173ff38576d1e2d",
+          "event_sequence": 32,
+          "key": "item-007-030",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "15e46c3e4998ff48843fda4f108e55be8dd34cfe97b0514f94a0b688c382719a",
+          "event_sequence": 33,
+          "key": "item-007-031",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "b2bc0cc2596cda2b99a46c24b95fc65046b5f4bb3783c85248cc56f8c4a3f98f",
+          "event_sequence": 34,
+          "key": "item-007-032",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "7da69a4ee11ead95d5d93117bff75f0c75093372ba56835e64c40bbc9aad45a4",
+          "event_sequence": 35,
+          "key": "item-007-033",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "8e4ecb1524be948dbb920c37a334a79bc9a8d513c57fa6db52b2b2e80d8b6070",
+          "event_sequence": 36,
+          "key": "item-007-034",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "68cb6b266228ec96728ff397ba64ca125fac412a6f11bc0384310234c00e6a3f",
+          "event_sequence": 37,
+          "key": "item-007-035",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "3cd178c4015bf779dca590b3b4008c8a5c191ef10d89212fd900e2eb3ba56d72",
+          "event_sequence": 38,
+          "key": "item-007-036",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "9a65aeebdfb7cc3edbba59f3e7829c21c9e9df1129a8be1c6e67a65fc809cd5a",
+          "event_sequence": 39,
+          "key": "item-007-037",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "5deaa5d25c114b261e4c18518a16b3c9b3cb0d28995d59a04e4aed86d3e61b1c",
+          "event_sequence": 40,
+          "key": "item-007-038",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "2ce3b2e61b7d16e68da81fb4dcee0fa78c9888ac7b4902d318aade78f3a0c274",
+          "event_sequence": 41,
+          "key": "item-007-039",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "0175afd39671e5647eda06b00f4d94f9d4334ae57505c1b85a39cfcc87458eba",
+          "event_sequence": 42,
+          "key": "item-007-040",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "4b0dd877ea2459ac1e82ed11ca1e0d3c36ba990f4312bf9ccb4021419b099fc9",
+          "event_sequence": 43,
+          "key": "item-007-041",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "2b01bbf8a5ce252bf1caa79a4a474e5a535d8506c0fc8afa78aa7cb117184002",
+          "event_sequence": 44,
+          "key": "item-007-042",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "a374da205905ea740154aa9756af55a93cfb9b02535b09c2205ad299749f00af",
+          "event_sequence": 45,
+          "key": "item-007-043",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "3216af965140c32b482f1f154291cc0c8cf891b1d5e7378b3168e09dee2f9908",
+          "event_sequence": 46,
+          "key": "item-007-044",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "469b8725d7858e38e68ba0a330b1cc6844c61538f393006263353cdb77bce2e6",
+          "event_sequence": 47,
+          "key": "item-007-045",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "1644a4bdf0b8eda7f153d6878f93bb31ccc9fdedd555a108382fcaacfb22cbdb",
+          "event_sequence": 48,
+          "key": "item-007-046",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "a656d5b906f617b3da3c910d0672b5ae645f0e7e150de64f3b5d71c24cab5b82",
+          "event_sequence": 49,
+          "key": "item-007-047",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "8878665ca57c9c3b9be0bf74ac07878538acd19ab6181a688d074ad0f3b78128",
+          "event_sequence": 50,
+          "key": "item-007-048",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "194caf82ddd0a817c6a2b864f311a4b2d69013154ee4561362460478edf1797e",
+          "event_sequence": 51,
+          "key": "item-007-049",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "8de67c7876ee306f39706df20aa8185222a6faa07c22a1826ade29896d3761ba",
+          "event_sequence": 52,
+          "key": "item-007-050",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "b7ab63fe39a01d3ef5fa6412b91479122b820403b7b5057224eda5fea390b4c0",
+          "event_sequence": 53,
+          "key": "item-007-051",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "b3b48e31bf13021ce5ba1319c9baa37c9fc105c82a7fe6d5a2a8120f14834264",
+          "event_sequence": 54,
+          "key": "item-007-052",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "7868579ccb5d007032b1622c5823584be32583f28d95f01a4a4c9bb089d382b6",
+          "event_sequence": 55,
+          "key": "item-007-053",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "f72a85049def7a1e91a91c896f02674c7fbeacf78224951b3d9cb83de2169761",
+          "event_sequence": 56,
+          "key": "item-007-054",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "9b40aba15ebb0f51e5a031f14249f7be507fb01d7ad42762c2ce347c49716ff0",
+          "event_sequence": 57,
+          "key": "item-007-055",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "bbf70739840c6292d5b467fedcb83b6e2ad3c97e859b3825002621ec3bc004d6",
+          "event_sequence": 58,
+          "key": "item-007-056",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "5e3bca01fb3cd6192413f59e2703d8ae4ce68176a40b7f806a0fad425f601273",
+          "event_sequence": 59,
+          "key": "item-007-057",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "70cb44a636519ff1db4974f32085cd1a736d940e9e59d1ea6d70aa17da2a6162",
+          "event_sequence": 60,
+          "key": "item-007-058",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "180a9bab94296b23777a7c3ae1a02ee7c354147ebdeb124f1d56755cc4c00729",
+          "event_sequence": 61,
+          "key": "item-007-059",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "6b92a62d437c594b3ff5af981d821cc5c3cae6a51dd516b276dbc890ccd8664a",
+          "event_sequence": 62,
+          "key": "item-007-060",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "8c224f1529879b9e38d3e552cfdb55105ef324b7b68e76927a00740d7b3cc718",
+          "event_sequence": 63,
+          "key": "item-007-061",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "7aecb04a71ba7493b997c3cfd8cab216b90c64deeb1574616e7ebeba8c4e2e97",
+          "event_sequence": 64,
+          "key": "item-007-062",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        },
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "large_transaction",
+            "decimal",
+            "null_vs_value"
+          ],
+          "event_digest": "a21f86beed954ba36bb9f2ff2c30444d9314dfc82dcfbc3fb0ebc6fd1f3e7ab5",
+          "event_sequence": 65,
+          "key": "item-007-063",
+          "operation": "insert",
+          "schema_version": "order_items/1.0.0",
+          "table": "order_items"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "12bca1f0b1955ac2c1a3d0851663fc4ccc252081719fb9f739118803c0d11ce9",
+      "transaction_id": "tx-008-large",
+      "transaction_sequence": 8
+    },
+    {
+      "cases": [
+        "controlled_schema_change"
+      ],
+      "commit_ordinal": 9,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": true,
+          "cases": [
+            "controlled_schema_change"
+          ],
+          "event_digest": "39778f2b4f2b50c5ed5c1c1335a8545a6239d9fc63dabab5700e023fb755f966",
+          "event_sequence": 1,
+          "key": "orders",
+          "operation": "schema_change",
+          "schema_version": "orders/1.1.0",
+          "table": "__schema__"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "530f682280f815481eb32ad7e6c5778da8aafc2d708e67a3382484cc9c8334d1",
+      "transaction_id": "tx-009-schema-change",
+      "transaction_sequence": 9
+    },
+    {
+      "cases": [
+        "null_vs_absent",
+        "controlled_schema_change"
+      ],
+      "commit_ordinal": 10,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": true,
+          "cases": [
+            "null_vs_absent",
+            "controlled_schema_change"
+          ],
+          "event_digest": "f85d45c32489181e2133a4d60f2e709d6e11e5524ffba6a06c3599bc290f2335",
+          "event_sequence": 1,
+          "key": "order-001",
+          "operation": "update",
+          "schema_version": "orders/1.1.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "62a9ac61ff14ababc6b6a60bdc971c2b5034b14c7dac6c2ac8f2520bb090da89",
+      "transaction_id": "tx-010-null-versus-absent",
+      "transaction_sequence": 10
+    },
+    {
+      "cases": [
+        "rollback"
+      ],
+      "commit_ordinal": null,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": false,
+          "cases": [
+            "rollback"
+          ],
+          "event_digest": "fbea3f8517188088c101529256b7c23a09e7f6bc433192f2362150e29068ab37",
+          "event_sequence": 1,
+          "key": "order-abort",
+          "operation": "insert",
+          "schema_version": "orders/1.1.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "ABORT",
+      "phase": "PRE_BOUNDARY",
+      "transaction_digest": "d38f29347cef657546cc46c2a6572a6ce00d5ca725f12343e94a06bc72bb7cf3",
+      "transaction_id": "tx-011-abort",
+      "transaction_sequence": 11
+    },
+    {
+      "cases": [
+        "post_boundary"
+      ],
+      "commit_ordinal": 11,
+      "events": [
+        {
+          "after_present": true,
+          "before_present": true,
+          "cases": [
+            "post_boundary"
+          ],
+          "event_digest": "7dbec53b5eaf23391c3f062ad44811881649138e8fb70580807b1d418f1495da",
+          "event_sequence": 1,
+          "key": "order-004",
+          "operation": "update",
+          "schema_version": "orders/1.1.0",
+          "table": "orders"
+        }
+      ],
+      "outcome": "COMMIT",
+      "phase": "POST_BOUNDARY",
+      "transaction_digest": "a21091f906883751a31ab003ff6157bd0a0b4cd3038b0a007345a0a5d22a66bc",
+      "transaction_id": "tx-012-post-boundary",
+      "transaction_sequence": 12
+    }
+  ],
+  "workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd"
+}

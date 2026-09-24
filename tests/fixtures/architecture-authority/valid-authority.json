@@ -8,6 +8,6 @@
   "expected_generation_transition_count": 14,
   "expected_checkpoint_state_count": 9,
   "expected_proof_gate_count": 8,
-  "expected_claim_count": 10,
+  "expected_claim_count": 11,
   "expected_architecture_freeze_commit": "0a27be6a197fa6e849958957e7df1447f2b4f797"
 }

@@ -2,49 +2,43 @@
 
 ## Current authorized boundary
 
-- Part: 1 — Truth, invariants, and completion contract
-- Stage: 5 — Readiness and owner rehearsal
-- Verified entry commit: `f7ada638e0404afacaac604be400c1434858002f`
-- Verified entry tree: `2401a4e8cdff8ae153dc4b1cebc1bc7b5cc61ac3`
-- Stage branch: `part1-stage5-readiness-rehearsal`
-- Stage evidence: `evidence/part1/stage5/`
-- Stage 5 source freeze: `a4ad1b73e6cd7da2ed1cea22f1f86a608d7052ee`
-- Stage 5 source tree: `8ae75b0d6e71fd12d744d6dabea454f564a815a9`
+- Part: 2 — Executable local migration path
+- Stage: 1 — Deterministic source workload and snapshot-boundary capture
+- Verified entry commit: `6ae4e071782bddeb5a35f9635262e868f52df6f5`
+- Verified entry tree: `2126b55cb85844189aa9907452de22847ca43e98`
+- Stage branch: `part2-stage1-source-boundary`
+- Runtime source freeze: `6f64f6afe99dbacfac71e3176bc15fe4b6227dc4`
+- Runtime source tree: `022f0b80aa20a2b6588465d924e53bae2ff0bb1a`
+- PostgreSQL proof run: `36036471399`
+- Stage evidence: `evidence/part2/stage1/`
 
-## Predecessor results
+## Predecessor result
 
-- `STAGE1_AUDIT_VERIFIED`
-- `STAGE2_COMPLETION_AUTHORITY_VERIFIED`
-- `STAGE3_ARCHITECTURE_AUTHORITY_VERIFIED`
-- `STAGE4_CONTRACT_ORACLE_AUTHORITY_VERIFIED`
+`PART1_COMPLETION_VERIFIED`
 
-Stage 5 started only from the exact verified Stage 4 merge checkpoint. All four predecessor
-stage manifests and receipts remain byte-identical, and their deterministic validators continue
-to pass.
+Part 1 remains protected. Its validator and 115 historical tests run from the exact frozen tree,
+while the current tree independently verifies all eight protected evidence digests.
 
-## Stage 5 candidate result
+## Stage 1 candidate result
 
-`PART1_COMPLETION_PENDING`: the candidate reconciles all 39 completion requirements, 15 ADRs,
-17 components, 16 contracts, 16 invariants, 10 governed claims and all four predecessor stages.
-It provides a non-authorizing nine-slice implementation-readiness manifest, an acyclic dependency
-graph, sixteen failure rehearsals, an authorization forecast, a skeptical review, an interview
-walkthrough, and fail-closed closure validation.
+`PART2_STAGE1_SOURCE_BOUNDARY_PENDING_EXTERNAL_CLOSURE`
 
-Part 1 validation passes while `CB-INTERVIEW-001` remains deliberately `DEFERRED` to the final
-ChangeBridge project-completion stage. The walkthrough authority exists now, but no human score or
-rehearsal result is fabricated. Part 1 completion still requires the deterministic validation
-ladder, exact-head CI, policy-compliant merge, and verified merged main.
+The runtime source freeze passes the required digest-pinned PostgreSQL 17.11 lane. Three isolated
+schemas prove same-seed logical determinism, different-seed distinction, independent replay versus
+queried source state, exported-snapshot import, immutable typed frontiers, post-boundary transaction
+commit ordering, expired-snapshot rejection, and logical-slot cleanup.
 
-No claim is promoted. Managed runtime, adapter conformance, performance, availability,
-exactly-once delivery, zero-downtime cutover and release completion remain unproven.
+The source-boundary result is `LOCAL_VERIFIED`. It establishes no AWS DMS, delivery, target apply,
+Spark, Iceberg, Terraform, performance, availability, cost, exactly-once, zero-downtime, or
+production-readiness claim.
 
-No runtime or Spark behavior, Terraform behavior, AWS resource, deployment, managed experiment,
-performance test, release, tag, history, dependency declaration or other project is changed by
-Stage 5.
+The in-repository receipt holds `ST21-AC-01` through `ST21-AC-36` as candidate-pass and leaves
+`ST21-AC-37` through `ST21-AC-40` external. Exact PR-head checks must satisfy criterion 37 before
+merge. Fresh merged-main verification and the external Stage 2 continuation checkpoint must then
+satisfy criteria 38 through 40.
 
 ## Next permitted action
 
-Seal Stage 5 evidence, publish the exact candidate, require CI on that exact PR head, and merge only
-after `ST5-AC-01` through `ST5-AC-41` pass. Do not publish the external verified-completion
-checkpoint inside the repository; it requires verified merged main and `ST5-AC-42` through
-`ST5-AC-44`. Preserve the mandatory interview rehearsal for final ChangeBridge project closure.
+Seal and publish the evidence candidate, open one Stage 1 pull request, validate its exact head,
+and merge only after the full pre-merge gate passes. Then verify fresh remote `main`, rerun bounded
+validation, and issue `PART2_STAGE1_SOURCE_BOUNDARY_VERIFIED` with the exact Stage 2 entry contract.
