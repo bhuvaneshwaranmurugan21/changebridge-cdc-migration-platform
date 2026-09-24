@@ -13,13 +13,14 @@ import psycopg2  # type: ignore[import-untyped]
 from psycopg2 import sql
 from psycopg2.extras import LogicalReplicationConnection  # type: ignore[import-untyped]
 
-from changebridge.contracts import ContractError, compare_source_positions, semantic_digest
+from changebridge.contracts import ContractError, semantic_digest
 from changebridge.source_boundary import (
     BOUNDARY_RECEIPT_VERSION,
     LSN_COMPARATOR_VERSION,
     POSTGRES_IMAGE,
     FrontierRegistry,
     PostgresSettings,
+    select_first_committed_transaction,
     validate_boundary_receipt,
 )
 from changebridge.source_workload import replay_workload, validate_workload
@@ -356,16 +357,9 @@ def capture_boundary(
             )
             changes = cursor.fetchall()
         admin_connection.commit()
-        eligible = [
-            {"data_digest": hashlib.sha256(data.encode()).hexdigest(), "lsn": lsn}
-            for lsn, _xid, data in changes
-            if data.startswith("table ")
-        ]
-        if not eligible:
-            raise _fail("CBSNP015_NO_POST_BOUNDARY_CHANGE", generation_id)
-        first_position = {"kind": "postgres_lsn", "value": eligible[0]["lsn"]}
-        if compare_source_positions(first_position, frontier) <= 0:
-            raise _fail("CBSNP009_NONADVANCING_FIRST_POSITION", repr(first_position))
+        decoded = [{"data": data, "lsn": lsn, "xid": xid} for lsn, xid, data in changes]
+        first_transaction = select_first_committed_transaction(decoded, frontier)
+        first_position = first_transaction["first_commit_position"]
 
         with admin_connection.cursor() as cursor:
             cursor.execute("SELECT pg_drop_replication_slot(%s)", (slot_name,))
@@ -389,11 +383,17 @@ def capture_boundary(
             "cleanup": {"slot_dropped": slot_dropped},
             "comparator_version": LSN_COMPARATOR_VERSION,
             "first_post_boundary_position": first_position,
+            "first_post_boundary_change_position": first_transaction[
+                "first_change_position"
+            ],
+            "first_post_boundary_transaction_sha256": hashlib.sha256(
+                first_transaction["first_transaction_xid"].encode()
+            ).hexdigest(),
             "generation_id": generation_id,
             "generation_record": generation_record,
             "generation_transitions": generation_states,
             "image": POSTGRES_IMAGE,
-            "logical_change_count": len(eligible),
+            "logical_change_count": first_transaction["logical_change_count"],
             "output_plugin": "test_decoding",
             "post_boundary_observations": post_observations,
             "receipt_version": BOUNDARY_RECEIPT_VERSION,

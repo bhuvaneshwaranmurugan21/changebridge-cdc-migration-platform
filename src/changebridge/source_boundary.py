@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import os
 import re
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from copy import deepcopy
 from dataclasses import dataclass
 from typing import Any
@@ -84,6 +84,58 @@ class FrontierRegistry:
             raise _fail("CBSNP002_SECOND_FRONTIER", generation_id)
         self._frontiers[generation_id] = candidate
         return deepcopy(candidate)
+
+
+def select_first_committed_transaction(
+    records: Sequence[Mapping[str, Any]], frontier: Mapping[str, Any]
+) -> dict[str, Any]:
+    """Select the first decoded transaction by its commit LSN.
+
+    PostgreSQL may label the first row-level output with the slot's consistent
+    point.  A migration transaction frontier is therefore the corresponding
+    COMMIT record, which must be strictly after the exported-snapshot boundary.
+    """
+
+    first_change_index = next(
+        (
+            index
+            for index, record in enumerate(records)
+            if str(record.get("data", "")).startswith("table ")
+        ),
+        None,
+    )
+    if first_change_index is None:
+        raise _fail("CBSNP015_NO_POST_BOUNDARY_CHANGE", "logical decoding output")
+    first_change = records[first_change_index]
+    xid = str(first_change.get("xid", ""))
+    change_position = {"kind": "postgres_lsn", "value": first_change.get("lsn")}
+    if not xid or not isinstance(change_position["value"], str):
+        raise _fail("CBSNP016_MALFORMED_DECODED_CHANGE", repr(first_change))
+    if compare_source_positions(change_position, frontier) < 0:
+        raise _fail("CBSNP017_CHANGE_PRECEDES_FRONTIER", repr(change_position))
+
+    commit = next(
+        (
+            record
+            for record in records[first_change_index + 1 :]
+            if str(record.get("xid", "")) == xid
+            and str(record.get("data", "")).startswith("COMMIT ")
+        ),
+        None,
+    )
+    if commit is None or not isinstance(commit.get("lsn"), str):
+        raise _fail("CBSNP018_COMMIT_RECORD_MISSING", xid)
+    commit_position = {"kind": "postgres_lsn", "value": commit["lsn"]}
+    if compare_source_positions(commit_position, frontier) <= 0:
+        raise _fail("CBSNP009_NONADVANCING_FIRST_POSITION", repr(commit_position))
+    return {
+        "first_change_position": change_position,
+        "first_commit_position": commit_position,
+        "first_transaction_xid": xid,
+        "logical_change_count": sum(
+            str(record.get("data", "")).startswith("table ") for record in records
+        ),
+    }
 
 
 def validate_boundary_receipt(

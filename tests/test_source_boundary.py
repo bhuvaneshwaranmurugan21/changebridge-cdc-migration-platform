@@ -12,6 +12,7 @@ from changebridge.source_boundary import (
     LSN_COMPARATOR_VERSION,
     FrontierRegistry,
     PostgresSettings,
+    select_first_committed_transaction,
     validate_boundary_receipt,
 )
 
@@ -77,6 +78,42 @@ def _validate(receipt: dict[str, object]) -> None:
 
 def test_valid_boundary_is_strictly_open_after_snapshot() -> None:
     _validate(_receipt())
+
+
+def test_decoded_transaction_uses_commit_lsn_when_first_change_equals_frontier() -> None:
+    frontier = _position(0, 0x194FAE8)
+    selected = select_first_committed_transaction(
+        [
+            {"lsn": "0/194FAE8", "xid": "741", "data": "BEGIN 741"},
+            {"lsn": "0/194FAE8", "xid": "741", "data": "table cb.orders: INSERT"},
+            {"lsn": "0/194FC20", "xid": "741", "data": "COMMIT 741"},
+        ],
+        frontier,
+    )
+    assert selected["first_change_position"] == frontier
+    assert selected["first_commit_position"] == _position(0, 0x194FC20)
+    assert selected["logical_change_count"] == 1
+
+
+@pytest.mark.parametrize(
+    ("records", "diagnostic"),
+    [
+        ([], "CBSNP015_NO_POST_BOUNDARY_CHANGE"),
+        (
+            [{"lsn": "0/194FAA0", "xid": "741", "data": "table cb.orders: INSERT"}],
+            "CBSNP017_CHANGE_PRECEDES_FRONTIER",
+        ),
+        (
+            [{"lsn": "0/194FAE8", "xid": "741", "data": "table cb.orders: INSERT"}],
+            "CBSNP018_COMMIT_RECORD_MISSING",
+        ),
+    ],
+)
+def test_decoded_transaction_selection_fails_closed(
+    records: list[dict[str, str]], diagnostic: str
+) -> None:
+    with pytest.raises(ContractError, match=diagnostic):
+        select_first_committed_transaction(records, _position(0, 0x194FAE8))
 
 
 @pytest.mark.parametrize(
