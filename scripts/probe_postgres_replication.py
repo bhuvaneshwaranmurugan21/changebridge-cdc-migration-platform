@@ -64,7 +64,6 @@ def run_probe() -> dict[str, Any]:
         **kwargs,
         connection_factory=LogicalReplicationConnection,
     )
-    exporter.autocommit = True
     snapshot_connection = None
     try:
         replication_cursor = exporter.cursor()
