@@ -12,6 +12,8 @@ from pathlib import Path
 from typing import Any, cast
 
 import psycopg2  # type: ignore[import-untyped]
+from psycopg2 import sql
+from psycopg2.extras import LogicalReplicationConnection  # type: ignore[import-untyped]
 
 from changebridge.contracts import (
     schema_digest,
@@ -32,6 +34,38 @@ from scripts.stage21_postgres_adapter import (
 
 ROOT = Path(__file__).resolve().parents[1]
 SEED = 424242
+
+
+def _prove_expired_snapshot_rejected(settings: PostgresSettings) -> dict[str, Any]:
+    exporter = psycopg2.connect(
+        **settings.connect_arguments(), connection_factory=LogicalReplicationConnection
+    )
+    cursor = exporter.cursor()
+    cursor.execute(
+        "CREATE_REPLICATION_SLOT cb_stage21_expired_probe "
+        "TEMPORARY LOGICAL test_decoding (SNAPSHOT 'export')"
+    )
+    snapshot_name = cursor.fetchone()[2]
+    exporter.close()
+
+    consumer = psycopg2.connect(**settings.connect_arguments())
+    try:
+        consumer.set_session(isolation_level="REPEATABLE READ", readonly=True, autocommit=False)
+        with consumer.cursor() as snapshot_cursor:
+            try:
+                snapshot_cursor.execute(
+                    sql.SQL("SET TRANSACTION SNAPSHOT {}").format(sql.Literal(snapshot_name))
+                )
+            except psycopg2.Error as exc:
+                consumer.rollback()
+                return {
+                    "diagnostic_class": exc.__class__.__name__,
+                    "result": "PASS",
+                    "scenario": "exporter_closed_before_snapshot_import",
+                }
+    finally:
+        consumer.close()
+    raise RuntimeError("CBSNP021_EXPIRED_SNAPSHOT_ACCEPTED")
 
 
 def _load_json(relative: str) -> dict[str, Any]:
@@ -145,6 +179,7 @@ def _run_once(
 
 def build_report(repository_commit: str, repository_tree: str) -> dict[str, Any]:
     base_settings = PostgresSettings.from_environment()
+    expired_snapshot = _prove_expired_snapshot_rejected(base_settings)
     schema_set_digest, schemas = _schema_authority()
     runs = [
         _run_once(
@@ -197,6 +232,7 @@ def build_report(repository_commit: str, repository_tree: str) -> dict[str, Any]
         raise RuntimeError("CBSRC028_PHYSICAL_LSN_NOT_RUN_SPECIFIC")
     return {
         "different_seed_differs": True,
+        "expired_snapshot_rejection": expired_snapshot,
         "image": runs[0]["boundary"]["image"],
         "physical_lsn_excluded_from_identity": True,
         "report_version": "stage21-postgres-lab/1.0.0",

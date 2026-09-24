@@ -12,6 +12,7 @@ from typing import Any
 from changebridge.contracts import ContractError, compare_source_positions
 
 BOUNDARY_RECEIPT_VERSION = "source-boundary-receipt/1.0.0"
+CAPTURE_METHOD = "postgres-logical-slot-exported-snapshot/1.0.0"
 LSN_COMPARATOR_VERSION = "postgres-lsn-u32-pair/1.0.0"
 POSTGRES_IMAGE = "postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652"
 _NAMESPACE = re.compile(r"^cb_[a-z0-9_]{1,48}$")
@@ -148,6 +149,8 @@ def validate_boundary_receipt(
 ) -> None:
     if receipt.get("receipt_version") != BOUNDARY_RECEIPT_VERSION:
         raise _fail("CBSNP003_UNKNOWN_RECEIPT_VERSION", str(receipt.get("receipt_version")))
+    if receipt.get("capture_method") != CAPTURE_METHOD:
+        raise _fail("CBSNP020_UNQUALIFIED_CAPTURE_METHOD", str(receipt.get("capture_method")))
     checks = (
         ("generation_id", expected_generation_id, "CBSNP004_GENERATION_MISMATCH"),
         ("workload_id", expected_workload_id, "CBSNP005_WORKLOAD_MISMATCH"),
@@ -169,6 +172,21 @@ def validate_boundary_receipt(
         raise _fail("CBSNP001_NON_POSTGRES_FRONTIER", repr((frontier, first)))
     if compare_source_positions(first, frontier) <= 0:
         raise _fail("CBSNP009_NONADVANCING_FIRST_POSITION", repr(first))
+    first_change = receipt.get("first_post_boundary_change_position")
+    if (
+        not isinstance(first_change, Mapping)
+        or compare_source_positions(first_change, frontier) < 0
+    ):
+        raise _fail("CBSNP017_CHANGE_PRECEDES_FRONTIER", repr(first_change))
+    observations = receipt.get("post_boundary_observations")
+    first_transaction_digest = receipt.get("first_post_boundary_transaction_sha256")
+    if (
+        not isinstance(observations, Sequence)
+        or not observations
+        or not isinstance(observations[0], Mapping)
+        or observations[0].get("observed_transaction_id_sha256") != first_transaction_digest
+    ):
+        raise _fail("CBSNP019_FIRST_TRANSACTION_GAP", repr(first_transaction_digest))
     if receipt.get("comparator_version") != LSN_COMPARATOR_VERSION:
         raise _fail("CBSNP010_COMPARATOR_VERSION_MISMATCH", str(receipt.get("comparator_version")))
     if receipt.get("snapshot_imported") is not True:

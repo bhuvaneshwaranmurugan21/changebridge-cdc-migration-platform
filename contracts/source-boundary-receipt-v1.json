@@ -6,6 +6,7 @@
   "additionalProperties": false,
   "required": [
     "receipt_version",
+    "capture_method",
     "repository_commit",
     "repository_tree",
     "generation_id",
@@ -34,6 +35,7 @@
   ],
   "properties": {
     "receipt_version": {"const": "source-boundary-receipt/1.0.0"},
+    "capture_method": {"const": "postgres-logical-slot-exported-snapshot/1.0.0"},
     "repository_commit": {"$ref": "#/$defs/sha"},
     "repository_tree": {"$ref": "#/$defs/sha"},
     "generation_id": {"type": "string", "pattern": "^generation-[0-9a-f]{24}$"},

@@ -16,6 +16,7 @@ from psycopg2.extras import LogicalReplicationConnection  # type: ignore[import-
 from changebridge.contracts import ContractError, semantic_digest
 from changebridge.source_boundary import (
     BOUNDARY_RECEIPT_VERSION,
+    CAPTURE_METHOD,
     LSN_COMPARATOR_VERSION,
     POSTGRES_IMAGE,
     FrontierRegistry,
@@ -380,6 +381,7 @@ def capture_boundary(
             "state": generation_states[-1],
         }
         receipt: dict[str, Any] = {
+            "capture_method": CAPTURE_METHOD,
             "cleanup": {"slot_dropped": slot_dropped},
             "comparator_version": LSN_COMPARATOR_VERSION,
             "first_post_boundary_position": first_position,

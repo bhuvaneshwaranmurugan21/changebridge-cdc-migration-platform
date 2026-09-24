@@ -9,6 +9,7 @@ from hypothesis import strategies as st
 from changebridge.contracts import ContractError, compare_source_positions, source_position_key
 from changebridge.source_boundary import (
     BOUNDARY_RECEIPT_VERSION,
+    CAPTURE_METHOD,
     LSN_COMPARATOR_VERSION,
     FrontierRegistry,
     PostgresSettings,
@@ -54,12 +55,18 @@ def test_empty_lsn_is_rejected_as_empty() -> None:
 def _receipt() -> dict[str, object]:
     return {
         "receipt_version": BOUNDARY_RECEIPT_VERSION,
+        "capture_method": CAPTURE_METHOD,
         "generation_id": "generation-" + "a" * 24,
         "workload_id": "b" * 64,
         "schema_set_digest": "c" * 64,
         "source_identity_digest": "d" * 64,
         "snapshot_frontier": _position(1, 255),
         "first_post_boundary_position": _position(1, 256),
+        "first_post_boundary_change_position": _position(1, 255),
+        "first_post_boundary_transaction_sha256": "f" * 64,
+        "post_boundary_observations": [
+            {"observed_transaction_id_sha256": "f" * 64}
+        ],
         "comparator_version": LSN_COMPARATOR_VERSION,
         "snapshot_imported": True,
         "cleanup": {"slot_dropped": True},
@@ -147,6 +154,22 @@ def test_incomparable_position_kind_is_rejected() -> None:
     receipt = _receipt()
     receipt["first_post_boundary_position"] = {"kind": "integer", "value": "256"}
     with pytest.raises(ContractError, match="CBSNP001_NON_POSTGRES_FRONTIER"):
+        _validate(receipt)
+
+
+def test_unqualified_current_wal_capture_method_is_rejected() -> None:
+    receipt = _receipt()
+    receipt["capture_method"] = "pg-current-wal-lsn-only"
+    with pytest.raises(ContractError, match="CBSNP020_UNQUALIFIED_CAPTURE_METHOD"):
+        _validate(receipt)
+
+
+def test_missing_first_transaction_is_rejected_as_boundary_gap() -> None:
+    receipt = _receipt()
+    receipt["post_boundary_observations"] = [
+        {"observed_transaction_id_sha256": "e" * 64}
+    ]
+    with pytest.raises(ContractError, match="CBSNP019_FIRST_TRANSACTION_GAP"):
         _validate(receipt)
 
 
