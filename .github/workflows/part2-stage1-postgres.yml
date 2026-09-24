@@ -7,8 +7,14 @@ on:
       - .github/workflows/part2-stage1-postgres.yml
       - pyproject.toml
       - scripts/probe_postgres_replication.py
+      - scripts/run_stage21_postgres_lab.py
+      - scripts/stage21_postgres_adapter.py
       - src/changebridge/source_boundary.py
       - src/changebridge/source_workload.py
+      - contracts/order-items-v1.json
+      - contracts/orders-v1.1.json
+      - contracts/source-boundary-receipt-v1.json
+      - contracts/source-workload-spec-v1.json
       - migrations/source/**
       - tests/integration/**
   pull_request:
@@ -16,8 +22,14 @@ on:
       - .github/workflows/part2-stage1-postgres.yml
       - pyproject.toml
       - scripts/probe_postgres_replication.py
+      - scripts/run_stage21_postgres_lab.py
+      - scripts/stage21_postgres_adapter.py
       - src/changebridge/source_boundary.py
       - src/changebridge/source_workload.py
+      - contracts/order-items-v1.json
+      - contracts/orders-v1.1.json
+      - contracts/source-boundary-receipt-v1.json
+      - contracts/source-workload-spec-v1.json
       - migrations/source/**
       - tests/integration/**
 
@@ -53,6 +65,7 @@ jobs:
       PGDATABASE: changebridge
       PGUSER: changebridge
       PGPASSWORD: stage21-local-only
+      CB_SOURCE_SCHEMA: cb_stage21_probe
 
     steps:
       - uses: actions/checkout@v4
@@ -90,7 +103,21 @@ jobs:
           cache: pip
 
       - name: Install the authorized probe toolchain
-        run: python -m pip install -e '.[dev]' 'psycopg2-binary==2.9.12'
+        run: python -m pip install -e '.[dev]'
 
       - name: Prove exported-snapshot replication compatibility
         run: python scripts/probe_postgres_replication.py
+
+      - name: Execute the real PostgreSQL boundary laboratory
+        env:
+          CB_RUN_POSTGRES_INTEGRATION: "1"
+          STAGE21_LAB_OUTPUT: /tmp/stage21-postgres-lab.json
+        run: pytest -m postgres_integration tests/integration --no-cov
+
+      - name: Upload normalized Stage 2.1 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage21-postgres-lab-${{ github.sha }}
+          path: /tmp/stage21-postgres-lab.json
+          if-no-files-found: error
+          retention-days: 7

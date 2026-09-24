@@ -1,0 +1,57 @@
+{
+  "catalog_version": "part2-stage1/1.0.0",
+  "extends": {
+    "authority_path": "contracts/catalog.json",
+    "policy": "additive extension; the Part 1 catalog remains byte-identical"
+  },
+  "contracts": [
+    {
+      "id": "orders_source_contract_v1_1",
+      "version": "1.1.0",
+      "authority_path": "contracts/orders-v1.1.json",
+      "owner": "schema-registry",
+      "producers": ["source-workload-driver"],
+      "consumers": ["snapshot-reader", "source-history-oracle"],
+      "compatibility_class": "ADDITIVE_MINOR",
+      "canonicalization_profile": "changebridge-canonical-json/1.0.0",
+      "unknown_field_policy": "REJECT",
+      "requirement_ids": ["CB-SCHEMA-001", "CB-BOUNDARY-001"]
+    },
+    {
+      "id": "order_items_source_contract",
+      "version": "1.0.0",
+      "authority_path": "contracts/order-items-v1.json",
+      "owner": "schema-registry",
+      "producers": ["source-workload-driver"],
+      "consumers": ["snapshot-reader", "source-history-oracle"],
+      "compatibility_class": "STRICT_MAJOR_ADDITIVE_MINOR",
+      "canonicalization_profile": "changebridge-canonical-json/1.0.0",
+      "unknown_field_policy": "REJECT",
+      "requirement_ids": ["CB-SCHEMA-001", "CB-BOUNDARY-001"]
+    },
+    {
+      "id": "source_workload_spec",
+      "version": "1.0.0",
+      "authority_path": "contracts/source-workload-spec-v1.json",
+      "owner": "source-workload-driver",
+      "producers": ["source-workload-planner"],
+      "consumers": ["source-workload-driver", "source-history-oracle"],
+      "compatibility_class": "STRICT_MAJOR_ADDITIVE_MINOR",
+      "canonicalization_profile": "changebridge-canonical-json/1.0.0",
+      "unknown_field_policy": "REJECT",
+      "requirement_ids": ["CB-EVIDENCE-001", "CB-BOUNDARY-001"]
+    },
+    {
+      "id": "source_boundary_receipt",
+      "version": "1.0.0",
+      "authority_path": "contracts/source-boundary-receipt-v1.json",
+      "owner": "source-boundary-capture",
+      "producers": ["postgres-source-adapter"],
+      "consumers": ["generation-controller", "stage21-validator", "stage22-cdc-capture"],
+      "compatibility_class": "STRICT_MAJOR_ADDITIVE_MINOR",
+      "canonicalization_profile": "changebridge-canonical-json/1.0.0",
+      "unknown_field_policy": "REJECT",
+      "requirement_ids": ["CB-BOUNDARY-001", "CB-ORDER-003", "CB-EVIDENCE-001"]
+    }
+  ]
+}

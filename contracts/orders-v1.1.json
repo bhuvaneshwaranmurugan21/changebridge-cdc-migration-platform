@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:orders:v1.1",
+  "title": "Order after the controlled Stage 2.1 additive transition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["order_id", "customer_id", "amount", "campaign_id", "source_note"],
+  "properties": {
+    "order_id": {"type": "string", "minLength": 1},
+    "customer_id": {"type": "string", "minLength": 1},
+    "amount": {"type": "integer", "minimum": 0},
+    "campaign_id": {"type": ["string", "null"]},
+    "source_note": {"type": ["string", "null"]}
+  }
+}

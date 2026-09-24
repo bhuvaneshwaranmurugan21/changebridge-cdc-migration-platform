@@ -23,8 +23,8 @@ jobs:
       - run: ruff check .
       - run: mypy src
       - run: pytest
-      - name: Validate Part 1 closure authority
-        run: python scripts/validate_part1_closure.py
+      - name: Validate frozen Part 1 closure authority
+        run: python scripts/validate_part1_frozen.py
       - name: Validate Stage 5 evidence binding
         run: python scripts/build_stage5_evidence.py --check
       - name: Regenerate deterministic evidence
