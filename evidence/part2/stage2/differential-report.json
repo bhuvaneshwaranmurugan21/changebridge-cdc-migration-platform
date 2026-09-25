@@ -1,0 +1,32 @@
+{
+  "accepted_count": 5,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "differential_report",
+  "fixture_record_digests": [
+    "44c77d6588fb2078ea438077505b29c93fe07646d58ae1602bb2a7a307480f8f",
+    "179483a0f9bdbcf5e5e7bec2b0938781b1786fe636f2d1c24cb306eb091f9432",
+    "aa384dd60800bf1a0baf4d0359e7273dc8ef578645d2da52095ad279196d4836",
+    "a5091284401629ed7a69e2e7a77ec39ce275a0131412cdab1e965f8686dd8c74",
+    "5bad354aad0056290a2a1847ca6a76e787c9629484ac53d987af84abbffb1549"
+  ],
+  "limitations": [
+    "Proof covers one explicit synthetic local DMS/S3-shaped profile and immutable fixtures.",
+    "No AWS DMS, S3, target apply, Spark, Iceberg, checkpoint, reconciliation, performance, availability, cost, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "05696e2b0c66aae691b9c41ab32ece0b627de5a9",
+  "source_history_digest": "61b6a6af3a3befa54f80a17cbf65278bb35a72cbb70a59bf6c86cd0460a00634",
+  "source_tree": "94e695b9d7f506f82006ce5d14275015b4d0889c",
+  "stage": 2,
+  "supported_operation_set": [
+    "delete",
+    "insert",
+    "snapshot",
+    "update"
+  ],
+  "verdict": "MATCH"
+}

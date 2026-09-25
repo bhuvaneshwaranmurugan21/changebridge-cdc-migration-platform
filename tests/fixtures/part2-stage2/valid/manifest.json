@@ -1,0 +1,106 @@
+{
+  "canonicalization_version": "changebridge-canonical-json/1.0.0",
+  "creation_tool_version": "changebridge-stage22-fixture-builder/1.0.0",
+  "declared_object_paths": [
+    "objects/snapshot-insert.json",
+    "objects/update-delete.jsonl",
+    "objects/post-boundary.parquet"
+  ],
+  "fixture_set_digest": "39a296105c0db1f04955da6cf0f9c6fb8f8e7d845d7ef5a7dd3c82bbb2953537",
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "manifest_id": "2946f0f6c0437e9356c65ac8657bc74aee1e98279c944aaf2245ebf53e444af4",
+  "manifest_version": "raw-landing-manifest/1.0.0",
+  "max_record_bytes": 262144,
+  "object_end_frontier": {
+    "kind": "postgres_lsn",
+    "value": "0/194FF20"
+  },
+  "objects": [
+    {
+      "byte_length": 2615,
+      "compression": "none",
+      "end_inclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FC20"
+      },
+      "format": "json",
+      "object_id": "object-json-001",
+      "object_sequence": 1,
+      "path": "objects/snapshot-insert.json",
+      "row_count": 2,
+      "sha256": "efe45935488e8ec6aacec440b27a3ab5d7459097af9025bd72a7a5b8cf7ea9a7",
+      "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+      "source_contract_id": "orders_source_contract_v1_1",
+      "source_contract_version": "1.1.0",
+      "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+      "source_table": "orders",
+      "start_exclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FB20"
+      }
+    },
+    {
+      "byte_length": 2143,
+      "compression": "none",
+      "end_inclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FE20"
+      },
+      "format": "jsonl",
+      "object_id": "object-jsonl-002",
+      "object_sequence": 2,
+      "path": "objects/update-delete.jsonl",
+      "row_count": 2,
+      "sha256": "fd147373a808ab93e509771ee6f79048d7abedb3d8d9b885ce70cf9c01b5fa67",
+      "source_contract_digest": "2a7c9746590b17b2e70b103932a0aeb249a54eb287495a198568f9a1fffda199",
+      "source_contract_id": "orders_source_contract",
+      "source_contract_version": "1.0.0",
+      "source_schema_digest": "2a7c9746590b17b2e70b103932a0aeb249a54eb287495a198568f9a1fffda199",
+      "source_table": "orders",
+      "start_exclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FC20"
+      }
+    },
+    {
+      "byte_length": 6404,
+      "compression": "snappy",
+      "end_inclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FF20"
+      },
+      "format": "parquet",
+      "object_id": "object-parquet-003",
+      "object_sequence": 3,
+      "path": "objects/post-boundary.parquet",
+      "row_count": 1,
+      "sha256": "bc171badd3da142889772eab12d7aa47f1b5a7f0c711636d89bf5bf9eb4ae2fa",
+      "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+      "source_contract_id": "orders_source_contract_v1_1",
+      "source_contract_version": "1.1.0",
+      "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+      "source_table": "orders",
+      "start_exclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FE20"
+      }
+    }
+  ],
+  "observed_at": "2024-03-01T00:00:10.000000Z",
+  "producer_settings_digest": "fb9e4eb7267c25cdd4ca91026a6f34c95208120600374c6c06d9ba2c8745fc6c",
+  "profile_id": "changebridge.synthetic-dms-s3.full-images",
+  "profile_version": "1.0.0",
+  "provenance": "SYNTHETIC_CONTRACT_FIXTURE",
+  "run_id": "stage22-synthetic-normalization-run-001",
+  "source_history_digest": "61b6a6af3a3befa54f80a17cbf65278bb35a72cbb70a59bf6c86cd0460a00634",
+  "stage1_boundary_receipt_digest": "bfa112e71e129e8e1c84df0809c46600591867831b391e17cfb28f6eaae88448",
+  "stage1_snapshot_frontier": {
+    "kind": "postgres_lsn",
+    "value": "0/194FB20"
+  },
+  "start_exclusive_frontier": {
+    "kind": "postgres_lsn",
+    "value": "0/194FB20"
+  },
+  "workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd"
+}

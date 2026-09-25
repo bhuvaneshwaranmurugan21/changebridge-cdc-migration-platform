@@ -1,0 +1,32 @@
+{
+  "all_byte_identical": true,
+  "clean_run_count": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "determinism_report",
+  "limitations": [
+    "Proof covers one explicit synthetic local DMS/S3-shaped profile and immutable fixtures.",
+    "No AWS DMS, S3, target apply, Spark, Iceberg, checkpoint, reconciliation, performance, availability, cost, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "output_files": {
+    "canonical.json": {
+      "byte_identical": true,
+      "sha256": "5340b9d1246857dd98ffaf2842b7887bc71f6fe373b271b7afa7b7fff4d7d95e"
+    },
+    "quarantine.json": {
+      "byte_identical": true,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "report.json": {
+      "byte_identical": true,
+      "sha256": "e08bce1671a5194dfaf818c79eb285407691f1c020bb4d27232b2007f2740d8e"
+    }
+  },
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "05696e2b0c66aae691b9c41ab32ece0b627de5a9",
+  "source_tree": "94e695b9d7f506f82006ce5d14275015b4d0889c",
+  "stage": 2
+}

@@ -78,11 +78,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "versioned schema validation plus round-trip and property tests",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/model.py", "contracts/cdc-envelope-v1.schema.json", "src/changebridge/contracts.py"],
-      "proof_paths": ["tests/test_contract_oracle_authority.py", "tests/fixtures/contract-oracle-authority/valid-cdc-event.json"],
+      "implementation_paths": ["src/changebridge/model.py", "contracts/cdc-envelope-v1.schema.json", "src/changebridge/contracts.py", "src/changebridge/normalizer.py"],
+      "proof_paths": ["tests/test_contract_oracle_authority.py", "tests/fixtures/contract-oracle-authority/valid-cdc-event.json", "tests/test_part2_stage2_normalizer.py", "evidence/part2/stage2/normalization-report.json"],
       "failure_condition": "Any required source semantic is absent, ambiguous, lossy, or excluded from replay identity.",
-      "limitations": "The v1 envelope and local reference validator are complete, but the existing runtime model and managed transport do not yet emit the envelope.",
-      "review_notes": "Stage 4 supplies contract-level LOCAL_VERIFIED proof while runtime conformance remains Part 2 work."
+      "limitations": "The v1 envelope and one explicit synthetic local profile now have runtime conformance proof. AWS DMS emission and managed transport remain unverified.",
+      "review_notes": "Part 2 Stage 2 adds local manifest-normalizer conformance without promoting a managed-service claim."
     },
     {
       "id": "CB-ORDER-002",
@@ -118,11 +118,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "ordering oracle, permutation property tests, and managed transaction-order evidence",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/engine.py", "src/changebridge/contracts.py", "src/changebridge/source_workload.py"],
-      "proof_paths": ["tests/test_contract_oracle_authority.py", "tests/test_source_workload.py", "evidence/part2/stage1/source-history-ledger.json", "evidence/part2/stage1/determinism-report.json"],
+      "implementation_paths": ["src/changebridge/engine.py", "src/changebridge/contracts.py", "src/changebridge/source_workload.py", "src/changebridge/normalizer.py"],
+      "proof_paths": ["tests/test_contract_oracle_authority.py", "tests/test_source_workload.py", "tests/test_part2_stage2_normalizer.py", "evidence/part2/stage1/source-history-ledger.json", "evidence/part2/stage1/determinism-report.json", "evidence/part2/stage2/determinism-report.json"],
       "failure_condition": "Equivalent immutable inputs can produce different event order or target state.",
-      "limitations": "Typed ordering and deterministic PostgreSQL source commit order are locally verified; DMS envelope order and target-apply conformance remain unverified.",
-      "review_notes": "Stage 2.1 adds an explicit source commit schedule without claiming downstream preservation."
+      "limitations": "Typed source order and local envelope ordering are verified for the explicit synthetic profile; AWS DMS delivery and target-apply conformance remain unverified.",
+      "review_notes": "Part 2 Stage 2 proves numeric LSN and source-sequence ordering independent of arrival and time."
     },
     {
       "id": "CB-ORDER-004",
@@ -138,11 +138,11 @@
       "owner_stage": "part2-runtime",
       "verification_method": "multi-event transaction tests and failure injection at each apply boundary",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/model.py", "src/changebridge/engine.py", "src/changebridge/source_workload.py", "scripts/stage21_postgres_adapter.py"],
-      "proof_paths": ["tests/test_engine.py", "tests/test_source_workload.py", "evidence/part2/stage1/source-history-ledger.json", "future:tests/test_transaction_atomicity.py"],
+      "implementation_paths": ["src/changebridge/model.py", "src/changebridge/engine.py", "src/changebridge/source_workload.py", "src/changebridge/normalizer.py", "scripts/stage21_postgres_adapter.py"],
+      "proof_paths": ["tests/test_engine.py", "tests/test_source_workload.py", "tests/test_part2_stage2_normalizer.py", "evidence/part2/stage1/source-history-ledger.json", "evidence/part2/stage2/normalization-report.json", "future:tests/test_transaction_atomicity.py"],
       "failure_condition": "A subset of a committed source transaction becomes visible or checkpointed.",
-      "limitations": "Source transaction boundaries and observed PostgreSQL commits are locally recorded; DMS normalization and target atomicity remain unverified.",
-      "review_notes": "Stage 2.1 establishes authoritative source boundaries that later stages must preserve."
+      "limitations": "Source boundaries and local normalization transaction metadata are verified for the explicit synthetic profile; target atomicity remains unverified.",
+      "review_notes": "Part 2 Stage 2 preserves transaction and event sequences through the canonical envelope."
     },
     {
       "id": "CB-APPLY-001",

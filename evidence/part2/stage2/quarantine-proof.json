@@ -1,0 +1,20 @@
+{
+  "accepted_quarantine_mutual_exclusion": "PASS",
+  "adversarial_test_module": "tests/test_part2_stage2_normalizer.py",
+  "closed_reason_code_count": 29,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "quarantine_proof",
+  "limitations": [
+    "Proof covers one explicit synthetic local DMS/S3-shaped profile and immutable fixtures.",
+    "No AWS DMS, S3, target apply, Spark, Iceberg, checkpoint, reconciliation, performance, availability, cost, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "05696e2b0c66aae691b9c41ab32ece0b627de5a9",
+  "source_tree": "94e695b9d7f506f82006ce5d14275015b4d0889c",
+  "stage": 2,
+  "valid_run_quarantine_count": 0
+}
