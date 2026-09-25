@@ -166,6 +166,16 @@ This is local contract evidence, not proof of AWS DMS emission, S3 delivery, man
 target application, or production readiness. See the
 [Stage 2 boundary](docs/part2/stage2/NORMALIZATION_BOUNDARY.md).
 
+<!-- claim:CB-CLAIM-013 -->
+The complete accepted 72-row snapshot at S is locally loaded through real Spark 3.5.9 into
+generation-isolated Iceberg 1.11.0 tables; identical replay creates no new target snapshot, and a
+process killed after Iceberg commit recovers from checksum-pinned commit metadata without
+rewriting.
+
+This is bounded local proof using a filesystem Hadoop catalog and SQLite control store, not AWS,
+post-`S` CDC application, publication, performance, or production-readiness proof. See the [Stage 3
+boundary](docs/part2/stage3/SNAPSHOT_GENERATION_BOUNDARY.md).
+
 <!-- claim:CB-CLAIM-010 -->
 Stage 1 reproduced the committed local simulation byte-for-byte and bound that verification to
 merged main; the older simulation payload itself still lacks embedded commit, command, and tool

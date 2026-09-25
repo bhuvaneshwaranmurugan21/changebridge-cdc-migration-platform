@@ -10,7 +10,7 @@
     "part":{"const":2},
     "stage":{"const":3},
     "evidence_type":{"type":"string","minLength":1},
-    "evidence_label":{"const":"LOCAL_VERIFIED"},
+    "evidence_label":{"enum":["LOCAL_VERIFIED","PENDING_EXTERNAL_CLOSURE"]},
     "source_commit":{"type":"string","pattern":"^[0-9a-f]{40}$"},
     "source_tree":{"type":"string","pattern":"^[0-9a-f]{40}$"},
     "result":{"enum":["PASS","PENDING_EXTERNAL_CLOSURE"]},

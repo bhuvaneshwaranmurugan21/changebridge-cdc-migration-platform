@@ -82,6 +82,8 @@ ALLOWED_PREFIXES = (
     "src/changebridge/snapshot_handoff.py",
     "src/changebridge/snapshot_loader.py",
     "tests/fixtures/part2-stage3/",
+    "tests/fixtures/architecture-authority/valid-authority.json",
+    "tests/fixtures/completion-authority/valid-authority.json",
     "tests/integration/test_stage23_iceberg_snapshot.py",
     "tests/test_part2_stage3_validator.py",
     "tests/test_stage23_generation_registry.py",
