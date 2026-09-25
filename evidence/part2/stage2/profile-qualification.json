@@ -29,7 +29,7 @@
   "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
   "result": "PASS",
   "schema_version": "1.0.0",
-  "source_commit": "05696e2b0c66aae691b9c41ab32ece0b627de5a9",
+  "source_commit": "60c9aed623291ad607b536b5223dbb2ca1747fdf",
   "source_tree": "94e695b9d7f506f82006ce5d14275015b4d0889c",
   "stage": 2
 }

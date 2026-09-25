@@ -3,67 +3,67 @@
   "artifacts": [
     {
       "path": "evidence/part2/stage2/authority-transition.json",
-      "sha256": "7f76440297ff407949c93764a2b234d94d536bc6ce354120eeb3da16b240d768"
+      "sha256": "a5be44ecfbb5d708db3ab9cf33a2feeb750d1bceae1871ed84e80dcaa3dc1033"
     },
     {
       "path": "evidence/part2/stage2/claim-impact-review.json",
-      "sha256": "86c4b827336418b65c6b63312aef7c0aaa1168e41e836f98d773739fd3ddff67"
+      "sha256": "97fcdb1c4159e99cdf6c0d5ef41e948d47afbd7a93e8c12a89232edd50ae1c38"
     },
     {
       "path": "evidence/part2/stage2/dependency-decision.json",
-      "sha256": "66648fe8cbb1f6894ae94b9c819e17208bb45d88c65810e5d66e7a6af90fd59d"
+      "sha256": "09579f9e8eb15a03b713124a301ee08edcf3be583345705c770e472cfd475b18"
     },
     {
       "path": "evidence/part2/stage2/determinism-report.json",
-      "sha256": "65bd5782a43618a79fa22bcd28983a8866d464fcf3349536754340905472037a"
+      "sha256": "ed04e1264ea590af63b9ed651102dc98b25de3d3a75bcdddb9a6b783fa5f7618"
     },
     {
       "path": "evidence/part2/stage2/differential-report.json",
-      "sha256": "9364e99d3bb5589dd8e8b2c8b16ecff3720e7b0f1c2ff38cf7beff9957209dff"
+      "sha256": "765fdd769f7e5d30f2b5b957c17173dc14e916322f357faafd48408c1a340a62"
     },
     {
       "path": "evidence/part2/stage2/execution-envelope.json",
-      "sha256": "171c6b7a6220bae9c0b95dc96c062bd4a1e1f10d6dd5ef6799cfadfcda772fa5"
+      "sha256": "f7c8c7e44738b773d9315c06f0dbfe22bc73730133b86da050447d1cd43eb102"
     },
     {
       "path": "evidence/part2/stage2/file-manifest.json",
-      "sha256": "8937bf9107b57e4fb0b2139700e0d7a9d52c1caae5333064723ef43d3c8fc815"
+      "sha256": "d510f6d7f027ac2c4c3beee8ca50c88410815ca982041467015e9d6b186660f6"
     },
     {
       "path": "evidence/part2/stage2/fixture-provenance.json",
-      "sha256": "10dbf0138a5a9d37ae9c1fcb8090b3151350317d393b2db8db47195cc272638a"
+      "sha256": "3edad1e54a767787a496bbe6b1789b38666568831521a96c3a4e959adb654aad"
     },
     {
       "path": "evidence/part2/stage2/normalization-report.json",
-      "sha256": "156754dc3b47507b4ae853bf681572098daab9ce08f1e67623123da4ed9b9e80"
+      "sha256": "6801fbf442f7e951ed7bd2f80cbf18dfc819d44e0489a50f226af25701f68462"
     },
     {
       "path": "evidence/part2/stage2/overlap-register.json",
-      "sha256": "a2eb9ba144aedde24ee2a570dc882d59a13f47d70f7102959633aa2b925cf985"
+      "sha256": "64c47ecac70a134dc4c2f64f1b0b72f471dfa2e0777ed56eb4cedf80ecd3f05e"
     },
     {
       "path": "evidence/part2/stage2/profile-qualification.json",
-      "sha256": "0a260faa4e6bf73cd0f0a5450d25965c7ccf5c9d000a28604356bbe700821336"
+      "sha256": "0b63c47c36878987686ddd28cd80fade16e43d9d4ce8e1cad5ee1de5ebd7b1dc"
     },
     {
       "path": "evidence/part2/stage2/protected-predecessor-baseline.json",
-      "sha256": "411a7cc6733128cf5b4bef49345e1c92d4449307419032d82239cbdf7b670d7e"
+      "sha256": "aa71e5a42eb7a41a2251c48a488e2abe8f85225db21a3ca29c5ca4d1ebcdd1a2"
     },
     {
       "path": "evidence/part2/stage2/quarantine-proof.json",
-      "sha256": "11e5f6e41a995b6502026daf10304a1e92d912c183f44fcc66bf098675162788"
+      "sha256": "98cd7bbd8ca8b2223d5550bac6bfe4e43ce137f74832818b781b360b2ba2c85a"
     },
     {
       "path": "evidence/part2/stage2/repository-entry.json",
-      "sha256": "74106782ca85065acd9ad23a29079aaba378336d69fd6d37044b9eb7b2fa3a68"
+      "sha256": "394f0fc250a9a43dd31b19bbc23e0ddb1821bd01daef710a3f8dfbf42baf70f5"
     },
     {
       "path": "evidence/part2/stage2/scope-isolation-report.json",
-      "sha256": "abc1543330e898299b82285f3a51a4736b444ef6b588784b1644dfd74a0574f4"
+      "sha256": "e485c6fc6516a8d9f6b6f9de4b24307e3802bc2b6013428c3bd3f47e3c395c47"
     },
     {
       "path": "evidence/part2/stage2/validation-summary.json",
-      "sha256": "257d79a039b0c5469469eededd96081fee0bba413b867580e72d78f85c873e09"
+      "sha256": "c5ab3d83a8bef82e9f2fedaeb205a2c105a0667d43dfa8cf284fd14949303fd5"
     }
   ],
   "evidence_label": "LOCAL_VERIFIED",
@@ -77,7 +77,7 @@
   "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
   "result": "PASS",
   "schema_version": "1.0.0",
-  "source_commit": "05696e2b0c66aae691b9c41ab32ece0b627de5a9",
+  "source_commit": "60c9aed623291ad607b536b5223dbb2ca1747fdf",
   "source_tree": "94e695b9d7f506f82006ce5d14275015b4d0889c",
   "stage": 2
 }
