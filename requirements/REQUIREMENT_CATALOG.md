@@ -346,7 +346,7 @@ Each normalized CDC event MUST preserve source position, transaction identity, o
 
 **Failure condition:** Any required source semantic is absent, ambiguous, lossy, or excluded from replay identity.
 
-**Current limitation:** The v1 envelope and local reference validator are complete, but the existing runtime model and managed transport do not yet emit the envelope.
+**Current limitation:** The v1 envelope and one explicit synthetic local profile now have runtime conformance proof. AWS DMS emission and managed transport remain unverified.
 
 ## CB-ORDER-002 — Contiguous batch chain
 
@@ -376,7 +376,7 @@ Transactions and events MUST be applied in a deterministic order consistent with
 
 **Failure condition:** Equivalent immutable inputs can produce different event order or target state.
 
-**Current limitation:** Typed ordering and deterministic PostgreSQL source commit order are locally verified; DMS envelope order and target-apply conformance remain unverified.
+**Current limitation:** Typed source order and local envelope ordering are verified for the explicit synthetic profile; AWS DMS delivery and target-apply conformance remain unverified.
 
 ## CB-ORDER-004 — Transaction boundary preservation
 
@@ -391,7 +391,7 @@ ChangeBridge MUST preserve source transaction boundaries through normalized inge
 
 **Failure condition:** A subset of a committed source transaction becomes visible or checkpointed.
 
-**Current limitation:** Source transaction boundaries and observed PostgreSQL commits are locally recorded; DMS normalization and target atomicity remain unverified.
+**Current limitation:** Source boundaries and local normalization transaction metadata are verified for the explicit synthetic profile; target atomicity remains unverified.
 
 ## CB-PUBLISH-001 — Proof before publication
 

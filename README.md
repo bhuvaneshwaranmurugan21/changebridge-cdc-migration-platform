@@ -158,6 +158,14 @@ matched logically while their physical LSNs remained run-specific.
 This is local source-boundary proof only; it is not AWS DMS, target-apply, performance, or
 production-readiness proof. See the [Stage 1 authority](docs/part2/stage1/SOURCE_BOUNDARY.md).
 
+<!-- claim:CB-CLAIM-012 -->
+A versioned local adapter deterministically normalizes the declared synthetic DMS/S3-shaped JSON,
+JSONL, and Parquet fixture profile into canonical ChangeBridge envelopes and quarantines malformed
+or ambiguous inputs with stable reason codes.
+This is local contract evidence, not proof of AWS DMS emission, S3 delivery, managed recovery,
+target application, or production readiness. See the
+[Stage 2 boundary](docs/part2/stage2/NORMALIZATION_BOUNDARY.md).
+
 <!-- claim:CB-CLAIM-010 -->
 Stage 1 reproduced the committed local simulation byte-for-byte and bound that verification to
 merged main; the older simulation payload itself still lacks embedded commit, command, and tool

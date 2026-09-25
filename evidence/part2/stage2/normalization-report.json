@@ -1,0 +1,30 @@
+{
+  "accepted_count": 5,
+  "canonical_digest": "c117d659644db7e90e915468f525fa65af3f82a32785efdd1212d1cd53f98cdd",
+  "contract_version": "normalization-report/1.0.0",
+  "duplicate_count": 0,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "normalization_report",
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "limitations": [
+    "Synthetic local contract fixtures; no AWS DMS or S3 execution is claimed.",
+    "No target apply, checkpoint, reconciliation, performance, or production claim is established."
+  ],
+  "manifest_id": "2946f0f6c0437e9356c65ac8657bc74aee1e98279c944aaf2245ebf53e444af4",
+  "normalizer_version": "changebridge-manifest-normalizer/1.0.0",
+  "part": 2,
+  "profile_id": "changebridge.synthetic-dms-s3.full-images",
+  "profile_version": "1.0.0",
+  "project": "ChangeBridge",
+  "quarantine_digest": "af757ab3f2b2d5a778e5f90344d66b3cf67cd1490d710beaa430e31f09583918",
+  "quarantined_count": 0,
+  "raw_record_count": 5,
+  "report_digest": "3cde80bfc4ad997f374777f38c17a237bd0076ef2fd0e9aec315b62bee1a6fb4",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "run_id": "stage22-synthetic-normalization-run-001",
+  "schema_version": "1.0.0",
+  "source_commit": "60c9aed623291ad607b536b5223dbb2ca1747fdf",
+  "source_tree": "94e695b9d7f506f82006ce5d14275015b4d0889c",
+  "stage": 2
+}

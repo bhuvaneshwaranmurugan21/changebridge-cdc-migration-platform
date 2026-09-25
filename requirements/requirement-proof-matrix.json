@@ -352,14 +352,17 @@
     },
     {
       "current_proof_paths": [
+        "evidence/part2/stage2/normalization-report.json",
         "tests/fixtures/contract-oracle-authority/valid-cdc-event.json",
-        "tests/test_contract_oracle_authority.py"
+        "tests/test_contract_oracle_authority.py",
+        "tests/test_part2_stage2_normalizer.py"
       ],
       "future_proof_paths": [],
       "implementation_paths": [
         "contracts/cdc-envelope-v1.schema.json",
         "src/changebridge/contracts.py",
-        "src/changebridge/model.py"
+        "src/changebridge/model.py",
+        "src/changebridge/normalizer.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
       "owner_stage": "part1-stage4",
@@ -386,13 +389,16 @@
       "current_proof_paths": [
         "evidence/part2/stage1/determinism-report.json",
         "evidence/part2/stage1/source-history-ledger.json",
+        "evidence/part2/stage2/determinism-report.json",
         "tests/test_contract_oracle_authority.py",
+        "tests/test_part2_stage2_normalizer.py",
         "tests/test_source_workload.py"
       ],
       "future_proof_paths": [],
       "implementation_paths": [
         "src/changebridge/contracts.py",
         "src/changebridge/engine.py",
+        "src/changebridge/normalizer.py",
         "src/changebridge/source_workload.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
@@ -404,7 +410,9 @@
     {
       "current_proof_paths": [
         "evidence/part2/stage1/source-history-ledger.json",
+        "evidence/part2/stage2/normalization-report.json",
         "tests/test_engine.py",
+        "tests/test_part2_stage2_normalizer.py",
         "tests/test_source_workload.py"
       ],
       "future_proof_paths": [
@@ -414,6 +422,7 @@
         "scripts/stage21_postgres_adapter.py",
         "src/changebridge/engine.py",
         "src/changebridge/model.py",
+        "src/changebridge/normalizer.py",
         "src/changebridge/source_workload.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",

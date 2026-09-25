@@ -112,3 +112,13 @@ A deterministic workload was executed in isolated PostgreSQL 17.11 schemas, and 
 - Limitations: This does not verify AWS DMS position mapping or delivery, downstream normalization, target application, Iceberg behavior, performance, availability, cost, exactly-once delivery, zero downtime, or production readiness.
 - Requirements: `CB-BOUNDARY-001`, `CB-BOUNDARY-002`, `CB-BOUNDARY-003`, `CB-ORDER-003`, `CB-ORDER-004`, `CB-SCHEMA-001`
 - Disposition: `CORRECTED`
+
+## CB-CLAIM-012 — LOCAL_VERIFIED
+
+<!-- claim:CB-CLAIM-012 -->
+A versioned local adapter deterministically normalizes the declared synthetic DMS/S3-shaped JSON, JSONL, and Parquet fixture profile into canonical ChangeBridge envelopes and quarantines malformed or ambiguous inputs with stable reason codes.
+
+- Scope: local manifest normalizer for one explicit synthetic fixture profile
+- Limitations: No AWS DMS emission, S3 delivery, managed retry/recovery, target apply, performance, availability, exactly-once, zero-downtime, or production-readiness proof is established.
+- Requirements: `CB-BOUNDARY-002`, `CB-BOUNDARY-003`, `CB-ORDER-001`, `CB-ORDER-003`, `CB-ORDER-004`, `CB-SCHEMA-001`, `CB-SCHEMA-002`, `CB-EVIDENCE-001`
+- Disposition: `CORRECTED`

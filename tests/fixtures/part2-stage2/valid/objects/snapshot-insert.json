@@ -1,0 +1,77 @@
+[
+  {
+    "after": {
+      "amount": 1250,
+      "campaign_id": null,
+      "customer_id": "José-🧪-528935",
+      "order_id": "order-001",
+      "source_note": "reviewed"
+    },
+    "before": null,
+    "commit_lsn": "0/194FB20",
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "event_sequence": 1,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-001"
+      }
+    ],
+    "profile_id": "changebridge.synthetic-dms-s3.full-images",
+    "profile_version": "1.0.0",
+    "record_kind": "snapshot",
+    "run_id": "stage22-synthetic-normalization-run-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:orders",
+    "transaction_sequence": 0
+  },
+  {
+    "after": {
+      "amount": 2000,
+      "campaign_id": "campaign-a",
+      "customer_id": "customer-528935-2",
+      "order_id": "order-002"
+    },
+    "before": null,
+    "commit_lsn": "0/194FC20",
+    "committed_at": "2024-03-01T00:00:01.000000Z",
+    "event_sequence": 1,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "insert",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-002"
+      }
+    ],
+    "profile_id": "changebridge.synthetic-dms-s3.full-images",
+    "profile_version": "1.0.0",
+    "record_kind": "cdc",
+    "run_id": "stage22-synthetic-normalization-run-001",
+    "source_contract_digest": "2a7c9746590b17b2e70b103932a0aeb249a54eb287495a198568f9a1fffda199",
+    "source_contract_id": "orders_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_schema": "public",
+    "source_schema_digest": "2a7c9746590b17b2e70b103932a0aeb249a54eb287495a198568f9a1fffda199",
+    "source_schema_version": "orders/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "tx-002-multi-row",
+    "transaction_sequence": 2
+  }
+]

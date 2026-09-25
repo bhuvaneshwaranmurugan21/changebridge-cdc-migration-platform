@@ -1,0 +1,35 @@
+{
+  "capability_matrix": {
+    "before_images": "full",
+    "commit_time": true,
+    "delete_representation": "before_image_and_null_after",
+    "schema_identity": true,
+    "snapshot_markers": true,
+    "source_order": true,
+    "source_position": "postgres_commit_lsn",
+    "transaction_boundaries": true
+  },
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "profile_qualification",
+  "fixture_set_digest": "39a296105c0db1f04955da6cf0f9c6fb8f8e7d845d7ef5a7dd3c82bbb2953537",
+  "formats": [
+    "json",
+    "jsonl",
+    "parquet"
+  ],
+  "limitations": [
+    "Proof covers one explicit synthetic local DMS/S3-shaped profile and immutable fixtures.",
+    "No AWS DMS, S3, target apply, Spark, Iceberg, checkpoint, reconciliation, performance, availability, cost, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "producer_settings_digest": "fb9e4eb7267c25cdd4ca91026a6f34c95208120600374c6c06d9ba2c8745fc6c",
+  "profile_id": "changebridge.synthetic-dms-s3.full-images",
+  "profile_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "60c9aed623291ad607b536b5223dbb2ca1747fdf",
+  "source_tree": "94e695b9d7f506f82006ce5d14275015b4d0889c",
+  "stage": 2
+}

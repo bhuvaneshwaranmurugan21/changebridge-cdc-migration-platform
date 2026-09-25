@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:raw-landing-manifest:1.0.0",
+  "title": "ChangeBridge immutable raw landing manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version", "manifest_id", "canonicalization_version", "profile_id",
+    "profile_version", "producer_settings_digest", "fixture_set_digest",
+    "provenance", "creation_tool_version", "run_id", "generation_id",
+    "workload_id", "source_history_digest", "stage1_boundary_receipt_digest",
+    "stage1_snapshot_frontier", "start_exclusive_frontier", "object_end_frontier",
+    "observed_at", "max_record_bytes", "declared_object_paths", "objects"
+  ],
+  "properties": {
+    "manifest_version": {"const": "raw-landing-manifest/1.0.0"},
+    "manifest_id": {"$ref": "#/$defs/digest"},
+    "canonicalization_version": {"const": "changebridge-canonical-json/1.0.0"},
+    "profile_id": {"const": "changebridge.synthetic-dms-s3.full-images"},
+    "profile_version": {"const": "1.0.0"},
+    "producer_settings_digest": {"$ref": "#/$defs/digest"},
+    "fixture_set_digest": {"$ref": "#/$defs/digest"},
+    "provenance": {"const": "SYNTHETIC_CONTRACT_FIXTURE"},
+    "creation_tool_version": {"const": "changebridge-stage22-fixture-builder/1.0.0"},
+    "run_id": {"type": "string", "minLength": 1},
+    "generation_id": {"type": "string", "minLength": 1},
+    "workload_id": {"$ref": "#/$defs/digest"},
+    "source_history_digest": {"$ref": "#/$defs/digest"},
+    "stage1_boundary_receipt_digest": {"$ref": "#/$defs/digest"},
+    "stage1_snapshot_frontier": {"$ref": "#/$defs/position"},
+    "start_exclusive_frontier": {"$ref": "#/$defs/position"},
+    "object_end_frontier": {"$ref": "#/$defs/position"},
+    "observed_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "max_record_bytes": {"type": "integer", "minimum": 1024, "maximum": 1048576},
+    "declared_object_paths": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[A-Za-z0-9_./-]+$"}
+    },
+    "objects": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": [
+          "object_id", "path", "format", "compression", "byte_length", "sha256",
+          "row_count", "object_sequence", "source_table", "source_contract_id",
+          "source_contract_version", "source_contract_digest", "source_schema_digest",
+          "start_exclusive_frontier", "end_inclusive_frontier"
+        ],
+        "properties": {
+          "object_id": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "format": {"enum": ["json", "jsonl", "parquet"]},
+          "compression": {"enum": ["none", "snappy"]},
+          "byte_length": {"type": "integer", "minimum": 1},
+          "sha256": {"$ref": "#/$defs/digest"},
+          "row_count": {"type": "integer", "minimum": 0},
+          "object_sequence": {"type": "integer", "minimum": 1},
+          "source_table": {"type": "string", "minLength": 1},
+          "source_contract_id": {"type": "string", "minLength": 1},
+          "source_contract_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+          "source_contract_digest": {"$ref": "#/$defs/digest"},
+          "source_schema_digest": {"$ref": "#/$defs/digest"},
+          "start_exclusive_frontier": {"$ref": "#/$defs/position"},
+          "end_inclusive_frontier": {"$ref": "#/$defs/position"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "position": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {"const": "postgres_lsn"},
+        "value": {"type": "string", "pattern": "^[0-9A-F]{1,8}/[0-9A-F]{1,8}$"}
+      }
+    }
+  }
+}

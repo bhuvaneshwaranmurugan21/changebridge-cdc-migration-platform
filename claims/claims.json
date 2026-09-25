@@ -196,6 +196,23 @@
       "owner": "part2-stage1",
       "invalidation_conditions": ["source workload, snapshot capture, comparator, image, or bound integration evidence changes"],
       "disposition": "CORRECTED"
+    },
+    {
+      "id": "CB-CLAIM-012",
+      "source_claim_ids": ["PART2-STAGE2-CDC-NORMALIZATION"],
+      "approved_wording": "A versioned local adapter deterministically normalizes the declared synthetic DMS/S3-shaped JSON, JSONL, and Parquet fixture profile into canonical ChangeBridge envelopes and quarantines malformed or ambiguous inputs with stable reason codes.",
+      "scope": "local manifest normalizer for one explicit synthetic fixture profile",
+      "label": "LOCAL_VERIFIED",
+      "requirement_ids": ["CB-BOUNDARY-002", "CB-BOUNDARY-003", "CB-ORDER-001", "CB-ORDER-003", "CB-ORDER-004", "CB-SCHEMA-001", "CB-SCHEMA-002", "CB-EVIDENCE-001"],
+      "proof_refs": ["evidence/part2/stage2/normalization-report.json", "evidence/part2/stage2/determinism-report.json", "evidence/part2/stage2/quarantine-proof.json", "tests/test_part2_stage2_normalizer.py"],
+      "producing_commit": "05696e2b0c66aae691b9c41ab32ece0b627de5a9",
+      "producing_run": "stage22-synthetic-normalization-run-001",
+      "limitations": "No AWS DMS emission, S3 delivery, managed retry/recovery, target apply, performance, availability, exactly-once, zero-downtime, or production-readiness proof is established.",
+      "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-012"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-012"}],
+      "review_status": "APPROVED",
+      "owner": "part2-stage2",
+      "invalidation_conditions": ["profile, manifest, fixture, identity, ordering, quarantine, or normalizer behavior changes"],
+      "disposition": "CORRECTED"
     }
   ]
 }

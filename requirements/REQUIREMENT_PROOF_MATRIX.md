@@ -26,10 +26,10 @@ Generated deterministically from the authoritative requirements registry.
 | `CB-OPS-002` | `PARTIAL` | `AWS_VERIFIED` | `part3-managed-proof` | None | `future:evidence/managed/operations.json` |
 | `CB-OPS-003` | `UNSATISFIED` | `AWS_VERIFIED` | `part3-managed-proof` | None | `future:evidence/managed/stage-receipt.json` |
 | `CB-OPS-004` | `UNSATISFIED` | `MEASURED` | `part3-managed-proof` | None | `future:evidence/managed/measurements.json` |
-| `CB-ORDER-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `tests/fixtures/contract-oracle-authority/valid-cdc-event.json`<br>`tests/test_contract_oracle_authority.py` | None |
+| `CB-ORDER-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/part2/stage2/normalization-report.json`<br>`tests/fixtures/contract-oracle-authority/valid-cdc-event.json`<br>`tests/test_contract_oracle_authority.py`<br>`tests/test_part2_stage2_normalizer.py` | None |
 | `CB-ORDER-002` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_engine.py` | None |
-| `CB-ORDER-003` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/part2/stage1/determinism-report.json`<br>`evidence/part2/stage1/source-history-ledger.json`<br>`tests/test_contract_oracle_authority.py`<br>`tests/test_source_workload.py` | None |
-| `CB-ORDER-004` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/part2/stage1/source-history-ledger.json`<br>`tests/test_engine.py`<br>`tests/test_source_workload.py` | `future:tests/test_transaction_atomicity.py` |
+| `CB-ORDER-003` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/part2/stage1/determinism-report.json`<br>`evidence/part2/stage1/source-history-ledger.json`<br>`evidence/part2/stage2/determinism-report.json`<br>`tests/test_contract_oracle_authority.py`<br>`tests/test_part2_stage2_normalizer.py`<br>`tests/test_source_workload.py` | None |
+| `CB-ORDER-004` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/part2/stage1/source-history-ledger.json`<br>`evidence/part2/stage2/normalization-report.json`<br>`tests/test_engine.py`<br>`tests/test_part2_stage2_normalizer.py`<br>`tests/test_source_workload.py` | `future:tests/test_transaction_atomicity.py` |
 | `CB-PUBLISH-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/local-simulation.json`<br>`tests/test_contract_oracle_authority.py`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-002` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
