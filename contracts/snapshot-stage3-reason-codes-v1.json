@@ -1,0 +1,7 @@
+{
+  "schema_version":"1.0.0",
+  "registry_id":"changebridge.snapshot-stage3.reason-codes",
+  "closed":true,
+  "prefixes":{"generation":"CBG","iceberg":"CBI","loader":"CBL","validator":"CB23V"},
+  "policy":"Unknown or unclassified failures are terminal; no reason is inferred or downgraded."
+}

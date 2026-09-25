@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0.0",
+  "contract_id":"changebridge.snapshot-generation",
+  "contract_version":"1.0.0",
+  "snapshot_frontier":{"kind":"postgres_lsn","value":"0/194FB20"},
+  "states":["CREATED","SNAPSHOT_LOADING","CDC_APPLYING","ACTIVE","PUBLISHED","ROLLED_BACK","REJECTED","RETIRED"],
+  "stage3_transitions":[["CREATED","SNAPSHOT_LOADING"],["SNAPSHOT_LOADING","CDC_APPLYING"]],
+  "required_tables":{"orders":6,"order_items":66},
+  "required_shards":["snapshot-orders-001","snapshot-order_items-001"],
+  "write_authority":["CREATED","SNAPSHOT_LOADING"],
+  "stage3_terminal_state":"CDC_APPLYING",
+  "post_s_cdc_applied":0,
+  "publication_allowed":false
+}

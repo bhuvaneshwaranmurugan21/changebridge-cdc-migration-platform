@@ -20,7 +20,7 @@ Generated deterministically from the authoritative requirements registry.
 | `CB-EVIDENCE-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part1-stage2` | `evidence/part1/stage2/determinism-report.json` | None |
 | `CB-EVIDENCE-004` | `SATISFIED` | `LOCAL_VERIFIED` | `part1-stage2` | `tests/fixtures/completion-authority/invalid-cases.json`<br>`tests/test_completion_authority.py` | None |
 | `CB-INTERVIEW-001` | `DEFERRED` | `LOCAL_VERIFIED` | `project-final-interview` | None | `future:evidence/project-completion/interview-rehearsal.json` |
-| `CB-ISOLATION-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage3` | `tests/test_engine.py` | `future:tests/model/test_generation_isolation.py` |
+| `CB-ISOLATION-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage3` | `tests/integration/test_stage23_iceberg_snapshot.py`<br>`tests/test_engine.py`<br>`tests/test_stage23_generation_registry.py` | None |
 | `CB-ISOLATION-002` | `UNSATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | None | `future:tests/model/test_replay_isolation.py` |
 | `CB-OPS-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-OPS-002` | `PARTIAL` | `AWS_VERIFIED` | `part3-managed-proof` | None | `future:evidence/managed/operations.json` |
@@ -34,11 +34,11 @@ Generated deterministically from the authoritative requirements registry.
 | `CB-PUBLISH-002` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-004` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | None | `future:evidence/managed/rollback.json`<br>`future:tests/model/test_rollback.py` |
-| `CB-RECON-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage3` | `tests/test_reconciliation.py` | `future:evidence/managed/reconciliation.json` |
+| `CB-RECON-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage3` | `tests/integration/test_stage23_iceberg_snapshot.py`<br>`tests/test_reconciliation.py` | `future:evidence/managed/reconciliation.json` |
 | `CB-RECON-002` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `tests/test_reconciliation.py` | `future:tests/test_hierarchical_reconciliation.py` |
 | `CB-RECON-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_reconciliation.py`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-RELEASE-001` | `DEFERRED` | `LOCAL_VERIFIED` | `final-release` | None | `future:release/release-verification.json` |
-| `CB-SCHEMA-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/part2/stage1/boundary-capture-report.json`<br>`evidence/part2/stage1/source-workload-manifest.json`<br>`tests/test_contract_oracle_authority.py`<br>`tests/test_schema_and_cutover.py`<br>`tests/test_source_workload.py` | None |
+| `CB-SCHEMA-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/part2/stage1/boundary-capture-report.json`<br>`evidence/part2/stage1/source-workload-manifest.json`<br>`tests/integration/test_stage23_iceberg_snapshot.py`<br>`tests/test_contract_oracle_authority.py`<br>`tests/test_schema_and_cutover.py`<br>`tests/test_source_workload.py`<br>`tests/test_stage23_snapshot_handoff.py` | None |
 | `CB-SCHEMA-002` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-SCHEMA-003` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-SEC-001` | `PARTIAL` | `AWS_VERIFIED` | `part3-managed-proof` | None | `future:evidence/managed/security.json` |

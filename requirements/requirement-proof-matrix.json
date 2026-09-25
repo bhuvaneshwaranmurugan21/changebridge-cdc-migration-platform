@@ -262,14 +262,15 @@
     },
     {
       "current_proof_paths": [
-        "tests/test_engine.py"
+        "tests/integration/test_stage23_iceberg_snapshot.py",
+        "tests/test_engine.py",
+        "tests/test_stage23_generation_registry.py"
       ],
-      "future_proof_paths": [
-        "future:tests/model/test_generation_isolation.py"
-      ],
+      "future_proof_paths": [],
       "implementation_paths": [
-        "future:src/changebridge/generation.py",
-        "src/changebridge/engine.py"
+        "src/changebridge/engine.py",
+        "src/changebridge/generation_registry.py",
+        "src/changebridge/iceberg_snapshot.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
       "owner_stage": "part1-stage3",
@@ -498,6 +499,7 @@
     },
     {
       "current_proof_paths": [
+        "tests/integration/test_stage23_iceberg_snapshot.py",
         "tests/test_reconciliation.py"
       ],
       "future_proof_paths": [
@@ -564,9 +566,11 @@
       "current_proof_paths": [
         "evidence/part2/stage1/boundary-capture-report.json",
         "evidence/part2/stage1/source-workload-manifest.json",
+        "tests/integration/test_stage23_iceberg_snapshot.py",
         "tests/test_contract_oracle_authority.py",
         "tests/test_schema_and_cutover.py",
-        "tests/test_source_workload.py"
+        "tests/test_source_workload.py",
+        "tests/test_stage23_snapshot_handoff.py"
       ],
       "future_proof_paths": [],
       "implementation_paths": [
@@ -576,7 +580,9 @@
         "contracts/orders-v1.1.json",
         "contracts/orders-v1.json",
         "contracts/part2-stage1-catalog.json",
+        "src/changebridge/iceberg_snapshot.py",
         "src/changebridge/schema.py",
+        "src/changebridge/snapshot_handoff.py",
         "src/changebridge/source_workload.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",

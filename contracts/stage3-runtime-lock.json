@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "changebridge.local-spark-iceberg-snapshot",
+  "profile_version": "1.0.0",
+  "python": "3.12.14",
+  "java": "OpenJDK 17.0.20",
+  "spark": "3.5.9",
+  "scala_binary": "2.12",
+  "scala_runtime": "2.12.18",
+  "python_packages": [
+    {"name":"pyspark","version":"3.5.9","source_sha256":"ea27f5795a410af045c467fbf8299bd1eb0f4ed97a4526fc974c3c1601163d93"},
+    {"name":"py4j","version":"0.10.9.9","wheel_sha256":"c7c2ab9dcf155f38e74bc18f5c9f85b3ab41086cf99fc5e8529d1612de6f1533"}
+  ],
+  "maven_artifact": {
+    "coordinate":"org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0",
+    "file":"iceberg-spark-runtime-3.5_2.12-1.11.0.jar",
+    "sha256":"94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a",
+    "repository":"https://repo.maven.apache.org/maven2/"
+  },
+  "catalog":"filesystem Hadoop catalog",
+  "control_store":"file-backed SQLite",
+  "evidence_label":"LOCAL_VERIFIED"
+}

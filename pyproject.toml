@@ -24,7 +24,10 @@ dev = [
   "pyarrow==21.0.0",
 ]
 aws = ["boto3>=1.35"]
-spark = ["pyspark>=3.5"]
+spark = [
+  "pyspark==3.5.9",
+  "py4j==0.10.9.9",
+]
 
 [project.scripts]
 changebridge = "changebridge.cli:main"
@@ -38,6 +41,7 @@ testpaths = ["tests"]
 pythonpath = ["."]
 markers = [
   "postgres_integration: requires the authorized digest-pinned PostgreSQL 17.11 service",
+  "iceberg_integration: requires the authorized checksum-pinned Iceberg 1.11.0 runtime",
 ]
 
 [tool.ruff]

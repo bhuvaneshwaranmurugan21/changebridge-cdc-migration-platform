@@ -1,0 +1,106 @@
+{
+  "canonicalization_version": "changebridge-canonical-json/1.0.0",
+  "creation_tool_version": "changebridge-stage22-fixture-builder/1.0.0",
+  "declared_object_paths": [
+    "objects/orders-snapshot.json",
+    "objects/order-items-snapshot.jsonl",
+    "objects/post-s-cdc.parquet"
+  ],
+  "fixture_set_digest": "4bbe2fb8bfc110a92221fbea9991e254b9c166402b0600682eea3ce3497123bb",
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "manifest_id": "cbefc7edceb284352970b9ef4f6726b88b694faff4e8678863d1245157cc6dc1",
+  "manifest_version": "raw-landing-manifest/1.0.0",
+  "max_record_bytes": 262144,
+  "object_end_frontier": {
+    "kind": "postgres_lsn",
+    "value": "0/194FE20"
+  },
+  "objects": [
+    {
+      "byte_length": 7998,
+      "compression": "none",
+      "end_inclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FC20"
+      },
+      "format": "json",
+      "object_id": "snapshot-orders-001",
+      "object_sequence": 1,
+      "path": "objects/orders-snapshot.json",
+      "row_count": 6,
+      "sha256": "10c6c67c5844a05ca01f0d5c078419d90b35c28c587853f8179cd401e6d7f111",
+      "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+      "source_contract_id": "orders_source_contract_v1_1",
+      "source_contract_version": "1.1.0",
+      "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+      "source_table": "orders",
+      "start_exclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FB20"
+      }
+    },
+    {
+      "byte_length": 75192,
+      "compression": "none",
+      "end_inclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FD20"
+      },
+      "format": "jsonl",
+      "object_id": "snapshot-order-items-002",
+      "object_sequence": 2,
+      "path": "objects/order-items-snapshot.jsonl",
+      "row_count": 66,
+      "sha256": "273cdd63f3cf1dcd5a2602be5f306d0a98e2ad029839032b3ee7c4e9532f78e5",
+      "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+      "source_contract_id": "order_items_source_contract",
+      "source_contract_version": "1.0.0",
+      "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+      "source_table": "order_items",
+      "start_exclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FC20"
+      }
+    },
+    {
+      "byte_length": 6380,
+      "compression": "snappy",
+      "end_inclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FE20"
+      },
+      "format": "parquet",
+      "object_id": "post-s-cdc-003",
+      "object_sequence": 3,
+      "path": "objects/post-s-cdc.parquet",
+      "row_count": 1,
+      "sha256": "3c149b58559f20dad29121d5c8426394f7fe20700971450fff9f331b30683627",
+      "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+      "source_contract_id": "orders_source_contract_v1_1",
+      "source_contract_version": "1.1.0",
+      "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+      "source_table": "orders",
+      "start_exclusive_frontier": {
+        "kind": "postgres_lsn",
+        "value": "0/194FD20"
+      }
+    }
+  ],
+  "observed_at": "2024-03-01T00:00:10.000000Z",
+  "producer_settings_digest": "fb9e4eb7267c25cdd4ca91026a6f34c95208120600374c6c06d9ba2c8745fc6c",
+  "profile_id": "changebridge.synthetic-dms-s3.full-images",
+  "profile_version": "1.0.0",
+  "provenance": "SYNTHETIC_CONTRACT_FIXTURE",
+  "run_id": "stage23-full-snapshot-handoff-001",
+  "source_history_digest": "61b6a6af3a3befa54f80a17cbf65278bb35a72cbb70a59bf6c86cd0460a00634",
+  "stage1_boundary_receipt_digest": "bfa112e71e129e8e1c84df0809c46600591867831b391e17cfb28f6eaae88448",
+  "stage1_snapshot_frontier": {
+    "kind": "postgres_lsn",
+    "value": "0/194FB20"
+  },
+  "start_exclusive_frontier": {
+    "kind": "postgres_lsn",
+    "value": "0/194FB20"
+  },
+  "workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd"
+}

@@ -318,11 +318,11 @@
       "owner_stage": "part1-stage4",
       "verification_method": "contract validation and schema-digest round trips",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["contracts/orders-v1.json", "contracts/orders-v1.1.json", "contracts/order-items-v1.json", "contracts/catalog.json", "contracts/part2-stage1-catalog.json", "contracts/cdc-envelope-v1.schema.json", "src/changebridge/schema.py", "src/changebridge/source_workload.py"],
-      "proof_paths": ["tests/test_schema_and_cutover.py", "tests/test_contract_oracle_authority.py", "tests/test_source_workload.py", "evidence/part2/stage1/source-workload-manifest.json", "evidence/part2/stage1/boundary-capture-report.json"],
+      "implementation_paths": ["contracts/orders-v1.json", "contracts/orders-v1.1.json", "contracts/order-items-v1.json", "contracts/catalog.json", "contracts/part2-stage1-catalog.json", "contracts/cdc-envelope-v1.schema.json", "src/changebridge/schema.py", "src/changebridge/source_workload.py", "src/changebridge/snapshot_handoff.py", "src/changebridge/iceberg_snapshot.py"],
+      "proof_paths": ["tests/test_schema_and_cutover.py", "tests/test_contract_oracle_authority.py", "tests/test_source_workload.py", "tests/test_stage23_snapshot_handoff.py", "tests/integration/test_stage23_iceberg_snapshot.py", "evidence/part2/stage1/source-workload-manifest.json", "evidence/part2/stage1/boundary-capture-report.json"],
       "failure_condition": "A record is accepted without an exact contract identity or schema digest.",
-      "limitations": "Stage 2.1 binds local PostgreSQL source rows and snapshots to the Stage 1 schema-set digest; normalized CDC producers and managed schema registries remain unverified.",
-      "review_notes": "The requirement remains partial because source binding is proven but downstream envelope conformance is not."
+      "limitations": "The accepted local profile binds source, normalized envelope, and Iceberg snapshot metadata; managed producers and schema registries remain unverified.",
+      "review_notes": "The requirement remains partial at the cross-profile and managed boundary."
     },
     {
       "id": "CB-SCHEMA-002",
@@ -378,11 +378,11 @@
       "owner_stage": "part1-stage3",
       "verification_method": "multi-generation state-model and integration tests",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/engine.py", "future:src/changebridge/generation.py"],
-      "proof_paths": ["tests/test_engine.py", "future:tests/model/test_generation_isolation.py"],
+      "implementation_paths": ["src/changebridge/engine.py", "src/changebridge/generation_registry.py", "src/changebridge/iceberg_snapshot.py"],
+      "proof_paths": ["tests/test_engine.py", "tests/test_stage23_generation_registry.py", "tests/integration/test_stage23_iceberg_snapshot.py"],
       "failure_condition": "Candidate writes alter active-generation data or share mutable state with another attempt.",
-      "limitations": "SQLite keys data by generation; physical Iceberg namespace isolation is unimplemented.",
-      "review_notes": "Storage layout is a Stage 3 design decision."
+      "limitations": "Physically isolated generation ownership is locally verified for one filesystem Hadoop catalog profile; Glue/S3 and concurrent distributed ownership remain unverified.",
+      "review_notes": "Stage 3 adds deterministic physical warehouse and namespace ownership with fail-closed alias checks."
     },
     {
       "id": "CB-ISOLATION-002",
@@ -419,10 +419,10 @@
       "verification_method": "frontier binding tests and managed source/target proof",
       "minimum_evidence": "LOCAL_VERIFIED",
       "implementation_paths": ["src/changebridge/reconciliation.py", "future:src/changebridge/proof.py"],
-      "proof_paths": ["tests/test_reconciliation.py", "future:evidence/managed/reconciliation.json"],
+      "proof_paths": ["tests/test_reconciliation.py", "tests/integration/test_stage23_iceberg_snapshot.py", "future:evidence/managed/reconciliation.json"],
       "failure_condition": "Source and target proofs use different frontiers or omit frontier lineage.",
-      "limitations": "The local function accepts a frontier parameter but does not acquire frozen source data.",
-      "review_notes": "The proof acquisition protocol is a Stage 3 decision."
+      "limitations": "Stage 3 proves the snapshot admission comparison at S; final source/target proof at F and managed acquisition remain future work.",
+      "review_notes": "The Stage 3 proof is intentionally an admission proof at S, not the Stage 6 final reconciliation at F."
     },
     {
       "id": "CB-RECON-002",
