@@ -1,0 +1,20 @@
+{
+  "clean_run_count": 2,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "determinism_report",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the committed fixture.",
+    "No AWS, S3/Glue durability, post-S CDC apply, schema evolution, publication, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "logical_projections_equal": true,
+  "part": 2,
+  "physical_snapshot_ids_excluded_from_determinism": true,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "second_run_state": "CDC_APPLYING",
+  "source_commit": "b22bb548f77b447e6097d855cd1b0cdd0fb2ec92",
+  "source_tree": "fcdcf1cad402fe6e15d7eb8152ff064239f16b40",
+  "stage": 3
+}

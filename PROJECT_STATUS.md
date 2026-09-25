@@ -23,7 +23,7 @@ The result is limited to `LOCAL_VERIFIED`. No AWS, S3/Glue durability, post-`S` 
 schema evolution, publication, Terraform, performance, availability, exactly-once, zero-downtime,
 or production-readiness claim is made.
 
-The in-repository receipt will hold `ST23-AC-01` through `ST23-AC-38` as candidate-pass and leave
+The in-repository receipt holds `ST23-AC-01` through `ST23-AC-38` as candidate-pass and leaves
 exact PR-head, merge, post-merge, and external checkpoint criteria `ST23-AC-39` through
 `ST23-AC-42` pending external closure.
 
