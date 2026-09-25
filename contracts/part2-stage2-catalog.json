@@ -1,0 +1,39 @@
+{
+  "catalog_version": "part2-stage2/1.0.0",
+  "extends": {
+    "authority_path": "contracts/part2-stage1-catalog.json",
+    "policy": "additive extension; all predecessor contracts and evidence remain byte-identical"
+  },
+  "contracts": [
+    {
+      "id": "raw_landing_manifest",
+      "version": "1.0.0",
+      "authority_path": "contracts/raw-landing-manifest-v1.json",
+      "owner": "manifest-normalizer",
+      "producers": ["synthetic-stage22-fixture-builder"],
+      "consumers": ["manifest-normalizer", "stage22-validator"],
+      "compatibility_class": "STRICT_MAJOR_ADDITIVE_MINOR",
+      "requirement_ids": ["CB-BOUNDARY-002", "CB-BOUNDARY-003", "CB-EVIDENCE-001"]
+    },
+    {
+      "id": "stage22_transport_profile",
+      "version": "1.0.0",
+      "authority_path": "contracts/transport-profile-stage22-v1.json",
+      "owner": "manifest-normalizer",
+      "producers": ["synthetic-stage22-fixture-builder"],
+      "consumers": ["manifest-normalizer"],
+      "compatibility_class": "STRICT",
+      "requirement_ids": ["CB-ORDER-001", "CB-ORDER-003", "CB-ORDER-004"]
+    },
+    {
+      "id": "normalization_quarantine",
+      "version": "1.0.0",
+      "authority_path": "contracts/normalization-quarantine-v1.json",
+      "owner": "manifest-normalizer",
+      "producers": ["manifest-normalizer"],
+      "consumers": ["stage22-validator", "operators"],
+      "compatibility_class": "STRICT_MAJOR_ADDITIVE_MINOR",
+      "requirement_ids": ["CB-SCHEMA-002", "CB-EVIDENCE-001"]
+    }
+  ]
+}

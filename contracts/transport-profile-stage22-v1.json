@@ -1,0 +1,39 @@
+{
+  "profile_id": "changebridge.synthetic-dms-s3.full-images",
+  "profile_version": "1.0.0",
+  "evidence_class": "SYNTHETIC_CONTRACT_FIXTURE",
+  "claim_ceiling": "LOCAL_VERIFIED",
+  "managed_service_claim": false,
+  "formats": ["json", "jsonl", "parquet"],
+  "parquet_encoding": {
+    "columns": ["record_json", "record_sha256"],
+    "purpose": "Lossless UTF-8 transport-record round trip with independently verified row digest"
+  },
+  "capabilities": {
+    "before_images": "full",
+    "transaction_boundaries": true,
+    "source_position": "postgres_commit_lsn",
+    "source_order": true,
+    "commit_time": true,
+    "schema_identity": true,
+    "snapshot_markers": true,
+    "delete_representation": "before_image_and_null_after"
+  },
+  "producer_settings": {
+    "before_image": "full",
+    "include_operation": true,
+    "include_transaction_details": true,
+    "timestamp_precision": "microseconds_utc",
+    "record_digest": "sha256"
+  },
+  "unsupported": [
+    "records without full update/delete before images",
+    "records without source transaction identity or commit LSN",
+    "unknown fields, profiles, versions, or schema identities",
+    "non-finite or binary floating-point identity values"
+  ],
+  "limitations": [
+    "This profile is a local synthetic contract profile shaped around DMS-to-S3 concerns.",
+    "It is not evidence of AWS DMS emission, S3 delivery, ordering, retry, or recovery behavior."
+  ]
+}

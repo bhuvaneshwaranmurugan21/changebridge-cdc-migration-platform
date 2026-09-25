@@ -55,6 +55,21 @@ continuation checkpoint.
 Stage 1 does not implement AWS DMS, Spark, Iceberg, Glue, Step Functions, DynamoDB, Terraform,
 deployment, performance testing, release, or tagging. It does not change target-apply behavior.
 
+## Stage 2 completion rule
+
+Stage 2 is complete only when `ST22-AC-01` through `ST22-AC-40` pass on one source-freeze
+commit/tree, `ST22-AC-41` passes on the exact reviewed pull-request head, the guarded policy merge
+succeeds, fresh merged `main` satisfies `ST22-AC-42` and `ST22-AC-43`, and an external
+`PART2_STAGE2_CDC_NORMALIZATION_VERIFIED` checkpoint satisfies `ST22-AC-44`.
+
+The Stage 2 claim ceiling is one explicit local synthetic DMS/S3-shaped profile. JSON, JSONL, and
+Parquet fixture normalization, quarantine, identity, ordering, and atomic output are locally
+verified; AWS DMS emission, S3 delivery, managed recovery, target application, and production
+properties remain unclaimed.
+
+The machine-readable authority is `requirements/part2-stage2-acceptance.json`. Repository evidence
+binds to a pre-evidence source-freeze commit to avoid recursive commit and manifest identities.
+
 ## Failure and correction policy
 
 - Failures preserve their original diagnostics and are corrected through reviewable commits.

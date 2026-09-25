@@ -1,0 +1,14 @@
+{
+  "builder_version": "changebridge-stage22-fixture-builder/1.0.0",
+  "classification": "SYNTHETIC_CONTRACT_FIXTURE",
+  "derived_from_history_digest": "61b6a6af3a3befa54f80a17cbf65278bb35a72cbb70a59bf6c86cd0460a00634",
+  "derived_from_workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd",
+  "managed_dms_output": false,
+  "record_semantic_digests": [
+    "44c77d6588fb2078ea438077505b29c93fe07646d58ae1602bb2a7a307480f8f",
+    "179483a0f9bdbcf5e5e7bec2b0938781b1786fe636f2d1c24cb306eb091f9432",
+    "aa384dd60800bf1a0baf4d0359e7273dc8ef578645d2da52095ad279196d4836",
+    "a5091284401629ed7a69e2e7a77ec39ce275a0131412cdab1e965f8686dd8c74",
+    "5bad354aad0056290a2a1847ca6a76e787c9629484ac53d987af84abbffb1549"
+  ]
+}

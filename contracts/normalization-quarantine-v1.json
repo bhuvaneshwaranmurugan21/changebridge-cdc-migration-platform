@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:normalization-quarantine:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version", "profile_id", "profile_version", "manifest_id", "object_id",
+    "record_locator", "raw_record_digest", "run_id", "generation_id", "reason_code",
+    "diagnostic_context", "normalizer_version", "first_observed_at", "quarantine_id",
+    "quarantine_digest"
+  ],
+  "properties": {
+    "contract_version": {"const": "normalization-quarantine/1.0.0"},
+    "profile_id": {"type": "string", "minLength": 1},
+    "profile_version": {"type": "string", "minLength": 1},
+    "manifest_id": {"$ref": "#/$defs/digest"},
+    "object_id": {"type": "string", "minLength": 1},
+    "record_locator": {"type": "string", "minLength": 1},
+    "raw_record_digest": {"$ref": "#/$defs/digest"},
+    "run_id": {"type": "string", "minLength": 1},
+    "generation_id": {"type": "string", "minLength": 1},
+    "reason_code": {"type": "string", "pattern": "^CBN[0-9]{3}_[A-Z0-9_]+$"},
+    "diagnostic_context": {"type": "string", "maxLength": 160},
+    "normalizer_version": {"const": "changebridge-manifest-normalizer/1.0.0"},
+    "first_observed_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "quarantine_id": {"$ref": "#/$defs/digest"},
+    "quarantine_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
