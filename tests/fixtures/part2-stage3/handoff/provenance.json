@@ -1,0 +1,13 @@
+{
+  "builder_version": "changebridge-stage23-full-handoff/1.0.0",
+  "classification": "SYNTHETIC_CONTRACT_FIXTURE",
+  "derived_from_workload_id": "34edddda5aee96dc7236aaf3f480c63e9180a0c0218f68cf2a93a883a26fcbcd",
+  "managed_dms_output": false,
+  "post_s_cdc_record_count": 1,
+  "snapshot_counts": {
+    "order_items": 66,
+    "orders": 6
+  },
+  "snapshot_record_count": 72,
+  "source_snapshot_whole_state_digest": "9089d027e04c0a78752776e679bed109348960d04f64c926b56a665a9e83439b"
+}

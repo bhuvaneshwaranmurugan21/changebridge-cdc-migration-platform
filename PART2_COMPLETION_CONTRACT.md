@@ -20,11 +20,11 @@ proof. Every stage must retain those limitations.
 |---:|---|---|
 | 1 | Deterministic source workload and exported-snapshot boundary | `PART2_STAGE1_SOURCE_BOUNDARY_VERIFIED` |
 | 2 | CDC capture and governed envelope normalization | `PART2_STAGE2_CDC_NORMALIZATION_VERIFIED` |
-| 3 | Transaction-preserving landing and ordering | `PART2_STAGE3_TRANSACTION_LANDING_VERIFIED` |
-| 4 | Idempotent target apply and checkpoint coupling | `PART2_STAGE4_TARGET_APPLY_VERIFIED` |
-| 5 | Schema evolution, quarantine, and deterministic restart | `PART2_STAGE5_RECOVERY_VERIFIED` |
-| 6 | Reconciliation and proof-manifest construction | `PART2_STAGE6_RECONCILIATION_VERIFIED` |
-| 7 | Local cutover, rollback, and Part 2 closure | `PART2_COMPLETION_VERIFIED` |
+| 3 | Snapshot loader and isolated Iceberg generation | `PART2_STAGE3_SNAPSHOT_GENERATION_VERIFIED` |
+| 4 | Transaction-aware CDC apply and checkpoint recovery | `PART2_STAGE4_CDC_APPLY_VERIFIED` |
+| 5 | Schema and primary-key change policy | `PART2_STAGE5_SCHEMA_POLICY_VERIFIED` |
+| 6 | Frontier reconciliation and sealed proof | `PART2_STAGE6_RECONCILIATION_VERIFIED` |
+| 7 | Orchestration, publication, rollback, and Part 2 closure | `PART2_COMPLETION_VERIFIED` |
 
 Stages are sequential. A later stage consumes the exact merged checkpoint of its predecessor and
 must not reinterpret source identity, canonicalization, generation identity, transaction order,
@@ -68,6 +68,30 @@ verified; AWS DMS emission, S3 delivery, managed recovery, target application, a
 properties remain unclaimed.
 
 The machine-readable authority is `requirements/part2-stage2-acceptance.json`. Repository evidence
+binds to a pre-evidence source-freeze commit to avoid recursive commit and manifest identities.
+
+## Stage 3 authority correction
+
+The prior table incorrectly assigned transaction-preserving landing to Stage 3 even though Stage 2
+already owns normalized transaction/event identity and ordering. ADR-017 corrects the sequence
+without changing any completed Stage 1 or Stage 2 contract, evidence, or checkpoint. No obligation
+is removed: CDC application moves to Stage 4, schema policy to Stage 5, final reconciliation to
+Stage 6, and publication/rollback to Stage 7.
+
+## Stage 3 completion rule
+
+Stage 3 is complete only when `ST23-AC-01` through `ST23-AC-38` pass on the bound source-freeze
+commit/tree, `ST23-AC-39` passes on the exact reviewed pull-request head, the expected-head policy
+merge satisfies `ST23-AC-40`, fresh merged `main` satisfies `ST23-AC-41`, and an external
+`PART2_STAGE3_SNAPSHOT_GENERATION_VERIFIED` checkpoint satisfies `ST23-AC-42`.
+
+Stage 3 may load only the complete accepted snapshot at `S` into an unpublished, generation-owned
+local Iceberg namespace. It must preserve post-`S` canonical CDC for Stage 4 but cannot apply it or
+advance a CDC checkpoint. Its claim ceiling is `LOCAL_VERIFIED` for the checksum-pinned local
+Spark/Iceberg profile; it establishes no AWS, performance, availability, exactly-once,
+zero-downtime, or production-readiness property.
+
+The machine-readable authority is `requirements/part2-stage3-acceptance.json`. Repository evidence
 binds to a pre-evidence source-freeze commit to avoid recursive commit and manifest identities.
 
 ## Failure and correction policy

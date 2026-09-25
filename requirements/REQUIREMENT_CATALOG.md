@@ -256,7 +256,7 @@ Each migration attempt MUST write to a distinct generation whose candidate state
 
 **Failure condition:** Candidate writes alter active-generation data or share mutable state with another attempt.
 
-**Current limitation:** SQLite keys data by generation; physical Iceberg namespace isolation is unimplemented.
+**Current limitation:** Physically isolated generation ownership is locally verified for one filesystem Hadoop catalog profile; Glue/S3 and concurrent distributed ownership remain unverified.
 
 ## CB-ISOLATION-002 — Backfill and replay isolation
 
@@ -466,7 +466,7 @@ Source and candidate reconciliation MUST compare data representing the same froz
 
 **Failure condition:** Source and target proofs use different frontiers or omit frontier lineage.
 
-**Current limitation:** The local function accepts a frontier parameter but does not acquire frozen source data.
+**Current limitation:** Stage 3 proves the snapshot admission comparison at S; final source/target proof at F and managed acquisition remain future work.
 
 ## CB-RECON-002 — Hierarchical deterministic proof
 
@@ -526,7 +526,7 @@ Every snapshot and CDC event MUST bind to a versioned source contract and canoni
 
 **Failure condition:** A record is accepted without an exact contract identity or schema digest.
 
-**Current limitation:** Stage 2.1 binds local PostgreSQL source rows and snapshots to the Stage 1 schema-set digest; normalized CDC producers and managed schema registries remain unverified.
+**Current limitation:** The accepted local profile binds source, normalized envelope, and Iceberg snapshot metadata; managed producers and schema registries remain unverified.
 
 ## CB-SCHEMA-002 — Compatible evolution acceptance
 

@@ -122,3 +122,13 @@ A versioned local adapter deterministically normalizes the declared synthetic DM
 - Limitations: No AWS DMS emission, S3 delivery, managed retry/recovery, target apply, performance, availability, exactly-once, zero-downtime, or production-readiness proof is established.
 - Requirements: `CB-BOUNDARY-002`, `CB-BOUNDARY-003`, `CB-ORDER-001`, `CB-ORDER-003`, `CB-ORDER-004`, `CB-SCHEMA-001`, `CB-SCHEMA-002`, `CB-EVIDENCE-001`
 - Disposition: `CORRECTED`
+
+## CB-CLAIM-013 — LOCAL_VERIFIED
+
+<!-- claim:CB-CLAIM-013 -->
+The complete accepted 72-row snapshot at S is locally loaded through real Spark 3.5.9 into generation-isolated Iceberg 1.11.0 tables; identical replay creates no new target snapshot, and a process killed after Iceberg commit recovers from checksum-pinned commit metadata without rewriting.
+
+- Scope: bounded local Spark/Iceberg snapshot generation at S
+- Limitations: The proof uses a local filesystem Hadoop catalog and file-backed SQLite. It does not prove S3 or Glue durability, distributed exactly-once delivery, post-S CDC apply, schema evolution, publication, performance, availability, zero downtime, or production readiness.
+- Requirements: `CB-BOUNDARY-001`, `CB-BOUNDARY-003`, `CB-ISOLATION-001`, `CB-RECON-001`, `CB-SCHEMA-001`, `CB-EVIDENCE-001`
+- Disposition: `CORRECTED`

@@ -1,0 +1,319 @@
+{
+  "artifact_manifest_digest": "e8f3b1a45d71036f6101df1b1d0c2e9c72bf82b788e1c49be86a2e6f8ff65d13",
+  "base_commit": "9382f8150c5af1de1bcdc8494fda6212c1d0b18b",
+  "base_tree": "5e98c6a8fe03e0dd5e6e01ca5508943743782435",
+  "contract_version": "1.0.0",
+  "criteria": [
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-01",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-02",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-03",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-04",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-05",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-06",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-07",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-08",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-09",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-10",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-11",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-12",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-13",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-14",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-15",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-16",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-17",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-18",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-19",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-20",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-21",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-22",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-23",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-24",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-25",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-26",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-27",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-28",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-29",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-30",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-31",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-32",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-33",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-34",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-35",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-36",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-37",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage3/validation-summary.json"
+      ],
+      "id": "ST23-AC-38",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST23-AC-39",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST23-AC-40",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST23-AC-41",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST23-AC-42",
+      "result": "PENDING"
+    }
+  ],
+  "criteria_passed": 38,
+  "criteria_pending": 4,
+  "criteria_total": 42,
+  "evidence_label": "PENDING_EXTERNAL_CLOSURE",
+  "evidence_type": "stage_receipt",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the committed fixture.",
+    "No AWS, S3/Glue durability, post-S CDC apply, schema evolution, publication, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "schema_version": "1.0.0",
+  "source_commit": "b22bb548f77b447e6097d855cd1b0cdd0fb2ec92",
+  "source_tree": "fcdcf1cad402fe6e15d7eb8152ff064239f16b40",
+  "stage": 3
+}

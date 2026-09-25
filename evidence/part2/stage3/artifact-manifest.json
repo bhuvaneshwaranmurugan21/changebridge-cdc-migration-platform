@@ -1,0 +1,99 @@
+{
+  "artifact_count": 20,
+  "artifacts": [
+    {
+      "path": "evidence/part2/stage3/authority-reconciliation.json",
+      "sha256": "0bd2d74a68dc09ff0d6317f7b72180e3be7c5b7066a1779bf5bd982f1ae37ee6"
+    },
+    {
+      "path": "evidence/part2/stage3/claim-impact-review.json",
+      "sha256": "982ce3cbea2754131b13a95a10c2ffb79ddacde90f26b3201154708063f32fbe"
+    },
+    {
+      "path": "evidence/part2/stage3/compatibility-probe.json",
+      "sha256": "207a594f5d80d6db6777185ffab27f937df14cf60b91097bb9df3102d9b6343c"
+    },
+    {
+      "path": "evidence/part2/stage3/dependency-decision.json",
+      "sha256": "8ea230c20dc7bbe3cb45c2901a68827aa68ab17d85723516172b02472851732a"
+    },
+    {
+      "path": "evidence/part2/stage3/determinism-report.json",
+      "sha256": "3f3d6e5d9601d744ec6b83961f2c76a74e26f43399cebb7070ebd486f0d74607"
+    },
+    {
+      "path": "evidence/part2/stage3/differential-report.json",
+      "sha256": "4be391d7c86fa648cae52ede38e7ad2d0390034b9ca004491d75a700ee213100"
+    },
+    {
+      "path": "evidence/part2/stage3/execution-envelope.json",
+      "sha256": "a6169e0080bafc04c5dc92e9a14478301d0a4c9bb12337b00f6e269075543a63"
+    },
+    {
+      "path": "evidence/part2/stage3/fault-recovery.json",
+      "sha256": "acad165085b8639ca248742ca609272786a552cbb9ce5ffb31eec6fdc92d5130"
+    },
+    {
+      "path": "evidence/part2/stage3/file-manifest.json",
+      "sha256": "38d32cc63384797ee7e1ea8713b3c7b640c7eede9fb6c4fbfd69ed03d82fa5cb"
+    },
+    {
+      "path": "evidence/part2/stage3/generation-identity.json",
+      "sha256": "e97e259fe78b7b09f8c791d7cafc4cf16536a11fd846dafeb3bd92e73f4af475"
+    },
+    {
+      "path": "evidence/part2/stage3/generation-isolation.json",
+      "sha256": "8f27137ce89932c3a4c3d17c0b118dcfa8ca5bcda1653072a6609fe02f2e7f4f"
+    },
+    {
+      "path": "evidence/part2/stage3/handoff-normalization.json",
+      "sha256": "f5544692d691a6fa90a9cb3e01b0377a1efc8b341bdd21e1ad867adc5da41c18"
+    },
+    {
+      "path": "evidence/part2/stage3/process-termination.json",
+      "sha256": "6b372c11a4f917fa7bcdd6617e1fcb8cf1645b2446539f9142507ca42599a94f"
+    },
+    {
+      "path": "evidence/part2/stage3/protected-predecessor-baseline.json",
+      "sha256": "f71a38ffc79bad2a948ddd446174d804c3cb61a8da4ddf0d28448fa792d9d4c5"
+    },
+    {
+      "path": "evidence/part2/stage3/repository-entry.json",
+      "sha256": "695e40100b4deb5d9e2564de6fbc34f22bd948d740e493bffd03958215e1533f"
+    },
+    {
+      "path": "evidence/part2/stage3/scope-isolation-report.json",
+      "sha256": "5cd9f54cc5b44d92d723946c0ea425003e27506c48725ec29f7a2b739e88dc68"
+    },
+    {
+      "path": "evidence/part2/stage3/shard-idempotency.json",
+      "sha256": "e7812bc9a18dfb900ae2426dd296839c2bf20fad95f7b3a63c98242490df4858"
+    },
+    {
+      "path": "evidence/part2/stage3/snapshot-input.json",
+      "sha256": "284eea975f7d8b77fe32e842195cb1e762fa76f3c9ece38d7b549bdd5495e2b8"
+    },
+    {
+      "path": "evidence/part2/stage3/table-map.json",
+      "sha256": "59a9df62c4ef8cd63dbdac766993c3bcad18dd948283420363549d54b0a069fd"
+    },
+    {
+      "path": "evidence/part2/stage3/validation-summary.json",
+      "sha256": "3f4cb1e0d15eb2dd7ca1b290fb0a67545b6b50eb0f5c063e130d6c56322c9ebc"
+    }
+  ],
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "artifact_manifest",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the committed fixture.",
+    "No AWS, S3/Glue durability, post-S CDC apply, schema evolution, publication, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "b22bb548f77b447e6097d855cd1b0cdd0fb2ec92",
+  "source_tree": "fcdcf1cad402fe6e15d7eb8152ff064239f16b40",
+  "stage": 3
+}

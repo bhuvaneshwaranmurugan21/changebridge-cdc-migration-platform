@@ -1,0 +1,48 @@
+{
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "dependency_decision",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the committed fixture.",
+    "No AWS, S3/Glue durability, post-S CDC apply, schema evolution, publication, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "qualification_result": "PASS",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "runtime_lock": {
+    "catalog": "filesystem Hadoop catalog",
+    "control_store": "file-backed SQLite",
+    "evidence_label": "LOCAL_VERIFIED",
+    "java": "OpenJDK 17.0.20",
+    "maven_artifact": {
+      "coordinate": "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0",
+      "file": "iceberg-spark-runtime-3.5_2.12-1.11.0.jar",
+      "repository": "https://repo.maven.apache.org/maven2/",
+      "sha256": "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a"
+    },
+    "profile_id": "changebridge.local-spark-iceberg-snapshot",
+    "profile_version": "1.0.0",
+    "python": "3.12.14",
+    "python_packages": [
+      {
+        "name": "pyspark",
+        "source_sha256": "ea27f5795a410af045c467fbf8299bd1eb0f4ed97a4526fc974c3c1601163d93",
+        "version": "3.5.9"
+      },
+      {
+        "name": "py4j",
+        "version": "0.10.9.9",
+        "wheel_sha256": "c7c2ab9dcf155f38e74bc18f5c9f85b3ab41086cf99fc5e8529d1612de6f1533"
+      }
+    ],
+    "scala_binary": "2.12",
+    "scala_runtime": "2.12.18",
+    "schema_version": "1.0.0",
+    "spark": "3.5.9"
+  },
+  "schema_version": "1.0.0",
+  "source_commit": "b22bb548f77b447e6097d855cd1b0cdd0fb2ec92",
+  "source_tree": "fcdcf1cad402fe6e15d7eb8152ff064239f16b40",
+  "stage": 3
+}

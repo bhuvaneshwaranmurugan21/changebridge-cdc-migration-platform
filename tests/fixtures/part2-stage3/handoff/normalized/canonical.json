@@ -1,0 +1,3505 @@
+[
+  {
+    "after": {
+      "amount": 1250,
+      "campaign_id": null,
+      "customer_id": "José-🧪-528935",
+      "order_id": "order-001",
+      "source_note": "reviewed"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "2584b668b86918d3f77825fcc6f6aa6d23aa6577e395522b81f92c2dfb7b6c25",
+    "event_sequence": 1,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "d0c89bb4be433d943f956d12b4e8fbd31925c820b273b9b673842e12725990e6",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-001"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:orders",
+    "transaction_sequence": 0,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "amount": 2350,
+      "campaign_id": null,
+      "customer_id": "customer-528935-2",
+      "order_id": "order-002",
+      "source_note": null
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "e94a09e7c2d95b7926ff0916180bb16898ad3d8294f58bd85c4aab63b7f04794",
+    "event_sequence": 2,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "49ad5809f83ce973dbbf1650d8418918da0c3db1cb77a21dd005e43240602142",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-002"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:orders",
+    "transaction_sequence": 0,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "amount": 4500,
+      "campaign_id": null,
+      "customer_id": "customer-528935-4",
+      "order_id": "order-004",
+      "source_note": null
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "b9b8f8d91aa1dd9da6c33cdde2a5f0cdedb64bcd12e57e365c8153477bce27ec",
+    "event_sequence": 3,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "4d23362099f55ffa5269d4a336f28aab1d8cfb1783785b676d91688391c99d26",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-004"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:orders",
+    "transaction_sequence": 0,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "amount": 5000,
+      "campaign_id": null,
+      "customer_id": "writer-a-528935",
+      "order_id": "order-005",
+      "source_note": null
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "f7a0aaa01e80cb4c472635b4ab13fde5e10026d17249399b664d24544b7f6a61",
+    "event_sequence": 4,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "713884e4af42f6bf83fb35f12c0c2f4aa3d3bd521fbb620854f8446fa8943a68",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-005"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:orders",
+    "transaction_sequence": 0,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "amount": 6000,
+      "campaign_id": null,
+      "customer_id": "writer-b-528935",
+      "order_id": "order-006",
+      "source_note": null
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "ea96aadb7a0ef2149a929f3b208c9ce63d23479dc5ead982eb760b1483aa1ebe",
+    "event_sequence": 5,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "80baa727c744b2cd560570da4d77c1f6534fef8bbf13826cb3c64bc0d603ad52",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-006"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:orders",
+    "transaction_sequence": 0,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "amount": 6400,
+      "campaign_id": null,
+      "customer_id": "large-528935",
+      "order_id": "order-007",
+      "source_note": null
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "95007b111e048bcebb05321d1210f37d425632614ca7dd0d29f3f1a48076bb83",
+    "event_sequence": 6,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "87c05098414eeb2dc3173877443b7bf98bfd7e94288c87cfd1b2b9cf283fe1c9",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-007"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:orders",
+    "transaction_sequence": 0,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-02-29T23:59:58.000000Z",
+      "item_id": "item-004-001",
+      "note": "café",
+      "order_id": "order-004",
+      "quantity": 2,
+      "unit_price": "12.50"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "ce3c4711d65e902db857870ae602436bc4ffa0b38378a8709bcef88118ebd971",
+    "event_sequence": 1,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "a4eb741a6b3c3b3f53cb827328f161fe79a934ba227df5cd291b94e5da663b0b",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-004-001"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-02-29T23:59:58.250000Z",
+      "item_id": "item-004-002",
+      "note": null,
+      "order_id": "order-004",
+      "quantity": 1,
+      "unit_price": "25.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "61ab8051051b70a781f470f9cc5496a8dd5e78b93628b71442bae6e82bae7749",
+    "event_sequence": 2,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "af787d9e447b5e39805c4d83729b6941b1e3a54ec7067729cbb7656dea9b880c",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-004-002"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-000",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "ac88ec589bbcc88c3abafb7d71e71e257c3840963b2d0fec86b75d17db42b80d",
+    "event_sequence": 3,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "f80d036bbd156567388e88e8b447cc02effbc32aca49ea81fc684c687d6f45b8",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-000"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-001",
+      "note": "batch-001",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "26ae0d6c716829bbefa5a89664a89aba061135e35d6a09a9da1295013f497de0",
+    "event_sequence": 4,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "e02fec191e14d93e2938f69f420ce3e9b9478c738dc0c0c6e181db5357e9870e",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-001"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-002",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "58da47423e35bdefa3c112ce99b1fdab4e979a06cf34b1f80d3b8782dec9d0b5",
+    "event_sequence": 5,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "4c401a489bcd3318a4a98f822d03aae765a74449adb76367e9f0e323ecba09eb",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-002"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-003",
+      "note": "batch-003",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "b02aedb28dbe2463938fc76e3e47e06b76b1dfc04ba2c0a01763fde1d5bc9a49",
+    "event_sequence": 6,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "e46afe2de2e34cceb71c931c7b25113f5169946c67db78dd9576522b4949de59",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-003"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-004",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "fb75c6dbcbd415a414713a7282c324fe96e22488b628d07084f76700c3bd2365",
+    "event_sequence": 7,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "d3ca5329bda843deb8daadd3133f1b40a5d95e4c60e2b590046873db6e6480ca",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-004"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-005",
+      "note": "batch-005",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "52337401a8b7e8d8fb5c8902802eba3e8c9d5148d9a2480a5fd4c7a2d588e35c",
+    "event_sequence": 8,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "b47ec88afbe432f26700d4bbac7ad6a5c490fc2a1ce643eacb4e371cf6bba7fd",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-005"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-006",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "5e4c0d786d158be606cf50bec5b40e9e868a507dc4eb9110812fa18e6756bc36",
+    "event_sequence": 9,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "e3a2d8365bb3838bba4a64045209c94cb9ee91e29ba5040065062212622a703d",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-006"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-007",
+      "note": "batch-007",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "b239b624a4cfc84e67db92de0e848b11b7aa1c3f6b7a779f0caad21a8d9f54d8",
+    "event_sequence": 10,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "fcf3b38c0fe75c1eaebda9b2c61f22975432ad09ad6190bc9027b99abf4a1254",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-007"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-008",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "5d0830fe6f67bca606b5fe39cacd36a35830f288bf3da3a8141b3e5b07c7c669",
+    "event_sequence": 11,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "6637014b5f07683a20ed3f6b0787aacd6ceed79a2555ece2d6dffa6d9e1e4766",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-008"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-009",
+      "note": "batch-009",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "7b4f319405b160ac0543c11939f24f9a584f9cecda463f75a314394d624f30bf",
+    "event_sequence": 12,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "6bf54e24783d35c6c8b754be7f06a754f3458d0842ae3aeb815549abe026eba7",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-009"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-010",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "812e06441326642d36675025f262aba94a1bec1444f62a8105bc3456a902769d",
+    "event_sequence": 13,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "8cee3000cb153a4fc1d7bae58c284f29c55db4782db778d055a513882f7aa3ad",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-010"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-011",
+      "note": "batch-011",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "c4198da165b6e8ca8c3acc092da266f1e39683b8e69fabe1f503cef196354dd3",
+    "event_sequence": 14,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "78a3832e63871128f67bcc1f72f86ef955bcbc5fc1ae5f15e43b852392ed0e17",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-011"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-012",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "b419ab949c78c2b844542e3fd1858c92b1b60b3693cb5b8c542b6563a0d91ccd",
+    "event_sequence": 15,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "deb5a49ccc1b3f8cb187db8c2f30092b2c61d0595e715f0460700bd7de7ccbb8",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-012"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-013",
+      "note": "batch-013",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "2e78eb86471d652495fc15a40f21fdcaf929af65fe5e8f3d7f40135f9209f24d",
+    "event_sequence": 16,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "aaaaaa08c45a1cefb436754938a1a3d2f6247eadb05e04455438f2d886250501",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-013"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-014",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "fdeb412c8205683c9d4f4c3a1c01bd06964dcb6a1efbfba7cec67382ec653ce2",
+    "event_sequence": 17,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "b1898d2326629d684f9623c70eb52e7c6ac7479f4ddbcb6ab0bd84aa7b723ea9",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-014"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-015",
+      "note": "batch-015",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "620aebeb63a2dd02aa9f774651ccd665dd9d6f4c137b84bd24e6c436edea8135",
+    "event_sequence": 18,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "60a947cc2ade67afb5d085c0e8a326d88884667d6dde4ee9b6ccb3e0775559c4",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-015"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-016",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "c577a7f121812dc8717ce6ab01de653517440fd0195de8ce162937b831a07a96",
+    "event_sequence": 19,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "8ac40cde5f3eff142d2fb1d08e8349dca57410f38797a57424ed2ff5bdefb002",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-016"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-017",
+      "note": "batch-017",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "067da15446585986055421d7e2229c98394c897e8b5675321d245307fe6a2e8d",
+    "event_sequence": 20,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "98222bb6e27d2996834e2931856c680689c0118d4d410f1ca836fd8f31739997",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-017"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-018",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "d859d9dce17c597408ae1bd48d65335c43fc58e61c0d9f1d27b915227f518bc7",
+    "event_sequence": 21,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "6de0eff501b7be2bf6caa9687b49a721173d3e1158a2976016c2544190f6631c",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-018"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-019",
+      "note": "batch-019",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "7f320653df48982ea60999fa23796c37064da718905f0d2cfba389dd064892ce",
+    "event_sequence": 22,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "6ba9071787bf7e2346095c0eb087db8e0edf39578f1a251aa2398b355156376d",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-019"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-020",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "1b6e91a6080d3c3da61c24950a42710b1ee7273a334f5a6ebff0f5cb581fa54e",
+    "event_sequence": 23,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "c7416be1e5adb3bb30693b518bbce97602f45fa4e203a2f489efaaf94fa39630",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-020"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-021",
+      "note": "batch-021",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "31305054bf4909df2c325dbda4f20c02bc51ac28d975bcf26afb785e5ee29345",
+    "event_sequence": 24,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "920fa75fff633417f7c962bcd2daf8ef86a5a41d134a99eb176b3d36b61bdc89",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-021"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-022",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "94e819b768061f40d1f94f2eea7761e2d6f2b6aa97cd25896a04a9140289c3e6",
+    "event_sequence": 25,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "e8fd1210e5fdf881b6f9677f1a63d96a3822abdcdaa203475dd1bd112e3b991b",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-022"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-023",
+      "note": "batch-023",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "48b048725b3b4b7af7652e8142c258e43f97c59a1e81aff7a30fa88eb160cbba",
+    "event_sequence": 26,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "4e900f9be9778bd6ff6e068534a15c749547c4c7b49e898394eb973e94bc44a4",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-023"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-024",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "a1ce5e6b2de3bda35d607bb4f861471ea380bb2a90bd73ebefdb8328cbdfb189",
+    "event_sequence": 27,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "2cbaf162ecbd3d1f08ff7868b71ca8320e9b52d1cb305f998b2c0645efebb66d",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-024"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-025",
+      "note": "batch-025",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "0d1dba87587fa3ff8162fddef40b48495a21e51ed6667dc603795c68a9d5cd24",
+    "event_sequence": 28,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "ceca41971e27358394180364d4cf38fd5f7759b0f0b2da3756327c8f9766a286",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-025"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-026",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "41eeaa0237878b326d3c13062111f4d76c0880a62a6ccccacbd5a97001b8ef3f",
+    "event_sequence": 29,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "b3d35b00d9ce6018c542a81204778e5044162844a82a768958a0a7df78207412",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-026"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-027",
+      "note": "batch-027",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "087364a9bbd8979a0588419533ed8a346c0f64bd5bdaae091a70fb2af67966de",
+    "event_sequence": 30,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "10beb14a50932bc39e9af315251835ddf071cefb43c0b1f08b3f369dc01e573d",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-027"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-028",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "98fe748e5ff7faedc64a852a0edeae10754431605c246f3b7c2dbfaf7a6c1a93",
+    "event_sequence": 31,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "713bb5d8acebf366931f70f62380a730b585f622d874948620217cfb8c7bc029",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-028"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-029",
+      "note": "batch-029",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "06871a0b2809205bcb54a6e8cc212f4814db57fca0d03133c2132b22c2f43c36",
+    "event_sequence": 32,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "6006f5b6e5b9a8e033df48c1ff3242c13f155062e7b4863ba0880374fd95d091",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-029"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-030",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "b84e858bcef5dd4f743eb85efdb20eb3db50978c708b442918d8b1780578a393",
+    "event_sequence": 33,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "785b297d285cb9dddbb90a7660179be0adfa51ec95ff0ab092ffaa5971f3de4b",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-030"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-031",
+      "note": "batch-031",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "83658bcfa8b65f6aa21c73eac2d8785c611ca1bca23f983eaf0c6dd9f6593da5",
+    "event_sequence": 34,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "2ae5d275394158b18dff96bd14473cfd868e938bf245806b7c28c7729abf6714",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-031"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-032",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "1a42e7940e5618541a7e8278fa9935244c1d9f1704cecc1135ddb62c10b22a90",
+    "event_sequence": 35,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "877263eae11d43409b5a3a31cb0afa23479d050a883fbcf3744f8ae4a4db51a1",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-032"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-033",
+      "note": "batch-033",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "ed1cd8cb1dc639bf432ad7c5d2ed26d145966118bd2eac1d2270f43da884c7da",
+    "event_sequence": 36,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "982cdfe924cdbd72f5e4cd4c802190829fd0981d6985aa83ca14a338f55ca021",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-033"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-034",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "0b8db232fbccd725553b648dd03f4d97fef5af41e1fc64488f0c43ea1f693cee",
+    "event_sequence": 37,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "71f16b4e4eced0d10162aa327f647210b4ffeebf77863f2de8f9c247e5d14f9b",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-034"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-035",
+      "note": "batch-035",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "d144962d9b7bc057b366b26c3c8d02c7d36076e5c12237ed25460ed95a245b5f",
+    "event_sequence": 38,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "c8c96fa7a81d78f5cd05391a034f349a2d72a0f41532e2e9c7bc4ccef31f2010",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-035"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-036",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "e25f11ddca358aedc67574741c876f54de689449b8c66f60d365698f94923f44",
+    "event_sequence": 39,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "9481b4a6bfd0e7bbe8223a62b83e0daa4843e25ca4b7c2e0bd1b8facd2da58f1",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-036"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-037",
+      "note": "batch-037",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "f2e20279f7530cfe69b1437e803a9bf8fa1c1777b2617d067563917cf57d939d",
+    "event_sequence": 40,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "7f4bc1be3a15374b87ee497ccc3e97d73fe52730c37b7be1d60e065238c3f2c1",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-037"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-038",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "ae90df1fc1c7599797119de151d197ad8191d323020183d05db05f9dcb177924",
+    "event_sequence": 41,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "765fe0c4d9b0bba1938cb2da14920482293a745b4591461386df5e9ae79c1365",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-038"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-039",
+      "note": "batch-039",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "9e599bfa0fad2b606d7e9acf5d177ed5091cdb74db64454f494f56f937cbb5fe",
+    "event_sequence": 42,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "627d54260233236ef61bc1791170918c588f385bfc34b1271347588259f291c0",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-039"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-040",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "78197396ef77020e41d3828bda0ce923c0a6288f072e3a910172f28beaf9b6e7",
+    "event_sequence": 43,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "3cd618c9fbf50217c54dea679beb0fd112f417303a2120cfadfa40ee94dc884d",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-040"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-041",
+      "note": "batch-041",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "57a67a5123fbafd3a2630c47b8bad2025468e9b98375d56d1907144a997b0054",
+    "event_sequence": 44,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "7c870f51e5b13d27742cf33bdc3a62ee134e3dee840f9da7654a65b7a5699426",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-041"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-042",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "a4d217ffefcfb7866cbc7ad87c6690f3c32c73afe7a84fe31e42c378ad950f63",
+    "event_sequence": 45,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "53fa788e6a7553108ef1b95d5a9c99ee26d4bdf87fcc446ae1b885e4a3cff1af",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-042"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-043",
+      "note": "batch-043",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "bd2eb5fd761d20e05f71a6fb56a1db55f667b233ffd29b2b78ccbf87261f2085",
+    "event_sequence": 46,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "aeed01481021bc897ebc30a60a42a41bd9af95294dafb81ee02c732bc45313c6",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-043"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-044",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "d78f95af39eff3e82c5d0aac0295f3c5df54ec8853e04bd6fd83be5d9026e206",
+    "event_sequence": 47,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "d724ed61d0dfd35b779e5fa031c6a7d9dc49818600ebfb151d0ccecff6cd214e",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-044"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-045",
+      "note": "batch-045",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "4faa6d8b6b505528a732c6719fe8c9623784571b0901c01a7a8a629aab08e92d",
+    "event_sequence": 48,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "16a3f60c492a6b090dd5cb86c54e9ef7092066c015360c3f149edbe14da9608a",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-045"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-046",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "d129b220cb30cd698ed833436f2fd4ac707e191b17935f9be99ab03efeed79c0",
+    "event_sequence": 49,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "1f7b5feb0c21c98a19f8c153df52ef195d2a8a037db1b39a56f813d50c68ab9d",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-046"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-047",
+      "note": "batch-047",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "44a55ee3b17aee526860bc37da78648df9642c0bee6bea534dfedd0246050aab",
+    "event_sequence": 50,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "47ed232fc56abae0c59a0f8bc90242e7e42f1141c2a41b28de54d23b66a96536",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-047"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-048",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "48850b6ccd95729cd5e9f907d39de6dfb6d9c5f995a4cd0562d83ccf63408b56",
+    "event_sequence": 51,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "29c0a2bca79b9f7f07b7c667d09ccb174d69a565292fd2ccc08837e6959ab264",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-048"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-049",
+      "note": "batch-049",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "fe74e1515e86bb49a7b64c3d9d51bc9019d4a3ed50a5bd0129db481cad0c2675",
+    "event_sequence": 52,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "914c8c336a785b0c673b17a425720a9c51fec3ca02e13e70904144eed3fb9c16",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-049"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-050",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "1154639a909568697f4eb24dd0033ff2f53b2174876911e531abea9c336b6541",
+    "event_sequence": 53,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "93839aa30db2ca43ae6a9614d75af7f678f4fba0ff74f983b69bfad8d459aedd",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-050"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-051",
+      "note": "batch-051",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "bc9865c568609c4b31d25795edb9fe9d19f14d981559d5af15d4670fe945c190",
+    "event_sequence": 54,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "1e45f98984e33612564711dd7b6122b82dab02c9ab5823e23873c531f90e6ad9",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-051"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-052",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "bcecbe4fa6a70ec948a16b1c969698279ac89cbdae510b10db13596d2189ccf1",
+    "event_sequence": 55,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "2a55757b81c1c50cb40650a385d399e368b19cd8ec99cbc6af3a14c3e02c50ea",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-052"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-053",
+      "note": "batch-053",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "8ae155cf694b5170a33ff3dc0f29d257fa620a1ff42178316dfdc1a5c2773c64",
+    "event_sequence": 56,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "8e39d64fe5b00e324c367e54f1c7124fd3139680be007abe16696fb35b2db344",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-053"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-054",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "b3bdc3ce17dafa0742934429b5055057b8e32c8480977954534cc1992f190425",
+    "event_sequence": 57,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "f2589093a38388857c6a1588bdc9e169afe80611efb473e3227b460c680acf60",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-054"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-055",
+      "note": "batch-055",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "e4fffdd08980d8102401950c51f96984ae16559fb5e4d8463c5b14b7266ce968",
+    "event_sequence": 58,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "44d4a91e18e2fb0e0f475ff8ded97508f8cc7e86906b9662b9eb71b30a4fe723",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-055"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-056",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "2f9c38169f6646c385d6b409544a66218dcd5a56c7ff51811e7153fae848431b",
+    "event_sequence": 59,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "46840520bcc23de4ec110ed0373f447afd9a6fac2cba48dfd8b841c9ec9a3238",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-056"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-057",
+      "note": "batch-057",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "a13ee8e0ef4ea2cd72dc81f0b63c6ec5d8239193fa139a68ed34a02a5e220bf0",
+    "event_sequence": 60,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "01d46dde68e0f32a32f5ff8db7d4829a005518b69ce874099fb65b8cf928fc20",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-057"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-058",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "94bb400b8472f174166904083f9e67ea1d7aaa616de9536d8525ab50cfebbbff",
+    "event_sequence": 61,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "e4a27f327e8b7e387d238f3511f0347a346d0821f82613b202bd0727444e1c01",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-058"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-059",
+      "note": "batch-059",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "71fc0f81d6ead59ffc60f90f58a09c66e67d8f9446ce16f839511899077268bb",
+    "event_sequence": 62,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "2011b26abc802bf57c4ee1448b80c3ef063fcfd9b8a1e075e5e3881931af8fec",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-059"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-060",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "f4cde21d115dacc6d1e485b40cc954a21b18b9fe874e5204f59cacb85b36b268",
+    "event_sequence": 63,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "88162961932ea7deced353d1534e443329cd3c6e9229e56573c2515bd5281780",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-060"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-061",
+      "note": "batch-061",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "436ebd6239435eeef8fa552838dc542d1c5457d9703c1cf37dfd73cdc132ade9",
+    "event_sequence": 64,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "031b7a2915f889efef892ff2c80358e239223b64d21bbd3ded3c6e5dd8c877c3",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-061"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-062",
+      "note": null,
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "5b8602c9703e16635dc051043fb9e9d595c017ec9d05bfe35de0fb55209b0626",
+    "event_sequence": 65,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "31ade09d90ba97ebf7279b2005bab349b2d71a4bfb3e980511048b2c59f1b218",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-062"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "created_at": "2024-03-01T00:00:00.000000Z",
+      "item_id": "item-007-063",
+      "note": "batch-063",
+      "order_id": "order-007",
+      "quantity": 1,
+      "unit_price": "100.00"
+    },
+    "before": null,
+    "committed_at": "2024-03-01T00:00:00.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "9909c6ab04ae91fd2682bf573a4d6ad62883a0a95cf05c21cc2f3db91fc4b98c",
+    "event_sequence": 66,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "snapshot",
+    "payload_digest": "f7dbdaf132a3389f0c89a0c9e3151d2ff9a36291d473ec8fe3795957abd27a8a",
+    "primary_key": [
+      {
+        "name": "item_id",
+        "type": "string",
+        "value": "item-007-063"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_contract_id": "order_items_source_contract",
+    "source_contract_version": "1.0.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FB20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "a3a0f107c60ac6a8dd9f9caa1937ed7e24f90540923c4f3cf7361c5072141b84",
+    "source_schema_version": "order_items/1.0.0",
+    "source_system": "postgresql",
+    "source_table": "order_items",
+    "transaction_id": "snapshot-batch:generation-34edddda5aee96dc7236aaf3:order_items",
+    "transaction_sequence": 1,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  },
+  {
+    "after": {
+      "amount": 4750,
+      "campaign_id": "post-boundary",
+      "customer_id": "customer-528935-4",
+      "order_id": "order-004",
+      "source_note": null
+    },
+    "before": {
+      "amount": 4500,
+      "campaign_id": null,
+      "customer_id": "customer-528935-4",
+      "order_id": "order-004",
+      "source_note": null
+    },
+    "committed_at": "2024-03-01T00:00:04.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "43f1cc17d056666646d6e38bdc0230a182591b4c8ae36602ee375f652a1be906",
+    "event_sequence": 1,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "update",
+    "payload_digest": "ca546e00da9414f7bd068a518e339920c872b71f13679aa538f15c44aa6f7a55",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-004"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FE20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "tx-012-post-boundary",
+    "transaction_sequence": 12,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  }
+]

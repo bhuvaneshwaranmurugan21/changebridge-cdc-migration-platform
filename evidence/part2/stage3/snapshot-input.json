@@ -1,0 +1,25 @@
+{
+  "counts": {
+    "order_items": 66,
+    "orders": 6
+  },
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "snapshot_input",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the committed fixture.",
+    "No AWS, S3/Glue durability, post-S CDC apply, schema evolution, publication, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "manifest_id": "cbefc7edceb284352970b9ef4f6726b88b694faff4e8678863d1245157cc6dc1",
+  "part": 2,
+  "post_s_cdc_rows": 1,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "snapshot_frontier": "0/194FB20",
+  "source_commit": "b22bb548f77b447e6097d855cd1b0cdd0fb2ec92",
+  "source_tree": "fcdcf1cad402fe6e15d7eb8152ff064239f16b40",
+  "stage": 3,
+  "total_snapshot_rows": 72,
+  "whole_state_digest": "9089d027e04c0a78752776e679bed109348960d04f64c926b56a665a9e83439b"
+}

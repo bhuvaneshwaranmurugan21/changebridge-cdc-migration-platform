@@ -213,6 +213,23 @@
       "owner": "part2-stage2",
       "invalidation_conditions": ["profile, manifest, fixture, identity, ordering, quarantine, or normalizer behavior changes"],
       "disposition": "CORRECTED"
+    },
+    {
+      "id": "CB-CLAIM-013",
+      "source_claim_ids": ["PART2-STAGE3-SNAPSHOT-GENERATION"],
+      "approved_wording": "The complete accepted 72-row snapshot at S is locally loaded through real Spark 3.5.9 into generation-isolated Iceberg 1.11.0 tables; identical replay creates no new target snapshot, and a process killed after Iceberg commit recovers from checksum-pinned commit metadata without rewriting.",
+      "scope": "bounded local Spark/Iceberg snapshot generation at S",
+      "label": "LOCAL_VERIFIED",
+      "requirement_ids": ["CB-BOUNDARY-001", "CB-BOUNDARY-003", "CB-ISOLATION-001", "CB-RECON-001", "CB-SCHEMA-001", "CB-EVIDENCE-001"],
+      "proof_refs": ["src/changebridge/snapshot_loader.py", "src/changebridge/iceberg_snapshot.py", "tests/integration/test_stage23_iceberg_snapshot.py", "docs/part2/stage3/SNAPSHOT_GENERATION_BOUNDARY.md"],
+      "producing_commit": "fbc6760e4be1ae353dda2a9047e98d75fbfb532c",
+      "producing_run": "stage23-local-spark-iceberg-proof",
+      "limitations": "The proof uses a local filesystem Hadoop catalog and file-backed SQLite. It does not prove S3 or Glue durability, distributed exactly-once delivery, post-S CDC apply, schema evolution, publication, performance, availability, zero downtime, or production readiness.",
+      "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-013"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-013"}],
+      "review_status": "APPROVED",
+      "owner": "part2-stage3",
+      "invalidation_conditions": ["snapshot handoff, generation registry, Iceberg adapter, loader recovery, runtime lock, or bound real-target tests change"],
+      "disposition": "CORRECTED"
     }
   ]
 }

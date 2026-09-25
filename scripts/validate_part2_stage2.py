@@ -24,6 +24,7 @@ from build_stage22_evidence import contract_authority  # type: ignore[import-not
 ROOT = Path(__file__).resolve().parents[1]
 BASE_COMMIT = "006a74119ebc4edc050e31ae171ca8d9fbe8b669"
 BASE_TREE = "745f25fc394fd06c339ee22b432e3f8f26d5035d"
+COMPLETED_STAGE_COMMIT = "9382f8150c5af1de1bcdc8494fda6212c1d0b18b"
 EVIDENCE = Path("evidence/part2/stage2")
 REQUIRED_EVIDENCE = {
     "artifact-manifest.json",
@@ -116,9 +117,11 @@ def tree_digest(root: Path, commit: str, path: str) -> str:
 
 
 def changed_paths(root: Path) -> set[str]:
-    result = set(git(root, "diff", "--name-only", f"{BASE_COMMIT}...HEAD").splitlines())
-    result.update(git(root, "diff", "--name-only").splitlines())
-    result.update(git(root, "ls-files", "--others", "--exclude-standard").splitlines())
+    # Stage 2 is historical after its guarded merge. Validate the immutable completed range rather
+    # than treating every later-stage path as if it had been part of the Stage 2 pull request.
+    result = git(
+        root, "diff", "--name-only", f"{BASE_COMMIT}...{COMPLETED_STAGE_COMMIT}"
+    ).splitlines()
     return {item for item in result if item}
 
 

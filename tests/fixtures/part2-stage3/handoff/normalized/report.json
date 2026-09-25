@@ -1,0 +1,21 @@
+{
+  "accepted_count": 73,
+  "canonical_digest": "7a64dd450a92efe6321326929092d5d91416bed64ef6ddffb9c49aba633e6276",
+  "contract_version": "normalization-report/1.0.0",
+  "duplicate_count": 0,
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "limitations": [
+    "Synthetic local contract fixtures; no AWS DMS or S3 execution is claimed.",
+    "No target apply, checkpoint, reconciliation, performance, or production claim is established."
+  ],
+  "manifest_id": "cbefc7edceb284352970b9ef4f6726b88b694faff4e8678863d1245157cc6dc1",
+  "normalizer_version": "changebridge-manifest-normalizer/1.0.0",
+  "profile_id": "changebridge.synthetic-dms-s3.full-images",
+  "profile_version": "1.0.0",
+  "quarantine_digest": "af757ab3f2b2d5a778e5f90344d66b3cf67cd1490d710beaa430e31f09583918",
+  "quarantined_count": 0,
+  "raw_record_count": 73,
+  "report_digest": "d4da310642bd22141a2c53ed7d691ccfcb433983b205e50c49e734e5026a0d23",
+  "result": "PASS",
+  "run_id": "stage23-full-snapshot-handoff-001"
+}
