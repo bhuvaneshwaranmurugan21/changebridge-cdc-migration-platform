@@ -247,6 +247,23 @@
       "owner": "part2-stage4",
       "invalidation_conditions": ["apply manifest, ordering, transaction assembly, Iceberg mutation, receipt recovery, checkpoint, runtime lock, or bound real-target tests change"],
       "disposition": "CORRECTED"
+    },
+    {
+      "id": "CB-CLAIM-015",
+      "source_claim_ids": ["PART2-STAGE5-SCHEMA-POLICY"],
+      "approved_wording": "The governed orders 1.0.0 to 1.1.0 nullable non-key addition is locally applied through one recoverable Iceberg metadata transaction; exact decision and receipt identity gates CDC, unknown changes quarantine before mutation, and incompatible schema or primary-key changes reject the candidate generation.",
+      "scope": "bounded local schema and primary-key policy for orders_source_contract",
+      "label": "LOCAL_VERIFIED",
+      "requirement_ids": ["CB-SCHEMA-001", "CB-SCHEMA-002", "CB-SCHEMA-003", "CB-CHECKPOINT-001", "CB-EVIDENCE-001"],
+      "proof_refs": ["src/changebridge/schema_policy.py", "src/changebridge/schema_control.py", "src/changebridge/iceberg_schema.py", "tests/integration/test_stage25_iceberg_schema.py", "tests/integration/test_stage25_schema_recovery.py", "evidence/part2/stage5/iceberg-schema-apply.json", "evidence/part2/stage5/schema-recovery.json", "evidence/part2/stage5/quarantine-proof.json", "evidence/part2/stage5/generation-rejection.json"],
+      "producing_commit": "dc32be76a8f1d0f6ac661d19263c990ea391cdb5",
+      "producing_run": "stage25-local-spark-iceberg-schema-proof",
+      "limitations": "The proof uses Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and one bounded nullable non-key addition. It does not prove AWS or Glue durability, arbitrary schema evolution, coercion/default semantics, publication, Stage 6 reconciliation, performance, availability, zero downtime, exactly-once delivery, or production readiness.",
+      "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-015"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-015"}],
+      "review_status": "APPROVED",
+      "owner": "part2-stage5",
+      "invalidation_conditions": ["schema policy, key authority, decision, quarantine, generation rejection, Iceberg schema application, receipt recovery, runtime lock, or bound real-target tests change"],
+      "disposition": "CORRECTED"
     }
   ]
 }

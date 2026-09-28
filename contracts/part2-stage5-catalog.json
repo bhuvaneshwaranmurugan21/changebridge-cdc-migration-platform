@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "part2-stage5",
+  "records": [
+    {"id":"schema_policy","version":"1.0.0","path":"contracts/schema-policy-v1.json"},
+    {"id":"primary_key_definition","version":"1.0.0","path":"contracts/part2-stage5-primary-key-definition-v1.contract.json"},
+    {"id":"schema_decision","version":"1.0.0","path":"contracts/part2-stage5-schema-decision-v1.contract.json"},
+    {"id":"schema_quarantine","version":"1.0.0","path":"contracts/part2-stage5-schema-quarantine-v1.contract.json"},
+    {"id":"schema_apply_receipt","version":"1.0.0","path":"contracts/part2-stage5-schema-apply-receipt-v1.contract.json"},
+    {"id":"reason_codes","version":"1.0.0","path":"contracts/stage5-reason-codes-v1.json"}
+  ]
+}

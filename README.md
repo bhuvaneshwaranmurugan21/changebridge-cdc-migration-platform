@@ -157,6 +157,13 @@ Iceberg commit recovers by durable commit token before the checkpoint advances. 
 remains unpublished in `CDC_APPLYING`; no atomic cross-table transaction or production exactly-once
 delivery is claimed. See [Stage 4 transactional apply](docs/part2/stage4/TRANSACTIONAL_APPLY.md).
 
+<!-- claim:CB-CLAIM-015 -->
+The governed orders 1.0.0 to 1.1.0 nullable non-key addition is locally applied through one
+recoverable Iceberg metadata transaction; exact decision and receipt identity gates CDC, unknown
+changes quarantine before mutation, and incompatible schema or primary-key changes reject the
+candidate generation. The compatible candidate remains unpublished, unsealed, and at checkpoint
+`0/194FE20`. See [Stage 5 schema policy](docs/part2/stage5/SCHEMA_POLICY.md).
+
 <!-- claim:CB-CLAIM-011 -->
 A deterministic workload was executed in isolated PostgreSQL 17.11 schemas, and a real exported
 logical snapshot was locally bound to one typed PostgreSQL LSN frontier; repeated same-seed runs

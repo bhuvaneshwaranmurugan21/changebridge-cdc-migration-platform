@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:schema-apply-receipt:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receipt_id", "apply_token", "generation_id", "source_table", "decision_id", "candidate_digest", "policy_digest", "iceberg_schema_id", "metadata_location", "recovered"],
+  "properties": {
+    "receipt_id": {"type": "string", "pattern": "^schema-receipt-[0-9a-f]{24}$"},
+    "apply_token": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "generation_id": {"type": "string", "minLength": 1},
+    "source_table": {"type": "string", "minLength": 1},
+    "decision_id": {"type": "string", "pattern": "^schema-decision-[0-9a-f]{24}$"},
+    "candidate_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "policy_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "iceberg_schema_id": {"type": "integer", "minimum": 0},
+    "metadata_location": {"type": "string", "minLength": 1},
+    "recovered": {"type": "integer", "enum": [0, 1]}
+  }
+}

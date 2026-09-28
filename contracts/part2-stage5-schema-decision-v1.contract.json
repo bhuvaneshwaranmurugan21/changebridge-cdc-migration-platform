@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:schema-decision:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["decision_id", "decision_digest", "generation_id", "source_table", "previous", "candidate", "previous_primary_key", "candidate_primary_key", "policy_id", "policy_version", "policy_digest", "verdict", "reason_codes", "required_action", "added_fields"],
+  "properties": {
+    "decision_id": {"type": "string", "pattern": "^schema-decision-[0-9a-f]{24}$"},
+    "decision_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "generation_id": {"type": "string", "pattern": "^generation-[0-9a-f]{24}$"},
+    "source_table": {"type": "string", "minLength": 1},
+    "previous": {"$ref": "#/$defs/identity"},
+    "candidate": {"$ref": "#/$defs/identity"},
+    "previous_primary_key": {"$ref": "#/$defs/key"},
+    "candidate_primary_key": {"$ref": "#/$defs/key"},
+    "policy_id": {"const": "changebridge.schema-policy"},
+    "policy_version": {"const": "1.0.0"},
+    "policy_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "verdict": {"enum": ["COMPATIBLE", "INCOMPATIBLE", "UNKNOWN"]},
+    "reason_codes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CB25S[0-9]{3}_[A-Z0-9_]+$"}},
+    "required_action": {"enum": ["APPLY", "QUARANTINE", "REJECT"]},
+    "added_fields": {"type": "array", "items": {"$ref": "#/$defs/field"}}
+  },
+  "$defs": {
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract_id", "version", "digest"],
+      "properties": {
+        "contract_id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "field": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "data_type", "nullable"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "data_type": {"enum": ["string", "integer", "number", "boolean"]},
+        "nullable": {"type": "boolean"}
+      }
+    },
+    "key": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["ordinal", "name", "data_type"],
+        "properties": {
+          "ordinal": {"type": "integer", "minimum": 0},
+          "name": {"type": "string", "minLength": 1},
+          "data_type": {"enum": ["string", "integer", "number", "boolean"]}
+        }
+      }
+    }
+  }
+}

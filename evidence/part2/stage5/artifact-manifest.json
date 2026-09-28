@@ -1,0 +1,71 @@
+{
+  "artifact_count": 13,
+  "artifacts": [
+    {
+      "path": "evidence/part2/stage5/claim-impact-review.json",
+      "sha256": "03735a20114d96c0b11cda6f370faf3318ecf8401d1c1546f4f648c37ed12bd7"
+    },
+    {
+      "path": "evidence/part2/stage5/determinism-report.json",
+      "sha256": "55a9ecf195249aae9c99c6339569057e2de51df05d21fcfcf3c5b3b0e72102de"
+    },
+    {
+      "path": "evidence/part2/stage5/execution-envelope.json",
+      "sha256": "ba265fa876110123168090123efdc8d80c22e0426a4eecf39ad27c4cfd4d9df7"
+    },
+    {
+      "path": "evidence/part2/stage5/file-manifest.json",
+      "sha256": "6db6de02025cc1308f13a3012458293c4aa850877a0bb239b1b6018cdaeddfa0"
+    },
+    {
+      "path": "evidence/part2/stage5/generation-rejection.json",
+      "sha256": "d80e9a62740235e0a0c9e8a4b7e105b649d7122af6e4a2d819a0a5bca19e5f3d"
+    },
+    {
+      "path": "evidence/part2/stage5/generation-state.json",
+      "sha256": "e7f3c6f54e72871ae927698a77b8c704cd9822c82025a3d6cedd3f584572443e"
+    },
+    {
+      "path": "evidence/part2/stage5/iceberg-schema-apply.json",
+      "sha256": "5dcf864efb909aa7ed0c8faa23dc3e667e148e3bad2dd146da83b684cabda816"
+    },
+    {
+      "path": "evidence/part2/stage5/protected-predecessor-baseline.json",
+      "sha256": "57b2a612f1df32d92716498b0e158fa3ec5a0075662b21667c07e90e0889d327"
+    },
+    {
+      "path": "evidence/part2/stage5/quarantine-proof.json",
+      "sha256": "77ba3263959eede63da65863d9f1ef077f1a7297ba81b5e8696ac9eb20f3b955"
+    },
+    {
+      "path": "evidence/part2/stage5/repository-entry.json",
+      "sha256": "3caa02b66e8ecf1a132e8fa41e568620b8491364b367075a80a2376121c34052"
+    },
+    {
+      "path": "evidence/part2/stage5/schema-policy-proof.json",
+      "sha256": "f67a3d09e1b625f819b5b9d1ecbbdfa002ea2290b46a1ac721c2b4e546c22073"
+    },
+    {
+      "path": "evidence/part2/stage5/schema-recovery.json",
+      "sha256": "02b16ea8164e98045d845bc086da415e0f7b1935df865b419c78d01df52bcae5"
+    },
+    {
+      "path": "evidence/part2/stage5/validation-summary.json",
+      "sha256": "2d79510920c1fa4452af0a9c72b9fac2c7273d588093dfbf5f7f480accaaa0db"
+    }
+  ],
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "artifact_manifest",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the accepted fixture.",
+    "No AWS durability, arbitrary schema evolution, publication, Stage 6 reconciliation, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "dc32be76a8f1d0f6ac661d19263c990ea391cdb5",
+  "source_tree": "41b7e7213d2a36b9e5da461812e46f4ec9929e1f",
+  "stage": 5
+}

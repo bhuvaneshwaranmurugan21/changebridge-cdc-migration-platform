@@ -142,3 +142,13 @@ The accepted post-snapshot transaction is locally applied through real Spark 3.5
 - Limitations: The candidate remains unpublished in CDC_APPLYING. No AWS durability, atomic multi-table Iceberg transaction, production exactly-once delivery, schema/key evolution, publication, performance, availability, zero downtime, or production-readiness proof is established.
 - Requirements: `CB-ORDER-001`, `CB-ORDER-002`, `CB-APPLY-001`, `CB-APPLY-002`, `CB-APPLY-003`, `CB-APPLY-004`, `CB-CHECKPOINT-001`, `CB-CHECKPOINT-002`, `CB-EVIDENCE-001`
 - Disposition: `CORRECTED`
+
+## CB-CLAIM-015 — LOCAL_VERIFIED
+
+<!-- claim:CB-CLAIM-015 -->
+The governed orders 1.0.0 to 1.1.0 nullable non-key addition is locally applied through one recoverable Iceberg metadata transaction; exact decision and receipt identity gates CDC, unknown changes quarantine before mutation, and incompatible schema or primary-key changes reject the candidate generation.
+
+- Scope: bounded local schema and primary-key policy for orders_source_contract
+- Limitations: The proof uses Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and one bounded nullable non-key addition. It does not prove AWS or Glue durability, arbitrary schema evolution, coercion/default semantics, publication, Stage 6 reconciliation, performance, availability, zero downtime, exactly-once delivery, or production readiness.
+- Requirements: `CB-SCHEMA-001`, `CB-SCHEMA-002`, `CB-SCHEMA-003`, `CB-CHECKPOINT-001`, `CB-EVIDENCE-001`
+- Disposition: `CORRECTED`

@@ -1,0 +1,23 @@
+{
+  "crash_exit_code": 88,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "schema_recovery",
+  "frontier_unchanged": "0/194FE20",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the accepted fixture.",
+    "No AWS durability, arbitrary schema evolution, publication, Stage 6 reconciliation, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "metadata_changed_once": true,
+  "part": 2,
+  "project": "ChangeBridge",
+  "receipts_after_crash": 0,
+  "recovered_receipt": true,
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_id": 1,
+  "schema_version": "1.0.0",
+  "snapshot_count_unchanged": true,
+  "source_commit": "dc32be76a8f1d0f6ac661d19263c990ea391cdb5",
+  "source_tree": "41b7e7213d2a36b9e5da461812e46f4ec9929e1f",
+  "stage": 5
+}
