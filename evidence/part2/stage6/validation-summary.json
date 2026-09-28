@@ -1,0 +1,24 @@
+{
+  "coverage_percent": 86.71,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "validation_summary",
+  "exact_head_service_lanes": "PENDING_EXTERNAL_CLOSURE",
+  "limitations": [
+    "Bounded local PostgreSQL-history, Spark 3.5.9, Iceberg 1.11.0 and SQLite proof.",
+    "No AWS, managed durability, publication, performance or production property is proven."
+  ],
+  "mypy": "PASS",
+  "part": 2,
+  "predecessor_validators": "PASS",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "ruff": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "29b47cb19301345e12780f754066df726a5f2901",
+  "source_tree": "1ce0956b4469607e8c06ba0af99c78b1b5273326",
+  "stage": 6,
+  "stage26_lab": "PASS",
+  "tests_passed": 257,
+  "tests_skipped": 2
+}

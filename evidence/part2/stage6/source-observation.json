@@ -1,0 +1,22 @@
+{
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "source_observation",
+  "frontier": "0/194FE20",
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "limitations": [
+    "Bounded local PostgreSQL-history, Spark 3.5.9, Iceberg 1.11.0 and SQLite proof.",
+    "No AWS, managed durability, publication, performance or production property is proven."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "row_counts": {
+    "order_items": 66,
+    "orders": 6
+  },
+  "schema_version": "1.0.0",
+  "source_commit": "29b47cb19301345e12780f754066df726a5f2901",
+  "source_tree": "1ce0956b4469607e8c06ba0af99c78b1b5273326",
+  "stage": 6
+}
