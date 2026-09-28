@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-import psycopg2
+import psycopg2  # type: ignore[import-untyped]
 
 
 def main() -> None:
