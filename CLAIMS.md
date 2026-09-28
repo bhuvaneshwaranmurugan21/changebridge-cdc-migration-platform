@@ -53,15 +53,15 @@ The deterministic local failure laboratory executes 13 named checks and reproduc
 - Requirements: `CB-EVIDENCE-003`
 - Disposition: `CORRECTED`
 
-## CB-CLAIM-006 — DESIGN_ONLY
+## CB-CLAIM-006 — LOCAL_VERIFIED
 
 <!-- claim:CB-CLAIM-006 -->
-The current Spark file is an interface and input-shape adapter: it validates five columns and counts rows, but performs no Iceberg write, MERGE, delete application, checkpoint coupling, or idempotent target transaction.
+The Spark apply job now executes one manifest-bound local Iceberg CDC transaction with deterministic commit identity, receipt recovery, and checkpoint-last finalization.
 
-- Scope: jobs/spark_iceberg_apply.py
-- Limitations: It is not an Iceberg apply engine and must not be described as production-ready.
+- Scope: bounded local Stage 4 Spark/Iceberg apply job
+- Limitations: The proof is local and bounded; it is not AWS durability, atomic cross-table storage, distributed exactly-once delivery, or production readiness.
 - Requirements: `CB-APPLY-001`, `CB-APPLY-002`, `CB-APPLY-003`, `CB-CHECKPOINT-001`
-- Disposition: `DOWNGRADED`
+- Disposition: `CORRECTED`
 
 ## CB-CLAIM-007 — UNCLAIMED
 
@@ -131,4 +131,14 @@ The complete accepted 72-row snapshot at S is locally loaded through real Spark 
 - Scope: bounded local Spark/Iceberg snapshot generation at S
 - Limitations: The proof uses a local filesystem Hadoop catalog and file-backed SQLite. It does not prove S3 or Glue durability, distributed exactly-once delivery, post-S CDC apply, schema evolution, publication, performance, availability, zero downtime, or production readiness.
 - Requirements: `CB-BOUNDARY-001`, `CB-BOUNDARY-003`, `CB-ISOLATION-001`, `CB-RECON-001`, `CB-SCHEMA-001`, `CB-EVIDENCE-001`
+- Disposition: `CORRECTED`
+
+## CB-CLAIM-014 — LOCAL_VERIFIED
+
+<!-- claim:CB-CLAIM-014 -->
+The accepted post-snapshot transaction is locally applied through real Spark 3.5.9 and Iceberg 1.11.0; independent reference digests match, identical replay is a no-op, and process loss after Iceberg commit recovers by durable commit token before the checkpoint advances.
+
+- Scope: bounded local transactional CDC apply for interval (0/194FB20, 0/194FE20]
+- Limitations: The candidate remains unpublished in CDC_APPLYING. No AWS durability, atomic multi-table Iceberg transaction, production exactly-once delivery, schema/key evolution, publication, performance, availability, zero downtime, or production-readiness proof is established.
+- Requirements: `CB-ORDER-001`, `CB-ORDER-002`, `CB-APPLY-001`, `CB-APPLY-002`, `CB-APPLY-003`, `CB-APPLY-004`, `CB-CHECKPOINT-001`, `CB-CHECKPOINT-002`, `CB-EVIDENCE-001`
 - Disposition: `CORRECTED`

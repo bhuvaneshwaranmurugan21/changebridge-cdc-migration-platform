@@ -1,0 +1,361 @@
+{
+  "artifact_manifest_digest": "bc7719e7de57273c648f2af65e5b4a24cba1a01e4682d7637ab51c95e69a418d",
+  "base_commit": "e9b4a6dc6d62c1c90a89ea4ba3c02ad6a0d6a601",
+  "base_tree": "775b6790edd7b671091e32b0e2787374e4bcb429",
+  "contract_version": "1.0.0",
+  "criteria": [
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-01",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-02",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-03",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-04",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-05",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-06",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-07",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-08",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-09",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-10",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-11",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-12",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-13",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-14",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-15",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-16",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-17",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-18",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-19",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-20",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-21",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-22",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-23",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-24",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-25",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-26",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-27",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-28",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-29",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-30",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-31",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-32",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-33",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-34",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-35",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-36",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-37",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-38",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-39",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-40",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-41",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-42",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-43",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage4/validation-summary.json"
+      ],
+      "id": "ST24-AC-44",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST24-AC-45",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST24-AC-46",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST24-AC-47",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST24-AC-48",
+      "result": "PENDING"
+    }
+  ],
+  "criteria_passed": 44,
+  "criteria_pending": 4,
+  "criteria_total": 48,
+  "evidence_label": "PENDING_EXTERNAL_CLOSURE",
+  "evidence_type": "stage_receipt",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the accepted fixture.",
+    "No AWS durability, distributed exactly-once, atomic cross-table storage transaction, schema/key evolution, publication, cutover, performance, availability, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "schema_version": "1.0.0",
+  "source_commit": "24c3ebbe7f56f30458fdeb0ea2cc8025131d7679",
+  "source_tree": "247886905ca6dc0260400f3b2a53fb4e8dd668bf",
+  "stage": 4
+}

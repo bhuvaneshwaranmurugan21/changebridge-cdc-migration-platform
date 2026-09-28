@@ -73,12 +73,12 @@ The deterministic local failure laboratory executes 13 named checks and reproduc
 
 Limitation: The checks exercise local control-plane semantics only and do not invoke managed AWS services.
 
-### CB-CLAIM-006 — `DESIGN_ONLY`
+### CB-CLAIM-006 — `LOCAL_VERIFIED`
 
 <!-- claim:CB-CLAIM-006 -->
-The current Spark file is an interface and input-shape adapter: it validates five columns and counts rows, but performs no Iceberg write, MERGE, delete application, checkpoint coupling, or idempotent target transaction.
+The Spark apply job now executes one manifest-bound local Iceberg CDC transaction with deterministic commit identity, receipt recovery, and checkpoint-last finalization.
 
-Limitation: It is not an Iceberg apply engine and must not be described as production-ready.
+Limitation: The proof is local and bounded; it is not AWS durability, atomic cross-table storage, distributed exactly-once delivery, or production readiness.
 
 ### CB-CLAIM-007 — `UNCLAIMED`
 

@@ -1,0 +1,22 @@
+{
+  "drift": {
+    "failed_closed": true,
+    "reason_code": "CB24I005_TARGET_BEFORE_IMAGE_MISMATCH"
+  },
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "failure_lab",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the accepted fixture.",
+    "No AWS durability, distributed exactly-once, atomic cross-table storage transaction, schema/key evolution, publication, cutover, performance, availability, or production claim is established."
+  ],
+  "part": 2,
+  "process_exit_code": 87,
+  "project": "ChangeBridge",
+  "recovered_without_rewrite": true,
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "24c3ebbe7f56f30458fdeb0ea2cc8025131d7679",
+  "source_tree": "247886905ca6dc0260400f3b2a53fb4e8dd668bf",
+  "stage": 4
+}

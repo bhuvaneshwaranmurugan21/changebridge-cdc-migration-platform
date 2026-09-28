@@ -108,7 +108,7 @@ tests/              invariant and failure-injection tests
 contracts/          versioned source contracts
 oracles/            invariant-to-oracle authority
 testing/            machine-readable test-layer authority
-jobs/               Spark interface/input-shape adapter; no Iceberg mutation
+jobs/               bounded Spark/Iceberg snapshot and transactional CDC adapters
 infra/terraform/    AWS reference topology
 evidence/           reproducible local proof artifact
 docs/               architecture decisions, runbook, and claim registry
@@ -117,9 +117,8 @@ docs/               architecture decisions, runbook, and claim registry
 ## Production mapping
 
 <!-- claim:CB-CLAIM-006 -->
-The current Spark file is an interface and input-shape adapter: it validates five columns and
-counts rows, but performs no Iceberg write, MERGE, delete application, checkpoint coupling, or
-idempotent target transaction.
+The Spark apply job now executes one manifest-bound local Iceberg CDC transaction with
+deterministic commit identity, receipt recovery, and checkpoint-last finalization.
 
 | Correctness concept | Local oracle | AWS reference component |
 |---|---|---|
@@ -150,6 +149,13 @@ CI validation and a real managed-service run still required before making a runt
 
 See the authoritative [claim registry](CLAIMS.md) and
 [completion contract](COMPLETION_CONTRACT.md).
+
+<!-- claim:CB-CLAIM-014 -->
+The accepted post-snapshot transaction is locally applied through real Spark 3.5.9 and Iceberg
+1.11.0; independent reference digests match, identical replay is a no-op, and process loss after
+Iceberg commit recovers by durable commit token before the checkpoint advances. The candidate
+remains unpublished in `CDC_APPLYING`; no atomic cross-table transaction or production exactly-once
+delivery is claimed. See [Stage 4 transactional apply](docs/part2/stage4/TRANSACTIONAL_APPLY.md).
 
 <!-- claim:CB-CLAIM-011 -->
 A deterministic workload was executed in isolated PostgreSQL 17.11 schemas, and a real exported

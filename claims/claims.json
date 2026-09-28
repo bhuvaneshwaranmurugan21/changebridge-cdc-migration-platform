@@ -98,19 +98,19 @@
     {
       "id": "CB-CLAIM-006",
       "source_claim_ids": ["PC-006", "BC-007"],
-      "approved_wording": "The current Spark file is an interface and input-shape adapter: it validates five columns and counts rows, but performs no Iceberg write, MERGE, delete application, checkpoint coupling, or idempotent target transaction.",
-      "scope": "jobs/spark_iceberg_apply.py",
-      "label": "DESIGN_ONLY",
+      "approved_wording": "The Spark apply job now executes one manifest-bound local Iceberg CDC transaction with deterministic commit identity, receipt recovery, and checkpoint-last finalization.",
+      "scope": "bounded local Stage 4 Spark/Iceberg apply job",
+      "label": "LOCAL_VERIFIED",
       "requirement_ids": ["CB-APPLY-001", "CB-APPLY-002", "CB-APPLY-003", "CB-CHECKPOINT-001"],
-      "proof_refs": ["jobs/spark_iceberg_apply.py", "evidence/part1/stage1/baseline_claims_matrix.json"],
-      "producing_commit": "d7e9cac800edfaf9e88f03dc6094ae07f43b496a",
-      "producing_run": null,
-      "limitations": "It is not an Iceberg apply engine and must not be described as production-ready.",
+      "proof_refs": ["jobs/spark_iceberg_apply.py", "src/changebridge/cdc_apply.py", "tests/integration/test_stage24_iceberg_cdc.py", "evidence/part2/stage4/validation-summary.json"],
+      "producing_commit": "24c3ebbe7f56f30458fdeb0ea2cc8025131d7679",
+      "producing_run": "stage24-local-spark-iceberg-proof",
+      "limitations": "The proof is local and bounded; it is not AWS durability, atomic cross-table storage, distributed exactly-once delivery, or production readiness.",
       "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-006"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-006"}, {"path": "docs/INTERVIEW_WALKTHROUGH.md", "marker": "CB-CLAIM-006"}],
       "review_status": "APPROVED",
-      "owner": "part2-runtime",
+      "owner": "part2-stage4",
       "invalidation_conditions": ["Spark adapter behavior changes", "real Iceberg apply implementation is added"],
-      "disposition": "DOWNGRADED"
+      "disposition": "CORRECTED"
     },
     {
       "id": "CB-CLAIM-007",
@@ -229,6 +229,23 @@
       "review_status": "APPROVED",
       "owner": "part2-stage3",
       "invalidation_conditions": ["snapshot handoff, generation registry, Iceberg adapter, loader recovery, runtime lock, or bound real-target tests change"],
+      "disposition": "CORRECTED"
+    },
+    {
+      "id": "CB-CLAIM-014",
+      "source_claim_ids": ["PART2-STAGE4-TRANSACTIONAL-CDC-APPLY"],
+      "approved_wording": "The accepted post-snapshot transaction is locally applied through real Spark 3.5.9 and Iceberg 1.11.0; independent reference digests match, identical replay is a no-op, and process loss after Iceberg commit recovers by durable commit token before the checkpoint advances.",
+      "scope": "bounded local transactional CDC apply for interval (0/194FB20, 0/194FE20]",
+      "label": "LOCAL_VERIFIED",
+      "requirement_ids": ["CB-ORDER-001", "CB-ORDER-002", "CB-APPLY-001", "CB-APPLY-002", "CB-APPLY-003", "CB-APPLY-004", "CB-CHECKPOINT-001", "CB-CHECKPOINT-002", "CB-EVIDENCE-001"],
+      "proof_refs": ["src/changebridge/cdc_apply.py", "src/changebridge/iceberg_cdc.py", "tests/integration/test_stage24_iceberg_cdc.py", "evidence/part2/stage4/differential-report.json", "evidence/part2/stage4/checkpoint-recovery.json"],
+      "producing_commit": "24c3ebbe7f56f30458fdeb0ea2cc8025131d7679",
+      "producing_run": "stage24-local-spark-iceberg-proof",
+      "limitations": "The candidate remains unpublished in CDC_APPLYING. No AWS durability, atomic multi-table Iceberg transaction, production exactly-once delivery, schema/key evolution, publication, performance, availability, zero downtime, or production-readiness proof is established.",
+      "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-014"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-014"}],
+      "review_status": "APPROVED",
+      "owner": "part2-stage4",
+      "invalidation_conditions": ["apply manifest, ordering, transaction assembly, Iceberg mutation, receipt recovery, checkpoint, runtime lock, or bound real-target tests change"],
       "disposition": "CORRECTED"
     }
   ]
