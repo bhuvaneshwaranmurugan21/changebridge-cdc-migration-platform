@@ -1,0 +1,22 @@
+{
+  "decision_digest": "bf20921a1b371ae9f481ad8e0bd7ba9ae45734499379853fb082b33be640d0b4",
+  "decision_id": "schema-decision-bf20921a1b371ae9f481ad8e",
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "schema_policy_proof",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the accepted fixture.",
+    "No AWS durability, arbitrary schema evolution, publication, Stage 6 reconciliation, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "policy_id": "changebridge.schema-policy",
+  "policy_version": "1.0.0",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "dc32be76a8f1d0f6ac661d19263c990ea391cdb5",
+  "source_tree": "41b7e7213d2a36b9e5da461812e46f4ec9929e1f",
+  "stage": 5,
+  "supported_change": "ADD_NULLABLE_NON_KEY_FIELD:source_note",
+  "supported_transition": "orders_source_contract/1.0.0->1.1.0"
+}

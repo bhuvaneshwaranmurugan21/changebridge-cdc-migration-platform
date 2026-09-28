@@ -1,0 +1,360 @@
+{
+  "artifact_manifest_digest": "6bb708fc34689d91589dd1c42a3f6e05cdd45daed134200ba6e4b7cbcdeb9bb2",
+  "base_commit": "cbf575315e3b9bea3c0ee79f78e3288c8746effb",
+  "base_tree": "30e26dd3d7cd89601de92bc6ec99ec0e1a2737f0",
+  "criteria": [
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-01",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-02",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-03",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-04",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-05",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-06",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-07",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-08",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-09",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-10",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-11",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-12",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-13",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-14",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-15",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-16",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-17",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-18",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-19",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-20",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-21",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-22",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-23",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-24",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-25",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-26",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-27",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-28",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-29",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-30",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-31",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-32",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-33",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-34",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-35",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-36",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-37",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-38",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-39",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-40",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-41",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-42",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-43",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage5/validation-summary.json"
+      ],
+      "id": "ST25-AC-44",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST25-AC-45",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST25-AC-46",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST25-AC-47",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "EXTERNAL_CLOSURE"
+      ],
+      "id": "ST25-AC-48",
+      "result": "PENDING"
+    }
+  ],
+  "criteria_passed": 44,
+  "criteria_pending": 4,
+  "criteria_total": 48,
+  "evidence_label": "PENDING_EXTERNAL_CLOSURE",
+  "evidence_type": "stage_receipt",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the accepted fixture.",
+    "No AWS durability, arbitrary schema evolution, publication, Stage 6 reconciliation, performance, availability, exactly-once, zero-downtime, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "schema_version": "1.0.0",
+  "source_commit": "dc32be76a8f1d0f6ac661d19263c990ea391cdb5",
+  "source_tree": "41b7e7213d2a36b9e5da461812e46f4ec9929e1f",
+  "stage": 5
+}
