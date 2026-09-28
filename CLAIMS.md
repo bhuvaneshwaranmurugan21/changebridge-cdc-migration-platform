@@ -152,3 +152,13 @@ The governed orders 1.0.0 to 1.1.0 nullable non-key addition is locally applied 
 - Limitations: The proof uses Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and one bounded nullable non-key addition. It does not prove AWS or Glue durability, arbitrary schema evolution, coercion/default semantics, publication, Stage 6 reconciliation, performance, availability, zero downtime, exactly-once delivery, or production readiness.
 - Requirements: `CB-SCHEMA-001`, `CB-SCHEMA-002`, `CB-SCHEMA-003`, `CB-CHECKPOINT-001`, `CB-EVIDENCE-001`
 - Disposition: `CORRECTED`
+
+## CB-CLAIM-016 — LOCAL_VERIFIED
+
+<!-- claim:CB-CLAIM-016 -->
+At accepted frontier 0/194FE20, deterministic source observations and generation-owned Iceberg snapshots reconcile through typed keyed-row, bucket, table, and generation proofs; eight independently bound gates seal one recoverable proof manifest and advance the unpublished candidate to PROVEN.
+
+- Scope: bounded local frozen-frontier reconciliation for generation-34edddda5aee96dc7236aaf3
+- Limitations: Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem catalog and SQLite proof; no AWS durability, performance, publication, cutover, rollback execution, zero downtime or production readiness is proven.
+- Requirements: `CB-RECON-001`, `CB-RECON-002`, `CB-RECON-003`, `CB-PUBLISH-001`, `CB-EVIDENCE-001`
+- Disposition: `CORRECTED`

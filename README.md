@@ -164,6 +164,16 @@ changes quarantine before mutation, and incompatible schema or primary-key chang
 candidate generation. The compatible candidate remains unpublished, unsealed, and at checkpoint
 `0/194FE20`. See [Stage 5 schema policy](docs/part2/stage5/SCHEMA_POLICY.md).
 
+<!-- claim:CB-CLAIM-016 -->
+At accepted frontier 0/194FE20, deterministic source observations and generation-owned Iceberg
+snapshots reconcile through typed keyed-row, bucket, table, and generation proofs; eight
+independently bound gates seal one recoverable proof manifest and advance the unpublished
+candidate to PROVEN.
+
+This is bounded local proof; publication, active-pointer mutation, cutover, rollback execution,
+AWS durability, performance, and production readiness remain unclaimed. See the
+[Stage 6 proof](docs/part2/stage6/RECONCILIATION_PROOF.md).
+
 <!-- claim:CB-CLAIM-011 -->
 A deterministic workload was executed in isolated PostgreSQL 17.11 schemas, and a real exported
 logical snapshot was locally bound to one typed PostgreSQL LSN frontier; repeated same-seed runs

@@ -1,5 +1,11 @@
 # ChangeBridge Part 2 Completion Contract
 
+## Stage 6 frozen-frontier proof
+
+The generation may reach `PROVEN` only after an immutable seal at `F = 0/194FE20`, deterministic
+hierarchical reconciliation, and all eight independently bound gates pass. `PROVEN` is not
+publication. Stage 6 leaves the active pointer unchanged.
+
 ## Purpose
 
 Part 2 converts the accepted Part 1 correctness authority into an executable, locally proven

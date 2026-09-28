@@ -264,6 +264,23 @@
       "owner": "part2-stage5",
       "invalidation_conditions": ["schema policy, key authority, decision, quarantine, generation rejection, Iceberg schema application, receipt recovery, runtime lock, or bound real-target tests change"],
       "disposition": "CORRECTED"
+    },
+    {
+      "id": "CB-CLAIM-016",
+      "source_claim_ids": ["PART2-STAGE6-RECONCILIATION-PROOF"],
+      "approved_wording": "At accepted frontier 0/194FE20, deterministic source observations and generation-owned Iceberg snapshots reconcile through typed keyed-row, bucket, table, and generation proofs; eight independently bound gates seal one recoverable proof manifest and advance the unpublished candidate to PROVEN.",
+      "scope": "bounded local frozen-frontier reconciliation for generation-34edddda5aee96dc7236aaf3",
+      "label": "LOCAL_VERIFIED",
+      "requirement_ids": ["CB-RECON-001", "CB-RECON-002", "CB-RECON-003", "CB-PUBLISH-001", "CB-EVIDENCE-001"],
+      "proof_refs": ["src/changebridge/hierarchical_reconciliation.py", "src/changebridge/proof_control.py", "src/changebridge/proof_gates.py", "tests/test_hierarchical_reconciliation.py", "evidence/part2/stage6/reconciliation-report.json", "evidence/part2/stage6/proof-manifest.json"],
+      "producing_commit": "b71f6d14591c73d697782dc1c0f90bcd9acac84e",
+      "producing_run": "stage26-local-spark-iceberg-reconciliation-proof",
+      "limitations": "Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem catalog and SQLite proof; no AWS durability, performance, publication, cutover, rollback execution, zero downtime or production readiness is proven.",
+      "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-016"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-016"}],
+      "review_status": "APPROVED",
+      "owner": "part2-stage6",
+      "invalidation_conditions": ["frontier, canonical observation, partitioning, snapshot binding, gate, seal, manifest, recovery, runtime lock or tests change"],
+      "disposition": "CORRECTED"
     }
   ]
 }

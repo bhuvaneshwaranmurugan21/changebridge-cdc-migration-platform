@@ -314,10 +314,10 @@
         "reconciliation_coordinator"
       ],
       "evidence_label": "DESIGN_ONLY",
-      "owner_stage": "part1-stage3",
-      "proof_owner": "part1-stage3",
+      "owner_stage": "part2-stage6",
+      "proof_owner": "part2-stage6",
       "requirement_id": "CB-RECON-001",
-      "requirement_status": "PARTIAL"
+      "requirement_status": "SATISFIED"
     },
     {
       "adrs": [
@@ -328,10 +328,10 @@
         "reconciliation_coordinator"
       ],
       "evidence_label": "UNCHANGED",
-      "owner_stage": "part2-runtime",
-      "proof_owner": "part2-runtime",
+      "owner_stage": "part2-stage6",
+      "proof_owner": "part2-stage6",
       "requirement_id": "CB-RECON-002",
-      "requirement_status": "PARTIAL"
+      "requirement_status": "SATISFIED"
     },
     {
       "adrs": [

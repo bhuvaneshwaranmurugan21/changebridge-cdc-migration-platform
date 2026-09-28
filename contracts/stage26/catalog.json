@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "part2-stage6",
+  "contracts": [
+    "schemas/part2-stage6/gate-result-v2.schema.json",
+    "schemas/part2-stage6/generation-seal-v1.schema.json",
+    "schemas/part2-stage6/proof-manifest-v2.schema.json",
+    "schemas/part2-stage6/reconciliation-report-v1.schema.json"
+  ],
+  "required_gates": ["continuity", "schema", "deletes", "reconciliation", "lag", "pre_migration", "rollback_readiness", "evidence_integrity"]
+}
