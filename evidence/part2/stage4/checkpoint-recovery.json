@@ -1,0 +1,35 @@
+{
+  "checkpoint_after_crash": {
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "last_transaction_digest": null,
+    "last_transaction_id": null,
+    "revision": 0,
+    "source_frontier": "0/194FB20"
+  },
+  "crash_exit_code": 87,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "checkpoint_recovery",
+  "final_checkpoint": {
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "last_transaction_digest": "dbe1b5ef0b989ec44211f699ee4310b536e3149d5fbe91100c6442ed58374861",
+    "last_transaction_id": "tx-012-post-boundary",
+    "revision": 1,
+    "source_frontier": "0/194FE20"
+  },
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the accepted fixture.",
+    "No AWS durability, distributed exactly-once, atomic cross-table storage transaction, schema/key evolution, publication, cutover, performance, availability, or production claim is established."
+  ],
+  "orders_snapshot_count": 2,
+  "part": 2,
+  "project": "ChangeBridge",
+  "receipts_after_crash": 0,
+  "recovered_receipt": true,
+  "recovered_without_rewrite": true,
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "24c3ebbe7f56f30458fdeb0ea2cc8025131d7679",
+  "source_tree": "247886905ca6dc0260400f3b2a53fb4e8dd668bf",
+  "stage": 4
+}

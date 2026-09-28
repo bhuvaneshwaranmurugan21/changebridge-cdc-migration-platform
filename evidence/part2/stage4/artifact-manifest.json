@@ -1,0 +1,67 @@
+{
+  "artifact_count": 12,
+  "artifacts": [
+    {
+      "path": "evidence/part2/stage4/apply-manifest-proof.json",
+      "sha256": "972219d2c782b44d4e9aeb6ea0794cf7858990f243dcf1ef5667e2de3efdfb5a"
+    },
+    {
+      "path": "evidence/part2/stage4/checkpoint-recovery.json",
+      "sha256": "38e9bc44b7a56a7fc83ffa1f77af390a57e3b51980903fa29397881c26c7b9db"
+    },
+    {
+      "path": "evidence/part2/stage4/claim-impact-review.json",
+      "sha256": "f6649311232e0fcec7dc9d10e5e4509d28b1c75d8d7748ccdd838a5cc2a1941e"
+    },
+    {
+      "path": "evidence/part2/stage4/determinism-report.json",
+      "sha256": "6fedd28390ce9f731f24a2c48f8adf38a8cd3f43bc8f135b46ecc191e0340246"
+    },
+    {
+      "path": "evidence/part2/stage4/differential-report.json",
+      "sha256": "63a585962148cbda30fa883cc07f1e67fbe20aa3f9ef2b42525eac1f4bb34ffb"
+    },
+    {
+      "path": "evidence/part2/stage4/execution-envelope.json",
+      "sha256": "911dcbeb5071e897a62b6feb28bbb267ff25c5a8a0e2aa35d214a62acb008226"
+    },
+    {
+      "path": "evidence/part2/stage4/failure-lab.json",
+      "sha256": "9917be87b8ca93290671f604bfc75a174035ee8f98bedafc03b6da616752dc83"
+    },
+    {
+      "path": "evidence/part2/stage4/file-manifest.json",
+      "sha256": "534216c01f6425260a6924da9b43058b4b82d3a44e67d40c0af177766894756b"
+    },
+    {
+      "path": "evidence/part2/stage4/generation-state.json",
+      "sha256": "e7075c17342d06dcc2dfd6836af4374f57160ccf7dbce89ddcb1463012f1617b"
+    },
+    {
+      "path": "evidence/part2/stage4/protected-predecessor-baseline.json",
+      "sha256": "bf35ba37076343433f4a3614462f60a621c9beb5c3bbf3f25b5196f3af20a298"
+    },
+    {
+      "path": "evidence/part2/stage4/repository-entry.json",
+      "sha256": "8ec4ae4b4163c21f683506b9e70f51c142c14d53d6e227191d01532a440b0393"
+    },
+    {
+      "path": "evidence/part2/stage4/validation-summary.json",
+      "sha256": "2041e258e833e77eb1ca55966020133f2b4c4a85a1b1070836e2890e3d34a299"
+    }
+  ],
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "artifact_manifest",
+  "limitations": [
+    "Proof is bounded to local Spark 3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, file-backed SQLite, and the accepted fixture.",
+    "No AWS durability, distributed exactly-once, atomic cross-table storage transaction, schema/key evolution, publication, cutover, performance, availability, or production claim is established."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "24c3ebbe7f56f30458fdeb0ea2cc8025131d7679",
+  "source_tree": "247886905ca6dc0260400f3b2a53fb4e8dd668bf",
+  "stage": 4
+}

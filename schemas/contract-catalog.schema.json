@@ -9,9 +9,9 @@
     "authority": {"const": "ChangeBridge Part 1 Stage 4"},
     "canonicalization_profile": {"const": "changebridge-canonical-json/1.0.0"},
     "compatibility_policy": {"type": "object", "minProperties": 12, "additionalProperties": {"type": "string", "minLength": 1}},
-    "required_logical_records": {"type": "array", "minItems": 16, "maxItems": 16, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "required_logical_records": {"type": "array", "minItems": 17, "maxItems": 17, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
     "contracts": {
-      "type": "array", "minItems": 16,
+      "type": "array", "minItems": 17,
       "items": {
         "type": "object", "additionalProperties": false,
         "required": ["id", "title", "version", "schema_uri", "authority_path", "schema_pointer", "owner", "producers", "consumers", "compatibility_class", "required_fields", "optional_fields", "conditional_fields", "unknown_field_policy", "canonicalization_profile", "identity_profile", "requirement_ids", "adr_ids", "component_ids", "invariant_ids", "claim_ids", "lifecycle", "replacement_id", "deprecation_stage", "local_validator", "future_managed_proof_owner"],

@@ -1,0 +1,13 @@
+{
+  "event_count": 1,
+  "fixture_kind": "accepted-stage3-handoff-extraction",
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "manifest_id": "3fc3fb396928211c9cedacbb88c815a717d9ad1a81beb7eefd97459c9bf6c19f",
+  "profile": "changebridge-stage24-fixture-provenance/1.0.0",
+  "snapshot_boundary": "0/194FB20",
+  "source": "tests/fixtures/part2-stage3/handoff/normalized/canonical.json",
+  "synthetic": false,
+  "terminal_frontier": "0/194FE20",
+  "transaction_count": 1,
+  "transaction_id": "tx-012-post-boundary"
+}
