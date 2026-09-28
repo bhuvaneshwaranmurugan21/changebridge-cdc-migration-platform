@@ -1,0 +1,25 @@
+{
+  "canonicalization_profile": "changebridge-canonical-json/1.0.0",
+  "contract_version": "changebridge-cdc-apply-manifest/1.0.0",
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "manifest_id": "3fc3fb396928211c9cedacbb88c815a717d9ad1a81beb7eefd97459c9bf6c19f",
+  "predecessor_manifest_digest": "cbefc7edceb284352970b9ef4f6726b88b694faff4e8678863d1245157cc6dc1",
+  "previous_frontier": "0/194FB20",
+  "source_history_digest": "61b6a6af3a3befa54f80a17cbf65278bb35a72cbb70a59bf6c86cd0460a00634",
+  "terminal_frontier": "0/194FE20",
+  "transactions": [
+    {
+      "commit_lsn": "0/194FE20",
+      "event_set_digest": "3eccb608084aae21d929e1ed00e0f8615e16a1c648745156580b22edd8ab76da",
+      "expected_event_count": 1,
+      "ordered_event_ids": [
+        "43f1cc17d056666646d6e38bdc0230a182591b4c8ae36602ee375f652a1be906"
+      ],
+      "tables": [
+        "orders"
+      ],
+      "transaction_id": "tx-012-post-boundary",
+      "transaction_sequence": 12
+    }
+  ]
+}

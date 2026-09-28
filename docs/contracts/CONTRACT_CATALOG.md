@@ -6,6 +6,7 @@ Generated from `contracts/catalog.json`; the JSON registry is authoritative.
 |---|---:|---|---|---|
 | `active_generation` | `1.0.0` | publication-controller | `contracts/control/control-records-v1.schema.json#/$defs/active_generation` | `changebridge.contracts.publication_verdict` |
 | `applied_transaction` | `1.0.0` | target-apply-adapter | `contracts/control/control-records-v1.schema.json#/$defs/applied_transaction` | `scripts/validate_contract_oracle_authority.py` |
+| `cdc_apply_manifest` | `1.0.0` | target-apply-adapter | `contracts/cdc-apply-manifest-v1.schema.json#` | `scripts/validate_part2_stage4.py` |
 | `cdc_envelope` | `1.0.0` | normalizer | `contracts/cdc-envelope-v1.schema.json#` | `changebridge.contracts.validate_cdc_event` |
 | `evidence_bundle` | `1.0.0` | evidence-assembler | `contracts/control/control-records-v1.schema.json#/$defs/evidence_bundle` | `changebridge.contracts.verify_artifact_manifest` |
 | `frontier_checkpoint` | `1.0.0` | checkpoint-store | `contracts/control/control-records-v1.schema.json#/$defs/frontier_checkpoint` | `scripts/validate_contract_oracle_authority.py` |

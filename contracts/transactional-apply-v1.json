@@ -1,0 +1,11 @@
+{
+  "contract_version": "changebridge-transactional-apply/1.0.0",
+  "authority": "manifest-bound transaction plus per-table durable commit receipts",
+  "checkpoint_rule": "advance only after every declared table receipt is durable and verified",
+  "recovery_rule": "recover by deterministic commit token in Iceberg snapshot summary; never blind-rewrite",
+  "ordering": ["typed postgres_lsn", "transaction_sequence", "event_sequence", "event_id"],
+  "candidate_state": "CDC_APPLYING",
+  "publication_allowed": false,
+  "cross_table_atomicity_claim": false,
+  "production_exactly_once_claim": false
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "after": {
+      "amount": 4750,
+      "campaign_id": "post-boundary",
+      "customer_id": "customer-528935-4",
+      "order_id": "order-004",
+      "source_note": null
+    },
+    "before": {
+      "amount": 4500,
+      "campaign_id": null,
+      "customer_id": "customer-528935-4",
+      "order_id": "order-004",
+      "source_note": null
+    },
+    "committed_at": "2024-03-01T00:00:04.000000Z",
+    "contract_version": "1.0.0",
+    "event_id": "43f1cc17d056666646d6e38bdc0230a182591b4c8ae36602ee375f652a1be906",
+    "event_sequence": 1,
+    "generation_id": "generation-34edddda5aee96dc7236aaf3",
+    "ingested_at": "2024-03-01T00:00:10.000000Z",
+    "operation": "update",
+    "payload_digest": "ca546e00da9414f7bd068a518e339920c872b71f13679aa538f15c44aa6f7a55",
+    "primary_key": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "value": "order-004"
+      }
+    ],
+    "quarantine_reason": null,
+    "run_id": "stage23-full-snapshot-handoff-001",
+    "source_contract_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_contract_id": "orders_source_contract_v1_1",
+    "source_contract_version": "1.1.0",
+    "source_database": "changebridge",
+    "source_position": {
+      "kind": "postgres_lsn",
+      "value": "0/194FE20"
+    },
+    "source_schema": "public",
+    "source_schema_digest": "3797f8a7959cffb6ea5759246d5bdb961a9c34f9e7983999662b22ae88fe9ca0",
+    "source_schema_version": "orders/1.1.0",
+    "source_system": "postgresql",
+    "source_table": "orders",
+    "transaction_id": "tx-012-post-boundary",
+    "transaction_sequence": 12,
+    "transport_capabilities": {
+      "before_images": "full",
+      "source_order": true,
+      "transaction_boundaries": true
+    }
+  }
+]

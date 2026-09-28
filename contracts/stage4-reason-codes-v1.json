@@ -1,0 +1,15 @@
+{
+  "contract_version": "changebridge-stage24-reason-codes/1.0.0",
+  "codes": {
+    "CB24A001_FOREIGN_GENERATION": "Event targets another generation",
+    "CB24A002_NONCONTIGUOUS_EVENT_SEQUENCE": "Transaction event sequence has a gap",
+    "CB24A004_STAGE5_POLICY_REQUIRED": "Schema or key evolution requires Stage 5 policy",
+    "CB24A008_INCOMPLETE_TRANSACTION": "Manifest-bound transaction is incomplete or reordered",
+    "CB24C002_TRANSACTION_REPLAY_CONFLICT": "Transaction identity was reused with different content",
+    "CB24C005_RECEIPTS_INCOMPLETE": "Checkpoint finalization lacks a required table receipt",
+    "CB24C007_STALE_CHECKPOINT": "Checkpoint compare-and-swap revision is stale",
+    "CB24I005_TARGET_BEFORE_IMAGE_MISMATCH": "Target row does not match the required before image",
+    "CB24I008_COMMIT_TOKEN_CONFLICT": "Recovered commit token metadata conflicts",
+    "CB24P001_GENERATION_NOT_CDC_APPLYING": "Candidate generation is not eligible for CDC apply"
+  }
+}

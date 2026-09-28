@@ -234,7 +234,7 @@ def diagnostic(call: Callable[[], Any]) -> str:
 def test_complete_authority_passes_without_candidate_evidence() -> None:
     report = validate_authority(load_authority(ROOT), ROOT, check_evidence=False)
     assert report["result"] == "PASS"
-    assert report["contract_count"] == 16
+    assert report["contract_count"] == 17
     assert report["control_record_count"] == 12
     assert report["invariant_count"] == 16
     assert report["oracle_case_count"] == 32
