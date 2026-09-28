@@ -1,0 +1,29 @@
+{
+  "policy_id": "changebridge.schema-policy",
+  "version": "1.0.0",
+  "direction": "previous_to_candidate",
+  "canonicalization_profile": "changebridge-canonical-json/1.0.0",
+  "compatible_changes": [
+    "EXACT_REPLAY",
+    "ADD_NULLABLE_NON_KEY_FIELD"
+  ],
+  "incompatible_changes": [
+    "FIELD_REMOVED",
+    "FIELD_RENAMED",
+    "TYPE_CHANGED",
+    "NULLABILITY_NARROWED",
+    "REQUIRED_FIELD_ADDED",
+    "PRIMARY_KEY_CHANGED",
+    "PRIMARY_KEY_VALUE_CHANGED"
+  ],
+  "unknown_changes": [
+    "UNREGISTERED_IDENTITY",
+    "POLICY_MISMATCH",
+    "TABLE_IDENTITY_MISMATCH"
+  ],
+  "unknown_action": "QUARANTINE_BEFORE_TARGET_MUTATION",
+  "incompatible_action": "QUARANTINE_THEN_REJECT_GENERATION",
+  "primary_key_policy": "IMMUTABLE_WITHIN_GENERATION",
+  "implicit_coercion": false,
+  "implicit_defaults": false
+}

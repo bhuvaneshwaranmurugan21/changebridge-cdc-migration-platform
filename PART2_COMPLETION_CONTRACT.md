@@ -94,6 +94,34 @@ zero-downtime, or production-readiness property.
 The machine-readable authority is `requirements/part2-stage3-acceptance.json`. Repository evidence
 binds to a pre-evidence source-freeze commit to avoid recursive commit and manifest identities.
 
+## Stage 4 completion rule
+
+Stage 4 is complete only when `ST24-AC-01` through `ST24-AC-44` pass on the exact reviewed head,
+the expected-head merge succeeds, fresh merged `main` satisfies `ST24-AC-45` through
+`ST24-AC-47`, and the external `PART2_STAGE4_CDC_APPLY_VERIFIED` checkpoint satisfies
+`ST24-AC-48`. The generation remains unpublished in `CDC_APPLYING` at frontier `0/194FE20`.
+
+## Stage 5 completion rule
+
+Stage 5 is complete only when `ST25-AC-01` through `ST25-AC-44` pass on one exact reviewed
+pull-request head, the guarded merge satisfies `ST25-AC-45`, fresh merged `main` satisfies
+`ST25-AC-46` and `ST25-AC-47`, and the external
+`PART2_STAGE5_SCHEMA_POLICY_VERIFIED` checkpoint satisfies `ST25-AC-48`.
+
+Stage 5 admits only an exact registered contract identity under an immutable policy digest. Its
+supported transition is `orders/1.0.0` to `orders/1.1.0`, adding the nullable, non-key
+`source_note` field. A durable compatible decision and exact Iceberg schema-apply receipt are
+mandatory before CDC admission. Unknown changes quarantine before mutation; incompatible schema
+or primary-key changes quarantine and reject the candidate generation. The checkpoint remains
+`0/194FE20`; the generation remains unpublished, unsealed, and in `CDC_APPLYING` after a
+compatible change.
+
+The machine-readable authority is `requirements/part2-stage5-acceptance.json`. Stage 5 evidence
+binds to a pre-evidence source-freeze commit. Its claim ceiling is `LOCAL_VERIFIED` for Spark
+3.5.9, Iceberg 1.11.0, a filesystem Hadoop catalog, and SQLite. It proves no AWS behavior,
+managed durability, arbitrary schema evolution, coercion, inferred defaults, publication,
+cutover, Stage 6 reconciliation, or production property.
+
 ## Failure and correction policy
 
 - Failures preserve their original diagnostics and are corrected through reviewable commits.

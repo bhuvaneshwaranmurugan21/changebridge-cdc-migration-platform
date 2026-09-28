@@ -1,0 +1,14 @@
+{
+  "contract_version": "changebridge-stage5-reason-codes/1.0.0",
+  "codes": [
+    {"code": "CB25S001_UNKNOWN_CONTRACT", "class": "UNKNOWN", "action": "QUARANTINE"},
+    {"code": "CB25S010_POLICY_MISMATCH", "class": "UNKNOWN", "action": "QUARANTINE"},
+    {"code": "CB25S011_TABLE_IDENTITY_MISMATCH", "class": "UNKNOWN", "action": "QUARANTINE"},
+    {"code": "CB25S020_PRIMARY_KEY_CHANGED", "class": "INCOMPATIBLE", "action": "REJECT"},
+    {"code": "CB25S021_FIELD_REMOVED", "class": "INCOMPATIBLE", "action": "REJECT"},
+    {"code": "CB25S022_TYPE_CHANGED", "class": "INCOMPATIBLE", "action": "REJECT"},
+    {"code": "CB25S023_NULLABILITY_NARROWED", "class": "INCOMPATIBLE", "action": "REJECT"},
+    {"code": "CB25S024_REQUIRED_FIELD_ADDED", "class": "INCOMPATIBLE", "action": "REJECT"},
+    {"code": "CB25S031_PRIMARY_KEY_VALUE_CHANGED", "class": "INCOMPATIBLE", "action": "REJECT"}
+  ]
+}

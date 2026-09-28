@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:changebridge:contract:schema-quarantine:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["quarantine_id", "generation_id", "source_table", "decision_id", "frontier", "target_metadata_location", "status", "reason_codes"],
+  "properties": {
+    "quarantine_id": {"type": "string", "pattern": "^schema-quarantine-[0-9a-f]{24}$"},
+    "generation_id": {"type": "string", "minLength": 1},
+    "source_table": {"type": "string", "minLength": 1},
+    "decision_id": {"type": "string", "pattern": "^schema-decision-[0-9a-f]{24}$"},
+    "frontier": {"type": "string", "minLength": 1},
+    "target_metadata_location": {"type": "string", "minLength": 1},
+    "status": {"enum": ["OPEN", "RESOLVED", "REJECTED"]},
+    "reason_codes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}
+  }
+}
