@@ -19,6 +19,8 @@ jobs:
         run: |
           printf '%s' "$PATCH_XZ_B64" | base64 --decode | xz --decompress > /tmp/stage4.patch
           git apply --index /tmp/stage4.patch
+          git restore --staged .github/workflows/ci.yml
+          git restore .github/workflows/ci.yml
           git rm .github/workflows/stage4-bootstrap.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
