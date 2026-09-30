@@ -1,0 +1,11 @@
+{
+  "action": "FIRST_PUBLICATION_FALLBACK",
+  "attempt_id": "stage27-fallback-attempt",
+  "expected_revision": 1,
+  "generation_id": null,
+  "prior_generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "product_id": "orders-migration",
+  "represents_prior_published_generation": false,
+  "resulting_revision": 2,
+  "verdict": "SOURCE_FALLBACK_VERIFIED"
+}

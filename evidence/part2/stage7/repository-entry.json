@@ -1,0 +1,20 @@
+{
+  "base_commit": "640c5714937aa5a7a68712ccebdafa3999ecc574",
+  "base_tree": "7fd9bb0e6a9d2009dbdd57c2761c8efa4e370f82",
+  "branch": "part2-stage7-publication-closure",
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "repository_entry",
+  "limitations": [
+    "Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem and SQLite proof.",
+    "No AWS, managed durability, live traffic, performance or production property is proven."
+  ],
+  "part": 2,
+  "predecessor_checkpoint": "PART2_STAGE6_RECONCILIATION_VERIFIED",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "c83877287af7de91c2354cfac045c16a73119380",
+  "source_tree": "563a91bf9843b81393c2cd0b529a1b35d32f5bd8",
+  "stage": 7
+}
