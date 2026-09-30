@@ -1,0 +1,199 @@
+{
+  "artifact_count": 45,
+  "artifacts": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "9eb8277a83e0304e3b867a4a6464cac4ad49cdcda7ac1e9f07d57bfeb9f8f802"
+    },
+    {
+      "path": ".github/workflows/part2-stage7-publication.yml",
+      "sha256": "aee579959c8b51298d6b62ddfa46b169db7d0e9dc4f4505343fd5942ad0facad"
+    },
+    {
+      "path": "CLAIMS.md",
+      "sha256": "86271ca8ab00ac81cffcce5a0b13eeec79280b605b6935f8a2e638f6925d985d"
+    },
+    {
+      "path": "PART2_COMPLETION_CONTRACT.md",
+      "sha256": "81fe428cad8dc5905cfb4017c3687f643aa3875780a5a3aee41fb84ab5e9bc1e"
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "sha256": "2036b449ae0cd4f402e585159cf102e358b773d94ed276e3242669790823ff8c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "600b1a55a0b3f3f40b94d1f375be55cada65f0e5329d1f3191fc3e0b73e6174e"
+    },
+    {
+      "path": "architecture/requirement-architecture-map.json",
+      "sha256": "f9d1ef559bbce1fa2ce86d6e8b81b6221ed5ad19d8a1298c24b54eaf102f6456"
+    },
+    {
+      "path": "claims/claims.json",
+      "sha256": "b8a70cd448af6cea9b13e9b8467a4ab17614da87732bc32085980a6c2475b163"
+    },
+    {
+      "path": "contracts/stage27/catalog.json",
+      "sha256": "6a3b3653289a0d5d87f3820dab3de7e0ecac81b128c009b1051ae821f66d9c19"
+    },
+    {
+      "path": "contracts/stage27/reason-codes.json",
+      "sha256": "0c6093670eb8433dd748272cbdacadd1702b52f0874b3e63afc64e28f3af580c"
+    },
+    {
+      "path": "docs/adr/ADR-021-execution-bound-publication.md",
+      "sha256": "094a736adfc18da3843d3e49859aefdb0132287b9df33bd1916c464d97e11e82"
+    },
+    {
+      "path": "docs/part2/stage7/PUBLICATION_AND_CLOSURE.md",
+      "sha256": "db02a20372c28bc0079cb53862d8d646c7b7a6f99f49e0ef24833a1896bb3d8f"
+    },
+    {
+      "path": "docs/part2/stage7/RUNBOOK.md",
+      "sha256": "1363d4c2ca6a97769f984cf1859cc4d152dcf10bd13ef0f2d36fe2e234a387b8"
+    },
+    {
+      "path": "evidence/part2/stage7/accepted-proof-chain.json",
+      "sha256": "ab69735759a4745c73ca77b2a287e3b56af41147e95e84cd159f967023b6a9ca"
+    },
+    {
+      "path": "evidence/part2/stage7/claim-impact-review.json",
+      "sha256": "c08572afc8ed486f95ffd126c5c2a55616fbe288e4c08ca3a7e0d288931cac07"
+    },
+    {
+      "path": "evidence/part2/stage7/consumer-verification.json",
+      "sha256": "01a64400e4e19888cd085685cfcbeec133922849b1b41f623a811f08552342a5"
+    },
+    {
+      "path": "evidence/part2/stage7/dependency-decision.json",
+      "sha256": "f0193beb89e9a586edc4bb72fff1c87901c92f90b02e48b0a75beb82afcbf295"
+    },
+    {
+      "path": "evidence/part2/stage7/determinism-report.json",
+      "sha256": "b6b63c5ed19fa7473a619343fb1b4bab227c8867b056c3439a569eaae79230a7"
+    },
+    {
+      "path": "evidence/part2/stage7/execution-envelope.json",
+      "sha256": "cff76d37800de8741bb7f4307e5dc8244cc27d63aa7b82b67a1b648e70569517"
+    },
+    {
+      "path": "evidence/part2/stage7/execution-proof-manifest.json",
+      "sha256": "aa056e37f13dc1487660d0b60f08c698909da0d1387a2b859215c5982becfbd3"
+    },
+    {
+      "path": "evidence/part2/stage7/failure-lab.json",
+      "sha256": "4ed19b577864e1115e01c8cdc58e96e754b8baa026b725c7d659f5aec30a2d33"
+    },
+    {
+      "path": "evidence/part2/stage7/fallback-receipt.json",
+      "sha256": "d10c76c27a2dd40eba4ef8c8f6de50017a7791404caeb8e2c06fde3dd98f050f"
+    },
+    {
+      "path": "evidence/part2/stage7/file-manifest.json",
+      "sha256": "82cbc3780be3deedb59a991aa5ce374b9145ed3391b91d995a6f996562360579"
+    },
+    {
+      "path": "evidence/part2/stage7/part2-closure-manifest.json",
+      "sha256": "b4a16fa2931e6827f442569a8ab1ace39b694c370d8d764f7083da66f5b578bc"
+    },
+    {
+      "path": "evidence/part2/stage7/physical-table-map.json",
+      "sha256": "b1aa47519a75cf521b8474cd88662027df4700e42c953179c9a15d62cbbdbbad"
+    },
+    {
+      "path": "evidence/part2/stage7/pointer-history.json",
+      "sha256": "a8d9f9ef33ccfc970e958be2ce654beb4fc8a18f7e94a882cecb0f2993727539"
+    },
+    {
+      "path": "evidence/part2/stage7/protected-predecessor-baseline.json",
+      "sha256": "c3024e6c828092465d87374c6ddb4ffb72eea978c14e4553fa557987e36fe33d"
+    },
+    {
+      "path": "evidence/part2/stage7/publication-binding-manifest.json",
+      "sha256": "7124db6f8c57f76aaf754265235a66bad5bf31d218080b5b4a3dbe905f073130"
+    },
+    {
+      "path": "evidence/part2/stage7/publication-receipt.json",
+      "sha256": "946669fc841dc8002a19b95fe9060416124fc3cb501c891e7289118e3f84fc89"
+    },
+    {
+      "path": "evidence/part2/stage7/repository-entry.json",
+      "sha256": "ebf39cff99f4fc3f0cd18e8b572f3711ad34378222396474496935ccb221a588"
+    },
+    {
+      "path": "evidence/part2/stage7/rollback-policy-report.json",
+      "sha256": "37a9ddddf2111b8938dab1a37bed03300087efeea1db6063298dfd04d594028f"
+    },
+    {
+      "path": "evidence/part2/stage7/validation-summary.json",
+      "sha256": "6a931e24b05086093db787c861df0b9495b8953bfc9b95ca8c0a7383b508b380"
+    },
+    {
+      "path": "jobs/spark_iceberg_publish.py",
+      "sha256": "92be2762d58e0064da8fdfc93ca9895280a26861222effe55e2e768b91e4be44"
+    },
+    {
+      "path": "requirements/completion-requirements.json",
+      "sha256": "b74eb436fc92b49e4aa145712b3ec5e3b4aeeff8f906e11c9e80115ba8386d4d"
+    },
+    {
+      "path": "requirements/part2-stage7-acceptance.json",
+      "sha256": "b23e24d4c7356ef3df0b910953e93f1da0ca114bcbf864d83120c0e14eea4224"
+    },
+    {
+      "path": "requirements/requirement-proof-matrix.json",
+      "sha256": "0d2c976e8ea6ce4c0d664de4285deac0b2d9460c6140b4255ed10f147f184e3d"
+    },
+    {
+      "path": "scripts/build_stage27_evidence.py",
+      "sha256": "5ae621a89aa456d443661eaa749d60faa8450999fef9dd516b0429abd946afa9"
+    },
+    {
+      "path": "scripts/run_stage27_publication_lab.py",
+      "sha256": "b02cdec257f12154b4d4517a963359f766dbce277909b1ec2fe08897fe1d2923"
+    },
+    {
+      "path": "scripts/validate_part2_stage6.py",
+      "sha256": "6cefd865d9008c46d9fa078f663cf279e9ac3fad6ef6e797070f60fc6f4a8376"
+    },
+    {
+      "path": "scripts/validate_part2_stage7.py",
+      "sha256": "5cb60c92cf5279b927e52e8a7d584a8486dac113672a8f5d4fa018e3edbf2760"
+    },
+    {
+      "path": "src/changebridge/consumer.py",
+      "sha256": "a512a90f428be18b604bbbf9fb64ffbbe91ed2e93ade01a0b5fa795322f1e944"
+    },
+    {
+      "path": "src/changebridge/publication.py",
+      "sha256": "38f28e242b14b40cb39e8c8b78b4f02e23d6a7140633a3e225847be57dd8ceca"
+    },
+    {
+      "path": "src/changebridge/publication_orchestrator.py",
+      "sha256": "a387a795c53b5bcf867b8f5341e0e5a8abee8ceba6ceee01299dd7bfee4c0389"
+    },
+    {
+      "path": "tests/test_stage27_contracts.py",
+      "sha256": "41c3f132653203af348ff8601e0936c981feb1da67d8b5aefe210f8070eebffc"
+    },
+    {
+      "path": "tests/test_stage27_publication.py",
+      "sha256": "db45a05977f08e3259849853d10643715b5cdb63709827d55a22c0eed4557aa6"
+    }
+  ],
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "artifact_manifest",
+  "limitations": [
+    "Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem and SQLite proof.",
+    "No AWS, managed durability, live traffic, performance or production property is proven."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "f8f1043a4b06ca7e75bc9797b82644cb2411f4dc",
+  "source_tree": "d1d5fc9b07f58c4ef0ee284d1247245c958c20f8",
+  "stage": 7
+}
