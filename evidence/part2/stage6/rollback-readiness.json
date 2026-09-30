@@ -1,0 +1,25 @@
+{
+  "active_pointer_before_publication": null,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_refs": [
+    "docs/adr/ADR-020-executable-frontier-proof.md"
+  ],
+  "evidence_type": "rollback_readiness",
+  "limitations": [
+    "Bounded local PostgreSQL-history, Spark 3.5.9, Iceberg 1.11.0 and SQLite proof.",
+    "No AWS, managed durability, publication, performance or production property is proven."
+  ],
+  "part": 2,
+  "policy": "FIRST_PUBLICATION_SOURCE_FALLBACK",
+  "project": "ChangeBridge",
+  "publication_stage": 7,
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "represents_prior_published_generation": false,
+  "result": "PASS",
+  "rollback_target": "ABSENT_ACTIVE_POINTER",
+  "schema_version": "1.0.0",
+  "source_authoritative": true,
+  "source_commit": "0dbb63843ab029715fb55ace976e4df150161e88",
+  "source_tree": "16e1e875e71ab6ac7b836ea6b85dc93640e3b7d5",
+  "stage": 6
+}

@@ -1,0 +1,18 @@
+{
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "determinism",
+  "limitations": [
+    "Bounded local PostgreSQL-history, Spark 3.5.9, Iceberg 1.11.0 and SQLite proof.",
+    "No AWS, managed durability, publication, performance or production property is proven."
+  ],
+  "logical_projection_equal": true,
+  "part": 2,
+  "physical_bindings_distinct": true,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "0dbb63843ab029715fb55ace976e4df150161e88",
+  "source_tree": "16e1e875e71ab6ac7b836ea6b85dc93640e3b7d5",
+  "stage": 6
+}

@@ -1,0 +1,19 @@
+{
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "dependency_decision",
+  "iceberg_coordinate": "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0",
+  "iceberg_sha256": "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a",
+  "limitations": [
+    "Bounded local PostgreSQL-history, Spark 3.5.9, Iceberg 1.11.0 and SQLite proof.",
+    "No AWS, managed durability, publication, performance or production property is proven."
+  ],
+  "part": 2,
+  "postgres_image": "postgres@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652",
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "0dbb63843ab029715fb55ace976e4df150161e88",
+  "source_tree": "16e1e875e71ab6ac7b836ea6b85dc93640e3b7d5",
+  "stage": 6
+}

@@ -1,0 +1,215 @@
+{
+  "artifact_count": 49,
+  "artifacts": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "130f929059dd64a40de84cd77798bf7f2ff963f49283c80921250229fc1b4905"
+    },
+    {
+      "path": ".github/workflows/part2-stage6-reconciliation.yml",
+      "sha256": "11ff91e1e8b9c2b17bc34452379af8f753e8cc45d35b07adc1482520a5790cca"
+    },
+    {
+      "path": "CLAIMS.md",
+      "sha256": "f87ce2273b3d7a9446d3636a76c192a08ecf31c632a52e1cfe201f5081cc0617"
+    },
+    {
+      "path": "PART2_COMPLETION_CONTRACT.md",
+      "sha256": "f037e9d8439a8290d541c9cf7d60ddd7a8c7c75ec95815f4b54b2a31f6f79fe5"
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "sha256": "d81e34c9830840bc54bf3052f3f96a777b79cde4940b32812841c82f56937f21"
+    },
+    {
+      "path": "README.md",
+      "sha256": "375979214e56ad9bc8ae7bd55db071a6969836fe6f3a346be89ec38e1f1adeeb"
+    },
+    {
+      "path": "architecture/requirement-architecture-map.json",
+      "sha256": "da3a2fb37052760ad5c1d33dd60acc07bb0cd93cf4efc4f2d2b6c8766fe0f951"
+    },
+    {
+      "path": "claims/claims.json",
+      "sha256": "0bcc06fffcc0828a806a335d5eff92ca75da9912c7bda515587e965ae9a27206"
+    },
+    {
+      "path": "contracts/stage26/catalog.json",
+      "sha256": "f6569a0dc176ce282eb2cc91e2f52aca5ef402ce9526d3a7024b224301d43c0f"
+    },
+    {
+      "path": "contracts/stage26/reason-codes.json",
+      "sha256": "2812165984053424cdf4ce616d42948333603a0a7cb4703abcdf0f796cd945e9"
+    },
+    {
+      "path": "docs/adr/ADR-020-executable-frontier-proof.md",
+      "sha256": "da7d02752d1983de6a9629cd7d0dd9e002975d530ea55e19472e2191294d0868"
+    },
+    {
+      "path": "docs/part2/stage6/RECONCILIATION_PROOF.md",
+      "sha256": "89267675ab69127eb05a7ff3689ebad52b222acd76554f5fd4a7e3ad6630ec59"
+    },
+    {
+      "path": "evidence/part2/stage6/claim-impact-review.json",
+      "sha256": "ed5843f0a0ac049db4412d816b0b9d35c1051653c34e2ce52c87708749c49d85"
+    },
+    {
+      "path": "evidence/part2/stage6/dependency-decision.json",
+      "sha256": "b51d52cbe4db461e533b93bbeded04afb77fdcaae6d36c126b23a54e454f2ca2"
+    },
+    {
+      "path": "evidence/part2/stage6/determinism-report.json",
+      "sha256": "335a7bcac9500faff939e17cb439f732bed79e25c612ed9631e11a638b6a811b"
+    },
+    {
+      "path": "evidence/part2/stage6/execution-envelope.json",
+      "sha256": "28765b09c889eda08a90c8096715511628bc437a8bd43bbbe2143ccebf5a9e9e"
+    },
+    {
+      "path": "evidence/part2/stage6/failure-lab.json",
+      "sha256": "a12d65bf193623dc4c8e5a12db4810e6db21b500e97cfb53741a321b013ee057"
+    },
+    {
+      "path": "evidence/part2/stage6/file-manifest.json",
+      "sha256": "fb4d5e6807fa4ddc125291e336a07acf557683b7baafe568c6b18cc502e97e1d"
+    },
+    {
+      "path": "evidence/part2/stage6/gates/continuity.json",
+      "sha256": "2e4a29e27184974fdde9a1d9c14db539ed0b93b532e3c6e0fb250f7dfd24187f"
+    },
+    {
+      "path": "evidence/part2/stage6/gates/deletes.json",
+      "sha256": "d0a44a53b67f639afd997da47eae3d587855ee36a948051c390b3c296d9e49aa"
+    },
+    {
+      "path": "evidence/part2/stage6/gates/evidence_integrity.json",
+      "sha256": "2e30d482ee78ae8ddf5849395f18c6df3db12adb116f02a45bac20b3a3b5479a"
+    },
+    {
+      "path": "evidence/part2/stage6/gates/lag.json",
+      "sha256": "1cb47cc0141002bf84a854a6acf4b14142130532bbb6621a9f6cf0600473d252"
+    },
+    {
+      "path": "evidence/part2/stage6/gates/pre_migration.json",
+      "sha256": "be252395ad1f903fc168ea0eaa5cd32e6fbfe67183537934ba3f9c4752414034"
+    },
+    {
+      "path": "evidence/part2/stage6/gates/reconciliation.json",
+      "sha256": "2136e6902014f267a260f9797ce32c7b90b67481744b71f9af7fe228151207fd"
+    },
+    {
+      "path": "evidence/part2/stage6/gates/rollback_readiness.json",
+      "sha256": "f9f88505157774823bbb0cb91f9a27b33cf80cce7bb74d66bfdc398dc4e82ade"
+    },
+    {
+      "path": "evidence/part2/stage6/gates/schema.json",
+      "sha256": "c880107ea4bfb80645a8f79a6f1078485c359ed7ef99dfc1950a9cded041b1c0"
+    },
+    {
+      "path": "evidence/part2/stage6/generation-seal.json",
+      "sha256": "3399b44618944a57d68592d79e3a0051e0275fea857820f71de9431cc40bcea7"
+    },
+    {
+      "path": "evidence/part2/stage6/proof-manifest.json",
+      "sha256": "2d4aae81be58647bf486e8c023528e13231d97b7d1736ed79d11f3be62c54dcc"
+    },
+    {
+      "path": "evidence/part2/stage6/protected-predecessor-baseline.json",
+      "sha256": "3a39a5d8b0f17fb756c449e1feefded9293298c9fe2ff85c64c8923416199319"
+    },
+    {
+      "path": "evidence/part2/stage6/reconciliation-report.json",
+      "sha256": "ae9281bd266208232e395c1597cdd5e0d66ded27627978eca2184b6716cb47f0"
+    },
+    {
+      "path": "evidence/part2/stage6/recovery-report.json",
+      "sha256": "8bf249ec075cdd6dda8457674b40364f9d1d2d160a392925a31a1e141a5b561a"
+    },
+    {
+      "path": "evidence/part2/stage6/repository-entry.json",
+      "sha256": "342941ca4c397b31d4b5c28d184e01cef26c05b415c449edce62b100255b0d21"
+    },
+    {
+      "path": "evidence/part2/stage6/rollback-readiness.json",
+      "sha256": "c9c34c11621ac402b4cd4c1aa09b7db9f805ba904fd4f16657f5743084befc05"
+    },
+    {
+      "path": "evidence/part2/stage6/source-observation.json",
+      "sha256": "8344813fbe8f6015b11ddbcec6589f15cefd0eb537a1d3f47171df528396b79a"
+    },
+    {
+      "path": "evidence/part2/stage6/target-observation.json",
+      "sha256": "6c679a69171696478ce73f38d3c03a9f9f04930b7e1bb9c688910d720c3e26fe"
+    },
+    {
+      "path": "evidence/part2/stage6/validation-summary.json",
+      "sha256": "13369c7931a1d9587af7c4d138914162cad1b452286e6f3d443c2d227f383249"
+    },
+    {
+      "path": "jobs/spark_iceberg_reconcile.py",
+      "sha256": "4841e94c52eb40cb3a2892be49079dcfa2b36791088c7b55c862f571fb8cc44c"
+    },
+    {
+      "path": "requirements/completion-requirements.json",
+      "sha256": "857c6d1861e1ec89a069f034423515173830e6fc495328a679edce784da666cb"
+    },
+    {
+      "path": "requirements/part2-stage6-acceptance.json",
+      "sha256": "ed665c5451a841497a2259c3d023ea595956f19f74b0e0cfd3259d1bb35c183e"
+    },
+    {
+      "path": "requirements/requirement-proof-matrix.json",
+      "sha256": "8414bb3ba49a093e205b74aec2d87571785bc10d8276b441bcd76ee0daad9674"
+    },
+    {
+      "path": "scripts/build_stage26_evidence.py",
+      "sha256": "bf095accc3c3795aa272732657a9794008b2eee10161ffc4e48eb4e9a71236c7"
+    },
+    {
+      "path": "scripts/run_stage26_postgres_observer.py",
+      "sha256": "501280fb863bdffe18cbdf4e8e6cc310d223856790047a48f7db039bd3dd7fba"
+    },
+    {
+      "path": "scripts/run_stage26_reconciliation_lab.py",
+      "sha256": "da9c223e105a6ee76ff2f0f4f4328efd0eb7bd741c26debe5e0418e135683a4c"
+    },
+    {
+      "path": "scripts/validate_part2_stage6.py",
+      "sha256": "f7bbd4fb1abfacde76b4f898479303d2300eab7a3c107626e3a04e0b7cea21eb"
+    },
+    {
+      "path": "src/changebridge/hierarchical_reconciliation.py",
+      "sha256": "a515ec9ea6f2f7c81711120f715dc4e60c84e59a423881c33f37ee0ec665ec9d"
+    },
+    {
+      "path": "src/changebridge/proof_control.py",
+      "sha256": "227dc90b2d69010f7a13a2c7aa2c38da7919ce77ac238647b2e37bf46909aa15"
+    },
+    {
+      "path": "src/changebridge/proof_gates.py",
+      "sha256": "3948441ab4dbb01e12a89d58ce8a4d3c30ce31f135326c30545fa716f3f0dc6b"
+    },
+    {
+      "path": "tests/test_hierarchical_reconciliation.py",
+      "sha256": "836d50e0649eebd42d85760cb59f5b269bc15ecebdaf795587eedb398be292bc"
+    },
+    {
+      "path": "tests/test_stage26_proof_control.py",
+      "sha256": "b6fbfd3f251be9f138cc496abb458c5fe4d378a13c351b55aa45b4b12540bb0f"
+    }
+  ],
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "artifact_manifest",
+  "limitations": [
+    "Bounded local PostgreSQL-history, Spark 3.5.9, Iceberg 1.11.0 and SQLite proof.",
+    "No AWS, managed durability, publication, performance or production property is proven."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "schema_version": "1.0.0",
+  "source_commit": "0dbb63843ab029715fb55ace976e4df150161e88",
+  "source_tree": "16e1e875e71ab6ac7b836ea6b85dc93640e3b7d5",
+  "stage": 6
+}
