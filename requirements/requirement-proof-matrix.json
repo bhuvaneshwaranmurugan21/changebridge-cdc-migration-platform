@@ -499,37 +499,39 @@
     },
     {
       "current_proof_paths": [
-        "tests/integration/test_stage23_iceberg_snapshot.py",
+        "evidence/part2/stage6/proof-manifest.json",
+        "evidence/part2/stage6/reconciliation-report.json",
+        "tests/test_hierarchical_reconciliation.py",
         "tests/test_reconciliation.py"
       ],
-      "future_proof_paths": [
-        "future:evidence/managed/reconciliation.json"
-      ],
+      "future_proof_paths": [],
       "implementation_paths": [
-        "future:src/changebridge/proof.py",
+        "src/changebridge/hierarchical_reconciliation.py",
+        "src/changebridge/proof_control.py",
         "src/changebridge/reconciliation.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
-      "owner_stage": "part1-stage3",
+      "owner_stage": "part2-stage6",
       "requirement_id": "CB-RECON-001",
-      "status": "PARTIAL",
-      "verification_method": "frontier binding tests and managed source/target proof"
+      "status": "SATISFIED",
+      "verification_method": "frontier-bound observations, real Iceberg binding, hierarchical reconciliation and fault injection"
     },
     {
       "current_proof_paths": [
+        "evidence/part2/stage6/failure-lab.json",
+        "evidence/part2/stage6/reconciliation-report.json",
+        "tests/test_hierarchical_reconciliation.py",
         "tests/test_reconciliation.py"
       ],
-      "future_proof_paths": [
-        "future:tests/test_hierarchical_reconciliation.py"
-      ],
+      "future_proof_paths": [],
       "implementation_paths": [
-        "future:src/changebridge/hierarchical_reconciliation.py",
+        "src/changebridge/hierarchical_reconciliation.py",
         "src/changebridge/reconciliation.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
-      "owner_stage": "part2-runtime",
+      "owner_stage": "part2-stage6",
       "requirement_id": "CB-RECON-002",
-      "status": "PARTIAL",
+      "status": "SATISFIED",
       "verification_method": "determinism, partition coverage, mismatch localization, and bounded-scale tests"
     },
     {

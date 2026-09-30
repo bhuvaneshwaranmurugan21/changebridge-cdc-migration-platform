@@ -3,35 +3,34 @@
 ## Current authorized boundary
 
 - Part: 2 — Executable local migration path
-- Stage: 5 — Recoverable schema and primary-key policy
-- Verified entry commit: `cbf575315e3b9bea3c0ee79f78e3288c8746effb`
-- Verified entry tree: `30e26dd3d7cd89601de92bc6ec99ec0e1a2737f0`
-- Predecessor checkpoint: `PART2_STAGE4_CDC_APPLY_VERIFIED`
-- Stage branch: `part2-stage5-schema-policy`
-- Stage evidence: `evidence/part2/stage5/`
+- Stage: 6 — Frozen-frontier reconciliation proof
+- Verified entry commit: `7b5e71c68c52766affd68d0a2c6087656b447c31`
+- Verified entry tree: `62ed362e52a7d5fb3ccc8aa30085211980c1ca7d`
+- Predecessor checkpoint: `PART2_STAGE5_SCHEMA_POLICY_VERIFIED`
+- Stage branch: `part2-stage6-reconciliation-proof`
+- Stage evidence: `evidence/part2/stage6/`
 
 ## Candidate result
 
-`PART2_STAGE5_SCHEMA_POLICY_PENDING_EXTERNAL_CLOSURE`
+`PART2_STAGE6_RECONCILIATION_PENDING_EXTERNAL_CLOSURE`
 
-The governed `orders_source_contract/1.0.0` to `1.1.0` transition adds nullable non-key field
-`source_note` using one real Iceberg metadata transaction. Existing rows read null. Process loss
-after the Iceberg commit recovers the exact schema receipt from its deterministic token without a
-second metadata commit. Unknown changes quarantine before mutation; incompatible schema or key
-changes quarantine and reject the candidate generation.
+The candidate is reconciled at `F = 0/194FE20`. Typed keyed-row proofs roll up through deterministic
+buckets and tables. Exact Iceberg snapshots, schema authority, deletes, lag, pre-migration,
+first-publication rollback readiness, and evidence integrity form eight mandatory gates. The
+durable sequence is `CDC_APPLYING → SEALED → PROVING → PROVEN`.
 
-The result is limited to `LOCAL_VERIFIED`. The compatible generation remains unpublished,
-unsealed, and in `CDC_APPLYING`; the checkpoint stays `0/194FE20`. No AWS or Glue durability,
-arbitrary schema evolution, implicit coercion/defaulting, publication, reconciliation,
+The result is `LOCAL_VERIFIED`. The generation remains unpublished and inactive. First-publication
+rollback restores an absent pointer and source fallback; it is not rollback to a previously
+published generation. No AWS, managed durability, publication, cutover, rollback execution,
 performance, availability, zero-downtime, or production-readiness claim is made.
 
-The in-repository receipt holds `ST25-AC-01` through `ST25-AC-44` as candidate-pass and leaves
+The receipt holds `ST26-AC-01` through `ST26-AC-48` as candidate-pass and leaves
 guarded merge, merged-main identity, post-merge validation, and external checkpoint criteria
-`ST25-AC-45` through `ST25-AC-48` pending external closure.
+`ST26-AC-49` through `ST26-AC-52` pending external closure.
 
 ## Next permitted action
 
 Publish the exact candidate, validate every required GitHub check on that head, merge with an
 expected-head guard, verify fresh merged `main`, and issue
-`PART2_STAGE5_SCHEMA_POLICY_VERIFIED`.
-Stage 6 remains outside this stage's authority.
+`PART2_STAGE6_RECONCILIATION_VERIFIED`.
+Stage 7 remains outside this stage's authority.

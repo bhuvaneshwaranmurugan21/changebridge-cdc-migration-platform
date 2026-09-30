@@ -34,8 +34,8 @@ Generated deterministically from the authoritative requirements registry.
 | `CB-PUBLISH-002` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-PUBLISH-004` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | None | `future:evidence/managed/rollback.json`<br>`future:tests/model/test_rollback.py` |
-| `CB-RECON-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage3` | `tests/integration/test_stage23_iceberg_snapshot.py`<br>`tests/test_reconciliation.py` | `future:evidence/managed/reconciliation.json` |
-| `CB-RECON-002` | `PARTIAL` | `LOCAL_VERIFIED` | `part2-runtime` | `tests/test_reconciliation.py` | `future:tests/test_hierarchical_reconciliation.py` |
+| `CB-RECON-001` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-stage6` | `evidence/part2/stage6/proof-manifest.json`<br>`evidence/part2/stage6/reconciliation-report.json`<br>`tests/test_hierarchical_reconciliation.py`<br>`tests/test_reconciliation.py` | None |
+| `CB-RECON-002` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-stage6` | `evidence/part2/stage6/failure-lab.json`<br>`evidence/part2/stage6/reconciliation-report.json`<br>`tests/test_hierarchical_reconciliation.py`<br>`tests/test_reconciliation.py` | None |
 | `CB-RECON-003` | `SATISFIED` | `LOCAL_VERIFIED` | `part2-runtime` | `evidence/local-simulation.json`<br>`tests/test_reconciliation.py`<br>`tests/test_schema_and_cutover.py` | None |
 | `CB-RELEASE-001` | `DEFERRED` | `LOCAL_VERIFIED` | `final-release` | None | `future:release/release-verification.json` |
 | `CB-SCHEMA-001` | `PARTIAL` | `LOCAL_VERIFIED` | `part1-stage4` | `evidence/part2/stage1/boundary-capture-report.json`<br>`evidence/part2/stage1/source-workload-manifest.json`<br>`tests/integration/test_stage23_iceberg_snapshot.py`<br>`tests/test_contract_oracle_authority.py`<br>`tests/test_schema_and_cutover.py`<br>`tests/test_source_workload.py`<br>`tests/test_stage23_snapshot_handoff.py` | None |

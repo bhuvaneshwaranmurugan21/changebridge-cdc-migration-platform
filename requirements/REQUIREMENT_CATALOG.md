@@ -456,9 +456,9 @@ Rollback MUST be an explicit, authorized compare-and-swap transition to a retain
 ## CB-RECON-001 — Frozen-frontier reconciliation
 
 - Normative level: `MUST`
-- Current status: `PARTIAL`
+- Current status: `SATISFIED`
 - Minimum evidence: `LOCAL_VERIFIED`
-- Owner: `part1-stage3`
+- Owner: `part2-stage6`
 - Source conditions: 8, 9
 - Source invariants: proof_before_publication
 
@@ -466,14 +466,14 @@ Source and candidate reconciliation MUST compare data representing the same froz
 
 **Failure condition:** Source and target proofs use different frontiers or omit frontier lineage.
 
-**Current limitation:** Stage 3 proves the snapshot admission comparison at S; final source/target proof at F and managed acquisition remain future work.
+**Current limitation:** Satisfied for bounded local frontier F; managed acquisition, AWS durability, scale and performance remain unproved.
 
 ## CB-RECON-002 — Hierarchical deterministic proof
 
 - Normative level: `MUST`
-- Current status: `PARTIAL`
+- Current status: `SATISFIED`
 - Minimum evidence: `LOCAL_VERIFIED`
-- Owner: `part2-runtime`
+- Owner: `part2-stage6`
 - Source conditions: 8, 12
 - Source invariants: evidence_binding
 
@@ -481,7 +481,7 @@ Reconciliation MUST produce deterministic machine-readable totals, partitions, a
 
 **Failure condition:** The same immutable inputs yield different proof, partitions omit rows, or mismatch cannot be localized below full-table scope.
 
-**Current limitation:** Current reconciliation uses counts and full-table canonical digests only.
+**Current limitation:** Satisfied for the bounded 72-row local fixture; no scale or performance claim is made.
 
 ## CB-RECON-003 — Mismatch blocks publication
 
