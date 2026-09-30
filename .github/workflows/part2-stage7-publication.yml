@@ -1,0 +1,42 @@
+name: Part 2 Stage 7 Publication Closure
+
+on:
+  pull_request:
+    paths:
+      - "src/changebridge/publication*.py"
+      - "src/changebridge/consumer.py"
+      - "scripts/*stage27*"
+      - "jobs/spark_iceberg_publish.py"
+      - "tests/*stage27*"
+      - "evidence/part2/stage7/**"
+      - ".github/workflows/part2-stage7-publication.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  spark-iceberg-publication:
+    runs-on: ubuntu-latest
+    env:
+      CB_ICEBERG_JAR: /tmp/changebridge-iceberg/iceberg.jar
+      SPARK_LOCAL_IP: 127.0.0.1
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: python -m pip install -e '.[dev,spark]'
+      - name: Acquire checksum-pinned Iceberg runtime
+        run: |
+          mkdir -p /tmp/changebridge-iceberg
+          curl --fail --location --silent --show-error \
+            https://repo.maven.apache.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5_2.12/1.11.0/iceberg-spark-runtime-3.5_2.12-1.11.0.jar \
+            --output "$CB_ICEBERG_JAR"
+          echo "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a  $CB_ICEBERG_JAR" | sha256sum --check --strict
+      - run: pytest --no-cov tests/test_stage27_publication.py tests/test_stage27_contracts.py
+      - run: >-
+          python jobs/spark_iceberg_publish.py
+          --iceberg-jar "$CB_ICEBERG_JAR"
+          --work-root /tmp/changebridge-stage27-run
+          --output /tmp/stage27-lab.json
+      - run: python scripts/validate_part2_stage7.py

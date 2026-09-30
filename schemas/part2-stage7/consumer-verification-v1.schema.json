@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"Stage 7 generation-pinned consumer verification","type":"object",
+  "required":["pin_id","product_id","revision","route","generation_id","proof_manifest_digest","table_map_digest","table_map","verification","tables","consumer_verification_digest"],
+  "properties":{"pin_id":{"type":"string","minLength":1},"product_id":{"type":"string","minLength":1},"revision":{"type":"integer","minimum":1},"route":{"const":"GENERATION"},"generation_id":{"type":"string","minLength":1},"proof_manifest_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},"table_map_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},"table_map":{"type":"object","required":["orders","order_items"],"minProperties":2,"maxProperties":2},"verification":{"const":"GENERATION_CONSISTENT_READ_VERIFIED"},"tables":{"type":"object","required":["orders","order_items"],"minProperties":2,"maxProperties":2},"consumer_verification_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"}},"additionalProperties":false
+}

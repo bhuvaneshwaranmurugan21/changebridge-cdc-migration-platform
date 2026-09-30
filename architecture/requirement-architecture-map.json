@@ -377,9 +377,9 @@
         "publication_controller",
         "active_generation_pointer"
       ],
-      "evidence_label": "UNCHANGED",
-      "owner_stage": "part2-runtime",
-      "proof_owner": "part2-runtime",
+      "evidence_label": "LOCAL_VERIFIED",
+      "owner_stage": "part2-stage7",
+      "proof_owner": "part2-stage7",
       "requirement_id": "CB-PUBLISH-002",
       "requirement_status": "SATISFIED"
     },
@@ -395,9 +395,9 @@
         "publication_controller",
         "active_generation_pointer"
       ],
-      "evidence_label": "UNCHANGED",
-      "owner_stage": "part2-runtime",
-      "proof_owner": "part2-runtime",
+      "evidence_label": "LOCAL_VERIFIED",
+      "owner_stage": "part2-stage7",
+      "proof_owner": "part2-stage7",
       "requirement_id": "CB-PUBLISH-003",
       "requirement_status": "SATISFIED"
     },
@@ -413,11 +413,11 @@
         "publication_controller",
         "active_generation_pointer"
       ],
-      "evidence_label": "UNCHANGED",
-      "owner_stage": "part2-runtime",
-      "proof_owner": "part2-runtime",
+      "evidence_label": "LOCAL_VERIFIED",
+      "owner_stage": "part2-stage7",
+      "proof_owner": "part2-stage7",
       "requirement_id": "CB-PUBLISH-004",
-      "requirement_status": "PARTIAL"
+      "requirement_status": "SATISFIED"
     },
     {
       "adrs": [

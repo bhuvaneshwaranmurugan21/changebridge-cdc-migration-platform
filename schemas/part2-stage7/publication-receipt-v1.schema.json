@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"Stage 7 publication receipt","type":"object",
+  "required":["attempt_id","action","verdict","product_id","generation_id","expected_revision","resulting_revision","proof_manifest_digest","table_map_digest","publication_binding_digest"],
+  "properties":{"attempt_id":{"type":"string","minLength":1},"action":{"const":"PUBLISH"},"verdict":{"const":"PUBLISHED"},"product_id":{"type":"string","minLength":1},"generation_id":{"type":"string","minLength":1},"prior_generation_id":{"type":["string","null"]},"expected_revision":{"type":"integer","minimum":0},"resulting_revision":{"type":"integer","minimum":1},"proof_manifest_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},"table_map_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},"publication_binding_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"}},"additionalProperties":false
+}

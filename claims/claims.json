@@ -281,6 +281,23 @@
       "owner": "part2-stage6",
       "invalidation_conditions": ["frontier, canonical observation, partitioning, snapshot binding, gate, seal, manifest, recovery, runtime lock or tests change"],
       "disposition": "CORRECTED"
+    },
+    {
+      "id": "CB-CLAIM-017",
+      "source_claim_ids": ["PART2-STAGE7-PUBLICATION-CLOSURE"],
+      "approved_wording": "A fresh execution-bound physical materialization preserving the accepted Stage 6 logical proof was locally published through a monotonic expected-revision pointer, read through one generation-pinned consumer view, and explicitly returned to source fallback while preserving revision history.",
+      "scope": "bounded local publication and first-publication fallback for generation-34edddda5aee96dc7236aaf3",
+      "label": "LOCAL_VERIFIED",
+      "requirement_ids": ["CB-PUBLISH-001", "CB-PUBLISH-002", "CB-PUBLISH-003", "CB-PUBLISH-004", "CB-ISOLATION-001", "CB-EVIDENCE-001"],
+      "proof_refs": ["src/changebridge/publication.py", "src/changebridge/consumer.py", "src/changebridge/publication_orchestrator.py", "tests/test_stage27_publication.py", "evidence/part2/stage7/publication-binding-manifest.json", "evidence/part2/stage7/publication-receipt.json", "evidence/part2/stage7/consumer-verification.json", "evidence/part2/stage7/fallback-receipt.json"],
+      "producing_commit": "602adc956500424ddbeaf19468c678476c316169",
+      "producing_run": "stage27-local-spark-iceberg-publication-proof",
+      "limitations": "Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem catalog and SQLite proof. It does not prove AWS or managed durability, live-traffic cutover, managed rollback, performance, availability, zero downtime, cross-table Iceberg atomicity, production exactly-once delivery, or production readiness.",
+      "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-017"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-017"}],
+      "review_status": "APPROVED",
+      "owner": "part2-stage7",
+      "invalidation_conditions": ["accepted proof chain, execution proof, physical table map, publication revision, consumer pin, fallback, rollback eligibility, runtime lock, or bound real-target tests change"],
+      "disposition": "CORRECTED"
     }
   ]
 }

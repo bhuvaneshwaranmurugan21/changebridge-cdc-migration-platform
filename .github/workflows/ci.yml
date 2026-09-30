@@ -43,10 +43,12 @@ jobs:
           scripts/run_stage25_schema_lab.py
           scripts/run_stage26_reconciliation_lab.py
           scripts/run_stage26_postgres_observer.py
+          scripts/run_stage27_publication_lab.py
           jobs/spark_iceberg_snapshot.py
           jobs/spark_iceberg_apply.py
           jobs/spark_iceberg_schema.py
           jobs/spark_iceberg_reconcile.py
+          jobs/spark_iceberg_publish.py
       - run: pytest
       - name: Validate frozen Part 1 closure authority
         run: python scripts/validate_part1_frozen.py
@@ -64,6 +66,8 @@ jobs:
         run: python scripts/validate_part2_stage5.py
       - name: Validate Part 2 Stage 6 reconciliation proof
         run: python scripts/validate_part2_stage6.py
+      - name: Validate Part 2 Stage 7 publication closure
+        run: python scripts/validate_part2_stage7.py
       - name: Regenerate deterministic evidence
         run: |
           python -m changebridge.cli simulate --output /tmp/changebridge-evidence.json

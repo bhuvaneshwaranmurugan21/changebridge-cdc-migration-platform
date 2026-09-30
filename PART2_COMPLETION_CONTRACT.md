@@ -6,6 +6,30 @@ The generation may reach `PROVEN` only after an immutable seal at `F = 0/194FE20
 hierarchical reconciliation, and all eight independently bound gates pass. `PROVEN` is not
 publication. Stage 6 leaves the active pointer unchanged.
 
+## Stage 7 completion rule
+
+Stage 7 is complete only when `ST27-AC-01` through `ST27-AC-50` pass on one
+source-freeze commit/tree, the exact candidate head is reviewed with passing required checks,
+the expected-head guarded merge satisfies `ST27-AC-51` through `ST27-AC-54`, fresh merged
+`main` satisfies `ST27-AC-55`, and the external `PART2_COMPLETION_VERIFIED` checkpoint satisfies
+`ST27-AC-56`.
+
+Publication is authorized only for a fresh physical materialization whose execution-bound
+eight-gate proof is chained to the accepted Stage 6 proof. The generation identity, boundaries,
+schema and policy authority, logical contents, reconciliation digest, and gate semantics must be
+unchanged. Fresh Iceberg snapshot identities are expected and must never be described as the
+vanished Stage 6 physical snapshots.
+
+The bounded first publication uses one monotonic SQLite revision and expected-revision
+compare-and-swap. A consumer pins one revision and resolves the complete generation table map.
+The explicitly authorized first-publication fallback restores pointer absence and source-system
+routing while incrementing the revision; it is not rollback to a historical incumbent. Ordinary
+rollback is separately proven only with isolated eligible test generations.
+
+Stage 7's claim ceiling is `LOCAL_VERIFIED`. It proves no AWS behavior, persistent deployment,
+live-traffic cutover, managed rollback, performance, availability, zero downtime, cross-table
+Iceberg atomicity, production exactly-once delivery, or production readiness.
+
 ## Purpose
 
 Part 2 converts the accepted Part 1 correctness authority into an executable, locally proven

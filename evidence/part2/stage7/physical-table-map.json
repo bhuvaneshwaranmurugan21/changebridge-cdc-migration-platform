@@ -1,0 +1,14 @@
+{
+  "order_items": {
+    "identifier": "stage23.cb_g_017d6eea93a471d8.order_items",
+    "manifest_list_digest": "0a83a2d4ccaba315a74be9403e740295f524f5411e230b63780ddd50c875f8e1",
+    "row_count": 66,
+    "snapshot_id": "9181776194235418564"
+  },
+  "orders": {
+    "identifier": "stage23.cb_g_017d6eea93a471d8.orders",
+    "manifest_list_digest": "e1ee2a7e74c0659560aa26a8c94c4bc58332ab4419a2d60f815a46b2e1df4d8b",
+    "row_count": 6,
+    "snapshot_id": "5164862605917836293"
+  }
+}

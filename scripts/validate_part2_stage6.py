@@ -32,6 +32,14 @@ def git(*args: str) -> str:
     ).stdout.strip()
 
 
+def git_bytes(commit: str, path: str) -> bytes:
+    """Read a source-bound artifact without confusing later-stage edits with drift."""
+
+    return subprocess.run(
+        ["git", "show", f"{commit}:{path}"], cwd=ROOT, check=True, capture_output=True
+    ).stdout
+
+
 def validate() -> dict[str, Any]:
     assert git("rev-parse", f"{BASE}^{{tree}}") == BASE_TREE
     receipt = load("evidence/part2/stage6/stage-receipt.json")
@@ -75,10 +83,13 @@ def validate() -> dict[str, Any]:
         and failure["missing_gate_code"] == "CB26G014_MISSING_GATE"
     )
     artifacts = load("evidence/part2/stage6/artifact-manifest.json")
-    assert all(
-        (ROOT / row["path"]).is_file() and sha((ROOT / row["path"]).read_bytes()) == row["sha256"]
-        for row in artifacts["artifacts"]
-    )
+    for row in artifacts["artifacts"]:
+        path = row["path"]
+        if path.startswith("evidence/part2/stage6/"):
+            data = (ROOT / path).read_bytes()
+        else:
+            data = git_bytes(commit, path)
+        assert sha(data) == row["sha256"]
     assert sha((OUT / "artifact-manifest.json").read_bytes()) == receipt["artifact_manifest_digest"]
     claims = load("claims/claims.json")["claims"]
     assert any(row["id"] == "CB-CLAIM-016" and row["label"] == "LOCAL_VERIFIED" for row in claims)

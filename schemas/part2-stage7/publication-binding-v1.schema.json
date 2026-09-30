@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://changebridge.local/schemas/part2-stage7/publication-binding-v1.schema.json",
+  "title":"Stage 7 execution-bound publication binding",
+  "type":"object",
+  "required":["record_type","contract_version","generation_id","frontier","schema_set_digest","accepted_proof_manifest_digest","execution_proof_manifest_digest","accepted_reconciliation_digest","execution_reconciliation_digest","gate_ids","table_map","table_map_digest","physical_identity_relation","reuses_vanished_stage6_snapshots","publication_binding_digest"],
+  "properties":{
+    "record_type":{"const":"publication_binding_manifest"},"contract_version":{"const":"1.0.0"},
+    "generation_id":{"type":"string","minLength":1},"frontier":{"type":"object","required":["kind","value"],"properties":{"kind":{"const":"postgres_lsn"},"value":{"type":"string","pattern":"^[0-9A-F]+/[0-9A-F]+$"}},"additionalProperties":false},
+    "schema_set_digest":{"$ref":"#/$defs/digest"},"accepted_proof_manifest_digest":{"$ref":"#/$defs/digest"},"execution_proof_manifest_digest":{"$ref":"#/$defs/digest"},"accepted_reconciliation_digest":{"$ref":"#/$defs/digest"},"execution_reconciliation_digest":{"$ref":"#/$defs/digest"},
+    "gate_ids":{"type":"array","minItems":8,"maxItems":8,"uniqueItems":true,"items":{"type":"string"}},
+    "table_map":{"type":"object","required":["orders","order_items"],"minProperties":2,"maxProperties":2,"additionalProperties":{"$ref":"#/$defs/table"}},
+    "table_map_digest":{"$ref":"#/$defs/digest"},"physical_identity_relation":{"const":"FRESH_EXECUTION_BOUND_MATERIALIZATION"},"reuses_vanished_stage6_snapshots":{"const":false},"publication_binding_digest":{"$ref":"#/$defs/digest"}
+  },
+  "$defs":{"digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},"table":{"type":"object","required":["identifier","snapshot_id","manifest_list_digest","row_count"],"properties":{"identifier":{"type":"string","minLength":1},"snapshot_id":{"type":"string","minLength":1},"manifest_list_digest":{"$ref":"#/$defs/digest"},"row_count":{"type":"integer","minimum":0}},"additionalProperties":false}},
+  "additionalProperties":false
+}
