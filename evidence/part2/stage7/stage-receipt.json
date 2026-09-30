@@ -1,0 +1,425 @@
+{
+  "accepted_proof_manifest_digest": "df47eda3dff2f2d4491afab71574a9abefe02e1ba1af3a788f3c190ab650a5ad",
+  "active_pointer": null,
+  "artifact_manifest_digest": "bd0e9778cc05e4c8dc3e2578b3e758e478e1367a744cf77daf861debbd983e4b",
+  "base_commit": "640c5714937aa5a7a68712ccebdafa3999ecc574",
+  "base_tree": "7fd9bb0e6a9d2009dbdd57c2761c8efa4e370f82",
+  "criteria": [
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-01",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-02",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-03",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-04",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-05",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-06",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-07",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-08",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-09",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-10",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-11",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-12",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-13",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-14",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-15",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-16",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-17",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-18",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-19",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-20",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-21",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-22",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-23",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-24",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-25",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-26",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-27",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-28",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-29",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-30",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-31",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-32",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-33",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-34",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-35",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-36",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-37",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-38",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-39",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-40",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-41",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-42",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-43",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-44",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-45",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-46",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-47",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-48",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-49",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-50",
+      "result": "PASS"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-51",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-52",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-53",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-54",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-55",
+      "result": "PENDING"
+    },
+    {
+      "evidence": [
+        "evidence/part2/stage7/validation-summary.json"
+      ],
+      "id": "ST27-AC-56",
+      "result": "PENDING"
+    }
+  ],
+  "criteria_passed": 50,
+  "criteria_pending": 6,
+  "criteria_total": 56,
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "stage_receipt",
+  "execution_proof_manifest_digest": "3f9820894bcd62ac92db48b10c9a128440f20096129cac0c83b06b957e7488a9",
+  "final_revision": 2,
+  "final_route": "SOURCE_FALLBACK",
+  "frontier": "0/194FE20",
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "limitations": [
+    "Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem and SQLite proof.",
+    "No AWS, managed durability, live traffic, performance or production property is proven."
+  ],
+  "part": 2,
+  "project": "ChangeBridge",
+  "publication_binding_digest": "fe23045680a240e34e9e962c082407fadb53ed03087591455dc44dee3e8e0e0f",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "schema_version": "1.0.0",
+  "snapshot_frontier": "0/194FB20",
+  "source_commit": "cad311267c2b514a48ea4b7340a6f0c0dc9a8d2c",
+  "source_tree": "6ed77a65073e12d2c82539f7c71e25bf210bd294",
+  "stage": 7
+}

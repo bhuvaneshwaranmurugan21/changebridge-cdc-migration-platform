@@ -1,0 +1,13 @@
+{
+  "action": "PUBLISH",
+  "attempt_id": "stage27-publish-attempt",
+  "expected_revision": 0,
+  "generation_id": "generation-34edddda5aee96dc7236aaf3",
+  "prior_generation_id": null,
+  "product_id": "orders-migration",
+  "proof_manifest_digest": "3f9820894bcd62ac92db48b10c9a128440f20096129cac0c83b06b957e7488a9",
+  "publication_binding_digest": "fe23045680a240e34e9e962c082407fadb53ed03087591455dc44dee3e8e0e0f",
+  "resulting_revision": 1,
+  "table_map_digest": "91d02e198cb3d843c5441361c9eb65ba1aba74117d1a8e8338a90ff3a02e2f84",
+  "verdict": "PUBLISHED"
+}

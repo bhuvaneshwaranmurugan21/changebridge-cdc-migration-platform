@@ -1,0 +1,23 @@
+{
+  "aba_stale_writer_code": "CB27P007_STALE_REVISION",
+  "automatic_fallback": false,
+  "consumer_failure_code": "CB27C005_SNAPSHOT_MISMATCH",
+  "evidence_label": "LOCAL_VERIFIED",
+  "evidence_type": "failure_lab",
+  "ineligible_rollback_code": "CB27P006_GENERATION_INELIGIBLE",
+  "limitations": [
+    "Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem and SQLite proof.",
+    "No AWS, managed durability, live traffic, performance or production property is proven."
+  ],
+  "part": 2,
+  "pointer_mutated": true,
+  "project": "ChangeBridge",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "result": "PASS",
+  "run_state": "INCIDENT",
+  "schema_version": "1.0.0",
+  "source_commit": "cad311267c2b514a48ea4b7340a6f0c0dc9a8d2c",
+  "source_tree": "6ed77a65073e12d2c82539f7c71e25bf210bd294",
+  "stage": 7,
+  "stale_writer_code": "CB27P007_STALE_REVISION"
+}
