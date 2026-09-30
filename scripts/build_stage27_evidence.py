@@ -43,6 +43,7 @@ ARTIFACTS = (
     "requirements/requirement-proof-matrix.json",
     "scripts/build_stage27_evidence.py",
     "scripts/run_stage27_publication_lab.py",
+    "scripts/validate_part2_stage6.py",
     "scripts/validate_part2_stage7.py",
     "src/changebridge/consumer.py",
     "src/changebridge/publication.py",

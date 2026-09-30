@@ -290,7 +290,7 @@
       "label": "LOCAL_VERIFIED",
       "requirement_ids": ["CB-PUBLISH-001", "CB-PUBLISH-002", "CB-PUBLISH-003", "CB-PUBLISH-004", "CB-ISOLATION-001", "CB-EVIDENCE-001"],
       "proof_refs": ["src/changebridge/publication.py", "src/changebridge/consumer.py", "src/changebridge/publication_orchestrator.py", "tests/test_stage27_publication.py", "evidence/part2/stage7/publication-binding-manifest.json", "evidence/part2/stage7/publication-receipt.json", "evidence/part2/stage7/consumer-verification.json", "evidence/part2/stage7/fallback-receipt.json"],
-      "producing_commit": "SOURCE_FREEZE_BOUND_IN_STAGE7_EVIDENCE",
+      "producing_commit": "602adc956500424ddbeaf19468c678476c316169",
       "producing_run": "stage27-local-spark-iceberg-publication-proof",
       "limitations": "Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem catalog and SQLite proof. It does not prove AWS or managed durability, live-traffic cutover, managed rollback, performance, availability, zero downtime, cross-table Iceberg atomicity, production exactly-once delivery, or production readiness.",
       "public_surfaces": [{"path": "README.md", "marker": "CB-CLAIM-017"}, {"path": "CLAIMS.md", "marker": "CB-CLAIM-017"}],
