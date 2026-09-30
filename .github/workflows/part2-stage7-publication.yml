@@ -34,5 +34,9 @@ jobs:
             --output "$CB_ICEBERG_JAR"
           echo "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a  $CB_ICEBERG_JAR" | sha256sum --check --strict
       - run: pytest --no-cov tests/test_stage27_publication.py tests/test_stage27_contracts.py
-      - run: python jobs/spark_iceberg_publish.py --output /tmp/stage27-lab.json
+      - run: >-
+          python jobs/spark_iceberg_publish.py
+          --iceberg-jar "$CB_ICEBERG_JAR"
+          --work-root /tmp/changebridge-stage27-run
+          --output /tmp/stage27-lab.json
       - run: python scripts/validate_part2_stage7.py
