@@ -413,7 +413,7 @@ A candidate generation MUST become publishable only after every required schema,
 - Normative level: `MUST`
 - Current status: `SATISFIED`
 - Minimum evidence: `LOCAL_VERIFIED`
-- Owner: `part2-runtime`
+- Owner: `part2-stage7`
 - Source conditions: 7, 9
 - Source invariants: single_publisher_cas
 
@@ -421,14 +421,14 @@ Consumer-visible generation publication MUST use a single versioned compare-and-
 
 **Failure condition:** Publication requires multiple independently visible pointer mutations or can lose a concurrent update.
 
-**Current limitation:** Satisfied only in the SQLite oracle; no DynamoDB managed proof exists.
+**Current limitation:** Satisfied in a durable local SQLite reference authority; no DynamoDB managed proof exists.
 
 ## CB-PUBLISH-003 — Stale writer rejection
 
 - Normative level: `MUST`
 - Current status: `SATISFIED`
 - Minimum evidence: `LOCAL_VERIFIED`
-- Owner: `part2-runtime`
+- Owner: `part2-stage7`
 - Source conditions: 5, 7
 - Source invariants: stale_writer_rejection
 
@@ -441,9 +441,9 @@ A publisher using a stale expected pointer version MUST be rejected without chan
 ## CB-PUBLISH-004 — Explicit rollback safety
 
 - Normative level: `MUST`
-- Current status: `PARTIAL`
+- Current status: `SATISFIED`
 - Minimum evidence: `LOCAL_VERIFIED`
-- Owner: `part2-runtime`
+- Owner: `part2-stage7`
 - Source conditions: 7, 11
 - Source invariants: rollback_safety, single_publisher_cas
 
@@ -451,7 +451,7 @@ Rollback MUST be an explicit, authorized compare-and-swap transition to a retain
 
 **Failure condition:** Rollback can target an unproven/unreadable generation, mutate data in reverse, or bypass pointer concurrency control.
 
-**Current limitation:** The generic local activation primitive exists, but no rollback API or executable rollback scenario exists.
+**Current limitation:** Satisfied for local SQLite ordinary rollback with isolated eligible generations and first-publication source fallback; no managed rollback or live-traffic exercise exists.
 
 ## CB-RECON-001 — Frozen-frontier reconciliation
 

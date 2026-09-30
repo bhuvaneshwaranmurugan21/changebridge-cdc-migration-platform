@@ -174,6 +174,14 @@ This is bounded local proof; publication, active-pointer mutation, cutover, roll
 AWS durability, performance, and production readiness remain unclaimed. See the
 [Stage 6 proof](docs/part2/stage6/RECONCILIATION_PROOF.md).
 
+<!-- claim:CB-CLAIM-017 -->
+A fresh execution-bound reconstruction of the accepted generation was locally published through
+a monotonic expected-revision pointer, read through one generation-pinned consumer view, and
+explicitly returned to source fallback at the next revision. Fresh Iceberg snapshot identities
+are disclosed and are not represented as the vanished Stage 6 snapshots. This is bounded local
+proof—not AWS, live-traffic cutover, managed rollback, performance, availability, exactly-once,
+or production-readiness proof. See [Stage 7 publication](docs/part2/stage7/PUBLICATION_AND_CLOSURE.md).
+
 <!-- claim:CB-CLAIM-011 -->
 A deterministic workload was executed in isolated PostgreSQL 17.11 schemas, and a real exported
 logical snapshot was locally bound to one typed PostgreSQL LSN frontier; repeated same-seed runs

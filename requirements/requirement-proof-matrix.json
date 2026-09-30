@@ -453,49 +453,53 @@
     },
     {
       "current_proof_paths": [
-        "evidence/local-simulation.json",
-        "tests/test_schema_and_cutover.py"
+        "evidence/part2/stage7/pointer-history.json",
+        "evidence/part2/stage7/publication-receipt.json",
+        "tests/test_stage27_publication.py"
       ],
       "future_proof_paths": [],
       "implementation_paths": [
-        "src/changebridge/engine.py"
+        "src/changebridge/publication.py",
+        "src/changebridge/publication_orchestrator.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
-      "owner_stage": "part2-runtime",
+      "owner_stage": "part2-stage7",
       "requirement_id": "CB-PUBLISH-002",
       "status": "SATISFIED",
       "verification_method": "pointer-version state-model and concurrent writer tests"
     },
     {
       "current_proof_paths": [
-        "evidence/local-simulation.json",
-        "tests/test_schema_and_cutover.py"
+        "evidence/part2/stage7/failure-lab.json",
+        "evidence/part2/stage7/pointer-history.json",
+        "tests/test_stage27_publication.py"
       ],
       "future_proof_paths": [],
       "implementation_paths": [
-        "src/changebridge/engine.py"
+        "src/changebridge/publication.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
-      "owner_stage": "part2-runtime",
+      "owner_stage": "part2-stage7",
       "requirement_id": "CB-PUBLISH-003",
       "status": "SATISFIED",
       "verification_method": "concurrent stale-version state-model tests"
     },
     {
-      "current_proof_paths": [],
-      "future_proof_paths": [
-        "future:evidence/managed/rollback.json",
-        "future:tests/model/test_rollback.py"
+      "current_proof_paths": [
+        "evidence/part2/stage7/fallback-receipt.json",
+        "evidence/part2/stage7/rollback-policy-report.json",
+        "tests/test_stage27_publication.py"
       ],
+      "future_proof_paths": [],
       "implementation_paths": [
-        "future:src/changebridge/rollback.py",
-        "src/changebridge/engine.py"
+        "src/changebridge/publication.py",
+        "src/changebridge/publication_orchestrator.py"
       ],
       "minimum_evidence": "LOCAL_VERIFIED",
-      "owner_stage": "part2-runtime",
+      "owner_stage": "part2-stage7",
       "requirement_id": "CB-PUBLISH-004",
-      "status": "PARTIAL",
-      "verification_method": "explicit rollback API tests, retained-generation readability, stale-writer rejection, and managed exercise"
+      "status": "SATISFIED",
+      "verification_method": "explicit rollback and first-publication fallback tests, retained-generation eligibility, stale-writer rejection and bounded local exercise"
     },
     {
       "current_proof_paths": [

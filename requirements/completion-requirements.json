@@ -495,14 +495,14 @@
       "source_invariants": ["single_publisher_cas"],
       "dependencies": ["CB-PUBLISH-001", "CB-ISOLATION-001"],
       "current_status": "SATISFIED",
-      "owner_stage": "part2-runtime",
+      "owner_stage": "part2-stage7",
       "verification_method": "pointer-version state-model and concurrent writer tests",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/engine.py"],
-      "proof_paths": ["tests/test_schema_and_cutover.py", "evidence/local-simulation.json"],
+      "implementation_paths": ["src/changebridge/publication.py", "src/changebridge/publication_orchestrator.py"],
+      "proof_paths": ["tests/test_stage27_publication.py", "evidence/part2/stage7/publication-receipt.json", "evidence/part2/stage7/pointer-history.json"],
       "failure_condition": "Publication requires multiple independently visible pointer mutations or can lose a concurrent update.",
-      "limitations": "Satisfied only in the SQLite oracle; no DynamoDB managed proof exists.",
-      "review_notes": "This does not assert atomic writes across Iceberg tables."
+      "limitations": "Satisfied in a durable local SQLite reference authority; no DynamoDB managed proof exists.",
+      "review_notes": "The single atomic decision is the pointer revision; this does not assert atomic writes across Iceberg tables."
     },
     {
       "id": "CB-PUBLISH-003",
@@ -515,14 +515,14 @@
       "source_invariants": ["stale_writer_rejection"],
       "dependencies": ["CB-PUBLISH-002"],
       "current_status": "SATISFIED",
-      "owner_stage": "part2-runtime",
+      "owner_stage": "part2-stage7",
       "verification_method": "concurrent stale-version state-model tests",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/engine.py"],
-      "proof_paths": ["tests/test_schema_and_cutover.py", "evidence/local-simulation.json"],
+      "implementation_paths": ["src/changebridge/publication.py"],
+      "proof_paths": ["tests/test_stage27_publication.py", "evidence/part2/stage7/failure-lab.json", "evidence/part2/stage7/pointer-history.json"],
       "failure_condition": "A stale expected version changes the active pointer or reports success.",
       "limitations": "Local SQLite proof only.",
-      "review_notes": "Managed conditional-write proof remains required."
+      "review_notes": "Pointer absence retains its revision, so fallback cannot create an ABA opening; managed conditional-write proof remains required."
     },
     {
       "id": "CB-PUBLISH-004",
@@ -534,15 +534,15 @@
       "source_conditions": [7, 11],
       "source_invariants": ["rollback_safety", "single_publisher_cas"],
       "dependencies": ["CB-PUBLISH-002"],
-      "current_status": "PARTIAL",
-      "owner_stage": "part2-runtime",
-      "verification_method": "explicit rollback API tests, retained-generation readability, stale-writer rejection, and managed exercise",
+      "current_status": "SATISFIED",
+      "owner_stage": "part2-stage7",
+      "verification_method": "explicit rollback and first-publication fallback tests, retained-generation eligibility, stale-writer rejection and bounded local exercise",
       "minimum_evidence": "LOCAL_VERIFIED",
-      "implementation_paths": ["src/changebridge/engine.py", "future:src/changebridge/rollback.py"],
-      "proof_paths": ["future:tests/model/test_rollback.py", "future:evidence/managed/rollback.json"],
+      "implementation_paths": ["src/changebridge/publication.py", "src/changebridge/publication_orchestrator.py"],
+      "proof_paths": ["tests/test_stage27_publication.py", "evidence/part2/stage7/rollback-policy-report.json", "evidence/part2/stage7/fallback-receipt.json"],
       "failure_condition": "Rollback can target an unproven/unreadable generation, mutate data in reverse, or bypass pointer concurrency control.",
-      "limitations": "The generic local activation primitive exists, but no rollback API or executable rollback scenario exists.",
-      "review_notes": "Documentation alone does not satisfy rollback correctness."
+      "limitations": "Satisfied for local SQLite ordinary rollback with isolated eligible generations and first-publication source fallback; no managed rollback or live-traffic exercise exists.",
+      "review_notes": "The accepted generation had no incumbent, so its fallback is explicitly not represented as historical-generation rollback."
     },
     {
       "id": "CB-OPS-001",

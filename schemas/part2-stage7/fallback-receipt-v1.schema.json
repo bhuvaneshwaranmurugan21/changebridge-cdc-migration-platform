@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"Stage 7 first-publication fallback receipt","type":"object",
+  "required":["attempt_id","action","verdict","product_id","generation_id","prior_generation_id","expected_revision","resulting_revision","represents_prior_published_generation"],
+  "properties":{"attempt_id":{"type":"string","minLength":1},"action":{"const":"FIRST_PUBLICATION_FALLBACK"},"verdict":{"const":"SOURCE_FALLBACK_VERIFIED"},"product_id":{"type":"string","minLength":1},"generation_id":{"const":null},"prior_generation_id":{"type":"string","minLength":1},"expected_revision":{"type":"integer","minimum":1},"resulting_revision":{"type":"integer","minimum":2},"represents_prior_published_generation":{"const":false}},"additionalProperties":false
+}

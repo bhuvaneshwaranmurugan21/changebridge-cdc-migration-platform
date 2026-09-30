@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "part2-stage7",
+  "contracts": [
+    "schemas/part2-stage7/publication-binding-v1.schema.json",
+    "schemas/part2-stage7/publication-receipt-v1.schema.json",
+    "schemas/part2-stage7/consumer-verification-v1.schema.json",
+    "schemas/part2-stage7/fallback-receipt-v1.schema.json"
+  ],
+  "publication_authority": "one monotonic SQLite revision and optional active pointer",
+  "consumer_contract": "orders-reader/1.1.0",
+  "claim_ceiling": "LOCAL_VERIFIED"
+}

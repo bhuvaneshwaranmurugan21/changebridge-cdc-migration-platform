@@ -162,3 +162,13 @@ At accepted frontier 0/194FE20, deterministic source observations and generation
 - Limitations: Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem catalog and SQLite proof; no AWS durability, performance, publication, cutover, rollback execution, zero downtime or production readiness is proven.
 - Requirements: `CB-RECON-001`, `CB-RECON-002`, `CB-RECON-003`, `CB-PUBLISH-001`, `CB-EVIDENCE-001`
 - Disposition: `CORRECTED`
+
+## CB-CLAIM-017 — LOCAL_VERIFIED
+
+<!-- claim:CB-CLAIM-017 -->
+A fresh execution-bound physical materialization preserving the accepted Stage 6 logical proof was locally published through a monotonic expected-revision pointer, read through one generation-pinned consumer view, and explicitly returned to source fallback while preserving revision history.
+
+- Scope: bounded local publication and first-publication fallback for generation-34edddda5aee96dc7236aaf3
+- Limitations: Bounded local Spark 3.5.9, Iceberg 1.11.0, filesystem catalog and SQLite proof. It does not prove AWS or managed durability, live-traffic cutover, managed rollback, performance, availability, zero downtime, cross-table Iceberg atomicity, production exactly-once delivery, or production readiness.
+- Requirements: `CB-PUBLISH-001`, `CB-PUBLISH-002`, `CB-PUBLISH-003`, `CB-PUBLISH-004`, `CB-ISOLATION-001`, `CB-EVIDENCE-001`
+- Disposition: `CORRECTED`
