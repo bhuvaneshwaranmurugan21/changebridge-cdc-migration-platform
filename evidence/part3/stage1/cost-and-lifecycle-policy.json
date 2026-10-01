@@ -1,0 +1,6 @@
+{
+  "budget_ceiling": "UNASSIGNED",
+  "mutation_blocked": true,
+  "future_controls": ["preflight estimate", "hard budget approval", "alarms", "resource inventory", "owner and TTL tags", "teardown verification"],
+  "closure_rule": "No managed stage closes while billable resources lack an inventory, owner, TTL, and verified disposition."
+}
