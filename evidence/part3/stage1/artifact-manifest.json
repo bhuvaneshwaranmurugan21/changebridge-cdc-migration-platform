@@ -1,0 +1,109 @@
+{
+  "algorithm": "sha256",
+  "artifacts": [
+    {
+      "path": "PART3_COMPLETION_CONTRACT.md",
+      "sha256": "7fdf13f910a5eca42e8627f55b3d91d1ad83aa09cdf91084e827f4bc22f1274a"
+    },
+    {
+      "path": "PART3_STATUS.md",
+      "sha256": "2c39a7ecc31793f75c6f6dbd60a7c93d70f81439f52cc027a3ecc4cd6134c05e"
+    },
+    {
+      "path": "docs/part3/stage1/MANAGED_AUTHORITY.md",
+      "sha256": "23c3f7286348f26ca81f6cbec0f7bc21962f7e544296951e93910d8af4a57dd7"
+    },
+    {
+      "path": "evidence/part3/stage1/authority-drift-register.json",
+      "sha256": "01613170fbe5fd77a71166866bca118c720886a46d8ee3404880ab956993029a"
+    },
+    {
+      "path": "evidence/part3/stage1/aws-authorization-forecast.json",
+      "sha256": "b21dd99cbbe8b253285ae9d36aa4c8cbd641f9d2ac6cb91f49cedff8fe0e4809"
+    },
+    {
+      "path": "evidence/part3/stage1/claim-impact-review.json",
+      "sha256": "4e9506fc94013952f63a33ba3b822d554753054669636fd41a2458919740cd34"
+    },
+    {
+      "path": "evidence/part3/stage1/contradiction-resolution.json",
+      "sha256": "c5a129fcb7c73fdcf90a29a3b3f58836b521f56840b10878aabae0188be8f554"
+    },
+    {
+      "path": "evidence/part3/stage1/cost-and-lifecycle-policy.json",
+      "sha256": "8d4b763c6292c0b10aa1672d20f96baf5dbf8a11ae33f26233b334147575893c"
+    },
+    {
+      "path": "evidence/part3/stage1/dependency-verification.json",
+      "sha256": "d8d8c16bff298bdf95f4dbd344284040ef1a6df556d9af3c0a3e00cc3e4be1b8"
+    },
+    {
+      "path": "evidence/part3/stage1/execution-envelope.json",
+      "sha256": "06c99a1035c1d30369bda669b84f4f21b25698e0e96e2d71410305953abcee07"
+    },
+    {
+      "path": "evidence/part3/stage1/file-manifest.json",
+      "sha256": "7b88c8927bc199a6933b3f7824e1ee3dc3b20b8852330e3ccce55026a4e54e2d"
+    },
+    {
+      "path": "evidence/part3/stage1/predecessor-checkpoint.json",
+      "sha256": "81bf5feebae415bb4c58c43b97e56406b16acc126e579ba3271f843f0b657b83"
+    },
+    {
+      "path": "evidence/part3/stage1/protected-evidence-baseline.json",
+      "sha256": "0bee5c924bab494876312afe96076e7e49b558d461e2fea531712a239d3b5e6e"
+    },
+    {
+      "path": "evidence/part3/stage1/repository-entry.json",
+      "sha256": "9a69319cf0b5f0575074ad0fd213a92c0ff1caee8f82f3a5a5ddf8e979c602f1"
+    },
+    {
+      "path": "evidence/part3/stage1/requirement-status-audit.json",
+      "sha256": "6ddd3736422bc4a4dff6a079b4544dee9d3682db436e06a2796a87a0241302c3"
+    },
+    {
+      "path": "evidence/part3/stage1/risk-register.json",
+      "sha256": "e352fe2a4f0bca23099845f063deddbeed1680515f5f66fe5c7b86c092e45926"
+    },
+    {
+      "path": "evidence/part3/stage1/stage-receipt.json",
+      "sha256": "2bda85d15d734406e11d4d20aa0beb0be9f86d774b1e7d977092520cdde2d118"
+    },
+    {
+      "path": "evidence/part3/stage1/validation-summary.json",
+      "sha256": "0134faedcc70d18e08a2300f6fc522586cf46cc470b34f949b541e7c71115a97"
+    },
+    {
+      "path": "readiness/part3-dependency-graph.json",
+      "sha256": "e71ccfcac36ea0c8aaaaf49d075234431142d334d3eb212710ccfc17ec64c7b9"
+    },
+    {
+      "path": "readiness/part3-stage-map.json",
+      "sha256": "19bdc778c5bda97521220bd714b21b71d6059e3c5c8566747ffd23ff2f544994"
+    },
+    {
+      "path": "requirements/part3-completion-contract.json",
+      "sha256": "310129559652bfb79e3a02e698bf889bdb34ff5ea9295ad844d6f93010418a8f"
+    },
+    {
+      "path": "requirements/part3-stage1-acceptance.json",
+      "sha256": "352c2998e7d5f3f7b49c2be4b7329cebefb21e374d30e5c6df02816d64525595"
+    },
+    {
+      "path": "requirements/part3-stage1-requirement-corrections.json",
+      "sha256": "bc29010bf7a4bf7ff6c1b7a3e81dcc6246091e1562872008b34a6583841ae6a3"
+    },
+    {
+      "path": "scripts/validate_part3_stage1.py",
+      "sha256": "4a3e6c249754f24a646173f1c73ba7267365ceb7b145c99383ad774b6f827017"
+    },
+    {
+      "path": "tests/fixtures/part3-stage1/invalid-cases.json",
+      "sha256": "b857767eda6d8b72104a0c01b0f4e45888db53c5dffb3e68d47201d333e57fcd"
+    },
+    {
+      "path": "tests/test_part3_stage1_validator.py",
+      "sha256": "dae464fb65cf01af5f79c5cd91c30ad47bd3b7ae661f8a77d15d3449312f478f"
+    }
+  ]
+}
