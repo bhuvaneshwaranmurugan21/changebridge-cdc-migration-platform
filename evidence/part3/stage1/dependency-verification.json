@@ -1,0 +1,21 @@
+{
+  "environment": "/tmp/changebridge-st31-venv",
+  "repository_declarations_changed": false,
+  "python": "3.12",
+  "direct_dependencies": {
+    "pytest": "9.1.1",
+    "pytest-cov": "7.1.0",
+    "ruff": "0.16.9",
+    "mypy": "2.3.1",
+    "jsonschema": "4.26.0",
+    "hypothesis": "6.168.0",
+    "psycopg2-binary": "2.9.12",
+    "pyarrow": "21.0.0",
+    "pyspark": "3.5.9",
+    "py4j": "0.10.9.9"
+  },
+  "iceberg_coordinate": "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0",
+  "iceberg_sha256_expected": "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a",
+  "iceberg_sha256_observed": "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a",
+  "result": "PASS"
+}
