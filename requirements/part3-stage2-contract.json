@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "part3-stage2-deployable-platform",
+  "entry_checkpoint": "PART3_STAGE1_MANAGED_AUTHORITY_VERIFIED",
+  "entry_commit": "963db655922b0209a4ce9790c5224b3ca0e642ef",
+  "entry_tree": "3ff300cad3b8823900326273f638f0b5cf36e7f6",
+  "branch": "part3-stage2-deployable-platform",
+  "claim_ceiling": "LOCAL_VERIFIED",
+  "aws_account": "UNASSIGNED",
+  "aws_region": "UNASSIGNED",
+  "aws_mutation_authorized": false,
+  "allowed_validation": ["terraform_fmt", "terraform_init_backend_false", "terraform_validate", "static_oracles", "repository_tests"],
+  "forbidden": ["aws_api", "credentials", "refresh", "terraform_plan_live", "apply", "import", "destroy", "deployment", "managed_claim"],
+  "checkpoint": "PART3_STAGE2_DEPLOYABLE_PLATFORM_VERIFIED"
+}

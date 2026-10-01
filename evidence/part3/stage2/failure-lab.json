@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "expected": "admission blocked",
+      "id": "ST32-FL-01",
+      "mutation": "account UNASSIGNED",
+      "result": "PASS"
+    },
+    {
+      "expected": "admission blocked",
+      "id": "ST32-FL-02",
+      "mutation": "region UNASSIGNED",
+      "result": "PASS"
+    },
+    {
+      "expected": "admission blocked",
+      "id": "ST32-FL-03",
+      "mutation": "runtime digest absent",
+      "result": "PASS"
+    },
+    {
+      "expected": "orchestration rejected",
+      "id": "ST32-FL-04",
+      "mutation": "unproven generation",
+      "result": "PASS"
+    },
+    {
+      "expected": "IAM boundary rejected",
+      "id": "ST32-FL-05",
+      "mutation": "processing pointer mutation",
+      "result": "PASS"
+    },
+    {
+      "expected": "static oracle rejected",
+      "id": "ST32-FL-06",
+      "mutation": "unsafe region default",
+      "result": "PASS"
+    },
+    {
+      "expected": "static oracle rejected",
+      "id": "ST32-FL-07",
+      "mutation": "random resource identity",
+      "result": "PASS"
+    },
+    {
+      "expected": "validator rejected",
+      "id": "ST32-FL-08",
+      "mutation": "protected evidence drift",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

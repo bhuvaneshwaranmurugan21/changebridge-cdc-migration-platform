@@ -1,0 +1,13 @@
+{
+  "Comment": "Proof-gated ChangeBridge generation lifecycle; deployable definition only",
+  "StartAt": "SnapshotLoad",
+  "States": {
+    "SnapshotLoad": {"Type": "Task", "Resource": "arn:aws:states:::glue:startJobRun.sync", "Parameters": {"JobName": "${snapshot_job}"}, "Retry": [{"ErrorEquals": ["States.TaskFailed"], "MaxAttempts": 2}], "Next": "CDCApply"},
+    "CDCApply": {"Type": "Task", "Resource": "arn:aws:states:::glue:startJobRun.sync", "Parameters": {"JobName": "${cdc_job}"}, "Retry": [{"ErrorEquals": ["States.TaskFailed"], "MaxAttempts": 2}], "Next": "SchemaAdmission"},
+    "SchemaAdmission": {"Type": "Task", "Resource": "arn:aws:states:::glue:startJobRun.sync", "Parameters": {"JobName": "${schema_job}"}, "Next": "Prove"},
+    "Prove": {"Type": "Task", "Resource": "arn:aws:states:::glue:startJobRun.sync", "Parameters": {"JobName": "${proof_job}"}, "Retry": [{"ErrorEquals": ["States.TaskFailed"], "MaxAttempts": 1}], "Next": "ProofGate"},
+    "ProofGate": {"Type": "Choice", "Choices": [{"Variable": "$.proof.status", "StringEquals": "PROVEN", "Next": "Publish"}], "Default": "Rejected"},
+    "Publish": {"Type": "Task", "Resource": "arn:aws:states:::glue:startJobRun.sync", "Parameters": {"JobName": "${publish_job}"}, "End": true},
+    "Rejected": {"Type": "Fail", "Error": "GenerationNotProven"}
+  }
+}

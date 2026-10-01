@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "part3-stage2-deployable-platform",
+  "claim_ceiling": "LOCAL_VERIFIED",
+  "aws_binding": {"account_id": "UNASSIGNED", "region": "UNASSIGNED", "mutation_authorized": false},
+  "components": [
+    "kms", "landing_storage", "evidence_storage", "glue_catalog", "dms_landing",
+    "generation_registry", "checkpoint_ledger", "publication_revision_ledger",
+    "active_pointer", "runtime_jobs", "orchestration", "observability"
+  ],
+  "lifecycle": ["CREATED", "SNAPSHOT_LOADING", "CDC_APPLYING", "SEALED", "PROVING", "PROVEN", "PUBLISHED"],
+  "non_claims": [
+    "not deployed", "not AWS validated", "not performance tested",
+    "no cross-table Iceberg atomicity", "no production exactly-once delivery"
+  ]
+}

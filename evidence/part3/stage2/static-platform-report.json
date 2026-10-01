@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "deterministic naming",
+    "fail-closed admission",
+    "encrypted private storage",
+    "distinct control ledgers",
+    "transaction-preserving DMS",
+    "five runtime jobs",
+    "proof-gated orchestration",
+    "bounded retries",
+    "role separation",
+    "no wildcard policy",
+    "bounded alarms",
+    "cost and lifecycle inputs"
+  ],
+  "result": "PASS"
+}

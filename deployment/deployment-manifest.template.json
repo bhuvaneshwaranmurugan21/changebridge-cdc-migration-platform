@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ChangeBridge",
+  "git_commit": "UNASSIGNED",
+  "git_tree": "UNASSIGNED",
+  "terraform_digest": "UNASSIGNED",
+  "configuration_digest": "UNASSIGNED",
+  "deployment_id": "UNASSIGNED",
+  "account_id": "UNASSIGNED",
+  "region": "UNASSIGNED",
+  "runtime_artifacts": [{"name": "changebridge-runtime", "sha256": "UNASSIGNED"}],
+  "iceberg": {
+    "coordinate": "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0",
+    "sha256": "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a"
+  },
+  "claim_ceiling": "LOCAL_VERIFIED"
+}

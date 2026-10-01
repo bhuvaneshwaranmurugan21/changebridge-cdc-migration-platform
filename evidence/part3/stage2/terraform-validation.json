@@ -1,0 +1,11 @@
+{
+  "aws_credentials": false,
+  "candidate_local": "FMT_PASS_PROVIDER_PROCESS_UNAVAILABLE_IN_EXECUTOR",
+  "commands": [
+    "terraform fmt -check -diff -recursive deployment/terraform",
+    "terraform -chdir=deployment/terraform init -backend=false",
+    "terraform -chdir=deployment/terraform validate"
+  ],
+  "executable_validation": "PENDING_EXACT_HEAD_CI",
+  "live_plan": false
+}

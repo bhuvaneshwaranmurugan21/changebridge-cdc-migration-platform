@@ -1,0 +1,9 @@
+{
+  "aws_account": "UNASSIGNED",
+  "aws_calls": 0,
+  "aws_region": "UNASSIGNED",
+  "claim_ceiling": "LOCAL_VERIFIED",
+  "credentials_used": false,
+  "refresh": false,
+  "terraform_backend": "disabled"
+}

@@ -1,0 +1,11 @@
+{
+  "after": "LOCAL_VERIFIED",
+  "before": "LOCAL_VERIFIED",
+  "limitations": [
+    "not deployed",
+    "not AWS validated",
+    "not performance tested"
+  ],
+  "new_managed_claims": [],
+  "result": "PASS"
+}
