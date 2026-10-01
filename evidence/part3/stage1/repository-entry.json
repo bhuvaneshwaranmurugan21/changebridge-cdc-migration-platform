@@ -1,0 +1,11 @@
+{
+  "project": "ChangeBridge",
+  "part": 3,
+  "stage": 1,
+  "entry_commit": "fd93d0863114ac131b79c011b2205a233fe185d7",
+  "entry_tree": "5be57fe4dc8369e7324770accb662e3cca9c8883",
+  "branch": "part3-stage1-managed-authority",
+  "predecessor_checkpoint": "PART2_COMPLETION_VERIFIED",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "identity_verified": true
+}
