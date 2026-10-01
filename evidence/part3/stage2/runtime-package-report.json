@@ -1,0 +1,26 @@
+{
+  "byte_identical": true,
+  "first": {
+    "bytes": 3416,
+    "files": [
+      "jobs/spark_iceberg_apply.py",
+      "jobs/spark_iceberg_publish.py",
+      "jobs/spark_iceberg_reconcile.py",
+      "jobs/spark_iceberg_schema.py",
+      "jobs/spark_iceberg_snapshot.py"
+    ],
+    "sha256": "560883f8735955b0e41e09164c10890e48257161ce581c20e06bc1b3fcc6945a"
+  },
+  "result": "PASS",
+  "second": {
+    "bytes": 3416,
+    "files": [
+      "jobs/spark_iceberg_apply.py",
+      "jobs/spark_iceberg_publish.py",
+      "jobs/spark_iceberg_reconcile.py",
+      "jobs/spark_iceberg_schema.py",
+      "jobs/spark_iceberg_snapshot.py"
+    ],
+    "sha256": "560883f8735955b0e41e09164c10890e48257161ce581c20e06bc1b3fcc6945a"
+  }
+}

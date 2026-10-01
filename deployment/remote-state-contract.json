@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "created_by_stage": 3,
+  "stage2_creates_backend": false,
+  "requirements": {
+    "s3_versioning": true,
+    "s3_public_access_block": true,
+    "kms_encryption": true,
+    "dynamodb_locking": true,
+    "cross_account_access": false
+  },
+  "backend_coordinates": "UNASSIGNED"
+}

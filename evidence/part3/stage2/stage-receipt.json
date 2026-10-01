@@ -1,0 +1,10 @@
+{
+  "aws_calls": 0,
+  "claim_ceiling": "LOCAL_VERIFIED",
+  "criteria_passed": 41,
+  "criteria_pending": 6,
+  "criteria_total": 47,
+  "next_checkpoint": "PART3_STAGE2_DEPLOYABLE_PLATFORM_VERIFIED",
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "stage": "part3-stage2-deployable-platform"
+}

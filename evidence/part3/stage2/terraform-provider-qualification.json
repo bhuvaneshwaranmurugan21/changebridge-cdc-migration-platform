@@ -1,0 +1,11 @@
+{
+  "artifact_checksum_result": "PASS",
+  "constraint": "= 5.100.0",
+  "exact_head_ci_validation": "PENDING",
+  "executor_provider_process": "UNAVAILABLE",
+  "lockfile": "deployment/terraform/.terraform.lock.hcl",
+  "official_artifact_sha256": "1589a2266af699cbd5d80737a0fe02e54ec9cf2ca54e7e00ac51c7359056f274",
+  "platform": "linux_amd64",
+  "provider": "registry.terraform.io/hashicorp/aws",
+  "version": "5.100.0"
+}

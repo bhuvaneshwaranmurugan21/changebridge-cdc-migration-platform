@@ -1,0 +1,137 @@
+{
+  "algorithm": "sha256",
+  "artifacts": [
+    {
+      "path": "deployment/deployment-manifest.template.json",
+      "sha256": "0946729d83ffb3a82f1de5dc7db267cb4dada686646aa9b7e76e8a607b76fe9e"
+    },
+    {
+      "path": "deployment/orchestration/migration.asl.json",
+      "sha256": "c0ddb6a3d0421e54766c8dc1d557a59f3174005a034b9f9ad312a38884f17806"
+    },
+    {
+      "path": "deployment/policies/iam-boundaries.json",
+      "sha256": "b5ea8b7fd1ef0c0f2dffabead5aa0390e1ccf8d022ecdafc0cb0b0fe909ea2ab"
+    },
+    {
+      "path": "deployment/remote-state-contract.json",
+      "sha256": "130dd340e2fabfe5e7b72eeaa57fef9cfcb485424a09e404751ed49d38291333"
+    },
+    {
+      "path": "deployment/runtime-lock.json",
+      "sha256": "bb474177103df1f79f1af82c794ded5be00562e55a3e1a0bba94c67028c2124c"
+    },
+    {
+      "path": "deployment/stage2-platform-spec.json",
+      "sha256": "b0179aac87f6a7c899415db489f6278c193b7eb6f061b1cbfd7c7316e696bac7"
+    },
+    {
+      "path": "deployment/terraform/.terraform.lock.hcl",
+      "sha256": "9cfd8d08fdc7d45ef0e92edfd4b9b65a82e8f2e0b2994749aa8c7087e1339fd7"
+    },
+    {
+      "path": "deployment/terraform/main.tf",
+      "sha256": "561f0c9fce7c742e9c3886e058d2318294126970dda94f780fbcc1e3e8088341"
+    },
+    {
+      "path": "deployment/terraform/outputs.tf",
+      "sha256": "4e0f3cf280172832735bee0758620c06f79b02b3409a023aba55a11992c1bd66"
+    },
+    {
+      "path": "deployment/terraform/variables.tf",
+      "sha256": "4013e9233e4105ee7bd31bfefbe327a9aa7a76d3bd0c80f7a2b893a4646ebb6e"
+    },
+    {
+      "path": "deployment/terraform/versions.tf",
+      "sha256": "81e2d3fbc1c2ecd16044d413b01b0141eae9bbff6ba20f3a9d510ab7f32f9db5"
+    },
+    {
+      "path": "PART3_STAGE2_STATUS.md",
+      "sha256": "4ee7c33d8d248c2dca2a34975114f41abbae174e5047223c7439a021d41eea50"
+    },
+    {
+      "path": "requirements/part3-stage2-acceptance.json",
+      "sha256": "43aeaaa74b01dcd9af0e4848726d1df05a034cc3ebd314ba58d9203f73a1e677"
+    },
+    {
+      "path": "requirements/part3-stage2-contract.json",
+      "sha256": "b8b249253e69b0038da7b4cbc96e8c2d6849ab06de96b7ffc741c43cfe8e255c"
+    },
+    {
+      "path": "scripts/build_stage32_evidence.py",
+      "sha256": "63edebac1eb357cb6d19b48b7a61b129e64f8cb350d06aed8b88e8f2842c46fc"
+    },
+    {
+      "path": "scripts/package_stage32_runtime.py",
+      "sha256": "0a48e067e075e54baae9e16a2693d3ca669c6a26739074e017c5340110d8220c"
+    },
+    {
+      "path": "scripts/validate_part3_stage1.py",
+      "sha256": "2ea44ee383ccc838efda6c84cf73a3241b949653bee5415a369191c04fafdc54"
+    },
+    {
+      "path": "scripts/validate_part3_stage2.py",
+      "sha256": "ba1fc0ae76f8fbcc1b2dc77a36c79485add1280dc0de605e3d03e09e33955ee5"
+    },
+    {
+      "path": "tests/test_part3_stage2_validator.py",
+      "sha256": "9ea43f9d45f8802ccf69b059de0313c2ec0a5ad0ef57cc910b21b83b72ee7a87"
+    },
+    {
+      "path": "docs/part3/stage2/DEPLOYABLE_PLATFORM.md",
+      "sha256": "cd833d7d1a49eb4098d275fc7afbcecd4bc30f72f0d3a730fc65165d364ba583"
+    },
+    {
+      "path": "docs/part3/stage2/FAILURE_MODES.md",
+      "sha256": "0ea4edcd8b5c0159c41552f6d74a136e876055b16830f1d922dedb00a5eef938"
+    },
+    {
+      "path": "docs/part3/stage2/RUNBOOK.md",
+      "sha256": "3d1f04eb835c826b7ec6f6163faa6c576f148b67c361593c12fbbbf6dbf1f72f"
+    },
+    {
+      "path": "docs/part3/stage2/STAGE3_HANDOFF.md",
+      "sha256": "977eecbe65391fed5cc134d9fb9cb642a1220741b2f93d7b542ef48b16d1d409"
+    },
+    {
+      "path": ".github/workflows/part3-stage2-deployable-platform.yml",
+      "sha256": "9ee8084a64c2177b01245667524a380554aa7f727d38217df93e4b640d939464"
+    },
+    {
+      "path": "evidence/part3/stage2/claim-impact-review.json",
+      "sha256": "e7d814da1cae89bed4936d8786ddb7c16224e8760c05f80390bf37e8cd4a5444"
+    },
+    {
+      "path": "evidence/part3/stage2/execution-envelope.json",
+      "sha256": "b043210302f3ba82241ad7a3ba5245f2d0614965648bb2fd8c6cc93817334872"
+    },
+    {
+      "path": "evidence/part3/stage2/failure-lab.json",
+      "sha256": "122c7c0f16d628d9f619cfb626064420d24f0e4b8e3b7e7a5306aa4a608846fb"
+    },
+    {
+      "path": "evidence/part3/stage2/protected-evidence-report.json",
+      "sha256": "a6f03fedf97cd9ef497ae08395c1fa4858bfc5f5dc024a96d2fdf388f7d0953f"
+    },
+    {
+      "path": "evidence/part3/stage2/repository-entry.json",
+      "sha256": "b4e535bd3af0de80620e198a0d78b2efabd568cd11e092249d9e9858d429de07"
+    },
+    {
+      "path": "evidence/part3/stage2/runtime-package-report.json",
+      "sha256": "60c022775e85e81d1fbcca864d097289fa280f1098364c9b58d2968891ef6920"
+    },
+    {
+      "path": "evidence/part3/stage2/static-platform-report.json",
+      "sha256": "003f6d9cd8ad50a88b28ce94eed63649e35e6a06733d8e6c9d41802694495361"
+    },
+    {
+      "path": "evidence/part3/stage2/terraform-provider-qualification.json",
+      "sha256": "71d75a30f1f47e30c2cba8c6134972f2d59f7a324f39bd43c247e821992f070a"
+    },
+    {
+      "path": "evidence/part3/stage2/terraform-validation.json",
+      "sha256": "54d893aa8dcccee0b02269a5434b10ab3380ed8a983d1078042efc9f490d218e"
+    }
+  ]
+}

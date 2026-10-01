@@ -1,0 +1,12 @@
+{
+  "python": "3.12",
+  "pyspark": "3.5.9",
+  "py4j": "0.10.9.9",
+  "iceberg_coordinate": "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0",
+  "iceberg_sha256": "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a",
+  "entry_points": [
+    "jobs/spark_iceberg_snapshot.py", "jobs/spark_iceberg_apply.py",
+    "jobs/spark_iceberg_schema.py", "jobs/spark_iceberg_reconcile.py",
+    "jobs/spark_iceberg_publish.py"
+  ]
+}

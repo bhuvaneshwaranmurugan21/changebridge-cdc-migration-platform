@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "roles": {
+    "dms_landing": {"may": ["s3:PutObject", "kms:GenerateDataKey"], "must_not": ["dynamodb:UpdateItem"]},
+    "snapshot_job": {"may": ["s3:GetObject", "s3:PutObject", "glue:GetTable"], "must_not": ["dynamodb:UpdateItem:active-pointer"]},
+    "cdc_apply_job": {"may": ["s3:GetObject", "s3:PutObject", "dynamodb:UpdateItem:checkpoints"], "must_not": ["dynamodb:UpdateItem:active-pointer"]},
+    "reconciliation_job": {"may": ["s3:GetObject", "dynamodb:GetItem"], "must_not": ["dynamodb:UpdateItem:active-pointer"]},
+    "publication_controller": {"may": ["dynamodb:TransactWriteItems:publication"], "must_not": ["s3:DeleteObject:evidence"]},
+    "orchestration": {"may": ["glue:StartJobRun", "glue:GetJobRun"], "must_not": ["s3:DeleteObject:evidence"]},
+    "evidence_writer": {"may": ["s3:PutObject:evidence"], "must_not": ["s3:DeleteObject:evidence"]}
+  },
+  "forbidden": ["Action:*", "Resource:*", "iam:PassRole:*", "sts:AssumeRole:*"]
+}

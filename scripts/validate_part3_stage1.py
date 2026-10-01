@@ -12,6 +12,8 @@ from typing import Any, cast
 ROOT = Path(__file__).resolve().parents[1]
 ENTRY = "fd93d0863114ac131b79c011b2205a233fe185d7"
 ENTRY_TREE = "5be57fe4dc8369e7324770accb662e3cca9c8883"
+ACCEPTED = "963db655922b0209a4ce9790c5224b3ca0e642ef"
+ACCEPTED_TREE = "3ff300cad3b8823900326273f638f0b5cf36e7f6"
 
 
 class Stage31Error(AssertionError):
@@ -105,6 +107,8 @@ def validate_authority(bundle: dict[str, Any]) -> None:
 def validate() -> dict[str, Any]:
     if git("rev-parse", f"{ENTRY}^{{tree}}") != ENTRY_TREE:
         fail("ST31_ENTRY_IDENTITY", "Git entry tree does not match authority")
+    if git("rev-parse", f"{ACCEPTED}^{{tree}}") != ACCEPTED_TREE:
+        fail("ST31_ACCEPTED_IDENTITY", "accepted Stage 1 tree does not match authority")
     validate_authority(load_bundle())
 
     baseline = load("evidence/part3/stage1/protected-evidence-baseline.json")
@@ -124,9 +128,10 @@ def validate() -> dict[str, Any]:
     if "PART3_STAGE1_MANAGED_AUTHORITY_PENDING_EXTERNAL_CLOSURE" not in status:
         fail("ST31_STATUS", "project status is not at Stage 1 candidate closure")
 
-    changed = set(filter(None, git("diff", "--name-only", ENTRY).splitlines()))
+    changed = set(filter(None, git("diff", "--name-only", ENTRY, ACCEPTED).splitlines()))
     forbidden = {
-        path for path in changed
+        path
+        for path in changed
         if path.startswith(("src/", "terraform/", "infra/", ".github/workflows/"))
         or path in {"pyproject.toml", "requirements.txt", "poetry.lock"}
     }
@@ -135,8 +140,13 @@ def validate() -> dict[str, Any]:
 
     manifest = load("evidence/part3/stage1/artifact-manifest.json")
     for row in manifest["artifacts"]:
-        path = ROOT / row["path"]
-        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != row["sha256"]:
+        accepted_bytes = subprocess.run(
+            ["git", "show", f"{ACCEPTED}:{row['path']}"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+        if hashlib.sha256(accepted_bytes).hexdigest() != row["sha256"]:
             fail("ST31_ARTIFACT_MANIFEST", f"artifact mismatch: {row['path']}")
 
     return {
