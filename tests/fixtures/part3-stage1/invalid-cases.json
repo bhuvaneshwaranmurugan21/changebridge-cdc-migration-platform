@@ -1,0 +1,7 @@
+{
+  "cases": [
+    {"id":"assigned_aws","expected_code":"ST31_AWS_NOT_UNASSIGNED"},
+    {"id":"missing_stage","expected_code":"ST31_STAGE_SEQUENCE"},
+    {"id":"criterion_gap","expected_code":"ST31_ACCEPTANCE_SEQUENCE"},
+    {"id":"managed_claim","expected_code":"ST31_CLAIM_PROMOTION"},
+    {"id":"overlay_gap","expected_code":"ST31_REQUIREMENT_OVERLAd��(��t)�(
