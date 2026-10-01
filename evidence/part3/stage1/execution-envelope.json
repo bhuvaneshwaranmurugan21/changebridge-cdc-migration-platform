@@ -1,1 +1,11 @@
-
+{
+  "scope": "Part 3 Stage 1 authority only",
+  "aws_operations": 0,
+  "terraform_mutations": 0,
+  "runtime_behavior_changes": 0,
+  "dependency_declaration_changes": 0,
+  "authorized_dependencies": ["repository dev extra", "repository spark extra"],
+  "iceberg_coordinate": "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0",
+  "iceberg_sha256": "94b8e36fc329f0293d44ba9e01b784a56e9501affec1842d898144c51f6e486a",
+  "result_ceiling": "LOCAL_VERIFIED"
+}
