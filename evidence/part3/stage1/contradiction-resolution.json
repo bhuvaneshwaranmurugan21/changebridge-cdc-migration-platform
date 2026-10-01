@@ -1,0 +1,9 @@
+{
+  "resolutions": [
+    {"id": "CR-001", "statement": "Part 2 is complete while project completion is not", "resolution": "Part 2 proves the executable local migration path; Part 3 separately proves managed operation and closure."},
+    {"id": "CR-002", "statement": "Local publication exists while no production cutover occurred", "resolution": "The publication was disposable and LOCAL_VERIFIED; it is not an AWS or live-traffic claim."},
+    {"id": "CR-003", "statement": "Historical and current validation use different authority revisions", "resolution": "Accepted historical commits prove original behavior; immutable evidence baselines and current frozen validators prove preservation."},
+    {"id": "CR-004", "statement": "The predecessor registry has stale local statuses but is hashed by accepted evidence", "resolution": "Keep the predecessor-owned files byte-identical and apply the validated Part 3 correction overlay as later authority."}
+  ],
+  "unresolved": []
+}
