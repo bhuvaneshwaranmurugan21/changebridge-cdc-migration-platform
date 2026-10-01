@@ -1,0 +1,7 @@
+{
+  "claim_ceiling_before": "LOCAL_VERIFIED",
+  "claim_ceiling_after": "LOCAL_VERIFIED",
+  "new_managed_claims": [],
+  "prohibited_claims": ["AWS_VERIFIED", "production exactly-once", "zero downtime", "production readiness"],
+  "decision": "NO_PROMOTION"
+}
