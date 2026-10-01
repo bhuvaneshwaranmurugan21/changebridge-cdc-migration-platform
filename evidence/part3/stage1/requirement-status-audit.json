@@ -1,0 +1,15 @@
+{
+  "sources": ["requirements/completion-requirements.json", "requirements/part3-stage1-requirement-corrections.json"],
+  "counts_at_entry": {"SATISFIED": 14, "PARTIAL": 18, "UNSATISFIED": 5, "DEFERRED": 2},
+  "effective_counts_after_overlay": {"SATISFIED": 31, "PARTIAL": 3, "UNSATISFIED": 3, "DEFERRED": 2},
+  "interpretation": "Part 2 satisfies the local evidence contract. Managed, measured and final-closure requirements remain incomplete.",
+  "managed_or_closure_requirements": ["CB-BOUNDARY-003","CB-OPS-002","CB-OPS-003","CB-OPS-004","CB-SEC-001","CB-SEC-002","CB-RELEASE-001","CB-INTERVIEW-001"],
+  "stage1_status_changes": [
+    "CB-BOUNDARY-001", "CB-BOUNDARY-002", "CB-ORDER-001", "CB-ORDER-003",
+    "CB-ORDER-004", "CB-APPLY-001", "CB-APPLY-002", "CB-CHECKPOINT-001",
+    "CB-CHECKPOINT-003", "CB-SCHEMA-001", "CB-SCHEMA-002", "CB-SCHEMA-003",
+    "CB-ISOLATION-001", "CB-ISOLATION-002", "CB-PUBLISH-001", "CB-OPS-001",
+    "CB-EVIDENCE-001"
+  ],
+  "reason": "The accepted Part 2 evidence now closes these LOCAL_VERIFIED requirements; Stage 1 corrects stale authority without creating new runtime proof."
+}

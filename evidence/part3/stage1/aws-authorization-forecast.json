@@ -1,0 +1,16 @@
+{
+  "account_id": "UNASSIGNED",
+  "region": "UNASSIGNED",
+  "budget_ceiling": "UNASSIGNED",
+  "execution_identity": "UNASSIGNED",
+  "oidc_binding": "UNASSIGNED",
+  "mutation_authorized": false,
+  "next_possible_mutation_stage": 3,
+  "required_before_mutation": [
+    "deployable platform checkpoint",
+    "exact account and region",
+    "approved budget ceiling and alarms",
+    "least-privilege identity and OIDC trust",
+    "stage-specific user authorization"
+  ]
+}

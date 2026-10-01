@@ -1,0 +1,8 @@
+{
+  "entry_commit": "fd93d0863114ac131b79c011b2205a233fe185d7",
+  "allowed_categories": ["authority", "contract", "requirements", "readiness", "validator", "test", "fixture", "evidence", "documentation", "status"],
+  "behavior_paths_changed": [],
+  "dependency_declarations_changed": [],
+  "protected_evidence_changed": [],
+  "manifest_source": "git diff --name-only against the exact entry commit"
+}

@@ -1,0 +1,7 @@
+{
+  "entries": [
+    {"id": "AD-001", "condition": "PROJECT_STATUS retained Part 2 candidate wording after merged closure", "resolution": "superseded by Part 3 Stage 1 status", "closed": true},
+    {"id": "AD-002", "condition": "historical validators inspect authority files later superseded", "resolution": "run historical validators at accepted commits; current frozen validators plus digest baseline prove preservation", "closed": true},
+    {"id": "AD-003", "condition": "managed requirements have no assigned AWS execution boundary", "resolution": "retain managed requirements as incomplete and block mutation while assignments are UNASSIGNED", "closed": true}
+  ]
+}

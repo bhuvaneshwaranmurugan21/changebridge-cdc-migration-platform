@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "part": 3,
+  "ordering": "strictly_sequential",
+  "managed_requirement_owners": {
+    "CB-BOUNDARY-003": 4,
+    "CB-OPS-002": 7,
+    "CB-OPS-003": 6,
+    "CB-OPS-004": 7,
+    "CB-SEC-001": 7,
+    "CB-SEC-002": 7,
+    "CB-RELEASE-001": 8,
+    "CB-INTERVIEW-001": 8
+  },
+  "aws_mutation_prerequisites": [
+    "PART3_STAGE2_DEPLOYABLE_PLATFORM_VERIFIED",
+    "exact account assignment",
+    "exact region assignment",
+    "approved budget ceiling",
+    "approved identity and OIDC binding",
+    "stage-specific user authorization"
+  ]
+}

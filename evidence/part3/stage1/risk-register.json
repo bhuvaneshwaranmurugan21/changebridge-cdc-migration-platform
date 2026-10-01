@@ -1,0 +1,9 @@
+{
+  "risks": [
+    {"id": "R31-01", "risk": "wrong AWS account or region", "control": "UNASSIGNED means fail closed", "residual": "none before assignment"},
+    {"id": "R31-02", "risk": "local proof mislabeled as managed", "control": "claim ceiling and resource-bound receipt requirement", "residual": "review error"},
+    {"id": "R31-03", "risk": "predecessor evidence drift", "control": "directory digest baseline validated before merge", "residual": "hash algorithm implementation defect"},
+    {"id": "R31-04", "risk": "cost leakage", "control": "budget approval, TTL, inventory, teardown receipt", "residual": "future managed execution only"},
+    {"id": "R31-05", "risk": "historical validator false failure", "control": "validate at accepted commit and use frozen current-tree preservation checks", "residual": "authority documentation drift"}
+  ]
+}

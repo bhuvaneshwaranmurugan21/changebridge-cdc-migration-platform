@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "part": 3,
+  "final_part": true,
+  "stages": [
+    {"number": 1, "id": "managed-authority", "depends_on": ["PART2_COMPLETION_VERIFIED"], "checkpoint": "PART3_STAGE1_MANAGED_AUTHORITY_VERIFIED"},
+    {"number": 2, "id": "deployable-platform", "depends_on": ["PART3_STAGE1_MANAGED_AUTHORITY_VERIFIED"], "checkpoint": "PART3_STAGE2_DEPLOYABLE_PLATFORM_VERIFIED"},
+    {"number": 3, "id": "aws-admission", "depends_on": ["PART3_STAGE2_DEPLOYABLE_PLATFORM_VERIFIED"], "checkpoint": "PART3_STAGE3_AWS_ADMISSION_VERIFIED"},
+    {"number": 4, "id": "managed-happy-path", "depends_on": ["PART3_STAGE3_AWS_ADMISSION_VERIFIED"], "checkpoint": "PART3_STAGE4_MANAGED_HAPPY_PATH_VERIFIED"},
+    {"number": 5, "id": "managed-recovery", "depends_on": ["PART3_STAGE4_MANAGED_HAPPY_PATH_VERIFIED"], "checkpoint": "PART3_STAGE5_MANAGED_RECOVERY_VERIFIED"},
+    {"number": 6, "id": "cutover-rollback", "depends_on": ["PART3_STAGE5_MANAGED_RECOVERY_VERIFIED"], "checkpoint": "PART3_STAGE6_CUTOVER_ROLLBACK_VERIFIED"},
+    {"number": 7, "id": "operations-closure", "depends_on": ["PART3_STAGE6_CUTOVER_ROLLBACK_VERIFIED"], "checkpoint": "PART3_STAGE7_OPERATIONS_CLOSURE_VERIFIED"},
+    {"number": 8, "id": "project-completion", "depends_on": ["PART3_STAGE7_OPERATIONS_CLOSURE_VERIFIED"], "checkpoint": "PROJECT_COMPLETION_VERIFIED"}
+  ]
+}

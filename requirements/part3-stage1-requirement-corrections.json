@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "part3_requirement_correction_overlay",
+  "base_registry": "requirements/completion-requirements.json",
+  "base_commit": "fd93d0863114ac131b79c011b2205a233fe185d7",
+  "precedence": "Apply this overlay after the immutable base registry.",
+  "reason": "Part 2 completed local runtime proof after the base statuses were authored; direct mutation would invalidate the accepted Part 2 Stage 7 artifact chain.",
+  "effective_counts": {"SATISFIED":31,"PARTIAL":3,"UNSATISFIED":3,"DEFERRED":2},
+  "corrections": [
+    {"id":"CB-BOUNDARY-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage6/proof-manifest.json"},
+    {"id":"CB-BOUNDARY-002","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage6/proof-manifest.json"},
+    {"id":"CB-ORDER-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage2/normalization-report.json"},
+    {"id":"CB-ORDER-003","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage4/determinism-report.json"},
+    {"id":"CB-ORDER-004","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage4/apply-manifest-proof.json"},
+    {"id":"CB-APPLY-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage4/differential-report.json"},
+    {"id":"CB-APPLY-002","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage4/differential-report.json"},
+    {"id":"CB-CHECKPOINT-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage4/checkpoint-recovery.json"},
+    {"id":"CB-CHECKPOINT-003","from":"UNSATISFIED","to":"SATISFIED","proof":"evidence/part2/stage4/failure-lab.json"},
+    {"id":"CB-SCHEMA-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage5/iceberg-schema-apply.json"},
+    {"id":"CB-SCHEMA-002","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage5/schema-policy-proof.json"},
+    {"id":"CB-SCHEMA-003","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage5/quarantine-proof.json"},
+    {"id":"CB-ISOLATION-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage3/generation-isolation.json"},
+    {"id":"CB-ISOLATION-002","from":"UNSATISFIED","to":"SATISFIED","proof":"evidence/part2/stage4/checkpoint-recovery.json"},
+    {"id":"CB-PUBLISH-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage7/publication-receipt.json"},
+    {"id":"CB-OPS-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part2/stage6/proof-manifest.json"},
+    {"id":"CB-EVIDENCE-001","from":"PARTIAL","to":"SATISFIED","proof":"evidence/part3/stage1/predecessor-checkpoint.json"}
+  ],
+  "not_promoted": ["CB-BOUNDARY-003","CB-OPS-002","CB-OPS-003","CB-OPS-004","CB-SEC-001","CB-SEC-002","CB-RELEASE-001","CB-INTERVIEW-001"]
+}

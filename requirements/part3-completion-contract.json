@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "part3_completion_contract",
+  "project": "ChangeBridge",
+  "part": 3,
+  "final_part": true,
+  "entry_checkpoint": "PART2_COMPLETION_VERIFIED",
+  "entry_commit": "fd93d0863114ac131b79c011b2205a233fe185d7",
+  "entry_tree": "5be57fe4dc8369e7324770accb662e3cca9c8883",
+  "stage_count": 8,
+  "entry_claim_ceiling": "LOCAL_VERIFIED",
+  "aws_binding": "UNASSIGNED",
+  "completion_checkpoint": "PROJECT_COMPLETION_VERIFIED",
+  "non_substitutable_conditions": [
+    "local evidence is not managed evidence",
+    "documentation is not execution evidence",
+    "a later checkpoint cannot replace an earlier checkpoint",
+    "a managed claim requires exact-run resource-bound receipts"
+  ]
+}
