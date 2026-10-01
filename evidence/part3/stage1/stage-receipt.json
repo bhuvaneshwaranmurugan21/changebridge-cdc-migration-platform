@@ -1,0 +1,12 @@
+{
+  "stage": "part3-stage1-managed-authority",
+  "entry_commit": "fd93d0863114ac131b79c011b2205a233fe185d7",
+  "entry_tree": "5be57fe4dc8369e7324770accb662e3cca9c8883",
+  "criteria_total": 44,
+  "criteria_passed": 39,
+  "criteria_pending": 5,
+  "result": "PENDING_EXTERNAL_CLOSURE",
+  "claim_ceiling": "LOCAL_VERIFIED",
+  "aws_binding": "UNASSIGNED",
+  "next_checkpoint": "PART3_STAGE1_MANAGED_AUTHORITY_VERIFIED"
+}
