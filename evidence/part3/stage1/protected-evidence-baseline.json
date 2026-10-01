@@ -1,0 +1,14 @@
+{
+  "algorithm": "sha256(path + TAB + file_sha256 + LF), paths sorted as UTF-8",
+  "entry_commit": "fd93d0863114ac131b79c011b2205a233fe185d7",
+  "directories": [
+    {"path": "evidence/part1", "files": 77, "digest": "1470430a4afde6bffd7d5bec71a2df42ba9e903006a5dc99efc0990a329f9b03"},
+    {"path": "evidence/part2/stage1", "files": 22, "digest": "164d42b786c3b3637b26596f76ee23e844eacebe27cb1b5a7407e24bbf5b7e8e"},
+    {"path": "evidence/part2/stage2", "files": 18, "digest": "275554052af60006a69bdced0c18fa35389559d36b3002eff31c1becf4599f3b"},
+    {"path": "evidence/part2/stage3", "files": 22, "digest": "5059c4872fa673783f89ffe7d442f0beb5db9d69b9f51c1778eb90fe626a289b"},
+    {"path": "evidence/part2/stage4", "files": 14, "digest": "c879b58e5b0bc477596b2be8dd5aad990a522bb675a9151d8574af0c08647a08"},
+    {"path": "evidence/part2/stage5", "files": 15, "digest": "a28137dc9afc87fb4a40ef693d6a68e5f9b8a44d512ae83d516fc97056bec5ca"},
+    {"path": "evidence/part2/stage6", "files": 26, "digest": "704650724545962b1abd314618bf1378328d8f7ed71fb37a39946d91bef2db41"},
+    {"path": "evidence/part2/stage7", "files": 21, "digest": "354b48704d0a327f04d6e5810f287c5d39cb86ea6f1ce71c2f9442036040c746"}
+  ]
+}
