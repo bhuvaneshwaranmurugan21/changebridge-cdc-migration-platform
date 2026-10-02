@@ -331,6 +331,8 @@ def validate() -> dict[str, Any]:
         "scripts/build_stage33_evidence.py",
         "scripts/validate_part3_stage3.py",
         "tests/test_part3_stage3_validator.py",
+        "tests/test_stage33_oidc_qualification.py",
+        ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",
         "PART3_STAGE3_STATUS.md",
         "evidence/part3/stage3",

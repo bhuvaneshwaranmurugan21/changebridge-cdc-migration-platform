@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "run_id": 36984718071,
+  "job_id": 110767003869,
+  "event": "workflow_dispatch",
+  "ref": "main",
+  "commit": "084407a972d2d3f937e8ac670733f198dd4b0179",
+  "completed_at_utc": "2026-10-02T08:33:48Z",
+  "conclusion": "success",
+  "role_arn": "arn:aws:iam::857229544428:role/ChangeBridgeGitHubOidcRole",
+  "region": "ap-southeast-2",
+  "proven": ["existing main workflow OIDC assumption", "STS caller role match"],
+  "not_proven": ["Stage 3 branch trust", "IAM inspection permission", "bootstrap mutation permission", "new candidate role security"],
+  "aws_resource_mutations": 0,
+  "source": "https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/runs/36984718071"
+}

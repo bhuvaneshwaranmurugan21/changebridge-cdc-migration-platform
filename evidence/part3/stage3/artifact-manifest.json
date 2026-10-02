@@ -55,15 +55,23 @@
     },
     {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "bd979c7de6bf39b2a796b06cc8e49bd86b7231205c7e060728571032f8c67a3d"
+      "sha256": "31685fc0c864b1ec31266dc170d3d6d47f28897eb05588ac6c53fdb7549967d2"
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "3d96594f1a4c20f01d56079e45b8113f45304493d2f9b2a7c363691fd7a17848"
+      "sha256": "c3307a7e25258c216e581e47a540ad424b0f7a81b11f3f1bc2896abb20c33918"
     },
     {
       "path": "tests/test_part3_stage3_validator.py",
       "sha256": "a8de37271b7ebf01a86a39f1100b0d3ca56a1c3b1fcc721756c5441ab1310477"
+    },
+    {
+      "path": "tests/test_stage33_oidc_qualification.py",
+      "sha256": "c871f151256aca5909fd5eb2366af2d626f7b452256dd5e1cb806adf9876104a"
+    },
+    {
+      "path": ".github/workflows/aws-oidc-identity.yml",
+      "sha256": "5c7a8964cd92f372f91b38befe5779ffbd244ad5b38688a4f67cab5b333d1803"
     },
     {
       "path": ".github/workflows/part3-stage3-aws-admission.yml",
@@ -80,6 +88,10 @@
     {
       "path": "evidence/part3/stage3/aws-readonly-review.json",
       "sha256": "c1fb7739feaf578eb99df02ff2d71be30bf4e2a5c608b6beae99b595d6ffc5e0"
+    },
+    {
+      "path": "evidence/part3/stage3/existing-oidc-identity.json",
+      "sha256": "dd4eaf4c1a089619ed807d9b5a8c435bd2153a359d21d9e4c69ef4a757482f4c"
     },
     {
       "path": "evidence/part3/stage3/local-validation.json",
