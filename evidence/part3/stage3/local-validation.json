@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "review_date_utc": "2026-10-02",
+  "result": "FOCUSED_PASS_BROADER_QUALITY_NOT_PASSED",
+  "focused": {
+    "command": "pytest --no-cov tests/test_part3_stage3_validator.py",
+    "result": "PASS",
+    "passed": 14,
+    "negative_controls": 11,
+    "scope": "Stage 3 packet validation; not whole-repository coverage"
+  },
+  "ruff_stage3_files": "PASS",
+  "bash_syntax": "PASS",
+  "git_diff_check": "PASS",
+  "protected_evidence": "BYTE_IDENTICAL",
+  "broader_run": {
+    "command": "pytest -m 'not postgres_integration and not iceberg_integration'",
+    "exit_code": 1,
+    "passed": 285,
+    "deselected": 9,
+    "coverage_percent": 76.18,
+    "required_coverage_percent": 85,
+    "result": "FAIL_COVERAGE",
+    "scope": "Non-integration subset; not the complete repository quality lane"
+  },
+  "untouched_predecessor_comparison": {
+    "commit": "084407a972d2d3f937e8ac670733f198dd4b0179",
+    "tree": "3a5ceefaf9dcfcbe97da5a593f76eab0cd5fe257",
+    "same_command": true,
+    "exit_code": 1,
+    "passed": 271,
+    "deselected": 9,
+    "coverage_percent": 76.18,
+    "required_coverage_percent": 85,
+    "result": "FAIL_COVERAGE",
+    "source_and_validation_configuration_changed": false
+  },
+  "diagnosis": "Marker-filtered subset retains full-package coverage enforcement; candidate and untouched predecessor produce identical coverage. Full quality validation remains pending, not bypassed or represented as successful.",
+  "coverage_threshold_changed": false,
+  "runtime_changed": false,
+  "aws_operations_in_this_resume": 0,
+  "aws_mutations": 0,
+  "remote_main_observed": "084407a972d2d3f937e8ac670733f198dd4b0179",
+  "remote_stage3_branch_observed": "084407a972d2d3f937e8ac670733f198dd4b0179",
+  "stage3_head_published": false,
+  "stage_complete": false
+}

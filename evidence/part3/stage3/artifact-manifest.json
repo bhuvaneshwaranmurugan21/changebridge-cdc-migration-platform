@@ -1,0 +1,109 @@
+{
+  "algorithm": "sha256",
+  "artifacts": [
+    {
+      "path": "requirements/part3-stage3-contract.json",
+      "sha256": "4650b0c9e5246939a6ccffe9cd1e0d53386b01537e02b19bb22f7b398d55cdc4"
+    },
+    {
+      "path": "requirements/part3-stage3-acceptance.json",
+      "sha256": "5b2bf46cd3db5118e455f9f914d1b0f8b8e02eaf750becef823e096bbb3cb116"
+    },
+    {
+      "path": "deployment/stage3/aws-binding.json",
+      "sha256": "926499842ac6ad433dc4815b192a5b095041cc57c685dc2342d4db3118451676"
+    },
+    {
+      "path": "deployment/stage3/bootstrap-manifest.json",
+      "sha256": "305afcf341345840c6b41defd4d3676c623d5ea87f312659bfb0dc4ef5fc01af"
+    },
+    {
+      "path": "deployment/stage3/oidc-trust-policy.proposed.json",
+      "sha256": "25549bd05edc2b6c6e9dd0628dfae23bbd8fbe46faec6afde2cb4c283a841c6a"
+    },
+    {
+      "path": "deployment/stage3/role-permissions.proposed.json",
+      "sha256": "5d1d147ef63bcd146f0b7243ce255491c7e6d5617cbc26f2ee4c8af6c1fdde9f"
+    },
+    {
+      "path": "deployment/stage3/teardown-plan.json",
+      "sha256": "723503c971f0507667fccd8a9e18e2ff7f49b274391592ab9efeadbe2739b1d2"
+    },
+    {
+      "path": "docs/part3/stage3/AUTHORIZATION_PACKET.md",
+      "sha256": "7400da0396a5911bb513e2d0503431c8e15fd9dd82d14ca026781049a8a1caa0"
+    },
+    {
+      "path": "docs/part3/stage3/AWS_ADMISSION.md",
+      "sha256": "cd39bedc3cb0eb20d716b3cdb7ab9a89b79af4b3a94526bb8571c0c843100efc"
+    },
+    {
+      "path": "docs/part3/stage3/BLOCKER_REVIEW.md",
+      "sha256": "6ee3a4fc023a6791a833cd8981d42df01e98c29588ebfab28a39af67600ca776"
+    },
+    {
+      "path": "docs/part3/stage3/EXECUTION_APPROVAL.md",
+      "sha256": "c7a28ca7a51e45b54e772f36941789e0ae2932a3d146381e109fdfefdd54075e"
+    },
+    {
+      "path": "docs/part3/stage3/FAILURE_MODES.md",
+      "sha256": "824eac05cafca3470d8ee77f55d6ada8357cb2bff040ce4b6f9ede750087d5ba"
+    },
+    {
+      "path": "scripts/collect_stage33_readonly.sh",
+      "sha256": "5dbe7ab5f1fd86a4b5cb5027908f8e73acc09f64a0c7d4349dc4a9729650814b"
+    },
+    {
+      "path": "scripts/build_stage33_evidence.py",
+      "sha256": "bd979c7de6bf39b2a796b06cc8e49bd86b7231205c7e060728571032f8c67a3d"
+    },
+    {
+      "path": "scripts/validate_part3_stage3.py",
+      "sha256": "3d96594f1a4c20f01d56079e45b8113f45304493d2f9b2a7c363691fd7a17848"
+    },
+    {
+      "path": "tests/test_part3_stage3_validator.py",
+      "sha256": "a8de37271b7ebf01a86a39f1100b0d3ca56a1c3b1fcc721756c5441ab1310477"
+    },
+    {
+      "path": ".github/workflows/part3-stage3-aws-admission.yml",
+      "sha256": "ed263387913e82552f292a977b09a780a9236fb25d23ddaf9ba71c7704e0bfb0"
+    },
+    {
+      "path": "PART3_STAGE3_STATUS.md",
+      "sha256": "d1f0e17e6c8a8210d7ee964e04657b563465e2a25c7a68a202a960d2c41faf26"
+    },
+    {
+      "path": "evidence/part3/stage3/authorization-state.json",
+      "sha256": "ff28f98598a8eafb1056aacabb62925eb6f98a795bcee87308afb81361c6f6b6"
+    },
+    {
+      "path": "evidence/part3/stage3/aws-readonly-review.json",
+      "sha256": "c1fb7739feaf578eb99df02ff2d71be30bf4e2a5c608b6beae99b595d6ffc5e0"
+    },
+    {
+      "path": "evidence/part3/stage3/local-validation.json",
+      "sha256": "950926fe628c0f0a3f7dcb9f0ce1be8ec0b81910e04cbb821d9c9b5e6a8e3d9a"
+    },
+    {
+      "path": "evidence/part3/stage3/operator-observation.json",
+      "sha256": "98cffd5d0c805dba1fda03f1ad429ba8c7b4a3d72e882158ab4342bb872d3c8e"
+    },
+    {
+      "path": "evidence/part3/stage3/predecessor-external-closure.json",
+      "sha256": "9ef26c2c6cdb0e38a5717debbd53d07098aec2ed575fbecf0adebe154511a421"
+    },
+    {
+      "path": "evidence/part3/stage3/protected-evidence-report.json",
+      "sha256": "a6f03fedf97cd9ef497ae08395c1fa4858bfc5f5dc024a96d2fdf388f7d0953f"
+    },
+    {
+      "path": "evidence/part3/stage3/qualification-gaps.json",
+      "sha256": "4f8c92bcd90db43aa08057964426f4f4638fc1495dfee46049c19805cf51d2a1"
+    },
+    {
+      "path": "evidence/part3/stage3/repository-entry.json",
+      "sha256": "985b2bc6541a46eefdfb3ba681ff6265025bc4a0b7e2d85dc28e291cbf9a675e"
+    }
+  ]
+}

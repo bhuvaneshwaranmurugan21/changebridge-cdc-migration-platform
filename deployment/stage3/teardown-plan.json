@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "policy": "NO_DELETION_WITHOUT_SEPARATE_AUTHORIZATION",
+  "deadline_rule": "all temporary Stage 3 resources must have a disposition before 48 hours elapse",
+  "order": [
+    "disable future workflow assumption",
+    "capture final inventory and configuration receipts",
+    "remove SNS subscription and topic",
+    "verify and close Terraform locks",
+    "export final state digest",
+    "delete lock table",
+    "empty every state and artifact object version and delete marker only after evidence retention approval",
+    "delete state and artifact buckets",
+    "schedule KMS key deletion using the AWS minimum window",
+    "verify absence of unintended billable resources"
+  ],
+  "fail_closed_conditions": [
+    "active Terraform lock",
+    "unexported state",
+    "unresolved resource inventory",
+    "missing evidence receipt",
+    "deletion not separately authorized"
+  ]
+}
