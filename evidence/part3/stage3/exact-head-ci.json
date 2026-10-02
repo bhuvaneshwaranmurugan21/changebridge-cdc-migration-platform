@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "candidate_head": "ace53c1455ee0fe2b671173ee96320413c14c179",
+  "candidate_tree": "fc11df01459d785f4ed73b3eb3d4675832db4963",
+  "result": "PASS",
+  "quality_run": 36985398640,
+  "quality_job": 110769154327,
+  "admission_run": 36985398688,
+  "platform_run": 36985398666,
+  "pytest": {
+    "passed": 308,
+    "skipped": 2,
+    "skip_scope": "pre-existing PostgreSQL service requirement",
+    "coverage_percent": 86.84,
+    "required_coverage_percent": 85
+  },
+  "ruff": "PASS",
+  "mypy": {
+    "result": "PASS",
+    "source_files": 50
+  },
+  "predecessor_validators": "PASS",
+  "stage_complete": false,
+  "historical_partial_failure_preserved": true
+}

@@ -58,3 +58,15 @@ pending, and no threshold or test has been changed to obtain a passing result.
 
 No AWS operation, resource creation, platform deployment or managed correctness is claimed by
 this review. Resume from the preserved Stage 3 branch; do not restart completed predecessors.
+
+## Subsequent exact-head verification
+
+The historical partial coverage failure above remains unchanged. Exact head `ace53c1` subsequently
+passed full repository CI with 308 tests, two existing PostgreSQL-service skips and 86.84% coverage;
+Ruff, mypy, qualified Iceberg integration and predecessor-preservation validators passed.
+
+Current main OIDC assumption succeeded in run `36984718071`. The Stage 3 branch assumption was
+denied in run `36985888482`, before any IAM-policy readback. Read-only observer PR #17 uses the
+already functioning main execution path and does not widen role trust or permission scope.
+The absent new candidate role and actual bootstrap gates remain unproven. Zero AWS resource
+mutations are recorded. This continuation is execution evidence, not a completion declaration.

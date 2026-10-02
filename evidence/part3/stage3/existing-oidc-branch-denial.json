@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "run_id": 36985888482,
+  "job_id": 110770697799,
+  "head_sha": "ace53c1455ee0fe2b671173ee96320413c14c179",
+  "head_branch": "part3-stage3-aws-admission",
+  "event": "workflow_dispatch",
+  "created_at_utc": "2026-10-02T08:45:45Z",
+  "role_arn": "arn:aws:iam::857229544428:role/ChangeBridgeGitHubOidcRole",
+  "region": "ap-southeast-2",
+  "status": "COMPLETED",
+  "conclusion": "FAILURE",
+  "scope_guard": "PASS",
+  "branch_role_assumption": "DENIED",
+  "caller_role_verification": "SKIPPED",
+  "iam_policy_collection": "SKIPPED",
+  "error": "Could not assume role with OIDC: Not authorized to perform sts:AssumeRoleWithWebIdentity",
+  "attempts": 12,
+  "error_at_utc": "2026-10-02T08:47:32.9079383Z",
+  "reviewed_at_utc": "2026-10-02T08:48:17Z",
+  "root_cause_observed": "Stage 3 branch OIDC assumption is not authorized for the existing role.",
+  "root_cause_limitations": "Actual trust document, permissions policies, permissions boundary and Organizations policy were not collected; the precise denying condition is not established.",
+  "aws_mutations": 0,
+  "limitations": [
+    "A successful main-branch identity check does not establish Stage 3 branch trust.",
+    "No credential values, role sessions or access tokens are recorded."
+  ]
+}

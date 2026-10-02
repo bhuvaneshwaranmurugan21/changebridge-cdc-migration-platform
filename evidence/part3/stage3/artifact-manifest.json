@@ -10,6 +10,14 @@
       "sha256": "5b2bf46cd3db5118e455f9f914d1b0f8b8e02eaf750becef823e096bbb3cb116"
     },
     {
+      "path": "deployment/stage3/ChangeBridgeStage33RoleObserver.proposed.json",
+      "sha256": "36091c41b5eaebdf5c4b2780e212272d281308c08cd847d05e2bdf4ce81b8607"
+    },
+    {
+      "path": "deployment/stage3/access-remediation.json",
+      "sha256": "16573507b63385eb61596abb82e31777958326630d58b4eea32e48110c770a5d"
+    },
+    {
       "path": "deployment/stage3/aws-binding.json",
       "sha256": "926499842ac6ad433dc4815b192a5b095041cc57c685dc2342d4db3118451676"
     },
@@ -30,6 +38,10 @@
       "sha256": "723503c971f0507667fccd8a9e18e2ff7f49b274391592ab9efeadbe2739b1d2"
     },
     {
+      "path": "docs/part3/stage3/ACCESS_REMEDIATION.md",
+      "sha256": "34899d193eb076da171c40afdd941f32ea1a643067c096beaecd91d9d777fa19"
+    },
+    {
       "path": "docs/part3/stage3/AUTHORIZATION_PACKET.md",
       "sha256": "7400da0396a5911bb513e2d0503431c8e15fd9dd82d14ca026781049a8a1caa0"
     },
@@ -39,11 +51,11 @@
     },
     {
       "path": "docs/part3/stage3/BLOCKER_REVIEW.md",
-      "sha256": "6ee3a4fc023a6791a833cd8981d42df01e98c29588ebfab28a39af67600ca776"
+      "sha256": "a38d11851269947c02ab2352c323c464405cf95eb338474f967d133fae83ee96"
     },
     {
       "path": "docs/part3/stage3/EXECUTION_APPROVAL.md",
-      "sha256": "c7a28ca7a51e45b54e772f36941789e0ae2932a3d146381e109fdfefdd54075e"
+      "sha256": "da4f58744c9dbfda852514ae25f2327c7e044dfd1414ad892f1c2f9537911b41"
     },
     {
       "path": "docs/part3/stage3/FAILURE_MODES.md",
@@ -55,11 +67,15 @@
     },
     {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "31685fc0c864b1ec31266dc170d3d6d47f28897eb05588ac6c53fdb7549967d2"
+      "sha256": "7f02511e6ec95ca560a7f9608cc25aad43b9f3f5a029fabd8901f28b3037a40f"
+    },
+    {
+      "path": "scripts/install_stage33_role_observer.sh",
+      "sha256": "8d1c90515413ee0ffafe4c29d24c81ac264392ac30f21b9be15a676ee3ac8eac"
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "c3307a7e25258c216e581e47a540ad424b0f7a81b11f3f1bc2896abb20c33918"
+      "sha256": "2bc7f1d3325955a1dc681b2772872944652c9ba578c50cc33df819b366330e30"
     },
     {
       "path": "tests/test_part3_stage3_validator.py",
@@ -67,27 +83,47 @@
     },
     {
       "path": "tests/test_stage33_oidc_qualification.py",
-      "sha256": "c871f151256aca5909fd5eb2366af2d626f7b452256dd5e1cb806adf9876104a"
+      "sha256": "92bd21f214959458734ad331a125d735ba442800a314745d91a0849a0bfc66df"
+    },
+    {
+      "path": "tests/test_stage33_role_observer_installation.py",
+      "sha256": "5f431f83fecdc016734f4a96d30978447360465ce1f3a8d0e429d9b239afe13e"
     },
     {
       "path": ".github/workflows/aws-oidc-identity.yml",
-      "sha256": "5c7a8964cd92f372f91b38befe5779ffbd244ad5b38688a4f67cab5b333d1803"
+      "sha256": "363010e466a3506ff3cee2ca83e2039bba535583321ecc905b31abf5a6603baf"
     },
     {
       "path": ".github/workflows/part3-stage3-aws-admission.yml",
-      "sha256": "ed263387913e82552f292a977b09a780a9236fb25d23ddaf9ba71c7704e0bfb0"
+      "sha256": "e51d36718940736ab44482b2f43a6edbbdb43b326624b9dfd1adf6ccd1cad6f7"
     },
     {
       "path": "PART3_STAGE3_STATUS.md",
-      "sha256": "d1f0e17e6c8a8210d7ee964e04657b563465e2a25c7a68a202a960d2c41faf26"
+      "sha256": "ab625628f1f1c9306bdc7628a6f118a9cf3ed46d358160bbc679def897aa2272"
     },
     {
       "path": "evidence/part3/stage3/authorization-state.json",
       "sha256": "ff28f98598a8eafb1056aacabb62925eb6f98a795bcee87308afb81361c6f6b6"
     },
     {
+      "path": "evidence/part3/stage3/autonomous-continuation.json",
+      "sha256": "b92aa56a7a4e1734e4f66d1171f8a59efc71d4ee5cb3170c86c6419c749409d7"
+    },
+    {
+      "path": "evidence/part3/stage3/autonomous-local-validation.json",
+      "sha256": "a68765b1f1b111e148ba973284114daaa5165e1c30e77ee11fe1d5f8b64ab9e8"
+    },
+    {
       "path": "evidence/part3/stage3/aws-readonly-review.json",
       "sha256": "c1fb7739feaf578eb99df02ff2d71be30bf4e2a5c608b6beae99b595d6ffc5e0"
+    },
+    {
+      "path": "evidence/part3/stage3/exact-head-ci.json",
+      "sha256": "a79703c03e1feea30fb2c777e29422505a255f052e48e29305b3547b6f73c383"
+    },
+    {
+      "path": "evidence/part3/stage3/existing-oidc-branch-denial.json",
+      "sha256": "cf86f282c0daba03ea8c0fbadcebca8655167414979117921d568435497552de"
     },
     {
       "path": "evidence/part3/stage3/existing-oidc-identity.json",
@@ -96,6 +132,14 @@
     {
       "path": "evidence/part3/stage3/local-validation.json",
       "sha256": "950926fe628c0f0a3f7dcb9f0ce1be8ec0b81910e04cbb821d9c9b5e6a8e3d9a"
+    },
+    {
+      "path": "evidence/part3/stage3/main-iam-denial.json",
+      "sha256": "01abb78ec1d9bd5759e6224dcc7cd7941cf7984ad35be768d85f606b5dfba159"
+    },
+    {
+      "path": "evidence/part3/stage3/main-observer-maintenance.json",
+      "sha256": "18f8eb736b22849176c4de343e9b6220e94241e1e8f527536c6ab9b874ed44dd"
     },
     {
       "path": "evidence/part3/stage3/operator-observation.json",

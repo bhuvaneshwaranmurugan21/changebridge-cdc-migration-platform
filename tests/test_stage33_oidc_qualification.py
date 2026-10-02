@@ -20,7 +20,7 @@ def guard_script() -> str:
     "key,value",
     [
         ("CB_REPOSITORY", "owner/other-project"),
-        ("CB_REF", "refs/heads/main"),
+        ("CB_REF", "refs/heads/part3-stage3-aws-admission"),
         ("CB_EVENT", "push"),
         ("CB_QUALIFY", "false"),
         ("CB_ROLE_ARN", "arn:aws:iam::111111111111:role/OtherRole"),
@@ -32,7 +32,7 @@ def test_iam_qualification_scope_guard(key: str, value: str) -> None:
     environment = {
         **os.environ,
         "CB_REPOSITORY": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
-        "CB_REF": "refs/heads/part3-stage3-aws-admission",
+        "CB_REF": "refs/heads/main",
         "CB_EVENT": "workflow_dispatch",
         "CB_QUALIFY": "true",
         "CB_ROLE_ARN": "arn:aws:iam::857229544428:role/ChangeBridgeGitHubOidcRole",

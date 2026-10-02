@@ -1,8 +1,19 @@
 # Stage 3 execution approval: unresolved decisions
 
+## Later standing delegation
+
+The user subsequently delegated all ChangeBridge execution and routine merges, including access
+resolution, and requested no manual CloudShell work. That instruction supersedes recurring
+per-action confirmation requests in this older proposal within the bounded Stage 3 scope.
+It does not create AWS permissions, prove a configuration, expand the eight-resource allowlist,
+or authorize touching another project. The exact trust/policy readback, quota, lifecycle,
+ownership, evidence-export and real bootstrap acceptance requirements remain mandatory.
+The proposed cost/lifecycle resolution must be made concrete in the execution authority record
+before resource creation; a policy draft alone remains no receipt of execution.
+
 This is a proposed security and lifecycle resolution, not an approval receipt or an AWS
-execution result. No AWS API was called to prepare it. The user's broad completion authorization
-does not resolve the previously explicit destructive-action and retention gates. Acceptance
+execution result. No AWS API was called to prepare it. The later standing delegation covers bounded routine execution; it does not substitute for
+actual ownership, lifecycle and safe evidence-retention checks. Acceptance
 criteria must remain pending until their actual evidence exists.
 
 ## Exact security boundary
@@ -32,17 +43,17 @@ the created role's actual boundary, trust policy, inline policies and attached p
 read back and reconciled against the approved policy before assumption. An unexpected policy or
 boundary fails closed. The absent candidate role is not evidence of an established secure role.
 
-## Specific confirmations still required
+## Cost, lifecycle and evidence conditions before creation
 
-1. Accept the proposed **USD 3 Stage 3 bootstrap allowance** for at most 48 active hours, including
+1. Record the bounded **USD 3 Stage 3 bootstrap allowance** for at most 48 active hours, including
    the bounded configuration and verification requests. The shared USD 20 monthly budget remains
    unchanged. Its alerts are notification controls, not a guaranteed hard spending cap. Portfolio
    credits do not increase the Stage 3 allowance.
-2. Accept **48-hour teardown of every Stage 3 bootstrap resource other than the KMS key's mandatory
+2. Enforce **48-hour teardown of every Stage 3 bootstrap resource other than the KMS key's mandatory
    pending-deletion residual**, measured from the first successful resource creation. No resource
    may stay operational beyond that deadline. An expiry tag is not automated enforcement, and
    merely writing a disposition plan does not satisfy actual teardown.
-3. Explicitly approve the **sole KMS physical-retention exception**: after preservation of required
+3. Resolve and record the **sole KMS physical-retention exception**: after preservation of required
    evidence and teardown of dependent objects, schedule the exact key for deletion with a seven-day
    waiting period no later than the 48-hour deadline. The key must be `PendingDeletion`, not active,
    after 48 hours. AWS cannot physically delete the key immediately. The residual must be inventoried
@@ -50,7 +61,7 @@ boundary fails closed. The absent candidate role is not evidence of an establish
 4. Replace any conflicting "retain through Part 3" text with the approved 48-hour disposition.
    Retaining state, artifacts, or other bootstrap resources through later stages requires separate
    explicit retention/lifetime approval before mutation; it cannot be inferred from completion urgency.
-5. Before destructive cleanup, obtain **separate exact cleanup authorization** identifying the
+5. Before destructive cleanup, bind the delegated cleanup to a record identifying the
    bootstrap execution, resource ARNs/immutable IDs, inventory digest, evidence-export digest,
    selected bucket object versions/delete markers, and exact KMS key ARN. Confirm no active locks,
    no unexported state, and successful preservation of required evidence. Never delete objects

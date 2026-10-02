@@ -150,6 +150,52 @@ def validate_proposed_policies() -> None:
             fail("ST33_PERMISSION_POLICY", "actions, exact resources or key constraints broadened")
 
 
+def validate_access_remediation() -> None:
+    policy = load("deployment/stage3/ChangeBridgeStage33RoleObserver.proposed.json")
+    expected = {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "ObserveExactExistingChangeBridgeRoleOnly",
+                "Effect": "Allow",
+                "Action": [
+                    "iam:GetRole",
+                    "iam:ListRolePolicies",
+                    "iam:ListAttachedRolePolicies",
+                    "iam:GetRolePolicy",
+                ],
+                "Resource": "arn:aws:iam::857229544428:role/ChangeBridgeGitHubOidcRole",
+            }
+        ],
+    }
+    if policy != expected:
+        fail("ST33_ACCESS_POLICY", "exact existing-role observation policy broadened")
+    remediation = load("deployment/stage3/access-remediation.json")
+    if (
+        remediation["status"] != "PREPARED_NOT_EXECUTED"
+        or remediation["execution_connection"] != "NOT_QUALIFIED"
+        or remediation["account_id"] != "857229544428"
+        or remediation["region"] != "ap-southeast-2"
+        or remediation["target_role_arn"] != expected["Statement"][0]["Resource"]
+        or remediation["aws_mutations_performed_by_preparation"] != 0
+        or remediation["phase1"]["new_resource_count"] != 0
+        or any(
+            remediation["phase1"][flag] is not False
+            for flag in (
+                "trust_changes",
+                "boundary_changes",
+                "managed_policy_attachment_changes",
+                "other_project_changes",
+                "automatic_overwrite_on_collision",
+                "self_grant",
+            )
+        )
+        or remediation["phase2"]["resource_arns"] != []
+        or remediation["phase2"]["wildcard_resources_permitted"] is not False
+    ):
+        fail("ST33_ACCESS_AUTHORITY", "unexecuted remediation or exact scope misrepresented")
+
+
 def validate() -> dict[str, Any]:
     if git("rev-parse", f"{ENTRY}^{{tree}}") != ENTRY_TREE:
         fail("ST33_ENTRY", "entry tree mismatch")
@@ -229,6 +275,7 @@ def validate() -> dict[str, Any]:
         fail("ST33_AUTHORITY", "exact-resource authorization gate removed")
 
     validate_proposed_policies()
+    validate_access_remediation()
 
     protected = git(
         "diff",
@@ -329,9 +376,11 @@ def validate() -> dict[str, Any]:
         "docs/part3/stage3",
         "scripts/collect_stage33_readonly.sh",
         "scripts/build_stage33_evidence.py",
+        "scripts/install_stage33_role_observer.sh",
         "scripts/validate_part3_stage3.py",
         "tests/test_part3_stage3_validator.py",
         "tests/test_stage33_oidc_qualification.py",
+        "tests/test_stage33_role_observer_installation.py",
         ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",
         "PART3_STAGE3_STATUS.md",

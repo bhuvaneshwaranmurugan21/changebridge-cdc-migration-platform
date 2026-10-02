@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       qualify_stage3:
-        description: "Read-only IAM qualification on the exact ChangeBridge Stage 3 branch"
+        description: "Read-only IAM qualification on the exact ChangeBridge main branch"
         type: boolean
         required: false
         default: false
@@ -27,7 +27,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Guard Stage 3 qualification scope before credentials
-        if: github.ref == 'refs/heads/part3-stage3-aws-admission'
+        if: inputs.qualify_stage3
         env:
           CB_REPOSITORY: ${{ github.repository }}
           CB_REF: ${{ github.ref }}
@@ -39,7 +39,7 @@ jobs:
         run: |
           set -euo pipefail
           [[ "$CB_REPOSITORY" == "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform" ]]
-          [[ "$CB_REF" == "refs/heads/part3-stage3-aws-admission" ]]
+          [[ "$CB_REF" == "refs/heads/main" ]]
           [[ "$CB_EVENT" == "workflow_dispatch" && "$CB_QUALIFY" == "true" ]]
           [[ "$CB_ROLE_ARN" == "arn:aws:iam::857229544428:role/ChangeBridgeGitHubOidcRole" ]]
           [[ "$CB_REGION" == "ap-southeast-2" ]]
@@ -50,6 +50,7 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
           role-session-name: github-oidc-identity-check
+          retry-max-attempts: ${{ inputs.qualify_stage3 && 2 || 12 }}
           mask-aws-account-id: true
 
       - name: Verify caller role
@@ -66,7 +67,7 @@ jobs:
           echo "OIDC identity verified for ${EXPECTED_ROLE}."
 
       - name: Qualify existing ChangeBridge IAM role read-only
-        if: github.ref == 'refs/heads/part3-stage3-aws-admission' && inputs.qualify_stage3
+        if: github.ref == 'refs/heads/main' && inputs.qualify_stage3
         shell: bash
         run: |
           set -euo pipefail
