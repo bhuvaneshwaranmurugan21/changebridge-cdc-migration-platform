@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PROPOSED_NOT_AUTHORIZED",
+  "execution_enabled": false,
+  "role_name": "ChangeBridgePart3GitHubActionsRole",
+  "actual_trust_readback_required": true,
+  "policy": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "ExactChangeBridgeStage3BranchOnly",
+        "Effect": "Allow",
+        "Principal": {
+          "Federated": "arn:aws:iam::857229544428:oidc-provider/token.actions.githubusercontent.com"
+        },
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Condition": {
+          "StringEquals": {
+            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+            "token.actions.githubusercontent.com:sub": "repo:bhuvaneshwaranmurugan21@276895096/changebridge-cdc-migration-platform@1332970949:ref:refs/heads/part3-stage3-aws-admission"
+          }
+        }
+      }
+    ]
+  }
+}

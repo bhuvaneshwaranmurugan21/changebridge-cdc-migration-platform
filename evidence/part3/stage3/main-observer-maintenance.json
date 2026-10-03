@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "maintenance_pr": 17,
+  "purpose": "read-only observer through existing main trust; not Stage 3 completion",
+  "head": "bcd44d153cfd754e1529bac50cddd2426c0a1832",
+  "merge": "80d929274f85bfcebcdbc6dd014831db5915d811",
+  "verified_main_tree": "2de405ba6a0a8fd42b55ea569462c4744fa178bc",
+  "quality_run": 36986537848,
+  "quality_result": "PASS",
+  "pytest_passed": 286,
+  "pytest_skipped": 2,
+  "coverage_percent": 86.84,
+  "required_coverage_percent": 85,
+  "policy_observed": {
+    "main_protected": false,
+    "rulesets": [],
+    "classic_branch_protection": "not configured; independently observed in signed-in repository UI"
+  },
+  "changed_files": [
+    ".github/workflows/aws-oidc-identity.yml",
+    "tests/test_stage33_oidc_qualification.py"
+  ],
+  "aws_resource_mutations": 0,
+  "predecessor_evidence_changed": false
+}

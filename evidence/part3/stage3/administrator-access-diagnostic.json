@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "label": "DIAGNOSTIC_NOT_ADMISSION_COMPLETE",
+  "result": "PASS",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "account_id": "857229544428",
+  "region": "ap-southeast-2",
+  "started_at_utc": "2026-10-03T05:20:54Z",
+  "finished_at_utc": "2026-10-03T05:21:07Z",
+  "source_script_sha256": "1eb1fd1bc40471d64a7de56d0b52a6bc80b056d5834fbbbbefc91ea37274024b",
+  "operator_role": "AccountFullAccessRole",
+  "aws_writes": 0,
+  "identity_controls_digest": "ac536f698f68bc5474a9f2ced58bf72a821c828c0f2ad9deb101ac0ce6971b47",
+  "role": {
+    "Arn": "arn:aws:iam::857229544428:role/ChangeBridgeGitHubOidcRole",
+    "RoleId": "AROA4PFW4ZPWEB3YXXLX3",
+    "MaxSessionDuration": 3600,
+    "PermissionsBoundary": null,
+    "AssumeRolePolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [{
+        "Effect": "Allow",
+        "Principal": {"Federated": "arn:aws:iam::857229544428:oidc-provider/token.actions.githubusercontent.com"},
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Condition": {"StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:bhuvaneshwaranmurugan21@276895096/changebridge-cdc-migration-platform@1332970949:ref:refs/heads/main"
+        }}
+      }]
+    }
+  },
+  "inline_policies": [],
+  "observed_managed_and_boundary_policies": [],
+  "oidc_provider_arn": "arn:aws:iam::857229544428:oidc-provider/token.actions.githubusercontent.com",
+  "oidc_provider": {
+    "Url": "token.actions.githubusercontent.com",
+    "ClientIDList": ["sts.amazonaws.com"],
+    "ThumbprintList": ["ab9d0263244dd0326eb67015705a667e79cfe998"],
+    "CreateDate": "2026-08-25T11:22:53.623000+00:00",
+    "Tags": [{"Key":"ManagedBy","Value":"GitHubActions"},{"Key":"Portfolio","Value":"DataEngineering"}]
+  },
+  "candidate_status": "ABSENT_NO_SUCH_ENTITY",
+  "candidate_role": null,
+  "limitations": [
+    "Read-only diagnostic, not bootstrap authorization or completed AWS admission.",
+    "Terminal JSON redacts sessions and email addresses; document hashes refer to private original receipts, not redacted bytes.",
+    "Separate AWS reads do not form an atomic IAM snapshot; observed before/after drift is rejected.",
+    "No policy simulation, AWS mutation or other-project role read occurred."
+  ]
+}

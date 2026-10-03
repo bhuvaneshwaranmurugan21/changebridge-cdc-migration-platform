@@ -1,0 +1,15 @@
+{
+  "aws_calls": "READ_ONLY_OPERATOR_OBSERVATIONS",
+  "aws_mutations": 0,
+  "broader_quality_validation": "LOCAL_FULL_QUALITY_PASS_REMOTE_EXACT_HEAD_CI_PENDING",
+  "claim_ceiling": "AWS_ADMISSION_OBSERVED",
+  "criteria_passed": 32,
+  "criteria_pending": 20,
+  "criteria_total": 52,
+  "current_quality_evidence": "evidence/part3/stage3/autonomous-local-validation.json",
+  "focused_validation": "PASS",
+  "historical_quality_evidence": "evidence/part3/stage3/exact-head-ci.json",
+  "next_checkpoint": "PART3_STAGE3_AWS_ADMISSION_VERIFIED",
+  "result": "PENDING_ADMINISTRATOR_CHANNEL_AND_BOOTSTRAP_PROOF",
+  "stage": "part3-stage3-aws-admission"
+}

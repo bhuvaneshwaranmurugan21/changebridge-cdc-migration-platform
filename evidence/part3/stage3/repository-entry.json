@@ -1,0 +1,7 @@
+{
+  "branch": "part3-stage3-aws-admission",
+  "checkpoint": "PART3_STAGE2_DEPLOYABLE_PLATFORM_VERIFIED",
+  "entry_commit": "084407a972d2d3f937e8ac670733f198dd4b0179",
+  "entry_tree": "3a5ceefaf9dcfcbe97da5a593f76eab0cd5fe257",
+  "result": "PASS"
+}

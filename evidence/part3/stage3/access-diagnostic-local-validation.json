@@ -1,0 +1,51 @@
+{
+  "aws_calls": 0,
+  "aws_mutations": 0,
+  "bash_syntax": "PASS",
+  "earlier_failed_run": {
+    "causes": [
+      "Six real Iceberg tests failed: java.net.BindException Cannot assign requested address; local launch omitted repository CI SPARK_LOCAL_IP=127.0.0.1.",
+      "Stage33 manifest validation failed because the finalized collector bytes were not yet refreshed."
+    ],
+    "corrections": [
+      "Use the existing CI loopback setting while retaining real Spark/Iceberg execution.",
+      "Freeze the new script and tests, refresh the complete manifest, then rerun the entire suite."
+    ],
+    "coverage_percent": 76.65,
+    "failed": 7,
+    "log_sha256": "35491fe7225eb131a6d11ce7cecd5f09125efa42e093c0c1e3b6a0dd644b8cb1",
+    "passed": 358,
+    "requirements_weakened": false,
+    "result": "FAIL",
+    "skipped": 2
+  },
+  "exact_remote_head_ci": "REQUIRED_AFTER_PUBLICATION",
+  "mypy": {
+    "result": "PASS",
+    "source_files": 50
+  },
+  "result": "PASS",
+  "ruff": "PASS",
+  "schema_version": "1.0.0",
+  "source_inputs": {
+    ".github/workflows/part3-stage3-aws-admission.yml": "5f6a2ae6a4a6baa05c796afeb2e04de6d1cbdf05207a7edb8a9426eb8e6cb751",
+    "scripts/build_stage33_evidence.py": "a7ed06d3fce7cb4b88799c546cdac7536f69ee144a26b6607178de3d61de5c47",
+    "scripts/collect_stage33_access_diagnostic.sh": "1eb1fd1bc40471d64a7de56d0b52a6bc80b056d5834fbbbbefc91ea37274024b",
+    "scripts/validate_part3_stage3.py": "2941eb3338b02a1f60b3bca56b4083534c91d84db4ee9c651d6535605fd3866e",
+    "tests/test_stage33_access_diagnostic.py": "5cc7e1b7d1c6ce3a0f6496bfd08bb069f8100d86a144e5c113a728121f1e38e3"
+  },
+  "stage33_validator": {
+    "criteria_passed": 32,
+    "criteria_pending": 20,
+    "result": "PASS"
+  },
+  "stage_complete": false,
+  "tests": {
+    "coverage_percent": 86.84,
+    "passed": 365,
+    "required_coverage_percent": 85,
+    "seconds": 74.86,
+    "skip_scope": "pre-existing PostgreSQL service requirement",
+    "skipped": 2
+  }
+}

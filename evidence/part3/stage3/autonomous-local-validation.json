@@ -1,0 +1,881 @@
+{
+  "aws_mutations": 0,
+  "bash_syntax": "PASS",
+  "full_pytest_log_sha256": "6e7f92e83e52fbaeadfe7d6cce12b99dfd9862fbc03539120d8fb2d15ea18e3c",
+  "mypy": {
+    "correction": "Rebuilt an independent fresh cache; same complete source/check options.",
+    "initial_failure": "sqlite3.DatabaseError: database disk image is malformed in incremental cache",
+    "result": "PASS",
+    "source_files": 50
+  },
+  "observed_at_utc": "2026-10-02T21:33:04.237878+00:00",
+  "predecessor_validators": "ALL_11_PASS",
+  "pytest": {
+    "coverage_percent": 86.84,
+    "elapsed_seconds": 72.7,
+    "passed": 347,
+    "required_coverage_percent": 85,
+    "skip_scope": "existing PostgreSQL service integration requirement",
+    "skipped": 2
+  },
+  "remote_exact_head_ci": "PENDING",
+  "result": "LOCAL_FULL_QUALITY_PASS",
+  "ruff": "PASS",
+  "schema_version": "1.0.0",
+  "source_input_sha256": "ad42de56db4f11d3eb488a0076cca1f566cde828296dff9b9554926dfaaee86f",
+  "source_inputs": [
+    {
+      "path": "src/changebridge/__init__.py",
+      "sha256": "6d8e36bd0475f6f0b71a55e1ab4ada9dd24ccac1584ba74f77b891801bb1e356"
+    },
+    {
+      "path": "src/changebridge/canonical.py",
+      "sha256": "333037fc8644e130087c5869564d294e715f502620a6ab136f49d271ce251e80"
+    },
+    {
+      "path": "src/changebridge/cdc_apply.py",
+      "sha256": "d8fb1eb65fbf137d5795020090767b13bd4fecfbff9bf3175ab4bb85785d3492"
+    },
+    {
+      "path": "src/changebridge/cdc_control.py",
+      "sha256": "ba83749cc649502c6a1bb355431dbd2aa3ecb237dc82599b5159d2cb052f6581"
+    },
+    {
+      "path": "src/changebridge/cdc_ordering.py",
+      "sha256": "69e1081ea19a42802ec18563ed2acf0b5546c2f7ef1199152eae0cf47e524a1e"
+    },
+    {
+      "path": "src/changebridge/cli.py",
+      "sha256": "2f0dab51a32e6881bb5fe7db6803c6a888fa8ef53190749ca1787ea1fc9dcc8a"
+    },
+    {
+      "path": "src/changebridge/consumer.py",
+      "sha256": "a512a90f428be18b604bbbf9fb64ffbbe91ed2e93ade01a0b5fa795322f1e944"
+    },
+    {
+      "path": "src/changebridge/contracts.py",
+      "sha256": "25b2b22bb6eb97e2023955fedcfe602040386d7ff5cd628b8166d3e6411ce530"
+    },
+    {
+      "path": "src/changebridge/cutover.py",
+      "sha256": "3e62f4f6dcde3bb7ad752081d79ed494e376e3c911dd6af823a8033dfbe68a92"
+    },
+    {
+      "path": "src/changebridge/engine.py",
+      "sha256": "b875af5b77892c5e7970a9d55d0e91a07ce8e03989ccaa49c35deb083fcbbed2"
+    },
+    {
+      "path": "src/changebridge/generation_registry.py",
+      "sha256": "b2df4b52f559fff69ffdfef371f1c3ef583d7e7edec3fe4e3557ce95b6878ef9"
+    },
+    {
+      "path": "src/changebridge/hierarchical_reconciliation.py",
+      "sha256": "a515ec9ea6f2f7c81711120f715dc4e60c84e59a423881c33f37ee0ec665ec9d"
+    },
+    {
+      "path": "src/changebridge/iceberg_cdc.py",
+      "sha256": "8d626c87f32893bb64eaa458c573525f60b325d72acc5da2dddbf4d3c046a3cd"
+    },
+    {
+      "path": "src/changebridge/iceberg_schema.py",
+      "sha256": "b973be2b0ffa13b090d5d21f09474681cb11699e239b49ffd0b9a8caac660a6e"
+    },
+    {
+      "path": "src/changebridge/iceberg_snapshot.py",
+      "sha256": "b73f5a9efdfd267ef8b3450dbb38d1e805fc06992dd48e62c84ae8db163246a4"
+    },
+    {
+      "path": "src/changebridge/model.py",
+      "sha256": "90aa47acf7bcaca64503bd21b22b159355cec647ca3bd85c1f08d061074e67c6"
+    },
+    {
+      "path": "src/changebridge/normalizer.py",
+      "sha256": "598ad998ba9cf81bd9b7a0876c0f0c7ca80a32b459ec8784129b42d81dee9542"
+    },
+    {
+      "path": "src/changebridge/oracles.py",
+      "sha256": "ac2229b46bcc0ae45dbb9e3dfa31bb1a22624b26aef4e9b50cd829f105d71166"
+    },
+    {
+      "path": "src/changebridge/proof_control.py",
+      "sha256": "227dc90b2d69010f7a13a2c7aa2c38da7919ce77ac238647b2e37bf46909aa15"
+    },
+    {
+      "path": "src/changebridge/proof_gates.py",
+      "sha256": "3948441ab4dbb01e12a89d58ce8a4d3c30ce31f135326c30545fa716f3f0dc6b"
+    },
+    {
+      "path": "src/changebridge/publication.py",
+      "sha256": "38f28e242b14b40cb39e8c8b78b4f02e23d6a7140633a3e225847be57dd8ceca"
+    },
+    {
+      "path": "src/changebridge/publication_orchestrator.py",
+      "sha256": "a387a795c53b5bcf867b8f5341e0e5a8abee8ceba6ceee01299dd7bfee4c0389"
+    },
+    {
+      "path": "src/changebridge/reconciliation.py",
+      "sha256": "4f06c48ec34e2cbe825d11b51a1ad52d7c75535480a67ea9afc759d8da617d88"
+    },
+    {
+      "path": "src/changebridge/reference_cdc.py",
+      "sha256": "d8f08aab6123bdf32341827127c264dd82f0edb638c8ebd061b7f2de173a0e62"
+    },
+    {
+      "path": "src/changebridge/schema.py",
+      "sha256": "c594a3d88aec0ece81f62703ca261a1d211066e5df117740716e1190c79a1ca3"
+    },
+    {
+      "path": "src/changebridge/schema_admission.py",
+      "sha256": "76e969a39522bf26867a757706174aafd7b5c554a0c86e2a285c8a5a48f82d85"
+    },
+    {
+      "path": "src/changebridge/schema_control.py",
+      "sha256": "e1bd97a86ae750091262dd407f54b90a19af8c7aaead8e6fcf9cf5f9f568fb68"
+    },
+    {
+      "path": "src/changebridge/schema_migration.py",
+      "sha256": "9c84567672b745b461dce3e6fd0ffb51fc4c543b85fc751760970ae007fae67d"
+    },
+    {
+      "path": "src/changebridge/schema_policy.py",
+      "sha256": "592a7323c199eedbdd61a440ca59d7a837dc3659678e86434586a1cf4f65421c"
+    },
+    {
+      "path": "src/changebridge/simulator.py",
+      "sha256": "a2f7b9b72be6631ed60b77e2ff784feceb06b80886e47990b9396087554f70d7"
+    },
+    {
+      "path": "src/changebridge/snapshot_handoff.py",
+      "sha256": "3e07a02de63ff193df5f19e525a2b9a9c3196fbe6e77fd32bd8305701be57fdc"
+    },
+    {
+      "path": "src/changebridge/snapshot_loader.py",
+      "sha256": "53f65f4f200945f1f41e1d9481f97eddfcf86eec531ec93c24f71fa5b6e2ac3e"
+    },
+    {
+      "path": "src/changebridge/source_boundary.py",
+      "sha256": "599134e92bf9559f9d9ce8deb04d736130eea7c1c350f2704b96f761156e40d6"
+    },
+    {
+      "path": "src/changebridge/source_workload.py",
+      "sha256": "fc9af6e0cf427e1d4cfcffa230c1ad13e3f42670d4b125da5c2e9b23c60e0ca7"
+    },
+    {
+      "path": "src/changebridge/transaction_assembler.py",
+      "sha256": "1bf3caf97f0e98e0bcdf7cd0e3f09ae00f68ec72983e827afb016dc8cd95ba18"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "e9695acbd157159b9e82260fca0ce926238a0c1ec8d43892d5c6eee04486e4fc"
+    },
+    {
+      "path": "scripts/build_architecture_authority.py",
+      "sha256": "a5bfc42846238ef76af9825f500a4cc9ca673e0cb92af8d4877f2de7bf1be3df"
+    },
+    {
+      "path": "scripts/build_contract_oracle_authority.py",
+      "sha256": "7b6120da7a7c7ac4ffcc2614e557000ee117cca6cb8b1aaf77612749b2dc2fa2"
+    },
+    {
+      "path": "scripts/build_part1_closure.py",
+      "sha256": "dded2184c10b77d327a82a39df925727b72298505cf0c7da797b95d7e67cf08d"
+    },
+    {
+      "path": "scripts/build_stage21_evidence.py",
+      "sha256": "5e386731e3a2c246f20b16214663feeea2f21748c4b9ff137b8892e0e4d7f089"
+    },
+    {
+      "path": "scripts/build_stage22_evidence.py",
+      "sha256": "903d952b033fd5a35870b10d337493e97d72e3dda9a09ed2f64d768cbb80df6f"
+    },
+    {
+      "path": "scripts/build_stage22_fixtures.py",
+      "sha256": "010a8200302453d23728153c4b8559930d6d33dc66c5f4ba211349f5cfcc3605"
+    },
+    {
+      "path": "scripts/build_stage23_evidence.py",
+      "sha256": "255dc4bb42bf1a7f60e0c2d90cd42691f960a7359a8bb1c5e985406e371d02e4"
+    },
+    {
+      "path": "scripts/build_stage23_fixtures.py",
+      "sha256": "0f628b8289be69ce22fa6cfc9c4734426409893993b6f7a88867a32ff767b6ef"
+    },
+    {
+      "path": "scripts/build_stage24_evidence.py",
+      "sha256": "e13fe8258e8d3663e0b5f5d0634d666b6880b33f8fe424aad5716f897886048c"
+    },
+    {
+      "path": "scripts/build_stage24_fixtures.py",
+      "sha256": "82875e1f888b2747eb71f9de8ff9f0b64c708ffbe5b5600bc61d6b405b17b827"
+    },
+    {
+      "path": "scripts/build_stage25_evidence.py",
+      "sha256": "192936b2b2c4be0e9ab9760f06e993c063d77ddb69d64fe30b9033ae24d9c98d"
+    },
+    {
+      "path": "scripts/build_stage26_evidence.py",
+      "sha256": "bf095accc3c3795aa272732657a9794008b2eee10161ffc4e48eb4e9a71236c7"
+    },
+    {
+      "path": "scripts/build_stage27_evidence.py",
+      "sha256": "5ae621a89aa456d443661eaa749d60faa8450999fef9dd516b0429abd946afa9"
+    },
+    {
+      "path": "scripts/build_stage32_evidence.py",
+      "sha256": "63edebac1eb357cb6d19b48b7a61b129e64f8cb350d06aed8b88e8f2842c46fc"
+    },
+    {
+      "path": "scripts/build_stage33_evidence.py",
+      "sha256": "7f02511e6ec95ca560a7f9608cc25aad43b9f3f5a029fabd8901f28b3037a40f"
+    },
+    {
+      "path": "scripts/build_stage4_evidence.py",
+      "sha256": "f063b45ff18e4edc47ca9af5a7db6877ca4969c093569929a808a1e9e967927d"
+    },
+    {
+      "path": "scripts/build_stage5_evidence.py",
+      "sha256": "11c0ec79147ead4961716d74edef7afee08b17d52b62e671f9ab13f21410a516"
+    },
+    {
+      "path": "scripts/collect_stage33_readonly.sh",
+      "sha256": "5dbe7ab5f1fd86a4b5cb5027908f8e73acc09f64a0c7d4349dc4a9729650814b"
+    },
+    {
+      "path": "scripts/install_stage33_role_observer.sh",
+      "sha256": "8d1c90515413ee0ffafe4c29d24c81ac264392ac30f21b9be15a676ee3ac8eac"
+    },
+    {
+      "path": "scripts/package_stage32_runtime.py",
+      "sha256": "0a48e067e075e54baae9e16a2693d3ca669c6a26739074e017c5340110d8220c"
+    },
+    {
+      "path": "scripts/probe_postgres_replication.py",
+      "sha256": "20bb6961f22c168ff4839f2bd12d34d254c907095ec34ec76283b2141c3dcdcf"
+    },
+    {
+      "path": "scripts/run_stage21_postgres_lab.py",
+      "sha256": "17d3f19a9ee432c1e79141fef0fc10dc77dcf81a4f3761867ffca767ede35b13"
+    },
+    {
+      "path": "scripts/run_stage23_iceberg_lab.py",
+      "sha256": "426f925745b3e2b6cab12343a40f221fe0631cb075ae1ebc92260959db294d63"
+    },
+    {
+      "path": "scripts/run_stage24_iceberg_lab.py",
+      "sha256": "b2a5898a5598b908045a2659a5a3a73d462524a4f55e542edbb0ce1f726cbec6"
+    },
+    {
+      "path": "scripts/run_stage25_schema_lab.py",
+      "sha256": "e3e6a83bba13abf3c465c2b025b17ff70dbd27e4e3aed582183ae837ae0610d8"
+    },
+    {
+      "path": "scripts/run_stage26_postgres_observer.py",
+      "sha256": "501280fb863bdffe18cbdf4e8e6cc310d223856790047a48f7db039bd3dd7fba"
+    },
+    {
+      "path": "scripts/run_stage26_reconciliation_lab.py",
+      "sha256": "da9c223e105a6ee76ff2f0f4f4328efd0eb7bd741c26debe5e0418e135683a4c"
+    },
+    {
+      "path": "scripts/run_stage27_publication_lab.py",
+      "sha256": "b02cdec257f12154b4d4517a963359f766dbce277909b1ec2fe08897fe1d2923"
+    },
+    {
+      "path": "scripts/stage21_postgres_adapter.py",
+      "sha256": "763a187fe16d84d16d85f2f83d337348c39d244874659fdb85b1feb981195971"
+    },
+    {
+      "path": "scripts/validate_architecture_authority.py",
+      "sha256": "cea59c6634068d928e2ab9f6ebce7d5e08092de73aac589f18aad392de251d10"
+    },
+    {
+      "path": "scripts/validate_completion_authority.py",
+      "sha256": "a780b69874b7e95d50bf2d8e67518db54ed12f29bc5e8371b9d6a5bee009ba6d"
+    },
+    {
+      "path": "scripts/validate_contract_oracle_authority.py",
+      "sha256": "a766e025bf9a3f4c59ff7040d65f7aefc96fcba0fc07fe7898dfac109deef1e0"
+    },
+    {
+      "path": "scripts/validate_part1_closure.py",
+      "sha256": "ceb9a75b0f756a95f6527a1e532716065fc36b1adc572680dba3a11a472691a4"
+    },
+    {
+      "path": "scripts/validate_part1_frozen.py",
+      "sha256": "8b7023f200427b9f03241a20848bac7aa8b9e95b3a41a8e149f754175ccda95a"
+    },
+    {
+      "path": "scripts/validate_part1_preservation.py",
+      "sha256": "3f7688feba23b9181782aff16307a8dfc9a6a174971289030b49cb69fa3e5e01"
+    },
+    {
+      "path": "scripts/validate_part2_stage1.py",
+      "sha256": "844d34234b25cca96c42261b75b854efe824d64f5e41d54178497e94a2409425"
+    },
+    {
+      "path": "scripts/validate_part2_stage1_frozen.py",
+      "sha256": "64a9f0f6bff4207754c5d90282eb3a6591aa5881bcc509dd5259acf4e829b9ee"
+    },
+    {
+      "path": "scripts/validate_part2_stage2.py",
+      "sha256": "84b3df0ea2945482893e46041e29ad2a0c1e0d70714cff22f2c63941553f50ca"
+    },
+    {
+      "path": "scripts/validate_part2_stage3.py",
+      "sha256": "e954bda8c51244a2a84f54bbeddf4201c2bbb2b86fe5bcb91134658e0559b9a3"
+    },
+    {
+      "path": "scripts/validate_part2_stage3_frozen.py",
+      "sha256": "5b83de0aa56768bb4666d565dee1429c8d3e488f49547f07972ea2fb6b37b1a4"
+    },
+    {
+      "path": "scripts/validate_part2_stage4.py",
+      "sha256": "203f266c127ea22bc51577f1813aaf696eaa50d7d2fc970a6b7b30e68d791c90"
+    },
+    {
+      "path": "scripts/validate_part2_stage5.py",
+      "sha256": "c3a9c8a7c92d93775711ccfbd0d40e12ff31a3cdf4c6f865895155e521aff111"
+    },
+    {
+      "path": "scripts/validate_part2_stage6.py",
+      "sha256": "6cefd865d9008c46d9fa078f663cf279e9ac3fad6ef6e797070f60fc6f4a8376"
+    },
+    {
+      "path": "scripts/validate_part2_stage7.py",
+      "sha256": "5cb60c92cf5279b927e52e8a7d584a8486dac113672a8f5d4fa018e3edbf2760"
+    },
+    {
+      "path": "scripts/validate_part3_stage1.py",
+      "sha256": "2ea44ee383ccc838efda6c84cf73a3241b949653bee5415a369191c04fafdc54"
+    },
+    {
+      "path": "scripts/validate_part3_stage2.py",
+      "sha256": "ba1fc0ae76f8fbcc1b2dc77a36c79485add1280dc0de605e3d03e09e33955ee5"
+    },
+    {
+      "path": "scripts/validate_part3_stage3.py",
+      "sha256": "2bc7f1d3325955a1dc681b2772872944652c9ba578c50cc33df819b366330e30"
+    },
+    {
+      "path": "tests/fixtures/architecture-authority/invalid-cases.json",
+      "sha256": "d0fd954e8374d561473192564330b062452563554a45da204fda97e7419bed1d"
+    },
+    {
+      "path": "tests/fixtures/architecture-authority/valid-authority.json",
+      "sha256": "225faa3066796fb4991340cac3b483a09af832c3fdfed269e654873ba7fe6f01"
+    },
+    {
+      "path": "tests/fixtures/completion-authority/invalid-cases.json",
+      "sha256": "290873f08ab92c5341d930e637daaa8a6b1ec5927e8da22f58281a58f9e3eb43"
+    },
+    {
+      "path": "tests/fixtures/completion-authority/valid-authority.json",
+      "sha256": "310d057ca5801fcf31cb44f6874528132e0f872d0f5af5bdf7b4373f77c4553c"
+    },
+    {
+      "path": "tests/fixtures/contract-oracle-authority/adversarial-cases.json",
+      "sha256": "ba797cf9bea132f77010a417369eba52c54eb6edd00ec00712b92d98020f36bf"
+    },
+    {
+      "path": "tests/fixtures/contract-oracle-authority/oracle-cases.json",
+      "sha256": "e6dcbf9df5a30d32f9a5540127784e97a8d7dc87e2df97e023a9bc3663d9f6da"
+    },
+    {
+      "path": "tests/fixtures/contract-oracle-authority/valid-cdc-event.json",
+      "sha256": "7f7fe36de9492f75eaeaedce78a2723625f83d9785e0e2369915b68aa2272567"
+    },
+    {
+      "path": "tests/fixtures/contract-oracle-authority/validator-mutations.json",
+      "sha256": "60a744af95fd6615ef0db0a54e239287a0fd06cc29825497cde45b7b315b937d"
+    },
+    {
+      "path": "tests/fixtures/part1-closure/validator-mutations.json",
+      "sha256": "528d735c59b5886c21e81b275e3818e387d5b490bf176f66e2ed17547e396791"
+    },
+    {
+      "path": "tests/fixtures/part2-stage2/valid/manifest.json",
+      "sha256": "374e224a42c35e78c6d5058386404f1be60949fd4194054358563e5ecadaf237"
+    },
+    {
+      "path": "tests/fixtures/part2-stage2/valid/objects/snapshot-insert.json",
+      "sha256": "efe45935488e8ec6aacec440b27a3ab5d7459097af9025bd72a7a5b8cf7ea9a7"
+    },
+    {
+      "path": "tests/fixtures/part2-stage2/valid/provenance.json",
+      "sha256": "0ad295f89014b06a6fb26d399e2774bc0346e6c261e404c0dd6de7d9503dfe4f"
+    },
+    {
+      "path": "tests/fixtures/part2-stage3/handoff/manifest.json",
+      "sha256": "c86095fe504410d6bec8aa624ca55dca869d128f60f8b6b57459429dabec6949"
+    },
+    {
+      "path": "tests/fixtures/part2-stage3/handoff/normalized/canonical.json",
+      "sha256": "93b024ab9d916460e934bd821f1b2cc622dbe6835290eee60a63c7c5b4da377e"
+    },
+    {
+      "path": "tests/fixtures/part2-stage3/handoff/normalized/quarantine.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "tests/fixtures/part2-stage3/handoff/normalized/report.json",
+      "sha256": "c972ac7fa7a47ed71cfe4b11f629ed50b1f1e626ac76104da7167a5cb4efe7d1"
+    },
+    {
+      "path": "tests/fixtures/part2-stage3/handoff/objects/orders-snapshot.json",
+      "sha256": "10c6c67c5844a05ca01f0d5c078419d90b35c28c587853f8179cd401e6d7f111"
+    },
+    {
+      "path": "tests/fixtures/part2-stage3/handoff/provenance.json",
+      "sha256": "bc4209964e91de38b136cab0e61e13b6ae6b6ed4854ba7d4b9544b85b714f8cc"
+    },
+    {
+      "path": "tests/fixtures/part2-stage4/apply-manifest.json",
+      "sha256": "9cf5e59cf0676cb08c4cc6e87f4085898b079dceaf4708116571b7f9b0f4a6aa"
+    },
+    {
+      "path": "tests/fixtures/part2-stage4/canonical-events.json",
+      "sha256": "92b14381ab6938c7945954a3a6eab1a2e54ade412249eb5df9439bb7b116e63b"
+    },
+    {
+      "path": "tests/fixtures/part2-stage4/provenance.json",
+      "sha256": "f0af412ca0057bb39e5903ae8dde83640e741103ff31b715f86da180f23e4da3"
+    },
+    {
+      "path": "tests/fixtures/part3-stage1/invalid-cases.json",
+      "sha256": "b857767eda6d8b72104a0c01b0f4e45888db53c5dffb3e68d47201d333e57fcd"
+    },
+    {
+      "path": "tests/integration/test_postgres_source_boundary.py",
+      "sha256": "e2ce07b9ea960dcfbbc56d4a41ece37318d8e34810296e6e803d0aab3e122eef"
+    },
+    {
+      "path": "tests/integration/test_stage23_iceberg_snapshot.py",
+      "sha256": "4e3a4491af0c292e6e8bc82a5edcf23f526d68cdcda32d510d69bafccb8933b3"
+    },
+    {
+      "path": "tests/integration/test_stage24_iceberg_cdc.py",
+      "sha256": "7b3d0f5ce8532bdd9d30a4d896514bcd7228afe96d7d34d6871e61980a4d66d9"
+    },
+    {
+      "path": "tests/integration/test_stage25_iceberg_schema.py",
+      "sha256": "0c725f52c5f359381b8b82fe0c17f12942c274e101e20eb5d8e743599710112b"
+    },
+    {
+      "path": "tests/integration/test_stage25_schema_recovery.py",
+      "sha256": "2a235f6188d24f5c1d2da905c027c9428e6e79bf94709f8ab6ba01feeab303c2"
+    },
+    {
+      "path": "tests/integration/test_stage26_postgres_source.py",
+      "sha256": "49e8bdb5a5ab8c7e97654210e44dfb1b19793d06a062a629b1245f36e8717728"
+    },
+    {
+      "path": "tests/test_architecture_authority.py",
+      "sha256": "e94afe454c5d36f425a34f062fe3ad5a08497f4268a47f0ffdb184eba9e32c38"
+    },
+    {
+      "path": "tests/test_completion_authority.py",
+      "sha256": "caa82b5339881b1db2fdbe38b06c078eedc37fd554544c2a72810cdb2687eaea"
+    },
+    {
+      "path": "tests/test_contract_oracle_authority.py",
+      "sha256": "c9023e5168bf3568b909445855a2f510d6100dd2d2c025548bdf734d24e2ffa1"
+    },
+    {
+      "path": "tests/test_engine.py",
+      "sha256": "4ccd686a8fed37ef11d6ad74427e1b5e32d5d464f3b8add624e03b25993645fd"
+    },
+    {
+      "path": "tests/test_hierarchical_reconciliation.py",
+      "sha256": "836d50e0649eebd42d85760cb59f5b269bc15ecebdaf795587eedb398be292bc"
+    },
+    {
+      "path": "tests/test_part1_closure.py",
+      "sha256": "710434916e80b8c311e7826e3b70c0b3e8b2c6e0c5f1a8204556a6ee95e7af55"
+    },
+    {
+      "path": "tests/test_part2_stage1_validator.py",
+      "sha256": "f46d3456ca923a954bd4f2c14f1c903c441028073ecbb3e1b55cfdc7430b8b3f"
+    },
+    {
+      "path": "tests/test_part2_stage2_normalizer.py",
+      "sha256": "43940737b2cf0eaf8b9bf86335021be2fd885377c8b22793d6911520c0eed5bb"
+    },
+    {
+      "path": "tests/test_part2_stage2_validator.py",
+      "sha256": "8c7ca2b7e4b24e266f392d241559eab6bfeba868358cf0c633a28c293333db29"
+    },
+    {
+      "path": "tests/test_part2_stage3_validator.py",
+      "sha256": "03e5492ceb339f7d16f8c03937b06154968d029ecb66092e66d45e12ae4e1838"
+    },
+    {
+      "path": "tests/test_part3_stage1_validator.py",
+      "sha256": "dae464fb65cf01af5f79c5cd91c30ad47bd3b7ae661f8a77d15d3449312f478f"
+    },
+    {
+      "path": "tests/test_part3_stage2_validator.py",
+      "sha256": "9ea43f9d45f8802ccf69b059de0313c2ec0a5ad0ef57cc910b21b83b72ee7a87"
+    },
+    {
+      "path": "tests/test_part3_stage3_validator.py",
+      "sha256": "a8de37271b7ebf01a86a39f1100b0d3ca56a1c3b1fcc721756c5441ab1310477"
+    },
+    {
+      "path": "tests/test_reconciliation.py",
+      "sha256": "04e087fd9bf7d91307522e9d972763585eb951338ee8cc3b2888837e81d3165e"
+    },
+    {
+      "path": "tests/test_schema_and_cutover.py",
+      "sha256": "3519d461377e4bb3beb2af655ffd26f2dc0b81d30a17d969502fbc1acfdf85f3"
+    },
+    {
+      "path": "tests/test_simulator.py",
+      "sha256": "947b05d56712d2bcfdda0fcd13c19208fc0408579d430a4a0694db73b8389bd8"
+    },
+    {
+      "path": "tests/test_source_boundary.py",
+      "sha256": "cb6a2b5cf822296fb82215afaf9d648cab943822a8ea685b053f5e7f9994a892"
+    },
+    {
+      "path": "tests/test_source_workload.py",
+      "sha256": "a347ce7ddebc7de9060e5550d669c4405176f6e1724bd086396a3387099ab2bb"
+    },
+    {
+      "path": "tests/test_stage23_generation_registry.py",
+      "sha256": "99f7ea25253f5eb2c013bfcb8e4a344405b05cc8c822429bc6338425832ba843"
+    },
+    {
+      "path": "tests/test_stage23_snapshot_handoff.py",
+      "sha256": "33f7653a89cad4ed89895779b5895561ad00d19c25fbac55d356751364aef807"
+    },
+    {
+      "path": "tests/test_stage24_reference_cdc.py",
+      "sha256": "4921e40d9f3d4b28349be905ea8b1414b063a0db9293557c2f56bcd069871906"
+    },
+    {
+      "path": "tests/test_stage24_transaction_protocol.py",
+      "sha256": "66adf730860d7df712b56b386ede3885faddd4adeb825e26cb0902013328678c"
+    },
+    {
+      "path": "tests/test_stage25_generation_rejection.py",
+      "sha256": "a4ea3d4d59477667b1037b70b3608be9c3b7c5d95192e586d78d9f2825007441"
+    },
+    {
+      "path": "tests/test_stage25_policy_bound_apply.py",
+      "sha256": "cc1d9e91aeb63e58155f2ec6e858cf900d0449acbc20b3bcc5e2691a78b06e56"
+    },
+    {
+      "path": "tests/test_stage25_schema_policy.py",
+      "sha256": "8be52f158e52c0cb6a0ac3b5457a215f102f3dcacf99a83b1f0673fa8add4ef4"
+    },
+    {
+      "path": "tests/test_stage26_proof_control.py",
+      "sha256": "b6fbfd3f251be9f138cc496abb458c5fe4d378a13c351b55aa45b4b12540bb0f"
+    },
+    {
+      "path": "tests/test_stage27_contracts.py",
+      "sha256": "41c3f132653203af348ff8601e0936c981feb1da67d8b5aefe210f8070eebffc"
+    },
+    {
+      "path": "tests/test_stage27_publication.py",
+      "sha256": "db45a05977f08e3259849853d10643715b5cdb63709827d55a22c0eed4557aa6"
+    },
+    {
+      "path": "tests/test_stage33_oidc_qualification.py",
+      "sha256": "92bd21f214959458734ad331a125d735ba442800a314745d91a0849a0bfc66df"
+    },
+    {
+      "path": "tests/test_stage33_role_observer_installation.py",
+      "sha256": "5f431f83fecdc016734f4a96d30978447360465ce1f3a8d0e429d9b239afe13e"
+    },
+    {
+      "path": "jobs/spark_iceberg_apply.py",
+      "sha256": "d630556c132fbc7bc9c2ffddf345c980db8dcaee25afe17479928aa1652bf766"
+    },
+    {
+      "path": "jobs/spark_iceberg_publish.py",
+      "sha256": "92be2762d58e0064da8fdfc93ca9895280a26861222effe55e2e768b91e4be44"
+    },
+    {
+      "path": "jobs/spark_iceberg_reconcile.py",
+      "sha256": "4841e94c52eb40cb3a2892be49079dcfa2b36791088c7b55c862f571fb8cc44c"
+    },
+    {
+      "path": "jobs/spark_iceberg_schema.py",
+      "sha256": "081087757a075988f421155895ad95e585a76f24c3fdd6410d17c49861418ecf"
+    },
+    {
+      "path": "jobs/spark_iceberg_snapshot.py",
+      "sha256": "90d8c51418413181d0ce4089ca3ab738fe0590fb23b6f2a39150164089fefdf0"
+    },
+    {
+      "path": ".github/workflows/aws-oidc-identity.yml",
+      "sha256": "363010e466a3506ff3cee2ca83e2039bba535583321ecc905b31abf5a6603baf"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "9eb8277a83e0304e3b867a4a6464cac4ad49cdcda7ac1e9f07d57bfeb9f8f802"
+    },
+    {
+      "path": ".github/workflows/part2-stage1-postgres.yml",
+      "sha256": "6a4e448a9196f4949429ab8bd96950a921afa0b9a395ddbfaf94faf89b5bf9f7"
+    },
+    {
+      "path": ".github/workflows/part2-stage6-reconciliation.yml",
+      "sha256": "11ff91e1e8b9c2b17bc34452379af8f753e8cc45d35b07adc1482520a5790cca"
+    },
+    {
+      "path": ".github/workflows/part2-stage7-publication.yml",
+      "sha256": "aee579959c8b51298d6b62ddfa46b169db7d0e9dc4f4505343fd5942ad0facad"
+    },
+    {
+      "path": ".github/workflows/part3-stage2-deployable-platform.yml",
+      "sha256": "9ee8084a64c2177b01245667524a380554aa7f727d38217df93e4b640d939464"
+    },
+    {
+      "path": ".github/workflows/part3-stage3-aws-admission.yml",
+      "sha256": "e51d36718940736ab44482b2f43a6edbbdb43b326624b9dfd1adf6ccd1cad6f7"
+    },
+    {
+      "path": ".github/workflows/terraform.yml",
+      "sha256": "058560c7a12e8463ed9bbb16be7337dc098d4cada7dbd88dc7d85e765115d4aa"
+    },
+    {
+      "path": "contracts/canonicalization-v1.json",
+      "sha256": "97652896cccaf80e26c92de51a0c1ad18791056af33973787cda96aed2b184ce"
+    },
+    {
+      "path": "contracts/catalog.json",
+      "sha256": "2dfc445982ac870e9b8c25fb989d959b815cff5d42963b86a7c10a3377296812"
+    },
+    {
+      "path": "contracts/cdc-apply-manifest-v1.schema.json",
+      "sha256": "80ccc788d317b4cd8c4ebbf863ab3022bbc750d822b69be17d4afa53003912f3"
+    },
+    {
+      "path": "contracts/cdc-envelope-v1.schema.json",
+      "sha256": "4ae93a5ba9ac65eeed87c911faac93a8588868180750fb8bda3f5da9f57d98f8"
+    },
+    {
+      "path": "contracts/control/control-records-v1.schema.json",
+      "sha256": "3afb04bce808d6dd9855ce2b3d37b0e57891835db92a13968e364470378b025b"
+    },
+    {
+      "path": "contracts/normalization-quarantine-v1.json",
+      "sha256": "034fd2768dbde72aab63e72e3e1ecc393c93f5a675d08f0abff885917f65eb4d"
+    },
+    {
+      "path": "contracts/normalization-reason-codes-v1.json",
+      "sha256": "86ee39093b6cbad4717581fcf5ae24ba19e62429ff7bb872522bb287fc8d8c23"
+    },
+    {
+      "path": "contracts/order-items-v1.json",
+      "sha256": "040250ecd6f538b3446086f18e908d0d940695ea76e305ad696fc74aff19f0d9"
+    },
+    {
+      "path": "contracts/orders-v1.1.json",
+      "sha256": "8d4337677da739a945efd52c96697bf248f6e2d365ee11ad3d697d5be5e72f89"
+    },
+    {
+      "path": "contracts/orders-v1.json",
+      "sha256": "2dc9aac43d00812d72a2f2f3afe4485bea1e71883a6c8362cb88c2fc3a232da8"
+    },
+    {
+      "path": "contracts/part2-stage1-catalog.json",
+      "sha256": "f259a4fe0da6296c75e64876234e62e7f86ba816df95a52a81b852ac972d729a"
+    },
+    {
+      "path": "contracts/part2-stage2-catalog.json",
+      "sha256": "b0c9244b8a9a21972fe28bf3cc4450f595fe4c7e2bb5226643bce6d2041e1669"
+    },
+    {
+      "path": "contracts/part2-stage5-catalog.json",
+      "sha256": "7e149d8278a4361a7e56445858e58cadec8170f11f056922baa19fcbe2854030"
+    },
+    {
+      "path": "contracts/part2-stage5-primary-key-definition-v1.contract.json",
+      "sha256": "32b40ae7a2c2d75bd4db75a437a1a1b1d8fdd3f83ad258570680f11ac6c58feb"
+    },
+    {
+      "path": "contracts/part2-stage5-schema-apply-receipt-v1.contract.json",
+      "sha256": "b3505982daabff8cf65a7096ddf58f232fef7101c94c1739d191bde55ae6ff11"
+    },
+    {
+      "path": "contracts/part2-stage5-schema-decision-v1.contract.json",
+      "sha256": "b6cdcea3e5915656f0442d77f0e41ab882ad02a076e367c8b95d0556c8554539"
+    },
+    {
+      "path": "contracts/part2-stage5-schema-quarantine-v1.contract.json",
+      "sha256": "406a612e7497f09525ba29ce7c21eb30c6e2992eb5a5f6b01f000255e9df0809"
+    },
+    {
+      "path": "contracts/raw-landing-manifest-v1.json",
+      "sha256": "d0389376d344569f89be30d5051a754a39d5e9153eca32c302dc8cf81dedd601"
+    },
+    {
+      "path": "contracts/schema-policy-v1.json",
+      "sha256": "140f638b83fc4114d8beb2ff6b66f83be4aa854ae9b2a09fe2cf204986819bb7"
+    },
+    {
+      "path": "contracts/snapshot-generation-v1.json",
+      "sha256": "ed717b03361944f5b7d33a5804fd4cfb1055421c3171fa4de337f33bdb1cf5fb"
+    },
+    {
+      "path": "contracts/snapshot-stage3-reason-codes-v1.json",
+      "sha256": "b4ebb694f44f71dbe58f72a01f9149517cb4e95395e15656a143993086e58a24"
+    },
+    {
+      "path": "contracts/source-boundary-receipt-v1.json",
+      "sha256": "058600ba4bb590c9265e10cf774c481e68f60b70761eb7dcc588597cfde1672e"
+    },
+    {
+      "path": "contracts/source-workload-spec-v1.json",
+      "sha256": "748acd2d5ef99aad9510f788d2dc84f28aad3a8da0fc6633be25e456e2ecbc47"
+    },
+    {
+      "path": "contracts/source-workload-v1.schema.json",
+      "sha256": "ab90931bdcdd0b6be740241b5969fcd7681a02059fe72edc765c33c88d321567"
+    },
+    {
+      "path": "contracts/stage26/catalog.json",
+      "sha256": "f6569a0dc176ce282eb2cc91e2f52aca5ef402ce9526d3a7024b224301d43c0f"
+    },
+    {
+      "path": "contracts/stage26/reason-codes.json",
+      "sha256": "2812165984053424cdf4ce616d42948333603a0a7cb4703abcdf0f796cd945e9"
+    },
+    {
+      "path": "contracts/stage27/catalog.json",
+      "sha256": "6a3b3653289a0d5d87f3820dab3de7e0ecac81b128c009b1051ae821f66d9c19"
+    },
+    {
+      "path": "contracts/stage27/reason-codes.json",
+      "sha256": "0c6093670eb8433dd748272cbdacadd1702b52f0874b3e63afc64e28f3af580c"
+    },
+    {
+      "path": "contracts/stage3-runtime-lock.json",
+      "sha256": "f614ad47719b49ea3aec746544098c3d279ec62f66152d2dc29f24476896a5db"
+    },
+    {
+      "path": "contracts/stage4-reason-codes-v1.json",
+      "sha256": "29d53117b947ed326c16b9b93fcde11b4b970fdf16c1c20fa46e2466140390c6"
+    },
+    {
+      "path": "contracts/stage5-reason-codes-v1.json",
+      "sha256": "9b07a2f51d0b3e97c2a4f14c73e683770387232f9d4ba1cd06120c9492a7f2fe"
+    },
+    {
+      "path": "contracts/target-record-metadata-v1.schema.json",
+      "sha256": "98184ec22176a2eebb55f8a12e5a7b219234e0929689a1c052678f460390c4a2"
+    },
+    {
+      "path": "contracts/transactional-apply-v1.json",
+      "sha256": "f18b4ef5fabbb275be85a13ad2ab416b8443014264ce8f482958b32d1a00e8e5"
+    },
+    {
+      "path": "contracts/transport-profile-stage22-v1.json",
+      "sha256": "a46a51b643f5298f0b50f25cf55f3ab693d5e3aef956c09205f8e2d3770fc66a"
+    },
+    {
+      "path": "schemas/architecture-adr-index.schema.json",
+      "sha256": "1a08919e9e0b1390c4b8ea46e9baed4a38bf3bdae21bd37d1f19b5fcf585d84b"
+    },
+    {
+      "path": "schemas/architecture-component.schema.json",
+      "sha256": "43a29eb9d9be79f16d345617509f5088050fda1a4a677c67e0ab22b08be840a4"
+    },
+    {
+      "path": "schemas/architecture-state-machine.schema.json",
+      "sha256": "7e127d8d40dc39600a23e938dc91bf494a37db5f041641edf4ac339b3da6029f"
+    },
+    {
+      "path": "schemas/canonicalization-profile.schema.json",
+      "sha256": "8efb3178c83e18209a7922137fc02085544e0351e1b666ed45aa13ed77f9bb62"
+    },
+    {
+      "path": "schemas/claim-registry.schema.json",
+      "sha256": "0c269018aa12e86498e1e156bd09ef32be6f0c62880b3a168f4a3362328a8da5"
+    },
+    {
+      "path": "schemas/completion-requirements.schema.json",
+      "sha256": "5105c3d990b07b2e26c91a2c607ba12b01e3bca97e6bda40ec3bc4f6b435505d"
+    },
+    {
+      "path": "schemas/contract-catalog.schema.json",
+      "sha256": "703777928e41e543f2f1f84d17c30d72de0a30051504c7104566f957bc992695"
+    },
+    {
+      "path": "schemas/invariant-oracle.schema.json",
+      "sha256": "f2bac8d069465585aa3a41d56c69db5e5eb0158e950572669e52a6cd84342672"
+    },
+    {
+      "path": "schemas/part1-closure.schema.json",
+      "sha256": "090d7d7abeac9a647074519dfd29487c5d814d4f9a941d2eed3d4ad076740057"
+    },
+    {
+      "path": "schemas/part2-stage1-evidence.schema.json",
+      "sha256": "e2aa4cbed6f023ae91e4677212af3cf23d3cd3a5a167bf46635bf280eb27597d"
+    },
+    {
+      "path": "schemas/part2-stage2-evidence.schema.json",
+      "sha256": "9abab4fe7b02072914a4344003d620ca60583b266a695e726de6e07f7163243b"
+    },
+    {
+      "path": "schemas/part2-stage3-evidence.schema.json",
+      "sha256": "92b94c629c6c16679d6fcb6b27a4ebb36915f6a9821d5fe1a61a25274b08edaa"
+    },
+    {
+      "path": "schemas/part2-stage4-evidence.schema.json",
+      "sha256": "48c9fc800579d25af43450bbee93cf9ae1b5455ba1943ebdd38821c755470e06"
+    },
+    {
+      "path": "schemas/part2-stage5-evidence.schema.json",
+      "sha256": "fbce1ac17b95531d0b301bd80b9061c710cdc57aa741309f1d9fb1f736a52fae"
+    },
+    {
+      "path": "schemas/part2-stage6/gate-result-v2.schema.json",
+      "sha256": "4941304ba29e64e53a4bd0b041ba16248dd4bf30cd458f095172d2ae44dd45a4"
+    },
+    {
+      "path": "schemas/part2-stage6/generation-seal-v1.schema.json",
+      "sha256": "ec2d9d7304d0a0ff056d2f3647db2b0f8a78ec8e693d0cfe1aa3d9faa79bcc11"
+    },
+    {
+      "path": "schemas/part2-stage6/proof-manifest-v2.schema.json",
+      "sha256": "62dd07c333dc735f545b4c5a0187981fc6b584870f25591ab2bb9956ecd498c5"
+    },
+    {
+      "path": "schemas/part2-stage6/reconciliation-report-v1.schema.json",
+      "sha256": "f19c1a3074112124332d6cd106b152305a7f92b745cdbce372a8013d4ea55ef6"
+    },
+    {
+      "path": "schemas/part2-stage7/consumer-verification-v1.schema.json",
+      "sha256": "862e74069aef44053ef5b20d7cef997f1b535af76b7f297752819cc5b7712a37"
+    },
+    {
+      "path": "schemas/part2-stage7/fallback-receipt-v1.schema.json",
+      "sha256": "00fe3ba6a8f9ccdeee41e1f49e911c08983f58a274b126e9e42ca6247045877c"
+    },
+    {
+      "path": "schemas/part2-stage7/publication-binding-v1.schema.json",
+      "sha256": "c7c6128a7d4f08a805fb141b2ef4244bb207c013196671f73dccd2becaab525d"
+    },
+    {
+      "path": "schemas/part2-stage7/publication-receipt-v1.schema.json",
+      "sha256": "c5faf5259c048e0f09a24cf270d85d6c04c5d488e070647102d54b67a53ed162"
+    },
+    {
+      "path": "schemas/stage-evidence.schema.json",
+      "sha256": "8919144b297d0e3b9b059df5dfbe58ef3175440f1e1aa21ae98362a2ee0134d9"
+    },
+    {
+      "path": "schemas/test-layer.schema.json",
+      "sha256": "5c539ff21a7fe099efc7fa51035f2027407ee62ba0a1923fb6256a614b5f7a9b"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "15d07c10faed4e15592ea988c34cc73122534eb7f7597f256238888f7123353e"
+    }
+  ],
+  "stage_complete": false
+}

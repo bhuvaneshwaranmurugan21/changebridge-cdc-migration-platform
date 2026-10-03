@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PREPARED_NOT_EXECUTED",
+  "account_id": "857229544428",
+  "region": "ap-southeast-2",
+  "target_role_arn": "arn:aws:iam::857229544428:role/ChangeBridgeGitHubOidcRole",
+  "inline_policy_name": "ChangeBridgeStage33RoleObserver",
+  "policy_file": "deployment/stage3/ChangeBridgeStage33RoleObserver.proposed.json",
+  "observed_denial_evidence": "evidence/part3/stage3/main-iam-denial.json",
+  "observed_reason": "No identity-based policy allows iam:GetRole; no explicit deny, boundary or SCP conclusion is proven.",
+  "authority_scope": "Standing ChangeBridge-only delegation covers preparation and bounded access resolution; execution requires an actual qualified administrator connection and reviewed exact policy digest.",
+  "execution_connection": "NOT_QUALIFIED",
+  "required_administrator_role_name": "AccountFullAccessRole",
+  "qualified_administrator_is_not_the_target_role": true,
+  "phase1": {
+    "new_resource_count": 0,
+    "permitted_write": "iam:PutRolePolicy only on the exact existing role with the exact minimal policy name and reviewed document",
+    "trust_changes": false,
+    "boundary_changes": false,
+    "managed_policy_attachment_changes": false,
+    "other_project_changes": false,
+    "automatic_overwrite_on_collision": false,
+    "self_grant": false
+  },
+  "phase2": {
+    "status": "DEFERRED_PENDING_REAL_POLICY_ARNS",
+    "potential_read_actions": [
+      "iam:GetPolicy",
+      "iam:GetPolicyVersion"
+    ],
+    "resource_arns": [],
+    "wildcard_resources_permitted": false,
+    "rule": "First collect attached-policy and permissions-boundary ARNs using Phase 1 access. Review any required Phase 2 grant against those exact observed ARNs; do not infer or pregrant them."
+  },
+  "required_receipts": [
+    "qualified administrator identity with session redacted for any public copy",
+    "exact role ARN and RoleId before and after",
+    "unchanged trust-policy digest before and after",
+    "prior inline-policy absence or exact-equivalent document",
+    "reviewed policy-file SHA256",
+    "actual inline-policy readback and canonical document SHA256",
+    "rerun main observer result with exact GitHub head and run identity",
+    "private exact policy-byte snapshot used for validation and write",
+    "independently reviewed preflight RoleId and trust digest supplied to apply",
+    "unchanged permissions-boundary readback before and after"
+  ],
+  "aws_mutations_performed_by_preparation": 0
+}

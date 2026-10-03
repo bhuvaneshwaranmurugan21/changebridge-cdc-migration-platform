@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at_utc": "2026-10-02T21:26:21.692989+00:00",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "standing_authority": "User delegates autonomous full ChangeBridge completion; routine merges and bounded access resolution do not require repeated approval.",
+  "scope": "ChangeBridge only; existing acceptance semantics and protected predecessor evidence remain mandatory.",
+  "verified_main_commit": "80d929274f85bfcebcdbc6dd014831db5915d811",
+  "verified_main_tree": "2de405ba6a0a8fd42b55ea569462c4744fa178bc",
+  "resumed_local_checkpoint": "7fa0158b97429499f23f35ca8edcc8b24468d7a6",
+  "resumed_remote_checkpoint": "ace53c1455ee0fe2b671173ee96320413c14c179",
+  "main_observer_merge": "Normal merge of accepted main observer maintenance into existing Stage 3 branch; no history rewrite.",
+  "admin_channel": "NOT_QUALIFIED",
+  "local_credential_route": "NOT_CONFIGURED",
+  "aws_console_browser_result": "Site Unavailable: Unable to access this site; no authentication session established.",
+  "aws_permission_evidence": "evidence/part3/stage3/main-iam-denial.json",
+  "remediation": "PREPARED_NOT_EXECUTED",
+  "aws_resource_mutations": 0,
+  "current_stage": "part3-stage3-aws-admission",
+  "stage_complete": false,
+  "current_head_validation": "LOCAL_FULL_QUALITY_PASS_REMOTE_CI_PENDING",
+  "criteria_passed": 32,
+  "criteria_pending": 20,
+  "remaining_blockers": [
+    "actual administrator execution channel",
+    "actual exact trust/policy/boundary readback",
+    "fresh bounded quota headroom",
+    "concrete accepted budget and lifecycle record",
+    "actual bootstrap and confirmed alert receipts",
+    "exact candidate CI and acceptance closure"
+  ],
+  "next_action_when_access_available": "Run the qualified bounded administrator preflight, bind reviewed RoleId/trust/policy digests, apply only the exact observer correction, read back and resume Stage 3 admission."
+}

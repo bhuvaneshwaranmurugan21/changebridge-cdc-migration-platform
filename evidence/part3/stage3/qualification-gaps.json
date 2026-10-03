@@ -1,0 +1,20 @@
+{
+  "closed_observation_gaps": [
+    "received evidence archive and member integrity",
+    "OIDC provider and audience observation",
+    "resource name collision observations",
+    "regional service read API availability",
+    "quota ceiling and network observations"
+  ],
+  "pending": [
+    "candidate-role exact trust observation (role is absent)",
+    "candidate role permission and boundary observation (role is absent)",
+    "complete bounded quota usage/headroom comparison",
+    "bounded cost estimate acceptance",
+    "48-hour lifetime versus retention and KMS deletion-window correction",
+    "fresh timestamped pre-mutation qualification",
+    "exact-resource mutation authorization",
+    "complete repository quality validation (partial suite coverage failed)"
+  ],
+  "result": "BLOCKED_AS_DESIGNED"
+}

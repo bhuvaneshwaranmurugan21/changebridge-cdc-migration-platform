@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "result": "OBSERVATION_REVIEWED_BOOTSTRAP_PENDING",
+  "provenance": "User-provided CloudShell terminal JSON; the assistant did not execute these AWS calls.",
+  "diagnostic_file": "evidence/part3/stage3/administrator-access-diagnostic.json",
+  "diagnostic_script_commit": "9a72e0cfbb0326358c2a7741d9f26dbc06f329cc",
+  "diagnostic_script_sha256": "1eb1fd1bc40471d64a7de56d0b52a6bc80b056d5834fbbbbefc91ea37274024b",
+  "independent_repository_metadata": {
+    "source": "https://api.github.com/repos/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+    "owner_id": 276895096,
+    "repository_id": 1332970949,
+    "created_at": "2026-08-13T10:06:55Z"
+  },
+  "existing_identity_policy_inventory": "NO_INLINE_OR_ATTACHED_POLICIES",
+  "existing_permissions_boundary": null,
+  "existing_trust_scope": "EXACT_IMMUTABLE_MAIN_SUBJECT",
+  "candidate_status": "ABSENT_NO_SUCH_ENTITY",
+  "corrected_proposed_stage3_subject": "repo:bhuvaneshwaranmurugan21@276895096/changebridge-cdc-migration-platform@1332970949:ref:refs/heads/part3-stage3-aws-admission",
+  "observer_installation_needed_for_this_review": false,
+  "observer_installation_performed": false,
+  "phase2_managed_policy_read_grant_needed_for_observed_inventory": false,
+  "existing_role_or_global_variable_changes": false,
+  "assistant_aws_mutations": 0,
+  "reported_operator_aws_writes": 0,
+  "candidate_permissions_established": false,
+  "stage_complete": false,
+  "criteria_passed": 32,
+  "criteria_pending": 20,
+  "limitations": [
+    "No identity policies does not exhaustively exclude resource-based permissions, SCPs or other effective controls.",
+    "The supplied control digest covers role identity, trust and boundary; it is not the installer's trust-only digest.",
+    "Actual candidate-role trust, policies and successful assumption remain unproven until creation and readback.",
+    "The backend-only candidate policy does not authorize later platform deployment.",
+    "Fresh collision, quota, cost/lifecycle, alert confirmation and bootstrap readbacks remain required."
+  ]
+}
