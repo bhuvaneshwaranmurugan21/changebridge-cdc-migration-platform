@@ -65,3 +65,12 @@ Current local full-quality verification: 347 passed, two existing PostgreSQL-ser
 86.84% coverage against the unchanged 85% requirement, Ruff, mypy on all 50 source files and all
 11 predecessor validators pass. The new remote candidate requires its own exact-head CI.
 No AWS write or Stage 3 completion is claimed.
+
+All three CI workflows for exact head `9d465a6b67b798d3bc6c852844a3cda68d9772b0`
+have now completed successfully, including the full quality lane. The new access diagnostic is
+prepared to collect current own-role and exact-provider controls directly through one authenticated
+administrator session, with sanitized terminal JSON and no archive download or AWS mutation.
+It avoids granting the optional observer policy solely to obtain those controls. The dedicated
+execution-role design and remaining bootstrap gates still require real AWS evidence; neither
+the four-read patch nor the diagnostic provides deployment permissions. Changed diagnostic code
+requires its own exact-head CI. See `docs/part3/stage3/AWS_EXECUTION_CONNECTION.md`.

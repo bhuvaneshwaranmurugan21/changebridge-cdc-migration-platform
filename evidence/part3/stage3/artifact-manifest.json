@@ -50,6 +50,10 @@
       "sha256": "cd39bedc3cb0eb20d716b3cdb7ab9a89b79af4b3a94526bb8571c0c843100efc"
     },
     {
+      "path": "docs/part3/stage3/AWS_EXECUTION_CONNECTION.md",
+      "sha256": "cd988d1a6a6152c24de89e07842337f7206e24434bfc2a80835e4fe8df1b1ca0"
+    },
+    {
       "path": "docs/part3/stage3/BLOCKER_REVIEW.md",
       "sha256": "a38d11851269947c02ab2352c323c464405cf95eb338474f967d133fae83ee96"
     },
@@ -66,8 +70,12 @@
       "sha256": "5dbe7ab5f1fd86a4b5cb5027908f8e73acc09f64a0c7d4349dc4a9729650814b"
     },
     {
+      "path": "scripts/collect_stage33_access_diagnostic.sh",
+      "sha256": "1eb1fd1bc40471d64a7de56d0b52a6bc80b056d5834fbbbbefc91ea37274024b"
+    },
+    {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "7f02511e6ec95ca560a7f9608cc25aad43b9f3f5a029fabd8901f28b3037a40f"
+      "sha256": "a7ed06d3fce7cb4b88799c546cdac7536f69ee144a26b6607178de3d61de5c47"
     },
     {
       "path": "scripts/install_stage33_role_observer.sh",
@@ -75,7 +83,7 @@
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "2bc7f1d3325955a1dc681b2772872944652c9ba578c50cc33df819b366330e30"
+      "sha256": "2941eb3338b02a1f60b3bca56b4083534c91d84db4ee9c651d6535605fd3866e"
     },
     {
       "path": "tests/test_part3_stage3_validator.py",
@@ -90,16 +98,28 @@
       "sha256": "5f431f83fecdc016734f4a96d30978447360465ce1f3a8d0e429d9b239afe13e"
     },
     {
+      "path": "tests/test_stage33_access_diagnostic.py",
+      "sha256": "5cc7e1b7d1c6ce3a0f6496bfd08bb069f8100d86a144e5c113a728121f1e38e3"
+    },
+    {
       "path": ".github/workflows/aws-oidc-identity.yml",
       "sha256": "363010e466a3506ff3cee2ca83e2039bba535583321ecc905b31abf5a6603baf"
     },
     {
       "path": ".github/workflows/part3-stage3-aws-admission.yml",
-      "sha256": "e51d36718940736ab44482b2f43a6edbbdb43b326624b9dfd1adf6ccd1cad6f7"
+      "sha256": "5f6a2ae6a4a6baa05c796afeb2e04de6d1cbdf05207a7edb8a9426eb8e6cb751"
     },
     {
       "path": "PART3_STAGE3_STATUS.md",
-      "sha256": "ab625628f1f1c9306bdc7628a6f118a9cf3ed46d358160bbc679def897aa2272"
+      "sha256": "92f5707171f3871a43d73dafa602bcc979520716a6f2458d87a7aeb89f0a7760"
+    },
+    {
+      "path": "evidence/part3/stage3/access-diagnostic-local-validation.json",
+      "sha256": "eb163398f6ac47cdacec30500ee3f66fcdffd2e0b35436d054608c865b3a39df"
+    },
+    {
+      "path": "evidence/part3/stage3/access-solution-preparation.json",
+      "sha256": "16adffda9cc419194943025b9a292fb9bbf711cb4c388a27f1e630bab9bc2577"
     },
     {
       "path": "evidence/part3/stage3/authorization-state.json",
