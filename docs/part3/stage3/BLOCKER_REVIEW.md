@@ -70,3 +70,17 @@ denied in run `36985888482`, before any IAM-policy readback. Read-only observer 
 already functioning main execution path and does not widen role trust or permission scope.
 The absent new candidate role and actual bootstrap gates remain unproven. Zero AWS resource
 mutations are recorded. This continuation is execution evidence, not a completion declaration.
+
+## Fresh administrator observation and subject correction
+
+The 2026-10-03 diagnostic records the exact existing role, main-only immutable trust, empty
+inline and attached policy inventories, absent boundary, exact provider and absent candidate.
+GitHub repository and owner IDs were independently checked. The proposed Stage 3 subject's
+legacy name-only format was incorrect and is corrected to the immutable numeric-ID format.
+This resolves the proposal error while preserving repository and branch isolation.
+
+The four-read observer patch is unnecessary for facts already collected through the administrator.
+The next operation must establish the full qualified bootstrap; neither repeating identity checks
+nor changing the existing main role supplies the missing dedicated bootstrap route. Candidate
+readback, quotas, cost/lifecycle and real bootstrap gates remain pending. No acceptance count,
+historical failed run, completed predecessor evidence or AWS resource has been changed by this review.

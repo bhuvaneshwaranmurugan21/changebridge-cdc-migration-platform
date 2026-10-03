@@ -17,7 +17,7 @@
         "Condition": {
           "StringEquals": {
             "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-            "token.actions.githubusercontent.com:sub": "repo:bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform:ref:refs/heads/part3-stage3-aws-admission"
+            "token.actions.githubusercontent.com:sub": "repo:bhuvaneshwaranmurugan21@276895096/changebridge-cdc-migration-platform@1332970949:ref:refs/heads/part3-stage3-aws-admission"
           }
         }
       }

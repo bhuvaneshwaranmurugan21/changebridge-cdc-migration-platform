@@ -51,3 +51,21 @@ At preparation time no AWS connector or administrator session is available to th
 environment. If that remains true, executing this read-only command in an authenticated CloudShell
 is the indispensable external step. Additional verbal permission cannot supply credentials or
 override AWS IAM. No access keys, passwords, session tokens, or one-time login codes belong in chat.
+
+## Administrator diagnostic received on 2026-10-03
+
+The operator ran the checksum-verified collector between 05:20:54Z and 05:21:07Z. The received
+terminal JSON is preserved in `evidence/part3/stage3/administrator-access-diagnostic.json`, with
+its review and provenance recorded separately. The existing role has no inline or attached
+permission policies, no permissions boundary, and exact immutable `main` trust. This inventory
+does not exhaustively prove the absence of resource-based permissions or account-level controls.
+
+GitHub metadata independently confirms owner ID `276895096` and repository ID `1332970949`.
+The current Stage 3 proposal now uses those identities and the exact Stage 3 branch. Earlier
+proposal bytes and denial evidence remain in history. The new candidate is absent; correcting
+a proposal is not an AWS trust update or proof of successful assumption.
+
+Direct administrator observation makes the optional four-read observer installation unnecessary
+for this review. No additional observer policy will be installed just to repeat known facts.
+The next useful administrator operation is the complete qualified bootstrap described in
+`ADMINISTRATOR_BOOTSTRAP_EXECUTION.md`; its executor is not yet validated or executed.

@@ -74,3 +74,10 @@ It avoids granting the optional observer policy solely to obtain those controls.
 execution-role design and remaining bootstrap gates still require real AWS evidence; neither
 the four-read patch nor the diagnostic provides deployment permissions. Changed diagnostic code
 requires its own exact-head CI. See `docs/part3/stage3/AWS_EXECUTION_CONNECTION.md`.
+
+The administrator diagnostic received on 2026-10-03 verifies exact immutable main trust,
+no inline or attached policy, no boundary and candidate absence. Its control digest is checked
+against the received normalized role fields; GitHub metadata independently confirms the IDs.
+The Stage 3 proposal now uses the exact immutable repository identity. The optional observer
+patch is unnecessary for this review and remains unexecuted. The next required work is the
+qualified administrator bootstrap executor and its real receipts; Stage 3 remains 32/52.

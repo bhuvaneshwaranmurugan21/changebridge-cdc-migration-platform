@@ -1,0 +1,44 @@
+{
+  "aws_calls_by_assistant": 0,
+  "aws_mutations": 0,
+  "development_focused_run": {
+    "acceptance_criteria_weakened": false,
+    "cause": "Focused draft validation preceded final artifact-manifest refresh; complete manifest regenerated before successful full suite.",
+    "failed": 1,
+    "passed": 41,
+    "result": "FAILED_UNREFRESHED_MANIFEST"
+  },
+  "diagnostic_digest_recomputed": "MATCH",
+  "exact_remote_head_ci": "REQUIRED_AFTER_PUBLICATION",
+  "github_owner_and_repository_ids": "INDEPENDENT_METADATA_MATCH",
+  "mypy": {
+    "result": "PASS",
+    "source_files": 51
+  },
+  "result": "PASS",
+  "ruff": "PASS",
+  "schema_version": "1.0.0",
+  "source_inputs": {
+    ".github/workflows/part3-stage3-aws-admission.yml": "d51c8af0585207f25c96103e2d7911e631ffa992745dcb8ad96a5322d2921a8f",
+    "deployment/stage3/oidc-trust-policy.proposed.json": "67e48fec869af39940846615beb197ec6e278d736eb1ad47616728a7f85434c5",
+    "scripts/build_stage33_evidence.py": "49a312673870f6510b41aad3c5870fa58c51042610d842c545bf740dce8c834c",
+    "scripts/validate_part3_stage3.py": "2b87d23def7f8cbe405f808ac0d76b0a40bdfe8d14cfa0d223428605c0bec9ea",
+    "scripts/validate_stage33_access_evidence.py": "4e621c6bce104d2be89bcc9ea389d8fb8a6d99c8778bb61e9b05cb2ff403abf6",
+    "tests/test_part3_stage3_validator.py": "f957ddcb442262c7095516351a17487ccf03d9de27bf74af75a092f73b251f83",
+    "tests/test_stage33_access_evidence.py": "db5358305e9d3d0bb13bb9555b567d961d8d4dc2eb71ac1143a7e6b24a861e14"
+  },
+  "stage33_validator": {
+    "criteria_passed": 32,
+    "criteria_pending": 20,
+    "result": "PASS"
+  },
+  "stage_complete": false,
+  "tests": {
+    "coverage_percent": 86.84,
+    "passed": 385,
+    "required_coverage_percent": 85,
+    "seconds": 74.78,
+    "skip_scope": "pre-existing PostgreSQL service requirement",
+    "skipped": 2
+  }
+}

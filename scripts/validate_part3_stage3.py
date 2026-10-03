@@ -61,7 +61,8 @@ def validate_proposed_policies() -> None:
                     "StringEquals": {
                         "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
                         "token.actions.githubusercontent.com:sub": (
-                            "repo:bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform:"
+                            "repo:bhuvaneshwaranmurugan21@276895096/"
+                            "changebridge-cdc-migration-platform@1332970949:"
                             "ref:refs/heads/part3-stage3-aws-admission"
                         ),
                     }
@@ -379,10 +380,12 @@ def validate() -> dict[str, Any]:
         "scripts/build_stage33_evidence.py",
         "scripts/install_stage33_role_observer.sh",
         "scripts/validate_part3_stage3.py",
+        "scripts/validate_stage33_access_evidence.py",
         "tests/test_part3_stage3_validator.py",
         "tests/test_stage33_oidc_qualification.py",
         "tests/test_stage33_role_observer_installation.py",
         "tests/test_stage33_access_diagnostic.py",
+        "tests/test_stage33_access_evidence.py",
         ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",
         "PART3_STAGE3_STATUS.md",

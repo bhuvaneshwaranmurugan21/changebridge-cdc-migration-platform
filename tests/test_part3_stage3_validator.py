@@ -103,6 +103,14 @@ def test_stage33_rejects_unsupported_success(
     "case,code",
     [
         ("wrong_subject", "ST33_OIDC_POLICY"),
+        ("legacy_exact_subject", "ST33_OIDC_POLICY"),
+        ("wrong_owner_id", "ST33_OIDC_POLICY"),
+        ("wrong_repository_id", "ST33_OIDC_POLICY"),
+        ("immutable_main_subject", "ST33_OIDC_POLICY"),
+        ("immutable_pull_request_subject", "ST33_OIDC_POLICY"),
+        ("immutable_tag_subject", "ST33_OIDC_POLICY"),
+        ("immutable_environment_subject", "ST33_OIDC_POLICY"),
+        ("immutable_wildcard_subject", "ST33_OIDC_POLICY"),
         ("wrong_audience", "ST33_OIDC_POLICY"),
         ("wrong_provider", "ST33_OIDC_POLICY"),
         ("broadened_permissions", "ST33_PERMISSION_POLICY"),
@@ -123,10 +131,37 @@ def test_stage33_rejects_policy_proposal_weakening(
         payload = original(path)
         if path == "deployment/stage3/oidc-trust-policy.proposed.json":
             statement = payload["policy"]["Statement"][0]
+            immutable_prefix = (
+                "repo:bhuvaneshwaranmurugan21@276895096/"
+                "changebridge-cdc-migration-platform@1332970949:"
+            )
+            subject_corrections = {
+                "legacy_exact_subject": (
+                    "repo:bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform:"
+                    "ref:refs/heads/part3-stage3-aws-admission"
+                ),
+                "wrong_owner_id": (
+                    immutable_prefix.replace("@276895096/", "@111111111/")
+                    + "ref:refs/heads/part3-stage3-aws-admission"
+                ),
+                "wrong_repository_id": (
+                    immutable_prefix.replace("@1332970949:", "@1111111111:")
+                    + "ref:refs/heads/part3-stage3-aws-admission"
+                ),
+                "immutable_main_subject": immutable_prefix + "ref:refs/heads/main",
+                "immutable_pull_request_subject": immutable_prefix + "pull_request",
+                "immutable_tag_subject": immutable_prefix + "ref:refs/tags/example",
+                "immutable_environment_subject": immutable_prefix + "environment:example",
+                "immutable_wildcard_subject": immutable_prefix + "ref:refs/heads/*",
+            }
             if case == "wrong_subject":
                 statement["Condition"]["StringEquals"][
                     "token.actions.githubusercontent.com:sub"
                 ] = "repo:bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform:*"
+            elif case in subject_corrections:
+                statement["Condition"]["StringEquals"][
+                    "token.actions.githubusercontent.com:sub"
+                ] = subject_corrections[case]
             elif case == "wrong_audience":
                 statement["Condition"]["StringEquals"][
                     "token.actions.githubusercontent.com:aud"
