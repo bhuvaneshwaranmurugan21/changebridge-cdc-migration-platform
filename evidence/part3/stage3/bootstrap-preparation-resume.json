@@ -1,0 +1,63 @@
+{
+  "acceptance": {
+    "passed": 32,
+    "pending": 20
+  },
+  "aws_calls": 0,
+  "aws_mutations": 0,
+  "corrected_environment_failures": [
+    "First preservation invocation used system Python without jsonschema; rerun used the authorized disposable dev/spark environment.",
+    "Recovered checkout lacked historical commit b22bb548f77b447e6097d855cd1b0cdd0fb2ec92; fetched exact ChangeBridge history and reran unchanged validator successfully.",
+    "Compiler mypy traversal exposed two existing validator annotation errors; corrected annotations without changing runtime checks and passed mypy plus 41 focused tests."
+  ],
+  "execution_channel_observations": {
+    "available_aws_plugin_found": false,
+    "aws_cli_available": false,
+    "cloud_browser_cloudshell": "SITE_UNAVAILABLE",
+    "credential_environment_present": false,
+    "credentials_file_present": false
+  },
+  "implementation": {
+    "aws_runner": "NOT_IMPLEMENTED",
+    "cleanup_executor": "NOT_IMPLEMENTED",
+    "durable_recovery_journal": "NOT_IMPLEMENTED",
+    "offline_request_compiler": "IMPLEMENTED",
+    "package_integrity_verifier": "IMPLEMENTED"
+  },
+  "label": "LOCAL_BOOTSTRAP_PREPARATION_NOT_AWS_ADMISSION_PROOF",
+  "observed_at_utc": "2026-10-04T17:52:26.258993+00:00",
+  "remaining_gates": [
+    "authenticated qualified administrator execution channel",
+    "complete bounded runner and durable recovery journal",
+    "fresh collision/provider/identity/quota qualification",
+    "accepted cost and concrete enforceable cleanup/evidence retention policy",
+    "actual bootstrap configuration readbacks",
+    "confirmed SNS subscription",
+    "dedicated-role OIDC and bounded backend proof",
+    "all pending acceptance and guarded merge"
+  ],
+  "resumed_from_commit": "451f8b43cb89aa970ce7ebc3b4cee4fa3c22e929",
+  "schema_version": "1.0.0",
+  "source_sha256": {
+    "scripts/prepare_stage33_bootstrap.py": "d7b1152083c096e59f255ad5f2a911c516f8cf7b3359be80747b496736315c03",
+    "scripts/validate_part3_stage3.py": "fab5341c99ff2fbc0a832afc11760a4142c6490e9d13f214c5ccc3fc13a85e6e",
+    "tests/test_stage33_bootstrap_package.py": "a33ab31e45f446b226831ae2f2a8354e847b3970200674dfcf54c11139ac153b"
+  },
+  "stage_complete": false,
+  "validation": {
+    "focused_after_type_annotation_correction": {
+      "passed": 41
+    },
+    "full_suite": {
+      "coverage_percent": 86.84,
+      "duration_seconds": 71.68,
+      "minimum_coverage_percent": 85,
+      "passed": 396,
+      "skipped": 2
+    },
+    "mypy_compiler": "PASS",
+    "mypy_repository_lane": "PASS_50_SOURCE_FILES",
+    "protected_predecessor_validators": "PASS_11",
+    "ruff": "PASS"
+  }
+}

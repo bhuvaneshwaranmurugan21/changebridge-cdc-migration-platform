@@ -153,7 +153,7 @@ def validate_proposed_policies() -> None:
 
 def validate_access_remediation() -> None:
     policy = load("deployment/stage3/ChangeBridgeStage33RoleObserver.proposed.json")
-    expected = {
+    expected: dict[str, Any] = {
         "Version": "2012-10-17",
         "Statement": [
             {
@@ -386,12 +386,14 @@ def validate() -> dict[str, Any]:
         "tests/test_stage33_role_observer_installation.py",
         "tests/test_stage33_access_diagnostic.py",
         "tests/test_stage33_access_evidence.py",
+        "scripts/prepare_stage33_bootstrap.py",
+        "tests/test_stage33_bootstrap_package.py",
         ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",
         "PART3_STAGE3_STATUS.md",
         "evidence/part3/stage3",
     ]
-    expected_paths = set()
+    expected_paths: set[str] = set()
     for item in roots:
         root = ROOT / item
         files = sorted(root.rglob("*")) if root.is_dir() else [root]

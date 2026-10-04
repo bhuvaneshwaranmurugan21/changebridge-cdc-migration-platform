@@ -43,7 +43,7 @@
     },
     {
       "path": "docs/part3/stage3/ADMINISTRATOR_BOOTSTRAP_EXECUTION.md",
-      "sha256": "59b983a196dee10ac90992e1928b316935cb73a6dc9818c2485eaad754ee308b"
+      "sha256": "ab53ad043e288e93c71b15e3eafbe045fa13f8db093c4d37de387dda6cfc2730"
     },
     {
       "path": "docs/part3/stage3/AUTHORIZATION_PACKET.md",
@@ -79,7 +79,7 @@
     },
     {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "49a312673870f6510b41aad3c5870fa58c51042610d842c545bf740dce8c834c"
+      "sha256": "8dd3ffc8977696370dcd1abedb63f7a19e6a02fc3d2d58bfa704e167da6be8d9"
     },
     {
       "path": "scripts/install_stage33_role_observer.sh",
@@ -87,7 +87,7 @@
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "2b87d23def7f8cbe405f808ac0d76b0a40bdfe8d14cfa0d223428605c0bec9ea"
+      "sha256": "fab5341c99ff2fbc0a832afc11760a4142c6490e9d13f214c5ccc3fc13a85e6e"
     },
     {
       "path": "scripts/validate_stage33_access_evidence.py",
@@ -114,6 +114,14 @@
       "sha256": "db5358305e9d3d0bb13bb9555b567d961d8d4dc2eb71ac1143a7e6b24a861e14"
     },
     {
+      "path": "scripts/prepare_stage33_bootstrap.py",
+      "sha256": "d7b1152083c096e59f255ad5f2a911c516f8cf7b3359be80747b496736315c03"
+    },
+    {
+      "path": "tests/test_stage33_bootstrap_package.py",
+      "sha256": "a33ab31e45f446b226831ae2f2a8354e847b3970200674dfcf54c11139ac153b"
+    },
+    {
       "path": ".github/workflows/aws-oidc-identity.yml",
       "sha256": "363010e466a3506ff3cee2ca83e2039bba535583321ecc905b31abf5a6603baf"
     },
@@ -123,7 +131,7 @@
     },
     {
       "path": "PART3_STAGE3_STATUS.md",
-      "sha256": "cfb7346b9903333c733aafe46055bfbf164e8b2c0217b5dc414ab75a541a262f"
+      "sha256": "43e9abb14636a14dc3031937defca0da0260649423d8555529dc118e1ae417d5"
     },
     {
       "path": "evidence/part3/stage3/access-diagnostic-local-validation.json",
@@ -156,6 +164,10 @@
     {
       "path": "evidence/part3/stage3/aws-readonly-review.json",
       "sha256": "c1fb7739feaf578eb99df02ff2d71be30bf4e2a5c608b6beae99b595d6ffc5e0"
+    },
+    {
+      "path": "evidence/part3/stage3/bootstrap-preparation-resume.json",
+      "sha256": "d36b05d3635170033fada765e6f8f4ce8fa415d252bad75e33a8d9f0761d0494"
     },
     {
       "path": "evidence/part3/stage3/exact-head-ci.json",

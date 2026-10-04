@@ -38,6 +38,8 @@ def build_manifest() -> None:
         "tests/test_stage33_role_observer_installation.py",
         "tests/test_stage33_access_diagnostic.py",
         "tests/test_stage33_access_evidence.py",
+        "scripts/prepare_stage33_bootstrap.py",
+        "tests/test_stage33_bootstrap_package.py",
         ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",
         "PART3_STAGE3_STATUS.md",

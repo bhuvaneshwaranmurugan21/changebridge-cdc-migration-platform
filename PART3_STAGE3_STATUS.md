@@ -81,3 +81,19 @@ against the received normalized role fields; GitHub metadata independently confi
 The Stage 3 proposal now uses the exact immutable repository identity. The optional observer
 patch is unnecessary for this review and remains unexecuted. The next required work is the
 qualified administrator bootstrap executor and its real receipts; Stage 3 remains 32/52.
+
+Resume checkpoint: the existing published head `451f8b43cb89aa970ce7ebc3b4cee4fa3c22e929`
+was recovered without restarting the stage. An offline bootstrap request compiler now freezes
+all eight allowed resources, exact proposed policies, source hashes, serial prerequisites and
+required actual readbacks into a private, non-executable package. Its eleven construction and
+negative tests pass. The complete AWS installer and lifecycle executor remain unfinished;
+no AWS admission criterion is newly marked PASS. This session has no AWS CLI, credential
+environment or credentials file, and plugin discovery found no available AWS execution connector.
+The standing authorization remains recorded; the authenticated administrator channel is still
+missing. Existing AWS evidence and protected predecessor evidence remain unchanged.
+
+Latest resume validation: 396 tests pass, two existing PostgreSQL-service skips, 86.84% coverage;
+Ruff, repository mypy, compiler mypy and all eleven predecessor validators pass. Compiler mypy
+exposed two existing validator type annotations, corrected without changing runtime checks;
+41 focused tests then passed. CloudShell also returns `Site Unavailable` in this session.
+See `evidence/part3/stage3/bootstrap-preparation-resume.json` for actual results and remaining work.

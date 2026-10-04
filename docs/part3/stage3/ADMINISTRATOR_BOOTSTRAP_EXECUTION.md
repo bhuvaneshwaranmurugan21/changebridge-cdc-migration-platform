@@ -159,3 +159,26 @@ subscriber. Wait only within bounded execution limits and otherwise preserve a p
 Once these conditions and real execution receipts exist, the dedicated OIDC route can remove
 repeated CloudShell handoffs for its permitted backend work. It does not itself enable the
 remaining platform stages or prove managed migration, performance, publication or rollback.
+
+## Offline request compiler checkpoint
+
+`python -m scripts.prepare_stage33_bootstrap --output /tmp/changebridge-bootstrap-package.json`
+creates a new mode-0600 file and refuses overwrite or symlink substitution. It performs no AWS
+operation. The package freezes source hashes, the exact eight-resource request scope, ordered
+prerequisites, key/email/expiry placeholders, the inner role policies and required actual readbacks.
+It labels itself `OFFLINE_REQUEST_PACKAGE_NOT_AWS_PROOF` and keeps execution disabled. It rejects
+account, region, lifetime, resource-inventory and proposed-policy drift.
+
+This compiler is **not the complete installer**. It deliberately provides no AWS subprocess
+runner, ownership adoption, durable write-ahead journal or cleanup executor. Its serial request
+sequence is a construction plan, not permission to send requests: table readiness, collision
+qualification, resolved bindings and all prior execution gates remain mandatory. In particular,
+the KMS create acknowledgement must be reconciled before any key-dependent request, the table
+must be ACTIVE before PITR configuration, and the SNS subscription must be genuinely confirmed.
+No generated package or unit test satisfies an AWS acceptance criterion. Do not substitute literal
+placeholders into a live AWS command or treat the package digest as an execution receipt.
+
+The package records its Git base commit/tree and whether the working tree was dirty.
+`python -m scripts.prepare_stage33_bootstrap --verify /tmp/changebridge-bootstrap-package.json`
+rejects changed requests, stale sources or changed Git identity, even if the caller recomputes
+the payload digest. Verification is local integrity checking and does not authorize execution.
