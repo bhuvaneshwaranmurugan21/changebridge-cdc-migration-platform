@@ -43,7 +43,7 @@
     },
     {
       "path": "docs/part3/stage3/ADMINISTRATOR_BOOTSTRAP_EXECUTION.md",
-      "sha256": "ab53ad043e288e93c71b15e3eafbe045fa13f8db093c4d37de387dda6cfc2730"
+      "sha256": "21d4920a1c4f90bafc9d74ded3014673c34b7af95d76057b0e1c9b18b7a2417d"
     },
     {
       "path": "docs/part3/stage3/AUTHORIZATION_PACKET.md",
@@ -79,7 +79,7 @@
     },
     {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "8dd3ffc8977696370dcd1abedb63f7a19e6a02fc3d2d58bfa704e167da6be8d9"
+      "sha256": "54e99946671ff0981e0e8ff71919924b67d8a3366ae02fd4d7b1e210d876deac"
     },
     {
       "path": "scripts/install_stage33_role_observer.sh",
@@ -87,7 +87,7 @@
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "fab5341c99ff2fbc0a832afc11760a4142c6490e9d13f214c5ccc3fc13a85e6e"
+      "sha256": "8e083fa6134021c538d84a7f7ad05a77fdd090a0b0eb646c7a067d5985f40e99"
     },
     {
       "path": "scripts/validate_stage33_access_evidence.py",
@@ -115,11 +115,35 @@
     },
     {
       "path": "scripts/prepare_stage33_bootstrap.py",
-      "sha256": "d7b1152083c096e59f255ad5f2a911c516f8cf7b3359be80747b496736315c03"
+      "sha256": "c026c36236d50552244c8955bf221d4d7d0bfb9e93ce2a823c466ec942920581"
     },
     {
       "path": "tests/test_stage33_bootstrap_package.py",
       "sha256": "a33ab31e45f446b226831ae2f2a8354e847b3970200674dfcf54c11139ac153b"
+    },
+    {
+      "path": "scripts/stage33_bootstrap_journal.py",
+      "sha256": "b151b9ce358018559e4653fc38eb519edad6cbd0149597000bf8f4d477d085c8"
+    },
+    {
+      "path": "scripts/qualify_stage33_bootstrap.py",
+      "sha256": "6c018d68b5ff0aba31784e2c9e3c0bae0a2658a673e029b0cfa6db8e43257933"
+    },
+    {
+      "path": "tests/test_stage33_bootstrap_journal.py",
+      "sha256": "8152bef8eb5149cf0e191f3d110585fd310f09adbca483bdef1b086a59fb08c7"
+    },
+    {
+      "path": "tests/test_stage33_bootstrap_qualification.py",
+      "sha256": "cf618e95754a9bac74bbb9bb4d4a336d5100e85eefd5c1ff7348b20babc780df"
+    },
+    {
+      "path": "scripts/prepare_stage33_cleanup.py",
+      "sha256": "a9d063e1ed9781e6893ea0a5f2b98fb5783a8debf6772a5116ad20af34e1ddbc"
+    },
+    {
+      "path": "tests/test_stage33_cleanup_plan.py",
+      "sha256": "fa153fd88412e60864f3f2d358e8458df9f590c834dcb3a9dc4e7e9a17ef1dbd"
     },
     {
       "path": ".github/workflows/aws-oidc-identity.yml",
@@ -127,11 +151,11 @@
     },
     {
       "path": ".github/workflows/part3-stage3-aws-admission.yml",
-      "sha256": "d51c8af0585207f25c96103e2d7911e631ffa992745dcb8ad96a5322d2921a8f"
+      "sha256": "f9df76a1e3cf87db29d968972eff6b479a30b44fe245b36200fa716f44a8aa01"
     },
     {
       "path": "PART3_STAGE3_STATUS.md",
-      "sha256": "43e9abb14636a14dc3031937defca0da0260649423d8555529dc118e1ae417d5"
+      "sha256": "1e3dd93cc64d6f51af099b68f8afc532613d10e6b342c9d2fb600c6254f5bcb1"
     },
     {
       "path": "evidence/part3/stage3/access-diagnostic-local-validation.json",
@@ -164,6 +188,10 @@
     {
       "path": "evidence/part3/stage3/aws-readonly-review.json",
       "sha256": "c1fb7739feaf578eb99df02ff2d71be30bf4e2a5c608b6beae99b595d6ffc5e0"
+    },
+    {
+      "path": "evidence/part3/stage3/bootstrap-components-resume.json",
+      "sha256": "9ef7054e1ddd8597ac60436861df1b56bd6b88a90866eac15f44007bc121440e"
     },
     {
       "path": "evidence/part3/stage3/bootstrap-preparation-resume.json",

@@ -169,8 +169,8 @@ prerequisites, key/email/expiry placeholders, the inner role policies and requir
 It labels itself `OFFLINE_REQUEST_PACKAGE_NOT_AWS_PROOF` and keeps execution disabled. It rejects
 account, region, lifetime, resource-inventory and proposed-policy drift.
 
-This compiler is **not the complete installer**. It deliberately provides no AWS subprocess
-runner, ownership adoption, durable write-ahead journal or cleanup executor. Its serial request
+This compiler is **not the complete installer**. The separate read-only qualification runner and private fsynced journal now exist; the
+mutation runner, mutation recovery, ownership adoption and cleanup executor remain unimplemented. Its serial request
 sequence is a construction plan, not permission to send requests: table readiness, collision
 qualification, resolved bindings and all prior execution gates remain mandatory. In particular,
 the KMS create acknowledgement must be reconciled before any key-dependent request, the table
@@ -182,3 +182,20 @@ The package records its Git base commit/tree and whether the working tree was di
 `python -m scripts.prepare_stage33_bootstrap --verify /tmp/changebridge-bootstrap-package.json`
 rejects changed requests, stale sources or changed Git identity, even if the caller recomputes
 the payload digest. Verification is local integrity checking and does not authorize execution.
+
+## Read-only qualification and cleanup selectors
+
+`qualify_stage33_bootstrap.py` permits only exact identity, security-control and collision reads.
+Its private journal persists intents and raw receipts before decisions, rejects torn or altered
+records and prevents concurrent writers. A lost read acknowledgement remains unknown; explicit
+read-only resume preserves that outcome before fresh observation. Errors are not resource absence
+unless their exact operation and qualified service error agree. Neither a local hash chain nor
+structural tests authenticate an AWS observation. No quota or complete admission proof is claimed.
+
+`prepare_stage33_cleanup.py` compiles selectors from a supplied inventory. It rejects foreign
+resources, unresolved keys, pending subscriptions and unsafe or duplicate object versions.
+Selectors require actual ownership, lock, version and independently readable export guards;
+these guards are not an implemented deletion executor. Bucket creation dates are not immutable
+identities, and many named AWS mutations lack an ownership compare-and-set. A planned seven-day
+KMS deletion is neither immediate physical deletion nor proof of the 48-hour operational deadline.
+The lifecycle enforcement design and authenticated administrator channel remain blocking.

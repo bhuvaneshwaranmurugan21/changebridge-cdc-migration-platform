@@ -97,3 +97,13 @@ Ruff, repository mypy, compiler mypy and all eleven predecessor validators pass.
 exposed two existing validator type annotations, corrected without changing runtime checks;
 41 focused tests then passed. CloudShell also returns `Site Unavailable` in this session.
 See `evidence/part3/stage3/bootstrap-preparation-resume.json` for actual results and remaining work.
+
+Continuation from published `7b234811543c788ac399e578fd946fe9f671a9a1`: a bounded
+read-only qualification runner and private durable journal are implemented. Real local process
+crash, integrity, writer exclusion and exact-scope rejection tests pass. Cleanup selectors are
+compiled with identity/version guards but cannot execute deletion. Mutation execution, mutation
+recovery, lifecycle enforcement and the authenticated administrator channel remain unfinished.
+469 tests pass, two existing PostgreSQL service skips, 86.84% coverage; 84 focused checks,
+Ruff, mypy and frozen predecessor checks pass. Historical receipts remain unchanged.
+Stage 3 remains 32 PASS / 20 PENDING, with zero AWS API calls or mutations in this continuation.
+See `evidence/part3/stage3/bootstrap-components-resume.json`.

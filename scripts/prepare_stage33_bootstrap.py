@@ -23,6 +23,7 @@ ARTIFACT = f"changebridge-p3s3-artifacts-{ACCOUNT}-{REGION}"
 LOCKS = "changebridge-p3s3-tf-locks"
 TOPIC = f"arn:aws:sns:{REGION}:{ACCOUNT}:changebridge-p3s3-alerts"
 EXPIRY = "__FIRST_CREATION_PLUS_AT_MOST_48_HOURS_UTC__"
+EXECUTION_ID = "__BOOTSTRAP_EXECUTION_ID__"
 SOURCES = (
     "deployment/stage3/bootstrap-manifest.json",
     "deployment/stage3/oidc-trust-policy.proposed.json",
@@ -30,6 +31,12 @@ SOURCES = (
     "deployment/stage3/teardown-plan.json",
     "docs/part3/stage3/ADMINISTRATOR_BOOTSTRAP_EXECUTION.md",
     "scripts/prepare_stage33_bootstrap.py",
+    "scripts/stage33_bootstrap_journal.py",
+    "scripts/prepare_stage33_cleanup.py",
+    "scripts/qualify_stage33_bootstrap.py",
+    "scripts/collect_stage33_access_diagnostic.sh",
+    "scripts/validate_stage33_access_evidence.py",
+    "evidence/part3/stage3/administrator-access-diagnostic.json",
 )
 
 
@@ -71,6 +78,7 @@ def compile_package() -> dict[str, Any]:
         {"Key": "Stage", "Value": "part3-stage3"},
         {"Key": "CostCenter", "Value": "changebridge-p3s3"},
         {"Key": "ExpiresAt", "Value": EXPIRY},
+        {"Key": "ExecutionId", "Value": EXECUTION_ID},
     ]
     steps: list[dict[str, Any]] = []
 
@@ -188,7 +196,7 @@ def compile_package() -> dict[str, Any]:
         "base_commit": commit, "base_tree": tree, "working_tree_dirty": bool(dirty),
         "source_sha256": {p: hashlib.sha256(source_bytes[p]).hexdigest() for p in SOURCES},
         "steps": steps, "required_actual_readbacks": readbacks,
-        "unresolved_bindings": [KEY, EMAIL, EXPIRY],
+        "unresolved_bindings": [KEY, EMAIL, EXPIRY, EXECUTION_ID],
         "blocking_conditions": [
             "authenticated administrator channel absent",
             "fresh collision, provider, identity and quota-usage qualification required",
@@ -197,7 +205,7 @@ def compile_package() -> dict[str, Any]:
             "durable evidence export independent of deleted KMS key required",
             "actual configuration, SNS confirmation and OIDC receipts absent",
         ],
-        "not_implemented": ["AWS runner", "durable request/recovery journal",
+        "not_implemented": ["mutation runner", "mutation request/recovery journal",
                             "collision ownership reconciliation", "cleanup executor"],
     }
     return {**payload, "package_sha256": digest(payload)}
