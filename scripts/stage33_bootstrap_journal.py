@@ -17,7 +17,7 @@ from scripts.prepare_stage33_bootstrap import canonical
 
 READ_OPERATIONS = frozenset({
     ("sts", "get-caller-identity"),
-    ("iam", "get-role"), ("iam", "list-role-policies"),
+    ("iam", "get-role"), ("iam", "get-role-policy"), ("iam", "list-role-policies"),
     ("iam", "list-attached-role-policies"),
     ("iam", "get-open-id-connect-provider"),
     ("s3api", "head-bucket"), ("dynamodb", "describe-table"),

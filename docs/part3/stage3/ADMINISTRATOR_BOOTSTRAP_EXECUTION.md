@@ -170,7 +170,8 @@ It labels itself `OFFLINE_REQUEST_PACKAGE_NOT_AWS_PROOF` and keeps execution dis
 account, region, lifetime, resource-inventory and proposed-policy drift.
 
 This compiler is **not the complete installer**. The separate read-only qualification runner and private fsynced journal now exist; the
-mutation runner, mutation recovery, ownership adoption and cleanup executor remain unimplemented. Its serial request
+mutation runner, operation-specific authoritative recovery, ownership adoption and cleanup
+executor remain unimplemented. The mutation-attempt recording component does not execute operations. Its serial request
 sequence is a construction plan, not permission to send requests: table readiness, collision
 qualification, resolved bindings and all prior execution gates remain mandatory. In particular,
 the KMS create acknowledgement must be reconciled before any key-dependent request, the table
@@ -193,9 +194,82 @@ unless their exact operation and qualified service error agree. Neither a local 
 structural tests authenticate an AWS observation. No quota or complete admission proof is claimed.
 
 `prepare_stage33_cleanup.py` compiles selectors from a supplied inventory. It rejects foreign
-resources, unresolved keys, pending subscriptions and unsafe or duplicate object versions.
+resources, unresolved keys, unknown subscription state and unsafe or duplicate object versions.
 Selectors require actual ownership, lock, version and independently readable export guards;
 these guards are not an implemented deletion executor. Bucket creation dates are not immutable
 identities, and many named AWS mutations lack an ownership compare-and-set. A planned seven-day
 KMS deletion is neither immediate physical deletion nor proof of the 48-hour operational deadline.
 The lifecycle enforcement design and authenticated administrator channel remain blocking.
+
+## Mutation-attempt durability checkpoint
+
+`stage33_mutation_journal.py` freezes the offline package and execution identity in a private
+SQLite database with FULL synchronous commits, a single-writer file lock and a chained canonical
+record stream. It rejects foreign schemas, altered records, public or multi-link files and unsafe
+sidecars. Real process exits demonstrate committed intent/acknowledgement preservation and rollback
+of an uncommitted SQLite transaction. These checks establish local process recovery on the tested
+filesystem; they do not establish survival of host loss or an independently preserved export.
+
+Keep private journals outside the Git worktree. Directory/database substitution and newly
+introduced unsafe sidecars stop recording before SQL writes. Recording a dependent step without
+verified prerequisites is also blocked. Recording an intent sends no AWS operation. A zero-return acknowledgement does not clear the
+unresolved attempt. Raw observations are retained with `configuration_verified=false`; they cannot
+clear it either. No automatic retry or success transition exists. Operation-specific authoritative
+readback and provenance verification must be implemented before this component can support a
+mutating coordinator. Lost KMS CreateKey identity particularly requires independently qualified
+recovery; matching a tag or name alone cannot establish ownership, and the journal must not infer it.
+
+`verify_stage33_role_controls.py` compares complete before/after dedicated-role snapshots with the
+exact immutable RoleId, trust, policies, boundary and execution tags. The physical KMS ARN must be
+account/region-bound and substituted only into the approved template. RFC3986 policy decoding
+preserves literal plus characters and rejects duplicate JSON keys. Lists require explicit complete
+pagination. The returned label is `STRUCTURAL_CONTROL_MATCH_NOT_ADMISSION_PROOF`, and role use
+remains unauthorized by that result. Actual API provenance, IAM consistency, OIDC use and allowed/
+denied operation proofs remain required.
+
+The bootstrap and teardown proposals now consistently specify the 48-hour operational deadline
+and seven-day KMS pending-deletion residual. This corrects proposal text; it does not qualify the
+cleanup executor, accept a cost estimate, change historical evidence or clear a pending criterion.
+The historical contract's unresolved-lifecycle record remains until concrete authority and actual
+execution evidence resolve it. No additional AWS resource is silently introduced for enforcement.
+
+Primary references used for this comparison:
+- https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html
+- https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html
+- https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html
+- https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html
+- https://docs.aws.amazon.com/kms/latest/developerguide/ct-createkey.html
+
+CloudTrail is a documented possible source of KMS creation identity, not a qualified recovery
+route in this implementation. No CloudTrail read was made or added to the current read runner.
+Do not assume its availability, event completeness, timely delivery or authorization; do not
+scan or adopt another project's keys to obtain recovery success.
+
+## Corrected backend key-decryption proposal
+
+The lock table uses the same customer key as the state storage. The preceding template allowed
+the backend role to use KMS only through S3. DynamoDB's documented caller-based table-key
+decryption requires an applicable authorization path for table access; its background-service
+grants must not be assumed to authorize a different data-access caller. This mismatch is found
+from the proposal and AWS documentation, not from an observed denial in this execution.
+
+The corrected proposal adds only `kms:Decrypt` on the verified physical key, through Sydney
+DynamoDB, with exact caller account, lock-table encryption context and subscriber account.
+It grants no direct key access, grant creation, key administration, additional table access or
+new resource. The compiler binds both KMS statements deterministically; the S3 statement stays
+unchanged. The validator and comparator reject weaker context, wildcard keys, other services,
+accounts or tables and additional key actions. These are request/policy checks, not an IAM
+simulator or actual effectiveness proof. Actual dedicated-role lock operations and a fresh-caller
+decryption path must be proven before bootstrap acceptance; every managed criterion remains pending.
+
+Reference: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/encryption.usagenotes.html
+See `evidence/part3/stage3/backend-key-policy-correction.json` for exact before/after template
+checksums and scope. This remains a proposed policy; nothing has been attached to AWS.
+
+`ReturnSubscriptionArn=true` returns an ARN even before email confirmation. Cleanup inventory
+therefore requires explicit observed confirmation state; the ARN alone is insufficient. Confirmed
+unsubscribe selectors require a fresh `PendingConfirmation=false` readback and exact endpoint/owner
+binding. Pending subscriptions produce no unsubscribe selector: their disposal requires the exact
+owned topic inventory, full subscription/endpoint observation and topic deletion. This preserves a
+partial-failure cleanup path without claiming a confirmed alert or adopting an unrelated topic.
+Reference: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html

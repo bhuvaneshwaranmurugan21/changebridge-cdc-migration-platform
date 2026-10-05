@@ -32,6 +32,8 @@ SOURCES = (
     "docs/part3/stage3/ADMINISTRATOR_BOOTSTRAP_EXECUTION.md",
     "scripts/prepare_stage33_bootstrap.py",
     "scripts/stage33_bootstrap_journal.py",
+    "scripts/stage33_mutation_journal.py",
+    "scripts/verify_stage33_role_controls.py",
     "scripts/prepare_stage33_cleanup.py",
     "scripts/qualify_stage33_bootstrap.py",
     "scripts/collect_stage33_access_diagnostic.sh",
@@ -155,7 +157,12 @@ def compile_package() -> dict[str, Any]:
     })
     trust = json.loads(source_bytes[SOURCES[1]])["policy"]
     permissions = json.loads(source_bytes[SOURCES[2]])["policy"]
-    permissions["Statement"][-1]["Resource"] = KEY
+    kms_placeholder = "__BIND_EXACT_KMS_KEY_ARN_FROM_VERIFIED_BOOTSTRAP_RECEIPT__"
+    bindings = [s for s in permissions["Statement"] if s["Resource"] == kms_placeholder]
+    if len(bindings) != 2:
+        raise ValueError("exact S3 and lock-table KMS bindings required")
+    for statement in bindings:
+        statement["Resource"] = KEY
     add("github-actions-role", "iam", "create-role", {
         "RoleName": ROLE, "AssumeRolePolicyDocument": json.dumps(trust),
         "MaxSessionDuration": 3600, "Tags": tags,
@@ -201,12 +208,14 @@ def compile_package() -> dict[str, Any]:
             "authenticated administrator channel absent",
             "fresh collision, provider, identity and quota-usage qualification required",
             "USD 3 allowance acceptance and cost estimate required",
-            "48-hour retention contradiction and viable authorized cleanup executor unresolved",
+            "independent 48-hour enforcement and viable exact-bound cleanup executor unresolved",
             "durable evidence export independent of deleted KMS key required",
             "actual configuration, SNS confirmation and OIDC receipts absent",
         ],
-        "not_implemented": ["mutation runner", "mutation request/recovery journal",
-                            "collision ownership reconciliation", "cleanup executor"],
+        "not_implemented": [
+            "mutation runner", "operation-specific authoritative mutation reconciliation",
+            "collision ownership reconciliation", "cleanup executor",
+        ],
     }
     return {**payload, "package_sha256": digest(payload)}
 

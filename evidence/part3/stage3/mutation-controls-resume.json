@@ -1,0 +1,38 @@
+{
+  "label": "LOCAL_CONTINUATION_NOT_AWS_ADMISSION",
+  "recorded_at_utc": "2026-10-05T05:28:00Z",
+  "predecessor_head": "64b76b264e65a9119493ca68787a0302e480c81d",
+  "tests": {
+    "passed": 540,
+    "skipped": 2,
+    "skip_scope": "existing PostgreSQL service-dependent tests",
+    "coverage_percent": 86.84,
+    "focused_passed": 185
+  },
+  "admission": {
+    "pass": 32,
+    "pending": 20
+  },
+  "aws_api_calls": 0,
+  "aws_mutations": 0,
+  "changes": [
+    "private durable mutation-attempt recording with real process-crash and rollback tests",
+    "strict dedicated-role control comparison without authorizing role use",
+    "bounded DynamoDB KMS decrypt proposal correction",
+    "complete inventory and unambiguous JSON qualification guards",
+    "explicit SNS confirmation-aware non-executable cleanup selectors"
+  ],
+  "failures_resolved": [
+    "identity substitution diagnostics preserved rather than wrapped as malformed records",
+    "formatting errors corrected",
+    "current artifact manifest refreshed after legitimate proposal changes"
+  ],
+  "pending": [
+    "usable AWS execution channel",
+    "mutation execution coordinator and operation-specific authoritative recovery",
+    "independent enforceable cleanup and evidence export",
+    "actual backend and alert admission evidence"
+  ],
+  "access_observation": "No AWS CLI or AWS execution connector; existing CloudShell browser surface reports Site Unavailable",
+  "historical_evidence_rewritten": false
+}

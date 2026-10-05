@@ -107,3 +107,28 @@ recovery, lifecycle enforcement and the authenticated administrator channel rema
 Ruff, mypy and frozen predecessor checks pass. Historical receipts remain unchanged.
 Stage 3 remains 32 PASS / 20 PENDING, with zero AWS API calls or mutations in this continuation.
 See `evidence/part3/stage3/bootstrap-components-resume.json`.
+
+2026-10-05 continuation from `64b76b264e65a9119493ca68787a0302e480c81d`: mutation-attempt
+recording now preserves unresolved outcomes through actual process exits and uncommitted SQL
+transaction rollback. It neither executes writes nor certifies observations. A dedicated-role
+readback comparator rejects trust/permission widening, unbound key identities, unexpected
+boundaries, duplicate policy keys and incomplete pagination. Qualification now explicitly
+rejects partial empty inventories and ambiguous JSON responses. Proposal retention text is
+consistent with the 48-hour operational deadline and seven-day KMS residual; concrete cleanup
+execution and lifecycle admission remain unresolved. No historical evidence was rewritten.
+525 tests pass, two existing PostgreSQL-service skips, 86.84% coverage; all existing predecessor
+validators pass. No AWS API call or mutation occurred. The browser still reports Site Unavailable,
+and no AWS execution connector is available. Stage 3 remains 32 PASS / 20 PENDING. Mutation
+execution, operation-specific authoritative recovery and enforceable cleanup remain unfinished.
+
+Additional review found a concrete backend mismatch: the customer-key-encrypted lock table
+needs a DynamoDB caller decryption path, while the previous role template allowed KMS only
+via S3. The proposal now includes only table/account-context-restricted `kms:Decrypt` through
+Sydney DynamoDB on the same verified key. No new resource or direct key/grant/admin access is
+proposed. Actual policy effectiveness and fresh-caller backend operations remain pending.
+
+Final local continuation validation: 540 tests pass, two existing PostgreSQL-service skips,
+86.84% coverage; 185 focused Stage 3 checks pass. SNS cleanup selectors now distinguish
+returned pending subscription ARNs from confirmed subscriptions and reject missing or
+non-Boolean confirmation state. All cleanup output remains non-executable. Admission
+remains 32 PASS / 20 PENDING; no AWS operation or managed proof was performed.

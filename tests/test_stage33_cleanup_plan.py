@@ -16,7 +16,8 @@ def inventory():
                 'state_bucket': {'name': STATE, 'creation_date': 'synthetic-observation',
                                  'versions': [{'Key': 'changebridge/part3/stage3/terraform.tfstate',
                                                'VersionId': 'synthetic-version'}]},
-                'alert_email': {'subscription_arn': f'{TOPIC}:{key}'},
+                'alert_email': {'subscription_arn': f'{TOPIC}:{key}',
+                                'pending_confirmation': False},
                 'github_actions_role': {'arn': f'arn:aws:iam::{ACCOUNT}:role/{ROLE}',
                                         'role_id': 'AROA' + 'A' * 17,
                                         'inline_policy_name': 'ChangeBridgeStage33Backend'},
@@ -88,3 +89,28 @@ def test_partial_inventory_never_proves_omitted_absence():
     assert len(plan['steps']) == 1
     limitation = 'partial inventories do not establish absence of omitted resources'
     assert limitation in plan['limitations']
+
+
+def test_returned_pending_arn_never_becomes_confirmed_unsubscribe():
+    source = inventory()
+    source['resources']['alert_email']['pending_confirmation'] = True
+    with pytest.raises(CleanupPlanError, match='owned topic disposal'):
+        cleanup_plan(source)
+    source['resources']['alerts'] = {'arn': TOPIC}
+    plan = cleanup_plan(source)
+    assert all(step['operation'] != 'unsubscribe' for step in plan['steps'])
+    assert any(step['operation'] == 'delete-topic' for step in plan['steps'])
+    assert plan['execution_enabled'] is False
+    assert 'pending subscription disposal does not satisfy confirmed alert admission' in (
+        plan['limitations'])
+
+
+def test_arn_without_explicit_boolean_confirmation_state_is_unknown():
+    for state in (None, 0, 'false'):
+        source = inventory()
+        if state is None:
+            del source['resources']['alert_email']['pending_confirmation']
+        else:
+            source['resources']['alert_email']['pending_confirmation'] = state
+        with pytest.raises(CleanupPlanError, match='confirmation state'):
+            cleanup_plan(source)

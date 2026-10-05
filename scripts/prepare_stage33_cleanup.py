@@ -82,20 +82,28 @@ def cleanup_plan(inventory: dict[str, Any]) -> dict[str, Any]:
     subscription = resources.get("alert_email")
     if subscription is not None:
         if (
-            set(subscription) != {"subscription_arn"}
+            set(subscription) != {"subscription_arn", "pending_confirmation"}
+            or type(subscription["pending_confirmation"]) is not bool
             or not re.fullmatch(re.escape(TOPIC) + ":" + UUID,
                                 str(subscription["subscription_arn"]))
         ):
-            raise CleanupPlanError("unknown or pending subscription identity")
-        add("alert_email", "sns", "unsubscribe", {
-            "SubscriptionArn": subscription["subscription_arn"],
-        }, subscription, ["actual exact topic/owner/endpoint binding", "preserved alert proof"])
+            raise CleanupPlanError("unknown subscription identity or confirmation state")
+        if subscription["pending_confirmation"]:
+            if resources.get("alerts") != {"arn": TOPIC}:
+                raise CleanupPlanError("pending subscription requires exact owned topic disposal")
+        else:
+            add("alert_email", "sns", "unsubscribe", {
+                "SubscriptionArn": subscription["subscription_arn"],
+            }, subscription, ["fresh PendingConfirmation=false attribute readback",
+                              "actual exact topic/owner/endpoint binding",
+                              "preserved subscription status and alert evidence"])
     topic = resources.get("alerts")
     if topic is not None:
         if topic != {"arn": TOPIC}:
             raise CleanupPlanError("unknown topic identity")
         add("alerts", "sns", "delete-topic", {"TopicArn": TOPIC}, topic,
-            ["exact ownership/tags", "subscriptions inventoried and removed"])
+            ["exact ownership/tags", "complete subscription inventory and endpoint/owner binding",
+             "confirmed subscriptions removed; pending subscriptions disposed by topic deletion"])
     table = resources.get("state_locks")
     if table is not None:
         if (
@@ -186,7 +194,8 @@ def cleanup_plan(inventory: dict[str, Any]) -> dict[str, Any]:
             "S3 creation-date metadata is not an immutable bucket identifier",
             "partial inventories do not establish absence of omitted resources",
             "planned guards are not implemented execution or observations",
-            "subscription PendingConfirmation cannot be treated as a confirmed ARN",
+            "a returned subscription ARN does not prove confirmation",
+            "pending subscription disposal does not satisfy confirmed alert admission",
             "KMS scheduled deletion is not physical deletion",
         ],
     }

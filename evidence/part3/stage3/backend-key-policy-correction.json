@@ -1,0 +1,26 @@
+{
+  "label": "PROPOSED_BACKEND_KEY_PERMISSION_CORRECTION_NOT_AWS_PROOF",
+  "original_checkpoint": "64b76b264e65a9119493ca68787a0302e480c81d",
+  "original_template_sha256": "5d1d147ef63bcd146f0b7243ce255491c7e6d5617cbc26f2ee4c8af6c1fdde9f",
+  "corrected_template_sha256": "40b5445a5fab15b9052423e4f757a609ec8a4e74e09cd5358bb9c8e940b7720c",
+  "finding": "Lock table is encrypted with the customer key; the previous backend role allows KMS only via S3 and has no caller decryption path via DynamoDB. This is a documented design mismatch, not an observed AWS denial.",
+  "correction": {
+    "action": "kms:Decrypt",
+    "key": "exact independently verified existing Stage 3 KMS key ARN, still unresolved",
+    "via_service": "dynamodb.ap-southeast-2.amazonaws.com",
+    "encryption_context": "exact Stage 3 lock table and bound subscriber account",
+    "no_new_resource": true,
+    "no_direct_key_access": true,
+    "no_grant_or_key_administration": true,
+    "existing_s3_statement_unchanged": true
+  },
+  "authority": "repository proposal/validator preparation within standing ChangeBridge delegation; no AWS attachment or role use is authorized by this record",
+  "aws_calls": 0,
+  "aws_writes": 0,
+  "actual_backend_and_cold_caller_decryption_probe": "PENDING",
+  "criteria_promotion": "NONE",
+  "sources": [
+    "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/encryption.usagenotes.html",
+    "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html"
+  ]
+}

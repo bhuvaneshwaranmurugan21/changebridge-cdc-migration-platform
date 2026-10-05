@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "policy": "NO_DELETION_WITHOUT_SEPARATE_AUTHORIZATION",
-  "deadline_rule": "all temporary Stage 3 resources must have a disposition before 48 hours elapse",
+  "policy": "NO_DELETION_WITHOUT_EXACT_EXECUTION_INVENTORY_AND_EXPORT_AUTHORITY",
+  "deadline_rule": "all eight operational Stage 3 resources must be absent before first bootstrap creation plus 48 hours; sole residual is exact KMS key PendingDeletion with seven-day waiting period",
   "order": [
     "disable future workflow assumption",
     "capture final inventory and configuration receipts",
@@ -19,6 +19,9 @@
     "unexported state",
     "unresolved resource inventory",
     "missing evidence receipt",
-    "deletion not separately authorized"
-  ]
+    "missing exact execution/resource/version/export cleanup binding",
+    "independent deadline enforcement not qualified"
+  ],
+  "standing_delegation": "bounded ChangeBridge execution delegated; destructive cleanup still requires exact execution, resource/version inventory and independently verified evidence-export binding",
+  "enforcement_status": "BLOCKED_NO_INDEPENDENT_EXECUTOR_WITHIN_EIGHT_RESOURCE_ALLOWLIST"
 }

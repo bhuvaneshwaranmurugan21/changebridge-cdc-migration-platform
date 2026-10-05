@@ -125,6 +125,15 @@ def validate_proposed_policies() -> None:
             },
         ),
     }
+    expected_statements["ExactLockTableKeyDecryptViaRegionalDynamoDBOnly"] = (
+        {"kms:Decrypt"}, placeholder,
+        {"StringEquals": {
+            "kms:CallerAccount": "857229544428",
+            "kms:ViaService": "dynamodb.ap-southeast-2.amazonaws.com",
+            "kms:EncryptionContext:aws:dynamodb:tableName": "changebridge-p3s3-tf-locks",
+            "kms:EncryptionContext:aws:dynamodb:subscriberId": "857229544428",
+        }},
+    )
     policy = permissions["policy"]
     statements = policy["Statement"]
     if (
@@ -394,6 +403,10 @@ def validate() -> dict[str, Any]:
         "tests/test_stage33_bootstrap_qualification.py",
         "scripts/prepare_stage33_cleanup.py",
         "tests/test_stage33_cleanup_plan.py",
+        "scripts/stage33_mutation_journal.py",
+        "tests/test_stage33_mutation_journal.py",
+        "scripts/verify_stage33_role_controls.py",
+        "tests/test_stage33_role_controls.py",
         ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",
         "PART3_STAGE3_STATUS.md",

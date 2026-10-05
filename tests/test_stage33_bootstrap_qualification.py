@@ -146,3 +146,51 @@ def test_command_uses_exact_tls_endpoint_and_private_stdin():
 def test_malformed_role_cannot_be_accepted():
     with pytest.raises(QualificationError, match="drifted"):
         validate_old_role({"Role": "invalid"}, diagnostic()["role"])
+
+
+@pytest.mark.parametrize('field', ['PolicyNames', 'AttachedPolicies'])
+@pytest.mark.parametrize('kind', ['truncated', 'missing', 'marker', 'cli_token', 'nonempty'])
+def test_partial_empty_inventory_cannot_qualify(field, kind):
+    from scripts.qualify_stage33_bootstrap import complete_empty_inventory
+
+    response = {field: [], 'IsTruncated': False}
+    if kind == 'truncated':
+        response['IsTruncated'] = True
+    elif kind == 'missing':
+        del response['IsTruncated']
+    elif kind == 'marker':
+        response['Marker'] = 'more'
+    elif kind == 'cli_token':
+        response['NextToken'] = 'more'
+    else:
+        response[field] = ['unexpected']
+    with pytest.raises(QualificationError, match='incomplete or drifted'):
+        complete_empty_inventory(response, field)
+
+
+def test_explicit_complete_single_page_and_exact_candidate_policy_read():
+    from scripts.qualify_stage33_bootstrap import command_for, complete_empty_inventory
+
+    complete_empty_inventory({'PolicyNames': [], 'IsTruncated': False}, 'PolicyNames')
+    assert '--no-paginate' in command_for('/usr/bin/aws', 'iam', 'list-role-policies',
+                                         {'RoleName': ROLE})
+    assert allowed_request('iam', 'get-role-policy',
+                           {'RoleName': ROLE, 'PolicyName': 'ChangeBridgeStage33Backend'})
+    assert not allowed_request('iam', 'get-role-policy',
+                               {'RoleName': ROLE, 'PolicyName': 'foreign'})
+
+
+@pytest.mark.parametrize('raw', [b'{"RoleId":"one","RoleId":"two"}', b'{"n":NaN}',
+                                b'{"n":Infinity}', b'[]'])
+def test_ambiguous_or_non_json_read_payload_rejected(raw):
+    from scripts.qualify_stage33_bootstrap import decode_response
+
+    with pytest.raises(QualificationError):
+        decode_response(raw)
+
+
+def test_response_decoder_preserves_unambiguous_json():
+    from scripts.qualify_stage33_bootstrap import decode_response
+
+    assert decode_response(b'{"PolicyNames":[],"IsTruncated":false}') == {
+        'PolicyNames': [], 'IsTruncated': False}

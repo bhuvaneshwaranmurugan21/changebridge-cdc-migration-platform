@@ -125,3 +125,24 @@ def test_source_drift_during_compilation_stops(tmp_path, monkeypatch):
     monkeypatch.setattr(bootstrap, "validate_proposed_policies", drift_after_validation)
     with pytest.raises(ValueError, match="source drift"):
         bootstrap.compile_package()
+
+
+def test_backend_decryption_is_bound_to_each_required_service_and_exact_table():
+    package = bootstrap.compile_package()
+    step = next(s for s in package['steps'] if s['operation'] == 'put-role-policy')
+    policy = json.loads(step['request']['PolicyDocument'])
+    statements = {s['Sid']: s for s in policy['Statement']}
+    table = statements['ExactLockTableKeyDecryptViaRegionalDynamoDBOnly']
+    assert table['Action'] == 'kms:Decrypt'
+    assert table['Resource'] == bootstrap.KEY
+    assert table['Condition'] == {'StringEquals': {
+        'kms:CallerAccount': bootstrap.ACCOUNT,
+        'kms:ViaService': f'dynamodb.{bootstrap.REGION}.amazonaws.com',
+        'kms:EncryptionContext:aws:dynamodb:tableName': bootstrap.LOCKS,
+        'kms:EncryptionContext:aws:dynamodb:subscriberId': bootstrap.ACCOUNT,
+    }}
+    s3 = statements['ExactVerifiedKeyViaRegionalS3Only']
+    assert s3['Resource'] == bootstrap.KEY
+    assert s3['Condition']['StringEquals']['kms:ViaService'] == (
+        f's3.{bootstrap.REGION}.amazonaws.com')
+    assert all(s['Resource'] != '*' for s in policy['Statement'])

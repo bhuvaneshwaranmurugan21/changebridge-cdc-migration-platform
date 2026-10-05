@@ -52,6 +52,8 @@ def allowed_request(service: str, operation: str, request: dict[str, Any]) -> bo
         "get-role", "list-role-policies", "list-attached-role-policies"
     }:
         return request in [{"RoleName": OLD_ROLE}, {"RoleName": ROLE}]
+    if pair == ("iam", "get-role-policy"):
+        return request == {"RoleName": ROLE, "PolicyName": "ChangeBridgeStage33Backend"}
     if pair == ("iam", "get-open-id-connect-provider"):
         return request == {"OpenIDConnectProviderArn": PROVIDER}
     if pair == ("s3api", "head-bucket"):
@@ -72,12 +74,40 @@ def command_for(
 ) -> list[str]:
     if not allowed_request(service, operation, request):
         raise QualificationError("read outside exact ChangeBridge qualification scope")
-    return [
+    command = [
         executable, service, operation, "--cli-input-json", "file:///dev/stdin",
         "--region", REGION, "--endpoint-url", ENDPOINTS[service],
         "--output", "json", "--no-cli-pager", "--no-cli-auto-prompt",
         "--cli-connect-timeout", "10", "--cli-read-timeout", "30",
     ]
+    if service == "iam" and operation in {"list-role-policies", "list-attached-role-policies"}:
+        command.append("--no-paginate")
+    return command
+
+
+def complete_empty_inventory(response: dict[str, Any] | None, field: str) -> None:
+    if (response is None or response.get(field) != []
+            or response.get("IsTruncated") is not False
+            or "Marker" in response or "NextToken" in response):
+        raise QualificationError("existing role policy inventory is incomplete or drifted")
+
+
+def decode_response(raw: bytes) -> dict[str, Any]:
+    def unique(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        result: dict[str, Any] = {}
+        for key, value in pairs:
+            if key in result:
+                raise QualificationError("duplicate JSON response key")
+            result[key] = value
+        return result
+
+    def invalid_constant(value: str) -> Any:
+        raise QualificationError("non-JSON numeric constant: " + value)
+
+    payload = json.loads(raw, object_pairs_hook=unique, parse_constant=invalid_constant)
+    if not isinstance(payload, dict):
+        raise QualificationError("AWS read did not return a JSON object")
+    return payload
 
 
 class AwsReader:
@@ -121,10 +151,7 @@ class AwsReader:
                 self.journal.observe_absence(identifier, code)
                 return None
             raise QualificationError("AWS read failed; denial/unknown error is not absence")
-        payload = json.loads(result.stdout or b"{}")
-        if not isinstance(payload, dict):
-            raise QualificationError("AWS read did not return a JSON object")
-        return payload
+        return decode_response(result.stdout or b"{}")
 
 
 def validate_identity(payload: dict[str, Any] | None) -> None:
@@ -207,8 +234,7 @@ def qualify(journal: BootstrapJournal) -> dict[str, Any]:
     for operation, field in (("list-role-policies", "PolicyNames"),
                              ("list-attached-role-policies", "AttachedPolicies")):
         response = reader.read("iam", operation, {"RoleName": OLD_ROLE})
-        if response is None or response.get(field) != []:
-            raise QualificationError("existing role policy inventory drifted")
+        complete_empty_inventory(response, field)
     collisions = [
         ("iam", "get-role", {"RoleName": ROLE}),
         *( ("s3api", "head-bucket", {"Bucket": bucket, "ExpectedBucketOwner": ACCOUNT})
@@ -226,8 +252,7 @@ def qualify(journal: BootstrapJournal) -> dict[str, Any]:
     for operation, field in (("list-role-policies", "PolicyNames"),
                              ("list-attached-role-policies", "AttachedPolicies")):
         response = reader.read("iam", operation, {"RoleName": OLD_ROLE})
-        if response is None or response.get(field) != []:
-            raise QualificationError("existing role policy inventory changed during qualification")
+        complete_empty_inventory(response, field)
     validate_provider(reader.read("iam", "get-open-id-connect-provider", {
         "OpenIDConnectProviderArn": PROVIDER,
     }), accepted["oidc_provider"])
