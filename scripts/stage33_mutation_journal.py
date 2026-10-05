@@ -5,6 +5,7 @@ import fcntl
 import hashlib
 import json
 import os
+import re
 import sqlite3
 import stat
 from contextlib import suppress
@@ -28,7 +29,8 @@ class MutationJournal:
     Observations preserve raw bytes; they certify neither origin nor configuration.
     """
 
-    def __init__(self, directory: Path, package: dict[str, Any], execution_id: str) -> None:
+    def __init__(self, directory: Path, package: dict[str, Any], execution_id: str,
+                 creation_tags: dict[str, str] | None = None) -> None:
         alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789-'
         if not execution_id or any(c not in alphabet for c in execution_id):
             raise MutationJournalError('invalid execution identity')
@@ -54,6 +56,28 @@ class MutationJournal:
         self.bound_package_sha256 = frozen['package_sha256']
         self.bound_execution_id = execution_id
         self.execution_id = execution_id
+        self.creation_tags = (json.loads(canonical(creation_tags))
+                              if creation_tags is not None else None)
+        self.creation_tags_sha256 = digest(self.creation_tags)
+        if self.creation_tags is not None:
+            names = {'Project', 'Owner', 'Stage', 'CostCenter', 'ExpiresAt', 'ExecutionId'}
+            tags = self.creation_tags
+            if (set(tags) != names or tags['Project'] != 'ChangeBridge'
+                    or tags['Owner'] != 'bhuvaneshwaranmurugan21' or tags['Stage'] != 'part3-stage3'
+                    or tags['CostCenter'] != 'changebridge-p3s3'
+                    or tags['ExecutionId'] != execution_id
+                    or not all(isinstance(v, str) and v and '__' not in v for v in tags.values())
+                    or not re.fullmatch(r'[a-z0-9-]{8,64}', tags['ExecutionId'])):
+                raise MutationJournalError('exact resolved creation tags required')
+            try:
+                expires = datetime.fromisoformat(tags['ExpiresAt'].replace('Z', '+00:00'))
+            except ValueError as error:
+                raise MutationJournalError('UTC creation expiry required') from error
+            if expires.tzinfo is None or expires.utcoffset() != UTC.utcoffset(expires):
+                raise MutationJournalError('UTC creation expiry required')
+        opening = {'package': frozen, 'execution_id': execution_id}
+        if self.creation_tags is not None:
+            opening['creation_tags'] = self.creation_tags
         with suppress(FileExistsError):
             directory.mkdir(mode=0o700)
         info = directory.lstat()
@@ -122,8 +146,8 @@ class MutationJournal:
             if not self.rows and not created:
                 raise MutationJournalError('missing durable opening; preserve incomplete database')
             if not self.rows:
-                self._append('OPEN', {'package': frozen, 'execution_id': execution_id})
-            elif self.rows[0]['payload'] != {'package': frozen, 'execution_id': execution_id}:
+                self._append('OPEN', opening)
+            elif self.rows[0]['payload'] != opening:
                 raise MutationJournalError('immutable package or execution identity mismatch')
             self.pending = self._pending()
         except BaseException:
@@ -154,7 +178,8 @@ class MutationJournal:
         finally:
             os.close(fd)
         if (digest({k: v for k, v in self.package.items() if k != 'package_sha256'})
-                != self.bound_package_sha256 or self.execution_id != self.bound_execution_id):
+                != self.bound_package_sha256 or self.execution_id != self.bound_execution_id
+                or digest(self.creation_tags) != self.creation_tags_sha256):
             raise MutationJournalError('in-memory package or execution binding changed')
         for suffix in ('-journal', '-wal', '-shm'):
             try:
@@ -216,8 +241,9 @@ class MutationJournal:
                 step = next(
                     (s for s in self.package['steps'] if s['id'] == payload['step_id']), None
                 )
-                if step is None or payload != {'step_id': step['id'], 'request': step['request'],
-                                              'request_sha256': digest(step['request'])}:
+                request = self._request(step) if step is not None else None
+                if step is None or payload != {'step_id': step['id'], 'request': request,
+                                              'request_sha256': digest(request)}:
                     raise MutationJournalError('intent outside frozen package')
                 pending = payload
             elif row['kind'] in {'ACKNOWLEDGEMENT', 'OBSERVATION'}:
@@ -263,6 +289,16 @@ class MutationJournal:
             raise
         self.rows.append(json.loads(canonical(row)))
 
+    def _request(self, step: dict[str, Any]) -> dict[str, Any]:
+        request = json.loads(canonical(step['request']))
+        if self.creation_tags is not None and step['id'] == 'bootstrap-01':
+            if step['service'] != 'kms' or step['operation'] != 'create-key':
+                raise MutationJournalError('first-key creation authority drift')
+            request['Tags'] = [{'TagKey': tag['TagKey'],
+                                'TagValue': self.creation_tags[tag['TagKey']]}
+                               for tag in request['Tags']]
+        return dict(request)
+
     def intent(self, step_id: str) -> None:
         """Record exact unresolved request durably; this method sends no AWS operation."""
         if self.pending is not None:
@@ -272,8 +308,9 @@ class MutationJournal:
             raise MutationJournalError('step outside immutable package')
         if step['depends_on']:
             raise MutationJournalError('prerequisite readbacks are not verified; recording blocked')
-        self._append('INTENT', {'step_id': step_id, 'request': step['request'],
-                                'request_sha256': digest(step['request'])})
+        request = self._request(step)
+        self._append('INTENT', {'step_id': step_id, 'request': request,
+                                'request_sha256': digest(request)})
         self.pending = self._pending()
 
     @staticmethod

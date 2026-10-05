@@ -146,3 +146,14 @@ def test_backend_decryption_is_bound_to_each_required_service_and_exact_table():
     assert s3['Condition']['StringEquals']['kms:ViaService'] == (
         f's3.{bootstrap.REGION}.amazonaws.com')
     assert all(s['Resource'] != '*' for s in policy['Statement'])
+
+
+def test_kms_creation_uses_kms_specific_tag_shape():
+    package = bootstrap.compile_package()
+    key = package['steps'][0]['request']
+    assert all(set(t) == {'TagKey', 'TagValue'} for t in key['Tags'])
+    assert {t['TagKey'] for t in key['Tags']} == {
+        'Project', 'Owner', 'Stage', 'CostCenter', 'ExpiresAt', 'ExecutionId'}
+    others = [s for s in package['steps'] if s['operation'] in {
+        'create-table', 'create-topic', 'create-role'}]
+    assert all(set(t) == {'Key', 'Value'} for s in others for t in s['request']['Tags'])

@@ -132,3 +132,20 @@ Final local continuation validation: 540 tests pass, two existing PostgreSQL-ser
 returned pending subscription ARNs from confirmed subscriptions and reject missing or
 non-Boolean confirmation state. All cleanup output remains non-executable. Admission
 remains 32 PASS / 20 PENDING; no AWS operation or managed proof was performed.
+
+## Resource-control continuation — 2026-10-05
+
+Resumed from 6a655b550045a8e9483c4f78de13e4aa96998712 without restarting.
+Exact KMS, approved-bucket and lock-table control comparators now reject physical
+identity, policy, encryption, ownership, state and complete-inventory mismatches.
+The KMS attempt inspector re-reads the private durable chain and requires an exact
+concrete creation-tag binding and unambiguous saved acknowledgement. Pending mutation
+and use/retry prohibitions remain in effect. KMS creation tags now use the correct
+TagKey/TagValue wire shape; other services retain their proper Key/Value shapes.
+
+Final local validation: 631 tests pass, two existing PostgreSQL-service skips,
+86.84% coverage; 90 resource-control/attempt checks pass. Typing passes for 46 source
+files. No dependency/provider declarations changed, no AWS call/mutation occurred,
+and accepted predecessor evidence remains unchanged. Stage 3 remains 32 PASS / 20
+PENDING. Full execution coordination, authoritative unknown-outcome recovery,
+independent cleanup enforcement/export and actual AWS admission remain unfinished.

@@ -34,6 +34,10 @@ SOURCES = (
     "scripts/stage33_bootstrap_journal.py",
     "scripts/stage33_mutation_journal.py",
     "scripts/verify_stage33_role_controls.py",
+    "scripts/verify_stage33_key_controls.py",
+    "scripts/verify_stage33_storage_controls.py",
+    "scripts/verify_stage33_lock_controls.py",
+    "scripts/reconcile_stage33_key_attempt.py",
     "scripts/prepare_stage33_cleanup.py",
     "scripts/qualify_stage33_bootstrap.py",
     "scripts/collect_stage33_access_diagnostic.sh",
@@ -103,7 +107,8 @@ def compile_package() -> dict[str, Any]:
     add("state-key", "kms", "create-key", {
         "Description": "ChangeBridge Part 3 Stage 3 state encryption",
         "KeyUsage": "ENCRYPT_DECRYPT", "KeySpec": "SYMMETRIC_DEFAULT",
-        "MultiRegion": False, "Policy": json.dumps(key_policy), "Tags": tags,
+        "MultiRegion": False, "Policy": json.dumps(key_policy),
+        "Tags": [{"TagKey": t["Key"], "TagValue": t["Value"]} for t in tags],
     })
     add("state-key-alias", "kms", "create-alias", {
         "AliasName": "alias/changebridge-p3s3-state", "TargetKeyId": KEY,

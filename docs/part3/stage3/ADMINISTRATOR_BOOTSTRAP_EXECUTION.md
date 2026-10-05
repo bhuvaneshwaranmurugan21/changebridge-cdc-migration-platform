@@ -273,3 +273,63 @@ binding. Pending subscriptions produce no unsubscribe selector: their disposal r
 owned topic inventory, full subscription/endpoint observation and topic deletion. This preserves a
 partial-failure cleanup path without claiming a confirmed alert or adopting an unrelated topic.
 Reference: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html
+
+### Exact resource-control comparison continuation
+
+`verify_stage33_key_controls.py`, `verify_stage33_storage_controls.py`, and
+`verify_stage33_lock_controls.py` compare two complete readback sets against exact
+ChangeBridge identities and the frozen request authority. They make no AWS call.
+All returned use-authorization flags remain false and labels explicitly distinguish
+structural comparison from managed admission proof.
+
+The KMS checker requires the independently bound physical key UUID and creation
+timestamp, enabled customer-managed symmetric AWS-origin key material, the exact
+key policy, complete unpaginated ownership tags, and expiry within 48 hours of
+creation. It cannot resolve a lost CreateKey acknowledgement, find a candidate key,
+or authorize name/tag-based adoption. A missing creation receipt remains blocked.
+
+The storage checker covers only the two approved buckets. Every readback must
+carry its exact Bucket and ExpectedBucketOwner request binding. Region, versioning,
+public-access blocking, enforced bucket ownership, exact physical-key encryption,
+transport-denial policy and ownership tags must match. Integer substitutes for
+security Booleans are rejected. Caller-supplied request bindings are not authenticated
+API provenance; bucket creation ownership, name reuse protection, object version and
+checksum receipts, and actual backend cryptographic use still require real execution.
+
+The lock checker binds TableId, ARN and creation timestamp, ACTIVE state, exact
+LockID key schema, on-demand billing, exact KMS key, enabled PITR, complete ownership
+tags and disabled deletion protection. Replica, index, stream and restore drift is
+rejected. This does not prove lock acquisition, contention, release, AWS provenance
+or independent cleanup. All existing pending managed criteria remain pending.
+
+Primary API references:
+- https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html
+- https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyPolicy.html
+- https://docs.aws.amazon.com/kms/latest/APIReference/API_ListResourceTags.html
+- https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html
+- https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketOwnershipControls.html
+- https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html
+- https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html
+- https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html
+- https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContinuousBackups.html
+- https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTagsOfResource.html
+
+`reconcile_stage33_key_attempt.py` joins the saved private mutation journal to KMS
+control comparisons. It re-reads the durable chain, rejects in-memory substitution,
+requires a zero-return creation acknowledgement with unambiguous physical identity,
+and binds the key metadata to the exact execution tags and both readbacks. Its
+result is `KEY_ATTEMPT_STRUCTURALLY_BOUND_NOT_AUTHORITATIVELY_RECOVERED`. It writes
+only an OBSERVATION record with configuration_verified=false. Pending mutation,
+use and retry guards remain blocked. This is not the missing authoritative recovery
+controller and cannot discover a key after a lost acknowledgement.
+
+The first mutation intent can now freeze explicitly supplied creation tags in an
+immutable opening record; subsequent changes or different tags at reopen are
+rejected. KMS wire tags use TagKey/TagValue, while S3, DynamoDB, SNS and IAM keep
+their service-specific Key/Value forms. Placeholder-only intents cannot establish
+a creation binding. Older opening records retain their original format; inspection
+of historical packages requires their recorded source checkpoint, because changed
+source authority must not silently reinterpret an earlier request.
+
+CreateKey request-shape reference:
+https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html
