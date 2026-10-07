@@ -3,8 +3,6 @@
 [![CI](https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/workflows/ci.yml)
 [![Infrastructure](https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/workflows/terraform.yml/badge.svg)](https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/workflows/terraform.yml)
 <!-- presentation-badges:start -->
-[![PostgreSQL Boundary](https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/workflows/part2-stage1-postgres.yml/badge.svg?branch=main)](https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/workflows/part2-stage1-postgres.yml)
-[![AWS OIDC Identity](https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/workflows/aws-oidc-identity.yml/badge.svg?branch=main)](https://github.com/bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform/actions/workflows/aws-oidc-identity.yml)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB)](../pyproject.toml)
 [![PySpark](https://img.shields.io/badge/Compute-PySpark-E25A1C)](../jobs/)
 [![Apache Iceberg](https://img.shields.io/badge/Tables-Apache%20Iceberg-1565C0)](../contracts/stage3-runtime-lock.json)
