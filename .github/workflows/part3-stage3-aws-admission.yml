@@ -38,6 +38,8 @@ jobs:
       - run: mypy scripts/export_stage33_evidence.py
       - run: mypy scripts/stage33_execution_bindings.py scripts/stage33_key_coordinator.py
       - run: pytest --no-cov tests/test_stage33_execution_bindings.py tests/test_stage33_key_coordinator.py
+      - run: mypy scripts/stage33_lifecycle_authority.py scripts/stage33_lifecycle_store.py
+      - run: pytest --no-cov tests/test_stage33_lifecycle_authority.py tests/test_stage33_lifecycle_store.py
       - run: pytest --no-cov tests/test_stage33_evidence_export.py
       - run: bash -n scripts/collect_stage33_access_diagnostic.sh
       - run: pytest --no-cov tests/test_part3_stage3_validator.py tests/test_stage33_oidc_qualification.py tests/test_stage33_role_observer_installation.py tests/test_stage33_access_diagnostic.py tests/test_stage33_access_evidence.py tests/test_stage33_bootstrap_package.py tests/test_stage33_bootstrap_journal.py tests/test_stage33_bootstrap_qualification.py tests/test_stage33_cleanup_plan.py tests/test_stage33_mutation_journal.py tests/test_stage33_role_controls.py tests/test_stage33_key_controls.py tests/test_stage33_storage_controls.py tests/test_stage33_lock_controls.py tests/test_stage33_key_attempt.py

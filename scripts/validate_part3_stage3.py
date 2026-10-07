@@ -7,10 +7,13 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any, cast
 
 ROOT = Path(__file__).resolve().parents[1]
+if __name__ == "__main__":
+    sys.path.insert(0, str(ROOT))
 ENTRY = "084407a972d2d3f937e8ac670733f198dd4b0179"
 ENTRY_TREE = "3a5ceefaf9dcfcbe97da5a593f76eab0cd5fe257"
 PASSED_IDS = {f"ST33-AC-{number:02d}" for number in range(1, 31)} | {"ST33-AC-33", "ST33-AC-34"}
@@ -207,10 +210,17 @@ def validate_access_remediation() -> None:
 
 
 def validate() -> dict[str, Any]:
+    from scripts.stage33_lifecycle_authority import approval
+
     if git("rev-parse", f"{ENTRY}^{{tree}}") != ENTRY_TREE:
         fail("ST33_ENTRY", "entry tree mismatch")
     if git("merge-base", ENTRY, "HEAD") != ENTRY:
         fail("ST33_ENTRY", "branch does not descend from exact Stage 2 entry")
+
+    try:
+        approval(ROOT)
+    except (ValueError, KeyError, TypeError, OSError) as error:
+        fail("ST33_LIFECYCLE_APPROVAL", str(error))
 
     contract = load("requirements/part3-stage3-contract.json")
     if contract["entry_commit"] != ENTRY or contract["entry_tree"] != ENTRY_TREE:
@@ -421,6 +431,10 @@ def validate() -> dict[str, Any]:
         "tests/test_stage33_execution_bindings.py",
         "scripts/stage33_key_coordinator.py",
         "tests/test_stage33_key_coordinator.py",
+        "scripts/stage33_lifecycle_authority.py",
+        "tests/test_stage33_lifecycle_authority.py",
+        "scripts/stage33_lifecycle_store.py",
+        "tests/test_stage33_lifecycle_store.py",
         ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",
         "PART3_STAGE3_STATUS.md",

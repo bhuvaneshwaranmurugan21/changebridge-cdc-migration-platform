@@ -112,9 +112,18 @@ def cleanup_plan(inventory: dict[str, Any]) -> dict[str, Any]:
             or not re.fullmatch(UUID, str(table["table_id"]))
         ):
             raise CleanupPlanError("unknown lock table identity")
+        add("state_locks", "dynamodb", "update-continuous-backups", {
+            "TableName": LOCKS, "PointInTimeRecoverySpecification": {
+                "PointInTimeRecoveryEnabled": False,
+            },
+        }, table, ["exact TableId and ownership; backend revoked and no active locks",
+                  "PITR admission already proven and original evidence preserved",
+                  "final state exported and independently verified before retirement",
+                  "authoritative PITR DISABLED readback before DeleteTable"])
         add("state_locks", "dynamodb", "delete-table", {"TableName": LOCKS}, table,
             ["exact TableId/ownership", "consistent complete scan proves no active locks",
-             "final state exported and independently verified"])
+             "final state exported and independently verified",
+             "fresh PITR DISABLED state; no unapproved system-backup residual"])
     for logical, bucket, prefix in (
         ("state_bucket", STATE, "changebridge/part3/stage3/terraform.tfstate"),
         ("artifact_bucket", ARTIFACT, "changebridge/part3/stage3/immutable/"),

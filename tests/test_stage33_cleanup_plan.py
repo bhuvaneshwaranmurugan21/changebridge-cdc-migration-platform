@@ -3,7 +3,7 @@ import copy
 
 import pytest
 
-from scripts.prepare_stage33_bootstrap import ACCOUNT, REGION, ROLE, STATE, TOPIC
+from scripts.prepare_stage33_bootstrap import ACCOUNT, LOCKS, REGION, ROLE, STATE, TOPIC
 from scripts.prepare_stage33_cleanup import CleanupPlanError, cleanup_plan
 
 
@@ -114,3 +114,25 @@ def test_arn_without_explicit_boolean_confirmation_state_is_unknown():
             source['resources']['alert_email']['pending_confirmation'] = state
         with pytest.raises(CleanupPlanError, match='confirmation state'):
             cleanup_plan(source)
+
+
+def test_pitr_retirement_preserves_admission_then_precedes_table_deletion():
+    source = inventory()
+    source['resources']['state_locks'] = {
+        'arn': f'arn:aws:dynamodb:{REGION}:{ACCOUNT}:table/{LOCKS}',
+        'table_id': '12345678-1234-1234-1234-123456789abc',
+    }
+    plan = cleanup_plan(source)
+    table_steps = [s for s in plan['steps'] if s['resource'] == 'state_locks']
+    assert [s['operation'] for s in table_steps] == [
+        'update-continuous-backups', 'delete-table']
+    assert table_steps[0]['request']['PointInTimeRecoverySpecification'] == {
+        'PointInTimeRecoveryEnabled': False}
+    assert table_steps[1]['depends_on'] == [table_steps[0]['id']]
+    assert 'PITR admission already proven and original evidence preserved' in (
+        table_steps[0]['mandatory_actual_guards'])
+    assert 'final state exported and independently verified before retirement' in (
+        table_steps[0]['mandatory_actual_guards'])
+    assert 'fresh PITR DISABLED state; no unapproved system-backup residual' in (
+        table_steps[1]['mandatory_actual_guards'])
+    assert plan['execution_enabled'] is False

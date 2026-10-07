@@ -1,5 +1,20 @@
 # Independent lifecycle scope decision
 
+## Approval overlay — 2026-10-07
+
+The user approved preparation of the seven objects below and their maximum ten-day
+controller/private-evidence retention exception. The frozen approval is recorded in
+`deployment/stage3/lifecycle-authority.json`, bound to this proposal at commit
+`c99ac491e5764bac81b413e494c83bc5e616cca6`. The proposal JSON and earlier evidence remain
+unchanged; their unapproved status describes the earlier checkpoint. The original eight
+objects retain the 48-hour operational deadline. The approval neither accepts the proposed
+USD 3 allowance nor authorizes resource creation before exact policies, cost and execution
+gates are verified. Stage 3 remains 32 PASS / 20 PENDING.
+
+`LIFECYCLE_IMPLEMENTATION.md` records implemented components, their actual validation and
+remaining work. No deployed function, actual scheduled execution, policy effectiveness or
+external retention has been proven. The previous narrative follows as the historical proposal.
+
 Status: proposed design correction, not an approved resource manifest, deployed controller,
 completed installer or AWS acceptance receipt. The original eight-resource allowlist, Stage 3
 contract and acceptance registry remain unchanged. Stage 3 stays 32 PASS / 20 PENDING.

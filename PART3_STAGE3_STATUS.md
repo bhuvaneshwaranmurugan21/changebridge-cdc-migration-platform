@@ -204,3 +204,33 @@ lifecycle coordination; an authenticated administrator execution channel is stil
 actual AWS qualification. Full mutation coordination, authoritative recovery, independent cleanup,
 external retention and live OIDC/backend/alert proofs remain unfinished. Do not merge draft PR #16
 or represent passing repository CI as live admission. See `coordination-design-resume.json`.
+
+## Approved lifecycle preparation — 2026-10-07
+
+Resumed from `c99ac491e5764bac81b413e494c83bc5e616cca6` without restarting. The user approved
+the seven named lifecycle/evidence resources and the maximum ten-day retention exception.
+`lifecycle-authority.json` freezes that approval against the original proposal digest. It does
+not accept the proposed USD 3 allowance or authorize creation before policies, cost and execution
+gates pass. The original bootstrap manifest, proposal, acceptance registry, teardown plan and
+48-hour operational deadline remain byte-identical.
+
+New components construct scoped lifecycle/Scheduler policies, conditional evidence writes and
+bounded schedule requests. A durable local reference and an unqualified S3 adapter implement
+immutable journal records plus conditional head commits. Real files/processes exercise competing
+writers, identical concurrent intents, SIGKILL, process exit between event/head, corrupted records,
+stale revisions and lost local acknowledgements. None permits target retry or claims managed success.
+PITR retirement is now explicitly ordered after preserved admission/export/quiescence proof and
+before table deletion; no PITR admission requirement is weakened. Source review corrected KMS alias
+deletion to require both the exact alias and its exact associated physical key.
+
+Validation: 771 tests pass, two existing PostgreSQL-service skips, 86.84% coverage; 65 focused
+checks pass; all 13 authority/evidence validators, Ruff and typing for 56 checked source files pass.
+The direct-script validator import path was corrected so both CLI and imported validation execute
+the approval check. No dependency/provider declaration, runtime/application artifact or accepted
+predecessor evidence changed. No AWS API call, resource creation or merge occurred.
+
+Stage 3 remains 32 PASS / 20 PENDING. The controller handler, full mutation coordination,
+operation-specific unknown-outcome recovery, runtime qualification, independently retained final
+exports, cost acceptance and authenticated AWS execution/actual admission remain unfinished.
+The scope approval is complete; do not request it again. Keep draft PR #16 unmerged until all original
+criteria pass. See `LIFECYCLE_IMPLEMENTATION.md` and `lifecycle-preparation-resume.json`.

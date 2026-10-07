@@ -26,6 +26,10 @@
       "sha256": "77190f3e9e938fbee5b3c70f067859b650ce2feb826a1432e730a6a479d89b1d"
     },
     {
+      "path": "deployment/stage3/lifecycle-authority.json",
+      "sha256": "7de8d45a1a11418cb3005958d5c08bb35f863cefb30ca449279f71b393585724"
+    },
+    {
       "path": "deployment/stage3/lifecycle-scope-correction.proposed.json",
       "sha256": "435ccaae8997e1acde98ea8c6bf0f2008d1296c3a7cd08e0a134b2a226fd55c7"
     },
@@ -74,8 +78,12 @@
       "sha256": "824eac05cafca3470d8ee77f55d6ada8357cb2bff040ce4b6f9ede750087d5ba"
     },
     {
+      "path": "docs/part3/stage3/LIFECYCLE_IMPLEMENTATION.md",
+      "sha256": "76ddfb7242fc85e7fafe5ee7be9c458e5347acfc3988066bd8cfd30931b9ff99"
+    },
+    {
       "path": "docs/part3/stage3/LIFECYCLE_SCOPE_DECISION.md",
-      "sha256": "5e37ccc7ccbb65138880e0d8e325b7de5021b63e1e843a0716931c7aaff64066"
+      "sha256": "0900304e4ec1a93f01f7c9664a58b2a19dc7b0d3573959afed9f8a11f0f87702"
     },
     {
       "path": "scripts/collect_stage33_readonly.sh",
@@ -87,7 +95,7 @@
     },
     {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "d6c6f3bdc02d1169057b7f84cc6d7b2c25dcd1cff4ad00ddce23a66ef939ecd0"
+      "sha256": "03ff9f398968cb202ab0ef7f0dd7b769a70c5383b0cf519d1d74459753678217"
     },
     {
       "path": "scripts/install_stage33_role_observer.sh",
@@ -95,7 +103,7 @@
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "71406abdb08dabbfaf6f3f94e6f64606e9fc77aeac464a4b17659222437f1c7c"
+      "sha256": "1394d27ed7475cf180f90218f9c46ee7fe92da4e02ec0ef91cf7a745b7024c80"
     },
     {
       "path": "scripts/validate_stage33_access_evidence.py",
@@ -123,7 +131,7 @@
     },
     {
       "path": "scripts/prepare_stage33_bootstrap.py",
-      "sha256": "5eb28ed85d2c7e598b81bd8c46fc1d5f80202cb64e4ad29031f009927627b05c"
+      "sha256": "109bab814e6b81dd70f3a55834f7f71b15c9fdf34bfd098b0560b0b4a74bf7b1"
     },
     {
       "path": "tests/test_stage33_bootstrap_package.py",
@@ -147,11 +155,11 @@
     },
     {
       "path": "scripts/prepare_stage33_cleanup.py",
-      "sha256": "2ce3bd16192e582236be36a795024e86edb8293eedcd2f5c8a05525fc1951cae"
+      "sha256": "50e626f466907c12af397bda8aa1364c076046647c498a22f76b67a40482f53d"
     },
     {
       "path": "tests/test_stage33_cleanup_plan.py",
-      "sha256": "fc1873bdb79c3015db41d269d08951ecf7d3fed5ccf9f834a16011f75e4345d0"
+      "sha256": "ee9baad7a67a1b36f9e692344aea6ed730b2e7f7178ce28cb4ace623ce06b3a0"
     },
     {
       "path": "scripts/stage33_mutation_journal.py",
@@ -226,16 +234,32 @@
       "sha256": "3aa5287fb06ac0b0bd333239de5b81ae6b032a6e06914daf08ca6407701849d1"
     },
     {
+      "path": "scripts/stage33_lifecycle_authority.py",
+      "sha256": "60925ecd8888d369f518ead846cc813a0d4114260e3dba96d8dd8334ac80a3cb"
+    },
+    {
+      "path": "tests/test_stage33_lifecycle_authority.py",
+      "sha256": "bb56ecdfd41e7c34c137277f1ce53125651d7c89825604e4412d10b8325b8385"
+    },
+    {
+      "path": "scripts/stage33_lifecycle_store.py",
+      "sha256": "7b09cc50768813332f29def2b01125e8627fd6fd27364ce38000e633300367c5"
+    },
+    {
+      "path": "tests/test_stage33_lifecycle_store.py",
+      "sha256": "9c7bd83ecb45f7eaeed48b10e4af676a7cb9e6415058e4b07fa0a03b448f1ec3"
+    },
+    {
       "path": ".github/workflows/aws-oidc-identity.yml",
       "sha256": "363010e466a3506ff3cee2ca83e2039bba535583321ecc905b31abf5a6603baf"
     },
     {
       "path": ".github/workflows/part3-stage3-aws-admission.yml",
-      "sha256": "be67ce94b42f07dc0949d1a19e35d962b3ed138825f3675692b2ac3eafdef2d8"
+      "sha256": "095f64856ac3c78bf079d2d4fc4b1600600057cbfd2b37c59d404c19d46362f6"
     },
     {
       "path": "PART3_STAGE3_STATUS.md",
-      "sha256": "4274e0545e00a3c8b5feac76e9e8ba209ad3e46f58d8193eaf3393db90ccce3f"
+      "sha256": "cbbb3026ffd0b264380db8105bb45477159881bf000b1a52ff267d43e7cf489d"
     },
     {
       "path": "evidence/part3/stage3/access-diagnostic-local-validation.json",
@@ -300,6 +324,10 @@
     {
       "path": "evidence/part3/stage3/immutable-subject-local-validation.json",
       "sha256": "f3738a6b1b8fc4f44877f0051bea336a9a1f4ed71ca0f1985e2dcb0abecdc65f"
+    },
+    {
+      "path": "evidence/part3/stage3/lifecycle-preparation-resume.json",
+      "sha256": "f3e8e10d9b63b36d21748d7416eb05cc2d0817dbba93b9351d079d3fb15b2d40"
     },
     {
       "path": "evidence/part3/stage3/local-validation.json",
