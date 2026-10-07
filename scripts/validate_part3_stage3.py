@@ -434,6 +434,7 @@ def validate() -> dict[str, Any]:
         "scripts/stage33_lifecycle_authority.py",
         "tests/test_stage33_lifecycle_authority.py",
         "scripts/stage33_lifecycle_store.py",
+        "scripts/qualify_stage33_sdk.py",
         "tests/test_stage33_lifecycle_store.py",
         ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",

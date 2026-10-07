@@ -43,3 +43,12 @@ jobs:
       - run: pytest --no-cov tests/test_stage33_evidence_export.py
       - run: bash -n scripts/collect_stage33_access_diagnostic.sh
       - run: pytest --no-cov tests/test_part3_stage3_validator.py tests/test_stage33_oidc_qualification.py tests/test_stage33_role_observer_installation.py tests/test_stage33_access_diagnostic.py tests/test_stage33_access_evidence.py tests/test_stage33_bootstrap_package.py tests/test_stage33_bootstrap_journal.py tests/test_stage33_bootstrap_qualification.py tests/test_stage33_cleanup_plan.py tests/test_stage33_mutation_journal.py tests/test_stage33_role_controls.py tests/test_stage33_key_controls.py tests/test_stage33_storage_controls.py tests/test_stage33_lock_controls.py tests/test_stage33_key_attempt.py
+      - name: Qualify actual SDK models without AWS credentials or API calls
+        run: |
+          python -m venv /tmp/changebridge-stage33-sdk
+          mkdir /tmp/changebridge-stage33-sdk-wheels
+          /tmp/changebridge-stage33-sdk/bin/python -m pip download --only-binary=:all: --no-deps --dest /tmp/changebridge-stage33-sdk-wheels boto3==1.43.108 botocore==1.43.108 jmespath==1.1.0 python-dateutil==2.9.0.post0 s3transfer==0.19.2 six==1.17.0 urllib3==2.8.0
+          python -m scripts.qualify_stage33_sdk --wheels /tmp/changebridge-stage33-sdk-wheels --verify-only
+          /tmp/changebridge-stage33-sdk/bin/python -m pip install --no-index --find-links /tmp/changebridge-stage33-sdk-wheels boto3==1.43.108 botocore==1.43.108
+          /tmp/changebridge-stage33-sdk/bin/python -m pip check
+          /tmp/changebridge-stage33-sdk/bin/python -m scripts.qualify_stage33_sdk --wheels /tmp/changebridge-stage33-sdk-wheels

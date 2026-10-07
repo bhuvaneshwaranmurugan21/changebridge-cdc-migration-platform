@@ -79,3 +79,24 @@ acceptance criteria pass. No AWS API call or resource creation occurred in this 
 - https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery_Howitworks.html
 
 These references support request and policy construction, not effective deployment or admission.
+
+## Offline SDK model qualification — 2026-10-07
+
+The repository already declares the AWS SDK extra (`boto3>=1.35`). Under the user's standing
+delegation of implementation/validation, a separate disposable environment now qualifies
+`boto3==1.43.108` and `botocore==1.43.108`, with only their five required transitive packages.
+All seven downloaded wheel hashes were compared to their primary PyPI release records.
+Dependency declarations are unchanged. `sdk-model-qualification.json` records exact artifacts,
+requirements and the actual SDK profile. It supersedes only the earlier absence of a local SDK
+probe; it does not revise the frozen approval receipt or earlier validation history.
+
+On Python 3.12.14, actual SDK parameter validation accepted current/versioned GetObject,
+conditional PutObject with IfNoneMatch and IfMatch, the bounded CreateSchedule request and
+PITR-retirement request. An unsupported request was rejected. Credential resolution was absent,
+metadata credential discovery disabled, configuration/credential files isolated, and regional
+clients constructed without any AWS API invocation. The actual S3 API-model fingerprint is
+`dc2dae37167575b343c9623a7aea7e46b11524402e3d78a536a6bb0cc717037e`.
+
+This establishes local model compatibility only. The managed Lambda source bundle, its actual
+runtime/model/role pins, effective policies, independent execution and real S3 observations must
+still be qualified. The controller handler and full mutation/recovery coordinator remain incomplete.

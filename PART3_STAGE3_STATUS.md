@@ -234,3 +234,17 @@ operation-specific unknown-outcome recovery, runtime qualification, independentl
 exports, cost acceptance and authenticated AWS execution/actual admission remain unfinished.
 The scope approval is complete; do not request it again. Keep draft PR #16 unmerged until all original
 criteria pass. See `LIFECYCLE_IMPLEMENTATION.md` and `lifecycle-preparation-resume.json`.
+
+## SDK model continuation — 2026-10-07
+
+Preparation commit `4998fd6e0208b29a0a33a8dcb3b4678ed3cc16c0`, tree
+`55411aae5772602bbe2fffddfaf1043cc921d269`, passed all three exact-head GitHub workflows:
+CI `37585978415`, Stage 3 `37585978418`, Stage 2 `37585978451`. The full CI independently
+reported 771 passed, two existing service skips and 86.84% coverage. PR #16 remains draft.
+
+A disposable installation of the existing declared AWS extra passed an offline SDK model probe:
+Boto3/Botocore 1.43.108, five required transitives, all seven wheel hashes matched primary PyPI
+metadata, six real request-model checks and unsupported-input rejection. Credentials resolved to
+none; no AWS API call or mutation occurred. This is local compatibility evidence, not managed
+runtime admission. No repository dependency declaration changed. See `sdk-model-qualification.json`.
+Stage 3 remains 32 PASS / 20 PENDING; controller completion and all live gates remain outstanding.

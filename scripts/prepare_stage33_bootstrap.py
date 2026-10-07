@@ -45,6 +45,7 @@ SOURCES = (
     "deployment/stage3/lifecycle-scope-correction.proposed.json",
     "scripts/stage33_lifecycle_authority.py",
     "scripts/stage33_lifecycle_store.py",
+    "scripts/qualify_stage33_sdk.py",
     "scripts/prepare_stage33_cleanup.py",
     "scripts/qualify_stage33_bootstrap.py",
     "scripts/collect_stage33_access_diagnostic.sh",

@@ -79,7 +79,7 @@
     },
     {
       "path": "docs/part3/stage3/LIFECYCLE_IMPLEMENTATION.md",
-      "sha256": "76ddfb7242fc85e7fafe5ee7be9c458e5347acfc3988066bd8cfd30931b9ff99"
+      "sha256": "6633436ca3ae531298859fe6b265ca033f12b74fa97f19e42c7ff29c9c0a601f"
     },
     {
       "path": "docs/part3/stage3/LIFECYCLE_SCOPE_DECISION.md",
@@ -95,7 +95,7 @@
     },
     {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "03ff9f398968cb202ab0ef7f0dd7b769a70c5383b0cf519d1d74459753678217"
+      "sha256": "c8010e8e9493daa51e4c84eceae245edd6faa0d62f91f040f76173aa1c66010d"
     },
     {
       "path": "scripts/install_stage33_role_observer.sh",
@@ -103,7 +103,7 @@
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "1394d27ed7475cf180f90218f9c46ee7fe92da4e02ec0ef91cf7a745b7024c80"
+      "sha256": "cba117dd3731e4d7f82f9d30d51ca98b191daead9ec285498ba12b6d1adeab78"
     },
     {
       "path": "scripts/validate_stage33_access_evidence.py",
@@ -131,7 +131,7 @@
     },
     {
       "path": "scripts/prepare_stage33_bootstrap.py",
-      "sha256": "109bab814e6b81dd70f3a55834f7f71b15c9fdf34bfd098b0560b0b4a74bf7b1"
+      "sha256": "7594dc808e632492c3abb652e2fabf30e69c31db3ca4774ffb71b613c930f1e2"
     },
     {
       "path": "tests/test_stage33_bootstrap_package.py",
@@ -246,6 +246,10 @@
       "sha256": "7b09cc50768813332f29def2b01125e8627fd6fd27364ce38000e633300367c5"
     },
     {
+      "path": "scripts/qualify_stage33_sdk.py",
+      "sha256": "80463ae4127beedd68c53f85cb6e07abea1a55aaff56d27da0b23bc4c85e63b2"
+    },
+    {
       "path": "tests/test_stage33_lifecycle_store.py",
       "sha256": "9c7bd83ecb45f7eaeed48b10e4af676a7cb9e6415058e4b07fa0a03b448f1ec3"
     },
@@ -255,11 +259,11 @@
     },
     {
       "path": ".github/workflows/part3-stage3-aws-admission.yml",
-      "sha256": "095f64856ac3c78bf079d2d4fc4b1600600057cbfd2b37c59d404c19d46362f6"
+      "sha256": "7656d698571d4198c6b08b0a7a06ea073b23d72cc4cb274c1260ea4251c5a822"
     },
     {
       "path": "PART3_STAGE3_STATUS.md",
-      "sha256": "cbbb3026ffd0b264380db8105bb45477159881bf000b1a52ff267d43e7cf489d"
+      "sha256": "4de898185b8ae358252f94baa8fe460fae093056813722449ffb2693d93dc8ac"
     },
     {
       "path": "evidence/part3/stage3/access-diagnostic-local-validation.json",
@@ -372,6 +376,10 @@
     {
       "path": "evidence/part3/stage3/resource-controls-resume.json",
       "sha256": "088d2c2ab3d71436d87c4a4c510fcb99765ec2460b86c25daa5dbafd27250733"
+    },
+    {
+      "path": "evidence/part3/stage3/sdk-model-qualification.json",
+      "sha256": "c0fa97e89dbdc6340f5614d019ac78d2a981cd4d9b0b07df32572d4ef4890ab0"
     }
   ]
 }
