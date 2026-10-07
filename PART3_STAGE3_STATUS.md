@@ -173,3 +173,34 @@ identity alone provides no bootstrap permission. Full mutation coordination, ope
 authoritative recovery, independently enforceable cleanup, externally retained evidence and live
 admission/backend/alert/OIDC proofs remain blocking. Do not merge the draft PR or represent the
 local export receipt as a completed AWS gate. See `evidence/part3/stage3/private-export-resume.json`.
+
+## Request binding, scoped readback and lifecycle design — 2026-10-07
+
+Resumed from `a5efdc29c54c647f39ce992894e9845f7ac18188` without restarting. All twenty
+bootstrap requests now have strict concrete binding construction, including both KMS policy
+paths, an independently approved private alert endpoint digest, immutable execution identity
+and actual creation-bound expiry rechecks. Construction grants no execution or prerequisite
+approval. A read-only first-key coordinator journals every scoped STS/KMS read before invocation,
+preserves raw outcomes, checks identity before key reads, and requires explicit preservation of
+interrupted/failed reads before fresh observation. Actual local process denial and SIGKILL tests
+leave the original mutation pending; no dependent mutation, use or retry is authorized.
+
+Final validation: 722 tests pass, two existing PostgreSQL-service skips, 86.84% coverage; 57 new
+focused checks pass; all 13 authority/evidence validators, Ruff and typing for 54 checked source
+files pass. Four initial negative tests exposed a PATH setup error hiding Git; the setup now keeps
+real source-integrity validation available. No failing validation was bypassed or weakened.
+Accepted predecessor evidence, runtime/application artifacts and dependency/provider declarations
+remain unchanged. No AWS API call or mutation occurred.
+
+The existing eight-resource allowlist still cannot provide an independent deadline executor or
+key-independent durable evidence destination. A concrete seven-resource lifecycle/evidence scope
+and ten-day controller-retention correction is proposed in `LIFECYCLE_SCOPE_DECISION.md` and its
+JSON manifest. It is unapproved, unimplemented and unproven. Original acceptance criteria,
+48-hour operational deadline, eight-resource manifest and teardown fail-closed status remain
+unchanged. The proposal is not a deployable policy package or permission to create its resources.
+
+Stage 3 remains 32 PASS / 20 PENDING. Review that design correction before implementing expanded
+lifecycle coordination; an authenticated administrator execution channel is still required for
+actual AWS qualification. Full mutation coordination, authoritative recovery, independent cleanup,
+external retention and live OIDC/backend/alert proofs remain unfinished. Do not merge draft PR #16
+or represent passing repository CI as live admission. See `coordination-design-resume.json`.

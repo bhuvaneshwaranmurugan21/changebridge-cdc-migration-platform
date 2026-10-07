@@ -26,6 +26,10 @@
       "sha256": "77190f3e9e938fbee5b3c70f067859b650ce2feb826a1432e730a6a479d89b1d"
     },
     {
+      "path": "deployment/stage3/lifecycle-scope-correction.proposed.json",
+      "sha256": "435ccaae8997e1acde98ea8c6bf0f2008d1296c3a7cd08e0a134b2a226fd55c7"
+    },
+    {
       "path": "deployment/stage3/oidc-trust-policy.proposed.json",
       "sha256": "67e48fec869af39940846615beb197ec6e278d736eb1ad47616728a7f85434c5"
     },
@@ -43,7 +47,7 @@
     },
     {
       "path": "docs/part3/stage3/ADMINISTRATOR_BOOTSTRAP_EXECUTION.md",
-      "sha256": "7352d7f9b1299ebc81a9f4193529112195786e5c9713e024c8fb062ea2ff7c3c"
+      "sha256": "08c002bdd8f83548012ce58d7a1a424756945aee5078bc30e3f09a9f2832af71"
     },
     {
       "path": "docs/part3/stage3/AUTHORIZATION_PACKET.md",
@@ -70,6 +74,10 @@
       "sha256": "824eac05cafca3470d8ee77f55d6ada8357cb2bff040ce4b6f9ede750087d5ba"
     },
     {
+      "path": "docs/part3/stage3/LIFECYCLE_SCOPE_DECISION.md",
+      "sha256": "5e37ccc7ccbb65138880e0d8e325b7de5021b63e1e843a0716931c7aaff64066"
+    },
+    {
       "path": "scripts/collect_stage33_readonly.sh",
       "sha256": "5dbe7ab5f1fd86a4b5cb5027908f8e73acc09f64a0c7d4349dc4a9729650814b"
     },
@@ -79,7 +87,7 @@
     },
     {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "945968ea5ee72dc007b46cfbc96912de7e13b09315409b42117bf3758f699e3f"
+      "sha256": "d6c6f3bdc02d1169057b7f84cc6d7b2c25dcd1cff4ad00ddce23a66ef939ecd0"
     },
     {
       "path": "scripts/install_stage33_role_observer.sh",
@@ -87,7 +95,7 @@
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "abfc36034dbc69b6a4f67e1b3f0e2a437d7e9b55810eeaaafc8bfee86e11aa60"
+      "sha256": "71406abdb08dabbfaf6f3f94e6f64606e9fc77aeac464a4b17659222437f1c7c"
     },
     {
       "path": "scripts/validate_stage33_access_evidence.py",
@@ -115,7 +123,7 @@
     },
     {
       "path": "scripts/prepare_stage33_bootstrap.py",
-      "sha256": "a61957a2345842e164a0d00cfeca1d6100dfde6467b9a7a776ea58b38ffbd1df"
+      "sha256": "5eb28ed85d2c7e598b81bd8c46fc1d5f80202cb64e4ad29031f009927627b05c"
     },
     {
       "path": "tests/test_stage33_bootstrap_package.py",
@@ -202,16 +210,32 @@
       "sha256": "be3ff6d3d371232d575af6641c6aee48ea092cbf66fffed397b25d623652573d"
     },
     {
+      "path": "scripts/stage33_execution_bindings.py",
+      "sha256": "44eb16f67f3570e5f2988bf6bebf330147e302d3eb5c161d0d732f98707f4b9a"
+    },
+    {
+      "path": "tests/test_stage33_execution_bindings.py",
+      "sha256": "cfccbbe30fcca2d633a9c81d115e7f92d4f74de2a612253e64992c3ccc5eb218"
+    },
+    {
+      "path": "scripts/stage33_key_coordinator.py",
+      "sha256": "54728f152e63e009c0003dce1878a0243ab9df93339d60d511ec78230f6607e9"
+    },
+    {
+      "path": "tests/test_stage33_key_coordinator.py",
+      "sha256": "3aa5287fb06ac0b0bd333239de5b81ae6b032a6e06914daf08ca6407701849d1"
+    },
+    {
       "path": ".github/workflows/aws-oidc-identity.yml",
       "sha256": "363010e466a3506ff3cee2ca83e2039bba535583321ecc905b31abf5a6603baf"
     },
     {
       "path": ".github/workflows/part3-stage3-aws-admission.yml",
-      "sha256": "35274448061a79a99b6d5f044c9e9b33b491a4d3accfab294179bd5b3a9ab5fa"
+      "sha256": "be67ce94b42f07dc0949d1a19e35d962b3ed138825f3675692b2ac3eafdef2d8"
     },
     {
       "path": "PART3_STAGE3_STATUS.md",
-      "sha256": "01adf5af84b74ae746b75f677947604892a7e9180abc2f5a701800f48c7f2c11"
+      "sha256": "4274e0545e00a3c8b5feac76e9e8ba209ad3e46f58d8193eaf3393db90ccce3f"
     },
     {
       "path": "evidence/part3/stage3/access-diagnostic-local-validation.json",
@@ -256,6 +280,10 @@
     {
       "path": "evidence/part3/stage3/bootstrap-preparation-resume.json",
       "sha256": "d36b05d3635170033fada765e6f8f4ce8fa415d252bad75e33a8d9f0761d0494"
+    },
+    {
+      "path": "evidence/part3/stage3/coordination-design-resume.json",
+      "sha256": "76cafa718883aebfe0b830332106db1b00520bf415de739f8866becccebf9ae3"
     },
     {
       "path": "evidence/part3/stage3/exact-head-ci.json",

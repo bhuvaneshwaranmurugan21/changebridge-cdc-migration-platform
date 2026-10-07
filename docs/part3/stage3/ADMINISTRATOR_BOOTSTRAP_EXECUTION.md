@@ -383,3 +383,35 @@ state/artifact/version export, enforceable cleanup and the authenticated adminis
 remain blocking. Do not publish private exports into the public repository. The current archive
 format supports the journal's existing unresolved first-key attempt; any future resolved/recovery
 journal protocol requires its own compatible verifier before mutation.
+
+## Concrete binding and scoped readback continuation
+
+`stage33_execution_bindings.py` materializes all twenty compiled requests using exact private
+endpoint, independently approved endpoint digest, immutable execution/UTC expiry and verified
+physical key bindings. It parses embedded policy JSON rather than interpolating private values.
+Every construction receipt keeps execution and prerequisite approval false. Preparation time is
+not substituted for observed first creation; an execution coordinator must recheck the actual
+creation-bound deadline before use. These functions invoke no AWS service.
+
+`stage33_key_coordinator.py` implements only readback of an acknowledged first KMS attempt,
+not the full mutation coordinator. It derives the key selector exclusively from the original
+saved zero-return creation acknowledgement. It journals each STS/KMS read intent before process
+invocation and then preserves actual raw stdout, stderr and return code. It qualifies the exact
+administrator identity before KMS reads and uses explicit regional endpoints, single CLI attempts
+and bounded process timeouts. A lost, failed or ambiguous read remains unresolved until explicit
+read-only preservation/resume; that never authorizes repeating a mutation. Direct metadata,
+policy and complete-tag reads are compared twice, with identity checks around the observation.
+No result clears the pending mutation, authorizes key use or satisfies bootstrap admission.
+
+The optional CLI requires clean frozen source, the existing private journal and its original
+private creation-tags file. It cannot create a key, discover an unknown key by name/tag, or
+construct success evidence when the AWS CLI is unavailable. Local process-denial and actual
+process-kill tests validate its recording protocol; they are explicitly not managed AWS proof.
+The standalone private exporter can preserve these OBSERVATION records without changing its
+supported unresolved-attempt protocol. No new resolved/recovery transition is introduced.
+
+The independent lifecycle gap is now set out as a concrete unapproved scope/retention decision
+in `LIFECYCLE_SCOPE_DECISION.md`. Its proposed seven resources do not alter the compiler's
+original eight-resource allowlist, contract, acceptance registry or teardown enforcement status.
+Do not execute the original bootstrap until the design, implementation, actual controller and
+externally retained evidence gates are all satisfied.
