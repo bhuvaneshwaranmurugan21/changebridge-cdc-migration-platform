@@ -58,6 +58,8 @@ def build_manifest() -> None:
         "tests/test_stage33_lock_controls.py",
         "scripts/reconcile_stage33_key_attempt.py",
         "tests/test_stage33_key_attempt.py",
+        "scripts/export_stage33_evidence.py",
+        "tests/test_stage33_evidence_export.py",
         ".github/workflows/aws-oidc-identity.yml",
         ".github/workflows/part3-stage3-aws-admission.yml",
         "PART3_STAGE3_STATUS.md",

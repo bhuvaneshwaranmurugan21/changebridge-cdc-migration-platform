@@ -333,3 +333,53 @@ source authority must not silently reinterpret an earlier request.
 
 CreateKey request-shape reference:
 https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html
+
+## Private attempt export and independent local verification
+
+`export_stage33_evidence.py` now exports the durable mutation-attempt chain while the journal's
+single-writer lock is held. It freezes the historic package, execution identity, resolved creation
+tags, raw receipts, original record hashes and final chain anchor. The export must use a separate
+private directory outside the Git worktree; a nested directory inside the source journal is not
+an independent copy. Files are created exclusively with mode 0600, flushed and fsynced, and their
+parent directory is fsynced. Existing exports are never overwritten. Source drift or changed
+in-memory state prevents a success receipt. Treat an incomplete export after a process failure
+as incomplete evidence; preserve it and do not overwrite it to conceal the failure.
+
+The independent verifier accepts an exact SHA-256 retained separately from the export. It checks
+bounded canonical bytes, the frozen package digest, opening identity, every original chain link,
+raw receipt hashes and supported unresolved-attempt semantics. It does not recompile against the
+current Git checkpoint, contact AWS or decrypt using the bootstrap KMS key. Tests verify the file
+from a separate Python process after removal of the disposable source journal and after an actual
+process exit. These are local persistence and integrity observations, not AWS provenance or proof
+that an external durable destination exists. Changing the file and recomputing its embedded digest
+cannot replace the separately retained file anchor.
+
+For a frozen package and an existing private journal, run:
+
+```bash
+python -m scripts.export_stage33_evidence \
+  --journal-directory /tmp/changebridge-private-attempt \
+  --package /tmp/changebridge-private-package/package.json \
+  --execution-id EXACT_EXISTING_EXECUTION_ID \
+  --output /tmp/changebridge-private-export/attempt.json
+```
+
+Create the separate output directory with mode 0700 first. If the opening bound concrete creation
+tags, supply their private mode-0600 JSON file with `--creation-tags`; omitting them cannot reopen
+that journal. The package and tags files must also be private. The terminal receipt contains the
+file digest and chain anchors, never raw AWS receipts, subscription emails or administrator session
+identifiers. Retain the expected file digest independently, then verify:
+
+```bash
+python -m scripts.export_stage33_evidence \
+  --verify /tmp/changebridge-private-export/attempt.json \
+  --expected-sha256 SEPARATELY_RETAINED_FILE_SHA256
+```
+
+The verifier explicitly keeps `aws_proven`, `cleanup_authorized` and `durable_retention_proven`
+false. A successful local verification never clears an unresolved mutation or authorizes retry,
+resource use, deletion or a dependent request. Actual durable off-host preservation, a complete
+state/artifact/version export, enforceable cleanup and the authenticated administrator channel
+remain blocking. Do not publish private exports into the public repository. The current archive
+format supports the journal's existing unresolved first-key attempt; any future resolved/recovery
+journal protocol requires its own compatible verifier before mutation.

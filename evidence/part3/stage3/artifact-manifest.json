@@ -43,7 +43,7 @@
     },
     {
       "path": "docs/part3/stage3/ADMINISTRATOR_BOOTSTRAP_EXECUTION.md",
-      "sha256": "45c327665ebe91c83f48fb468cfb07a76e5f0614377f26c483e803edeed97b65"
+      "sha256": "7352d7f9b1299ebc81a9f4193529112195786e5c9713e024c8fb062ea2ff7c3c"
     },
     {
       "path": "docs/part3/stage3/AUTHORIZATION_PACKET.md",
@@ -79,7 +79,7 @@
     },
     {
       "path": "scripts/build_stage33_evidence.py",
-      "sha256": "b95bf878b97261d3864f4ae32cf99ba1acd637ff5b4511f50bcdb12cd511602f"
+      "sha256": "945968ea5ee72dc007b46cfbc96912de7e13b09315409b42117bf3758f699e3f"
     },
     {
       "path": "scripts/install_stage33_role_observer.sh",
@@ -87,7 +87,7 @@
     },
     {
       "path": "scripts/validate_part3_stage3.py",
-      "sha256": "77b3ade6ada7596dcdf3a78882dbe53a83808dc8defba45848b18fbc90442f8a"
+      "sha256": "abfc36034dbc69b6a4f67e1b3f0e2a437d7e9b55810eeaaafc8bfee86e11aa60"
     },
     {
       "path": "scripts/validate_stage33_access_evidence.py",
@@ -115,7 +115,7 @@
     },
     {
       "path": "scripts/prepare_stage33_bootstrap.py",
-      "sha256": "94063621774b1834137f2e35d27c1fdf7a455e4e8cbfef32fce2b0e7636cb819"
+      "sha256": "a61957a2345842e164a0d00cfeca1d6100dfde6467b9a7a776ea58b38ffbd1df"
     },
     {
       "path": "tests/test_stage33_bootstrap_package.py",
@@ -194,16 +194,24 @@
       "sha256": "ad1496a786d84accb31b1e14d6f51b1416d9b911140ee24d24329f40df92e207"
     },
     {
+      "path": "scripts/export_stage33_evidence.py",
+      "sha256": "46f3e82d1331b496f643c743adcb409b25ada7079cfce5b23a940457e2279617"
+    },
+    {
+      "path": "tests/test_stage33_evidence_export.py",
+      "sha256": "be3ff6d3d371232d575af6641c6aee48ea092cbf66fffed397b25d623652573d"
+    },
+    {
       "path": ".github/workflows/aws-oidc-identity.yml",
       "sha256": "363010e466a3506ff3cee2ca83e2039bba535583321ecc905b31abf5a6603baf"
     },
     {
       "path": ".github/workflows/part3-stage3-aws-admission.yml",
-      "sha256": "54ede82813763dc3bd53968e242e8c934e22d9d0a289f6d54d4e565d6019de60"
+      "sha256": "35274448061a79a99b6d5f044c9e9b33b491a4d3accfab294179bd5b3a9ab5fa"
     },
     {
       "path": "PART3_STAGE3_STATUS.md",
-      "sha256": "0286cd37dc2c4f6c9cdade42da2510576899d2aafa9c1c38426afa4c3c45e9ff"
+      "sha256": "01adf5af84b74ae746b75f677947604892a7e9180abc2f5a701800f48c7f2c11"
     },
     {
       "path": "evidence/part3/stage3/access-diagnostic-local-validation.json",
@@ -288,6 +296,10 @@
     {
       "path": "evidence/part3/stage3/predecessor-external-closure.json",
       "sha256": "9ef26c2c6cdb0e38a5717debbd53d07098aec2ed575fbecf0adebe154511a421"
+    },
+    {
+      "path": "evidence/part3/stage3/private-export-resume.json",
+      "sha256": "c425647c8c957c853c88c2eca30de9cda8da846fd0a221513b99c6c6be3273f9"
     },
     {
       "path": "evidence/part3/stage3/protected-evidence-report.json",

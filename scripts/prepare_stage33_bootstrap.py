@@ -38,6 +38,7 @@ SOURCES = (
     "scripts/verify_stage33_storage_controls.py",
     "scripts/verify_stage33_lock_controls.py",
     "scripts/reconcile_stage33_key_attempt.py",
+    "scripts/export_stage33_evidence.py",
     "scripts/prepare_stage33_cleanup.py",
     "scripts/qualify_stage33_bootstrap.py",
     "scripts/collect_stage33_access_diagnostic.sh",

@@ -149,3 +149,27 @@ files. No dependency/provider declarations changed, no AWS call/mutation occurre
 and accepted predecessor evidence remains unchanged. Stage 3 remains 32 PASS / 20
 PENDING. Full execution coordination, authoritative unknown-outcome recovery,
 independent cleanup enforcement/export and actual AWS admission remain unfinished.
+
+## Private-export continuation — 2026-10-07
+
+Resumed from `34e3b078f13976d6e8c034f738bc56df705c8892` without restarting. A private
+mutation-attempt exporter now freezes the durable record chain under the writer lock and
+verifies it independently using a separately retained file digest. Actual process exit and
+source-journal removal tests demonstrate local readback without the source database or KMS.
+Exports reject overwrite, unsafe paths/permissions, altered receipts and unsupported success
+transitions. Pending attempts remain pending. This component does not establish AWS provenance,
+complete state/artifact export, durable off-host retention or deletion authority.
+
+Validation: 665 tests pass, two existing PostgreSQL-service skips, 86.84% coverage; 34 new export
+checks pass; all 13 authority/evidence validators, repository lint and typing for 62 source files
+pass. The initial full run correctly rejected incomplete manifest integration; the required-file
+list was extended to include both new artifacts and hashes regenerated, then the complete suite
+passed. No check or acceptance criterion was weakened. No dependency/provider declaration,
+application/runtime behavior or accepted predecessor evidence changed.
+
+Stage 3 remains 32 PASS / 20 PENDING; no AWS API call or mutation occurred. The current available
+tools include GitHub but no AWS execution connector, and the host has no AWS CLI. Existing OIDC
+identity alone provides no bootstrap permission. Full mutation coordination, operation-specific
+authoritative recovery, independently enforceable cleanup, externally retained evidence and live
+admission/backend/alert/OIDC proofs remain blocking. Do not merge the draft PR or represent the
+local export receipt as a completed AWS gate. See `evidence/part3/stage3/private-export-resume.json`.
