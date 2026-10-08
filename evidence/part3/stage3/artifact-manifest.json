@@ -1,0 +1,385 @@
+{
+  "algorithm": "sha256",
+  "artifacts": [
+    {
+      "path": "requirements/part3-stage3-contract.json",
+      "sha256": "4650b0c9e5246939a6ccffe9cd1e0d53386b01537e02b19bb22f7b398d55cdc4"
+    },
+    {
+      "path": "requirements/part3-stage3-acceptance.json",
+      "sha256": "5b2bf46cd3db5118e455f9f914d1b0f8b8e02eaf750becef823e096bbb3cb116"
+    },
+    {
+      "path": "deployment/stage3/ChangeBridgeStage33RoleObserver.proposed.json",
+      "sha256": "36091c41b5eaebdf5c4b2780e212272d281308c08cd847d05e2bdf4ce81b8607"
+    },
+    {
+      "path": "deployment/stage3/access-remediation.json",
+      "sha256": "16573507b63385eb61596abb82e31777958326630d58b4eea32e48110c770a5d"
+    },
+    {
+      "path": "deployment/stage3/aws-binding.json",
+      "sha256": "926499842ac6ad433dc4815b192a5b095041cc57c685dc2342d4db3118451676"
+    },
+    {
+      "path": "deployment/stage3/bootstrap-manifest.json",
+      "sha256": "77190f3e9e938fbee5b3c70f067859b650ce2feb826a1432e730a6a479d89b1d"
+    },
+    {
+      "path": "deployment/stage3/lifecycle-authority.json",
+      "sha256": "7de8d45a1a11418cb3005958d5c08bb35f863cefb30ca449279f71b393585724"
+    },
+    {
+      "path": "deployment/stage3/lifecycle-scope-correction.proposed.json",
+      "sha256": "435ccaae8997e1acde98ea8c6bf0f2008d1296c3a7cd08e0a134b2a226fd55c7"
+    },
+    {
+      "path": "deployment/stage3/oidc-trust-policy.proposed.json",
+      "sha256": "67e48fec869af39940846615beb197ec6e278d736eb1ad47616728a7f85434c5"
+    },
+    {
+      "path": "deployment/stage3/role-permissions.proposed.json",
+      "sha256": "40b5445a5fab15b9052423e4f757a609ec8a4e74e09cd5358bb9c8e940b7720c"
+    },
+    {
+      "path": "deployment/stage3/teardown-plan.json",
+      "sha256": "634af89945d4c7fb407ea1c1bdf01070eb77d5ebbf01f513321549e62cce59db"
+    },
+    {
+      "path": "docs/part3/stage3/ACCESS_REMEDIATION.md",
+      "sha256": "34899d193eb076da171c40afdd941f32ea1a643067c096beaecd91d9d777fa19"
+    },
+    {
+      "path": "docs/part3/stage3/ADMINISTRATOR_BOOTSTRAP_EXECUTION.md",
+      "sha256": "08c002bdd8f83548012ce58d7a1a424756945aee5078bc30e3f09a9f2832af71"
+    },
+    {
+      "path": "docs/part3/stage3/AUTHORIZATION_PACKET.md",
+      "sha256": "7400da0396a5911bb513e2d0503431c8e15fd9dd82d14ca026781049a8a1caa0"
+    },
+    {
+      "path": "docs/part3/stage3/AWS_ADMISSION.md",
+      "sha256": "cd39bedc3cb0eb20d716b3cdb7ab9a89b79af4b3a94526bb8571c0c843100efc"
+    },
+    {
+      "path": "docs/part3/stage3/AWS_EXECUTION_CONNECTION.md",
+      "sha256": "eb25d7aec9916f825045f2721ad59e5338de41554990a5dce606312e139a42e2"
+    },
+    {
+      "path": "docs/part3/stage3/BLOCKER_REVIEW.md",
+      "sha256": "a02b5847c14100b5cfa8864b98d2f4d643e70025d2cf9c9ce2d926b4cb0311a5"
+    },
+    {
+      "path": "docs/part3/stage3/EXECUTION_APPROVAL.md",
+      "sha256": "da4f58744c9dbfda852514ae25f2327c7e044dfd1414ad892f1c2f9537911b41"
+    },
+    {
+      "path": "docs/part3/stage3/FAILURE_MODES.md",
+      "sha256": "824eac05cafca3470d8ee77f55d6ada8357cb2bff040ce4b6f9ede750087d5ba"
+    },
+    {
+      "path": "docs/part3/stage3/LIFECYCLE_IMPLEMENTATION.md",
+      "sha256": "6633436ca3ae531298859fe6b265ca033f12b74fa97f19e42c7ff29c9c0a601f"
+    },
+    {
+      "path": "docs/part3/stage3/LIFECYCLE_SCOPE_DECISION.md",
+      "sha256": "0900304e4ec1a93f01f7c9664a58b2a19dc7b0d3573959afed9f8a11f0f87702"
+    },
+    {
+      "path": "scripts/collect_stage33_readonly.sh",
+      "sha256": "5dbe7ab5f1fd86a4b5cb5027908f8e73acc09f64a0c7d4349dc4a9729650814b"
+    },
+    {
+      "path": "scripts/collect_stage33_access_diagnostic.sh",
+      "sha256": "1eb1fd1bc40471d64a7de56d0b52a6bc80b056d5834fbbbbefc91ea37274024b"
+    },
+    {
+      "path": "scripts/build_stage33_evidence.py",
+      "sha256": "c8010e8e9493daa51e4c84eceae245edd6faa0d62f91f040f76173aa1c66010d"
+    },
+    {
+      "path": "scripts/install_stage33_role_observer.sh",
+      "sha256": "8d1c90515413ee0ffafe4c29d24c81ac264392ac30f21b9be15a676ee3ac8eac"
+    },
+    {
+      "path": "scripts/validate_part3_stage3.py",
+      "sha256": "cba117dd3731e4d7f82f9d30d51ca98b191daead9ec285498ba12b6d1adeab78"
+    },
+    {
+      "path": "scripts/validate_stage33_access_evidence.py",
+      "sha256": "4e621c6bce104d2be89bcc9ea389d8fb8a6d99c8778bb61e9b05cb2ff403abf6"
+    },
+    {
+      "path": "tests/test_part3_stage3_validator.py",
+      "sha256": "f957ddcb442262c7095516351a17487ccf03d9de27bf74af75a092f73b251f83"
+    },
+    {
+      "path": "tests/test_stage33_oidc_qualification.py",
+      "sha256": "92bd21f214959458734ad331a125d735ba442800a314745d91a0849a0bfc66df"
+    },
+    {
+      "path": "tests/test_stage33_role_observer_installation.py",
+      "sha256": "5f431f83fecdc016734f4a96d30978447360465ce1f3a8d0e429d9b239afe13e"
+    },
+    {
+      "path": "tests/test_stage33_access_diagnostic.py",
+      "sha256": "5cc7e1b7d1c6ce3a0f6496bfd08bb069f8100d86a144e5c113a728121f1e38e3"
+    },
+    {
+      "path": "tests/test_stage33_access_evidence.py",
+      "sha256": "db5358305e9d3d0bb13bb9555b567d961d8d4dc2eb71ac1143a7e6b24a861e14"
+    },
+    {
+      "path": "scripts/prepare_stage33_bootstrap.py",
+      "sha256": "7594dc808e632492c3abb652e2fabf30e69c31db3ca4774ffb71b613c930f1e2"
+    },
+    {
+      "path": "tests/test_stage33_bootstrap_package.py",
+      "sha256": "fc13edc532e21b722406075ec5574d9b3b2ead524e4d134be779bfacb4954730"
+    },
+    {
+      "path": "scripts/stage33_bootstrap_journal.py",
+      "sha256": "25b6a78490700e3105250737031c9007d5534bc89424cc735bec355aa678819b"
+    },
+    {
+      "path": "scripts/qualify_stage33_bootstrap.py",
+      "sha256": "0e4f221a9dfa6d316aca6d7394cec9b8c5c252718afdb169c4945d16ba389d06"
+    },
+    {
+      "path": "tests/test_stage33_bootstrap_journal.py",
+      "sha256": "8152bef8eb5149cf0e191f3d110585fd310f09adbca483bdef1b086a59fb08c7"
+    },
+    {
+      "path": "tests/test_stage33_bootstrap_qualification.py",
+      "sha256": "69e14dbc65e266e59f585fd4c273bfe1469d9be94cbe3270d9e5a3720cdcc1bf"
+    },
+    {
+      "path": "scripts/prepare_stage33_cleanup.py",
+      "sha256": "50e626f466907c12af397bda8aa1364c076046647c498a22f76b67a40482f53d"
+    },
+    {
+      "path": "tests/test_stage33_cleanup_plan.py",
+      "sha256": "ee9baad7a67a1b36f9e692344aea6ed730b2e7f7178ce28cb4ace623ce06b3a0"
+    },
+    {
+      "path": "scripts/stage33_mutation_journal.py",
+      "sha256": "8ac0a0a8246f1290c40e6ac14ebcf6da99fa85b60f761662d935bddad972d1d1"
+    },
+    {
+      "path": "tests/test_stage33_mutation_journal.py",
+      "sha256": "8a2c7c44c6bda474ce62594af8affc4eb71b59c12f211ded1cd137d46a667723"
+    },
+    {
+      "path": "scripts/verify_stage33_role_controls.py",
+      "sha256": "7d1f11541bcc898173187925c47c6c87408f3b51602a916e066dd6e838f4f11d"
+    },
+    {
+      "path": "tests/test_stage33_role_controls.py",
+      "sha256": "8a7d5d451f0e3ec643643be3cc2d388f6b683972d26800eafc5044cd4618720a"
+    },
+    {
+      "path": "scripts/verify_stage33_key_controls.py",
+      "sha256": "5b236873632c0b97116bb4ef8b8676366458b95c4404274488a33784ffb3abe4"
+    },
+    {
+      "path": "tests/test_stage33_key_controls.py",
+      "sha256": "49cc2528c6269b21ded10954992003cd8fadd3463815628aa59ac7dd2f182adb"
+    },
+    {
+      "path": "scripts/verify_stage33_storage_controls.py",
+      "sha256": "ec923dbcf3cb1c2ee1e61b771f5cf3e8484977283f4716afbc4b2ef2afd08993"
+    },
+    {
+      "path": "tests/test_stage33_storage_controls.py",
+      "sha256": "2f6fcb4c104baf8b425a8f7070fec55ca023b8cfc04e16596f975b4ef117e8c0"
+    },
+    {
+      "path": "scripts/verify_stage33_lock_controls.py",
+      "sha256": "2df4c075d33a1b819cf5279b085813a7b1088e25f96087d4179d0fb45088a2ab"
+    },
+    {
+      "path": "tests/test_stage33_lock_controls.py",
+      "sha256": "d05c61f64c99b7ed867a3863dc330740944a4c93a9ba2821b94bc516a0bda0a0"
+    },
+    {
+      "path": "scripts/reconcile_stage33_key_attempt.py",
+      "sha256": "4fe38c7803c9fd3e5f661a9432e42e0d266ea51e613b43e47cc7722636db9b1e"
+    },
+    {
+      "path": "tests/test_stage33_key_attempt.py",
+      "sha256": "ad1496a786d84accb31b1e14d6f51b1416d9b911140ee24d24329f40df92e207"
+    },
+    {
+      "path": "scripts/export_stage33_evidence.py",
+      "sha256": "46f3e82d1331b496f643c743adcb409b25ada7079cfce5b23a940457e2279617"
+    },
+    {
+      "path": "tests/test_stage33_evidence_export.py",
+      "sha256": "be3ff6d3d371232d575af6641c6aee48ea092cbf66fffed397b25d623652573d"
+    },
+    {
+      "path": "scripts/stage33_execution_bindings.py",
+      "sha256": "44eb16f67f3570e5f2988bf6bebf330147e302d3eb5c161d0d732f98707f4b9a"
+    },
+    {
+      "path": "tests/test_stage33_execution_bindings.py",
+      "sha256": "cfccbbe30fcca2d633a9c81d115e7f92d4f74de2a612253e64992c3ccc5eb218"
+    },
+    {
+      "path": "scripts/stage33_key_coordinator.py",
+      "sha256": "54728f152e63e009c0003dce1878a0243ab9df93339d60d511ec78230f6607e9"
+    },
+    {
+      "path": "tests/test_stage33_key_coordinator.py",
+      "sha256": "3aa5287fb06ac0b0bd333239de5b81ae6b032a6e06914daf08ca6407701849d1"
+    },
+    {
+      "path": "scripts/stage33_lifecycle_authority.py",
+      "sha256": "60925ecd8888d369f518ead846cc813a0d4114260e3dba96d8dd8334ac80a3cb"
+    },
+    {
+      "path": "tests/test_stage33_lifecycle_authority.py",
+      "sha256": "bb56ecdfd41e7c34c137277f1ce53125651d7c89825604e4412d10b8325b8385"
+    },
+    {
+      "path": "scripts/stage33_lifecycle_store.py",
+      "sha256": "7b09cc50768813332f29def2b01125e8627fd6fd27364ce38000e633300367c5"
+    },
+    {
+      "path": "scripts/qualify_stage33_sdk.py",
+      "sha256": "80463ae4127beedd68c53f85cb6e07abea1a55aaff56d27da0b23bc4c85e63b2"
+    },
+    {
+      "path": "tests/test_stage33_lifecycle_store.py",
+      "sha256": "9c7bd83ecb45f7eaeed48b10e4af676a7cb9e6415058e4b07fa0a03b448f1ec3"
+    },
+    {
+      "path": ".github/workflows/aws-oidc-identity.yml",
+      "sha256": "363010e466a3506ff3cee2ca83e2039bba535583321ecc905b31abf5a6603baf"
+    },
+    {
+      "path": ".github/workflows/part3-stage3-aws-admission.yml",
+      "sha256": "7656d698571d4198c6b08b0a7a06ea073b23d72cc4cb274c1260ea4251c5a822"
+    },
+    {
+      "path": "PART3_STAGE3_STATUS.md",
+      "sha256": "4de898185b8ae358252f94baa8fe460fae093056813722449ffb2693d93dc8ac"
+    },
+    {
+      "path": "evidence/part3/stage3/access-diagnostic-local-validation.json",
+      "sha256": "eb163398f6ac47cdacec30500ee3f66fcdffd2e0b35436d054608c865b3a39df"
+    },
+    {
+      "path": "evidence/part3/stage3/access-solution-preparation.json",
+      "sha256": "16adffda9cc419194943025b9a292fb9bbf711cb4c388a27f1e630bab9bc2577"
+    },
+    {
+      "path": "evidence/part3/stage3/administrator-access-diagnostic.json",
+      "sha256": "77f479154dd739aee978114781cc333e147332687aec0966874eb5b2750432c6"
+    },
+    {
+      "path": "evidence/part3/stage3/administrator-access-review.json",
+      "sha256": "c58d7b0ac9568f58e3d7f0348215bf100f8ff33943dd70ab2d61d50e310c0108"
+    },
+    {
+      "path": "evidence/part3/stage3/authorization-state.json",
+      "sha256": "ff28f98598a8eafb1056aacabb62925eb6f98a795bcee87308afb81361c6f6b6"
+    },
+    {
+      "path": "evidence/part3/stage3/autonomous-continuation.json",
+      "sha256": "b92aa56a7a4e1734e4f66d1171f8a59efc71d4ee5cb3170c86c6419c749409d7"
+    },
+    {
+      "path": "evidence/part3/stage3/autonomous-local-validation.json",
+      "sha256": "a68765b1f1b111e148ba973284114daaa5165e1c30e77ee11fe1d5f8b64ab9e8"
+    },
+    {
+      "path": "evidence/part3/stage3/aws-readonly-review.json",
+      "sha256": "c1fb7739feaf578eb99df02ff2d71be30bf4e2a5c608b6beae99b595d6ffc5e0"
+    },
+    {
+      "path": "evidence/part3/stage3/backend-key-policy-correction.json",
+      "sha256": "32832980f34eba2218e69dcb0d50503b22fc29bfb70229417ce74878e49a693a"
+    },
+    {
+      "path": "evidence/part3/stage3/bootstrap-components-resume.json",
+      "sha256": "9ef7054e1ddd8597ac60436861df1b56bd6b88a90866eac15f44007bc121440e"
+    },
+    {
+      "path": "evidence/part3/stage3/bootstrap-preparation-resume.json",
+      "sha256": "d36b05d3635170033fada765e6f8f4ce8fa415d252bad75e33a8d9f0761d0494"
+    },
+    {
+      "path": "evidence/part3/stage3/coordination-design-resume.json",
+      "sha256": "76cafa718883aebfe0b830332106db1b00520bf415de739f8866becccebf9ae3"
+    },
+    {
+      "path": "evidence/part3/stage3/exact-head-ci.json",
+      "sha256": "a79703c03e1feea30fb2c777e29422505a255f052e48e29305b3547b6f73c383"
+    },
+    {
+      "path": "evidence/part3/stage3/existing-oidc-branch-denial.json",
+      "sha256": "cf86f282c0daba03ea8c0fbadcebca8655167414979117921d568435497552de"
+    },
+    {
+      "path": "evidence/part3/stage3/existing-oidc-identity.json",
+      "sha256": "dd4eaf4c1a089619ed807d9b5a8c435bd2153a359d21d9e4c69ef4a757482f4c"
+    },
+    {
+      "path": "evidence/part3/stage3/immutable-subject-local-validation.json",
+      "sha256": "f3738a6b1b8fc4f44877f0051bea336a9a1f4ed71ca0f1985e2dcb0abecdc65f"
+    },
+    {
+      "path": "evidence/part3/stage3/lifecycle-preparation-resume.json",
+      "sha256": "f3e8e10d9b63b36d21748d7416eb05cc2d0817dbba93b9351d079d3fb15b2d40"
+    },
+    {
+      "path": "evidence/part3/stage3/local-validation.json",
+      "sha256": "950926fe628c0f0a3f7dcb9f0ce1be8ec0b81910e04cbb821d9c9b5e6a8e3d9a"
+    },
+    {
+      "path": "evidence/part3/stage3/main-iam-denial.json",
+      "sha256": "01abb78ec1d9bd5759e6224dcc7cd7941cf7984ad35be768d85f606b5dfba159"
+    },
+    {
+      "path": "evidence/part3/stage3/main-observer-maintenance.json",
+      "sha256": "18f8eb736b22849176c4de343e9b6220e94241e1e8f527536c6ab9b874ed44dd"
+    },
+    {
+      "path": "evidence/part3/stage3/mutation-controls-resume.json",
+      "sha256": "b1a6cb67f2b63aca1fdfc88148a16c10e0a8418f82ea09536b633568af72bc45"
+    },
+    {
+      "path": "evidence/part3/stage3/operator-observation.json",
+      "sha256": "98cffd5d0c805dba1fda03f1ad429ba8c7b4a3d72e882158ab4342bb872d3c8e"
+    },
+    {
+      "path": "evidence/part3/stage3/predecessor-external-closure.json",
+      "sha256": "9ef26c2c6cdb0e38a5717debbd53d07098aec2ed575fbecf0adebe154511a421"
+    },
+    {
+      "path": "evidence/part3/stage3/private-export-resume.json",
+      "sha256": "c425647c8c957c853c88c2eca30de9cda8da846fd0a221513b99c6c6be3273f9"
+    },
+    {
+      "path": "evidence/part3/stage3/protected-evidence-report.json",
+      "sha256": "a6f03fedf97cd9ef497ae08395c1fa4858bfc5f5dc024a96d2fdf388f7d0953f"
+    },
+    {
+      "path": "evidence/part3/stage3/qualification-gaps.json",
+      "sha256": "4f8c92bcd90db43aa08057964426f4f4638fc1495dfee46049c19805cf51d2a1"
+    },
+    {
+      "path": "evidence/part3/stage3/repository-entry.json",
+      "sha256": "985b2bc6541a46eefdfb3ba681ff6265025bc4a0b7e2d85dc28e291cbf9a675e"
+    },
+    {
+      "path": "evidence/part3/stage3/resource-controls-resume.json",
+      "sha256": "088d2c2ab3d71436d87c4a4c510fcb99765ec2460b86c25daa5dbafd27250733"
+    },
+    {
+      "path": "evidence/part3/stage3/sdk-model-qualification.json",
+      "sha256": "c0fa97e89dbdc6340f5614d019ac78d2a981cd4d9b0b07df32572d4ef4890ab0"
+    }
+  ]
+}

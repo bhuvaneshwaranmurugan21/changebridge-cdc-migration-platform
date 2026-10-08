@@ -1,0 +1,91 @@
+{
+  "account_id": "857229544428",
+  "authority_preserved": [
+    "Original bootstrap manifest, acceptance registry and protected predecessor evidence stay unchanged",
+    "Backend OIDC role retains backend-only scope",
+    "No existing main role or shared account resource is modified",
+    "Proposal does not satisfy any pending Stage 3 acceptance criterion"
+  ],
+  "aws_mutation_authorized": false,
+  "cost": {
+    "additional_resources_priced": false,
+    "ceiling_accepted": false,
+    "hard_cap_proven": false,
+    "required": "Current official regional price estimate and consumption bounds for all 15 resources before any write; request revised allowance if the approved bound cannot cover it",
+    "stage_bootstrap_ceiling_usd_proposed": 3
+  },
+  "execution_enabled": false,
+  "existing_eight_resource_allowlist_changed": false,
+  "label": "LIFECYCLE_SCOPE_DESIGN_CORRECTION_NOT_AWS_AUTHORIZATION",
+  "not_implemented_or_proven": [
+    "Exact deployment requests and IAM policy qualification",
+    "Actual schedule delivery and cleanup",
+    "Durable externally retained evidence",
+    "Lost acknowledgement forensic correlation",
+    "Authenticated administrator execution channel"
+  ],
+  "pre_write_gates": [
+    "Approve scope and retention correction without weakening existing resource deadlines or acceptance semantics",
+    "Compile and review exact trust and least-privilege inline policies; no new shared role/provider or repository-global variable change",
+    "Freeze independently verified immutable controller code and runtime matrix; separately qualify any undeclared dependency",
+    "Create, observe and independently invoke the controller using non-destructive qualification before the first original bootstrap write",
+    "Verify private off-host evidence readback after source-journal removal without the bootstrap KMS key",
+    "Verify conditional journal versioning, single execution binding and cleanup selectors; unknown CreateKey outcomes must remain blocked unless authoritatively correlated",
+    "Bind exact execution, inventories, object versions, lock absence and state/artifact exports before deletion",
+    "Verify real scheduled invocation, failure routing and controller restart before admitting lifecycle enforcement"
+  ],
+  "problem": "No independent deadline executor or key-independent durable evidence destination exists within the eight-resource allowlist.",
+  "proposed_additional_resources": [
+    {
+      "name": "changebridge-p3s3-evidence-857229544428-ap-southeast-2",
+      "purpose": "Private versioned SSE-S3 evidence outside the bootstrap KMS dependency",
+      "type": "AWS::S3::Bucket"
+    },
+    {
+      "name": "changebridge-p3s3-lifecycle",
+      "purpose": "Inventory-bound cleanup and readback; no platform deployment or arbitrary resource adoption",
+      "type": "AWS::Lambda::Function"
+    },
+    {
+      "name": "ChangeBridgePart3LifecycleRole",
+      "purpose": "Exact Stage 3 inventory cleanup and evidence IO only; no role creation or other-project access",
+      "type": "AWS::IAM::Role"
+    },
+    {
+      "name": "ChangeBridgePart3SchedulerRole",
+      "purpose": "Invoke only the lifecycle function and send failures only to its exact queue",
+      "type": "AWS::IAM::Role"
+    },
+    {
+      "name": "/aws/lambda/changebridge-p3s3-lifecycle",
+      "purpose": "Redacted controller outcome records with bounded retention",
+      "type": "AWS::Logs::LogGroup"
+    },
+    {
+      "name": "changebridge-p3s3-lifecycle",
+      "purpose": "Independent recurring delivery; UTC rate(15 minutes), flexible window OFF, explicit end date",
+      "type": "AWS::Scheduler::Schedule"
+    },
+    {
+      "name": "changebridge-p3s3-lifecycle-failures",
+      "purpose": "Durable failed-delivery records, distinct from proof that cleanup succeeded",
+      "type": "AWS::SQS::Queue"
+    }
+  ],
+  "proposed_lifecycle": {
+    "cleanup_start_hours_after_first_creation": 46,
+    "controller_and_private_evidence_exception_maximum_days": 10,
+    "controller_retirement": "Separate exact inventory and export verification; no blanket self-destruction or deletion of sole evidence copy",
+    "deadline_success_requires_actual_resource_readback": true,
+    "exception_is_approved": false,
+    "existing_bootstrap_operational_deadline_hours": 48,
+    "kms_deletion_wait_days": 7,
+    "overdue": "Record failure and bounded escalation; never reinterpret missed deadline as PASS",
+    "scheduler_is_not_a_deadline_guarantee": true,
+    "unexported_state_or_unknown_identity": "PRESERVE_AND_BLOCK_DELETION_AND_ADMISSION"
+  },
+  "region": "ap-southeast-2",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "schema_version": "1.0.0",
+  "status": "PROPOSED_REQUIRES_REVIEW"
+}

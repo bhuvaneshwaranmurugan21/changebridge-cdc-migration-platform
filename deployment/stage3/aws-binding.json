@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "account_id": "857229544428",
+  "region": "ap-southeast-2",
+  "observed_role": "AccountFullAccessRole",
+  "session_identifier": "REDACTED",
+  "alert_endpoint": "VERIFIED_REDACTED",
+  "shared_budget": {
+    "name": "portfolio-labs-monthly-cost",
+    "limit_usd_monthly": 20,
+    "notifications": [
+      {"type": "ACTUAL", "threshold_percent": 50},
+      {"type": "ACTUAL", "threshold_percent": 80},
+      {"type": "FORECASTED", "threshold_percent": 100}
+    ]
+  },
+  "maximum_lifetime_hours": 48,
+  "observation_only": true,
+  "aws_mutations": 0
+}

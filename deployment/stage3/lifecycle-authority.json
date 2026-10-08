@@ -1,0 +1,64 @@
+{
+  "account_id": "857229544428",
+  "approval_received_at_utc": "2026-10-07T06:32:20Z",
+  "approval_text": "I approve the seven ChangeBridge-only resources listed in the lifecycle proposal and the maximum ten-day retention exception for the controller and private evidence resources. Preserve the original bootstrap\u2019s 48-hour operational deadline and all acceptance criteria. Codex may complete the implementation and validation. No AWS resource creation until exact policies, cost limits and execution gates are verified.",
+  "approval_text_sha256": "754c7b5dc4094ca196c0cdf05a30cf5c3649d541aa370e1b19b6256bb195fcf9",
+  "approved_preparation": true,
+  "approved_resources": [
+    {
+      "name": "changebridge-p3s3-evidence-857229544428-ap-southeast-2",
+      "purpose": "Private versioned SSE-S3 evidence outside the bootstrap KMS dependency",
+      "type": "AWS::S3::Bucket"
+    },
+    {
+      "name": "changebridge-p3s3-lifecycle",
+      "purpose": "Inventory-bound cleanup and readback; no platform deployment or arbitrary resource adoption",
+      "type": "AWS::Lambda::Function"
+    },
+    {
+      "name": "ChangeBridgePart3LifecycleRole",
+      "purpose": "Exact Stage 3 inventory cleanup and evidence IO only; no role creation or other-project access",
+      "type": "AWS::IAM::Role"
+    },
+    {
+      "name": "ChangeBridgePart3SchedulerRole",
+      "purpose": "Invoke only the lifecycle function and send failures only to its exact queue",
+      "type": "AWS::IAM::Role"
+    },
+    {
+      "name": "/aws/lambda/changebridge-p3s3-lifecycle",
+      "purpose": "Redacted controller outcome records with bounded retention",
+      "type": "AWS::Logs::LogGroup"
+    },
+    {
+      "name": "changebridge-p3s3-lifecycle",
+      "purpose": "Independent recurring delivery; UTC rate(15 minutes), flexible window OFF, explicit end date",
+      "type": "AWS::Scheduler::Schedule"
+    },
+    {
+      "name": "changebridge-p3s3-lifecycle-failures",
+      "purpose": "Durable failed-delivery records, distinct from proof that cleanup succeeded",
+      "type": "AWS::SQS::Queue"
+    }
+  ],
+  "aws_resource_creation_authorized": false,
+  "controller_retention_maximum_days": 10,
+  "cost_limit_accepted": false,
+  "label": "APPROVED_LIFECYCLE_PREPARATION_NOT_AWS_CREATION_AUTHORITY",
+  "original_operational_deadline_hours": 48,
+  "pending_execution_gates": [
+    "exact policies qualified",
+    "cost bound accepted and verified",
+    "runtime matrix qualified",
+    "authenticated administrator channel",
+    "fresh identity, collisions, usage and control qualification",
+    "independent scheduled execution, external evidence retention and cleanup verification"
+  ],
+  "predecessor_acceptance_weakened": false,
+  "proposal_sha256": "435ccaae8997e1acde98ea8c6bf0f2008d1296c3a7cd08e0a134b2a226fd55c7",
+  "proposal_source_commit": "c99ac491e5764bac81b413e494c83bc5e616cca6",
+  "region": "ap-southeast-2",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "runtime_dependencies_qualified": false,
+  "schema_version": "1.0.0"
+}

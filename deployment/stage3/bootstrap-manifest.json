@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_status": "PROPOSED_NOT_AUTHORIZED",
+  "account_id": "857229544428",
+  "region": "ap-southeast-2",
+  "deployment_id": "p3s3",
+  "maximum_lifetime_hours": 48,
+  "resources": [
+    {
+      "type": "AWS::KMS::Key",
+      "logical_name": "state-key",
+      "physical_name": "provider-assigned",
+      "purpose": "Terraform state encryption",
+      "retention": "after verified independent evidence export and dependent teardown, schedule exact key deletion with seven-day waiting period no later than first creation plus 48 hours; independently verify eventual physical deletion"
+    },
+    {
+      "type": "AWS::KMS::Alias",
+      "logical_name": "state-key-alias",
+      "physical_name": "alias/changebridge-p3s3-state",
+      "purpose": "stable state-key reference",
+      "retention": "remove exact owned resource after verified independent evidence export and no active locks, no later than first bootstrap creation plus 48 hours; no retention through later parts"
+    },
+    {
+      "type": "AWS::S3::Bucket",
+      "logical_name": "state-bucket",
+      "physical_name": "changebridge-p3s3-tfstate-857229544428-ap-southeast-2",
+      "purpose": "versioned encrypted Terraform state",
+      "retention": "remove exact owned resource after verified independent evidence export and no active locks, no later than first bootstrap creation plus 48 hours; no retention through later parts"
+    },
+    {
+      "type": "AWS::S3::Bucket",
+      "logical_name": "artifact-bucket",
+      "physical_name": "changebridge-p3s3-artifacts-857229544428-ap-southeast-2",
+      "purpose": "immutable checksum-bound runtime artifacts",
+      "retention": "remove exact owned resource after verified independent evidence export and no active locks, no later than first bootstrap creation plus 48 hours; no retention through later parts"
+    },
+    {
+      "type": "AWS::DynamoDB::Table",
+      "logical_name": "state-locks",
+      "physical_name": "changebridge-p3s3-tf-locks",
+      "purpose": "Terraform state locking",
+      "retention": "remove exact owned resource after verified independent evidence export and no active locks, no later than first bootstrap creation plus 48 hours; no retention through later parts"
+    },
+    {
+      "type": "AWS::SNS::Topic",
+      "logical_name": "alerts",
+      "physical_name": "changebridge-p3s3-alerts",
+      "purpose": "bounded experiment alerts",
+      "retention": "remove exact owned resource after verified independent evidence export and no active locks, no later than first bootstrap creation plus 48 hours; no retention through later parts"
+    },
+    {
+      "type": "AWS::SNS::Subscription",
+      "logical_name": "alert-email",
+      "physical_name": "VERIFIED_REDACTED",
+      "purpose": "operator alert delivery",
+      "retention": "remove exact owned resource after verified independent evidence export and no active locks, no later than first bootstrap creation plus 48 hours; no retention through later parts"
+    },
+    {
+      "type": "AWS::IAM::Role",
+      "logical_name": "github-actions-role",
+      "physical_name": "ChangeBridgePart3GitHubActionsRole",
+      "purpose": "repository and branch-bound OIDC execution",
+      "retention": "remove exact owned resource after verified independent evidence export and no active locks, no later than first bootstrap creation plus 48 hours; no retention through later parts"
+    }
+  ],
+  "mandatory_controls": [
+    "S3 versioning",
+    "S3 block-public-access",
+    "S3 bucket-owner-enforced",
+    "S3 artifact immutability through version identity and checksum binding",
+    "KMS encryption",
+    "TLS-only bucket policy",
+    "DynamoDB point-in-time recovery",
+    "least-privilege OIDC trust bound to the ChangeBridge repository",
+    "owner project stage expiry and cost-center tags",
+    "collision check before create",
+    "create-or-reconcile without destructive replacement"
+  ],
+  "explicitly_excluded": [
+    "DMS endpoints instances or tasks",
+    "Glue jobs or catalog database",
+    "migration data buckets",
+    "Step Functions state machine",
+    "CDC execution",
+    "managed migration workload",
+    "Terraform apply of deployment/terraform"
+  ],
+  "authorization_required": true
+}

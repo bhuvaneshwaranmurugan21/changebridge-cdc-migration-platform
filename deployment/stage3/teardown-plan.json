@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "policy": "NO_DELETION_WITHOUT_EXACT_EXECUTION_INVENTORY_AND_EXPORT_AUTHORITY",
+  "deadline_rule": "all eight operational Stage 3 resources must be absent before first bootstrap creation plus 48 hours; sole residual is exact KMS key PendingDeletion with seven-day waiting period",
+  "order": [
+    "disable future workflow assumption",
+    "capture final inventory and configuration receipts",
+    "remove SNS subscription and topic",
+    "verify and close Terraform locks",
+    "export final state digest",
+    "delete lock table",
+    "empty every state and artifact object version and delete marker only after evidence retention approval",
+    "delete state and artifact buckets",
+    "schedule KMS key deletion using the AWS minimum window",
+    "verify absence of unintended billable resources"
+  ],
+  "fail_closed_conditions": [
+    "active Terraform lock",
+    "unexported state",
+    "unresolved resource inventory",
+    "missing evidence receipt",
+    "missing exact execution/resource/version/export cleanup binding",
+    "independent deadline enforcement not qualified"
+  ],
+  "standing_delegation": "bounded ChangeBridge execution delegated; destructive cleanup still requires exact execution, resource/version inventory and independently verified evidence-export binding",
+  "enforcement_status": "BLOCKED_NO_INDEPENDENT_EXECUTOR_WITHIN_EIGHT_RESOURCE_ALLOWLIST"
+}

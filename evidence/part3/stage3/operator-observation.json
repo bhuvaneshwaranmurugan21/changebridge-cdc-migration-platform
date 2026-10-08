@@ -1,0 +1,21 @@
+{
+  "account_id": "857229544428",
+  "alert_endpoint": "VERIFIED_REDACTED",
+  "aws_mutations": 0,
+  "observed_at_utc": "2026-10-01T10:18:19Z",
+  "portfolio_credit_context_usd": 140,
+  "portfolio_credit_is_stage_allowance": false,
+  "region": "ap-southeast-2",
+  "result": "PASS",
+  "role": "AccountFullAccessRole",
+  "role_session": "REDACTED",
+  "shared_budget": {
+    "alerts": [
+      "ACTUAL_50_PERCENT",
+      "ACTUAL_80_PERCENT",
+      "FORECASTED_100_PERCENT"
+    ],
+    "limit_usd_monthly": 20,
+    "name": "portfolio-labs-monthly-cost"
+  }
+}

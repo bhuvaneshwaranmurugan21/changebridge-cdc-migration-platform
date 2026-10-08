@@ -1,0 +1,54 @@
+{
+  "actual_local_evidence": [
+    "separate-process verification after removing disposable source journal",
+    "process exit after fsynced export preserves independently verifiable unresolved intent",
+    "external file digest rejects tampering despite recomputed internal digest",
+    "private filesystem and no-overwrite guards reject unsafe destinations"
+  ],
+  "authority_validators_passed": 13,
+  "aws_calls": 0,
+  "aws_mutations": 0,
+  "claims": {
+    "aws_proven": false,
+    "cleanup_authorized_by_export": false,
+    "durable_off_host_retention_proven": false,
+    "stage_completed": false
+  },
+  "criteria_passed": 32,
+  "criteria_pending": 20,
+  "export_checks_passed": 34,
+  "full_suite": {
+    "coverage_percent": 86.84,
+    "log_sha256": "d527a2cc8db6893f50603dd2ed3ce4af560496ef3f64e5abed797be1e8b9f9f6",
+    "passed": 665,
+    "skip_reason": "existing PostgreSQL service unavailable",
+    "skipped": 2
+  },
+  "initial_validation_failure": {
+    "cause": "builder and strict validator required-file lists differed",
+    "code": "ST33_MANIFEST",
+    "original_full_run": {
+      "failed": 1,
+      "passed": 659,
+      "skipped": 2
+    },
+    "resolution": "include new exporter and tests in both lists; regenerate hashes; rerun complete suite"
+  },
+  "label": "LOCAL_EXPORT_COMPONENT_VERIFIED_NOT_AWS_ADMISSION",
+  "protected_predecessor_evidence": "BYTE_IDENTICAL",
+  "remaining": [
+    "full mutation coordinator",
+    "authoritative unknown-outcome recovery",
+    "independent enforceable cleanup",
+    "durable external evidence preservation",
+    "authenticated bootstrap execution channel",
+    "fresh quota/cost/lifecycle admission",
+    "actual dedicated OIDC/backend/alert proof",
+    "exact-head managed gates before merge"
+  ],
+  "resumed_from_commit": "34e3b078f13976d6e8c034f738bc56df705c8892",
+  "resumed_from_tree": "2136a224f3fdcce0176187af31afa7839a9afe2f",
+  "ruff": "PASS",
+  "schema_version": "1.0.0",
+  "typed_source_files": 62
+}

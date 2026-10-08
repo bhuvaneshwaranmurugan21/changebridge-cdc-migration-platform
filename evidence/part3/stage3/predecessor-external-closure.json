@@ -1,0 +1,11 @@
+{
+  "checkpoint": "PART3_STAGE2_DEPLOYABLE_PLATFORM_VERIFIED",
+  "exact_head_checks_passed": 2,
+  "fresh_origin_main_verified": true,
+  "merge_commit": "084407a972d2d3f937e8ac670733f198dd4b0179",
+  "merge_tree": "3a5ceefaf9dcfcbe97da5a593f76eab0cd5fe257",
+  "note": "The committed candidate receipt remains historically pending; external closure is independently reconstructed from the exact-head checks and merged main identity.",
+  "pull_request": 15,
+  "result": "PASS",
+  "reviewed_head": "daa39539ff9d32340a87a3caa0d8a84c06a726a7"
+}

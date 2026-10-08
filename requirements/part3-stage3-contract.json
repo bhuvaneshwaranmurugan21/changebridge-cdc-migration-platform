@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "part3-stage3-aws-admission",
+  "entry_checkpoint": "PART3_STAGE2_DEPLOYABLE_PLATFORM_VERIFIED",
+  "entry_commit": "084407a972d2d3f937e8ac670733f198dd4b0179",
+  "entry_tree": "3a5ceefaf9dcfcbe97da5a593f76eab0cd5fe257",
+  "branch": "part3-stage3-aws-admission",
+  "aws_binding": {
+    "account_id": "857229544428",
+    "region": "ap-southeast-2",
+    "execution_role_arn": "arn:aws:sts::857229544428:assumed-role/AccountFullAccessRole/REDACTED_SESSION",
+    "alert_endpoint": "VERIFIED_REDACTED"
+  },
+  "cost_boundary": {
+    "shared_budget_name": "portfolio-labs-monthly-cost",
+    "shared_budget_usd_monthly": 20,
+    "portfolio_credit_context_usd": 140,
+    "portfolio_credit_is_stage_allowance": false,
+    "maximum_resource_lifetime_hours": 48,
+    "proposed_bootstrap_ceiling_usd": 3,
+    "proposed_ceiling_accepted": false,
+    "budget_alerts_are_hard_spend_cap": false,
+    "lifecycle_conflict": "UNRESOLVED_RETAIN_THROUGH_PART3_AND_KMS_DELETION_WINDOW"
+  },
+  "claim_ceiling": "AWS_ADMISSION_OBSERVED",
+  "aws_mutation_authorized": false,
+  "authorized_now": [
+    "repository_inspection",
+    "read_only_aws_qualification",
+    "admission_artifact_preparation",
+    "local_validation"
+  ],
+  "forbidden_until_exact_bootstrap_authorization": [
+    "create",
+    "update",
+    "delete",
+    "terraform_apply",
+    "terraform_import",
+    "managed_workload",
+    "platform_deployment"
+  ],
+  "checkpoint": "PART3_STAGE3_AWS_ADMISSION_VERIFIED"
+}

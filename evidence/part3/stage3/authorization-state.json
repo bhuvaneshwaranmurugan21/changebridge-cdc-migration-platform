@@ -1,0 +1,8 @@
+{
+  "aws_mutation_authorized": false,
+  "exact_bootstrap_authorization": "PENDING",
+  "managed_workload_authorized": false,
+  "read_only_qualification_authorized": true,
+  "repository_preparation_authorized": true,
+  "result": "PASS"
+}

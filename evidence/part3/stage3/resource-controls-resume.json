@@ -1,0 +1,39 @@
+{
+  "label": "RESOURCE_CONTROL_CONTINUATION_NOT_MANAGED_ADMISSION",
+  "at_utc": "2026-10-05T06:24:42.464156+00:00",
+  "predecessor_head": "6a655b550045a8e9483c4f78de13e4aa96998712",
+  "validation": {
+    "tests_passed": 631,
+    "skipped": 2,
+    "skip_scope": "existing PostgreSQL service-dependent tests",
+    "coverage_percent": 86.84,
+    "new_resource_control_and_attempt_tests": 90,
+    "typing_source_files": 46
+  },
+  "changes": [
+    "exact KMS identity, key policy, complete ownership tags and creation-bound expiry comparisons",
+    "exact owner-bound S3 region, versioning, public-access, encryption, ownership and policy comparisons",
+    "physical DynamoDB TableId, schema, billing, encryption and PITR comparisons",
+    "durable KMS attempt-to-readback structural binding preserving unresolved mutation",
+    "optional immutable first-creation tag binding in private journal",
+    "corrected KMS-specific TagKey/TagValue request shape"
+  ],
+  "failures_resolved": [
+    "format/import errors corrected",
+    "regression-test missing namespace corrected",
+    "stale manifest observed when files changed during an earlier test run; refreshed and final suite rerun after edits completed",
+    "integration exposed unresolved creation-tag placeholders; concrete intent tags now frozen and placeholder-only creation binding rejected"
+  ],
+  "aws_calls": 0,
+  "aws_mutations": 0,
+  "criteria_passed": 32,
+  "criteria_pending": 20,
+  "predecessor_evidence_changed": false,
+  "pending": [
+    "usable authenticated AWS execution channel",
+    "full mutation coordinator and operation-specific authoritative recovery including lost CreateKey acknowledgement",
+    "independent enforceable cleanup and evidence export",
+    "real backend, alert, OIDC and managed admission receipts"
+  ],
+  "claim_ceiling": "LOCAL_COMPONENT_VALIDATION_ONLY"
+}

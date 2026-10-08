@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "result": "OBSERVATIONS_VERIFIED_GAPS_REMAIN",
+  "review_date_utc": "2026-10-02",
+  "collection_time_utc": "UNKNOWN_NOT_RECORDED_IN_ARCHIVES",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "account_id": "857229544428",
+  "region": "ap-southeast-2",
+  "archives": [
+    {
+      "name": "ChangeBridge-Stage3-ReadOnly.zip",
+      "sha256": "a97177eba30a944c83e3d4b152a96a8389b4b92ad15b466ff32ff2c19c3a8ca7",
+      "internal_checksums": "PASS",
+      "collection_time_utc": "UNKNOWN"
+    },
+    {
+      "name": "ChangeBridge-Stage3-Supplemental.zip",
+      "sha256": "d73803158b44556eab1fb4a4fad4989e35e98d6999cd329729c1e4460775c17e",
+      "internal_checksums": "PASS",
+      "collection_time_utc": "UNKNOWN"
+    }
+  ],
+  "observations": {
+    "oidc_provider_arn": "arn:aws:iam::857229544428:oidc-provider/token.actions.githubusercontent.com",
+    "oidc_audience": "sts.amazonaws.com",
+    "operator_role_arn": "arn:aws:iam::857229544428:role/managed/AccountFullAccessRole",
+    "operator_permissions_boundary": "ABSENT",
+    "candidate_role": "ABSENT_NO_SUCH_ENTITY",
+    "candidate_trust_policy": "NOT_OBSERVED",
+    "candidate_permissions_and_boundary": "NOT_OBSERVED",
+    "state_bucket_collision": "ABSENT",
+    "artifact_bucket_collision": "ABSENT",
+    "lock_table_collision": "ABSENT_RESOURCE_NOT_FOUND",
+    "kms_alias_collision": "ABSENT",
+    "sns_topic_collision": "ABSENT",
+    "regional_api_availability": ["DMS", "GLUE", "STEP_FUNCTIONS"],
+    "quota_ceilings_observed": ["DMS", "GLUE", "STEP_FUNCTIONS"],
+    "complete_quota_usage_comparison": "NOT_PROVEN",
+    "available_az_count": 3,
+    "default_vpc": "AVAILABLE",
+    "subnet_count": 3,
+    "free_ipv4_addresses_per_subnet": 4091,
+    "default_route": "ACTIVE_INTERNET_GATEWAY",
+    "dms_replication_subnet_group": "ABSENT",
+    "network_deployment_capability": "NOT_PROVEN",
+    "shared_budget_usd_monthly": 20,
+    "shared_budget_alerts_are_hard_spend_cap": false
+  },
+  "newly_supported_acceptance_ids": ["ST33-AC-33", "ST33-AC-34"],
+  "unresolved_acceptance_ids": ["ST33-AC-31", "ST33-AC-32", "ST33-AC-35", "ST33-AC-36"],
+  "limitations": [
+    "Archive integrity verifies received content, not AWS authenticity or collector completeness.",
+    "Normalized archive timestamps are not capture timestamps; refresh is required before mutation.",
+    "The absent proposed role does not prove its future trust, permissions or boundary.",
+    "Quota ceilings alone do not prove remaining usage headroom.",
+    "Regional API responses do not prove workload or deployment capability.",
+    "The USD 3 bootstrap ceiling is a proposal, not an accepted allowance or hard cost cap.",
+    "The 48-hour lifetime conflicts with retain-through-Part-3 proposals and requires resolution."
+  ],
+  "pre_mutation_refresh_required": true,
+  "aws_mutation_authorized": false,
+  "aws_mutations_in_review": 0,
+  "public_alert_endpoint": "VERIFIED_REDACTED"
+}

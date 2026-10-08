@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "status": "READ_ONLY_DIAGNOSTIC_PREPARED_NOT_AWS_EXECUTED",
+  "repository": "bhuvaneshwaranmurugan21/changebridge-cdc-migration-platform",
+  "account_id": "857229544428",
+  "region": "ap-southeast-2",
+  "aws_mutations": 0,
+  "administrator_channel": "NOT_AVAILABLE",
+  "existing_main_role": "ChangeBridgeGitHubOidcRole",
+  "dedicated_candidate_role": "ChangeBridgePart3GitHubActionsRole",
+  "observer_patch_enables_bootstrap": false,
+  "diagnostic_enables_deployment": false,
+  "existing_role_or_global_variable_changes": false,
+  "protected_predecessor_changes": false,
+  "stage_complete": false,
+  "next_indispensable_step": "One authenticated administrator read-only diagnostic; review before any bootstrap write.",
+  "reviewed_candidate_ci": {
+    "head": "9d465a6b67b798d3bc6c852844a3cda68d9772b0",
+    "tree": "87d53346572af4c51e367fcd148ba748a304fc57",
+    "quality": {"run_id": 37067551574, "job_id": 111039038126, "conclusion": "success"},
+    "admission": {"run_id": 37067551434, "conclusion": "success"},
+    "deployable_platform": {"run_id": 37067551498, "conclusion": "success"},
+    "scope": "These results apply to the stated prior exact head; changed code needs its own validation."
+  }
+}

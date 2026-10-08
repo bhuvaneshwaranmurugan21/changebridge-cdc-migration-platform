@@ -1,0 +1,70 @@
+{
+  "acceptance_registry_byte_identical": true,
+  "actual_local_evidence": [
+    "real SQLite transactions and private file/inode enforcement",
+    "competing writers: exactly one conditional head owner",
+    "identical parallel intents cannot adopt another writer acknowledgement",
+    "actual process exit between immutable event and head leaves no committed dispatch authority",
+    "actual SIGKILL during uncommitted SQL rolls back",
+    "lost local acknowledgement reconciles exact durable bytes without a second put",
+    "denied writes, malformed/rehashed records and nonfinite JSON remain blocked"
+  ],
+  "approval": "deployment/stage3/lifecycle-authority.json",
+  "approved_controller_retention_maximum_days": 10,
+  "approved_resource_count": 7,
+  "authority_validators_passed": 13,
+  "aws_calls": 0,
+  "aws_mutations": 0,
+  "claims": {
+    "aws_proven": false,
+    "complete_controller_implemented": false,
+    "cost_limit_accepted": false,
+    "external_final_retention_proven": false,
+    "independent_cleanup_proven": false,
+    "mutation_coordinator_completed": false,
+    "policy_effectiveness_proven": false,
+    "runtime_qualified": false,
+    "stage_completed": false
+  },
+  "criteria_passed": 32,
+  "criteria_pending": 20,
+  "dependency_declarations_changed": false,
+  "focused_checks_passed": 65,
+  "full_suite": {
+    "coverage_percent": 86.84,
+    "log_sha256": "f73c2eb265274ee08ebc1f963898c26d36273636498829fc170087af0fcabaa9",
+    "passed": 771,
+    "skip_reason": "existing PostgreSQL service unavailable",
+    "skipped": 2
+  },
+  "label": "APPROVED_LIFECYCLE_LOCAL_PREPARATION_NOT_AWS_ADMISSION",
+  "mypy": {
+    "checked_source_files": 56,
+    "result": "PASS"
+  },
+  "original_deadline_weakened": false,
+  "original_manifest_byte_identical": true,
+  "original_operational_deadline_hours": 48,
+  "original_scope_proposal_byte_identical": true,
+  "protected_predecessor_evidence": "BYTE_IDENTICAL",
+  "remaining": [
+    "complete controller handler and full guarded mutation/recovery coordination",
+    "qualify and freeze exact runtime source bundle and SDK model",
+    "prove operation-specific authoritative recovery, including missing first-key acknowledgement",
+    "verify final export destination independently of controller, evidence bucket and bootstrap KMS",
+    "exact regional cost/resource-volume bound and allowance acceptance",
+    "authenticated administrator channel and fresh qualification",
+    "actual independent delivery, cleanup, OIDC/backend/alerts and all pending acceptance criteria"
+  ],
+  "resumed_from_commit": "c99ac491e5764bac81b413e494c83bc5e616cca6",
+  "resumed_from_tree": "d893320781800fa8fae9c0ae40530191f236dc29",
+  "review_corrections": [
+    "Scheduler trust binds default schedule group, invocation policy binds exact function/failure queue",
+    "SNS subscription permissions authorize against exact topic resource",
+    "KMS DeleteAlias permission binds both exact alias and associated physical key",
+    "PITR retirement follows preserved admission, export and quiescence before verified DISABLED/delete"
+  ],
+  "ruff": "PASS",
+  "schema_version": "1.0.0",
+  "teardown_plan_byte_identical": true
+}

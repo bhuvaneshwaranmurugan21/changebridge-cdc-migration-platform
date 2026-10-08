@@ -1,0 +1,64 @@
+{
+  "actual_local_evidence": [
+    "real local denied subprocess retains raw return code and stderr before blocking further reads",
+    "SIGKILL of actual coordinator process preserves unresolved read intent across journal reopen",
+    "explicit unknown-read preservation leaves original mutation pending and retry forbidden",
+    "all 20 exact request constructors reject unresolved or foreign bindings",
+    "malformed durable scopes stop before transport"
+  ],
+  "authority_validators_passed": 13,
+  "aws_calls": 0,
+  "aws_mutations": 0,
+  "claims": {
+    "authoritative_recovery_completed": false,
+    "aws_proven": false,
+    "durable_external_retention_proven": false,
+    "independent_cleanup_implemented_or_proven": false,
+    "mutation_coordinator_completed": false,
+    "stage_completed": false
+  },
+  "criteria_passed": 32,
+  "criteria_pending": 20,
+  "focused_checks_passed": 57,
+  "full_suite": {
+    "coverage_percent": 86.84,
+    "log_sha256": "6a2d8e143a5788e08a8fb838e54811cdcfbadfacf5a0e42c671586411f7f9de5",
+    "passed": 722,
+    "skip_reason": "existing PostgreSQL service unavailable",
+    "skipped": 2
+  },
+  "initial_local_failure": {
+    "cause": "test PATH replacement hid git needed for source-integrity validation",
+    "failed": 4,
+    "passed": 50,
+    "resolution": "preserve real git access; fake CLI path is prepended; missing-CLI check uses git-only directory",
+    "validation_weakened": false
+  },
+  "label": "LOCAL_REQUEST_BINDING_AND_SCOPED_READBACK_VERIFIED_NOT_AWS_ADMISSION",
+  "lifecycle_design": {
+    "additional_named_resources": 7,
+    "approved": false,
+    "original_48_hour_deadline_weakened": false,
+    "original_allowlist_changed": false,
+    "proposal": "deployment/stage3/lifecycle-scope-correction.proposed.json",
+    "proposed_maximum_controller_retention_days": 10
+  },
+  "mypy": {
+    "checked_source_files": 54,
+    "result": "PASS"
+  },
+  "protected_predecessor_evidence": "BYTE_IDENTICAL",
+  "remaining": [
+    "review lifecycle scope and retention correction",
+    "finish full mutation coordinator and operation-specific authoritative recovery against accepted design",
+    "implement and independently prove lifecycle controller and externally retained state/artifact/version exports",
+    "usable authenticated administrator execution channel",
+    "fresh collision, quota, cost and lifecycle qualification",
+    "actual dedicated OIDC/backend/alert and admission proofs",
+    "exact-head completion criteria before merge"
+  ],
+  "resumed_from_commit": "a5efdc29c54c647f39ce992894e9845f7ac18188",
+  "resumed_from_tree": "66af4bc2a9b9d89ce767ae424634fff475e981ea",
+  "ruff": "PASS",
+  "schema_version": "1.0.0"
+}
